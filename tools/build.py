@@ -57,7 +57,9 @@ def _year_month(date_str):
     return int(date_str[0:4]), int(date_str[5:7])
 
 
-def derive_company(record, today):
+def derive_company(record, today, fx_rate=0.92):
+    """today is an as-of reference (year, month) — usually derived from the data's
+    own dataAsOf, not the current date. See build()."""
     valuation, rounds = record["valuation"], record["rounds"]
     last_round = rounds[-1] if rounds else None
     unicorn_year, _ = parse_date(record["becameUnicorn"]["date"])
@@ -80,7 +82,10 @@ def derive_company(record, today):
     }
     sort = {
         "newest": list(date_sort_key(record["becameUnicorn"]["date"])),
-        "valuationEur": _to_eur(valuation["amount"], valuation["currency"], 0.92),
+        # Ordering mixed currencies requires a common unit; this value is a sort key
+        # only and is never displayed — display.valuationLabel stays in the source's
+        # own currency, so "no FX conversion on a company's own figure" still holds.
+        "valuationEur": _to_eur(valuation["amount"], valuation["currency"], fx_rate),
         "latestRound": list(date_sort_key(last_round["date"])) if last_round else [0, 0],
         "name": record["name"].lower(),
     }
@@ -126,9 +131,14 @@ def build(src="data/companies", out="data/companies.json", fx_path="data/fx.json
         # Anchor to the data, never the wall clock: data/companies.json is committed
         # and must be reproducible byte-for-byte on any day CI happens to run.
         data_as_of = _data_as_of(raw_records)
-        today = _year_month(data_as_of) if data_as_of is not None else (0, 0)
+        if data_as_of is None:
+            if raw_records:
+                raise ValueError("cannot derive dataAsOf: no source carries a publishedOn")
+            today = (0, 0)  # unreachable by derive_company: raw_records is empty
+        else:
+            today = _year_month(data_as_of)
 
-    records = [derive_company(record, today) for record in raw_records]
+    records = [derive_company(record, today, fx["USD_EUR"]) for record in raw_records]
     payload = {"stats": compute_stats(records, fx), "companies": records}
     out_path = pathlib.Path(out)
     out_path.parent.mkdir(parents=True, exist_ok=True)

@@ -73,3 +73,18 @@ def test_the_build_output_is_a_pure_function_of_its_inputs(tmp_path):
     assert (tmp_path / "a.json").read_text() == (tmp_path / "b.json").read_text()
     assert "generatedOn" not in first["stats"]
     assert first["stats"]["dataAsOf"] == "2024-03-14"
+    assert first["companies"][0]["display"]["aged"] is False, (
+        "aged must be measured from dataAsOf, not the wall clock")
+
+
+def test_a_missing_publishedon_raises_instead_of_building_on_nonsense(tmp_path):
+    base = json.loads(FIXTURE.read_text(encoding="utf-8"))
+    base["sources"] = [{**s, "publishedOn": ""} for s in base["sources"]]
+    src = tmp_path / "companies"
+    src.mkdir()
+    (src / "example-gmbh.json").write_text(json.dumps(base), encoding="utf-8")
+    fx = tmp_path / "fx.json"
+    fx.write_text(json.dumps({"USD_EUR": 0.92, "asOf": "2026-08"}), encoding="utf-8")
+
+    with pytest.raises(ValueError, match="publishedOn"):
+        build(src=str(src), out=str(tmp_path / "out.json"), fx_path=str(fx))
