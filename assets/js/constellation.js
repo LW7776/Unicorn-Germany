@@ -39,8 +39,13 @@ export class Constellation {
   }
 
   pointAt(index) {
-    const point = this.points[index % this.points.length];
     const box = this.canvas.getBoundingClientRect();
+    // No companies yet (empty dataset) means no points to index into — fall back
+    // to the canvas centre so callers (Task 6's FLIP) never dereference undefined.
+    if (!this.points.length) {
+      return { x: box.left + this.w / 2, y: box.top + this.h / 2 };
+    }
+    const point = this.points[index % this.points.length];
     return { x: box.left + point.x, y: box.top + point.y };
   }
 
