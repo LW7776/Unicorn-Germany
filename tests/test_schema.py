@@ -11,7 +11,7 @@ def test_parse_date_accepts_year_and_month_precision():
     assert parse_date("2024") == (2024, 0)
 
 
-@pytest.mark.parametrize("bad", ["2024-3", "March 2024", "2024-03-11", "", "24-03"])
+@pytest.mark.parametrize("bad", ["2024-3", "March 2024", "2024-03-11", "", "24-03", "2024-00", "2024-13"])
 def test_parse_date_rejects_other_shapes(bad):
     with pytest.raises(ValueError):
         parse_date(bad)

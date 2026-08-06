@@ -24,8 +24,9 @@ def parse_date(value):
     match = _DATE.match(value or "")
     if not match:
         raise ValueError(f"date must be YYYY or YYYY-MM, got {value!r}")
-    year, month = int(match.group(1)), int(match.group(2) or 0)
-    if month > 12:
+    year, month_str = int(match.group(1)), match.group(2)
+    month = int(month_str) if month_str else 0
+    if month_str and (month < 1 or month > 12):
         raise ValueError(f"month out of range in {value!r}")
     return year, month
 
