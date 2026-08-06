@@ -15,58 +15,71 @@ export async function enterRegister({ hero, register, sky, grid }) {
   const enterButton = document.querySelector("[data-enter]");
   if (enterButton) enterButton.disabled = true;
 
-  register.hidden = false;
-  document.querySelector("[data-topbar]").hidden = false;
+  try {
+    register.hidden = false;
+    document.querySelector("[data-topbar]").hidden = false;
 
-  // hero.css gives .hero a full 100svh in normal document flow, so the instant
-  // .register unhides it is pushed below the fold — every grid cell would land
-  // off-screen and the flight would be invisible. Taking hero out of flow puts
-  // the register at the top of the document immediately; a positioned element
-  // stacks above in-flow content, so hero still visually overlays it while it
-  // fades, and the flight lands somewhere the viewer can actually see.
-  // A class (not an inline style) so the lift is reverted cleanly below rather
-  // than leaving a permanent full-viewport fixed element in the DOM.
-  hero.classList.add("hero--lifted");
+    // hero.css gives .hero a full 100svh in normal document flow, so the instant
+    // .register unhides it is pushed below the fold — every grid cell would land
+    // off-screen and the flight would be invisible. Taking hero out of flow puts
+    // the register at the top of the document immediately; a positioned element
+    // stacks above in-flow content, so hero still visually overlays it while it
+    // fades, and the flight lands somewhere the viewer can actually see.
+    // A class (not an inline style) so the lift can never survive as a stray
+    // inline style — the finally below always removes it, throw or no throw.
+    hero.classList.add("hero--lifted");
 
-  if (REDUCED.matches) {
+    if (REDUCED.matches) {
+      hero.hidden = true;
+      sky.stop();
+      return;
+    }
+
+    const cells = [...grid.querySelectorAll(".cell")];
+    const flights = cells.map((cell, index) => {
+      const box = cell.getBoundingClientRect();
+      const star = sky.pointAt(index);
+      const spark = document.createElement("span");
+      spark.className = "spark";
+      spark.style.left = `${star.x}px`;
+      spark.style.top = `${star.y}px`;
+      document.body.append(spark);
+      cell.style.opacity = "0";
+      return { spark, cell, dx: box.left + box.width / 2 - star.x, dy: box.top + box.height / 2 - star.y };
+    });
+
+    hero.animate(
+      { opacity: [1, 0], filter: ["blur(0px)", "blur(12px)"], transform: ["translateY(0)", "translateY(-4vh)"] },
+      { duration: 600, easing: "cubic-bezier(.22,1,.36,1)", fill: "forwards" });
+
+    await Promise.all(flights.map(({ spark, dx, dy }, index) =>
+      spark.animate(
+        { transform: ["translate(0,0) scale(1)", `translate(${dx}px, ${dy}px) scale(.4)`], opacity: [1, 0] },
+        { duration: 900, delay: index * 12, easing: "cubic-bezier(.22,1,.36,1)", fill: "forwards" }
+      ).finished));
+
+    flights.forEach(({ spark, cell }, index) => {
+      spark.remove();
+      cell.style.opacity = "";
+      cell.animate({ opacity: [0, 1], transform: ["scale(.94)", "scale(1)"] },
+        { duration: 320, delay: index * 8, easing: "cubic-bezier(.22,1,.36,1)" });
+    });
+
     hero.hidden = true;
-    hero.classList.remove("hero--lifted");
     sky.stop();
-    return;
+    register.querySelector(".cell")?.focus({ preventScroll: true });
+  } finally {
+    // Runs on every exit — success, the reduced-motion early return, or a
+    // throw partway through the flight — so a mid-transition failure can
+    // never strand the page: no permanently full-viewport hero, no dead CTA,
+    // no cell left invisible mid-flight, no orphaned spark. A stuck overlay
+    // is a worse outcome than a slightly imperfect animation ending, so this
+    // cleanup is unconditional rather than trying to distinguish failure
+    // modes.
+    hero.classList.remove("hero--lifted");
+    grid.querySelectorAll(".cell").forEach((cell) => { cell.style.opacity = ""; });
+    document.querySelectorAll(".spark").forEach((spark) => spark.remove());
+    if (enterButton) enterButton.disabled = false;
+    inFlight = false;
   }
-
-  const cells = [...grid.querySelectorAll(".cell")];
-  const flights = cells.map((cell, index) => {
-    const box = cell.getBoundingClientRect();
-    const star = sky.pointAt(index);
-    const spark = document.createElement("span");
-    spark.className = "spark";
-    spark.style.left = `${star.x}px`;
-    spark.style.top = `${star.y}px`;
-    document.body.append(spark);
-    cell.style.opacity = "0";
-    return { spark, cell, dx: box.left + box.width / 2 - star.x, dy: box.top + box.height / 2 - star.y };
-  });
-
-  hero.animate(
-    { opacity: [1, 0], filter: ["blur(0px)", "blur(12px)"], transform: ["translateY(0)", "translateY(-4vh)"] },
-    { duration: 600, easing: "cubic-bezier(.22,1,.36,1)", fill: "forwards" });
-
-  await Promise.all(flights.map(({ spark, dx, dy }, index) =>
-    spark.animate(
-      { transform: ["translate(0,0) scale(1)", `translate(${dx}px, ${dy}px) scale(.4)`], opacity: [1, 0] },
-      { duration: 900, delay: index * 12, easing: "cubic-bezier(.22,1,.36,1)", fill: "forwards" }
-    ).finished));
-
-  flights.forEach(({ spark, cell }, index) => {
-    spark.remove();
-    cell.style.opacity = "";
-    cell.animate({ opacity: [0, 1], transform: ["scale(.94)", "scale(1)"] },
-      { duration: 320, delay: index * 8, easing: "cubic-bezier(.22,1,.36,1)" });
-  });
-
-  hero.hidden = true;
-  hero.classList.remove("hero--lifted");
-  sky.stop();
-  register.querySelector(".cell")?.focus({ preventScroll: true });
 }

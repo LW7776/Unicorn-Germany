@@ -28,6 +28,15 @@ export async function boot() {
       hero: document.querySelector("[data-hero]"),
       register: document.querySelector("[data-register]"),
       sky, grid,
+    }).catch((error) => {
+      // The transition is decoration; the register is the product. If the
+      // animation throws partway through, the viewer must still reach the
+      // content rather than being stuck looking at whatever state the
+      // failure left behind.
+      console.error(error);
+      document.querySelector("[data-register]").hidden = false;
+      document.querySelector("[data-topbar]").hidden = false;
+      document.querySelector("[data-hero]").hidden = true;
     });
   });
 }
