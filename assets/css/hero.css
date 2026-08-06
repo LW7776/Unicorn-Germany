@@ -3,9 +3,9 @@
   padding: var(--space-6); overflow: hidden;
 }
 .hero__canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
-.hero__inner { position: relative; max-width: 72rem; text-align: center; }
+.hero__inner { position: relative; max-width: 80rem; text-align: center; }
 .hero__eyebrow { margin: 0 0 var(--space-5); }
-.hero__title { font-size: var(--step-6); }
+.hero__title { font-size: var(--step-6); text-wrap: balance; }
 .hero__sub {
   max-width: 44rem; margin: var(--space-6) auto 0; color: var(--muted);
   font-family: var(--font-prose);
