@@ -55,7 +55,8 @@ def validate_company(record):
         if not quote_states_figure(
                 sources[source_id]["quote"], amount, figure.get("currency")):
             errors.append(
-                f"{label}: quote for source {source_id} does not contain the figure {amount}")
+                f"{label}: quote for source {source_id} does not state the figure {amount} "
+                f"and its currency — extend the quote to a sentence naming both")
 
     check_figure("valuation", record["valuation"])
     check_figure("totalRaised", record["totalRaised"])

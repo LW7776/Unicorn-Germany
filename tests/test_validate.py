@@ -92,6 +92,8 @@ def test_currency_must_appear_in_the_quote(record):
 
 
 def test_a_non_breaking_space_in_the_quote_still_matches(record):
+    # Replace normal spaces with non-breaking spaces in "1.2 billion"
+    nbsp = chr(0xa0)
     record["sources"][0]["quote"] = record["sources"][0]["quote"].replace(
-        "1.2 billion", "1.2 billion")
+        "1.2 billion", f"1.2{nbsp}billion")
     assert validate_company(record) == []

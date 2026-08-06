@@ -4,6 +4,7 @@ All monetary amounts are millions of the stated currency: 13000 + "USD" is $13bn
 All dates are "YYYY" or "YYYY-MM" — never padded to a day the source did not give.
 """
 import re
+from decimal import Decimal, ROUND_HALF_UP
 
 SOURCE_ALLOWLIST = {
     "Company press release", "Investor press release", "Handelsregister", "Bundesanzeiger",
@@ -73,19 +74,32 @@ def figure_variants(millions):
     return variants
 
 
-_SCALE_WORDS = r"(?:bn|billion|billions|mrd|milliarde|milliarden)"
+_SCALE_WORDS = r"(?:milliarden|milliarde|billions|billion|mrd\.?|bn|b)(?![a-z])"
 _CURRENCY_TOKENS = {
     "EUR": ("€", "eur", "euro"),
     "USD": ("$", "usd", "dollar"),
 }
 
 
+_UNICODE_SPACES = (" ", " ", " ", "　")
+
+
 def _normalise_quote(quote):
-    """Press releases and PDFs carry non-breaking and thin spaces around figures."""
+    """Press releases and PDFs separate figures with non-breaking and thin spaces."""
     text = quote or ""
-    for space in (" ", " ", " "):
+    for space in _UNICODE_SPACES:
         text = text.replace(space, " ")
     return text
+
+
+def _billion_forms(millions):
+    """How a source might print this amount in billions, rounded as sources round."""
+    exact = Decimal(str(millions)) / Decimal(1000)
+    forms = set()
+    for places in (2, 1):
+        quantised = exact.quantize(Decimal("1." + "0" * places), rounding=ROUND_HALF_UP)
+        forms.add(format(quantised, "f").rstrip("0").rstrip("."))
+    return forms
 
 
 def _figure_forms(millions):
@@ -96,12 +110,13 @@ def _figure_forms(millions):
     """
     forms = []
     if millions >= 1000:
-        plain = f"{millions / 1000:.1f}".rstrip("0").rstrip(".")
-        forms.append((plain, True))
-        forms.append((plain.replace(".", ","), True))
+        for billions in _billion_forms(millions):
+            forms.append((billions, True))
+            forms.append((billions.replace(".", ","), True))
         forms.append((f"{millions:.0f}", False))
         forms.append((f"{millions:,.0f}", False))
         forms.append((f"{millions:,.0f}".replace(",", "."), False))
+        forms.append((f"{millions:,.0f}".replace(",", " "), False))
     else:
         forms.append((f"{millions:.0f}", False))
     return forms
@@ -122,7 +137,7 @@ def quote_states_figure(quote, millions, currency=None):
     for form, needs_scale in _figure_forms(millions):
         escaped = re.escape(form)
         if needs_scale:
-            pattern = rf"(?<![\d.,]){escaped}\s*{_SCALE_WORDS}"
+            pattern = rf"(?<![\d.,]){escaped}[\s\-–—]*{_SCALE_WORDS}"
         else:
             pattern = rf"(?<![\d.,]){escaped}(?!\d)(?![.,]\d)"
         if re.search(pattern, text):

@@ -2,7 +2,7 @@
 import pytest
 from tools.schema import (
     SOURCE_ALLOWLIST, parse_date, date_sort_key, format_date,
-    format_amount, figure_variants,
+    format_amount, figure_variants, quote_states_figure,
 )
 
 
@@ -46,3 +46,27 @@ def test_allowlist_excludes_licensed_databases():
     assert "Sifted" in SOURCE_ALLOWLIST
     for banned in ("Crunchbase", "Dealroom", "PitchBook", "Tracxn", "Wikipedia"):
         assert banned not in SOURCE_ALLOWLIST
+
+
+def test_two_decimal_billion_figures_are_recognised():
+    assert quote_states_figure("valued at $1.25 billion", 1250, "USD")
+
+
+def test_german_hyphenated_compound_is_recognised():
+    assert quote_states_figure("die 1,4-Milliarden-Bewertung in Euro", 1400, "EUR")
+
+
+def test_shorthand_b_suffix_is_recognised():
+    assert quote_states_figure("now valued at $1.2B", 1200, "USD")
+
+
+def test_a_bare_b_does_not_match_an_unrelated_german_word():
+    assert not quote_states_figure("1,4 bis 2 Milliarden Euro erwartet", 1400, "EUR")
+
+
+def test_a_space_thousands_separator_is_recognised():
+    assert quote_states_figure("1 200 Millionen Euro", 1200, "EUR")
+
+
+def test_the_scale_word_must_be_adjacent_to_the_number():
+    assert not quote_states_figure("on 1 March, in euros", 1000, "EUR")
