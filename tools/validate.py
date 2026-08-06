@@ -83,7 +83,7 @@ def validate_company(record):
         if previous is not None and key < previous:
             errors.append(f"rounds must be in chronological order: {entry['id']} is out of order")
         previous = key
-        check_figure(f"round {entry['id']}", entry, amount_key="postMoney")
+        check_figure(f"round {entry['id']}", entry)
 
     by_id = {entry.get("id"): entry for entry in rounds}
     unicorn_round = by_id.get(record["becameUnicorn"].get("roundId"))

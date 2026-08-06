@@ -13,7 +13,7 @@
   "totalRaised": {"amount": 300, "currency": "EUR", "approximate": true, "source": "s1"},
   "rounds": [
     {"id": "r1", "date": "2021-05", "stage": "Series B", "amount": 60, "currency": "EUR",
-     "approximate": false, "postMoney": null, "leadInvestors": ["Earlybird"], "investors": ["Earlybird"], "source": "s1"},
+     "approximate": false, "postMoney": null, "leadInvestors": ["Earlybird"], "investors": ["Earlybird"], "source": "s2"},
     {"id": "r2", "date": "2024-03", "stage": "Series C", "amount": 120, "currency": "EUR",
      "approximate": false, "postMoney": 1200, "leadInvestors": ["Index Ventures"], "investors": ["Index Ventures", "Earlybird"], "source": "s1"}
   ],
@@ -22,6 +22,9 @@
   "sources": [
     {"id": "s1", "publication": "Reuters", "title": "Example raises Series C",
      "url": "https://www.reuters.com/example", "publishedOn": "2024-03-14",
-     "quote": "Example GmbH raised 120 million euros at a valuation of about 1.2 billion euros, and has raised 300 million euros in total."}
+     "quote": "Example GmbH raised 120 million euros at a valuation of about 1.2 billion euros, and has raised 300 million euros in total."},
+    {"id": "s2", "publication": "Sifted", "title": "Example raises Series B",
+     "url": "https://sifted.eu/articles/example-series-b", "publishedOn": "2021-05-18",
+     "quote": "Example GmbH has raised 60 million euros in a Series B round led by Earlybird."}
   ]
 }
