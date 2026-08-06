@@ -24,6 +24,7 @@ is the signature; everything else stays quiet.
 | `--violet` | `#A97BFF` | Gradient partner; the €1bn marker |
 | `--amber` | `#E0A24B` | Aged and disputed signals |
 | `--plate` | `#F7F8FA` | The white plate logos sit on |
+| `--plate-ink` | `#14161A` | Text on the white logo plate — the only token for light surfaces |
 
 Two accents exist because `--beam` is a graphics colour and fails 4.5:1 as text. Never set
 type in `--beam`.
