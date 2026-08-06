@@ -32,6 +32,7 @@ index.html                      Hero + register + detail window (the whole app)
 method.html                     How the data is verified; the FX rate disclosure
 about.html                      What this is, who made it, error reporting
 impressum.html                  Impressum + privacy note
+admin.html                      Form editor for a company record. Generates valid JSON to commit.
 .nojekyll                       Stops GitHub Pages running Jekyll over the repo
 
 assets/css/tokens.css           Colour, type, spacing, motion tokens. Only file with raw hex.
@@ -69,6 +70,7 @@ tests/fixtures/                 Synthetic companies — never real data
 
 .github/workflows/validate.yml  pytest + validate.py on every push and PR
 .github/workflows/watch.yml     Monthly cron + workflow_dispatch; opens the candidates issue
+.github/workflows/rebuild.yml   Validates and regenerates companies.json after any manual data edit
 docs/UPDATING.md                How to run an update, manually or on request
 DESIGN.md                       The locked design system (supersedes design-system/MASTER.md)
 ```
@@ -1710,7 +1712,12 @@ function markup(company) {
     <p>${company.founders.length
       ? company.founders.map((f) => `${f.name} <span class="detail__role">${dash(f.role)}</span>`).join(" · ")
       : "—"}</p></section>
-  <section><h3 class="label">Sources</h3>${sources(company)}</section>`;
+  <section><h3 class="label">Sources</h3>${sources(company)}</section>
+  <footer class="detail__foot">
+    <a href="https://github.com/OWNER/REPO/edit/main/data/companies/${company.slug}.json"
+       target="_blank" rel="noopener noreferrer">Edit this entry ↗</a>
+    <span>Committing there revalidates and rebuilds the site automatically.</span>
+  </footer>`;
 }
 
 export function openDetail(company, context = {}) {
@@ -1851,6 +1858,11 @@ def test_round_labels_are_precomputed(record):
 .sources { color: var(--muted); font-size: var(--step--1); padding-left: var(--space-5); }
 .sources__meta { display: block; }
 .detail__role { color: var(--muted); }
+.detail__foot {
+  display: grid; gap: var(--space-2); margin-top: var(--space-7);
+  padding-top: var(--space-5); border-top: 1px solid var(--stroke);
+  color: var(--muted); font-size: var(--step--1);
+}
 @media (max-width: 600px) { .detail { padding: var(--space-5); width: 96vw; } }
 ```
 
@@ -2276,13 +2288,14 @@ jobs:
       - run: python tools/check_contrast.py
       - run: python tools/validate.py
       - name: companies.json must match the source files
+        if: github.event_name == 'pull_request'
         run: |
           python tools/build.py
           git diff --exit-code data/companies.json \
             || (echo "::error::data/companies.json is stale — run python3 tools/build.py and commit"; exit 1)
 ```
 
-That last step is the important one: it makes a stale generated file a build failure rather than a silent inconsistency.
+That last step makes a stale generated file a build failure rather than a silent inconsistency. It is deliberately **pull-request only**: a manual edit committed straight to `main` from the GitHub web editor cannot rebuild anything by itself, so `rebuild.yml` (Task 13) handles that case instead. Running the strict check on every push would turn every browser edit into a red build.
 
 - [ ] **Step 2: Write `.github/workflows/watch.yml`**
 
@@ -2336,12 +2349,45 @@ jobs:
 ```markdown
 # Updating the register
 
-Nothing here edits the dataset automatically. The monthly scan only *proposes*.
+Nothing here edits the dataset automatically. The monthly scan only *proposes*. There are
+three ways to change the content, and all three end in the same place: a validated commit.
+
+| Route | Needs | Use it when |
+|---|---|---|
+| **A. GitHub web editor** | A browser | Fixing a figure, a date, a typo — the fastest path |
+| **B. `admin.html` form** | A browser | Adding a whole company, or editing many fields at once |
+| **C. Files and terminal** | Python | Bulk edits, or when you are already in the repository |
 
 ## Monthly, automatic
 
 On the 1st of each month the `watch` workflow reads the allowlisted feeds and opens an issue
 listing candidate changes. Trigger it early from **Actions → watch → Run workflow**.
+
+## Route A — edit in the browser
+
+Open any company on the live site and click **Edit this entry** at the bottom of its detail
+window. That opens `data/companies/<slug>.json` in GitHub's editor. Change what you need and
+commit.
+
+On commit, `rebuild.yml` validates the file. If it passes, it regenerates `data/companies.json`
+and the live site updates within a minute or two. **If it fails, nothing is published** — the
+site keeps serving the last good data and the workflow posts the errors as a comment on your
+commit. A bad manual edit can never break the live site.
+
+The same rules still apply: every figure needs a source in `sources[]` whose `quote` contains
+that figure. The validator will tell you exactly which figure is unsourced.
+
+## Route B — the form editor
+
+Open `admin.html` (locally, or on the live site) and either pick an existing company to load
+or start a blank record. The form knows the schema: required fields, allowed publications, date
+formats, and the quote-contains-the-figure rule, all checked as you type.
+
+When it is valid, download the file or copy the JSON. Then either drop it into
+`data/companies/` and commit, or paste it into GitHub's editor via Route A.
+
+The form never writes to the repository by itself — that is deliberate. Every change stays a
+reviewable commit with your name on it.
 
 ## Acting on candidates
 
@@ -2356,14 +2402,15 @@ Paste this into Claude Code:
 > and open a pull request. If a figure has no quotable source sentence, leave the field out and
 > say so in the pull request — never fill a gap by inference.
 
-## Manually, by hand
+## Route C — files and terminal
 
 1. Edit or add `data/companies/<slug>.json`.
 2. `python3 tools/build.py`
 3. `python3 -m pytest && python3 tools/validate.py`
 4. Commit both the company file and the regenerated `data/companies.json`.
 
-CI fails if `data/companies.json` does not match the source files, so step 2 is not optional.
+On a pull request, CI fails if `data/companies.json` does not match the source files, so step 2
+is not optional there. On a direct push to `main`, `rebuild.yml` regenerates it for you.
 
 ## Removing a company
 
@@ -2390,7 +2437,198 @@ git commit -m "ci: validate every push and scan for candidates monthly"
 
 ---
 
-### Task 13: Publish to GitHub Pages
+### Task 13: Manual editing routes
+
+**Files:**
+- Create: `.github/workflows/rebuild.yml`, `admin.html`, `assets/js/admin.js`, `assets/css/admin.css`
+- Modify: `about.html` (link the form editor)
+
+**Interfaces:**
+- Consumes: `data/companies.json` (to prefill), the schema rules from Task 1.
+- Produces: `admin.js` exports `FIELDS` (the field descriptor list driving the form) and `buildRecord(formState) -> object`; a workflow that keeps a manual edit from ever publishing bad data.
+
+The automation must never be the *only* way to change the site. This task makes a hand edit a first-class path, and makes it impossible for one to break the live site.
+
+- [ ] **Step 1: Write `.github/workflows/rebuild.yml`**
+
+```yaml
+name: rebuild
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/companies/**'      # note: does NOT match data/companies.json, so no loop
+      - 'data/fx.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+
+      - name: Validate before anything is published
+        id: validate
+        run: python tools/validate.py 2>&1 | tee validate.log
+
+      - name: Regenerate companies.json
+        run: python tools/build.py
+
+      - name: Commit the rebuild
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/companies.json
+          git diff --staged --quiet || git commit -m "chore: rebuild companies.json"
+          git push
+
+      - name: Explain the failure on the commit
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            let log = 'Validation failed.';
+            try { log = fs.readFileSync('validate.log', 'utf8'); } catch (e) {}
+            await github.rest.repos.createCommitComment({
+              owner: context.repo.owner, repo: context.repo.repo, commit_sha: context.sha,
+              body: `**This edit was not published.** The live site still shows the previous `
+                  + `data, so nothing is broken.\n\n\`\`\`\n${log.slice(0, 4000)}\n\`\`\`\n\n`
+                  + `Fix the file and commit again. See [docs/UPDATING.md](../blob/main/docs/UPDATING.md).`,
+            });
+```
+
+The ordering is the safety property: validation runs **before** `build.py`, so a bad manual edit leaves `data/companies.json` untouched and the published site keeps serving the last good data.
+
+- [ ] **Step 2: Write `assets/js/admin.js`**
+
+A descriptor-driven form, so the schema lives in one list rather than in hand-written markup.
+
+```js
+/* Local editor for one company record. Generates JSON to commit — it never writes to the repo.
+   The rules here mirror tools/validate.py; that file remains the authority. */
+export const PUBLICATIONS = [
+  "Company press release", "Investor press release", "Handelsregister", "Bundesanzeiger",
+  "Gründerszene", "Sifted", "EU-Startups", "Tech.eu", "TechCrunch",
+  "Handelsblatt", "Reuters", "Bloomberg", "Financial Times",
+];
+
+export const FIELDS = [
+  { key: "slug", label: "Slug", hint: "lowercase-with-hyphens, matches the filename" },
+  { key: "name", label: "Company name" },
+  { key: "website", label: "Website", hint: "must start with https://" },
+  { key: "logo", label: "Logo path", hint: "assets/logos/<slug>.svg" },
+  { key: "hq.city", label: "HQ city" },
+  { key: "hq.country", label: "HQ country", hint: "two-letter code, e.g. DE" },
+  { key: "foundedCountry", label: "Founded in (country)" },
+  { key: "foundedYear", label: "Founded year", type: "number" },
+  { key: "sectors", label: "Sectors", hint: "comma separated", list: true },
+  { key: "thesis.problem", label: "The problem", type: "textarea" },
+  { key: "thesis.solution", label: "Technology & business model", type: "textarea" },
+  { key: "investors", label: "Investors", hint: "comma separated", list: true },
+];
+
+const DATE = /^\d{4}(-\d{2})?$/;
+
+export function figureVariants(millions) {
+  const variants = new Set([String(Math.round(millions))]);
+  if (millions >= 1000) {
+    const plain = String(+(millions / 1000).toFixed(1)).replace(/\.0$/, "");
+    variants.add(plain);
+    variants.add(plain.replace(".", ","));
+    variants.add(Math.round(millions).toLocaleString("en-US"));
+    variants.add(Math.round(millions).toLocaleString("de-DE"));
+  }
+  return variants;
+}
+
+export function validateRecord(record) {
+  const errors = [];
+  if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(record.slug || "")) errors.push("slug must be lowercase and hyphenated");
+  if (!(record.website || "").startsWith("https://")) errors.push("website must start with https://");
+  if (!record.sources?.length) errors.push("at least one source is required");
+
+  const byId = Object.fromEntries((record.sources || []).map((s) => [s.id, s]));
+  for (const source of record.sources || []) {
+    if (!PUBLICATIONS.includes(source.publication)) errors.push(`source ${source.id}: publication is not on the allowlist`);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(source.publishedOn || "")) errors.push(`source ${source.id}: publishedOn must be YYYY-MM-DD`);
+    if (!source.quote?.trim()) errors.push(`source ${source.id}: the verbatim quote is required`);
+  }
+
+  const checkFigure = (label, figure) => {
+    if (!figure) return;
+    const source = byId[figure.source];
+    if (!source) return errors.push(`${label}: cites unknown source "${figure.source}"`);
+    if (figure.amount == null) return;
+    const found = [...figureVariants(figure.amount)].some((v) => (source.quote || "").includes(v));
+    if (!found) errors.push(`${label}: the quote for ${figure.source} does not contain ${figure.amount}`);
+  };
+  checkFigure("valuation", record.valuation);
+  checkFigure("totalRaised", record.totalRaised);
+  (record.rounds || []).forEach((r) => {
+    checkFigure(`round ${r.id}`, r);
+    if (!DATE.test(r.date || "")) errors.push(`round ${r.id}: date must be YYYY or YYYY-MM`);
+  });
+
+  if (!DATE.test(record.valuation?.asOf || "")) errors.push("valuation.asOf must be YYYY or YYYY-MM");
+  const unicornRound = (record.rounds || []).find((r) => r.id === record.becameUnicorn?.roundId);
+  if (!unicornRound) errors.push("becameUnicorn.roundId matches no round");
+  else if ((unicornRound.postMoney || 0) < 1000) errors.push(`round ${unicornRound.id} post-money is below the 1000m threshold`);
+  return errors;
+}
+
+export function download(record) {
+  const blob = new Blob([JSON.stringify(record, null, 1)], { type: "application/json" });
+  const link = Object.assign(document.createElement("a"), {
+    href: URL.createObjectURL(blob), download: `${record.slug || "company"}.json`,
+  });
+  link.click();
+  URL.revokeObjectURL(link.href);
+}
+```
+
+- [ ] **Step 3: Write `admin.html`**
+
+The page renders `FIELDS` into inputs, plus repeatable row editors for `rounds`, `founders` and `sources` (add/remove buttons), a live error panel bound to `validateRecord`, a JSON preview, and three actions: **Load an existing company** (a select populated from `data/companies.json`), **Download JSON**, **Copy JSON**.
+
+Required behaviours:
+- The error panel updates on every input and lists every failure by field — never a single generic "invalid".
+- Download and Copy stay disabled while there are errors, with the reason shown next to them.
+- A short standing note at the top: *"This generates a file. Commit it to `data/companies/` — nothing is saved automatically."*
+- It reuses `tokens.css` and `base.css`; it is a tool, so it stays plain. No constellation, no animation.
+- It is **not** linked from the main navigation. Link it from `about.html` and the README.
+
+- [ ] **Step 4: Verify by round-tripping a real record**
+
+Load an existing company in the form, change nothing, download, and diff against the original:
+
+```bash
+diff <(python3 -c "import json,sys;print(json.dumps(json.load(open('data/companies/example-gmbh.json')),indent=1,ensure_ascii=False))") ~/Downloads/example-gmbh.json
+```
+
+Expected: no differences. A round trip that silently drops a field would be a data-loss bug.
+
+Then deliberately break things and confirm each is caught: a quote that does not contain its figure, a publication set to Crunchbase, a `publishedOn` of `2024-03`, and a `becameUnicorn.roundId` pointing at nothing.
+
+- [ ] **Step 5: Verify the workflow's failure path**
+
+On a branch, commit a company file with a valuation whose quote does not contain the figure. Confirm the `rebuild` run fails, `data/companies.json` is unchanged, and a commit comment appears explaining which figure was unsourced. Then fix it and confirm the rebuild commits cleanly.
+
+- [ ] **Step 6: Commit**
+
+```bash
+git add .github/workflows/rebuild.yml admin.html assets/js/admin.js assets/css/admin.css about.html
+git commit -m "feat: add browser and form routes for editing content by hand"
+```
+
+---
+
+### Task 14: Publish to GitHub Pages
 
 **Files:**
 - Modify: `assets/js/main.js` (footer repo URL), `README.md` (live URL)
@@ -2412,13 +2650,18 @@ Ask the user which account and repository name to use, then create the public re
 
 Settings → Pages → Source: **Deploy from a branch** → `main` / `/ (root)`. No build step is needed; the repository is the site.
 
-- [ ] **Step 4: Replace the placeholder repository URL**
+- [ ] **Step 4: Replace every placeholder repository URL**
 
-Update `OWNER/REPO` in the footer's "Report an error" link and the README's live URL, then commit.
+Run: `grep -rn "OWNER/REPO" --include="*.js" --include="*.html" --include="*.md" .`
+Replace each hit with the real path — the footer's "Report an error" link, the **"Edit this entry"** link in `assets/js/detail.js` (Task 8), and the README's live URL. Re-run the grep and expect no output; a stale placeholder would make the manual-edit route dead on arrival.
 
 - [ ] **Step 5: Verify the live site**
 
 Open the published URL and confirm against the local version: the constellation runs, the transition plays, a cell opens the detail window, a `#/<slug>` deep link loads directly, the map renders, and the browser console shows no failed requests. Check the network panel for any third-party request — there must be none.
+
+- [ ] **Step 6: Verify the manual route end to end**
+
+From the live site, open a company, click **Edit this entry**, change one harmless field (a sector label), and commit in GitHub's editor. Confirm `rebuild` runs, `data/companies.json` is regenerated by the bot, and the change is visible on the live site. Then revert it the same way. This is the route the user will actually use — it must work before the project is handed over.
 
 - [ ] **Step 6: Commit**
 
@@ -2429,7 +2672,7 @@ git commit -m "chore: point error reporting at the published repository"
 
 ---
 
-### Task 14: Dataset research — batch 1 (companies 1–8)
+### Task 15: Dataset research — batch 1 (companies 1–8)
 
 **Files:**
 - Create: `data/companies/<slug>.json` × 8, `assets/logos/<slug>.svg` × 8
@@ -2478,15 +2721,15 @@ git commit -m "data: add the first eight verified unicorn records"
 
 ---
 
-### Tasks 15–17: Dataset research — batches 2, 3 and 4
+### Tasks 16–18: Dataset research — batches 2, 3 and 4
 
-Repeat Task 14 verbatim for the remaining companies on the candidate list, eight at a time, committing each batch separately. Each batch ends with `python3 tools/validate.py && python3 tools/build.py && python3 -m pytest` green and a visual check of the grid.
+Repeat Task 15 verbatim for the remaining companies on the candidate list, eight at a time, committing each batch separately. Each batch ends with `python3 tools/validate.py && python3 tools/build.py && python3 -m pytest` green and a visual check of the grid.
 
 Stop when every company on the `docs/CANDIDATES.md` list is either included or has a recorded exclusion reason. Update `docs/CANDIDATES.md` in the same commit as the batch it covers.
 
 ---
 
-### Task 18: Accessibility, responsive and performance pass
+### Task 19: Accessibility, responsive and performance pass
 
 **Files:**
 - Modify: whichever CSS/JS files the findings touch
@@ -2529,8 +2772,10 @@ git commit -m "fix: accessibility and responsive findings from the QA pass"
 
 ## Self-Review
 
-**Spec coverage:** Purpose → Tasks 5–8. Scope and inclusion tests → Tasks 2, 14. Boundary problem (aged badge) → Tasks 3, 4, 6. Concept and voice → Tasks 5, 10. Hero → Task 5. Transition → Task 6. Register, stat bar, controls, grid cell, map → Tasks 6, 7, 9. No timeline view on Screen 2 → not built; the only timeline is in the detail window (Task 8). Detail window with the visible close button, fixed content order and `—` for missing data → Task 8. Personal data (no photos) → Task 8 renders founders as text only. Content model → Tasks 1–3. Correctness mechanism, all six failure modes → Task 2. Source allowlist → Task 1. Updating → Tasks 11, 12. Design tokens and type → Task 4. Architecture, Pages, workflows → Tasks 12, 13. Legal → Task 10. FX disclosure → Tasks 3, 10. Dataset → Tasks 14–17. Quality floor → Task 18.
+**Spec coverage:** Purpose → Tasks 5–8. Scope and inclusion tests → Tasks 2, 15. Boundary problem (aged badge) → Tasks 3, 4, 6. Concept and voice → Tasks 5, 10. Hero → Task 5. Transition → Task 6. Register, stat bar, controls, grid cell, map → Tasks 6, 7, 9. No timeline view on Screen 2 → not built; the only timeline is in the detail window (Task 8). Detail window with the visible close button, fixed content order and `—` for missing data → Task 8. Personal data (no photos) → Task 8 renders founders as text only. Content model → Tasks 1–3. Correctness mechanism, all six failure modes → Task 2. Source allowlist → Task 1. Updating, automatic and manual → Tasks 11, 12, 13. Design tokens and type → Task 4. Architecture, Pages, workflows → Tasks 12, 13, 14. Legal → Task 10. FX disclosure → Tasks 3, 10. Dataset → Tasks 15–18. Quality floor → Task 19.
 
-**Gaps found and closed:** the spec's `disputed` marker had no implementing task — it is rendered by the aged/disputed styling in Task 4's tokens and Task 8's figure notes, and the field is optional in the schema, so a record without it validates. The stale-`companies.json` failure mode was not in the spec at all; Task 12 adds it because a generated file that can drift silently would undermine the whole citation guarantee.
+**Gaps found and closed:** the spec's `disputed` marker had no implementing task — it is rendered by the aged/disputed styling in Task 4's tokens and Task 8's figure notes, and the field is optional in the schema, so a record without it validates. The stale-`companies.json` failure mode was not in the spec at all; Task 12 adds it because a generated file that can drift silently would undermine the whole citation guarantee. The spec described manual updating only as "edit the JSON" — Task 13 turns that into three real routes (browser editor, form editor, terminal) and, more importantly, guarantees that a bad hand edit fails closed: validation runs before the rebuild, so the live site keeps its last good data instead of publishing a broken record.
+
+**Type consistency (second pass, after the insertion):** `validateRecord` in `admin.js` mirrors but does not replace `validate_company` in `tools/validate.py`; the Python version stays the authority and is what CI runs, so a divergence shows up as a failed build rather than as published bad data. `figureVariants` in `admin.js` reproduces `figure_variants` in `tools/schema.py` — both must generate the same forms for 13000 and 1400, which Task 13 Step 4 checks by round trip. The `OWNER/REPO` placeholder appears in `detail.js` (Task 8), `main.js` (Task 10) and `README.md` (Task 12), and all three are resolved by the single grep in Task 14 Step 4.
 
 **Type consistency:** `derive_company(record, today)` returns `display` and `sort` blocks, consumed by name in `register.js` and `detail.js`; `rounds[].dateLabel`/`amountLabel` are added in Task 8 Step 2 before `detail.js` reads them. `Constellation.pointAt(index)` returns viewport coordinates, which is what `transition.js` assumes. `controls.setCity(city)` is defined in Task 7 and called in Task 9. `parse_feed(xml, source)` takes the source name as its second argument in both the test and the implementation.
