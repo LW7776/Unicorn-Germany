@@ -97,3 +97,23 @@ def test_a_non_breaking_space_in_the_quote_still_matches(record):
     record["sources"][0]["quote"] = record["sources"][0]["quote"].replace(
         "1.2 billion", f"1.2{nbsp}billion")
     assert validate_company(record) == []
+
+
+def test_null_sectors_is_an_error(record):
+    record["sectors"] = None
+    assert any("sectors" in e for e in validate_company(record))
+
+
+def test_empty_sectors_is_an_error(record):
+    record["sectors"] = []
+    assert any("sectors" in e for e in validate_company(record))
+
+
+def test_hq_missing_city_is_an_error(record):
+    del record["hq"]["city"]
+    assert any("hq.city" in e for e in validate_company(record))
+
+
+def test_founded_year_as_a_string_is_an_error(record):
+    record["foundedYear"] = "2015"
+    assert any("foundedYear" in e for e in validate_company(record))

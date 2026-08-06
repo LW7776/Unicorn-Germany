@@ -86,7 +86,7 @@
   background: transparent; border: 1px solid var(--stroke); color: var(--muted);
   font-size: var(--step--1); transition: all var(--dur-fast) var(--ease-out);
 }
-.chip[aria-pressed="true"] { color: var(--ink); border-color: var(--beam); background: var(--panel); }
+.chip[aria-checked="true"] { color: var(--ink); border-color: var(--beam); background: var(--panel); }
 .controls__count { color: var(--muted); font-size: var(--step--1); margin: 0; }
 
 .spark {

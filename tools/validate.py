@@ -24,11 +24,57 @@ THRESHOLD_MILLIONS = 1000          # $1B or €1B, as reported. No FX conversion
 SLUG = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 
 
+def _require_string(errors, label, value):
+    if not isinstance(value, str) or not value.strip():
+        errors.append(f"{label} must be a non-empty string")
+
+
+def _validate_types(record):
+    """Presence (REQUIRED, above) only proves a key exists — a record can pass
+    that check with `"sectors": null` or `"foundedYear": "2015"` and still
+    crash every consumer downstream (the browser's `flatMap`, this file's own
+    figure checks, tools/build.py's derive_company). This is the real gate:
+    it fails fast, before any code assumes a field has the shape it needs."""
+    errors = []
+    for label, key in (("name", "name"), ("website", "website"),
+                        ("logo", "logo"), ("slug", "slug")):
+        _require_string(errors, label, record.get(key))
+
+    sectors = record.get("sectors")
+    if not isinstance(sectors, list) or not sectors:
+        errors.append("sectors must be a non-empty list")
+    else:
+        for entry in sectors:
+            if not isinstance(entry, str) or not entry.strip():
+                errors.append(f"sectors contains a non-string or empty entry: {entry!r}")
+
+    hq = record.get("hq")
+    if not isinstance(hq, dict):
+        errors.append("hq must be an object with city and country")
+    else:
+        _require_string(errors, "hq.city", hq.get("city"))
+        _require_string(errors, "hq.country", hq.get("country"))
+
+    for field in ("founders", "investors", "rounds", "sources"):
+        if not isinstance(record.get(field), list):
+            errors.append(f"{field} must be a list")
+
+    founded_year = record.get("foundedYear")
+    if not isinstance(founded_year, int) or isinstance(founded_year, bool):
+        errors.append("foundedYear must be an integer")
+
+    return errors
+
+
 def validate_company(record):
     errors = []
     for field in REQUIRED:
         if field not in record:
             errors.append(f"missing required field: {field}")
+    if errors:
+        return errors
+
+    errors = _validate_types(record)
     if errors:
         return errors
 

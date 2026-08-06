@@ -12,20 +12,28 @@ function cmp(a, b) { return a[0] - b[0] || a[1] - b[1]; }
 export function applyState(companies, state) {
   const query = state.query.trim().toLowerCase();
   return companies
-    .filter((c) => !state.sector || c.sectors.includes(state.sector))
-    .filter((c) => !state.city || c.hq.city === state.city)
+    .filter((c) => !state.sector || (c.sectors || []).includes(state.sector))
+    .filter((c) => !state.city || (c.hq?.city ?? "") === state.city)
     .filter((c) => !query
       || c.name.toLowerCase().includes(query)
-      || c.sectors.join(" ").toLowerCase().includes(query)
-      || c.hq.city.toLowerCase().includes(query)
+      || (c.sectors || []).join(" ").toLowerCase().includes(query)
+      || (c.hq?.city ?? "").toLowerCase().includes(query)
       || (c.investors || []).join(" ").toLowerCase().includes(query))
     .sort(SORTS[state.sort]);
 }
 
 export function mountControls({ container, companies, onChange }) {
   const state = { query: "", sector: "", city: "", sort: "newest" };
-  const sectors = [...new Set(companies.flatMap((c) => c.sectors))].sort();
-  const cities = [...new Set(companies.map((c) => c.hq.city))].sort();
+  // data/companies.json is validated (tools/validate.py) before it can be
+  // committed, but the browser has no such guarantee at runtime — a bad
+  // deploy or a manually edited file could still ship a record with a null
+  // `sectors` or a `hq` missing `city`. flatMap/map over the raw field would
+  // throw synchronously here, before boot() even reaches the [data-enter]
+  // listener, taking the whole page down with it. Falling back to `[]` / ""
+  // instead means that one record just contributes no filter value.
+  const sectors = [...new Set(companies.flatMap((c) => c.sectors || []))].sort();
+  const cities = [...new Set(companies.map((c) => c.hq?.city ?? ""))]
+    .filter(Boolean).sort();
 
   // Every sector and city string below comes from data/companies.json — hand-
   // written and pipeline-generated, so untrusted like every other company
@@ -57,9 +65,9 @@ export function mountControls({ container, companies, onChange }) {
         </select>
       </label>
     </div>
-    <div class="chips" role="group" aria-label="Filter by sector">
-      <button class="chip" type="button" data-sector="" aria-pressed="true">All sectors</button>
-      ${sectors.map((s) => `<button class="chip" type="button" data-sector="${escapeHtml(s)}" aria-pressed="false">${escapeHtml(s)}</button>`).join("")}
+    <div class="chips" role="radiogroup" aria-label="Filter by sector">
+      <button class="chip" type="button" role="radio" data-sector="" aria-checked="true" tabindex="0">All sectors</button>
+      ${sectors.map((s) => `<button class="chip" type="button" role="radio" data-sector="${escapeHtml(s)}" aria-checked="false" tabindex="-1">${escapeHtml(s)}</button>`).join("")}
     </div>
     <p class="controls__count" role="status" data-count></p>`;
 
@@ -83,13 +91,49 @@ export function mountControls({ container, companies, onChange }) {
   container.querySelector("[data-city]").addEventListener("change", (event) => {
     state.city = event.target.value; emit();
   });
-  container.querySelectorAll("[data-sector]").forEach((chip) => {
-    chip.addEventListener("click", () => {
-      state.sector = chip.dataset.sector;
-      container.querySelectorAll("[data-sector]").forEach((other) =>
-        other.setAttribute("aria-pressed", String(other === chip)));
-      emit();
+  // The sector chips are a single-select group — exactly one filter value is
+  // ever active — so they follow the WAI-ARIA radiogroup pattern rather than
+  // a set of independent toggle buttons: role="radio"/aria-checked instead
+  // of aria-pressed, and a roving tabindex (only the checked chip is a Tab
+  // stop; Arrow keys move focus *and* selection among the rest), matching
+  // how a native <input type="radio"> group behaves for keyboard and
+  // screen-reader users.
+  const chips = () => [...container.querySelectorAll("[data-sector]")];
+
+  const selectChip = (chip) => {
+    state.sector = chip.dataset.sector;
+    chips().forEach((other) => {
+      const checked = other === chip;
+      other.setAttribute("aria-checked", String(checked));
+      other.tabIndex = checked ? 0 : -1;
     });
+    emit();
+  };
+
+  chips().forEach((chip) => {
+    chip.addEventListener("click", () => selectChip(chip));
+  });
+
+  container.querySelector(".chips").addEventListener("keydown", (event) => {
+    const list = chips();
+    const current = list.indexOf(document.activeElement);
+    if (current === -1) return;
+    const moves = {
+      ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1,
+    };
+    let next;
+    if (event.key in moves) {
+      next = (current + moves[event.key] + list.length) % list.length;
+    } else if (event.key === "Home") {
+      next = 0;
+    } else if (event.key === "End") {
+      next = list.length - 1;
+    } else {
+      return;
+    }
+    event.preventDefault();
+    list[next].focus();
+    selectChip(list[next]);
   });
 
   addEventListener("keydown", (event) => {
