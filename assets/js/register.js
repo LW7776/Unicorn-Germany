@@ -19,11 +19,21 @@ export function renderGrid(container, companies) {
   container.innerHTML = companies.map(cell).join("");
 }
 
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+/** "2026-07-18" -> "Jul 2026". Month precision matches how every other date renders. */
+function asOfLabel(dataAsOf) {
+  if (!dataAsOf) return "—";
+  const [year, month] = dataAsOf.split("-");
+  return `${MONTHS[Number(month) - 1]} ${year}`;
+}
+
 export function renderStats(container, stats) {
   // stats.dataAsOf is a YYYY-MM-DD string, or null when the dataset is empty
   // (see tools/build.py:_data_as_of) — never a wall-clock value, and never
   // assumed present.
-  const freshness = stats.dataAsOf ? stats.dataAsOf : "—";
+  const freshness = asOfLabel(stats.dataAsOf);
   const items = [
     ["Unicorns", stats.count],
     ["Combined value", stats.combinedValuationLabel],

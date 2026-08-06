@@ -32,7 +32,7 @@
   text-decoration: none; color: inherit;
 }
 .stat__value { font-size: var(--step-2); color: var(--ink); }
-.stat--freshness .stat__value { font-size: var(--step-1); color: var(--beam-text); }
+.stat--freshness .stat__value { font-size: var(--step-1); color: var(--beam-text); white-space: nowrap; }
 
 .grid {
   display: grid; gap: var(--space-4);
