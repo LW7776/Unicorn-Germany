@@ -1,4 +1,6 @@
 import { Constellation } from "./constellation.js";
+import { renderGrid, renderStats } from "./register.js";
+import { enterRegister } from "./transition.js";
 
 async function loadData() {
   const response = await fetch("data/companies.json", { cache: "no-cache" });
@@ -16,6 +18,18 @@ export async function boot() {
   const sky = new Constellation(canvas, data.companies.length);
   sky.start();
   window.__sky = sky;
+
+  const grid = document.querySelector("[data-grid]");
+  renderGrid(grid, data.companies);
+  renderStats(document.querySelector("[data-stats]"), data.stats);
+
+  document.querySelector("[data-enter]").addEventListener("click", () => {
+    enterRegister({
+      hero: document.querySelector("[data-hero]"),
+      register: document.querySelector("[data-register]"),
+      sky, grid,
+    });
+  });
 }
 
 boot().catch((error) => {

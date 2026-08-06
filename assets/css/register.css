@@ -1,0 +1,74 @@
+.topbar {
+  position: fixed; inset: 0 0 auto; z-index: 20; display: flex; gap: var(--space-5);
+  align-items: center; justify-content: space-between;
+  padding: var(--space-4) var(--space-6);
+  background: color-mix(in srgb, var(--void) 82%, transparent);
+  backdrop-filter: blur(14px); border-bottom: 1px solid var(--stroke);
+}
+/* Author `display: flex` above otherwise wins the cascade over the UA [hidden]
+   rule regardless of specificity (origin beats specificity), so the topbar
+   would render even while its `hidden` attribute is set. */
+.topbar[hidden] { display: none; }
+.topbar__mark {
+  font-family: var(--font-display); font-weight: 800; font-stretch: 112%;
+  letter-spacing: .04em; color: var(--ink); text-decoration: none; font-size: var(--step--1);
+}
+.topbar__nav { display: flex; gap: var(--space-4); align-items: center; }
+.topbar__nav > * {
+  background: none; border: 0; color: var(--muted); text-decoration: none;
+  font-size: var(--step--1); letter-spacing: .1em; text-transform: uppercase;
+  padding: var(--space-2); min-height: 44px;
+}
+.topbar__nav > *:hover, .topbar__nav [aria-pressed="true"] { color: var(--ink); }
+
+.register { padding: calc(var(--space-8) + 3rem) var(--space-6) var(--space-8); }
+.stats {
+  display: grid; gap: var(--space-4); margin-bottom: var(--space-7);
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+}
+.stat {
+  display: grid; gap: var(--space-2); padding: var(--space-5);
+  border: 1px solid var(--stroke); border-radius: var(--radius); background: var(--panel);
+  text-decoration: none; color: inherit;
+}
+.stat__value { font-size: var(--step-2); color: var(--ink); }
+.stat--freshness .stat__value { font-size: var(--step-1); color: var(--beam-text); }
+
+.grid {
+  display: grid; gap: var(--space-4);
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+}
+.cell {
+  display: grid; gap: var(--space-3); padding: var(--space-4); text-align: left;
+  background: var(--panel); border: 1px solid var(--stroke); border-radius: var(--radius);
+  color: var(--ink);
+  transition: transform var(--dur-fast) var(--ease-out),
+              border-color var(--dur-fast) var(--ease-out),
+              box-shadow var(--dur-fast) var(--ease-out);
+}
+.cell:hover {
+  transform: translateY(-3px); border-color: color-mix(in srgb, var(--beam) 55%, transparent);
+  box-shadow: 0 12px 40px -12px color-mix(in srgb, var(--beam) 45%, transparent);
+}
+.cell__plate {
+  display: grid; place-items: center; background: var(--plate);
+  border-radius: 10px; padding: var(--space-4); min-height: 5.5rem;
+}
+.cell__plate img { max-height: 3rem; width: auto; object-fit: contain; }
+.cell__figure { font-size: var(--step-1); }
+.cell__meta { font-size: var(--step--1); color: var(--muted); }
+.cell__aged {
+  margin-left: var(--space-2); padding: 0 var(--space-2); border-radius: 4px;
+  font-size: var(--step--1); color: var(--amber);
+  border: 1px solid color-mix(in srgb, var(--amber) 45%, transparent);
+}
+
+.spark {
+  position: fixed; z-index: 30; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--beam-text); box-shadow: 0 0 12px 4px color-mix(in srgb, var(--beam) 60%, transparent);
+  pointer-events: none;
+}
+@media (max-width: 480px) {
+  .grid { grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr)); }
+  .register { padding-inline: var(--space-4); }
+}
