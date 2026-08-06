@@ -1,0 +1,48 @@
+# tests/test_schema.py
+import pytest
+from tools.schema import (
+    SOURCE_ALLOWLIST, parse_date, date_sort_key, format_date,
+    format_amount, figure_variants,
+)
+
+
+def test_parse_date_accepts_year_and_month_precision():
+    assert parse_date("2024-03") == (2024, 3)
+    assert parse_date("2024") == (2024, 0)
+
+
+@pytest.mark.parametrize("bad", ["2024-3", "March 2024", "2024-03-11", "", "24-03"])
+def test_parse_date_rejects_other_shapes(bad):
+    with pytest.raises(ValueError):
+        parse_date(bad)
+
+
+def test_year_precision_sorts_before_any_month_of_that_year():
+    assert date_sort_key("2024") < date_sort_key("2024-01")
+    assert date_sort_key("2023-12") < date_sort_key("2024")
+
+
+def test_format_date_is_month_and_year_or_bare_year():
+    assert format_date("2024-03") == "Mar 2024"
+    assert format_date("2024") == "2024"
+
+
+def test_format_amount_renders_billions_with_approximate_marker():
+    assert format_amount(13000, "USD", True) == "~$13 bn"
+    assert format_amount(1400, "EUR", True) == "~€1.4 bn"
+    assert format_amount(2000, "EUR", False) == "€2 bn"
+    assert format_amount(850, "EUR", True) == "~€850 m"
+
+
+def test_figure_variants_cover_how_sources_write_the_number():
+    assert "13" in figure_variants(13000)
+    variants = figure_variants(1400)
+    assert {"1.4", "1,4"} <= variants
+    assert "850" in figure_variants(850)
+
+
+def test_allowlist_excludes_licensed_databases():
+    assert "Reuters" in SOURCE_ALLOWLIST
+    assert "Sifted" in SOURCE_ALLOWLIST
+    for banned in ("Crunchbase", "Dealroom", "PitchBook", "Tracxn", "Wikipedia"):
+        assert banned not in SOURCE_ALLOWLIST
