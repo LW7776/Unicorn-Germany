@@ -16,6 +16,7 @@ is the signature; everything else stays quiet.
 | `--void` | `#07080B` | Page |
 | `--deep` | `#0C0E14` | Raised surfaces |
 | `--panel` | `rgba(255,255,255,.045)` | Glass cells over `--deep` |
+| `--panel-hover` | `rgba(255,255,255,.075)` | Glass cells on hover |
 | `--stroke` | `rgba(255,255,255,.10)` | Hairlines, cell borders |
 | `--ink` | `#ECEEF3` | Primary text |
 | `--muted` | `#9AA1B1` | Metadata and labels (4.5:1 on `--void`) |
