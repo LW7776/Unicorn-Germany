@@ -140,9 +140,9 @@ def quote_states_figure(quote, millions, currency=None):
         escaped = re.escape(form)
         if needs_scale:
             patterns = (
-                rf"(?<![\d.,]){escaped}\s*{_SCALE_EN}",
+                rf"(?<![\d.,]){escaped}[\s\-–—]*{_SCALE_EN}",
                 rf"(?<![\d.,]){escaped}[\s\-–—]*{_SCALE_DE}",
-                rf"{_CURRENCY_SYMBOLS}\s?{escaped}\s?b(?![a-z0-9])",
+                rf"{_CURRENCY_SYMBOLS}\s?{escaped}b(?![a-z0-9])",
             )
             if any(re.search(pattern, text) for pattern in patterns):
                 return True

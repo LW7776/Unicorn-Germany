@@ -72,8 +72,9 @@ def test_the_scale_word_must_be_adjacent_to_the_number():
     assert not quote_states_figure("on 1 March, in euros", 1000, "EUR")
 
 
-def test_a_hyphen_does_not_bridge_an_english_scale_word():
-    assert not quote_states_figure("page 1.2-billion-word appendix, USD filing", 1200, "USD")
+def test_hyphenated_english_phrasing_is_recognised():
+    assert quote_states_figure("the round gave it a $1.2-billion valuation", 1200, "USD")
+    assert quote_states_figure("the round was a $1.2-bn deal", 1200, "USD")
 
 
 def test_clause_numbering_is_not_a_billion_figure():
@@ -97,3 +98,8 @@ def test_currency_attached_b_shorthand_is_still_recognised():
 
 def test_german_hyphenated_compound_is_still_recognised():
     assert quote_states_figure("die 1,4-Milliarden-Bewertung in Euro", 1400, "EUR")
+
+
+def test_a_spaced_b_after_a_currency_symbol_is_clause_lettering_not_a_figure():
+    assert not quote_states_figure("Grundkapital € 1.2 b) der Satzung", 1200, "EUR")
+    assert not quote_states_figure("See $1.2 b) of the credit agreement filing", 1200, "USD")
