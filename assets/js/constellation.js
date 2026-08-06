@@ -14,6 +14,8 @@ export class Constellation {
   }
 
   resize() {
+    const previousW = this.w;
+    const previousH = this.h;
     const dpr = Math.min(devicePixelRatio || 1, 2);
     const { width, height } = this.canvas.getBoundingClientRect();
     this.canvas.width = width * dpr;
@@ -21,7 +23,23 @@ export class Constellation {
     this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     this.w = width;
     this.h = height;
-    if (!this.points.length) this.seed();
+
+    if (!this.points.length) {
+      this.seed();
+    } else if (previousW && previousH) {
+      // Keep each point where it was relative to the field, so nothing is
+      // stranded off-screen when the viewport changes.
+      const scaleX = this.w / previousW;
+      const scaleY = this.h / previousH;
+      for (const point of this.points) {
+        point.x *= scaleX;
+        point.y *= scaleY;
+      }
+    }
+
+    // Assigning canvas.width clears the bitmap. When the loop is not running
+    // (reduced motion), nothing else will ever repaint it.
+    if (!this.running) this.paintStatic();
   }
 
   seed() {
@@ -45,7 +63,10 @@ export class Constellation {
     if (!this.points.length) {
       return { x: box.left + this.w / 2, y: box.top + this.h / 2 };
     }
-    const point = this.points[index % this.points.length];
+    const length = this.points.length;
+    // % is remainder, not modulo, in JS — negative index needs an explicit
+    // wrap so this never indexes past the array and returns undefined.
+    const point = this.points[((index % length) + length) % length];
     return { x: box.left + point.x, y: box.top + point.y };
   }
 
@@ -90,8 +111,10 @@ export class Constellation {
       if (this.running) {
         point.x += point.vx;
         point.y += point.vy;
-        if (point.x < 0 || point.x > w) point.vx *= -1;
-        if (point.y < 0 || point.y > h) point.vy *= -1;
+        if (point.x < 0) { point.x = 0; point.vx = Math.abs(point.vx); }
+        else if (point.x > w) { point.x = w; point.vx = -Math.abs(point.vx); }
+        if (point.y < 0) { point.y = 0; point.vy = Math.abs(point.vy); }
+        else if (point.y > h) { point.y = h; point.vy = -Math.abs(point.vy); }
       }
       const twinkle = 0.65 + 0.35 * Math.sin(time / 1400 + point.phase);
       const glow = ctx.createRadialGradient(

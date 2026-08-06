@@ -23,5 +23,5 @@ boot().catch((error) => {
   document.querySelector("[data-hero]").insertAdjacentHTML(
     "beforeend",
     '<p class="hero__error" role="alert">The register could not be loaded. ' +
-    'Reload the page, or report this on GitHub.</p>');
+    'Reload the page, or <a href="https://github.com/OWNER/REPO/issues">report this on GitHub</a>.</p>');
 });
