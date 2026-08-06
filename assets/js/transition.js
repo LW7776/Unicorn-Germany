@@ -2,7 +2,19 @@
    Hand-rolled FLIP — measure the target, animate a clone from the star's position. */
 const REDUCED = matchMedia("(prefers-reduced-motion: reduce)");
 
+// The CTA stays clickable for the ~1s the flight takes (hero.hidden only
+// flips at the very end), so a double-click is entirely foreseeable — it
+// would stack a second hero fade-out and a second full set of sparks on
+// top of the first. Module-level, not per-call: enterRegister is only ever
+// meant to run once for the page's lifetime.
+let inFlight = false;
+
 export async function enterRegister({ hero, register, sky, grid }) {
+  if (inFlight) return;
+  inFlight = true;
+  const enterButton = document.querySelector("[data-enter]");
+  if (enterButton) enterButton.disabled = true;
+
   register.hidden = false;
   document.querySelector("[data-topbar]").hidden = false;
 
@@ -12,11 +24,13 @@ export async function enterRegister({ hero, register, sky, grid }) {
   // the register at the top of the document immediately; a positioned element
   // stacks above in-flow content, so hero still visually overlays it while it
   // fades, and the flight lands somewhere the viewer can actually see.
-  hero.style.position = "fixed";
-  hero.style.inset = "0";
+  // A class (not an inline style) so the lift is reverted cleanly below rather
+  // than leaving a permanent full-viewport fixed element in the DOM.
+  hero.classList.add("hero--lifted");
 
   if (REDUCED.matches) {
     hero.hidden = true;
+    hero.classList.remove("hero--lifted");
     sky.stop();
     return;
   }
@@ -52,6 +66,7 @@ export async function enterRegister({ hero, register, sky, grid }) {
   });
 
   hero.hidden = true;
+  hero.classList.remove("hero--lifted");
   sky.stop();
   register.querySelector(".cell")?.focus({ preventScroll: true });
 }

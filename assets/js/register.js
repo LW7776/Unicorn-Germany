@@ -1,17 +1,24 @@
+import { escapeHtml } from "./html.js";
+
 /* Renders precomputed labels. No formatting logic lives in the browser. */
 function cell(company, index) {
   const aged = company.display.aged
     ? '<span class="cell__aged" title="This valuation is over two years old">aged</span>'
     : "";
+  const name = escapeHtml(company.name);
+  const slug = escapeHtml(company.slug);
+  const logo = escapeHtml(company.logo);
+  const valuationLabel = escapeHtml(company.display.valuationLabel);
+  const lastRoundLabel = escapeHtml(company.display.lastRoundLabel);
   return `
     <button class="cell" role="listitem" type="button"
-            data-slug="${company.slug}" data-index="${index}"
-            aria-label="${company.name}, ${company.display.valuationLabel}">
+            data-slug="${slug}" data-index="${index}"
+            aria-label="${name}, ${valuationLabel}">
       <span class="cell__plate">
-        <img src="${company.logo}" alt="${company.name} logo" loading="lazy" decoding="async">
+        <img src="${logo}" alt="${name} logo" loading="lazy" decoding="async">
       </span>
-      <span class="cell__figure">${company.display.valuationLabel}${aged}</span>
-      <span class="cell__meta">Last round · ${company.display.lastRoundLabel}</span>
+      <span class="cell__figure">${valuationLabel}${aged}</span>
+      <span class="cell__meta">Last round · ${lastRoundLabel}</span>
     </button>`;
 }
 
@@ -33,7 +40,7 @@ export function renderStats(container, stats) {
   // stats.dataAsOf is a YYYY-MM-DD string, or null when the dataset is empty
   // (see tools/build.py:_data_as_of) — never a wall-clock value, and never
   // assumed present.
-  const freshness = asOfLabel(stats.dataAsOf);
+  const freshness = escapeHtml(asOfLabel(stats.dataAsOf));
   const items = [
     ["Unicorns", stats.count],
     ["Combined value", stats.combinedValuationLabel],
@@ -42,7 +49,7 @@ export function renderStats(container, stats) {
   ];
   container.innerHTML = items.map(([label, value]) => `
     <div class="stat">
-      <span class="stat__value">${value}</span>
+      <span class="stat__value">${escapeHtml(value)}</span>
       <span class="label">${label}</span>
     </div>`).join("") + `
     <a class="stat stat--freshness" href="method.html">

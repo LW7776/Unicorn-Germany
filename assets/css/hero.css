@@ -28,3 +28,8 @@
 .hero__cta:hover { background: var(--panel-hover); border-color: var(--beam); }
 .hero__error { margin-top: var(--space-6); color: var(--amber); }
 .hero[hidden] { display: none; }
+
+/* Applied for the duration of the register transition only (transition.js) —
+   lifts hero out of document flow so the register (and every flight target)
+   isn't pushed below the fold, while hero still overlays it as it fades. */
+.hero--lifted { position: fixed; inset: 0; }
