@@ -1,4 +1,4 @@
-import copy, json, pathlib, pytest
+import json, pathlib, pytest
 from tools.validate import validate_company
 
 FIXTURE = pathlib.Path(__file__).parent / "fixtures" / "valid_company.json"
@@ -74,3 +74,24 @@ def test_unknown_unicorn_round_id_is_an_error(record):
 def test_slug_must_be_url_safe(record):
     record["slug"] = "Example GmbH"
     assert any("slug" in e for e in validate_company(record))
+
+
+def test_a_figure_hiding_inside_a_longer_number_is_not_sourced(record):
+    record["totalRaised"]["amount"] = 20        # "20" appears only inside "120"
+    assert any("quote" in e for e in validate_company(record))
+
+
+def test_unquoted_post_money_is_an_error(record):
+    record["rounds"][1]["postMoney"] = 9999
+    assert any("post-money" in e for e in validate_company(record))
+
+
+def test_currency_must_appear_in_the_quote(record):
+    record["valuation"]["currency"] = "USD"     # the quote says euros
+    assert any("quote" in e for e in validate_company(record))
+
+
+def test_a_non_breaking_space_in_the_quote_still_matches(record):
+    record["sources"][0]["quote"] = record["sources"][0]["quote"].replace(
+        "1.2 billion", "1.2 billion")
+    assert validate_company(record) == []

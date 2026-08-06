@@ -71,3 +71,60 @@ def figure_variants(millions):
         variants.add(f"{millions:,.0f}")           # 13,000
         variants.add(f"{millions:,.0f}".replace(",", "."))  # 13.000
     return variants
+
+
+_SCALE_WORDS = r"(?:bn|billion|billions|mrd|milliarde|milliarden)"
+_CURRENCY_TOKENS = {
+    "EUR": ("€", "eur", "euro"),
+    "USD": ("$", "usd", "dollar"),
+}
+
+
+def _normalise_quote(quote):
+    """Press releases and PDFs carry non-breaking and thin spaces around figures."""
+    text = quote or ""
+    for space in (" ", " ", " "):
+        text = text.replace(space, " ")
+    return text
+
+
+def _figure_forms(millions):
+    """(form, needs_scale_word) pairs a source might use for this amount.
+
+    Billion-scale forms need a scale word beside them: bare "1" must not match
+    "1 March", but "1 billion" is a genuine statement of 1000 millions.
+    """
+    forms = []
+    if millions >= 1000:
+        plain = f"{millions / 1000:.1f}".rstrip("0").rstrip(".")
+        forms.append((plain, True))
+        forms.append((plain.replace(".", ","), True))
+        forms.append((f"{millions:.0f}", False))
+        forms.append((f"{millions:,.0f}", False))
+        forms.append((f"{millions:,.0f}".replace(",", "."), False))
+    else:
+        forms.append((f"{millions:.0f}", False))
+    return forms
+
+
+def quote_states_figure(quote, millions, currency=None):
+    """True when the quote states this figure, with digit-boundary matching.
+
+    Currency matching is presence-based: the quote must mention the currency
+    somewhere. It cannot bind a currency to a specific number in prose, so it
+    catches a mislabelled record, not a subtly wrong one.
+    """
+    text = _normalise_quote(quote).lower()
+    if currency:
+        tokens = _CURRENCY_TOKENS.get(currency)
+        if tokens and not any(token in text for token in tokens):
+            return False
+    for form, needs_scale in _figure_forms(millions):
+        escaped = re.escape(form)
+        if needs_scale:
+            pattern = rf"(?<![\d.,]){escaped}\s*{_SCALE_WORDS}"
+        else:
+            pattern = rf"(?<![\d.,]){escaped}(?!\d)(?![.,]\d)"
+        if re.search(pattern, text):
+            return True
+    return False

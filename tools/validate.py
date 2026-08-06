@@ -9,7 +9,7 @@ import re
 import sys
 
 from tools.schema import (
-    SOURCE_ALLOWLIST, date_sort_key, figure_variants, is_full_date, parse_date,
+    SOURCE_ALLOWLIST, date_sort_key, is_full_date, parse_date, quote_states_figure,
 )
 
 REQUIRED = ["slug", "name", "website", "logo", "hq", "foundedCountry", "foundedYear",
@@ -17,12 +17,6 @@ REQUIRED = ["slug", "name", "website", "logo", "hq", "foundedCountry", "foundedY
             "rounds", "founders", "investors", "sources"]
 THRESHOLD_MILLIONS = 1000          # $1B or €1B, as reported. No FX conversion.
 SLUG = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
-
-
-def _quote_contains(quote, millions):
-    """True when the source sentence actually states this figure."""
-    normalised = (quote or "").replace(" ", " ")
-    return any(variant in normalised for variant in figure_variants(millions))
 
 
 def validate_company(record):
@@ -58,13 +52,13 @@ def validate_company(record):
         amount = figure.get(amount_key)
         if amount is None:
             return
-        if not _quote_contains(sources[source_id]["quote"], amount):
+        if not quote_states_figure(
+                sources[source_id]["quote"], amount, figure.get("currency")):
             errors.append(
                 f"{label}: quote for source {source_id} does not contain the figure {amount}")
 
     check_figure("valuation", record["valuation"])
     check_figure("totalRaised", record["totalRaised"])
-    check_figure("becameUnicorn", record["becameUnicorn"])
 
     for field, value in (("valuation.asOf", record["valuation"].get("asOf")),
                          ("becameUnicorn.date", record["becameUnicorn"].get("date"))):
@@ -84,6 +78,7 @@ def validate_company(record):
             errors.append(f"rounds must be in chronological order: {entry['id']} is out of order")
         previous = key
         check_figure(f"round {entry['id']}", entry)
+        check_figure(f"round {entry['id']} post-money", entry, amount_key="postMoney")
 
     by_id = {entry.get("id"): entry for entry in rounds}
     unicorn_round = by_id.get(record["becameUnicorn"].get("roundId"))
