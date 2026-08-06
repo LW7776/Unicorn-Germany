@@ -8,6 +8,11 @@ import pathlib
 import re
 import sys
 
+# Allow `python3 tools/validate.py` to resolve `tools.schema` even though running a
+# script puts only its own directory on sys.path, not the repo root. pytest is
+# unaffected (pytest.ini already puts the repo root on sys.path via pythonpath = .).
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
+
 from tools.schema import (
     SOURCE_ALLOWLIST, date_sort_key, is_full_date, parse_date, quote_states_figure,
 )
