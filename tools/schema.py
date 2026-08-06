@@ -74,7 +74,9 @@ def figure_variants(millions):
     return variants
 
 
-_SCALE_WORDS = r"(?:milliarden|milliarde|billions|billion|mrd\.?|bn|b)(?![a-z])"
+_SCALE_EN = r"(?:billions|billion|bn)(?![a-z])"
+_SCALE_DE = r"(?:milliarden|milliarde|mrd\.?)(?![a-z])"
+_CURRENCY_SYMBOLS = r"[$€]"
 _CURRENCY_TOKENS = {
     "EUR": ("€", "eur", "euro"),
     "USD": ("$", "usd", "dollar"),
@@ -137,9 +139,15 @@ def quote_states_figure(quote, millions, currency=None):
     for form, needs_scale in _figure_forms(millions):
         escaped = re.escape(form)
         if needs_scale:
-            pattern = rf"(?<![\d.,]){escaped}[\s\-–—]*{_SCALE_WORDS}"
+            patterns = (
+                rf"(?<![\d.,]){escaped}\s*{_SCALE_EN}",
+                rf"(?<![\d.,]){escaped}[\s\-–—]*{_SCALE_DE}",
+                rf"{_CURRENCY_SYMBOLS}\s?{escaped}\s?b(?![a-z0-9])",
+            )
+            if any(re.search(pattern, text) for pattern in patterns):
+                return True
         else:
             pattern = rf"(?<![\d.,]){escaped}(?!\d)(?![.,]\d)"
-        if re.search(pattern, text):
-            return True
+            if re.search(pattern, text):
+                return True
     return False

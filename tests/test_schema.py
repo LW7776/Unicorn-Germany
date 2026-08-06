@@ -70,3 +70,30 @@ def test_a_space_thousands_separator_is_recognised():
 
 def test_the_scale_word_must_be_adjacent_to_the_number():
     assert not quote_states_figure("on 1 March, in euros", 1000, "EUR")
+
+
+def test_a_hyphen_does_not_bridge_an_english_scale_word():
+    assert not quote_states_figure("page 1.2-billion-word appendix, USD filing", 1200, "USD")
+
+
+def test_clause_numbering_is_not_a_billion_figure():
+    assert not quote_states_figure(
+        "Gemaess Ziffer 1.2 b des Handelsregisterauszugs, EUR Stammkapital", 1200, "EUR")
+
+
+def test_b2b_adjacency_is_not_a_billion_figure():
+    assert not quote_states_figure(
+        "the 1.2B2B focused fund invests in EUR-denominated startups", 1200, "EUR")
+
+
+def test_section_numbering_is_not_a_billion_figure():
+    assert not quote_states_figure(
+        "per section 1.2b of the USD credit agreement filing", 1200, "USD")
+
+
+def test_currency_attached_b_shorthand_is_still_recognised():
+    assert quote_states_figure("now valued at $1.2B", 1200, "USD")
+
+
+def test_german_hyphenated_compound_is_still_recognised():
+    assert quote_states_figure("die 1,4-Milliarden-Bewertung in Euro", 1400, "EUR")
