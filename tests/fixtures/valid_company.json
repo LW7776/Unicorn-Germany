@@ -1,0 +1,27 @@
+{
+  "slug": "example-gmbh",
+  "name": "Example GmbH",
+  "website": "https://example.de",
+  "logo": "assets/logos/example-gmbh.svg",
+  "hq": {"city": "Berlin", "country": "DE"},
+  "foundedCountry": "DE",
+  "foundedYear": 2015,
+  "sectors": ["Enterprise Software"],
+  "thesis": {"problem": "Procurement runs on email.", "solution": "A workflow tool, sold per seat."},
+  "valuation": {"amount": 1200, "currency": "EUR", "approximate": true, "asOf": "2024-03", "round": "Series C", "source": "s1"},
+  "becameUnicorn": {"date": "2024-03", "roundId": "r2", "source": "s1"},
+  "totalRaised": {"amount": 300, "currency": "EUR", "approximate": true, "source": "s1"},
+  "rounds": [
+    {"id": "r1", "date": "2021-05", "stage": "Series B", "amount": 60, "currency": "EUR",
+     "approximate": false, "postMoney": null, "leadInvestors": ["Earlybird"], "investors": ["Earlybird"], "source": "s1"},
+    {"id": "r2", "date": "2024-03", "stage": "Series C", "amount": 120, "currency": "EUR",
+     "approximate": false, "postMoney": 1200, "leadInvestors": ["Index Ventures"], "investors": ["Index Ventures", "Earlybird"], "source": "s1"}
+  ],
+  "founders": [{"name": "A. Beispiel", "role": "CEO", "current": true}],
+  "investors": ["Index Ventures", "Earlybird"],
+  "sources": [
+    {"id": "s1", "publication": "Reuters", "title": "Example raises Series C",
+     "url": "https://www.reuters.com/example", "publishedOn": "2024-03-14",
+     "quote": "Example GmbH raised 120 million euros at a valuation of about 1.2 billion euros, and has raised 300 million euros in total."}
+  ]
+}
