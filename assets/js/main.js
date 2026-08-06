@@ -1,4 +1,5 @@
 import { Constellation } from "./constellation.js";
+import { mountControls } from "./controls.js";
 import { renderGrid, renderStats } from "./register.js";
 import { enterRegister } from "./transition.js";
 
@@ -22,6 +23,13 @@ export async function boot() {
   const grid = document.querySelector("[data-grid]");
   renderGrid(grid, data.companies);
   renderStats(document.querySelector("[data-stats]"), data.stats);
+
+  const controls = mountControls({
+    container: document.querySelector("[data-controls]"),
+    companies: data.companies,
+    onChange: (visible) => renderGrid(grid, visible),
+  });
+  window.__controls = controls;
 
   document.querySelector("[data-enter]").addEventListener("click", () => {
     enterRegister({
