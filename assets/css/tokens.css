@@ -12,6 +12,7 @@
   --violet: #A97BFF;
   --amber: #E0A24B;
   --plate: #F7F8FA;
+  --plate-ink: #14161A;   /* the only token for text on --plate; every other ink is for dark surfaces */
 
   --font-display: "Archivo", system-ui, sans-serif;
   --font-prose: "Source Serif 4", Georgia, serif;

@@ -23,6 +23,8 @@ h1, h2, h3 {
   letter-spacing: -.02em; line-height: .95; margin: 0;
 }
 .prose { font-family: var(--font-prose); font-size: var(--step-1); line-height: 1.6; }
+/* Deliberately overrides the tight h1/h2/h3 tracking above — a class beats a type
+   selector regardless of source order, so .label stays legible at small sizes. */
 .label {
   font-size: var(--step--1); letter-spacing: .14em; text-transform: uppercase;
   color: var(--muted);

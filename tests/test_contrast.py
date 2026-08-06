@@ -1,5 +1,5 @@
 import pytest
-from tools.check_contrast import contrast_ratio, TOKENS
+from tools.check_contrast import contrast_ratio, SURFACES, TOKENS
 
 
 def test_known_pair_matches_the_wcag_formula():
@@ -7,5 +7,15 @@ def test_known_pair_matches_the_wcag_formula():
 
 
 @pytest.mark.parametrize("token", ["--ink", "--muted", "--beam-text", "--amber", "--violet"])
-def test_every_text_token_clears_4_5_on_the_page_background(token):
-    assert contrast_ratio(TOKENS[token], TOKENS["--void"]) >= 4.5
+@pytest.mark.parametrize("surface", list(SURFACES))
+def test_every_text_token_clears_4_5_on_every_surface(token, surface):
+    assert contrast_ratio(TOKENS[token], SURFACES[surface]) >= 4.5
+
+
+def test_plate_ink_is_readable_on_the_logo_plate():
+    assert contrast_ratio(TOKENS["--plate-ink"], TOKENS["--plate"]) >= 4.5
+
+
+def test_the_dark_surface_inks_are_unreadable_on_the_plate():
+    """Guards the trap: --ink on --plate is invisible, so --plate-ink must be used there."""
+    assert contrast_ratio(TOKENS["--ink"], TOKENS["--plate"]) < 4.5

@@ -44,7 +44,9 @@ German courts, and this site carries an Impressum.
 Hand-rolled: Web Animations API and `requestAnimationFrame`. No GSAP, no dependency.
 Micro-interactions 150–250ms `--ease-out`; the hero→grid FLIP ~1200ms. Under
 `prefers-reduced-motion` the particle field stops painting and every transition becomes an
-opacity fade.
+opacity fade. The CSS `prefers-reduced-motion` block cannot stop a JavaScript animation loop,
+so the canvas particle field must check `matchMedia("(prefers-reduced-motion: reduce)")` itself
+and skip scheduling its own `requestAnimationFrame` calls.
 
 ## Discipline
 
