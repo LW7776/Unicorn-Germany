@@ -14,8 +14,12 @@ jobs:
   rebuild:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Check out the repository
+        id: checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        id: python
+        uses: actions/setup-python@v5
         with: { python-version: "3.11" }
 
       - name: Validate before anything is published
@@ -23,9 +27,11 @@ jobs:
         run: python tools/validate.py 2>&1 | tee validate.log
 
       - name: Regenerate companies.json
+        id: build
         run: python tools/build.py
 
       - name: Commit the rebuild
+        id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -33,17 +39,58 @@ jobs:
           git diff --staged --quiet || git commit -m "chore: rebuild companies.json"
           git push
 
+      # if: failure() fires for ANY failed step above, not just a bad validate.py run — a
+      # build.py crash or a rejected git push lands here too. Blaming the operator's data for
+      # all three would be actively wrong for the last two (validate.log would say "All
+      # records valid." right above a message telling them to fix their file), at exactly the
+      # moment they need trustworthy guidance. So this step reads which step actually failed
+      # (each one above now has an id for this reason) and only shows the log-and-fix-your-file
+      # message when validate itself is the one that failed; everything else gets an honest
+      # "this is a workflow problem, not you" message. Either way nothing was published — that
+      # reassurance holds regardless of which step failed, so both branches say so.
       - name: Explain the failure on the commit
         if: failure()
         uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
-            let log = 'Validation failed.';
-            try { log = fs.readFileSync('validate.log', 'utf8'); } catch (e) {}
+            const outcomes = {
+              checkout: '${{ steps.checkout.outcome }}',
+              python: '${{ steps.python.outcome }}',
+              validate: '${{ steps.validate.outcome }}',
+              build: '${{ steps.build.outcome }}',
+              commit: '${{ steps.commit.outcome }}',
+            };
+            const describe = {
+              checkout: 'checking out the repository',
+              python: 'setting up Python',
+              validate: 'validation',
+              build: 'regenerating data/companies.json',
+              commit: 'committing the rebuild',
+            };
+            // At most one step above can show 'failure' — the default fail-fast behaviour
+            // skips every step after the first one that fails — so this reliably names the
+            // one that actually broke, not just the last one that ran.
+            const failedStep = Object.keys(outcomes).find((id) => outcomes[id] === 'failure');
+            const runId = '${{ github.run_id }}';
+
+            let body;
+            if (failedStep === 'validate') {
+              let log = 'Validation failed.';
+              try { log = fs.readFileSync('validate.log', 'utf8'); } catch (e) {}
+              body = `**This edit was not published.** The live site still shows the previous `
+                  + `data, so nothing is broken.\n\n\`\`\`\n${log.slice(0, 4000)}\n\`\`\`\n\n`
+                  + `Fix the file and commit again. See [docs/UPDATING.md](../blob/main/docs/UPDATING.md).`;
+            } else {
+              const where = describe[failedStep] || 'an earlier step';
+              body = `**This edit was not published, but not because of your data — validation `
+                  + `passed.** The rebuild failed while ${where}. The live site still shows the `
+                  + `previous data, so nothing is broken. This looks like a workflow problem, `
+                  + `not a mistake in your file — see the `
+                  + `[run log](../actions/runs/${runId}) for details, or open an issue. `
+                  + `See [docs/UPDATING.md](../blob/main/docs/UPDATING.md).`;
+            }
             await github.rest.repos.createCommitComment({
               owner: context.repo.owner, repo: context.repo.repo, commit_sha: context.sha,
-              body: `**This edit was not published.** The live site still shows the previous `
-                  + `data, so nothing is broken.\n\n\`\`\`\n${log.slice(0, 4000)}\n\`\`\`\n\n`
-                  + `Fix the file and commit again. See [docs/UPDATING.md](../blob/main/docs/UPDATING.md).`,
+              body,
             });

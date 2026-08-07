@@ -33,7 +33,7 @@ export const FIELDS = [
 
   { key: "hq.city", label: "HQ city", group: "Location & founding" },
   { key: "hq.country", label: "HQ country", hint: "two-letter code, e.g. DE", group: "Location & founding" },
-  { key: "alsoBasedIn", label: "Also based in", hint: "comma separated, optional — e.g. a dual HQ", list: true, group: "Location & founding" },
+  { key: "alsoBasedIn", label: "Also based in", hint: "comma separated, optional — e.g. a dual HQ", list: true, pruneWhenEmpty: true, group: "Location & founding" },
   { key: "foundedCountry", label: "Founded in (country)", group: "Location & founding" },
   { key: "foundedYear", label: "Founded year", type: "number", step: "1", group: "Location & founding" },
 
@@ -466,19 +466,29 @@ export function validateRecord(record) {
 }
 
 /** formState is the live record object (see mount() below — form controls mutate it in
-    place via setPath so untouched fields never move). buildRecord() only prunes optional
-    sub-structures back to "absent" when they end up empty — e.g. a disputed note typed in
-    and then cleared again — rather than publishing a stray {}/[] a hand-reader would misread
-    as a deliberate claim. Everything else passes through untouched, which is what keeps an
-    unmodified load-then-download byte-identical to the source file. */
+    place via setPath so untouched fields never move). buildRecord() prunes `disputed` back to
+    "absent" when it ends up empty — e.g. a disputed note typed in and then cleared again —
+    rather than publishing a stray {} a hand-reader would misread as a deliberate claim. That
+    check is safe to run unconditionally on every call because a *loaded* record can never
+    legitimately arrive with both fields blank: tools/validate.py itself rejects a present
+    `disputed` whose note is empty, so blank-both can only ever be something the operator just
+    typed and cleared in this session, never something that was already on disk.
+
+    `alsoBasedIn` doesn't have that same guarantee — validate.py accepts an explicit
+    `"alsoBasedIn": []` as a valid, on-disk state (unlike `disputed`), so buildRecord() cannot
+    tell "the operator just cleared it" apart from "it was already empty when loaded" — that
+    distinction depends on *when* it became empty, which this function, seeing only a single
+    snapshot, structurally cannot know. So it isn't handled here: see mount()'s
+    handleControlChange(), which prunes it at the moment the operator's own edit to that field
+    empties it, and leaves an untouched (possibly already-empty) array alone otherwise.
+
+    Everything else passes through untouched, which is what keeps an unmodified
+    load-then-download byte-identical to the source file. */
 export function buildRecord(formState) {
   const record = structuredClone(formState);
   if (record.valuation && record.valuation.disputed) {
     const { note, source } = record.valuation.disputed;
     if (!isNonEmptyString(note) && !isNonEmptyString(source)) delete record.valuation.disputed;
-  }
-  if (Array.isArray(record.alsoBasedIn) && record.alsoBasedIn.length === 0) {
-    delete record.alsoBasedIn;
   }
   return record;
 }
@@ -704,6 +714,12 @@ export function mount(root = document) {
       record[el.dataset.array] = record[el.dataset.array] || [];
       record[el.dataset.array][index] = record[el.dataset.array][index] || {};
       record[el.dataset.array][index][el.dataset.field] = value;
+    } else if (descriptor.pruneWhenEmpty && Array.isArray(value) && value.length === 0) {
+      // Collapse back to "absent" only at the moment *this* edit empties it — not on every
+      // later render, which can't distinguish "the operator just cleared it" from "it was
+      // already an empty array when loaded" (see buildRecord()'s comment on why that check
+      // can't live there for this field the way it safely can for `disputed`).
+      delete record[el.dataset.field];
     } else {
       setPath(record, el.dataset.field, value);
     }

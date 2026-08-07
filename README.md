@@ -14,7 +14,7 @@ file, and it is committed like any other — nothing is built at deploy time.
 
 - `data/companies/<slug>.json` — one record per company, hand- or form-edited, where every
   figure carries a dated source and the verbatim sentence that states it.
-- `admin.html` — a local form editor (`assets/js/admin.js`) for one company at a time. It
+- [`admin.html`](admin.html) — a local form editor (`assets/js/admin.js`) for one company at a time. It
   mirrors `tools/validate.py`'s rules in the browser so mistakes show up while typing, then
   downloads or copies the JSON to commit — it never writes to the repository itself.
 - `tools/build.py` merges those files into `data/companies.json`, computing every derived
