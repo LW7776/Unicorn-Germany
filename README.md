@@ -61,14 +61,22 @@ default Jekyll processing, which would otherwise ignore files and folders starti
 
 ## Licence
 
-- **Code** — everything outside `data/` and `assets/logos/` — is licensed
-  [MIT](https://opensource.org/licenses/MIT).
-- **Dataset** — the company records in `data/companies/*.json` and the generated
+Different parts of this repository carry different licences:
+
+- **Code** — the site's HTML, CSS and JavaScript, and the Python tools in `tools/` — is
+  licensed [MIT](https://opensource.org/licenses/MIT).
+- **The dataset** — the company records in `data/companies/*.json` and the generated
   `data/companies.json` — is licensed
   [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/): reuse it, with attribution.
-- **Company logos** (`assets/logos/`) remain the property of their respective owners. They are
-  used nominatively, solely to identify the companies they belong to, and are not covered by
-  the licences above.
+- **Fonts** (`assets/fonts/*.woff2` — Archivo, Source Serif 4 and IBM Plex Mono) are each
+  licensed [SIL Open Font License 1.1](https://openfontlicense.org/), not MIT. See
+  `assets/fonts/README.md` for the exact source and date of each file.
+- **Map geometry** (`data/geo/germany.json`) is derived from Natural Earth via the
+  `datasets/geo-countries` project and is public domain. See `data/geo/README.md` for
+  full provenance.
+- **Company logos** (`assets/logos/`) remain the property of their respective owners. They
+  are used nominatively, solely to identify the companies they belong to, and are not
+  covered by any licence granted above.
 
 ## Corrections
 

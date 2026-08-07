@@ -29,10 +29,18 @@ jobs:
             const fs = require('fs');
             const data = JSON.parse(fs.readFileSync('data/candidates.json', 'utf8'));
             if (!data.candidates.length) { core.info('No candidates this month.'); return; }
+            // Headlines (and feed-error text) are free text from external feeds, not
+            // from this repository — an unbalanced bracket or a stray backtick would
+            // otherwise break the link, or silently restyle text as code, in the one
+            // artefact this job exists to produce. c.link is a URL and stays
+            // unescaped; if it could contain a ')' that would prematurely close the
+            // markdown link, angle brackets are the markdown-native way to allow it.
+            const escapeMd = (s) => String(s).replace(/[\[\]`]/g, '\\$&');
+            const linkFor = (url) => /[()]/.test(url) ? `<${url}>` : url;
             const lines = data.candidates.map(c =>
-              `- [ ] **${c.company || 'NEW'}** — [${c.title}](${c.link}) · ${c.source} · ${c.published}`);
+              `- [ ] **${c.company || 'NEW'}** — [${escapeMd(c.title)}](${linkFor(c.link)}) · ${escapeMd(c.source)} · ${c.published}`);
             const errors = data.feedErrors.length
-              ? `\n\nFeed errors:\n${data.feedErrors.map(e => `- ${e}`).join('\n')}` : '';
+              ? `\n\nFeed errors:\n${data.feedErrors.map(e => `- ${escapeMd(e)}`).join('\n')}` : '';
             await github.rest.issues.create({
               owner: context.repo.owner, repo: context.repo.repo,
               title: `${data.candidates.length} candidate updates — ${data.scannedOn}`,
