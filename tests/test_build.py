@@ -39,6 +39,13 @@ def test_missing_optional_data_becomes_an_em_dash(record):
     assert derive_company(record, today=(2026, 8))["display"]["foundersLabel"] == "—"
 
 
+def test_round_labels_are_precomputed(record):
+    from tools.build import derive_company
+    rounds = derive_company(record, today=(2026, 8))["rounds"]
+    assert rounds[1]["dateLabel"] == "Mar 2024"
+    assert rounds[1]["amountLabel"] == "€120 m"
+
+
 def test_stats_combine_valuations_at_the_disclosed_rate(record):
     other = json.loads(FIXTURE.read_text(encoding="utf-8"))
     other["slug"] = "second-gmbh"

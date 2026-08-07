@@ -80,6 +80,15 @@ def derive_company(record, today, fx_rate=0.92):
         "foundersLabel": ", ".join(f["name"] for f in founders) if founders else "—",
         "aged": _months_between(today, parse_date(valuation["asOf"])) > AGED_AFTER_MONTHS,
     }
+    derived_rounds = []
+    for entry in rounds:
+        derived_rounds.append({
+            **entry,
+            "dateLabel": format_date(entry["date"]),
+            "amountLabel": format_amount(
+                entry["amount"], entry["currency"], entry.get("approximate", False))
+            if entry.get("amount") is not None else None,
+        })
     sort = {
         "newest": list(date_sort_key(record["becameUnicorn"]["date"])),
         # Ordering mixed currencies requires a common unit; this value is a sort key
@@ -89,7 +98,7 @@ def derive_company(record, today, fx_rate=0.92):
         "latestRound": list(date_sort_key(last_round["date"])) if last_round else [0, 0],
         "name": record["name"].lower(),
     }
-    return {**record, "display": display, "sort": sort}
+    return {**record, "rounds": derived_rounds, "display": display, "sort": sort}
 
 
 def compute_stats(records, fx):

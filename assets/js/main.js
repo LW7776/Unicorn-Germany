@@ -2,6 +2,7 @@ import { Constellation } from "./constellation.js";
 import { mountControls } from "./controls.js";
 import { renderGrid, renderStats } from "./register.js";
 import { enterRegister } from "./transition.js";
+import { wireDetail } from "./detail.js";
 
 async function loadData() {
   const response = await fetch("data/companies.json", { cache: "no-cache" });
@@ -30,6 +31,8 @@ export async function boot() {
     onChange: (visible) => renderGrid(grid, visible),
   });
   window.__controls = controls;
+
+  wireDetail(data.companies);
 
   document.querySelector("[data-enter]").addEventListener("click", () => {
     enterRegister({
