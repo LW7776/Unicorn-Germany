@@ -39,7 +39,7 @@ function figure(label, value, note, extra = "") {
 }
 
 /** valuation.disputed: a conflicting figure recorded alongside the one on
-    file (method.html — "Disputed"), rather than the site silently picking
+    file, flagged "Disputed", rather than the site silently picking
     one on the reader's behalf. Renders a visible amber marker with the note
     and a link to the disputed figure's own source, exactly like any other
     cited claim — note is escaped and the source link goes through the same
@@ -93,7 +93,7 @@ function markup(company) {
   const site = isSafeUrl(company.website)
     ? `<a class="detail__site" href="${escapeHtml(company.website)}" target="_blank" rel="noopener noreferrer">${websiteText} ↗</a>`
     : `<span class="detail__site">${websiteText}</span>`;
-  // Dual-HQ companies (method.html — Celonis is Munich and New York) carry
+  // Dual-HQ companies (Celonis is Munich and New York, for example) carry
   // an explicit alsoBasedIn list; render it right after the HQ city so a
   // second headquarters is never dropped from the one place HQ is shown.
   const alsoBasedIn = (company.alsoBasedIn || []).length

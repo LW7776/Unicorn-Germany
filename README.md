@@ -30,8 +30,8 @@ file, and it is committed like any other — nothing is built at deploy time.
   the site keeps serving the last good data and the workflow explains the failure on the
   commit.
 
-See [`method.html`](method.html) for the inclusion rules and sourcing standard, and
-[`docs/UPDATING.md`](docs/UPDATING.md) for exactly how to add, correct or remove a company.
+See [`docs/UPDATING.md`](docs/UPDATING.md) for the inclusion rules and exactly how to add,
+correct or remove a company.
 
 ## Local development
 

@@ -9,6 +9,18 @@ three ways to change the content, and all three end in the same place: a validat
 | **B. `admin.html` form** | A browser | Adding a whole company, or editing many fields at once |
 | **C. Files and terminal** | Python | Bulk edits, or when you are already in the repository |
 
+## Inclusion rules
+
+A company qualifies only if all three hold:
+
+1. **Founded in Germany, or headquartered in Germany.** Record this explicitly — dual-HQ cases
+   (Celonis is headquartered in both Munich and New York) use the optional `alsoBasedIn` field
+   rather than being hidden. Being German only by investor base does not qualify.
+2. **Currently independent and private.** Not IPO'd, not acquired, not insolvent.
+3. **A publicly reported post-money valuation of at least $1B or €1B**, in the currency the
+   source used. Either threshold qualifies, and a company's own figures are never converted
+   between currencies.
+
 ## Monthly, automatic
 
 On the 1st of each month the `watch` workflow reads the allowlisted feeds and opens an issue
@@ -48,8 +60,8 @@ Paste this into Claude Code:
 > Process the open candidates issue in this repository. For each candidate: open the linked
 > article, and only if the publication is on the allowlist in `tools/schema.py`, extract the
 > figures with the verbatim sentence containing each one. Update the matching file in
-> `data/companies/`, or create a new one if the company qualifies under the inclusion rules in
-> `method.html`. Amounts are millions of the stated currency; dates are
+> `data/companies/`, or create a new one if the company qualifies under the inclusion rules
+> above. Amounts are millions of the stated currency; dates are
 > `YYYY` or `YYYY-MM`. Then run `python3 tools/build.py && python3 -m pytest && python3
 > tools/validate.py` and open a pull request. If a figure has no quotable source sentence,
 > leave the field out and say so in the pull request — never fill a gap by inference.

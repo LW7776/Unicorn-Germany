@@ -1,7 +1,7 @@
 import { escapeHtml } from "./html.js";
 
 /** Renders the footer shared by every page: the FX disclosure that backs the
-    combined headline figure, and the Method / About / Impressum / report-an-error
+    combined headline figure, and the Policy / About / Impressum / report-an-error
     links.
 
     Takes only the two fields it needs, `fxRateDisclosed` and `fxAsOf`, so it works
@@ -18,7 +18,7 @@ export function renderFooter(container, { fxRateDisclosed, fxAsOf } = {}) {
     <p>Figures are indicative and carry the date they were reported.
        Combined value converts USD at ${rate} (${asOf}).</p>
     <nav aria-label="Footer">
-      <a href="method.html">Method</a> · <a href="about.html">About</a> ·
+      <a href="policy.html">Policy</a> · <a href="about.html">About</a> ·
       <a href="impressum.html">Impressum</a> ·
       <a href="https://github.com/LW7776/Unicorn-Germany/issues/new" target="_blank" rel="noopener noreferrer">Report an error</a>
     </nav>`;

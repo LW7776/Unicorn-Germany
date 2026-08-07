@@ -333,7 +333,7 @@ function typeErrors(record) {
     requireString(errors, "hq.country", record.hq.country);
   }
 
-  // Optional dual-HQ list (method.html — Celonis is Munich and New York). Matches
+  // Optional dual-HQ list (Celonis is Munich and New York, for example). Matches
   // validate.py exactly: an explicit null is treated the same as the key being absent
   // (both skip the check) — only a *present, non-list* value is an error.
   const alsoBasedIn = record.alsoBasedIn;

@@ -64,7 +64,7 @@ def _validate_types(record):
         _require_string(errors, "hq.city", hq.get("city"))
         _require_string(errors, "hq.country", hq.get("country"))
 
-    # Optional: dual-HQ cases (method.html — Celonis is Munich and New York)
+    # Optional: dual-HQ cases (Celonis is Munich and New York, for example)
     # recorded explicitly rather than forced into the single `hq` object.
     also_based_in = record.get("alsoBasedIn")
     if also_based_in is not None:

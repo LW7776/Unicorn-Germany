@@ -16,7 +16,7 @@
   <a class="topbar__mark" href="index.html">GERMAN&nbsp;UNICORNS</a>
   <nav class="topbar__nav" aria-label="Main">
     <a href="index.html">Companies</a>
-    <a href="method.html">Method</a>
+    <a href="policy.html">Policy</a>
     <a href="about.html" aria-current="page">About</a>
   </nav>
 </header>
@@ -37,9 +37,9 @@
       scale-up capital has become a live policy question in its own right. That debate deserves a
       factual, checkable baseline rather than a round number repeated without its source. This
       site exists to provide that baseline for one country: every company listed is verified
-      against a public announcement, every valuation carries the date it was true, and every claim
-      is open to correction. See the <a href="method.html">Method page</a> for the exact rules
-      that enforce this.
+      against a public announcement, every valuation carries the date it was true, and every
+      claim is open to correction — open any company's entry to see its own figures next to the
+      sources behind them.
     </p>
   </section>
 
@@ -52,6 +52,20 @@
       <a href="https://github.com/LW7776/Unicorn-Germany" target="_blank" rel="noopener noreferrer">github.com/LW7776/Unicorn-Germany</a>,
       where every past change is visible as a diff against the file it edited. Nothing here relies
       on a paid API or a licensed data feed.
+    </p>
+  </section>
+
+  <section aria-labelledby="built">
+    <h2 id="built">How it's built</h2>
+    <p>
+      Each company is one JSON file, and nothing about it reaches the live site unless a
+      <a href="https://github.com/LW7776/Unicorn-Germany/blob/main/tools/validate.py" target="_blank" rel="noopener noreferrer">Python validator</a>
+      confirms every figure in it carries a dated, quoted source — the same check runs on every
+      proposed change, with no exception and no separate publish path. The site itself is static
+      HTML, CSS and JavaScript: no build step, no framework, no database, served at no cost by
+      GitHub Pages. The one standing automation is a GitHub Action that reads trade-press feeds
+      once a month and opens a pull request with what it finds; nothing merges until a person has
+      reviewed it.
     </p>
   </section>
 

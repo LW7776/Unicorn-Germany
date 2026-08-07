@@ -52,7 +52,7 @@ export function renderStats(container, stats) {
       <span class="stat__value">${escapeHtml(value)}</span>
       <span class="label">${label}</span>
     </div>`).join("") + `
-    <a class="stat stat--freshness" href="method.html">
+    <a class="stat stat--freshness" href="about.html#built">
       <span class="stat__value">Data as of ${freshness}</span>
       <span class="label">How this is verified</span>
     </a>`;
