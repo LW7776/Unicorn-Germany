@@ -1,10 +1,31 @@
-/* Layout for the static long-form pages: method.html, about.html, impressum.html.
-   Body text stays in the default mono face set on `body` in base.css — DESIGN.md
-   reserves the serif face for the two thesis blocks in the detail window only,
-   so these pages do not opt into `.prose`. */
+/* Layout for the static long-form pages: about.html, policy.html, impressum.html.
+   Body text defaults to the mono face set on `body` in base.css. */
 .page {
   padding: calc(var(--space-8) + 3rem) var(--space-6) var(--space-8);
   max-width: 42rem; margin: 0 auto;
+}
+
+/* about.html and policy.html carry an argument, not a reference table — DESIGN.md's
+   reasoning for the serif face ("reads as reported, not generated") applies to their
+   running prose the same way it applies to the detail window's thesis blocks, so both
+   opt into this modifier. impressum.html is a legal notice, not an argument, and stays
+   on the plain `.page` mono body text.
+   Scope is paragraphs, list items and the lede — i.e. running text — not headings (stay
+   on the display face) or `.label` (the eyebrow readout, kept mono like every other
+   label/date/figure on the site; higher specificity than the plain `p`/`li` rules below
+   so it wins even though a `.label` here happens to be a `<p>`).
+   The narrower measure exists because proportional serif at the base `.page` column width
+   (42rem) reads as too long a line — mono's fixed-width glyphs are wider on average, so
+   the same column holds noticeably more serif characters per line. */
+.page--prose {
+  max-width: 38rem;
+}
+.page--prose p,
+.page--prose li {
+  font-family: var(--font-prose);
+}
+.page--prose .label {
+  font-family: var(--font-mono);
 }
 .page__title { font-size: var(--step-4); margin-bottom: var(--space-5); text-wrap: balance; }
 .page__lede {
