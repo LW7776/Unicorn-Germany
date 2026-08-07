@@ -1,0 +1,55 @@
+/* Layout for the static long-form pages: method.html, about.html, impressum.html.
+   Body text stays in the default mono face set on `body` in base.css — DESIGN.md
+   reserves the serif face for the two thesis blocks in the detail window only,
+   so these pages do not opt into `.prose`. */
+.page {
+  padding: calc(var(--space-8) + 3rem) var(--space-6) var(--space-8);
+  max-width: 42rem; margin: 0 auto;
+}
+.page__title { font-size: var(--step-4); margin-bottom: var(--space-5); text-wrap: balance; }
+.page__lede {
+  color: var(--muted); font-size: var(--step-1); max-width: 38rem;
+  margin: 0 0 var(--space-7); line-height: 1.6;
+}
+.page section { margin-top: var(--space-7); }
+.page section:first-of-type { margin-top: 0; }
+.page h2 { font-size: var(--step-2); margin-bottom: var(--space-4); }
+.page h3 { font-size: var(--step-1); margin: var(--space-5) 0 var(--space-3); }
+.page p { margin: 0 0 var(--space-4); line-height: 1.6; }
+.page ul, .page ol {
+  margin: 0 0 var(--space-4); padding-left: 1.25rem; display: grid; gap: var(--space-3);
+  line-height: 1.6;
+}
+.page li > ul, .page li > ol { margin-top: var(--space-2); }
+
+.callout {
+  padding: var(--space-5); border: 1px solid var(--stroke); border-radius: var(--radius);
+  background: var(--panel); margin: var(--space-5) 0;
+}
+.callout--warn { border-color: color-mix(in srgb, var(--amber) 50%, transparent); }
+.callout p:last-child { margin-bottom: 0; }
+
+/* Marks a value in the Impressum that must be replaced before the site can be
+   published — never rendered as if it were real data. */
+.placeholder {
+  color: var(--amber); font-family: var(--font-mono);
+  border: 1px dashed color-mix(in srgb, var(--amber) 55%, transparent);
+  border-radius: 4px; padding: 0 .35em; white-space: nowrap;
+}
+
+.badge-note {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  margin: var(--space-2) 0 var(--space-4);
+}
+.badge-note__aged {
+  padding: 0 var(--space-2); border-radius: 4px; font-size: var(--step--1); color: var(--amber);
+  border: 1px solid color-mix(in srgb, var(--amber) 45%, transparent);
+}
+
+@media (max-width: 480px) {
+  .page { padding-inline: var(--space-4); }
+  /* The topbar wraps onto two rows below 480px (see base.css) and grows
+     taller than the fixed top padding above budgets for; add the difference
+     back so the page title never sits under the fixed header. */
+  .page { padding-top: calc(var(--space-8) + 5rem); }
+}

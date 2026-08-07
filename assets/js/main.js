@@ -4,6 +4,7 @@ import { renderGrid, renderStats } from "./register.js";
 import { enterRegister } from "./transition.js";
 import { wireDetail } from "./detail.js";
 import { renderMap } from "./map.js";
+import { renderFooter } from "./footer.js";
 
 async function loadData() {
   const response = await fetch("data/companies.json", { cache: "no-cache" });
@@ -25,6 +26,7 @@ export async function boot() {
   const grid = document.querySelector("[data-grid]");
   renderGrid(grid, data.companies);
   renderStats(document.querySelector("[data-stats]"), data.stats);
+  renderFooter(document.querySelector("[data-footer]"), data.stats);
 
   const controls = mountControls({
     container: document.querySelector("[data-controls]"),
@@ -88,5 +90,5 @@ boot().catch((error) => {
   document.querySelector("[data-hero]").insertAdjacentHTML(
     "beforeend",
     '<p class="hero__error" role="alert">The register could not be loaded. ' +
-    'Reload the page, or <a href="https://github.com/OWNER/REPO/issues">report this on GitHub</a>.</p>');
+    'Reload the page, or <a href="https://github.com/LW7776/Unicorn-Germany/issues">report this on GitHub</a>.</p>');
 });

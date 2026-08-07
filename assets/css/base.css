@@ -38,6 +38,54 @@ img, svg { max-width: 100%; }
   clip: rect(0 0 0 0); white-space: nowrap;
 }
 
+/* Site chrome shared by index.html (where it is shown/hidden around the hero
+   transition) and the static pages (method.html, about.html, impressum.html),
+   where it is simply always visible — hence living in base.css rather than
+   register.css, which the static pages have no other reason to load. */
+.topbar {
+  position: fixed; inset: 0 0 auto; z-index: 20; display: flex; gap: var(--space-5);
+  align-items: center; justify-content: space-between;
+  padding: var(--space-4) var(--space-6);
+  background: color-mix(in srgb, var(--void) 82%, transparent);
+  backdrop-filter: blur(14px); border-bottom: 1px solid var(--stroke);
+}
+/* Author `display: flex` above otherwise wins the cascade over the UA [hidden]
+   rule regardless of specificity (origin beats specificity), so the topbar
+   would render even while its `hidden` attribute is set. */
+.topbar[hidden] { display: none; }
+.topbar__mark {
+  font-family: var(--font-display); font-weight: 800; font-stretch: 112%;
+  letter-spacing: .04em; color: var(--ink); text-decoration: none; font-size: var(--step--1);
+}
+.topbar__nav { display: flex; gap: var(--space-4); align-items: center; }
+.topbar__nav > * {
+  background: none; border: 0; color: var(--muted); text-decoration: none;
+  font-size: var(--step--1); letter-spacing: .1em; text-transform: uppercase;
+  padding: var(--space-2); min-height: 44px;
+}
+.topbar__nav > *:hover,
+.topbar__nav [aria-pressed="true"],
+.topbar__nav [aria-current="page"] { color: var(--ink); }
+
+/* Below ~480px the wordmark plus every nav item no longer fit on one row
+   (measured overflow: mark + nav ~400px+ vs a 375px viewport), which left the
+   trailing link cut off past the viewport edge with no way to reach it. Wrap
+   the nav onto its own row instead of shrinking text or truncating items. */
+@media (max-width: 480px) {
+  .topbar { flex-wrap: wrap; row-gap: var(--space-2); padding: var(--space-3) var(--space-4); }
+  .topbar__nav { flex-wrap: wrap; width: 100%; gap: var(--space-3); }
+}
+
+/* Shared by every page: the FX disclosure required alongside the combined
+   headline figure, plus the Method/About/Impressum/report-an-error links. */
+.footer {
+  max-width: 64rem; margin: 0 auto; padding: var(--space-7) var(--space-6) var(--space-8);
+  border-top: 1px solid var(--stroke); color: var(--muted); font-size: var(--step--1);
+  display: grid; gap: var(--space-3);
+}
+.footer p { margin: 0; max-width: 46rem; }
+.footer nav { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-3); }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: .01ms !important; animation-iteration-count: 1 !important;
