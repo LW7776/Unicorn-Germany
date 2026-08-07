@@ -39,7 +39,7 @@ img, svg { max-width: 100%; }
 }
 
 /* Site chrome shared by index.html (where it is shown/hidden around the hero
-   transition) and the static pages (method.html, about.html, impressum.html),
+   transition) and the static pages (about.html, policy.html, impressum.html),
    where it is simply always visible — hence living in base.css rather than
    register.css, which the static pages have no other reason to load. */
 .topbar {

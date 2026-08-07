@@ -64,8 +64,8 @@
       proposed change, with no exception and no separate publish path. The site itself is static
       HTML, CSS and JavaScript: no build step, no framework, no database, served at no cost by
       GitHub Pages. The one standing automation is a GitHub Action that reads trade-press feeds
-      once a month and opens a pull request with what it finds; nothing merges until a person has
-      reviewed it.
+      once a month and opens an issue listing what it finds. It never edits company data itself;
+      turning a candidate into a real update is a separate, human-reviewed step.
     </p>
   </section>
 
@@ -78,8 +78,8 @@
       companies not yet tracked whose headline reports a valuation at or above $1B or €1B, or
       existing companies with a new figure to record. The scan does not check nationality — that
       is for the person reviewing the issue to confirm, the same as everything else it flags. The
-      scan opens or updates a GitHub issue listing what it found, with the headline, publication
-      and link for each candidate.
+      scan opens a GitHub issue listing what it found, with the headline, publication and link
+      for each candidate.
     </p>
     <p>
       Nothing is published from that issue automatically. A person reads the flagged articles,
