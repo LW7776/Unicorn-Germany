@@ -57,6 +57,24 @@ def _year_month(date_str):
     return int(date_str[0:4]), int(date_str[5:7])
 
 
+def _investors_leads_first(record):
+    """The detail window's content order mandates leads first among investors,
+    but data/companies/*.json just lists `investors` as a flat array — nothing
+    in the source data enforces or even implies an order. Settle it here, the
+    one place that already owns every other derived label, rather than
+    trusting the browser (or the next data file) to get it right.
+
+    A name counts as a lead if it appears in any round's leadInvestors,
+    regardless of that round's position in the company's history. Relative
+    order is preserved within each group, so this only ever moves leads
+    forward — it never reorders leads amongst themselves or non-leads
+    amongst themselves.
+    """
+    investors = record.get("investors") or []
+    leads = {name for round_ in record.get("rounds", []) for name in (round_.get("leadInvestors") or [])}
+    return [name for name in investors if name in leads] + [name for name in investors if name not in leads]
+
+
 def derive_company(record, today, fx_rate=0.92):
     """today is an as-of reference (year, month) — usually derived from the data's
     own dataAsOf, not the current date. See build()."""
@@ -98,7 +116,13 @@ def derive_company(record, today, fx_rate=0.92):
         "latestRound": list(date_sort_key(last_round["date"])) if last_round else [0, 0],
         "name": record["name"].lower(),
     }
-    return {**record, "rounds": derived_rounds, "display": display, "sort": sort}
+    return {
+        **record,
+        "rounds": derived_rounds,
+        "display": display,
+        "sort": sort,
+        "investorsOrdered": _investors_leads_first(record),
+    }
 
 
 def compute_stats(records, fx):

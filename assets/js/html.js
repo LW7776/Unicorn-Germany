@@ -13,3 +13,19 @@ export function escapeHtml(value) {
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#39;");
 }
+
+/** True only for absolute http/https URLs — blocks `javascript:`, `data:`, and
+    anything else that would be unsafe to drop into an href even once escaped.
+    Escaping alone does not make a URL safe: it stops the string from breaking
+    out of the attribute, but a syntactically valid `javascript:` URL still
+    executes on click regardless of how cleanly it's escaped. Any value bound
+    for an href — from data/companies.json or from a future form editor
+    (Task 13) — should be checked here before it is ever rendered as a link. */
+export function isSafeUrl(value) {
+  try {
+    const url = new URL(value, location.href);
+    return url.protocol === "http:" || url.protocol === "https:";
+  } catch {
+    return false;
+  }
+}

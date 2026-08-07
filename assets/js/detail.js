@@ -8,7 +8,12 @@
    inside an unquoted one, and it does not make a URL safe — a source's `url` (and,
    defensively, a company's `website`) is only rendered as a link when its scheme
    is http: or https:; otherwise it renders as plain text. */
-import { escapeHtml } from "./html.js";
+import { escapeHtml, isSafeUrl } from "./html.js";
+
+// Dialog-switch and grid-entry animations are motion, not information — a
+// viewer with reduced motion set should get the same content instantly, the
+// same way transition.js and constellation.js already gate their animations.
+const REDUCED = matchMedia("(prefers-reduced-motion: reduce)");
 
 let dialog, current, all = [];
 
@@ -17,22 +22,14 @@ const dash = (value) => (value === null || value === undefined || value === "" ?
     numbers and strings already containing HTML-significant characters. */
 const text = (value) => escapeHtml(dash(value));
 
-/** True only for absolute http/https URLs — blocks `javascript:`, `data:`, and
-    anything else that would be unsafe to drop into an href even once escaped. */
-function isSafeUrl(value) {
-  try {
-    const url = new URL(value, location.href);
-    return url.protocol === "http:" || url.protocol === "https:";
-  } catch {
-    return false;
-  }
-}
-
+/** label and note are always literals at today's call sites, but escaping
+    them here (rather than trusting every future caller to remember) means a
+    call site that ever passes through data can't turn this into a footgun. */
 function figure(label, value, note) {
   return `<div class="fig">
-    <span class="label">${label}</span>
+    <span class="label">${text(label)}</span>
     <span class="fig__value">${text(value)}</span>
-    ${note ? `<span class="fig__note">${note}</span>` : ""}
+    ${note ? `<span class="fig__note">${text(note)}</span>` : ""}
   </div>`;
 }
 
@@ -92,10 +89,10 @@ function markup(company) {
     </div>
   </header>
   <div class="detail__figures">
-    ${figure("Valuation", d.valuationLabel, `as of ${text(d.valuationAsOf)}${d.aged ? " · aged" : ""}`)}
-    ${figure("Last round", d.lastRoundStage, text(d.lastRoundLabel))}
+    ${figure("Valuation", d.valuationLabel, `as of ${dash(d.valuationAsOf)}${d.aged ? " · aged" : ""}`)}
+    ${figure("Last round", d.lastRoundStage, d.lastRoundLabel)}
     ${figure("Total raised", d.totalRaisedLabel)}
-    ${figure("Years to €1bn", d.yearsToUnicorn, `unicorn ${text(d.becameUnicornLabel)}`)}
+    ${figure("Years to €1bn", d.yearsToUnicorn, `unicorn ${dash(d.becameUnicornLabel)}`)}
   </div>
   <section class="detail__thesis">
     <div><h3 class="label">The problem</h3><p class="prose">${text(company.thesis.problem)}</p></div>
@@ -103,7 +100,7 @@ function markup(company) {
   </section>
   <section><h3 class="label">Funding rounds</h3>${timeline(company)}</section>
   <section><h3 class="label">Investors</h3>
-    <p class="detail__investors">${text((company.investors || []).join(" · "))}</p></section>
+    <p class="detail__investors">${text((company.investorsOrdered || company.investors || []).join(" · "))}</p></section>
   <section><h3 class="label">Founders</h3>
     <p>${company.founders.length
       ? company.founders.map((f) => `${text(f.name)} <span class="detail__role">${text(f.role)}</span>`).join(" · ")
@@ -116,6 +113,14 @@ function markup(company) {
   </footer>`;
 }
 
+/** context.replace: true means "reuse the current history entry" — used for
+    ←/→ navigation, where each step is a lateral move within one browsing
+    session, not a new destination. Assigning location.hash always pushes a
+    new entry, so left unchecked, flipping through companies with the arrow
+    keys floods session history and the Back button starts stepping through
+    companies one at a time instead of leaving the window. Grid clicks and
+    deep links (context.replace left falsy) keep the normal pushing
+    behaviour — that URL is meant to be shareable and back-navigable. */
 export function openDetail(company, context = {}) {
   dialog = dialog || document.querySelector("[data-detail]");
   all = context.companies || all;
@@ -123,10 +128,16 @@ export function openDetail(company, context = {}) {
   dialog.innerHTML = markup(company);
   if (!dialog.open) dialog.showModal();
   document.body.style.overflow = "hidden";
-  location.hash = `#/${company.slug}`;
+  if (context.replace) {
+    history.replaceState(null, "", `#/${company.slug}`);
+  } else {
+    location.hash = `#/${company.slug}`;
+  }
   dialog.querySelector("[data-close]").focus();
-  dialog.animate({ opacity: [0, 1], transform: ["translateY(18px) scale(.985)", "none"] },
-    { duration: 260, easing: "cubic-bezier(.22,1,.36,1)" });
+  if (!REDUCED.matches) {
+    dialog.animate({ opacity: [0, 1], transform: ["translateY(18px) scale(.985)", "none"] },
+      { duration: 260, easing: "cubic-bezier(.22,1,.36,1)" });
+  }
 }
 
 export function closeDetail() {
@@ -152,9 +163,13 @@ export function wireDetail(companies) {
   });
   dialog.addEventListener("keydown", (event) => {
     if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
+    // Holding the key auto-repeats keydown; without this, each repeat would
+    // still have opened a company (just onto a replaced history entry), so
+    // holding ArrowRight would blow through the whole list in a blink.
+    if (event.repeat) return;
     const index = all.findIndex((c) => c.slug === current.slug);
     const next = event.key === "ArrowRight" ? index + 1 : index - 1;
-    if (all[next]) openDetail(all[next]);
+    if (all[next]) openDetail(all[next], { replace: true });
   });
 
   document.querySelector("[data-grid]").addEventListener("click", (event) => {
@@ -166,8 +181,17 @@ export function wireDetail(companies) {
 
   const routeFromHash = () => {
     const slug = location.hash.replace("#/", "");
+    if (!slug) return;
     const company = all.find((c) => c.slug === slug);
-    if (company) openDetail(company, { companies: all });
+    if (company) {
+      openDetail(company, { companies: all });
+    } else if (dialog.open) {
+      // The hash points at a slug that doesn't exist (bad deep link, edited
+      // by hand, or a Back/Forward step landing on a stale entry) while a
+      // company is still showing — closing keeps the address bar and the
+      // visible window from silently disagreeing.
+      closeDetail();
+    }
   };
   addEventListener("hashchange", routeFromHash);
   if (location.hash.startsWith("#/")) routeFromHash();

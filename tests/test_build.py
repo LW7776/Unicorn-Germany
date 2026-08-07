@@ -46,6 +46,15 @@ def test_round_labels_are_precomputed(record):
     assert rounds[1]["amountLabel"] == "€120 m"
 
 
+def test_investors_are_ordered_leads_first(record):
+    # "Cherry Ventures" never leads a round; "Index Ventures" and "Earlybird"
+    # each lead one (r2 and r1 respectively). Listing the non-lead first in
+    # the source data must not survive into the derived order.
+    record["investors"] = ["Cherry Ventures", "Index Ventures", "Earlybird"]
+    investors_ordered = derive_company(record, today=(2026, 8))["investorsOrdered"]
+    assert investors_ordered == ["Index Ventures", "Earlybird", "Cherry Ventures"]
+
+
 def test_stats_combine_valuations_at_the_disclosed_rate(record):
     other = json.loads(FIXTURE.read_text(encoding="utf-8"))
     other["slug"] = "second-gmbh"
