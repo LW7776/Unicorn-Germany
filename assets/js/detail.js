@@ -24,13 +24,34 @@ const text = (value) => escapeHtml(dash(value));
 
 /** label and note are always literals at today's call sites, but escaping
     them here (rather than trusting every future caller to remember) means a
-    call site that ever passes through data can't turn this into a footgun. */
-function figure(label, value, note) {
+    call site that ever passes through data can't turn this into a footgun.
+    `extra` is different: it is pre-built HTML (currently only disputedBadge's
+    output) that already escaped everything it interpolated, so it is dropped
+    in unescaped — treat it the same as note/label if a future call site ever
+    wants to pass raw data through it. */
+function figure(label, value, note, extra = "") {
   return `<div class="fig">
     <span class="label">${text(label)}</span>
     <span class="fig__value">${text(value)}</span>
     ${note ? `<span class="fig__note">${text(note)}</span>` : ""}
+    ${extra}
   </div>`;
+}
+
+/** valuation.disputed: a conflicting figure recorded alongside the one on
+    file (method.html — "Disputed"), rather than the site silently picking
+    one on the reader's behalf. Renders a visible amber marker with the note
+    and a link to the disputed figure's own source, exactly like any other
+    cited claim — note is escaped and the source link goes through the same
+    isSafeUrl gate as every other link on this page. */
+function disputedBadge(disputed, sources) {
+  if (!disputed) return "";
+  const source = (sources || []).find((s) => s.id === disputed.source);
+  const link = source ? sourceLink(source) : text(disputed.source);
+  return `<span class="fig__disputed">
+    <span class="fig__disputed-badge">disputed</span>
+    <span class="fig__disputed-note">${text(disputed.note)}</span> — ${link}
+  </span>`;
 }
 
 function timeline(company) {
@@ -89,7 +110,8 @@ function markup(company) {
     </div>
   </header>
   <div class="detail__figures">
-    ${figure("Valuation", d.valuationLabel, `as of ${dash(d.valuationAsOf)}${d.aged ? " · aged" : ""}`)}
+    ${figure("Valuation", d.valuationLabel, `as of ${dash(d.valuationAsOf)}${d.aged ? " · aged" : ""}`,
+      disputedBadge(company.valuation.disputed, company.sources))}
     ${figure("Last round", d.lastRoundStage, d.lastRoundLabel)}
     ${figure("Total raised", d.totalRaisedLabel)}
     ${figure("Years to €1bn", d.yearsToUnicorn, `unicorn ${dash(d.becameUnicornLabel)}`)}

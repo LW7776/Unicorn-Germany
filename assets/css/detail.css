@@ -24,6 +24,11 @@
 }
 .fig__value { font-size: var(--step-2); }
 .fig__note { color: var(--muted); font-size: var(--step--1); }
+.fig__disputed { display: block; margin-top: var(--space-2); font-size: var(--step--1); color: var(--amber); }
+.fig__disputed-badge {
+  display: inline-block; margin-right: var(--space-2); padding: 0 var(--space-2);
+  border: 1px solid color-mix(in srgb, var(--amber) 45%, transparent); border-radius: 4px;
+}
 .detail__thesis {
   display: grid; gap: var(--space-6); margin: var(--space-6) 0;
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));

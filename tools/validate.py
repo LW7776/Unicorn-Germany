@@ -112,6 +112,18 @@ def validate_company(record):
     check_figure("valuation", record["valuation"])
     check_figure("totalRaised", record["totalRaised"])
 
+    disputed = record["valuation"].get("disputed")
+    if disputed is not None:
+        if not isinstance(disputed, dict):
+            errors.append("valuation.disputed must be an object with note and source")
+        else:
+            note = disputed.get("note")
+            if not isinstance(note, str) or not note.strip():
+                errors.append("valuation.disputed.note must be a non-empty string")
+            if disputed.get("source") not in sources:
+                errors.append(
+                    f"valuation.disputed cites unknown source {disputed.get('source')!r}")
+
     for field, value in (("valuation.asOf", record["valuation"].get("asOf")),
                          ("becameUnicorn.date", record["becameUnicorn"].get("date"))):
         try:

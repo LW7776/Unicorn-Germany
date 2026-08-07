@@ -117,3 +117,19 @@ def test_hq_missing_city_is_an_error(record):
 def test_founded_year_as_a_string_is_an_error(record):
     record["foundedYear"] = "2015"
     assert any("foundedYear" in e for e in validate_company(record))
+
+
+def test_a_well_formed_disputed_valuation_validates(record):
+    record["valuation"]["disputed"] = {
+        "note": "A later filing put the round at €900m post-money.", "source": "s2"}
+    assert validate_company(record) == []
+
+
+def test_disputed_citing_an_unknown_source_is_an_error(record):
+    record["valuation"]["disputed"] = {"note": "Conflicting figure reported.", "source": "s99"}
+    assert any("disputed" in e and "s99" in e for e in validate_company(record))
+
+
+def test_disputed_with_an_empty_note_is_an_error(record):
+    record["valuation"]["disputed"] = {"note": "  ", "source": "s2"}
+    assert any("disputed.note" in e for e in validate_company(record))
