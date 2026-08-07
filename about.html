@@ -60,10 +60,12 @@
     <p>
       An automated scan runs monthly and can also be triggered on demand. It reads the RSS feeds
       of the allowlisted trade press, matches articles against tracked company names and trigger
-      words — <em>raises, Series, valuation, unicorn, IPO, insolvency</em> — and flags candidate
-      updates: German companies newly reported above the €1B threshold, or existing companies with
-      a new figure to record. The scan opens or updates a GitHub issue listing what it found, with
-      the headline, publication and link for each candidate.
+      words — <em>raises, Series, valuation, unicorn, IPO, insolvency</em> — and flags candidates:
+      companies not yet tracked whose headline reports a valuation at or above $1B or €1B, or
+      existing companies with a new figure to record. The scan does not check nationality — that
+      is for the person reviewing the issue to confirm, the same as everything else it flags. The
+      scan opens or updates a GitHub issue listing what it found, with the headline, publication
+      and link for each candidate.
     </p>
     <p>
       Nothing is published from that issue automatically. A person reads the flagged articles,
