@@ -1,0 +1,20 @@
+name: validate
+on: [push, pull_request]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install pytest
+      - run: python -m pytest -v
+      - run: python tools/check_contrast.py
+      - run: python tools/validate.py
+      - name: companies.json must match the source files
+        if: github.event_name == 'pull_request'
+        run: |
+          python tools/build.py
+          git diff --exit-code data/companies.json \
+            || (echo "::error::data/companies.json is stale — run python3 tools/build.py and commit"; exit 1)

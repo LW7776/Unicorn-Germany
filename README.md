@@ -1,0 +1,77 @@
+# German Unicorns
+
+A public register of Germany's currently private companies valued at a billion euros or
+more, built so that every figure on it can be checked against a public, dated source rather
+than taken on trust.
+
+**Live site:** [lw7776.github.io/Unicorn-Germany](https://lw7776.github.io/Unicorn-Germany/)
+
+This is a static, buildless site: plain HTML, CSS and vanilla JavaScript, served directly by
+GitHub Pages with no framework, bundler or server. `data/companies.json` is the one generated
+file, and it is committed like any other — nothing is built at deploy time.
+
+## How it works
+
+- `data/companies/<slug>.json` — one record per company, hand- or form-edited, where every
+  figure carries a dated source and the verbatim sentence that states it.
+- `tools/build.py` merges those files into `data/companies.json`, computing every derived
+  label, sort key and staleness flag so the browser code stays thin.
+- `tools/validate.py` refuses to publish a figure that isn't backed by a quoted, dated,
+  allowlisted source.
+- `tools/watch.py` scans a short allowlist of trade-press feeds once a month and opens an
+  issue listing candidate changes — it never edits the dataset itself.
+
+See [`method.html`](method.html) for the inclusion rules and sourcing standard, and
+[`docs/UPDATING.md`](docs/UPDATING.md) for exactly how to add, correct or remove a company.
+
+## Local development
+
+Requires Python 3.11+. The site itself has no dependencies; `pytest` is the only thing needed
+to run the test suite.
+
+```bash
+python3 tools/build.py        # regenerate data/companies.json from data/companies/*.json
+python3 -m http.server 8080   # serve the site at http://localhost:8080
+python3 -m pytest             # run the test suite
+```
+
+Also useful while editing data:
+
+```bash
+python3 tools/validate.py        # check every company file against the schema and sourcing rules
+python3 tools/check_contrast.py  # confirm the colour palette clears the WCAG AA 4.5:1 floor
+python3 tools/watch.py           # run the monthly candidate scan locally
+```
+
+## Continuous integration
+
+Every push and pull request runs the test suite, the contrast check and the validator
+(`.github/workflows/validate.yml`). Pull requests additionally fail if `data/companies.json`
+is stale — that is, if it doesn't match what `tools/build.py` produces from the current
+`data/companies/*.json` — so a regenerated file can never be forgotten in review.
+
+A scheduled workflow (`.github/workflows/watch.yml`) runs the monthly candidate scan and opens
+a GitHub issue with anything it finds. Nothing is ever published automatically; see
+[`docs/UPDATING.md`](docs/UPDATING.md) for the routes from an open candidate to a merged,
+validated change.
+
+Deployment is GitHub Pages, configured to serve directly from `main` at the repository root —
+no build step, no deploy workflow; the repository *is* the site. `.nojekyll` disables Pages'
+default Jekyll processing, which would otherwise ignore files and folders starting with `_`.
+
+## Licence
+
+- **Code** — everything outside `data/` and `assets/logos/` — is licensed
+  [MIT](https://opensource.org/licenses/MIT).
+- **Dataset** — the company records in `data/companies/*.json` and the generated
+  `data/companies.json` — is licensed
+  [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/): reuse it, with attribution.
+- **Company logos** (`assets/logos/`) remain the property of their respective owners. They are
+  used nominatively, solely to identify the companies they belong to, and are not covered by
+  the licences above.
+
+## Corrections
+
+If something here is wrong, out of date, or missing a source, open an issue or use the
+"Report an error" link in the footer of any page. See [`docs/UPDATING.md`](docs/UPDATING.md)
+for the three ways to fix it directly.
