@@ -38,6 +38,13 @@
   display: grid; gap: var(--space-4);
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
 }
+/* Same author-vs-user-agent cascade gap as .topbar[hidden] and .map[hidden]
+   below: `.grid { display: grid }` is author-origin and beats the UA's
+   `[hidden] { display: none }` at equal specificity, so the grid stayed
+   visible through the view toggle's `grid.hidden = true` without this. Went
+   unnoticed until Task 9 wired up the first thing that actually hides the
+   grid at runtime. */
+.grid[hidden] { display: none; }
 .cell {
   display: grid; gap: var(--space-3); padding: var(--space-4); text-align: left;
   background: var(--panel); border: 1px solid var(--stroke); border-radius: var(--radius);
@@ -88,6 +95,32 @@
 }
 .chip[aria-checked="true"] { color: var(--ink); border-color: var(--beam); background: var(--panel); }
 .controls__count { color: var(--muted); font-size: var(--step--1); margin: 0; }
+
+.map { display: grid; justify-items: center; gap: var(--space-4); }
+/* Same author-vs-user-agent cascade issue as .topbar[hidden] above: without
+   this, `.map { display: grid }` (equal specificity, author origin) beats
+   the UA's `[hidden] { display: none }` and the map would render even while
+   the grid view is active. */
+.map[hidden] { display: none; }
+.map__svg { width: min(46rem, 100%); height: auto; }
+.map__outline { fill: var(--panel); stroke: var(--stroke); stroke-width: 2; }
+.map__halo {
+  fill: color-mix(in srgb, var(--beam) 22%, transparent);
+  stroke: color-mix(in srgb, var(--beam) 60%, transparent); stroke-width: 1.5;
+  transition: fill var(--dur-fast) var(--ease-out);
+}
+.map__city { cursor: pointer; }
+/* Invisible, larger than the visible halo at every city size — see map.js's
+   MIN_HIT_RADIUS comment for why 65 viewBox units and its limits. fill:
+   transparent (not `none`) so it still participates in hit-testing. */
+.map__hit { fill: transparent; }
+.map__city:hover .map__halo, .map__city:focus-visible .map__halo {
+  fill: color-mix(in srgb, var(--violet) 34%, transparent);
+}
+.map__city:focus-visible { outline: 2px solid var(--beam); outline-offset: 2px; }
+.map__pin { fill: var(--ink); }
+.map__label { fill: var(--ink); font-family: var(--font-mono); font-size: 22px; text-anchor: middle; }
+.map__note { color: var(--muted); font-size: var(--step--1); text-align: center; max-width: 40rem; }
 
 .spark {
   position: fixed; z-index: 30; width: 6px; height: 6px; border-radius: 50%;
