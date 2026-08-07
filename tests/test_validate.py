@@ -133,3 +133,18 @@ def test_disputed_citing_an_unknown_source_is_an_error(record):
 def test_disputed_with_an_empty_note_is_an_error(record):
     record["valuation"]["disputed"] = {"note": "  ", "source": "s2"}
     assert any("disputed.note" in e for e in validate_company(record))
+
+
+def test_a_well_formed_also_based_in_validates(record):
+    record["alsoBasedIn"] = ["New York"]
+    assert validate_company(record) == []
+
+
+def test_also_based_in_with_a_blank_entry_is_an_error(record):
+    record["alsoBasedIn"] = ["New York", "  "]
+    assert any("alsoBasedIn" in e for e in validate_company(record))
+
+
+def test_also_based_in_that_is_not_a_list_is_an_error(record):
+    record["alsoBasedIn"] = "New York"
+    assert any("alsoBasedIn" in e for e in validate_company(record))

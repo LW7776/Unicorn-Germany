@@ -120,7 +120,9 @@ def derive_company(record, today, fx_rate=0.92):
     # method.html) needs no derivation of its own — validate.py has already
     # checked its shape and that its source resolves, and `**record` below
     # carries the untouched `valuation` object (disputed field included)
-    # straight into the output. detail.js reads it from there.
+    # straight into the output. detail.js reads it from there. The same is
+    # true of the optional top-level `alsoBasedIn` (dual-HQ companies, per
+    # method.html) — it needs no derivation either, just the pass-through.
     return {
         **record,
         "rounds": derived_rounds,

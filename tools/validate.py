@@ -55,6 +55,18 @@ def _validate_types(record):
         _require_string(errors, "hq.city", hq.get("city"))
         _require_string(errors, "hq.country", hq.get("country"))
 
+    # Optional: dual-HQ cases (method.html — Celonis is Munich and New York)
+    # recorded explicitly rather than forced into the single `hq` object.
+    also_based_in = record.get("alsoBasedIn")
+    if also_based_in is not None:
+        if not isinstance(also_based_in, list):
+            errors.append("alsoBasedIn must be a list of non-empty strings")
+        else:
+            for entry in also_based_in:
+                if not isinstance(entry, str) or not entry.strip():
+                    errors.append(
+                        f"alsoBasedIn contains a non-string or empty entry: {entry!r}")
+
     for field in ("founders", "investors", "rounds", "sources"):
         if not isinstance(record.get(field), list):
             errors.append(f"{field} must be a list")

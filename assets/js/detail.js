@@ -93,6 +93,12 @@ function markup(company) {
   const site = isSafeUrl(company.website)
     ? `<a class="detail__site" href="${escapeHtml(company.website)}" target="_blank" rel="noopener noreferrer">${websiteText} ↗</a>`
     : `<span class="detail__site">${websiteText}</span>`;
+  // Dual-HQ companies (method.html — Celonis is Munich and New York) carry
+  // an explicit alsoBasedIn list; render it right after the HQ city so a
+  // second headquarters is never dropped from the one place HQ is shown.
+  const alsoBasedIn = (company.alsoBasedIn || []).length
+    ? ` · also ${text(company.alsoBasedIn.join(", "))}`
+    : "";
   return `
   <button class="detail__close" type="button" data-close aria-label="Close">
     <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
@@ -104,7 +110,7 @@ function markup(company) {
     <div>
       <h2>${name}</h2>
       <p class="detail__meta">
-        ${text(company.hq.city)} · ${text((company.sectors || []).join(", "))} · Founded ${text(company.foundedYear)}
+        ${text(company.hq.city)}${alsoBasedIn} · ${text((company.sectors || []).join(", "))} · Founded ${text(company.foundedYear)}
       </p>
       ${site}
     </div>
