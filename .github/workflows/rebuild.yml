@@ -1,0 +1,49 @@
+name: rebuild
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/companies/**'      # note: does NOT match data/companies.json, so no loop
+      - 'data/fx.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+
+      - name: Validate before anything is published
+        id: validate
+        run: python tools/validate.py 2>&1 | tee validate.log
+
+      - name: Regenerate companies.json
+        run: python tools/build.py
+
+      - name: Commit the rebuild
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/companies.json
+          git diff --staged --quiet || git commit -m "chore: rebuild companies.json"
+          git push
+
+      - name: Explain the failure on the commit
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            let log = 'Validation failed.';
+            try { log = fs.readFileSync('validate.log', 'utf8'); } catch (e) {}
+            await github.rest.repos.createCommitComment({
+              owner: context.repo.owner, repo: context.repo.repo, commit_sha: context.sha,
+              body: `**This edit was not published.** The live site still shows the previous `
+                  + `data, so nothing is broken.\n\n\`\`\`\n${log.slice(0, 4000)}\n\`\`\`\n\n`
+                  + `Fix the file and commit again. See [docs/UPDATING.md](../blob/main/docs/UPDATING.md).`,
+            });

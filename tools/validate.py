@@ -2,6 +2,15 @@
 
 Run: python3 tools/validate.py [data/companies]
 Exits non-zero and prints every error found.
+
+assets/js/admin.js mirrors the rules below in the browser, so the operator filling in the
+form editor sees errors while typing instead of after committing. This file remains the sole
+authority and the only gate that can block a publish — rebuild.yml runs it before
+tools/build.py ever touches data/companies.json, and .github/workflows/validate.yml runs it
+on every push and pull request. If the two ever disagree, CI catches it here and the
+published site is never wrong; the browser copy can only be over- or under-helpful, never
+dangerous. This duplication is deliberate, not an oversight — see the matching comment at the
+top of assets/js/admin.js.
 """
 import json
 import pathlib

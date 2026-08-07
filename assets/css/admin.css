@@ -1,0 +1,129 @@
+/* admin.html is a tool for the site's owner, not a public page: it reuses tokens.css and
+   base.css but stays plain — no constellation, no animation, nothing beyond what a form
+   needs to be legible and fast to scan. */
+
+.admin {
+  padding: calc(var(--space-8) + 3rem) var(--space-6) var(--space-8);
+  max-width: 74rem; margin: 0 auto;
+}
+.admin__title { font-size: var(--step-3); margin-bottom: var(--space-3); text-wrap: balance; }
+.admin__lede {
+  color: var(--muted); max-width: 44rem; margin: 0 0 var(--space-5); line-height: 1.6;
+}
+.admin__lede code { font-size: .95em; }
+
+.admin__note {
+  max-width: 50rem; margin: 0 0 var(--space-6); padding: var(--space-4) var(--space-5);
+  border: 1px solid color-mix(in srgb, var(--amber) 50%, transparent); border-radius: var(--radius);
+  background: var(--panel); color: var(--ink); font-size: var(--step--1); line-height: 1.6;
+}
+.admin__note code { font-size: .95em; }
+
+.admin__load { margin-bottom: var(--space-6); max-width: 26rem; }
+
+.admin__layout { display: grid; gap: var(--space-6); grid-template-columns: 1fr; align-items: start; }
+@media (min-width: 960px) {
+  .admin__layout { grid-template-columns: minmax(0, 2.15fr) minmax(19rem, 1fr); }
+}
+
+/* --- fieldsets / groups -------------------------------------------------------------- */
+.admin__group {
+  border: 1px solid var(--stroke); border-radius: var(--radius); background: var(--panel);
+  padding: var(--space-5); margin: 0 0 var(--space-5); min-width: 0;
+}
+.admin__group legend {
+  padding: 0 var(--space-2); font-family: var(--font-display); font-weight: 800;
+  font-stretch: 112%; letter-spacing: -.01em; font-size: var(--step-0); color: var(--ink);
+}
+.admin__grid {
+  display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+}
+/* Textareas (thesis prose, source quotes) read badly squeezed into a narrow grid column. */
+.admin__grid .field:has(textarea) { grid-column: 1 / -1; }
+
+/* --- individual fields ---------------------------------------------------------------- */
+.field { display: grid; gap: var(--space-2); align-content: start; min-width: 0; }
+.field label { font-size: var(--step--1); color: var(--muted); }
+.field input, .field select, .field textarea {
+  min-height: 44px; padding: var(--space-2) var(--space-3); background: var(--deep);
+  border: 1px solid var(--stroke); border-radius: 8px; color: var(--ink); font: inherit;
+  width: 100%;
+}
+.field input:focus-visible, .field select:focus-visible, .field textarea:focus-visible {
+  outline: 2px solid var(--beam); outline-offset: 1px;
+}
+.field textarea {
+  min-height: 5.5rem; resize: vertical; font-family: var(--font-prose); font-size: var(--step-0);
+}
+.field__hint { margin: 0; font-size: var(--step--1); color: var(--muted); }
+.field__preview { font-size: var(--step--1); min-height: 1.2em; }
+.field__preview a { color: var(--beam-text); }
+
+.field--checkbox { display: grid; }
+.field--checkbox label {
+  display: flex; align-items: center; gap: var(--space-2); color: var(--ink); font-size: var(--step-0);
+}
+.field--checkbox input { min-height: auto; width: auto; flex: none; }
+
+/* --- repeatable rows (rounds / founders / sources) ------------------------------------ */
+.admin__rows { display: grid; gap: var(--space-4); margin-bottom: var(--space-4); }
+.admin__row {
+  border: 1px solid var(--stroke); border-radius: 10px; padding: var(--space-4);
+  background: color-mix(in srgb, var(--deep) 55%, transparent); display: grid; gap: var(--space-3);
+  min-width: 0;
+}
+.admin__row-head { display: flex; justify-content: space-between; align-items: center; gap: var(--space-3); }
+.admin__row-title {
+  font-size: var(--step--1); color: var(--muted); letter-spacing: .06em; text-transform: uppercase;
+}
+.admin__row-remove {
+  min-height: 36px; padding: 0 var(--space-3); border-radius: 999px; background: transparent;
+  border: 1px solid color-mix(in srgb, var(--amber) 50%, transparent); color: var(--amber);
+  font-size: var(--step--1);
+}
+.admin__row-remove:hover { background: color-mix(in srgb, var(--amber) 15%, transparent); }
+.admin__add {
+  min-height: 44px; padding: 0 var(--space-5); border-radius: var(--radius);
+  background: transparent; border: 1px dashed var(--stroke); color: var(--muted); font: inherit;
+}
+.admin__add:hover { color: var(--ink); border-color: var(--beam); }
+
+/* --- side panel: errors, actions, preview ---------------------------------------------- */
+.admin__side { display: grid; gap: var(--space-5); min-width: 0; }
+@media (min-width: 960px) {
+  .admin__side { position: sticky; top: calc(var(--space-4)); max-height: calc(100vh - var(--space-6)); overflow-y: auto; }
+}
+
+.admin__errors {
+  border: 1px solid color-mix(in srgb, var(--amber) 45%, transparent); border-radius: var(--radius);
+  background: var(--panel); padding: var(--space-4); font-size: var(--step--1); color: var(--ink);
+  max-height: 16rem; overflow-y: auto;
+}
+.admin__errors--ok {
+  border-color: color-mix(in srgb, var(--beam) 45%, transparent); color: var(--muted);
+}
+.admin__errors ul { margin: 0; padding-left: 1.1rem; display: grid; gap: var(--space-2); }
+
+.admin__actions { display: grid; gap: var(--space-2); }
+.admin__actions-row { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+.admin__actions-row button {
+  min-height: 44px; padding: 0 var(--space-5); border-radius: var(--radius);
+  background: var(--panel); border: 1px solid var(--stroke); color: var(--ink); font: inherit;
+}
+.admin__actions-row button:not(:disabled):hover { background: var(--panel-hover); border-color: var(--beam); }
+.admin__actions-row button:disabled { color: var(--muted); cursor: not-allowed; opacity: .6; }
+.admin__reason { margin: 0; font-size: var(--step--1); color: var(--amber); min-height: 1.4em; }
+
+.admin__preview {
+  border: 1px solid var(--stroke); border-radius: var(--radius); background: var(--deep);
+  padding: var(--space-4); overflow-x: auto;
+}
+.admin__preview pre {
+  margin: var(--space-2) 0 0; font-size: var(--step--1); line-height: 1.5;
+  white-space: pre-wrap; word-break: break-word; color: var(--muted); font-family: var(--font-mono);
+}
+
+@media (max-width: 480px) {
+  .admin { padding-inline: var(--space-4); padding-top: calc(var(--space-8) + 5rem); }
+  .admin__side { position: static; max-height: none; }
+}

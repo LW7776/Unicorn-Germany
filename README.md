@@ -14,12 +14,21 @@ file, and it is committed like any other — nothing is built at deploy time.
 
 - `data/companies/<slug>.json` — one record per company, hand- or form-edited, where every
   figure carries a dated source and the verbatim sentence that states it.
+- `admin.html` — a local form editor (`assets/js/admin.js`) for one company at a time. It
+  mirrors `tools/validate.py`'s rules in the browser so mistakes show up while typing, then
+  downloads or copies the JSON to commit — it never writes to the repository itself.
 - `tools/build.py` merges those files into `data/companies.json`, computing every derived
   label, sort key and staleness flag so the browser code stays thin.
 - `tools/validate.py` refuses to publish a figure that isn't backed by a quoted, dated,
-  allowlisted source.
+  allowlisted source. This is the sole gate that can block a publish — `admin.js`'s mirror of
+  the same rules is a convenience, not an authority.
 - `tools/watch.py` scans a short allowlist of trade-press feeds once a month and opens an
   issue listing candidate changes — it never edits the dataset itself.
+- `.github/workflows/rebuild.yml` regenerates `data/companies.json` after a push that edits
+  `data/companies/**` directly on `main` (the GitHub-web-editor and files-and-terminal
+  routes). It validates first and only then rebuilds, so a bad hand edit is never published —
+  the site keeps serving the last good data and the workflow explains the failure on the
+  commit.
 
 See [`method.html`](method.html) for the inclusion rules and sourcing standard, and
 [`docs/UPDATING.md`](docs/UPDATING.md) for exactly how to add, correct or remove a company.
@@ -54,6 +63,13 @@ A scheduled workflow (`.github/workflows/watch.yml`) runs the monthly candidate 
 a GitHub issue with anything it finds. Nothing is ever published automatically; see
 [`docs/UPDATING.md`](docs/UPDATING.md) for the routes from an open candidate to a merged,
 validated change.
+
+A third workflow (`.github/workflows/rebuild.yml`) handles edits made straight to `main`
+outside a pull request — the GitHub web editor and files-and-terminal routes in
+`docs/UPDATING.md`. It runs the validator *before* `tools/build.py`, so a manual edit that
+fails validation never reaches the build step: `data/companies.json` is left untouched, the
+live site keeps serving the last good data, and the workflow explains the failure as a
+comment on the commit.
 
 Deployment is GitHub Pages, configured to serve directly from `main` at the repository root —
 no build step, no deploy workflow; the repository *is* the site. `.nojekyll` disables Pages'

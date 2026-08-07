@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin — German Unicorns</title>
+<meta name="description" content="Local form editor for one company record. Generates a JSON file to commit by hand — nothing is saved automatically.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+<a class="visually-hidden" href="#main">Skip to the content</a>
+
+<header class="topbar">
+  <a class="topbar__mark" href="index.html">GERMAN&nbsp;UNICORNS</a>
+  <nav class="topbar__nav" aria-label="Main">
+    <a href="index.html">← Back to the register</a>
+  </nav>
+</header>
+
+<main class="admin" id="main">
+  <p class="label">Admin — not part of the public site</p>
+  <h1 class="admin__title">Edit a company record</h1>
+  <p class="admin__lede">
+    One company at a time. This form knows the schema — required fields, the allowed
+    publications, date formats, and the rule that every figure's quote must actually contain
+    it — and checks as you type, the same rules <code>tools/validate.py</code> enforces
+    before anything publishes.
+  </p>
+  <p class="admin__note">
+    <strong>This generates a file.</strong> Commit it to <code>data/companies/&lt;slug&gt;.json</code>
+    — nothing here is saved automatically. See
+    <a href="https://github.com/LW7776/Unicorn-Germany/blob/main/docs/UPDATING.md" target="_blank" rel="noopener noreferrer">docs/UPDATING.md</a>
+    for the full routes from a downloaded file to a published change.
+  </p>
+
+  <div class="admin__load">
+    <label class="field">
+      <span>Load an existing company</span>
+      <select data-load>
+        <option value="">— start a blank record —</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="admin__layout">
+    <form class="admin__form" data-form novalidate>
+      <div data-groups></div>
+    </form>
+
+    <aside class="admin__side">
+      <section class="admin__errors" data-errors aria-live="polite" aria-label="Validation errors"></section>
+      <div class="admin__actions">
+        <div class="admin__actions-row">
+          <button type="button" data-download disabled aria-describedby="admin-reason">Download JSON</button>
+          <button type="button" data-copy disabled aria-describedby="admin-reason">Copy JSON</button>
+        </div>
+        <p class="admin__reason" id="admin-reason" data-reason role="status"></p>
+      </div>
+      <div class="admin__preview">
+        <p class="label">JSON preview</p>
+        <pre data-preview></pre>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer class="footer" data-footer></footer>
+
+<script type="module" src="assets/js/admin.js"></script>
+<script type="module" src="assets/js/static-page.js"></script>
+</body>
+</html>
