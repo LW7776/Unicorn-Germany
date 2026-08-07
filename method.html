@@ -64,9 +64,10 @@
     </p>
     <p class="badge-note">
       <span class="badge-note__aged">aged</span>
-      A valuation more than 24 months old is marked this way in the grid, so a reader can see at a
-      glance which figures are furthest from today rather than treating every number as equally
-      current.
+      A valuation more than 24 months old is marked this way in the grid. The 24-month window is
+      measured from the newest source publication date in the whole dataset, not from today —
+      <code>data/companies.json</code> is generated and committed, and has to build to the exact
+      same bytes no matter what day the build runs, so nothing in it may depend on the wall clock.
     </p>
     <p>
       <strong>Disputed</strong> works differently: when a new figure conflicts with data already
@@ -83,7 +84,8 @@
       restrictive allowlist:
     </p>
     <ul>
-      <li><strong>Primary:</strong> company and investor press releases, official registries, and regulatory filings.</li>
+      <li><strong>Primary:</strong> company and investor press releases, and the official
+      registries Handelsregister and Bundesanzeiger.</li>
       <li><strong>Trade press:</strong> Gründerszene, Sifted, EU-Startups, Tech.eu, TechCrunch.</li>
       <li><strong>Business press with editorial standards:</strong> Handelsblatt, Reuters, Bloomberg, Financial Times.</li>
     </ul>
@@ -117,17 +119,20 @@
   </section>
 
   <section aria-labelledby="fx">
-    <h2 id="fx">The one conversion</h2>
+    <h2 id="fx">The one conversion that reaches a reader, and the one that doesn't</h2>
     <p>
-      A company's own figures are never converted between currencies — a valuation reported in
-      dollars stays in dollars everywhere it appears on that company's profile and in the grid.
-      There is exactly one place mixed currencies are combined: the register's headline
-      "combined value" statistic, which adds every company's valuation into a single number and
-      therefore has to pick one currency to add them in.
+      No figure shown to a reader is ever converted between currencies — a valuation reported in
+      dollars stays in dollars everywhere it is displayed: on that company's profile, in the grid,
+      and in the timeline of its rounds. What you read is what the source said, in the currency the
+      source used.
     </p>
     <p>
-      For that single figure, and nowhere else, USD valuations are converted to EUR at a fixed
-      rate stored in the dataset and disclosed here: <strong>1 USD =
+      A fixed USD → EUR rate exists in the dataset for two internal uses, neither of which changes
+      a displayed figure. The first is the register's headline "combined value" statistic, which
+      adds every company's valuation into a single number and has to pick one currency to add them
+      in. The second is the sort key behind ordering the grid by valuation: ranking a mixed-currency
+      list requires a common unit, so a converted figure is computed to sort by — and only to sort
+      by. It is never rendered. The rate is disclosed here: <strong>1 USD =
       <span data-fx-rate>—</span> EUR</strong>, as of <strong><span data-fx-asof>—</span></strong>.
       The combined figure is labelled approximate for exactly this reason.
     </p>
