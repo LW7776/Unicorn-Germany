@@ -86,8 +86,12 @@ def polygons_from_geometry(geometry):
 
 def pick_mainland(geometry):
     rings = list(polygons_from_geometry(geometry))
+    if not rings:
+        raise ValueError("geometry has no rings at all")
     rings.sort(key=ring_area, reverse=True)
     mainland, dropped = rings[0], rings[1:]
+    if len(mainland) < 4:  # a closed ring needs >= 3 distinct points + the closing point
+        raise ValueError(f"largest ring has only {len(mainland)} points, too few to be real")
     return mainland, dropped
 
 
@@ -181,39 +185,63 @@ def path_from_ring(points):
     return "".join(commands)
 
 
-def build(out_path=OUT_PATH, readme_path=README_PATH, source_url=GEOJSON_URL):
+class GeoFetchError(Exception):
+    """Raised when a real outline cannot be produced, at any of three
+    distinguishable stages: the source couldn't be downloaded, the DEU
+    feature wasn't found in it, or its geometry was unusable once found.
+
+    main() reports whichever of those it is and exits non-zero *without*
+    calling build()'s file-write step — a regeneration that can't produce a
+    real outline must never overwrite the committed data/geo/germany.json
+    with a degraded one. The old null-outline fallback silently did exactly
+    that (same exit code either way), so a re-run during a network blip
+    could quietly replace a good file and nothing would catch it before
+    commit. Failing loudly and leaving the existing file untouched is the
+    only safe default.
+    """
+
+
+def _download_mainland(source_url):
     try:
         geojson = fetch_geojson(source_url)
+    except Exception as error:
+        raise GeoFetchError(f"download failed: could not fetch {source_url} ({error})") from error
+
+    try:
         feature = find_country(geojson, ISO3)
+    except ValueError as error:
+        raise GeoFetchError(f"DEU feature not found: {error}") from error
+
+    try:
         mainland_lonlat, dropped_rings = pick_mainland(feature["geometry"])
+    except (KeyError, ValueError) as error:
+        raise GeoFetchError(f"geometry unusable: {error}") from error
 
-        project = build_projection(mainland_lonlat)
-        mainland_px = [project(lon, lat) for lon, lat in mainland_lonlat]
-        simplified_px = simplify_ring(mainland_px, SIMPLIFY_EPSILON)
-        outline_path = path_from_ring(simplified_px)
+    return mainland_lonlat, dropped_rings
 
-        # CITY_COORDS is keyed (lat, lon) to match how the brief listed them;
-        # project() takes (lon, lat), so the pair is swapped here.
-        cities_px = {name: list(project(lon, lat)) for name, (lat, lon) in CITY_COORDS.items()}
 
-        dropped_points = sum(len(r) - 1 for r in dropped_rings)
-        report = {
-            "ok": True,
-            "mainland_raw_points": len(mainland_lonlat) - 1,
-            "mainland_simplified_points": len(simplified_px),
-            "dropped_ring_count": len(dropped_rings),
-            "dropped_point_count": dropped_points,
-        }
-    except Exception as error:  # network unavailable, source shape changed, etc.
-        print(f"warning: could not build a real outline ({error}); "
-              f"falling back to null outline (bubbles only).", file=sys.stderr)
-        outline_path = None
-        # Cities still need a projection even without a coastline to project
-        # against — build one straight from the city coordinates' own bbox.
-        cities_lonlat = [(lon, lat) for lat, lon in CITY_COORDS.values()]
-        project = build_projection(cities_lonlat + [cities_lonlat[0]])
-        cities_px = {name: list(project(lon, lat)) for name, (lat, lon) in CITY_COORDS.items()}
-        report = {"ok": False, "error": str(error)}
+def build(out_path=OUT_PATH, readme_path=README_PATH, source_url=GEOJSON_URL):
+    """Raises GeoFetchError (and writes nothing) if a real outline can't be
+    produced — see GeoFetchError's docstring for why there is no degraded
+    fallback here any more."""
+    mainland_lonlat, dropped_rings = _download_mainland(source_url)
+
+    project = build_projection(mainland_lonlat)
+    mainland_px = [project(lon, lat) for lon, lat in mainland_lonlat]
+    simplified_px = simplify_ring(mainland_px, SIMPLIFY_EPSILON)
+    outline_path = path_from_ring(simplified_px)
+
+    # CITY_COORDS is keyed (lat, lon) to match how the brief listed them;
+    # project() takes (lon, lat), so the pair is swapped here.
+    cities_px = {name: list(project(lon, lat)) for name, (lat, lon) in CITY_COORDS.items()}
+
+    dropped_points = sum(len(r) - 1 for r in dropped_rings)
+    report = {
+        "mainland_raw_points": len(mainland_lonlat) - 1,
+        "mainland_simplified_points": len(simplified_px),
+        "dropped_ring_count": len(dropped_rings),
+        "dropped_point_count": dropped_points,
+    }
 
     payload = {
         "viewBox": f"0 0 {VIEW_W} {VIEW_H}",
@@ -225,13 +253,23 @@ def build(out_path=OUT_PATH, readme_path=README_PATH, source_url=GEOJSON_URL):
     return payload, report
 
 
-if __name__ == "__main__":
-    result, report = build()
+def main(source_url=None):
+    """Returns a process exit code; does not itself call sys.exit so tests
+    can invoke this directly (e.g. with a deliberately broken source_url)
+    without spawning a subprocess."""
+    try:
+        _, report = build(source_url=source_url or GEOJSON_URL)
+    except GeoFetchError as error:
+        print(f"error: {error}", file=sys.stderr)
+        print(f"Refusing to touch {OUT_PATH} — it is left exactly as it was.", file=sys.stderr)
+        return 1
     size = OUT_PATH.stat().st_size
-    if report.get("ok"):
-        print(f"Wrote {OUT_PATH} ({size:,} bytes): mainland ring "
-              f"{report['mainland_raw_points']} -> {report['mainland_simplified_points']} points, "
-              f"dropped {report['dropped_ring_count']} smaller rings "
-              f"({report['dropped_point_count']} points total).")
-    else:
-        print(f"Wrote {OUT_PATH} ({size:,} bytes) with a null outline: {report['error']}")
+    print(f"Wrote {OUT_PATH} ({size:,} bytes): mainland ring "
+          f"{report['mainland_raw_points']} -> {report['mainland_simplified_points']} points, "
+          f"dropped {report['dropped_ring_count']} smaller rings "
+          f"({report['dropped_point_count']} points total).")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

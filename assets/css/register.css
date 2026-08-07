@@ -110,9 +110,10 @@
   transition: fill var(--dur-fast) var(--ease-out);
 }
 .map__city { cursor: pointer; }
-/* Invisible, larger than the visible halo at every city size — see map.js's
-   MIN_HIT_RADIUS comment for why 65 viewBox units and its limits. fill:
-   transparent (not `none`) so it still participates in hit-testing. */
+/* Invisible, sized in map.js to target a 44px hit area at the SVG's actual
+   rendered size, capped so it never reaches past the midpoint to the
+   nearest neighbouring city (see map.js's `sized`/`neighbourCap` comments).
+   fill: transparent (not `none`) so it still participates in hit-testing. */
 .map__hit { fill: transparent; }
 .map__city:hover .map__halo, .map__city:focus-visible .map__halo {
   fill: color-mix(in srgb, var(--violet) 34%, transparent);
@@ -121,6 +122,7 @@
 .map__pin { fill: var(--ink); }
 .map__label { fill: var(--ink); font-family: var(--font-mono); font-size: 22px; text-anchor: middle; }
 .map__note { color: var(--muted); font-size: var(--step--1); text-align: center; max-width: 40rem; }
+.map__note--hint { margin-top: calc(-1 * var(--space-3)); font-style: italic; }
 
 .spark {
   position: fixed; z-index: 30; width: 6px; height: 6px; border-radius: 50%;

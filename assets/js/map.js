@@ -1,18 +1,14 @@
 import { escapeHtml } from "./html.js";
 
-// The visible halo shrinks down to r=18 for a single-company city, but every
-// interactive control on this site keeps a >=44px hit target (see
-// register.css's `min-height: 44px` on buttons, selects and chips). An SVG
-// circle scales with the viewBox, not with CSS pixels, so there is no one
-// radius that is exactly 44px at every viewport width — but 65 viewBox units
-// covers the largest possible halo (r maxes out at 64, see MAX_RADIUS below)
-// and comfortably clears 44px down to ~375px-wide viewports, which is this
-// site's smallest realistic mobile breakpoint (register.css's `@media
-// (max-width: 480px)`). Below that the target is still strictly bigger than
-// the visible bubble, never smaller.
-const MIN_HIT_RADIUS = 65;
 const BASE_RADIUS = 18;
 const MAX_RADIUS = 46; // added on top of BASE_RADIUS for the most-represented city
+// Half of the site's 44px minimum interactive target (register.css's
+// `min-height: 44px` on buttons, selects and chips) — halved because it's
+// used as a circle radius, not a diameter.
+const MIN_HIT_TARGET_PX = 44;
+// Used only if the SVG can't be measured (e.g. rendered with zero width);
+// matches this file's previous fixed-radius behaviour as a safety net.
+const FALLBACK_HIT_RADIUS = 65;
 
 /** company.hq.city comes from data/companies.json, an automated pipeline's
     output — untrusted the same as every other field rendered from it. Every
@@ -25,9 +21,15 @@ export async function renderMap(container, companies, { onSelectCity }) {
   const geo = await response.json();
   const geoCities = geo.cities || {};
 
+  // A company with no hq at all, or an hq with no city, isn't the same as a
+  // company whose city just isn't on the map — it's missing data, and the
+  // site's rule is that missing data is shown, never silently dropped. Count
+  // it separately from `unplaced` (which is a real, named city this file
+  // just doesn't have coordinates for).
+  let missingLocation = 0;
   const counts = companies.reduce((acc, c) => {
     const city = c.hq?.city;
-    if (!city) return acc; // a record with a missing/malformed hq must not crash the map
+    if (!city) { missingLocation += 1; return acc; }
     acc[city] = (acc[city] || 0) + 1;
     return acc;
   }, {});
@@ -35,33 +37,145 @@ export async function renderMap(container, companies, { onSelectCity }) {
   const unplaced = Object.entries(counts).filter(([city]) => !geoCities[city]);
   const max = Math.max(1, ...known.map(([, n]) => n));
 
+  // Render the outline (and an empty <svg>) first so its actual rendered CSS
+  // width can be measured below — the viewBox scales content independent of
+  // what's inside it, so this measurement doesn't need the city bubbles to
+  // exist yet, and doesn't need a second layout pass after adding them.
   container.innerHTML = `
     <svg class="map__svg" viewBox="${escapeHtml(geo.viewBox)}" role="img"
          aria-label="German unicorns by headquarters city">
       ${geo.outline ? `<path class="map__outline" d="${escapeHtml(geo.outline)}"/>` : ""}
-      ${known.map(([city, n]) => {
-        const [x, y] = geoCities[city];
-        const r = BASE_RADIUS + (n / max) * MAX_RADIUS;
-        const hitR = Math.max(MIN_HIT_RADIUS, r);
-        const safeCity = escapeHtml(city);
-        const label = `${safeCity}, ${n} ${n === 1 ? "company" : "companies"}`;
-        return `<g class="map__city" data-city="${safeCity}" tabindex="0" role="button"
-                   aria-label="${label}">
-          <circle cx="${x}" cy="${y}" r="${hitR}" class="map__hit"/>
-          <circle cx="${x}" cy="${y}" r="${r}" class="map__halo"/>
-          <circle cx="${x}" cy="${y}" r="4" class="map__pin"/>
-          <text x="${x}" y="${y - r - 10}" class="map__label">${safeCity} · ${n}</text>
-        </g>`;
-      }).join("")}
-    </svg>
-    ${unplaced.length ? `<p class="map__note">Not shown on the map:
-      ${unplaced.map(([city, n]) => `${escapeHtml(city)} (${n})`).join(", ")}</p>` : ""}`;
+    </svg>`;
+  const svg = container.querySelector(".map__svg");
+  const viewBoxWidth = Number((geo.viewBox || "").split(" ")[2]) || 1000;
+  const renderedWidth = svg.getBoundingClientRect().width;
+  const scale = renderedWidth / viewBoxWidth;
+  // The 44px target converted from CSS pixels into *this render's* viewBox
+  // units. Unlike a fixed viewBox-unit radius, this actually tracks 44px at
+  // whatever width the SVG is currently drawn at, instead of only being
+  // correct at one particular viewport width.
+  const targetHitRadius = scale > 0
+    ? (MIN_HIT_TARGET_PX / 2) / scale
+    : FALLBACK_HIT_RADIUS;
 
-  const select = (node) => onSelectCity(node.dataset.city);
+  const positioned = known.map(([city, n]) => {
+    const [x, y] = geoCities[city];
+    return { city, n, x, y, visibleRadius: BASE_RADIUS + (n / max) * MAX_RADIUS };
+  });
+
+  // Nearest-neighbour distance among the cities actually being drawn (a city
+  // with zero companies today has no bubble, so it isn't a constraint).
+  // Capping each hit radius at half that distance means it can never reach
+  // past the midpoint into a neighbour's territory — the two circles can
+  // touch exactly at the midpoint but never cross it, so a click nearest to
+  // city B can never be captured by city A's hit area, regardless of paint
+  // order. The visible bubble itself is never shrunk to make room; only the
+  // invisible hit area is capped, and never below the bubble's own radius.
+  const sized = positioned.map((entry) => {
+    let nearest = Infinity;
+    for (const other of positioned) {
+      if (other === entry) continue;
+      const distance = Math.hypot(entry.x - other.x, entry.y - other.y);
+      if (distance < nearest) nearest = distance;
+    }
+    const neighbourCap = Number.isFinite(nearest) ? nearest / 2 : Infinity;
+    const hitRadius = Math.max(entry.visibleRadius, Math.min(targetHitRadius, neighbourCap));
+    return { ...entry, hitRadius, reachedTarget: hitRadius >= targetHitRadius - 0.05 };
+  });
+
+  // SVG paints in document order, so without this the winner of an
+  // overlapping click is whichever bubble happens to come later in
+  // `companies` — an accident of data order, not geography. Painting the
+  // smallest hit targets last puts them on top, so a small city sitting
+  // inside a larger neighbour's halo stays reachable.
+  sized.sort((a, b) => b.hitRadius - a.hitRadius);
+
+  const anyCramped = sized.some((entry) => !entry.reachedTarget);
+
+  svg.insertAdjacentHTML("beforeend", sized.map(({ city, n, x, y, visibleRadius, hitRadius }) => {
+    const safeCity = escapeHtml(city);
+    const label = `${safeCity}, ${n} ${n === 1 ? "company" : "companies"}`;
+    return `<g class="map__city" data-city="${safeCity}" tabindex="0" role="button"
+               aria-label="${label}">
+      <circle cx="${x}" cy="${y}" r="${hitRadius}" class="map__hit"/>
+      <circle cx="${x}" cy="${y}" r="${visibleRadius}" class="map__halo"/>
+      <circle cx="${x}" cy="${y}" r="4" class="map__pin"/>
+      <text x="${x}" y="${y - visibleRadius - 10}" class="map__label">${safeCity} · ${n}</text>
+    </g>`;
+  }).join(""));
+
+  // Capping each hit radius at the neighbour's midpoint (above) keeps a
+  // click on Heidelberg's own bubble from ever landing inside Mannheim's
+  // hit-circle — but the floor that guarantees a hit area is never smaller
+  // than its own visible bubble can still push a *large* city's hit circle
+  // (e.g. Mannheim, r=64 for its 2 companies) well past that same midpoint
+  // from the other side, since the floor is a harder requirement than the
+  // cap. Concretely, with two companies in Mannheim and one in Heidelberg
+  // (25.1 viewBox units apart), Heidelberg's hit circle is floored up to
+  // r=41 — bigger than the 25.1 unit gap — so it geometrically covers
+  // Mannheim's own centre point too. Paint order alone can't fix a
+  // genuinely-too-large hit circle, so instead of trusting whichever <g>
+  // the browser's native top-most-element hit-test happens to report,
+  // resolveCity re-checks geometry at click time: among every city whose
+  // hit circle contains the click point, the one whose *centre* is closest
+  // to the click wins. A click on Mannheim's own dot is distance 0 from
+  // Mannheim and 25.1 from Heidelberg, so Mannheim wins regardless of which
+  // element's hit circle happened to paint on top there.
+  function resolveCity(event, fallbackCity) {
+    const ctm = svg.getScreenCTM();
+    if (!ctm) return fallbackCity;
+    const point = svg.createSVGPoint();
+    point.x = event.clientX;
+    point.y = event.clientY;
+    const local = point.matrixTransform(ctm.inverse());
+    let best = null;
+    let bestDistance = Infinity;
+    for (const entry of sized) {
+      const distance = Math.hypot(local.x - entry.x, local.y - entry.y);
+      if (distance <= entry.hitRadius && distance < bestDistance) {
+        best = entry.city;
+        bestDistance = distance;
+      }
+    }
+    return best ?? fallbackCity;
+  }
+
+  const notFound = [
+    ...unplaced.map(([city, n]) => `${escapeHtml(city)} (${n})`),
+    ...(missingLocation ? [`Location not recorded (${missingLocation})`] : []),
+  ];
+  let extraHtml = notFound.length
+    ? `<p class="map__note">Not shown on the map: ${notFound.join(", ")}</p>` : "";
+  if (anyCramped) {
+    // Finding 3's genuine trade-off: on narrow viewports (or with cities
+    // this close together at any width — e.g. Mannheim/Heidelberg are ~25
+    // viewBox units apart, closer than a 44px target needs even at desktop
+    // width) the 44px target and "never steal a neighbour's click" cannot
+    // both fully hold. This implementation always prefers not stealing: the
+    // neighbourCap clamp plus resolveCity's nearest-centre tie-break (above)
+    // together mean a crowded city's hit target can still land smaller than
+    // 44px, but it never resolves to the wrong city — clicking it is just
+    // more fiddly, not incorrect. This note is the visible cost of that
+    // trade-off; Task 19's accessibility pass should keep this behaviour
+    // (correct-but-small) rather than loosen the clamp to hit 44px exactly
+    // at the cost of occasional misfires.
+    extraHtml += `<p class="map__note map__note--hint">Cities close together on the map ` +
+      `may be easier to pick from the city dropdown above.</p>`;
+  }
+  container.insertAdjacentHTML("beforeend", extraHtml);
+
   container.querySelectorAll("[data-city]").forEach((node) => {
-    node.addEventListener("click", () => select(node));
+    // Mouse/touch: the point that was actually clicked may sit inside more
+    // than one city's hit circle (see resolveCity above) — resolve by
+    // nearest centre rather than trusting which <g> the event landed on.
+    node.addEventListener("click", (event) => onSelectCity(resolveCity(event, node.dataset.city)));
+    // Keyboard: the focused element unambiguously identifies one city —
+    // there's no click point to disambiguate, so no geometry needed here.
     node.addEventListener("keydown", (event) => {
-      if (event.key === "Enter" || event.key === " ") { event.preventDefault(); select(node); }
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        onSelectCity(node.dataset.city);
+      }
     });
   });
 }
