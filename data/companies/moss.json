@@ -1,0 +1,139 @@
+{
+  "slug": "moss",
+  "name": "Moss",
+  "website": "https://www.getmoss.com",
+  "logo": "assets/logos/moss.svg",
+  "hq": {
+    "city": "Berlin",
+    "country": "DE"
+  },
+  "foundedCountry": "DE",
+  "foundedYear": 2019,
+  "sectors": [
+    "Fintech",
+    "Spend Management"
+  ],
+  "thesis": {
+    "problem": "In a mid-sized company, money leaves before finance knows about it. Employees pay on shared cards or their own, receipts arrive weeks later, and invoices are approved over email, so the finance team spends the month reconstructing what was spent rather than controlling it as it happens.",
+    "solution": "Moss issues corporate cards with per-team budgets and approval rules, and pairs them with invoice capture and reimbursements in the same system, so every payment carries its receipt, cost centre and approver from the moment it is made. Entries flow into the accounting and ERP systems the company already runs, and the newer AI features are built to prepare work for sign-off rather than to act unsupervised."
+  },
+  "valuation": {
+    "amount": 1000,
+    "currency": "EUR",
+    "approximate": false,
+    "asOf": "2026-08",
+    "round": "Series C",
+    "source": "s1",
+    "disputed": {
+      "note": "Gründerszene reports the same round in dollars — “mehr als eine Milliarde Dollar” — where Moss, Sifted and EU-Startups give €1bn.",
+      "source": "s3"
+    }
+  },
+  "becameUnicorn": {
+    "date": "2026-08",
+    "roundId": "r2",
+    "source": "s1"
+  },
+  "totalRaised": {
+    "amount": 200,
+    "currency": "EUR",
+    "approximate": true,
+    "source": "s1"
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "date": "2022",
+      "stage": "Series B",
+      "amount": 75,
+      "currency": "EUR",
+      "approximate": false,
+      "postMoney": 500,
+      "leadInvestors": [
+        "Tiger Global Management"
+      ],
+      "investors": [
+        "Tiger Global Management"
+      ],
+      "source": "s2"
+    },
+    {
+      "id": "r2",
+      "date": "2026-08",
+      "stage": "Series C",
+      "amount": 35,
+      "currency": "EUR",
+      "approximate": false,
+      "postMoney": 1000,
+      "leadInvestors": [
+        "Portage"
+      ],
+      "investors": [
+        "Portage",
+        "Cherry Ventures"
+      ],
+      "source": "s1"
+    }
+  ],
+  "founders": [
+    {
+      "name": "Ante Spittler",
+      "role": "Co-founder & CEO",
+      "current": true
+    },
+    {
+      "name": "Anton Rummel",
+      "role": "Co-founder",
+      "current": true
+    },
+    {
+      "name": "Ferdinand Meyer",
+      "role": "Co-founder",
+      "current": true
+    },
+    {
+      "name": "Stephan Haslebacher",
+      "role": "Co-founder",
+      "current": true
+    }
+  ],
+  "investors": [
+    "Portage",
+    "Cherry Ventures",
+    "Tiger Global Management"
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "publication": "Company press release",
+      "title": "Moss hits a €1 billion valuation and bets on Finance AI shaped by finance teams",
+      "url": "https://www.getmoss.com/magazine/moss-series-c",
+      "publishedOn": "2026-08-05",
+      "quote": "The €35 million Series C round led by fintech specialist investor Portage, with participation from Cherry Ventures, values Moss at €1 billion and brings total funding to over €200 million."
+    },
+    {
+      "id": "s2",
+      "publication": "EU-Startups",
+      "title": "Berlin-based Moss hits unicorn status after closing €30 million Series C to expand its Finance AI suite",
+      "url": "https://www.eu-startups.com/2026/08/berlin-based-moss-hits-unicorn-status-after-closing-e30-million-series-c-to-expand-its-finance-ai-suite/",
+      "publishedOn": "2026-08-05",
+      "quote": "This funding round comes four years after the company announced the closing of its Series B funding round of €75 million at a valuation of over €500 million."
+    },
+    {
+      "id": "s3",
+      "publication": "Gründerszene",
+      "title": "Neues Unicorn: Berliner Fintech Moss knackt Milliarden-Bewertung",
+      "url": "https://www.businessinsider.de/gruenderszene/berliner-unicorn-deutsches-fintech-moss-knackt-die-milliarden-bewertung/",
+      "publishedOn": "2026-08-07",
+      "quote": "Das Berliner Finanz-Startup Moss ist nach einer Finanzierungsrunde mehr als eine Milliarde Dollar wert."
+    },
+    {
+      "id": "s4",
+      "publication": "Sifted",
+      "title": "Fintech startup Moss crowned Europe’s newest unicorn with €30m Series C",
+      "url": "https://sifted.eu/articles/moss-unicorn-series-c/",
+      "publishedOn": "2026-08-05",
+      "quote": "AI finance platform Moss has been crowned Europe’s latest unicorn, securing a €1bn valuation for its €30m Series C."
+    }
+  ]
+}

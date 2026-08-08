@@ -1,0 +1,156 @@
+{
+  "slug": "personio",
+  "name": "Personio",
+  "website": "https://www.personio.com",
+  "logo": "assets/logos/personio.svg",
+  "hq": {
+    "city": "Munich",
+    "country": "DE"
+  },
+  "foundedCountry": "DE",
+  "foundedYear": 2015,
+  "sectors": [
+    "Enterprise Software",
+    "HR Tech"
+  ],
+  "thesis": {
+    "problem": "Enterprise HR suites are priced and configured for companies with thousands of staff and an HR department to run them. The small and mid-sized firms that employ most of Europe were left running recruitment, contracts, absence and payroll preparation across spreadsheets, email threads and paper files.",
+    "solution": "Personio packages the whole employee lifecycle — applicant tracking, onboarding, digital personnel files, absence, performance and payroll preparation — into one subscription that a company without a dedicated HR systems team can configure itself. It is sold per employee per month and localised for each European country's payroll and employment rules."
+  },
+  "valuation": {
+    "amount": 8500,
+    "currency": "USD",
+    "approximate": false,
+    "asOf": "2022-06",
+    "round": "Series E (second close)",
+    "source": "s1"
+  },
+  "becameUnicorn": {
+    "date": "2021-01",
+    "roundId": "r1",
+    "source": "s2"
+  },
+  "totalRaised": {
+    "amount": null,
+    "currency": "USD",
+    "approximate": false,
+    "source": "s1"
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "date": "2021-01",
+      "stage": "Series D",
+      "amount": 125,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": 1700,
+      "leadInvestors": [
+        "Index Ventures",
+        "Meritech"
+      ],
+      "investors": [
+        "Index Ventures",
+        "Meritech",
+        "Accel",
+        "Lightspeed Venture Partners",
+        "Northzone",
+        "Global Founders Capital",
+        "Picus"
+      ],
+      "source": "s2"
+    },
+    {
+      "id": "r2",
+      "date": "2021-10",
+      "stage": "Series E",
+      "amount": 270,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": null,
+      "leadInvestors": [
+        "Greenoaks Capital Partners"
+      ],
+      "investors": [
+        "Greenoaks Capital Partners"
+      ],
+      "source": "s3"
+    },
+    {
+      "id": "r3",
+      "date": "2022-06",
+      "stage": "Series E (second close)",
+      "amount": 200,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": 8500,
+      "leadInvestors": [
+        "Greenoaks Capital Partners"
+      ],
+      "investors": [
+        "Greenoaks Capital Partners"
+      ],
+      "source": "s1"
+    }
+  ],
+  "founders": [
+    {
+      "name": "Hanno Renner",
+      "role": "Co-founder & CEO",
+      "current": true
+    },
+    {
+      "name": "Roman Schumacher",
+      "role": "Co-founder",
+      "current": true
+    },
+    {
+      "name": "Arseniy Vershinin",
+      "role": "Co-founder",
+      "current": true
+    },
+    {
+      "name": "Jonas Rieke",
+      "role": "Co-founder",
+      "current": true
+    }
+  ],
+  "investors": [
+    "Greenoaks Capital Partners",
+    "Index Ventures",
+    "Meritech",
+    "Accel",
+    "Lightspeed Venture Partners",
+    "Northzone",
+    "Global Founders Capital",
+    "Picus",
+    "Altimeter Capital",
+    "Alkeon"
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "publication": "TechCrunch",
+      "title": "Personio nabs $200M at a $8.5B valuation as its HR for small businesses hits the big time",
+      "url": "https://techcrunch.com/2022/06/21/personio-nabs-200m-at-a-8-5b-valuation-as-its-hr-for-small-businesses-hits-the-big-time/",
+      "publishedOn": "2022-06-21",
+      "quote": "The company has picked up another $200 million at a new valuation of $8.5 billion, making it one of the most valuable startups in Europe at the moment."
+    },
+    {
+      "id": "s2",
+      "publication": "TechCrunch",
+      "title": "Personio raises $125M on a $1.7B valuation for an HR platform targeting SMEs",
+      "url": "https://techcrunch.com/2021/01/17/personio-raises-125m-on-a-1-7b-valuation-for-an-hr-platform-targeting-smes/",
+      "publishedOn": "2021-01-18",
+      "quote": "Personio — the German startup that targets small- and medium-sized businesses (10-2,000 employees) with an all-in-one HR platform covering recruiting and onboarding, payroll, absence tracking and other major HR functions — has picked up $125 million in funding at a $1.7 billion post-money valuation."
+    },
+    {
+      "id": "s3",
+      "publication": "TechCrunch",
+      "title": "Personio nabs $200M at a $8.5B valuation as its HR for small businesses hits the big time",
+      "url": "https://techcrunch.com/2022/06/21/personio-nabs-200m-at-a-8-5b-valuation-as-its-hr-for-small-businesses-hits-the-big-time/",
+      "publishedOn": "2022-06-21",
+      "quote": "The funding is technically a second closing of its Series E, coming on the heels of the first tranche of $270 million that closed in October."
+    }
+  ]
+}

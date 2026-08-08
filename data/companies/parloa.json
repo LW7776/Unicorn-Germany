@@ -1,0 +1,119 @@
+{
+  "slug": "parloa",
+  "name": "Parloa",
+  "website": "https://www.parloa.com",
+  "logo": "assets/logos/parloa.svg",
+  "hq": {
+    "city": "Berlin",
+    "country": "DE"
+  },
+  "alsoBasedIn": [
+    "New York"
+  ],
+  "foundedCountry": "DE",
+  "foundedYear": 2018,
+  "sectors": [
+    "Artificial Intelligence",
+    "Customer Experience"
+  ],
+  "thesis": {
+    "problem": "Enterprise contact centres are expensive to staff and slow to scale, and the automation sold to them was built on rigid decision trees that break the moment a caller phrases something unexpectedly. Large brands that wanted to hand routine calls to software found it either failed the customer or could not be trusted to act on their systems.",
+    "solution": "Parloa sells a platform for building, testing and supervising AI agents that hold spoken and written conversations and then carry out the resulting task in the company's own systems. The emphasis is on the management layer — simulation before deployment, guardrails and human sign-off — so that a large enterprise can run many agents across languages and channels under one set of controls."
+  },
+  "valuation": {
+    "amount": 1000,
+    "currency": "USD",
+    "approximate": false,
+    "asOf": "2025-05",
+    "round": "Series C",
+    "source": "s1"
+  },
+  "becameUnicorn": {
+    "date": "2025-05",
+    "roundId": "r2",
+    "source": "s1"
+  },
+  "totalRaised": {
+    "amount": null,
+    "currency": "USD",
+    "approximate": false,
+    "source": "s1"
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "date": "2024",
+      "stage": "Series B",
+      "amount": 66,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": null,
+      "leadInvestors": [],
+      "investors": [],
+      "source": "s2"
+    },
+    {
+      "id": "r2",
+      "date": "2025-05",
+      "stage": "Series C",
+      "amount": 120,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": 1000,
+      "leadInvestors": [
+        "Durable Capital Partners",
+        "Altimeter Capital",
+        "General Catalyst"
+      ],
+      "investors": [
+        "Durable Capital Partners",
+        "Altimeter Capital",
+        "General Catalyst",
+        "EQT Ventures",
+        "RPT Capital",
+        "Senovo",
+        "Mosaic Ventures"
+      ],
+      "source": "s1"
+    }
+  ],
+  "founders": [
+    {
+      "name": "Malte Kosub",
+      "role": "Co-founder & CEO",
+      "current": true
+    },
+    {
+      "name": "Stefan Ostwald",
+      "role": "Co-founder",
+      "current": true
+    }
+  ],
+  "investors": [
+    "Durable Capital Partners",
+    "Altimeter Capital",
+    "General Catalyst",
+    "EQT Ventures",
+    "RPT Capital",
+    "Senovo",
+    "Mosaic Ventures"
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "publication": "Company press release",
+      "title": "Parloa raises $120M Series C to reinvent customer service with agentic AI",
+      "url": "https://www.parloa.com/parloa-in-the-press/parloa-raises-120m-series-c-to-reinvent-customer-service-with-agentic-ai/",
+      "publishedOn": "2025-05-06",
+      "quote": "Berlin and New York—May 6, 2025—Parloa, an innovator in Agentic AI for customer experience, today announced it has secured $120 million in Series C funding, bringing the company’s valuation to $1 billion."
+    },
+    {
+      "id": "s2",
+      "publication": "Company press release",
+      "title": "Parloa raises $120M Series C to reinvent customer service with agentic AI",
+      "url": "https://www.parloa.com/parloa-in-the-press/parloa-raises-120m-series-c-to-reinvent-customer-service-with-agentic-ai/",
+      "publishedOn": "2025-05-06",
+      "quote": "Since raising $66M in its Series B round just 12 months ago, Parloa released its groundbreaking AI Agent Management Platform, AMP, the industry’s first Agentic AI platform purpose-built for enterprise contact centers, and quadrupled its revenue."
+    }
+  ]
+}

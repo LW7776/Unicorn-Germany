@@ -1,13 +1,1533 @@
 {
  "stats": {
-  "count": 0,
-  "combinedValuationEurMillions": 0,
-  "combinedValuationLabel": "~€0 m",
-  "newInLast12Months": 0,
-  "medianYearsToUnicorn": 0,
+  "count": 8,
+  "combinedValuationEurMillions": 60880.0,
+  "combinedValuationLabel": "~€60.9 bn",
+  "newInLast12Months": 1,
+  "medianYearsToUnicorn": 6,
   "fxRateDisclosed": 0.92,
   "fxAsOf": "2026-08",
-  "dataAsOf": null
+  "dataAsOf": "2026-08-07"
  },
- "companies": []
+ "companies": [
+  {
+   "slug": "celonis",
+   "name": "Celonis",
+   "website": "https://www.celonis.com",
+   "logo": "assets/logos/celonis.svg",
+   "hq": {
+    "city": "Munich",
+    "country": "DE"
+   },
+   "alsoBasedIn": [
+    "New York"
+   ],
+   "foundedCountry": "DE",
+   "foundedYear": 2011,
+   "sectors": [
+    "Enterprise Software",
+    "Process Mining"
+   ],
+   "thesis": {
+    "problem": "Large companies cannot see how their own processes actually run. An order-to-cash or purchase-to-pay flow touches ERP, CRM and supply-chain systems that each hold a fragment of the truth, so the duplicated payments, manual rework and stalled deliveries hiding inside them stay invisible to the people accountable for them.",
+    "solution": "Celonis reconstructs the real path of every transaction from the event logs those systems already write, compares it against how the process was supposed to run, and quantifies the cost of each deviation. The product is sold to large enterprises as a platform that both diagnoses the gap and triggers the corrective action inside the underlying system."
+   },
+   "valuation": {
+    "amount": 13000,
+    "currency": "USD",
+    "approximate": true,
+    "asOf": "2022-08",
+    "round": "Series D extension",
+    "source": "s1"
+   },
+   "becameUnicorn": {
+    "date": "2019-11",
+    "roundId": "r1",
+    "source": "s2"
+   },
+   "totalRaised": {
+    "amount": null,
+    "currency": "USD",
+    "approximate": false,
+    "source": "s1"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2019-11",
+     "stage": "Series C",
+     "amount": 290,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": 2500,
+     "leadInvestors": [
+      "Arena Holdings"
+     ],
+     "investors": [
+      "Arena Holdings",
+      "Accel",
+      "83North"
+     ],
+     "source": "s2",
+     "dateLabel": "Nov 2019",
+     "amountLabel": "$290 m"
+    },
+    {
+     "id": "r2",
+     "date": "2021-06",
+     "stage": "Series D",
+     "amount": 1000,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": 11000,
+     "leadInvestors": [],
+     "investors": [],
+     "source": "s3",
+     "dateLabel": "Jun 2021",
+     "amountLabel": "$1 bn"
+    },
+    {
+     "id": "r3",
+     "date": "2022-08",
+     "stage": "Series D extension",
+     "amount": 400,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": 13000,
+     "leadInvestors": [
+      "Qatar Investment Authority"
+     ],
+     "investors": [
+      "Qatar Investment Authority",
+      "Activant Capital",
+      "Neuberger Berman",
+      "Alta Park Capital",
+      "Commonfund Capital",
+      "Arena Holdings",
+      "T. Rowe Price",
+      "Franklin Templeton",
+      "Durable Capital Partners",
+      "TCV",
+      "83North",
+      "Accel Partners",
+      "Sator Grove"
+     ],
+     "source": "s1",
+     "dateLabel": "Aug 2022",
+     "amountLabel": "$400 m"
+    }
+   ],
+   "founders": [
+    {
+     "name": "Alexander Rinke",
+     "role": "Co-founder & co-CEO",
+     "current": true
+    },
+    {
+     "name": "Bastian Nominacher",
+     "role": "Co-founder & co-CEO",
+     "current": true
+    },
+    {
+     "name": "Martin Klenk",
+     "role": "Co-founder",
+     "current": true
+    }
+   ],
+   "investors": [
+    "Qatar Investment Authority",
+    "Arena Holdings",
+    "Accel",
+    "83North",
+    "Activant Capital",
+    "Neuberger Berman",
+    "Alta Park Capital",
+    "Commonfund Capital",
+    "T. Rowe Price",
+    "Franklin Templeton",
+    "Durable Capital Partners",
+    "TCV",
+    "Sator Grove"
+   ],
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "Company press release",
+     "title": "Celonis Secures $1 Billion to Help Customers Fight Economic and Supply Chain Challenges with Process Improvements",
+     "url": "https://www.celonis.com/news/press/celonis-secures-one-billion-to-help-customers-fight-economic-and-supply-change-challenges",
+     "publishedOn": "2022-08-23",
+     "quote": "This $1 billion in liquidity is anchored by a $400 million equity raise at a post money valuation of nearly $13 billion."
+    },
+    {
+     "id": "s2",
+     "publication": "TechCrunch",
+     "title": "Celonis, a leader in big data process mining for enterprises, nabs $290M on a $2.5B valuation",
+     "url": "https://techcrunch.com/2019/11/21/celonis-a-leader-in-big-data-process-mining-for-enterprises-nabs-290m-on-a-2-5b-valuation/",
+     "publishedOn": "2019-11-21",
+     "quote": "Celonis, a leader in the area of process mining — which tracks data produced by a company’s software, as well as how the software works, in order to provide guidance on what a company could and should do to improve it — has raised $290 million in a Series C round of funding, giving the startup a post-money valuation of $2.5 billion."
+    },
+    {
+     "id": "s3",
+     "publication": "Company press release",
+     "title": "Celonis Secures $1 Billion to Help Customers Fight Economic and Supply Chain Challenges with Process Improvements",
+     "url": "https://www.celonis.com/news/press/celonis-secures-one-billion-to-help-customers-fight-economic-and-supply-change-challenges",
+     "publishedOn": "2022-08-23",
+     "quote": "In June 2021, Celonis announced its $1 billion Series D round at a valuation of $11 billion."
+    }
+   ],
+   "display": {
+    "valuationLabel": "~$13 bn",
+    "valuationAsOf": "Aug 2022",
+    "lastRoundLabel": "Aug 2022",
+    "lastRoundStage": "Series D extension",
+    "totalRaisedLabel": "—",
+    "yearsToUnicorn": 8,
+    "becameUnicornLabel": "Nov 2019",
+    "foundersLabel": "Alexander Rinke, Bastian Nominacher, Martin Klenk",
+    "aged": true
+   },
+   "sort": {
+    "newest": [
+     2019,
+     11
+    ],
+    "valuationEur": 11960.0,
+    "latestRound": [
+     2022,
+     8
+    ],
+    "name": "celonis"
+   },
+   "investorsOrdered": [
+    "Qatar Investment Authority",
+    "Arena Holdings",
+    "Accel",
+    "83North",
+    "Activant Capital",
+    "Neuberger Berman",
+    "Alta Park Capital",
+    "Commonfund Capital",
+    "T. Rowe Price",
+    "Franklin Templeton",
+    "Durable Capital Partners",
+    "TCV",
+    "Sator Grove"
+   ]
+  },
+  {
+   "slug": "deepl",
+   "name": "DeepL",
+   "website": "https://www.deepl.com",
+   "logo": "assets/logos/deepl.svg",
+   "hq": {
+    "city": "Cologne",
+    "country": "DE"
+   },
+   "foundedCountry": "DE",
+   "foundedYear": 2017,
+   "sectors": [
+    "Artificial Intelligence",
+    "Language Technology"
+   ],
+   "thesis": {
+    "problem": "Free machine translation is tuned for gist, not for text a company would put its name to. Businesses working across European languages either paid human translators for every contract, support reply and manual, or accepted output that read as translated — and most general-purpose engines would not let regulated firms keep the text off a third party's training data.",
+    "solution": "DeepL trains its own translation and writing models rather than fine-tuning someone else's, and sells them to businesses as an API and as apps that plug into the tools staff already use. Enterprise contracts cover data handling and glossaries so that terminology stays consistent, and the same model line has been extended into writing assistance and spoken translation."
+   },
+   "valuation": {
+    "amount": 2000,
+    "currency": "USD",
+    "approximate": false,
+    "asOf": "2024-05",
+    "round": "Growth round",
+    "source": "s1"
+   },
+   "becameUnicorn": {
+    "date": "2023-01",
+    "roundId": "r1",
+    "source": "s2"
+   },
+   "totalRaised": {
+    "amount": null,
+    "currency": "USD",
+    "approximate": false,
+    "source": "s1"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2023-01",
+     "stage": "Growth round",
+     "amount": null,
+     "currency": "EUR",
+     "approximate": false,
+     "postMoney": 1000,
+     "leadInvestors": [
+      "IVP"
+     ],
+     "investors": [
+      "IVP",
+      "Bessemer Venture Partners",
+      "Atomico",
+      "WiL"
+     ],
+     "source": "s2",
+     "dateLabel": "Jan 2023",
+     "amountLabel": null
+    },
+    {
+     "id": "r2",
+     "date": "2024-05",
+     "stage": "Growth round",
+     "amount": 300,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": 2000,
+     "leadInvestors": [
+      "Index Ventures"
+     ],
+     "investors": [
+      "Index Ventures",
+      "ICONIQ Growth",
+      "Teachers’ Venture Growth",
+      "IVP",
+      "Atomico",
+      "WiL"
+     ],
+     "source": "s1",
+     "dateLabel": "May 2024",
+     "amountLabel": "$300 m"
+    }
+   ],
+   "founders": [
+    {
+     "name": "Jaroslaw Kutylowski",
+     "role": "Founder & CEO",
+     "current": true
+    }
+   ],
+   "investors": [
+    "Index Ventures",
+    "IVP",
+    "ICONIQ Growth",
+    "Teachers’ Venture Growth",
+    "Atomico",
+    "WiL",
+    "Bessemer Venture Partners",
+    "Benchmark",
+    "btov"
+   ],
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "TechCrunch",
+     "title": "AI language translation startup DeepL nabs $300M on a $2B valuation to focus on B2B growth",
+     "url": "https://techcrunch.com/2024/05/22/deepl-the-ai-language-translation-startup-nabs-300m-on-a-2b-valuation-to-focus-on-b2b-growth/",
+     "publishedOn": "2024-05-22",
+     "quote": "DeepL, which builds automated text translation and writing tools that compete against the likes of Google Translate and Grammarly, said on Wednesday that it has raised an additional $300 million. It is now valued at $2 billion, post-money."
+    },
+    {
+     "id": "s2",
+     "publication": "TechCrunch",
+     "title": "DeepL, the AI-based language translator, raises over $100M at a $1B+ valuation",
+     "url": "https://techcrunch.com/2023/01/11/deepl-the-ai-based-language-translator-raises-over-100m-at-a-1b-valuation/",
+     "publishedOn": "2023-01-11",
+     "quote": "DeepL, a startup that provides instant translation-as-a-service both to businesses and to individuals — competing with Google, Bing and other online tools — has confirmed a fundraise at a €1 billion valuation (just over $1 billion at today’s rates)."
+    },
+    {
+     "id": "s3",
+     "publication": "Sifted",
+     "title": "AI language startup DeepL could IPO in 2026, sources say",
+     "url": "https://sifted.eu/articles/deepl-ipo-2026",
+     "publishedOn": "2025-04-03",
+     "quote": "Founded in 2017, DeepL last year raised $300m in a round led by Index Ventures."
+    }
+   ],
+   "display": {
+    "valuationLabel": "$2 bn",
+    "valuationAsOf": "May 2024",
+    "lastRoundLabel": "May 2024",
+    "lastRoundStage": "Growth round",
+    "totalRaisedLabel": "—",
+    "yearsToUnicorn": 6,
+    "becameUnicornLabel": "Jan 2023",
+    "foundersLabel": "Jaroslaw Kutylowski",
+    "aged": true
+   },
+   "sort": {
+    "newest": [
+     2023,
+     1
+    ],
+    "valuationEur": 1840.0,
+    "latestRound": [
+     2024,
+     5
+    ],
+    "name": "deepl"
+   },
+   "investorsOrdered": [
+    "Index Ventures",
+    "IVP",
+    "ICONIQ Growth",
+    "Teachers’ Venture Growth",
+    "Atomico",
+    "WiL",
+    "Bessemer Venture Partners",
+    "Benchmark",
+    "btov"
+   ]
+  },
+  {
+   "slug": "helsing",
+   "name": "Helsing",
+   "website": "https://helsing.ai",
+   "logo": "assets/logos/helsing.svg",
+   "hq": {
+    "city": "Munich",
+    "country": "DE"
+   },
+   "foundedCountry": "DE",
+   "foundedYear": 2021,
+   "sectors": [
+    "Defence",
+    "Artificial Intelligence"
+   ],
+   "thesis": {
+    "problem": "European armed forces run on hardware procured over decades, and the sensor data those platforms produce is largely unused at the speed a decision needs it. Buying capability through traditional prime contractors takes years, which leaves European and NATO forces reliant on American software for battlefield awareness.",
+    "solution": "Helsing writes defence software rather than building the platforms it runs on: models that fuse feeds from cameras, radar and other sensors into a live picture of a battlespace, delivered as updatable software into existing aircraft, vehicles and drones. It funds its own research and sells directly to governments and to prime manufacturers as a partner, and has since extended into building strike drones and underwater systems of its own."
+   },
+   "valuation": {
+    "amount": 18000,
+    "currency": "USD",
+    "approximate": false,
+    "asOf": "2026-07",
+    "round": "Series E",
+    "source": "s1"
+   },
+   "becameUnicorn": {
+    "date": "2023-09",
+    "roundId": "r1",
+    "source": "s3"
+   },
+   "totalRaised": {
+    "amount": null,
+    "currency": "EUR",
+    "approximate": false,
+    "source": "s5"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2023-09",
+     "stage": "Series B",
+     "amount": 209,
+     "currency": "EUR",
+     "approximate": false,
+     "postMoney": 1700,
+     "leadInvestors": [
+      "General Catalyst"
+     ],
+     "investors": [
+      "General Catalyst",
+      "Saab"
+     ],
+     "source": "s3",
+     "dateLabel": "Sep 2023",
+     "amountLabel": "€209 m"
+    },
+    {
+     "id": "r2",
+     "date": "2024-07",
+     "stage": "Series C",
+     "amount": 450,
+     "currency": "EUR",
+     "approximate": false,
+     "postMoney": null,
+     "leadInvestors": [],
+     "investors": [
+      "General Catalyst",
+      "Elad Gil",
+      "Accel",
+      "Saab",
+      "Lightspeed Ventures",
+      "Plural",
+      "Greenoaks"
+     ],
+     "source": "s4",
+     "dateLabel": "Jul 2024",
+     "amountLabel": "€450 m"
+    },
+    {
+     "id": "r3",
+     "date": "2025-06",
+     "stage": "Series D",
+     "amount": 600,
+     "currency": "EUR",
+     "approximate": false,
+     "postMoney": 12000,
+     "leadInvestors": [
+      "Prima Materia"
+     ],
+     "investors": [
+      "Prima Materia",
+      "Lightspeed Ventures",
+      "Accel",
+      "Plural",
+      "General Catalyst",
+      "Saab",
+      "BDT & MSD Partners"
+     ],
+     "source": "s5",
+     "dateLabel": "Jun 2025",
+     "amountLabel": "€600 m"
+    },
+    {
+     "id": "r4",
+     "date": "2026-07",
+     "stage": "Series E",
+     "amount": 1800,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": 18000,
+     "leadInvestors": [],
+     "investors": [
+      "Dragoneer Investment Group",
+      "Lightspeed Venture Partners",
+      "Disruptive",
+      "Iconiq",
+      "Growth Equity at Goldman Sachs Alternatives",
+      "JPMorganChase",
+      "Canada Pension Plan Investment Board",
+      "General Catalyst",
+      "Plural",
+      "Stepstone"
+     ],
+     "source": "s1",
+     "dateLabel": "Jul 2026",
+     "amountLabel": "$1.8 bn"
+    }
+   ],
+   "founders": [
+    {
+     "name": "Torsten Reil",
+     "role": "Co-founder & CEO",
+     "current": true
+    },
+    {
+     "name": "Gundbert Scherf",
+     "role": "Co-founder",
+     "current": true
+    }
+   ],
+   "investors": [
+    "General Catalyst",
+    "Prima Materia",
+    "Saab",
+    "Accel",
+    "Plural",
+    "Lightspeed Ventures",
+    "Greenoaks",
+    "Elad Gil",
+    "BDT & MSD Partners",
+    "Dragoneer Investment Group",
+    "Lightspeed Venture Partners",
+    "Disruptive",
+    "Iconiq",
+    "Growth Equity at Goldman Sachs Alternatives",
+    "JPMorganChase",
+    "Canada Pension Plan Investment Board",
+    "Stepstone"
+   ],
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "Company press release",
+     "title": "Helsing raises US$1.8bn in Series E",
+     "url": "https://helsing.ai/newsroom/helsing-raises-1-8bn-in-series-e",
+     "publishedOn": "2026-07-13",
+     "quote": "Helsing, Europe’s leading defence AI company, today announces it has raised $1.8bn in a Series E, valuing the company at US$18bn."
+    },
+    {
+     "id": "s2",
+     "publication": "Company press release",
+     "title": "Helsing raises €209m Series B to bolster Defence AI Capabilities for Democracies",
+     "url": "https://helsing.ai/newsroom/helsing-raises-euro209m-series-b-to-bolster-defence-ai-capabilities-for-democracies",
+     "publishedOn": "2023-09-14",
+     "quote": "Munich, September, 14 2023 – Defence AI company Helsing today announced that it has raised €209m in a Series B funding round led by General Catalyst."
+    },
+    {
+     "id": "s3",
+     "publication": "TechCrunch",
+     "title": "Defense AI startup Helsing breaks the record for European AI, raising a $223M Series B",
+     "url": "https://techcrunch.com/2023/09/14/defence-ai-startup-helsing-breaks-the-record-for-european-ai-raising-a-223m-series-b/",
+     "publishedOn": "2023-09-14",
+     "quote": "Helsing, a “Defense AI” startup backed by Spotify founder Daniel Ek which had previously raised €102.5 million, has today pulled in another €209 million ($223 million) in a Series B funding round led by General Catalyst. Swedish heavy industry and defense group Saab is joining as a strategic investor, deepening what was previously an existing partnership. The investment could potentially make Helsing the largest European AI company and also the largest European defense tech unicorn. In June, France’s Mistral AI raised a $113 million seed round at a $260 million valuation. The pre-money valuation for Helsing was said to be €1.5 billion, but post-money would put that figure at over €1.7 billion."
+    },
+    {
+     "id": "s4",
+     "publication": "Company press release",
+     "title": "Helsing raises €600m to invest in European technological sovereignty",
+     "url": "https://helsing.ai/newsroom/helsing-raises-eur600m-to-invest-in-european-technological-sovereignty",
+     "publishedOn": "2025-06-17",
+     "quote": "Today’s announcement follows Helsing’s Series C funding of €450m in July 2024, involving General Catalyst, Elad Gil, Accel, Saab, Lightspeed Ventures, Plural and Greenoaks."
+    },
+    {
+     "id": "s5",
+     "publication": "Tech.eu",
+     "title": "Helsing raises €600M, more than doubling valuation to €12BN",
+     "url": "https://tech.eu/2025/06/17/helsing-raises-600-million-elevating-valuation-to-eur12bn/",
+     "publishedOn": "2025-06-17",
+     "quote": "Helsing, the German defence tech startup, has raised €600 million, more than doubling its valuation to €12bn, in a Series D funding round led by Spotify's Daniel Ek."
+    }
+   ],
+   "display": {
+    "valuationLabel": "$18 bn",
+    "valuationAsOf": "Jul 2026",
+    "lastRoundLabel": "Jul 2026",
+    "lastRoundStage": "Series E",
+    "totalRaisedLabel": "—",
+    "yearsToUnicorn": 2,
+    "becameUnicornLabel": "Sep 2023",
+    "foundersLabel": "Torsten Reil, Gundbert Scherf",
+    "aged": false
+   },
+   "sort": {
+    "newest": [
+     2023,
+     9
+    ],
+    "valuationEur": 16560.0,
+    "latestRound": [
+     2026,
+     7
+    ],
+    "name": "helsing"
+   },
+   "investorsOrdered": [
+    "General Catalyst",
+    "Prima Materia",
+    "Saab",
+    "Accel",
+    "Plural",
+    "Lightspeed Ventures",
+    "Greenoaks",
+    "Elad Gil",
+    "BDT & MSD Partners",
+    "Dragoneer Investment Group",
+    "Lightspeed Venture Partners",
+    "Disruptive",
+    "Iconiq",
+    "Growth Equity at Goldman Sachs Alternatives",
+    "JPMorganChase",
+    "Canada Pension Plan Investment Board",
+    "Stepstone"
+   ]
+  },
+  {
+   "slug": "moss",
+   "name": "Moss",
+   "website": "https://www.getmoss.com",
+   "logo": "assets/logos/moss.svg",
+   "hq": {
+    "city": "Berlin",
+    "country": "DE"
+   },
+   "foundedCountry": "DE",
+   "foundedYear": 2019,
+   "sectors": [
+    "Fintech",
+    "Spend Management"
+   ],
+   "thesis": {
+    "problem": "In a mid-sized company, money leaves before finance knows about it. Employees pay on shared cards or their own, receipts arrive weeks later, and invoices are approved over email, so the finance team spends the month reconstructing what was spent rather than controlling it as it happens.",
+    "solution": "Moss issues corporate cards with per-team budgets and approval rules, and pairs them with invoice capture and reimbursements in the same system, so every payment carries its receipt, cost centre and approver from the moment it is made. Entries flow into the accounting and ERP systems the company already runs, and the newer AI features are built to prepare work for sign-off rather than to act unsupervised."
+   },
+   "valuation": {
+    "amount": 1000,
+    "currency": "EUR",
+    "approximate": false,
+    "asOf": "2026-08",
+    "round": "Series C",
+    "source": "s1",
+    "disputed": {
+     "note": "Gründerszene reports the same round in dollars — “mehr als eine Milliarde Dollar” — where Moss, Sifted and EU-Startups give €1bn.",
+     "source": "s3"
+    }
+   },
+   "becameUnicorn": {
+    "date": "2026-08",
+    "roundId": "r2",
+    "source": "s1"
+   },
+   "totalRaised": {
+    "amount": 200,
+    "currency": "EUR",
+    "approximate": true,
+    "source": "s1"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2022",
+     "stage": "Series B",
+     "amount": 75,
+     "currency": "EUR",
+     "approximate": false,
+     "postMoney": 500,
+     "leadInvestors": [
+      "Tiger Global Management"
+     ],
+     "investors": [
+      "Tiger Global Management"
+     ],
+     "source": "s2",
+     "dateLabel": "2022",
+     "amountLabel": "€75 m"
+    },
+    {
+     "id": "r2",
+     "date": "2026-08",
+     "stage": "Series C",
+     "amount": 35,
+     "currency": "EUR",
+     "approximate": false,
+     "postMoney": 1000,
+     "leadInvestors": [
+      "Portage"
+     ],
+     "investors": [
+      "Portage",
+      "Cherry Ventures"
+     ],
+     "source": "s1",
+     "dateLabel": "Aug 2026",
+     "amountLabel": "€35 m"
+    }
+   ],
+   "founders": [
+    {
+     "name": "Ante Spittler",
+     "role": "Co-founder & CEO",
+     "current": true
+    },
+    {
+     "name": "Anton Rummel",
+     "role": "Co-founder",
+     "current": true
+    },
+    {
+     "name": "Ferdinand Meyer",
+     "role": "Co-founder",
+     "current": true
+    },
+    {
+     "name": "Stephan Haslebacher",
+     "role": "Co-founder",
+     "current": true
+    }
+   ],
+   "investors": [
+    "Portage",
+    "Cherry Ventures",
+    "Tiger Global Management"
+   ],
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "Company press release",
+     "title": "Moss hits a €1 billion valuation and bets on Finance AI shaped by finance teams",
+     "url": "https://www.getmoss.com/magazine/moss-series-c",
+     "publishedOn": "2026-08-05",
+     "quote": "The €35 million Series C round led by fintech specialist investor Portage, with participation from Cherry Ventures, values Moss at €1 billion and brings total funding to over €200 million."
+    },
+    {
+     "id": "s2",
+     "publication": "EU-Startups",
+     "title": "Berlin-based Moss hits unicorn status after closing €30 million Series C to expand its Finance AI suite",
+     "url": "https://www.eu-startups.com/2026/08/berlin-based-moss-hits-unicorn-status-after-closing-e30-million-series-c-to-expand-its-finance-ai-suite/",
+     "publishedOn": "2026-08-05",
+     "quote": "This funding round comes four years after the company announced the closing of its Series B funding round of €75 million at a valuation of over €500 million."
+    },
+    {
+     "id": "s3",
+     "publication": "Gründerszene",
+     "title": "Neues Unicorn: Berliner Fintech Moss knackt Milliarden-Bewertung",
+     "url": "https://www.businessinsider.de/gruenderszene/berliner-unicorn-deutsches-fintech-moss-knackt-die-milliarden-bewertung/",
+     "publishedOn": "2026-08-07",
+     "quote": "Das Berliner Finanz-Startup Moss ist nach einer Finanzierungsrunde mehr als eine Milliarde Dollar wert."
+    },
+    {
+     "id": "s4",
+     "publication": "Sifted",
+     "title": "Fintech startup Moss crowned Europe’s newest unicorn with €30m Series C",
+     "url": "https://sifted.eu/articles/moss-unicorn-series-c/",
+     "publishedOn": "2026-08-05",
+     "quote": "AI finance platform Moss has been crowned Europe’s latest unicorn, securing a €1bn valuation for its €30m Series C."
+    }
+   ],
+   "display": {
+    "valuationLabel": "€1 bn",
+    "valuationAsOf": "Aug 2026",
+    "lastRoundLabel": "Aug 2026",
+    "lastRoundStage": "Series C",
+    "totalRaisedLabel": "~€200 m",
+    "yearsToUnicorn": 7,
+    "becameUnicornLabel": "Aug 2026",
+    "foundersLabel": "Ante Spittler, Anton Rummel, Ferdinand Meyer, Stephan Haslebacher",
+    "aged": false
+   },
+   "sort": {
+    "newest": [
+     2026,
+     8
+    ],
+    "valuationEur": 1000,
+    "latestRound": [
+     2026,
+     8
+    ],
+    "name": "moss"
+   },
+   "investorsOrdered": [
+    "Portage",
+    "Tiger Global Management",
+    "Cherry Ventures"
+   ]
+  },
+  {
+   "slug": "n26",
+   "name": "N26",
+   "website": "https://n26.com",
+   "logo": "assets/logos/n26.svg",
+   "hq": {
+    "city": "Berlin",
+    "country": "DE"
+   },
+   "foundedCountry": "DE",
+   "foundedYear": 2013,
+   "sectors": [
+    "Fintech",
+    "Banking"
+   ],
+   "thesis": {
+    "problem": "Opening and running a current account in Europe meant a branch appointment, paper forms and a statement that arrived days after the money moved. Incumbent banks carried the cost of that branch network into their fee schedules, and charged again on every foreign transaction.",
+    "solution": "N26 is a bank built as a smartphone app on its own German banking licence: sign-up by video identification, a card the customer freezes and unfreezes themselves, and instant push notifications on every transaction. Running without branches lets it offer free basic accounts and earn instead on paid tiers, card interchange and add-on products such as savings and insurance."
+   },
+   "valuation": {
+    "amount": 9000,
+    "currency": "USD",
+    "approximate": true,
+    "asOf": "2021-10",
+    "round": "Series E",
+    "source": "s1"
+   },
+   "becameUnicorn": {
+    "date": "2019-01",
+    "roundId": "r1",
+    "source": "s2"
+   },
+   "totalRaised": {
+    "amount": 1800,
+    "currency": "USD",
+    "approximate": true,
+    "source": "s4"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2019-01",
+     "stage": "Series D",
+     "amount": 300,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": 2700,
+     "leadInvestors": [],
+     "investors": [
+      "Insight Venture Partners",
+      "GIC"
+     ],
+     "source": "s2",
+     "dateLabel": "Jan 2019",
+     "amountLabel": "$300 m"
+    },
+    {
+     "id": "r2",
+     "date": "2019-07",
+     "stage": "Series D extension",
+     "amount": 170,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": null,
+     "leadInvestors": [],
+     "investors": [
+      "Insight Venture Partners",
+      "GIC",
+      "Tencent",
+      "Allianz X",
+      "Valar Ventures",
+      "Earlybird Venture Capital",
+      "Greyhound Capital"
+     ],
+     "source": "s3",
+     "dateLabel": "Jul 2019",
+     "amountLabel": "$170 m"
+    },
+    {
+     "id": "r3",
+     "date": "2021-10",
+     "stage": "Series E",
+     "amount": 900,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": 9000,
+     "leadInvestors": [
+      "Third Point Ventures",
+      "Coatue Management"
+     ],
+     "investors": [
+      "Third Point Ventures",
+      "Coatue Management",
+      "Dragoneer Investment Group"
+     ],
+     "source": "s1",
+     "dateLabel": "Oct 2021",
+     "amountLabel": "$900 m"
+    }
+   ],
+   "founders": [
+    {
+     "name": "Valentin Stalf",
+     "role": "Co-founder & CEO",
+     "current": true
+    },
+    {
+     "name": "Maximilian Tayenthal",
+     "role": "Co-founder",
+     "current": true
+    }
+   ],
+   "investors": [
+    "Third Point Ventures",
+    "Coatue Management",
+    "Dragoneer Investment Group",
+    "Insight Venture Partners",
+    "GIC",
+    "Tencent",
+    "Allianz X",
+    "Valar Ventures",
+    "Earlybird Venture Capital",
+    "Greyhound Capital"
+   ],
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "Company press release",
+     "title": "N26 announces landmark Series E funding round of more than $900 Million",
+     "url": "https://n26.com/en-eu/press/press-release/n26-announces-landmark-series-e-funding-round",
+     "publishedOn": "2021-10-18",
+     "quote": "Berlin - The Mobile Bank N26 today announced its record-breaking $900+ million Series E funding round, the largest financing round to date for a digital bank in Europe. The recent funding increases the company’s valuation to more than $9 billion, making the Berlin-based pioneer the highest valued fintech in Germany, and ranking it amongst the top 20 fintechs in the world."
+    },
+    {
+     "id": "s2",
+     "publication": "Company press release",
+     "title": "Announcing $300 million in Series D funding round and reaching 2.3 million customers",
+     "url": "https://n26.com/en-eu/blog/n26-series-d-funding-round-2019",
+     "publishedOn": "2019-01-10",
+     "quote": "We have closed our Series D funding round with an incredible $300 million. This figure represents the largest private equity financing round for a fintech business in Europe in recent years. With a valuation of $2.7 billion, it also makes N26 one of the most valuable technology startups around the world."
+    },
+    {
+     "id": "s3",
+     "publication": "TechCrunch",
+     "title": "Banking startup N26 raises another $170 million at $3.5 billion valuation",
+     "url": "https://techcrunch.com/2019/07/17/banking-startup-n26-raises-another-170-million-at-3-5-billion-valuation/",
+     "publishedOn": "2019-07-18",
+     "quote": "Fintech startup N26 is raising $170 million a few months after raising $300 million."
+    },
+    {
+     "id": "s4",
+     "publication": "Company press release",
+     "title": "N26 announces landmark Series E funding round of more than $900 Million",
+     "url": "https://n26.com/en-eu/press/press-release/n26-announces-landmark-series-e-funding-round",
+     "publishedOn": "2021-10-18",
+     "quote": "Founded by Valentin Stalf and Maximilian Tayenthal in 2013, N26 has raised close to US$ 1.8 billion from some of the world’s most renowned investors."
+    }
+   ],
+   "display": {
+    "valuationLabel": "~$9 bn",
+    "valuationAsOf": "Oct 2021",
+    "lastRoundLabel": "Oct 2021",
+    "lastRoundStage": "Series E",
+    "totalRaisedLabel": "~$1.8 bn",
+    "yearsToUnicorn": 6,
+    "becameUnicornLabel": "Jan 2019",
+    "foundersLabel": "Valentin Stalf, Maximilian Tayenthal",
+    "aged": true
+   },
+   "sort": {
+    "newest": [
+     2019,
+     1
+    ],
+    "valuationEur": 8280.0,
+    "latestRound": [
+     2021,
+     10
+    ],
+    "name": "n26"
+   },
+   "investorsOrdered": [
+    "Third Point Ventures",
+    "Coatue Management",
+    "Dragoneer Investment Group",
+    "Insight Venture Partners",
+    "GIC",
+    "Tencent",
+    "Allianz X",
+    "Valar Ventures",
+    "Earlybird Venture Capital",
+    "Greyhound Capital"
+   ]
+  },
+  {
+   "slug": "parloa",
+   "name": "Parloa",
+   "website": "https://www.parloa.com",
+   "logo": "assets/logos/parloa.svg",
+   "hq": {
+    "city": "Berlin",
+    "country": "DE"
+   },
+   "alsoBasedIn": [
+    "New York"
+   ],
+   "foundedCountry": "DE",
+   "foundedYear": 2018,
+   "sectors": [
+    "Artificial Intelligence",
+    "Customer Experience"
+   ],
+   "thesis": {
+    "problem": "Enterprise contact centres are expensive to staff and slow to scale, and the automation sold to them was built on rigid decision trees that break the moment a caller phrases something unexpectedly. Large brands that wanted to hand routine calls to software found it either failed the customer or could not be trusted to act on their systems.",
+    "solution": "Parloa sells a platform for building, testing and supervising AI agents that hold spoken and written conversations and then carry out the resulting task in the company's own systems. The emphasis is on the management layer — simulation before deployment, guardrails and human sign-off — so that a large enterprise can run many agents across languages and channels under one set of controls."
+   },
+   "valuation": {
+    "amount": 1000,
+    "currency": "USD",
+    "approximate": false,
+    "asOf": "2025-05",
+    "round": "Series C",
+    "source": "s1"
+   },
+   "becameUnicorn": {
+    "date": "2025-05",
+    "roundId": "r2",
+    "source": "s1"
+   },
+   "totalRaised": {
+    "amount": null,
+    "currency": "USD",
+    "approximate": false,
+    "source": "s1"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2024",
+     "stage": "Series B",
+     "amount": 66,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": null,
+     "leadInvestors": [],
+     "investors": [],
+     "source": "s2",
+     "dateLabel": "2024",
+     "amountLabel": "$66 m"
+    },
+    {
+     "id": "r2",
+     "date": "2025-05",
+     "stage": "Series C",
+     "amount": 120,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": 1000,
+     "leadInvestors": [
+      "Durable Capital Partners",
+      "Altimeter Capital",
+      "General Catalyst"
+     ],
+     "investors": [
+      "Durable Capital Partners",
+      "Altimeter Capital",
+      "General Catalyst",
+      "EQT Ventures",
+      "RPT Capital",
+      "Senovo",
+      "Mosaic Ventures"
+     ],
+     "source": "s1",
+     "dateLabel": "May 2025",
+     "amountLabel": "$120 m"
+    }
+   ],
+   "founders": [
+    {
+     "name": "Malte Kosub",
+     "role": "Co-founder & CEO",
+     "current": true
+    },
+    {
+     "name": "Stefan Ostwald",
+     "role": "Co-founder",
+     "current": true
+    }
+   ],
+   "investors": [
+    "Durable Capital Partners",
+    "Altimeter Capital",
+    "General Catalyst",
+    "EQT Ventures",
+    "RPT Capital",
+    "Senovo",
+    "Mosaic Ventures"
+   ],
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "Company press release",
+     "title": "Parloa raises $120M Series C to reinvent customer service with agentic AI",
+     "url": "https://www.parloa.com/parloa-in-the-press/parloa-raises-120m-series-c-to-reinvent-customer-service-with-agentic-ai/",
+     "publishedOn": "2025-05-06",
+     "quote": "Berlin and New York—May 6, 2025—Parloa, an innovator in Agentic AI for customer experience, today announced it has secured $120 million in Series C funding, bringing the company’s valuation to $1 billion."
+    },
+    {
+     "id": "s2",
+     "publication": "Company press release",
+     "title": "Parloa raises $120M Series C to reinvent customer service with agentic AI",
+     "url": "https://www.parloa.com/parloa-in-the-press/parloa-raises-120m-series-c-to-reinvent-customer-service-with-agentic-ai/",
+     "publishedOn": "2025-05-06",
+     "quote": "Since raising $66M in its Series B round just 12 months ago, Parloa released its groundbreaking AI Agent Management Platform, AMP, the industry’s first Agentic AI platform purpose-built for enterprise contact centers, and quadrupled its revenue."
+    }
+   ],
+   "display": {
+    "valuationLabel": "$1 bn",
+    "valuationAsOf": "May 2025",
+    "lastRoundLabel": "May 2025",
+    "lastRoundStage": "Series C",
+    "totalRaisedLabel": "—",
+    "yearsToUnicorn": 7,
+    "becameUnicornLabel": "May 2025",
+    "foundersLabel": "Malte Kosub, Stefan Ostwald",
+    "aged": false
+   },
+   "sort": {
+    "newest": [
+     2025,
+     5
+    ],
+    "valuationEur": 920.0,
+    "latestRound": [
+     2025,
+     5
+    ],
+    "name": "parloa"
+   },
+   "investorsOrdered": [
+    "Durable Capital Partners",
+    "Altimeter Capital",
+    "General Catalyst",
+    "EQT Ventures",
+    "RPT Capital",
+    "Senovo",
+    "Mosaic Ventures"
+   ]
+  },
+  {
+   "slug": "personio",
+   "name": "Personio",
+   "website": "https://www.personio.com",
+   "logo": "assets/logos/personio.svg",
+   "hq": {
+    "city": "Munich",
+    "country": "DE"
+   },
+   "foundedCountry": "DE",
+   "foundedYear": 2015,
+   "sectors": [
+    "Enterprise Software",
+    "HR Tech"
+   ],
+   "thesis": {
+    "problem": "Enterprise HR suites are priced and configured for companies with thousands of staff and an HR department to run them. The small and mid-sized firms that employ most of Europe were left running recruitment, contracts, absence and payroll preparation across spreadsheets, email threads and paper files.",
+    "solution": "Personio packages the whole employee lifecycle — applicant tracking, onboarding, digital personnel files, absence, performance and payroll preparation — into one subscription that a company without a dedicated HR systems team can configure itself. It is sold per employee per month and localised for each European country's payroll and employment rules."
+   },
+   "valuation": {
+    "amount": 8500,
+    "currency": "USD",
+    "approximate": false,
+    "asOf": "2022-06",
+    "round": "Series E (second close)",
+    "source": "s1"
+   },
+   "becameUnicorn": {
+    "date": "2021-01",
+    "roundId": "r1",
+    "source": "s2"
+   },
+   "totalRaised": {
+    "amount": null,
+    "currency": "USD",
+    "approximate": false,
+    "source": "s1"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2021-01",
+     "stage": "Series D",
+     "amount": 125,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": 1700,
+     "leadInvestors": [
+      "Index Ventures",
+      "Meritech"
+     ],
+     "investors": [
+      "Index Ventures",
+      "Meritech",
+      "Accel",
+      "Lightspeed Venture Partners",
+      "Northzone",
+      "Global Founders Capital",
+      "Picus"
+     ],
+     "source": "s2",
+     "dateLabel": "Jan 2021",
+     "amountLabel": "$125 m"
+    },
+    {
+     "id": "r2",
+     "date": "2021-10",
+     "stage": "Series E",
+     "amount": 270,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": null,
+     "leadInvestors": [
+      "Greenoaks Capital Partners"
+     ],
+     "investors": [
+      "Greenoaks Capital Partners"
+     ],
+     "source": "s3",
+     "dateLabel": "Oct 2021",
+     "amountLabel": "$270 m"
+    },
+    {
+     "id": "r3",
+     "date": "2022-06",
+     "stage": "Series E (second close)",
+     "amount": 200,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": 8500,
+     "leadInvestors": [
+      "Greenoaks Capital Partners"
+     ],
+     "investors": [
+      "Greenoaks Capital Partners"
+     ],
+     "source": "s1",
+     "dateLabel": "Jun 2022",
+     "amountLabel": "$200 m"
+    }
+   ],
+   "founders": [
+    {
+     "name": "Hanno Renner",
+     "role": "Co-founder & CEO",
+     "current": true
+    },
+    {
+     "name": "Roman Schumacher",
+     "role": "Co-founder",
+     "current": true
+    },
+    {
+     "name": "Arseniy Vershinin",
+     "role": "Co-founder",
+     "current": true
+    },
+    {
+     "name": "Jonas Rieke",
+     "role": "Co-founder",
+     "current": true
+    }
+   ],
+   "investors": [
+    "Greenoaks Capital Partners",
+    "Index Ventures",
+    "Meritech",
+    "Accel",
+    "Lightspeed Venture Partners",
+    "Northzone",
+    "Global Founders Capital",
+    "Picus",
+    "Altimeter Capital",
+    "Alkeon"
+   ],
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "TechCrunch",
+     "title": "Personio nabs $200M at a $8.5B valuation as its HR for small businesses hits the big time",
+     "url": "https://techcrunch.com/2022/06/21/personio-nabs-200m-at-a-8-5b-valuation-as-its-hr-for-small-businesses-hits-the-big-time/",
+     "publishedOn": "2022-06-21",
+     "quote": "The company has picked up another $200 million at a new valuation of $8.5 billion, making it one of the most valuable startups in Europe at the moment."
+    },
+    {
+     "id": "s2",
+     "publication": "TechCrunch",
+     "title": "Personio raises $125M on a $1.7B valuation for an HR platform targeting SMEs",
+     "url": "https://techcrunch.com/2021/01/17/personio-raises-125m-on-a-1-7b-valuation-for-an-hr-platform-targeting-smes/",
+     "publishedOn": "2021-01-18",
+     "quote": "Personio — the German startup that targets small- and medium-sized businesses (10-2,000 employees) with an all-in-one HR platform covering recruiting and onboarding, payroll, absence tracking and other major HR functions — has picked up $125 million in funding at a $1.7 billion post-money valuation."
+    },
+    {
+     "id": "s3",
+     "publication": "TechCrunch",
+     "title": "Personio nabs $200M at a $8.5B valuation as its HR for small businesses hits the big time",
+     "url": "https://techcrunch.com/2022/06/21/personio-nabs-200m-at-a-8-5b-valuation-as-its-hr-for-small-businesses-hits-the-big-time/",
+     "publishedOn": "2022-06-21",
+     "quote": "The funding is technically a second closing of its Series E, coming on the heels of the first tranche of $270 million that closed in October."
+    }
+   ],
+   "display": {
+    "valuationLabel": "$8.5 bn",
+    "valuationAsOf": "Jun 2022",
+    "lastRoundLabel": "Jun 2022",
+    "lastRoundStage": "Series E (second close)",
+    "totalRaisedLabel": "—",
+    "yearsToUnicorn": 6,
+    "becameUnicornLabel": "Jan 2021",
+    "foundersLabel": "Hanno Renner, Roman Schumacher, Arseniy Vershinin, Jonas Rieke",
+    "aged": true
+   },
+   "sort": {
+    "newest": [
+     2021,
+     1
+    ],
+    "valuationEur": 7820.0,
+    "latestRound": [
+     2022,
+     6
+    ],
+    "name": "personio"
+   },
+   "investorsOrdered": [
+    "Greenoaks Capital Partners",
+    "Index Ventures",
+    "Meritech",
+    "Accel",
+    "Lightspeed Venture Partners",
+    "Northzone",
+    "Global Founders Capital",
+    "Picus",
+    "Altimeter Capital",
+    "Alkeon"
+   ]
+  },
+  {
+   "slug": "trade-republic",
+   "name": "Trade Republic",
+   "website": "https://traderepublic.com",
+   "logo": "assets/logos/trade-republic.svg",
+   "hq": {
+    "city": "Berlin",
+    "country": "DE"
+   },
+   "foundedCountry": "DE",
+   "foundedYear": 2015,
+   "sectors": [
+    "Fintech",
+    "Brokerage"
+   ],
+   "thesis": {
+    "problem": "Retail investing in Europe was priced and packaged for people who already had money. Bank brokerage carried per-order commissions and custody fees large enough to make small, regular savings uneconomic, which left most Europeans dependent on state pensions they are unlikely to be able to live on.",
+    "solution": "Trade Republic is a mobile broker with a full German banking licence: commission-free savings plans, fractional shares and ETFs, plus bonds, derivatives and crypto, with a flat external settlement fee instead of a percentage. It earns on order flow, interest on customer deposits and card interchange rather than trading commissions, and now operates across most of western Europe."
+   },
+   "valuation": {
+    "amount": 12500,
+    "currency": "EUR",
+    "approximate": false,
+    "asOf": "2025-12",
+    "round": "Secondary",
+    "source": "s1"
+   },
+   "becameUnicorn": {
+    "date": "2021-05",
+    "roundId": "r1",
+    "source": "s2"
+   },
+   "totalRaised": {
+    "amount": 1000,
+    "currency": "EUR",
+    "approximate": true,
+    "source": "s3"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2021-05",
+     "stage": "Series C",
+     "amount": 900,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": 5300,
+     "leadInvestors": [
+      "Sequoia"
+     ],
+     "investors": [
+      "Sequoia",
+      "TCV",
+      "Thrive Capital",
+      "Accel",
+      "Founders Fund",
+      "Creandum",
+      "Project A"
+     ],
+     "source": "s2",
+     "dateLabel": "May 2021",
+     "amountLabel": "$900 m"
+    },
+    {
+     "id": "r2",
+     "date": "2025-12",
+     "stage": "Secondary",
+     "amount": 1200,
+     "currency": "EUR",
+     "approximate": false,
+     "postMoney": 12500,
+     "leadInvestors": [
+      "Founders Fund"
+     ],
+     "investors": [
+      "Founders Fund",
+      "Sequoia",
+      "Accel",
+      "TCV",
+      "Thrive Capital",
+      "Wellington Management",
+      "GIC",
+      "Fidelity Management & Research Company",
+      "Khosla Ventures",
+      "Lingotto Innovation",
+      "Aglaé"
+     ],
+     "source": "s1",
+     "dateLabel": "Dec 2025",
+     "amountLabel": "€1.2 bn"
+    }
+   ],
+   "founders": [
+    {
+     "name": "Christian Hecker",
+     "role": "Co-founder & CEO",
+     "current": true
+    },
+    {
+     "name": "Thomas Pischke",
+     "role": "Co-founder",
+     "current": true
+    },
+    {
+     "name": "Marco Cancellieri",
+     "role": "Co-founder",
+     "current": true
+    }
+   ],
+   "investors": [
+    "Sequoia",
+    "Founders Fund",
+    "Accel",
+    "TCV",
+    "Thrive Capital",
+    "Creandum",
+    "Project A",
+    "Wellington Management",
+    "GIC",
+    "Fidelity Management & Research Company",
+    "Khosla Ventures",
+    "Lingotto Innovation",
+    "Aglaé"
+   ],
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "Company press release",
+     "title": "Trade Republic strengthens its shareholder base in a €1.2 billion secondary round led by Founders Fund and other existing investors at €12.5 billion valuation.",
+     "url": "https://assets.traderepublic.com/assets/files/251217_Secondary_PressRelease_BL_EN2.pdf",
+     "publishedOn": "2025-12-17",
+     "quote": "Now, investors conducted a €1.2bn secondary transaction valuing the company at €12.5bn."
+    },
+    {
+     "id": "s2",
+     "publication": "TechCrunch",
+     "title": "Berlin’s Trade Republic nabs $900M led by Sequoia at a $5B+ valuation to take its neobroker app across Europe",
+     "url": "https://techcrunch.com/2021/05/20/berlins-trade-republic-nabs-900m-led-by-sequoia-at-a-5b-valuation-to-take-its-neo-broker-app-across-europe/",
+     "publishedOn": "2021-05-20",
+     "quote": "Trade Republic, which lets people buy and sell shares, exchange-traded funds (ETFs), derivatives and (most recently) cryptocurrency by way of a mobile app that does not charge commissions (but does have a fee structure for various services), has raised $900 million in a Series C round of funding that values the Berlin startup at $5.3 billion, the startup confirmed."
+    },
+    {
+     "id": "s3",
+     "publication": "Company press release",
+     "title": "Trade Republic strengthens its shareholder base in a €1.2 billion secondary round led by Founders Fund and other existing investors at €12.5 billion valuation.",
+     "url": "https://assets.traderepublic.com/assets/files/251217_Secondary_PressRelease_BL_EN2.pdf",
+     "publishedOn": "2025-12-17",
+     "quote": "Trade Republic raised more than 1 billion euro in primary capital across its funding rounds and received a full banking license from the ECB in 2023."
+    }
+   ],
+   "display": {
+    "valuationLabel": "€12.5 bn",
+    "valuationAsOf": "Dec 2025",
+    "lastRoundLabel": "Dec 2025",
+    "lastRoundStage": "Secondary",
+    "totalRaisedLabel": "~€1 bn",
+    "yearsToUnicorn": 6,
+    "becameUnicornLabel": "May 2021",
+    "foundersLabel": "Christian Hecker, Thomas Pischke, Marco Cancellieri",
+    "aged": false
+   },
+   "sort": {
+    "newest": [
+     2021,
+     5
+    ],
+    "valuationEur": 12500,
+    "latestRound": [
+     2025,
+     12
+    ],
+    "name": "trade republic"
+   },
+   "investorsOrdered": [
+    "Sequoia",
+    "Founders Fund",
+    "Accel",
+    "TCV",
+    "Thrive Capital",
+    "Creandum",
+    "Project A",
+    "Wellington Management",
+    "GIC",
+    "Fidelity Management & Research Company",
+    "Khosla Ventures",
+    "Lingotto Innovation",
+    "Aglaé"
+   ]
+  }
+ ]
 }

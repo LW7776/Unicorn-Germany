@@ -1,0 +1,125 @@
+{
+  "slug": "deepl",
+  "name": "DeepL",
+  "website": "https://www.deepl.com",
+  "logo": "assets/logos/deepl.svg",
+  "hq": {
+    "city": "Cologne",
+    "country": "DE"
+  },
+  "foundedCountry": "DE",
+  "foundedYear": 2017,
+  "sectors": [
+    "Artificial Intelligence",
+    "Language Technology"
+  ],
+  "thesis": {
+    "problem": "Free machine translation is tuned for gist, not for text a company would put its name to. Businesses working across European languages either paid human translators for every contract, support reply and manual, or accepted output that read as translated — and most general-purpose engines would not let regulated firms keep the text off a third party's training data.",
+    "solution": "DeepL trains its own translation and writing models rather than fine-tuning someone else's, and sells them to businesses as an API and as apps that plug into the tools staff already use. Enterprise contracts cover data handling and glossaries so that terminology stays consistent, and the same model line has been extended into writing assistance and spoken translation."
+  },
+  "valuation": {
+    "amount": 2000,
+    "currency": "USD",
+    "approximate": false,
+    "asOf": "2024-05",
+    "round": "Growth round",
+    "source": "s1"
+  },
+  "becameUnicorn": {
+    "date": "2023-01",
+    "roundId": "r1",
+    "source": "s2"
+  },
+  "totalRaised": {
+    "amount": null,
+    "currency": "USD",
+    "approximate": false,
+    "source": "s1"
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "date": "2023-01",
+      "stage": "Growth round",
+      "amount": null,
+      "currency": "EUR",
+      "approximate": false,
+      "postMoney": 1000,
+      "leadInvestors": [
+        "IVP"
+      ],
+      "investors": [
+        "IVP",
+        "Bessemer Venture Partners",
+        "Atomico",
+        "WiL"
+      ],
+      "source": "s2"
+    },
+    {
+      "id": "r2",
+      "date": "2024-05",
+      "stage": "Growth round",
+      "amount": 300,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": 2000,
+      "leadInvestors": [
+        "Index Ventures"
+      ],
+      "investors": [
+        "Index Ventures",
+        "ICONIQ Growth",
+        "Teachers’ Venture Growth",
+        "IVP",
+        "Atomico",
+        "WiL"
+      ],
+      "source": "s1"
+    }
+  ],
+  "founders": [
+    {
+      "name": "Jaroslaw Kutylowski",
+      "role": "Founder & CEO",
+      "current": true
+    }
+  ],
+  "investors": [
+    "Index Ventures",
+    "IVP",
+    "ICONIQ Growth",
+    "Teachers’ Venture Growth",
+    "Atomico",
+    "WiL",
+    "Bessemer Venture Partners",
+    "Benchmark",
+    "btov"
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "publication": "TechCrunch",
+      "title": "AI language translation startup DeepL nabs $300M on a $2B valuation to focus on B2B growth",
+      "url": "https://techcrunch.com/2024/05/22/deepl-the-ai-language-translation-startup-nabs-300m-on-a-2b-valuation-to-focus-on-b2b-growth/",
+      "publishedOn": "2024-05-22",
+      "quote": "DeepL, which builds automated text translation and writing tools that compete against the likes of Google Translate and Grammarly, said on Wednesday that it has raised an additional $300 million. It is now valued at $2 billion, post-money."
+    },
+    {
+      "id": "s2",
+      "publication": "TechCrunch",
+      "title": "DeepL, the AI-based language translator, raises over $100M at a $1B+ valuation",
+      "url": "https://techcrunch.com/2023/01/11/deepl-the-ai-based-language-translator-raises-over-100m-at-a-1b-valuation/",
+      "publishedOn": "2023-01-11",
+      "quote": "DeepL, a startup that provides instant translation-as-a-service both to businesses and to individuals — competing with Google, Bing and other online tools — has confirmed a fundraise at a €1 billion valuation (just over $1 billion at today’s rates)."
+    },
+    {
+      "id": "s3",
+      "publication": "Sifted",
+      "title": "AI language startup DeepL could IPO in 2026, sources say",
+      "url": "https://sifted.eu/articles/deepl-ipo-2026",
+      "publishedOn": "2025-04-03",
+      "quote": "Founded in 2017, DeepL last year raised $300m in a round led by Index Ventures."
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "slug": "n26",
+  "name": "N26",
+  "website": "https://n26.com",
+  "logo": "assets/logos/n26.svg",
+  "hq": {
+    "city": "Berlin",
+    "country": "DE"
+  },
+  "foundedCountry": "DE",
+  "foundedYear": 2013,
+  "sectors": [
+    "Fintech",
+    "Banking"
+  ],
+  "thesis": {
+    "problem": "Opening and running a current account in Europe meant a branch appointment, paper forms and a statement that arrived days after the money moved. Incumbent banks carried the cost of that branch network into their fee schedules, and charged again on every foreign transaction.",
+    "solution": "N26 is a bank built as a smartphone app on its own German banking licence: sign-up by video identification, a card the customer freezes and unfreezes themselves, and instant push notifications on every transaction. Running without branches lets it offer free basic accounts and earn instead on paid tiers, card interchange and add-on products such as savings and insurance."
+  },
+  "valuation": {
+    "amount": 9000,
+    "currency": "USD",
+    "approximate": true,
+    "asOf": "2021-10",
+    "round": "Series E",
+    "source": "s1"
+  },
+  "becameUnicorn": {
+    "date": "2019-01",
+    "roundId": "r1",
+    "source": "s2"
+  },
+  "totalRaised": {
+    "amount": 1800,
+    "currency": "USD",
+    "approximate": true,
+    "source": "s4"
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "date": "2019-01",
+      "stage": "Series D",
+      "amount": 300,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": 2700,
+      "leadInvestors": [],
+      "investors": [
+        "Insight Venture Partners",
+        "GIC"
+      ],
+      "source": "s2"
+    },
+    {
+      "id": "r2",
+      "date": "2019-07",
+      "stage": "Series D extension",
+      "amount": 170,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": null,
+      "leadInvestors": [],
+      "investors": [
+        "Insight Venture Partners",
+        "GIC",
+        "Tencent",
+        "Allianz X",
+        "Valar Ventures",
+        "Earlybird Venture Capital",
+        "Greyhound Capital"
+      ],
+      "source": "s3"
+    },
+    {
+      "id": "r3",
+      "date": "2021-10",
+      "stage": "Series E",
+      "amount": 900,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": 9000,
+      "leadInvestors": [
+        "Third Point Ventures",
+        "Coatue Management"
+      ],
+      "investors": [
+        "Third Point Ventures",
+        "Coatue Management",
+        "Dragoneer Investment Group"
+      ],
+      "source": "s1"
+    }
+  ],
+  "founders": [
+    {
+      "name": "Valentin Stalf",
+      "role": "Co-founder & CEO",
+      "current": true
+    },
+    {
+      "name": "Maximilian Tayenthal",
+      "role": "Co-founder",
+      "current": true
+    }
+  ],
+  "investors": [
+    "Third Point Ventures",
+    "Coatue Management",
+    "Dragoneer Investment Group",
+    "Insight Venture Partners",
+    "GIC",
+    "Tencent",
+    "Allianz X",
+    "Valar Ventures",
+    "Earlybird Venture Capital",
+    "Greyhound Capital"
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "publication": "Company press release",
+      "title": "N26 announces landmark Series E funding round of more than $900 Million",
+      "url": "https://n26.com/en-eu/press/press-release/n26-announces-landmark-series-e-funding-round",
+      "publishedOn": "2021-10-18",
+      "quote": "Berlin - The Mobile Bank N26 today announced its record-breaking $900+ million Series E funding round, the largest financing round to date for a digital bank in Europe. The recent funding increases the company’s valuation to more than $9 billion, making the Berlin-based pioneer the highest valued fintech in Germany, and ranking it amongst the top 20 fintechs in the world."
+    },
+    {
+      "id": "s2",
+      "publication": "Company press release",
+      "title": "Announcing $300 million in Series D funding round and reaching 2.3 million customers",
+      "url": "https://n26.com/en-eu/blog/n26-series-d-funding-round-2019",
+      "publishedOn": "2019-01-10",
+      "quote": "We have closed our Series D funding round with an incredible $300 million. This figure represents the largest private equity financing round for a fintech business in Europe in recent years. With a valuation of $2.7 billion, it also makes N26 one of the most valuable technology startups around the world."
+    },
+    {
+      "id": "s3",
+      "publication": "TechCrunch",
+      "title": "Banking startup N26 raises another $170 million at $3.5 billion valuation",
+      "url": "https://techcrunch.com/2019/07/17/banking-startup-n26-raises-another-170-million-at-3-5-billion-valuation/",
+      "publishedOn": "2019-07-18",
+      "quote": "Fintech startup N26 is raising $170 million a few months after raising $300 million."
+    },
+    {
+      "id": "s4",
+      "publication": "Company press release",
+      "title": "N26 announces landmark Series E funding round of more than $900 Million",
+      "url": "https://n26.com/en-eu/press/press-release/n26-announces-landmark-series-e-funding-round",
+      "publishedOn": "2021-10-18",
+      "quote": "Founded by Valentin Stalf and Maximilian Tayenthal in 2013, N26 has raised close to US$ 1.8 billion from some of the world’s most renowned investors."
+    }
+  ]
+}

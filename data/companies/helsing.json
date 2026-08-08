@@ -1,0 +1,196 @@
+{
+  "slug": "helsing",
+  "name": "Helsing",
+  "website": "https://helsing.ai",
+  "logo": "assets/logos/helsing.svg",
+  "hq": {
+    "city": "Munich",
+    "country": "DE"
+  },
+  "foundedCountry": "DE",
+  "foundedYear": 2021,
+  "sectors": [
+    "Defence",
+    "Artificial Intelligence"
+  ],
+  "thesis": {
+    "problem": "European armed forces run on hardware procured over decades, and the sensor data those platforms produce is largely unused at the speed a decision needs it. Buying capability through traditional prime contractors takes years, which leaves European and NATO forces reliant on American software for battlefield awareness.",
+    "solution": "Helsing writes defence software rather than building the platforms it runs on: models that fuse feeds from cameras, radar and other sensors into a live picture of a battlespace, delivered as updatable software into existing aircraft, vehicles and drones. It funds its own research and sells directly to governments and to prime manufacturers as a partner, and has since extended into building strike drones and underwater systems of its own."
+  },
+  "valuation": {
+    "amount": 18000,
+    "currency": "USD",
+    "approximate": false,
+    "asOf": "2026-07",
+    "round": "Series E",
+    "source": "s1"
+  },
+  "becameUnicorn": {
+    "date": "2023-09",
+    "roundId": "r1",
+    "source": "s3"
+  },
+  "totalRaised": {
+    "amount": null,
+    "currency": "EUR",
+    "approximate": false,
+    "source": "s5"
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "date": "2023-09",
+      "stage": "Series B",
+      "amount": 209,
+      "currency": "EUR",
+      "approximate": false,
+      "postMoney": 1700,
+      "leadInvestors": [
+        "General Catalyst"
+      ],
+      "investors": [
+        "General Catalyst",
+        "Saab"
+      ],
+      "source": "s3"
+    },
+    {
+      "id": "r2",
+      "date": "2024-07",
+      "stage": "Series C",
+      "amount": 450,
+      "currency": "EUR",
+      "approximate": false,
+      "postMoney": null,
+      "leadInvestors": [],
+      "investors": [
+        "General Catalyst",
+        "Elad Gil",
+        "Accel",
+        "Saab",
+        "Lightspeed Ventures",
+        "Plural",
+        "Greenoaks"
+      ],
+      "source": "s4"
+    },
+    {
+      "id": "r3",
+      "date": "2025-06",
+      "stage": "Series D",
+      "amount": 600,
+      "currency": "EUR",
+      "approximate": false,
+      "postMoney": 12000,
+      "leadInvestors": [
+        "Prima Materia"
+      ],
+      "investors": [
+        "Prima Materia",
+        "Lightspeed Ventures",
+        "Accel",
+        "Plural",
+        "General Catalyst",
+        "Saab",
+        "BDT & MSD Partners"
+      ],
+      "source": "s5"
+    },
+    {
+      "id": "r4",
+      "date": "2026-07",
+      "stage": "Series E",
+      "amount": 1800,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": 18000,
+      "leadInvestors": [],
+      "investors": [
+        "Dragoneer Investment Group",
+        "Lightspeed Venture Partners",
+        "Disruptive",
+        "Iconiq",
+        "Growth Equity at Goldman Sachs Alternatives",
+        "JPMorganChase",
+        "Canada Pension Plan Investment Board",
+        "General Catalyst",
+        "Plural",
+        "Stepstone"
+      ],
+      "source": "s1"
+    }
+  ],
+  "founders": [
+    {
+      "name": "Torsten Reil",
+      "role": "Co-founder & CEO",
+      "current": true
+    },
+    {
+      "name": "Gundbert Scherf",
+      "role": "Co-founder",
+      "current": true
+    }
+  ],
+  "investors": [
+    "General Catalyst",
+    "Prima Materia",
+    "Saab",
+    "Accel",
+    "Plural",
+    "Lightspeed Ventures",
+    "Greenoaks",
+    "Elad Gil",
+    "BDT & MSD Partners",
+    "Dragoneer Investment Group",
+    "Lightspeed Venture Partners",
+    "Disruptive",
+    "Iconiq",
+    "Growth Equity at Goldman Sachs Alternatives",
+    "JPMorganChase",
+    "Canada Pension Plan Investment Board",
+    "Stepstone"
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "publication": "Company press release",
+      "title": "Helsing raises US$1.8bn in Series E",
+      "url": "https://helsing.ai/newsroom/helsing-raises-1-8bn-in-series-e",
+      "publishedOn": "2026-07-13",
+      "quote": "Helsing, Europe’s leading defence AI company, today announces it has raised $1.8bn in a Series E, valuing the company at US$18bn."
+    },
+    {
+      "id": "s2",
+      "publication": "Company press release",
+      "title": "Helsing raises €209m Series B to bolster Defence AI Capabilities for Democracies",
+      "url": "https://helsing.ai/newsroom/helsing-raises-euro209m-series-b-to-bolster-defence-ai-capabilities-for-democracies",
+      "publishedOn": "2023-09-14",
+      "quote": "Munich, September, 14 2023 – Defence AI company Helsing today announced that it has raised €209m in a Series B funding round led by General Catalyst."
+    },
+    {
+      "id": "s3",
+      "publication": "TechCrunch",
+      "title": "Defense AI startup Helsing breaks the record for European AI, raising a $223M Series B",
+      "url": "https://techcrunch.com/2023/09/14/defence-ai-startup-helsing-breaks-the-record-for-european-ai-raising-a-223m-series-b/",
+      "publishedOn": "2023-09-14",
+      "quote": "Helsing, a “Defense AI” startup backed by Spotify founder Daniel Ek which had previously raised €102.5 million, has today pulled in another €209 million ($223 million) in a Series B funding round led by General Catalyst. Swedish heavy industry and defense group Saab is joining as a strategic investor, deepening what was previously an existing partnership. The investment could potentially make Helsing the largest European AI company and also the largest European defense tech unicorn. In June, France’s Mistral AI raised a $113 million seed round at a $260 million valuation. The pre-money valuation for Helsing was said to be €1.5 billion, but post-money would put that figure at over €1.7 billion."
+    },
+    {
+      "id": "s4",
+      "publication": "Company press release",
+      "title": "Helsing raises €600m to invest in European technological sovereignty",
+      "url": "https://helsing.ai/newsroom/helsing-raises-eur600m-to-invest-in-european-technological-sovereignty",
+      "publishedOn": "2025-06-17",
+      "quote": "Today’s announcement follows Helsing’s Series C funding of €450m in July 2024, involving General Catalyst, Elad Gil, Accel, Saab, Lightspeed Ventures, Plural and Greenoaks."
+    },
+    {
+      "id": "s5",
+      "publication": "Tech.eu",
+      "title": "Helsing raises €600M, more than doubling valuation to €12BN",
+      "url": "https://tech.eu/2025/06/17/helsing-raises-600-million-elevating-valuation-to-eur12bn/",
+      "publishedOn": "2025-06-17",
+      "quote": "Helsing, the German defence tech startup, has raised €600 million, more than doubling its valuation to €12bn, in a Series D funding round led by Spotify's Daniel Ek."
+    }
+  ]
+}

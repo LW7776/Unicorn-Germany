@@ -1,0 +1,160 @@
+{
+  "slug": "celonis",
+  "name": "Celonis",
+  "website": "https://www.celonis.com",
+  "logo": "assets/logos/celonis.svg",
+  "hq": {
+    "city": "Munich",
+    "country": "DE"
+  },
+  "alsoBasedIn": [
+    "New York"
+  ],
+  "foundedCountry": "DE",
+  "foundedYear": 2011,
+  "sectors": [
+    "Enterprise Software",
+    "Process Mining"
+  ],
+  "thesis": {
+    "problem": "Large companies cannot see how their own processes actually run. An order-to-cash or purchase-to-pay flow touches ERP, CRM and supply-chain systems that each hold a fragment of the truth, so the duplicated payments, manual rework and stalled deliveries hiding inside them stay invisible to the people accountable for them.",
+    "solution": "Celonis reconstructs the real path of every transaction from the event logs those systems already write, compares it against how the process was supposed to run, and quantifies the cost of each deviation. The product is sold to large enterprises as a platform that both diagnoses the gap and triggers the corrective action inside the underlying system."
+  },
+  "valuation": {
+    "amount": 13000,
+    "currency": "USD",
+    "approximate": true,
+    "asOf": "2022-08",
+    "round": "Series D extension",
+    "source": "s1"
+  },
+  "becameUnicorn": {
+    "date": "2019-11",
+    "roundId": "r1",
+    "source": "s2"
+  },
+  "totalRaised": {
+    "amount": null,
+    "currency": "USD",
+    "approximate": false,
+    "source": "s1"
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "date": "2019-11",
+      "stage": "Series C",
+      "amount": 290,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": 2500,
+      "leadInvestors": [
+        "Arena Holdings"
+      ],
+      "investors": [
+        "Arena Holdings",
+        "Accel",
+        "83North"
+      ],
+      "source": "s2"
+    },
+    {
+      "id": "r2",
+      "date": "2021-06",
+      "stage": "Series D",
+      "amount": 1000,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": 11000,
+      "leadInvestors": [],
+      "investors": [],
+      "source": "s3"
+    },
+    {
+      "id": "r3",
+      "date": "2022-08",
+      "stage": "Series D extension",
+      "amount": 400,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": 13000,
+      "leadInvestors": [
+        "Qatar Investment Authority"
+      ],
+      "investors": [
+        "Qatar Investment Authority",
+        "Activant Capital",
+        "Neuberger Berman",
+        "Alta Park Capital",
+        "Commonfund Capital",
+        "Arena Holdings",
+        "T. Rowe Price",
+        "Franklin Templeton",
+        "Durable Capital Partners",
+        "TCV",
+        "83North",
+        "Accel Partners",
+        "Sator Grove"
+      ],
+      "source": "s1"
+    }
+  ],
+  "founders": [
+    {
+      "name": "Alexander Rinke",
+      "role": "Co-founder & co-CEO",
+      "current": true
+    },
+    {
+      "name": "Bastian Nominacher",
+      "role": "Co-founder & co-CEO",
+      "current": true
+    },
+    {
+      "name": "Martin Klenk",
+      "role": "Co-founder",
+      "current": true
+    }
+  ],
+  "investors": [
+    "Qatar Investment Authority",
+    "Arena Holdings",
+    "Accel",
+    "83North",
+    "Activant Capital",
+    "Neuberger Berman",
+    "Alta Park Capital",
+    "Commonfund Capital",
+    "T. Rowe Price",
+    "Franklin Templeton",
+    "Durable Capital Partners",
+    "TCV",
+    "Sator Grove"
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "publication": "Company press release",
+      "title": "Celonis Secures $1 Billion to Help Customers Fight Economic and Supply Chain Challenges with Process Improvements",
+      "url": "https://www.celonis.com/news/press/celonis-secures-one-billion-to-help-customers-fight-economic-and-supply-change-challenges",
+      "publishedOn": "2022-08-23",
+      "quote": "This $1 billion in liquidity is anchored by a $400 million equity raise at a post money valuation of nearly $13 billion."
+    },
+    {
+      "id": "s2",
+      "publication": "TechCrunch",
+      "title": "Celonis, a leader in big data process mining for enterprises, nabs $290M on a $2.5B valuation",
+      "url": "https://techcrunch.com/2019/11/21/celonis-a-leader-in-big-data-process-mining-for-enterprises-nabs-290m-on-a-2-5b-valuation/",
+      "publishedOn": "2019-11-21",
+      "quote": "Celonis, a leader in the area of process mining — which tracks data produced by a company’s software, as well as how the software works, in order to provide guidance on what a company could and should do to improve it — has raised $290 million in a Series C round of funding, giving the startup a post-money valuation of $2.5 billion."
+    },
+    {
+      "id": "s3",
+      "publication": "Company press release",
+      "title": "Celonis Secures $1 Billion to Help Customers Fight Economic and Supply Chain Challenges with Process Improvements",
+      "url": "https://www.celonis.com/news/press/celonis-secures-one-billion-to-help-customers-fight-economic-and-supply-change-challenges",
+      "publishedOn": "2022-08-23",
+      "quote": "In June 2021, Celonis announced its $1 billion Series D round at a valuation of $11 billion."
+    }
+  ]
+}

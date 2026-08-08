@@ -1,0 +1,147 @@
+{
+  "slug": "trade-republic",
+  "name": "Trade Republic",
+  "website": "https://traderepublic.com",
+  "logo": "assets/logos/trade-republic.svg",
+  "hq": {
+    "city": "Berlin",
+    "country": "DE"
+  },
+  "foundedCountry": "DE",
+  "foundedYear": 2015,
+  "sectors": [
+    "Fintech",
+    "Brokerage"
+  ],
+  "thesis": {
+    "problem": "Retail investing in Europe was priced and packaged for people who already had money. Bank brokerage carried per-order commissions and custody fees large enough to make small, regular savings uneconomic, which left most Europeans dependent on state pensions they are unlikely to be able to live on.",
+    "solution": "Trade Republic is a mobile broker with a full German banking licence: commission-free savings plans, fractional shares and ETFs, plus bonds, derivatives and crypto, with a flat external settlement fee instead of a percentage. It earns on order flow, interest on customer deposits and card interchange rather than trading commissions, and now operates across most of western Europe."
+  },
+  "valuation": {
+    "amount": 12500,
+    "currency": "EUR",
+    "approximate": false,
+    "asOf": "2025-12",
+    "round": "Secondary",
+    "source": "s1"
+  },
+  "becameUnicorn": {
+    "date": "2021-05",
+    "roundId": "r1",
+    "source": "s2"
+  },
+  "totalRaised": {
+    "amount": 1000,
+    "currency": "EUR",
+    "approximate": true,
+    "source": "s3"
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "date": "2021-05",
+      "stage": "Series C",
+      "amount": 900,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": 5300,
+      "leadInvestors": [
+        "Sequoia"
+      ],
+      "investors": [
+        "Sequoia",
+        "TCV",
+        "Thrive Capital",
+        "Accel",
+        "Founders Fund",
+        "Creandum",
+        "Project A"
+      ],
+      "source": "s2"
+    },
+    {
+      "id": "r2",
+      "date": "2025-12",
+      "stage": "Secondary",
+      "amount": 1200,
+      "currency": "EUR",
+      "approximate": false,
+      "postMoney": 12500,
+      "leadInvestors": [
+        "Founders Fund"
+      ],
+      "investors": [
+        "Founders Fund",
+        "Sequoia",
+        "Accel",
+        "TCV",
+        "Thrive Capital",
+        "Wellington Management",
+        "GIC",
+        "Fidelity Management & Research Company",
+        "Khosla Ventures",
+        "Lingotto Innovation",
+        "Aglaé"
+      ],
+      "source": "s1"
+    }
+  ],
+  "founders": [
+    {
+      "name": "Christian Hecker",
+      "role": "Co-founder & CEO",
+      "current": true
+    },
+    {
+      "name": "Thomas Pischke",
+      "role": "Co-founder",
+      "current": true
+    },
+    {
+      "name": "Marco Cancellieri",
+      "role": "Co-founder",
+      "current": true
+    }
+  ],
+  "investors": [
+    "Sequoia",
+    "Founders Fund",
+    "Accel",
+    "TCV",
+    "Thrive Capital",
+    "Creandum",
+    "Project A",
+    "Wellington Management",
+    "GIC",
+    "Fidelity Management & Research Company",
+    "Khosla Ventures",
+    "Lingotto Innovation",
+    "Aglaé"
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "publication": "Company press release",
+      "title": "Trade Republic strengthens its shareholder base in a €1.2 billion secondary round led by Founders Fund and other existing investors at €12.5 billion valuation.",
+      "url": "https://assets.traderepublic.com/assets/files/251217_Secondary_PressRelease_BL_EN2.pdf",
+      "publishedOn": "2025-12-17",
+      "quote": "Now, investors conducted a €1.2bn secondary transaction valuing the company at €12.5bn."
+    },
+    {
+      "id": "s2",
+      "publication": "TechCrunch",
+      "title": "Berlin’s Trade Republic nabs $900M led by Sequoia at a $5B+ valuation to take its neobroker app across Europe",
+      "url": "https://techcrunch.com/2021/05/20/berlins-trade-republic-nabs-900m-led-by-sequoia-at-a-5b-valuation-to-take-its-neo-broker-app-across-europe/",
+      "publishedOn": "2021-05-20",
+      "quote": "Trade Republic, which lets people buy and sell shares, exchange-traded funds (ETFs), derivatives and (most recently) cryptocurrency by way of a mobile app that does not charge commissions (but does have a fee structure for various services), has raised $900 million in a Series C round of funding that values the Berlin startup at $5.3 billion, the startup confirmed."
+    },
+    {
+      "id": "s3",
+      "publication": "Company press release",
+      "title": "Trade Republic strengthens its shareholder base in a €1.2 billion secondary round led by Founders Fund and other existing investors at €12.5 billion valuation.",
+      "url": "https://assets.traderepublic.com/assets/files/251217_Secondary_PressRelease_BL_EN2.pdf",
+      "publishedOn": "2025-12-17",
+      "quote": "Trade Republic raised more than 1 billion euro in primary capital across its funding rounds and received a full banking license from the ECB in 2023."
+    }
+  ]
+}
