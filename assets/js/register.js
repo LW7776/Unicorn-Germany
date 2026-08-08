@@ -45,7 +45,13 @@ export function renderStats(container, stats) {
     ["Unicorns", stats.count],
     ["Combined value", stats.combinedValuationLabel],
     ["New in 12 months", stats.newInLast12Months],
-    ["Median years to €1bn", stats.medianYearsToUnicorn],
+    // Not "to €1bn": this median runs across a register where most companies
+    // crossed the dollar threshold, not the euro one (the rule is "$1B **or**
+    // €1B, as reported"). Naming one currency for an aggregate spanning both
+    // states a fact about the set that is not true of most of its members —
+    // the same defect the per-round flag had. Each detail page still names the
+    // threshold its own crossing round actually cleared.
+    ["Median years to unicorn", stats.medianYearsToUnicorn],
   ];
   container.innerHTML = items.map(([label, value]) => `
     <div class="stat">

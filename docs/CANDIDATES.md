@@ -77,31 +77,67 @@ Notes carried into the records:
   qualify — the rule is *a publicly reported post-money*, not a recent one — and the site's
   own staleness flag marks the age rather than the register hiding it.
 
+## Include — written (batch 3)
+
+| Company | HQ | Valuation as reported | Evidence |
+|---|---|---|---|
+| **Proxima Fusion** | Munich | €2.4bn, Jul 2026, €411m financing round | [Company press release](https://www.proximafusion.com/press-news/proxima-fusion-raises-eu411-million-to-build-europes-commercial-fusion-champion) |
+| **Enpal** | Berlin | €2.2bn, Jan 2023, Series D | [Sifted](https://sifted.eu/articles/enpal-215m-solar-panels-news) |
+| **Scalable Capital** | Munich | $1.4bn, Dec 2023, Series E extension | [TechCrunch](https://techcrunch.com/2023/12/06/european-neobroker-scalable-capital-raises-65m-on-a-flat-1-4b-valuation/) |
+| **1KOMMA5°** | Hamburg | $1bn, Jun 2023, Series B | [Company press release](https://1komma5.com/en/press/press-releases/1komma5-unicorn-en/) |
+| **sennder** | Berlin | over $1bn, Jan 2021, Series D | [Tech.eu](https://tech.eu/2021/01/14/berlin-based-digital-freight-forwarder-sennder-bags-160-million-at-a-1-billion-valuation/) |
+
+Five, not eight. The other three names in the queue did not clear the bar on evidence that
+exists today, and each is left below with the exact sentence that is missing.
+
+Notes carried into the records:
+
+- **Two of the five crossed earlier than the round they are famous for**, which is the
+  batch-1 Celonis error and the reason `postMoney` is now filled in wherever a source states
+  one. **Enpal** is dated to a €2.2bn Series D of January 2023 in every list, but TechCrunch
+  reported the October 2021 Series C close at "€950 million ($1.1 billion) post-money, the
+  company has confirmed" — under the threshold in euros, over it in dollars, and the dollar
+  figure is the source's own, not a conversion of ours. Sifted's January 2023 piece gives the
+  game away in its own first line, calling Enpal a "solar unicorn" a year before the round
+  the register would otherwise have credited. **Scalable Capital**'s crossing is named inside
+  the very article that carries its published valuation: the December 2023 round was flat at
+  $1.4bn because that "was the same valuation Scalable Capital had the last time it raised
+  money — $180 million in 2021". The crossing is June 2021, not December 2023.
+- **Proxima Fusion** carries a `disputed` note. Its own announcement and EU-Startups give
+  €2.4bn; [Sifted](https://sifted.eu/articles/google-proxima-fusion-411m-raise) gives €2.5bn,
+  same day, same round. The record publishes the company's own figure and shows Sifted's
+  beside it. Note this is the opposite of what the batch-2 queue expected — the queue assumed
+  Sifted's €2.5bn was the headline figure, because the company's own release had not been
+  opened.
+- **1KOMMA5°** carries a `disputed` note on the round rather than the valuation. The round is
+  universally reported as €430m; the company's own release splits it into "215 million Euro
+  in equity" plus "an additional 215 million Euro in re-participation options, which can be
+  paid as part of the purchase price for new acquisitions". Only the first half is money
+  raised. This is the Razor Group problem in a new costume — a headline number that measures
+  something wider than the round — so the record publishes the equity and keeps €430m in the
+  note.
+- **sennder** carries a `disputed` note for the reverse reason: a €2bn figure is attached to
+  it by a Tech.eu headline about a raise that was being *prepared* in December 2022 and never
+  closed. Talks are not a post-money, as the Agile Robots entry below already says.
+- **Two schema limits were hit and fixed** rather than worked around by dropping facts.
+  `postMoneyCurrency` exists because Enpal's Series C was raised in euros and priced by its
+  source in dollars; without it, 1100 would have had to be filed under EUR, a figure no
+  source states. `postMoneySource` exists because 1KOMMA5°'s own release states the equity
+  raised in one paragraph and the valuation in another, and one source per round would have
+  forced the record to drop one of them. Neither relaxes a check: whichever source is named
+  must still be allowlisted, dated, and carry a quote stating that figure in that currency.
+
 ## Include — verified, queued for a later batch
 
 These meet all three rules, but the register cannot yet publish an honest record. In every
 case the blocker is named precisely, so the next batch can act on it directly.
 
-> **Three of these are no longer blocked.** `validate.py` used to reject any record whose
-> `valuation.asOf` predated its most recent round, on dates alone. That is right when the
-> newer round disclosed a price — the record would be showing a superseded figure — but wrong
-> when it disclosed none, which is ordinary and honest: the company raised and said nothing
-> about valuation, so the last publicly reported figure genuinely is still the earlier one.
-> The check now fires only when a round *after* the valuation carries a post-money of its own.
-> **Enpal, Scalable Capital and 1KOMMA5° were queued solely behind that check and are now
-> writable — batch 3 should pick them up first, after Proxima Fusion.** Nothing about their
-> evidence changed; the rule did.
-
 | Company | HQ | Why it qualifies | What blocks the record |
 |---|---|---|---|
-| **Proxima Fusion** | Munich | €411m round, Jul 2026, Max Planck stellarator spin-out. Sifted: "Munich-headquartered Proxima Fusion has raised €411m at a €2.5bn valuation in a round led by XTX Ventures and East X Ventures" ([Sifted, 2026-07-07](https://sifted.eu/articles/google-proxima-fusion-411m-raise)) | Nothing — but it arrived after this batch's eight were written. Note that [EU-Startups](https://www.eu-startups.com/2026/07/largest-european-fusion-investment-on-record-sees-proxima-fusion-raise-e411-million/) gives the same round at **€2.4bn** where Sifted gives **€2.5bn**: a genuine conflict between two allowlisted publications, so the record needs a `disputed` note |
-| **Quantum Systems** | Gilching, near Munich | Now the largest of them all: $1.2bn Series D at "~$8 billion on a post-money basis" ([company press release, 2026-07-02](https://quantum-systems.com/news/quantum-systems-raises-1-2bn-series-d-to-accelerate-growth-and-scale-software-defined-autonomous-systems-across-air-land-and-sea/)) | The **crossing**, not the valuation. It became a unicorn at the €160m Series C in May 2025, but every allowlisted account of that moment states the figure in words rather than digits — Handelsblatt, "mit mehr als einer Milliarde Dollar bewertet"; Gründerszene, "mehr als einer Milliarde Dollar"; [Sifted](https://sifted.eu/articles/quantum-systems-160m-unicorn), "hits unicorn status" with no figure at all. A quote with no numeral cannot carry a post-money, so the record would have to date the crossing to the November 2025 extension — which is the batch-1 Celonis error again. Needs one source that prints the May 2025 valuation as a number |
-| **Enpal** | Berlin | €2.2bn at the €215m Series D ([Sifted, 2023-01-09](https://sifted.eu/articles/enpal-215m-solar-panels-news)) | **Unblocked — writable now.** The April 2025 €110m round postdates the valuation, but [Sifted](https://sifted.eu/articles/enpal-e110m-tpg-equity) records that "Enpal declined to comment on the valuation the round gives the company", so it discloses no post-money and no longer bars the record. Publish €2.2bn as of Jan 2023, with the April 2025 round carrying `postMoney: null`; the aged badge will mark the gap |
-| **1KOMMA5°** | Hamburg | Unicorn at 23 months on a €430m Series B, "valued at over $1 billion" ([Tech.eu, 2023-06-23](https://tech.eu/2023/06/23/hamburg-s-1komma5-has-raised-430-million-and-just-become-a-unicorn-at-just-23-months-old/)) | **Unblocked — writable now.** Same shape as Enpal: the €150m pre-IPO round closed Dec 2024 and was extended Jul 2025, but [Sifted](https://sifted.eu/articles/1komma5-e150m-pre-ipo-news) reports "a slight increase in valuation" and that the company "did not disclose an updated figure" — no post-money, so no bar |
-| **Scalable Capital** | Munich | Flat $1.4bn at the Dec 2023 round ([TechCrunch](https://techcrunch.com/2023/12/06/european-neobroker-scalable-capital-raises-65m-on-a-flat-1-4b-valuation/)) | **Unblocked — writable now.** The €155m June 2025 round — its largest — postdates the valuation, but neither the company nor [EU-Startups](https://www.eu-startups.com/2025/06/german-startup-scalable-capital-receives-e155-million-to-continue-to-expand-its-digital-investment-platform/) gives a figure for it, so it discloses no post-money and no longer bars the record |
-| **Neura Robotics** | Metzingen | $1.4bn Series C, Jun 2026, backed by Tether, Qualcomm, Amazon and Nvidia | Both headline numbers are soft. The company's own release calls it a round "of **up to** $1.4 billion", and the only valuation reaches an allowlisted page second-hand: [Sifted](https://sifted.eu/articles/neura-robotics-1-4bn-series-c) — "The new funding brings Neura's valuation to $7bn, the Financial Times reported, citing people familiar with the deal." Publishable, but only with the sourcing chain shown; worth one more attempt at a first-hand figure |
-| **Isar Aerospace** | Munich (Ottobrunn) | €270m Series D closed Jun 2026 ([Sifted, 2026-06-09](https://sifted.eu/articles/isar-aerospace-raises-e270m-to-scale-launch-operations)) | Still no allowlisted post-money. Neither the company release nor Sifted states one, and Bloomberg — which is on the allowlist — returns 403 to this crawler, so its March 2026 piece cannot be opened and therefore cannot be cited |
-| **sennder** | Berlin | Crossed $1bn on a $160m round in January 2021 | The rule no longer blocks it — the newer raise never closed, so nothing later discloses a post-money: [Tech.eu (2022-12-14)](https://tech.eu/2022/12/14/sennder/) reports sennder "**taking on** funds at around double the $1 billion or so value it received for equity issued January 2021". What is still missing is first-hand reading: the January 2021 source has not been opened, so its quote cannot yet be cited |
+| **Quantum Systems** | Gilching, near Munich | The largest of them all: $1.2bn Series D at "~$8 billion on a post-money basis" ([company press release, 2026-07-02](https://quantum-systems.com/news/quantum-systems-raises-1-2bn-series-d-to-accelerate-growth-and-scale-software-defined-autonomous-systems-across-air-land-and-sea/)) | Still the **crossing**, not the valuation, and this batch could not shift it. It became a unicorn at the €160m Series C in May 2025; no allowlisted account prints that valuation as a numeral. Checked again and re-read this time: [Sifted, 2025-05-06](https://sifted.eu/articles/quantum-systems-160m-unicorn) says only "making it one of only a few unicorns in the European defence tech field"; [Tech.eu, 2025-11-28](https://tech.eu/2025/11/28/quantum-systems-180m-series-c-extension-lifts-company-to-3b/) and its lead investor's own release ([Balderton](https://www.balderton.com/news/quantum-systems-triples-valuation/)) both say the November extension "tripled its valuation" to "above €3 billion" but never state what it tripled *from*. Dividing €3bn by three would be arithmetic, not a source. quantum-systems.com returns 403 to this crawler on every page including its own Series C release, so the company's own wording cannot be read either. Needs one allowlisted page that prints the May 2025 figure |
+| **Neura Robotics** | Metzingen | $1.4bn Series C, Jun 2026, backed by Tether, Qualcomm, Amazon and Nvidia | Weaker on a first-hand read than the queue expected, so it was left out rather than published thin. The company's own release ([2026-06-10](https://neura-robotics.com/record-series-c/)) — opened and read in full — announces "a landmark Series C financing with a total round size of **up to** $1.4 billion" and states **no valuation at all**. The $7bn reaches an allowlisted page only at third hand: [Sifted](https://sifted.eu/articles/neura-robotics-1-4bn-series-c) writes "The new funding brings Neura's valuation to $7bn, the Financial Times reported, citing people familiar with the deal", and contemporaneous reporting adds that Neura declined to comment on the figure. A milestone-contingent round size and an unconfirmed, anonymously-sourced number that nobody calls a post-money is two of the three known error shapes at once. Publishable only if the FT's own page can be opened, or if the company states a figure |
+| **Isar Aerospace** | Munich (Ottobrunn) | €270m Series D closed Jun 2026 | Now checked first-hand and still blocked. Isar's **own** press release ([2026-06-09](https://isaraerospace.com/press/isar-aerospace-secures-eur-270m-to-provide-sovereign-space-capabilities-globally)) was opened and read end to end: it gives the round, the investors, the factory and the headcount, and states no valuation anywhere. Bloomberg, which is on the allowlist, still returns 403 to this crawler. The widely quoted "more than €2 billion" traces to profile pages, not to reporting |
+| **wefox** | Berlin | $4.5bn post-money at the May 2023 round ([TechCrunch](https://techcrunch.com/2023/05/16/wefox-secures-new-funding-at-45-billion-valuation-as-it-aims-for-profitability/)) | **Moved up from the exclusion list — the reason it was excluded does not survive a check.** wefox was held to be "marked down far below its 2022 peak", but no allowlisted publication has printed a wefox valuation below the threshold, or indeed any valuation since 2023. It sold subsidiaries and restructured, but the company itself is not insolvent, not listed and not acquired, and [Tech.eu, 2025-07-11](https://tech.eu/2025/07/11/eur151m-for-insurtech-unicorn-wefox/) still calls it an "Insurtech unicorn" while reporting a €151m raise. On the register's own rule — *a publicly reported post-money*, not a recent one, the same rule Taxfix and Choco are published under — wefox qualifies. What is missing is a first-hand read of the 2023 round and of what the €151m did to the cap table, which is a batch of work, not a blocker of principle |
 
 ## Exclude — verified
 
@@ -114,22 +150,24 @@ case the blocker is named precisely, so the next batch can act on it directly.
 | **EGYM** | The most surprising exclusion of this round. Munich's connected-fitness company was, on Handelsblatt's account, the *only* German startup to reach $1bn in 2024 — and it no longer exists as an independent company. It merged into Playlist, the American parent of ClassPass and Mindbody; the deal closed on 31 March 2026 and "EGYM will operate under Playlist alongside its other brands". Fails rule 2. | [TechCrunch, 2026-03-31](https://techcrunch.com/2026/03/31/the-company-behind-classpass-and-mindbody-just-got-a-lot-bigger-with-a-7-5b-merger/) |
 | **Zalando**, **Delivery Hero**, **HelloFresh**, **Auto1**, **Ottobock** | Publicly listed, so not private. Ottobock is the most recent, listing in Frankfurt in October 2025. | Listed on the Frankfurt Stock Exchange |
 | **About You** | Acquired by Zalando and delisted; no longer independent. | Zalando/About You combination completed 2025 |
+| **Contentful** | The most surprising exclusion of this batch, and it was not on anyone's list of doubts. The Berlin-founded headless CMS closed a $175m Series F in 2021 at over $3bn — comfortably the largest valuation in the undecided pile — and it was **acquired by Salesforce**, announced 1 June 2026. Tech.eu: "Contentful, the German-founded content management company, is to be acquired by US software giant Salesforce, the companies announced today." The same piece notes it "closed a $175 million funding round in 2021, at a valuation of over $3 billion", so a company that would have entered the register near the top of it instead leaves at a reported discount to that price. Fails rule 2. | [Tech.eu, 2026-06-01](https://tech.eu/2026/06/01/berlin-based-contentful-snapped-up-by-salesforce/) |
+| **Volocopter** | Insolvency: Volocopter GmbH filed to open proceedings at the Karlsruhe local court in December 2024. Now settled against an allowlisted report rather than a search snippet. Fails rule 2. | [TechCrunch, 2024-12-30](https://techcrunch.com/2024/12/30/mercedes-backed-volocopter-files-for-bankruptcy/) |
+| **Lilium** | Insolvent and wound down; TechCrunch's October 2025 piece describes it in the past tense as the "defunct electric aircraft startup" whose technology has ended up at Archer. Fails rule 2. | [TechCrunch, 2025-10-16](https://techcrunch.com/2025/10/16/defunct-electric-aircraft-startup-liliums-tech-lives-on-over-at-archer/) |
+| **Cognigy** | Acquired by NiCE — "US customer service giant NICE has paid almost $1bn to acquire Düsseldorf-based Cognigy in what is Europe's biggest AI acquisition to date". Fails rule 2, and note the price is *below* the threshold in any case. | [Sifted](https://sifted.eu/articles/cognigy-sells-for-almost-1bn-in-europes-biggest-ai-acquisition-yet), [Tech.eu, 2025-07-28](https://tech.eu/2025/07/28/german-ai-startup-cognigy-hoovered-up-by-us-customer-service-firm-nice/) |
+| **Tier Mobility** | Merged with Dott and the brand retired: "Tier becomes Dott following the merger of the two micromobility companies". No longer a standalone German company. Fails rule 2. | [TechCrunch, 2024-09-30](https://techcrunch.com/2024/09/30/tier-becomes-dott-following-the-merger-of-the-two-micromobility-companies/) |
 
 ## Exclude — pending a first-hand check
 
-Widely reported as no longer qualifying, but recorded here only from search results rather
-than from a page opened and read. Each needs one allowlisted source before the reason above
-is treated as settled.
+Believed not to qualify, but not yet settled against a page that was opened and read. The
+list is much shorter than it was: **Volocopter, Lilium, Cognigy, Tier Mobility and
+Contentful moved up to the verified table above**, and **wefox moved the other way** — the
+reason given for excluding it turned out not to be a fact anyone has published.
 
-| Company | Reason believed |
-|---|---|
-| **wefox** | Marked down far below its 2022 peak after warning shareholders of insolvency risk in 2024 and restructuring; no current valuation at or above the threshold |
-| **Volocopter** | Insolvency proceedings opened at Karlsruhe in December 2024 |
-| **Lilium** | Filed for insolvency a second time in February 2025 after the rescue funding failed; operations stopped |
-| **Cognigy** | Acquired by NiCE, closed September 2025 |
-| **Tier Mobility** | Combined with Dott; no longer standalone |
-| **GoStudent** | Austrian, not German — fails the founding/HQ test |
-| **Mambu**, **SumUp**, **Contentful** | Headquarters and founding country both need establishing before either rule can be applied |
+| Company | Reason believed | What is still missing |
+|---|---|---|
+| **GoStudent** | Austrian, not German — fails the founding/HQ test | An allowlisted page stating the Vienna founding or HQ. Nothing about this is in doubt; it simply has not been opened |
+| **Mambu** | Not German enough to pass rule 1 | Half-settled, and against the company. TechCrunch, opened and read, calls it "Amsterdam/London-based Mambu" at the €4.9bn Series E ([2021-12-09](https://techcrunch.com/2021/12/09/mambu-nabs-266m-at-a-5-5b-valuation-to-double-down-on-embedded-financial-service-and-banking-apis/)), so the HQ limb of rule 1 fails outright. The founding limb rests on a Berlin origin that no allowlisted publication states. It stays out until one does — the register does not fill that gap from memory |
+| **SumUp** | Same shape as Mambu | Weaker again: no allowlisted page opened in this batch calls SumUp either German-founded or German-headquartered, and the €8bn figure most often quoted for it is attached to a debt financing, not a post-money. Two separate gaps, both real |
 
 ## Rule 3 not established — a unicorn label without a post-money
 
@@ -144,25 +182,31 @@ own, so they sit here rather than in the undecided queue.
 
 ## Undecided — queued for verification
 
-Not yet checked against a source that was opened and read. Listed so that the queue is
-visible and nothing is quietly dropped. For each, the same three questions apply: German by
-founding or HQ, still independent and private, and a publicly reported post-money at or above
-the threshold.
+Not yet checked against a source that was opened and read, or checked and found to have no
+publishable figure. Listed so that the queue is visible and nothing is quietly dropped. For
+each, the same three questions apply: German by founding or HQ, still independent and
+private, and a publicly reported post-money at or above the threshold.
 
 Raisin · Flix · Black Semiconductor · Marvel Fusion · instagrid · The Exploration Company
 
 Notes on what specifically to settle:
 
-- **Flix** remains private and shelved its 2024 listing, but EQT and Kühne Holding are
-  reported to have taken a 35% minority stake in 2024. If that is right, it postdates the
-  $3bn valuation of June 2021 and the register would need a figure attached to the stake
-  sale itself. Neither has been read first-hand yet.
-- **The Exploration Company** appeared on Sifted's own sidebar during this review as
-  "Bessemer, Atomico in talks to lead The Exploration Company funding at $2bn valuation" —
-  a headline seen, not an article read, and "in talks" in any case.
-- **Marvel Fusion**, **Proxima Fusion**'s smaller German fusion and hardware peers,
-  **instagrid** and **Black Semiconductor** have all raised in the tens or low hundreds of
-  millions. None is likely to clear the threshold, but "likely" is not a reason this file
-  accepts, so they stay here until a source has been opened.
-- **Raisin** last had a €60m round reported in March 2023 with no valuation attached to it in
-  the search results; the question is whether any post-money has ever been published.
+- **Flix** was checked this batch and is still short of rule 3, for a reason worth recording.
+  EQT's own announcement of the deal was opened and read
+  ([EQT, 2024-07-04](https://eqtgroup.com/news/eqt-and-kuhne-holding-invest-in-flix-the-global-travel-company-2024-07-04)):
+  it confirms EQT Future and Kühne Holding took "a 35% minority stake in Flix", partly
+  primary and partly bought from existing shareholders, and it states **no valuation at
+  all** — 2023 revenue and EBITDA, but no price. The €3bn attached to the deal everywhere
+  comes from Bloomberg, which is on the allowlist but returns 403 to this crawler. Flix is
+  German, private and independent; only the figure is missing.
+- **Raisin** is reported at over €2bn after a secondary in which existing holders sold more
+  than €100m of stock. Every route to that figure this batch could find runs through
+  publications that are not on the allowlist. Note also that a secondary sets a price for
+  shares changing hands, not a post-money — which the register can carry (Trade Republic is
+  published on one) but should label as what it is.
+- **The Exploration Company** is still "in talks": a $300m round at more than $2bn,
+  attributed to the FT and unconfirmed by the company, with the reporting itself cautioning
+  that the terms could move or the deal fall away. Talks are not a post-money.
+- **Marvel Fusion**, **instagrid** and **Black Semiconductor** have all raised in the tens or
+  low hundreds of millions. None is likely to clear the threshold, but "likely" is not a
+  reason this file accepts, so they stay here until a source has been opened.

@@ -139,3 +139,18 @@ def test_a_missing_publishedon_raises_instead_of_building_on_nonsense(tmp_path):
 
     with pytest.raises(ValueError, match="publishedOn"):
         build(src=str(src), out=str(tmp_path / "out.json"), fx_path=str(fx))
+
+
+def test_unicorn_threshold_label_follows_the_crossing_round_currency(record):
+    """The inclusion rule is "$1B or €1B, as reported", so the flag on the crossing
+    round must name the threshold that round actually cleared. Enpal's crossing was
+    "€950 million ($1.1 billion) post-money" — over $1bn, under €1bn — and a
+    hard-coded "crossed €1bn" asserted the opposite of the quote beside it."""
+    record["rounds"][1]["postMoney"] = 1100
+    record["rounds"][1]["postMoneyCurrency"] = "USD"
+    derived = derive_company(record, (2024, 3))
+    assert derived["display"]["unicornThresholdLabel"] == "$1bn"
+
+
+def test_unicorn_threshold_label_defaults_to_the_round_currency(record):
+    assert derive_company(record, (2024, 3))["display"]["unicornThresholdLabel"] == "€1bn"

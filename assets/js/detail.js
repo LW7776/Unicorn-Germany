@@ -58,6 +58,10 @@ function disputedBadge(disputed, sources) {
 
 function timeline(company) {
   const unicornId = company.becameUnicorn.roundId;
+  // "$1bn" or "€1bn" — settled in tools/build.py from the crossing round's own
+  // post-money currency, because the inclusion rule is "$1B or €1B, as reported"
+  // and a company that crossed at "$1.1 billion" did not cross €1bn.
+  const threshold = text(company.display.unicornThresholdLabel);
   return `<ol class="timeline">${company.rounds.map((round, index) => `
     <li class="timeline__node ${round.id === unicornId ? "is-unicorn" : ""}"
         style="--i:${index}">
@@ -66,7 +70,7 @@ function timeline(company) {
       <span class="timeline__stage">${text(round.stage)}</span>
       <span class="timeline__amount">${text(round.amountLabel)}</span>
       <span class="timeline__lead">${text((round.leadInvestors || []).join(", "))}</span>
-      ${round.id === unicornId ? '<span class="timeline__flag">crossed €1bn</span>' : ""}
+      ${round.id === unicornId ? `<span class="timeline__flag">crossed ${threshold}</span>` : ""}
       ${disputedBadge(round.disputed, company.sources)}
     </li>`).join("")}</ol>`;
 }
@@ -123,7 +127,7 @@ function markup(company) {
       disputedBadge(company.valuation.disputed, company.sources))}
     ${figure("Last round", d.lastRoundStage, d.lastRoundLabel)}
     ${figure("Total raised", d.totalRaisedLabel)}
-    ${figure("Years to €1bn", d.yearsToUnicorn, `unicorn ${dash(d.becameUnicornLabel)}`)}
+    ${figure(`Years to ${text(d.unicornThresholdLabel)}`, d.yearsToUnicorn, `unicorn ${dash(d.becameUnicornLabel)}`)}
   </div>
   <section class="detail__thesis">
     <div><h3 class="label">The problem</h3><p class="prose">${text(company.thesis.problem)}</p></div>

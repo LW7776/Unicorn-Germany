@@ -237,3 +237,43 @@ def test_disputed_round_citing_an_unknown_source_is_an_error(record):
 def test_disputed_round_with_an_empty_note_is_an_error(record):
     record["rounds"][1]["disputed"] = {"note": "", "source": "s2"}
     assert any("round r2" in e and "disputed.note" in e for e in validate_company(record))
+
+
+def test_post_money_in_a_different_currency_from_the_round(record):
+    """A German round in euros valued by its source in dollars — Enpal's Series C was
+    "€250 million ... values Enpal at €950 million ($1.1 billion) post-money", and only
+    the dollar figure clears the threshold. Without postMoneyCurrency the record would
+    have to file 1100 under EUR, which is a figure no source states."""
+    record["rounds"][1]["postMoney"] = 1100
+    record["rounds"][1]["postMoneyCurrency"] = "USD"
+    record["sources"][0]["quote"] = (
+        "Example GmbH raised 120 million euros, valuing it at 1.1 billion dollars "
+        "post-money, and has raised 300 million euros in total.")
+    record["valuation"] = {"amount": 1100, "currency": "USD", "approximate": False,
+                           "asOf": "2024-03", "round": "Series C", "source": "s1"}
+    record["totalRaised"] = {"amount": 300, "currency": "EUR", "approximate": True,
+                             "source": "s1"}
+    assert validate_company(record) == []
+
+
+def test_post_money_currency_is_still_checked_against_the_quote(record):
+    """The override names a currency; it does not skip the check."""
+    record["rounds"][1]["postMoneyCurrency"] = "USD"
+    assert any("round r2 post-money" in e for e in validate_company(record))
+
+
+def test_post_money_from_a_different_source_than_the_round_amount(record):
+    """1KOMMA5°'s own release states the equity raised in one paragraph and the
+    valuation in another, so one source per round could carry only one of them."""
+    record["sources"].append({
+        "id": "s3", "publication": "Company press release",
+        "title": "Example GmbH is a unicorn", "url": "https://example.de/press/unicorn",
+        "publishedOn": "2024-03-14",
+        "quote": "Example GmbH has reached a valuation of 1.2 billion euros."})
+    record["rounds"][1]["postMoneySource"] = "s3"
+    assert validate_company(record) == []
+
+
+def test_post_money_source_must_still_exist(record):
+    record["rounds"][1]["postMoneySource"] = "s99"
+    assert any("round r2 post-money" in e and "s99" in e for e in validate_company(record))

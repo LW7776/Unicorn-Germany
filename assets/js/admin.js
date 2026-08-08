@@ -400,16 +400,20 @@ export function validateRecord(record) {
     sourcesById[source.id] = source;
   }
 
-  const checkFigure = (label, figure, amountKey = "amount") => {
+  /** `currencyKey`/`sourceKey` mirror tools/validate.py's check_figure: a round's
+      post-money is routinely stated in a different currency, and sometimes by a
+      different sentence, than the money raised. Both fall back to `currency`/`source`. */
+  const checkFigure = (label, figure, amountKey = "amount", currencyKey = "currency", sourceKey = "source") => {
     if (!figure) return;
-    const sourceId = figure.source;
+    const sourceId = figure[sourceKey] || figure.source;
     if (!Object.prototype.hasOwnProperty.call(sourcesById, sourceId)) {
       errors.push(`${label} cites unknown source ${describe(sourceId)}`);
       return;
     }
     const amount = figure[amountKey];
     if (amount === null || amount === undefined) return;
-    if (!quoteStatesFigure(sourcesById[sourceId].quote, amount, figure.currency)) {
+    const currency = figure[currencyKey] || figure.currency;
+    if (!quoteStatesFigure(sourcesById[sourceId].quote, amount, currency)) {
       errors.push(`${label}: quote for source ${sourceId} does not state the figure ${amount} `
         + `and its currency — extend the quote to a sentence naming both`);
     }
@@ -454,7 +458,7 @@ export function validateRecord(record) {
     }
     previous = key;
     checkFigure(`round ${entry.id ?? "?"}`, entry);
-    checkFigure(`round ${entry.id ?? "?"} post-money`, entry, "postMoney");
+    checkFigure(`round ${entry.id ?? "?"} post-money`, entry, "postMoney", "postMoneyCurrency", "postMoneySource");
     checkDisputed(`round ${entry.id ?? "?"}`, entry);
   }
 

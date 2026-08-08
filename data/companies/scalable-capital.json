@@ -1,0 +1,185 @@
+{
+  "slug": "scalable-capital",
+  "name": "Scalable Capital",
+  "website": "https://de.scalable.capital",
+  "logo": "assets/logos/scalable-capital.png",
+  "hq": {
+    "city": "Munich",
+    "country": "DE"
+  },
+  "foundedCountry": "DE",
+  "foundedYear": 2014,
+  "sectors": [
+    "Fintech",
+    "Brokerage"
+  ],
+  "thesis": {
+    "problem": "In Germany, saving has traditionally meant a bank account, and investing has meant paying a bank a percentage every year for a fund it chose. The result is a country with high savings and low market participation: the cost of getting invested, and the effort of choosing, both sit above what a small saver will pay.",
+    "solution": "Scalable Capital started as an algorithmic wealth manager and became a broker as well, selling trades and savings plans on a flat monthly fee rather than a percentage of assets. It runs both halves on the same platform, alongside a white-label version for banks and its own European Investor Exchange."
+  },
+  "valuation": {
+    "amount": 1400,
+    "currency": "USD",
+    "approximate": false,
+    "asOf": "2023-12",
+    "round": "Series E extension",
+    "source": "s2"
+  },
+  "becameUnicorn": {
+    "date": "2021-06",
+    "roundId": "r2",
+    "source": "s3"
+  },
+  "totalRaised": {
+    "amount": 470,
+    "currency": "EUR",
+    "approximate": true,
+    "source": "s5"
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "date": "2020-07",
+      "stage": "Series D",
+      "amount": 58,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": 460,
+      "leadInvestors": [],
+      "investors": [],
+      "source": "s4"
+    },
+    {
+      "id": "r2",
+      "date": "2021-06",
+      "stage": "Series E",
+      "amount": 180,
+      "currency": "USD",
+      "approximate": true,
+      "postMoney": 1400,
+      "leadInvestors": [
+        "Tencent"
+      ],
+      "investors": [
+        "Tencent",
+        "BlackRock",
+        "HV Capital",
+        "Tengelmann Ventures"
+      ],
+      "source": "s3"
+    },
+    {
+      "id": "r3",
+      "date": "2023-12",
+      "stage": "Series E extension",
+      "amount": 60,
+      "currency": "EUR",
+      "approximate": false,
+      "postMoney": 1400,
+      "postMoneyCurrency": "USD",
+      "postMoneySource": "s2",
+      "leadInvestors": [
+        "Balderton Capital"
+      ],
+      "investors": [
+        "Balderton Capital",
+        "HV Capital"
+      ],
+      "source": "s1"
+    },
+    {
+      "id": "r4",
+      "date": "2025-06",
+      "stage": "Equity round",
+      "amount": 155,
+      "currency": "EUR",
+      "approximate": false,
+      "postMoney": null,
+      "leadInvestors": [
+        "Sofina",
+        "Noteus Partners"
+      ],
+      "investors": [
+        "Sofina",
+        "Noteus Partners",
+        "Balderton Capital",
+        "Tencent",
+        "HV Capital"
+      ],
+      "source": "s5"
+    }
+  ],
+  "founders": [
+    {
+      "name": "Erik Podzuweit",
+      "role": "Founder, Co-CEO",
+      "current": true
+    },
+    {
+      "name": "Florian Prucker",
+      "role": "Founder, Co-CEO",
+      "current": true
+    },
+    {
+      "name": "Adam French",
+      "role": "Co-founder",
+      "current": false
+    },
+    {
+      "name": "Stefan Mittnik",
+      "role": "Co-founder",
+      "current": false
+    }
+  ],
+  "investors": [
+    "Tencent",
+    "Balderton Capital",
+    "Sofina",
+    "Noteus Partners",
+    "BlackRock",
+    "HV Capital",
+    "Tengelmann Ventures"
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "publication": "TechCrunch",
+      "title": "European neobroker Scalable Capital raises $65M on a flat $1.4B valuation",
+      "url": "https://techcrunch.com/2023/12/06/european-neobroker-scalable-capital-raises-65m-on-a-flat-1-4b-valuation/",
+      "publishedOn": "2023-12-06",
+      "quote": "The company has raised €60 million in equity ($65 million at today’s rates)."
+    },
+    {
+      "id": "s2",
+      "publication": "TechCrunch",
+      "title": "European neobroker Scalable Capital raises $65M on a flat $1.4B valuation",
+      "url": "https://techcrunch.com/2023/12/06/european-neobroker-scalable-capital-raises-65m-on-a-flat-1-4b-valuation/",
+      "publishedOn": "2023-12-06",
+      "quote": "Contrary to the startup’s name, this round is coming in at a flat valuation of $1.4 billion. This was the same valuation Scalable Capital had the last time it raised money — $180 million in 2021, a round led by Tencent, with BlackRock, HV and Tengelmann participating."
+    },
+    {
+      "id": "s3",
+      "publication": "TechCrunch",
+      "title": "European neobroker Scalable Capital raises $180M+ at a $1.4B valuation",
+      "url": "https://techcrunch.com/2021/06/08/european-neobroker-scalable-capital-raises-180m-at-a-1-4b-valuation/",
+      "publishedOn": "2021-06-08",
+      "quote": "Scalable Capital, a Munich/Berlin startup that provides tools to monitor and manage portfolios for those investing in shares, manage trades and exchange traded funds for a flat fee of €2.99 per month, has raised more than $180 million (around €150 million) to expand its business. The company confirmed to us that the investment, a Series E being led by China’s Tencent, is being done at a $1.4 billion valuation."
+    },
+    {
+      "id": "s4",
+      "publication": "TechCrunch",
+      "title": "European neobroker Scalable Capital raises $180M+ at a $1.4B valuation",
+      "url": "https://techcrunch.com/2021/06/08/european-neobroker-scalable-capital-raises-180m-at-a-1-4b-valuation/",
+      "publishedOn": "2021-06-08",
+      "quote": "It was only in July 2020, less than a year ago, that the startup raised a Series D of $58 million at a $460 million valuation."
+    },
+    {
+      "id": "s5",
+      "publication": "Company press release",
+      "title": "Scalable Capital receives €155 million and continues to expand its digital investment platform – Sofina and Noteus Partners lead funding round",
+      "url": "https://de.scalable.capital/en/newsroom/en-funding-round-2025",
+      "publishedOn": "2025-06-03",
+      "quote": "Munich, June 3, 2025: Scalable Capital has successfully completed a funding round, raising €155 million ($175 million). This is the company’s largest funding round to date and is led by Sofina and Noteus Partners. Existing investors Balderton Capital, Tencent, and HV Capital also participated, underlining their continued confidence in the company. Sofina is a global investment company, listed on Euronext Brussels. Noteus Partners is a pan-European technology investor specializing in growth equity. Investors have now invested over €470 million (over $535 million) in Scalable Capital."
+    }
+  ]
+}

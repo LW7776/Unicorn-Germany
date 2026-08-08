@@ -1,0 +1,199 @@
+{
+  "slug": "proxima-fusion",
+  "name": "Proxima Fusion",
+  "website": "https://www.proximafusion.com",
+  "logo": "assets/logos/proxima-fusion.png",
+  "hq": {
+    "city": "Munich",
+    "country": "DE"
+  },
+  "foundedCountry": "DE",
+  "foundedYear": 2023,
+  "sectors": [
+    "Fusion Energy",
+    "Deep Tech"
+  ],
+  "thesis": {
+    "problem": "Fusion power has been a laboratory result for decades rather than a product, because the machines that confine a plasma hot enough to fuse are either unstable or impossible to run continuously. The tokamak, the design most money has gone into, needs a current driven through the plasma and tends to disrupt; the stellarator is inherently steadier but its twisted magnets were long considered too hard to design and build.",
+    "solution": "Proxima Fusion is the first spin-out from the Max Planck Institute for Plasma Physics, where the world's largest stellarator, Wendelstein 7-X, was built. It uses simulation and high-temperature superconducting magnets to make that design manufacturable, and is building Alpha, a net-energy demonstrator near Munich, as the step before a commercial plant."
+  },
+  "valuation": {
+    "amount": 2400,
+    "currency": "EUR",
+    "approximate": false,
+    "asOf": "2026-07",
+    "round": "Financing round",
+    "source": "s1",
+    "disputed": {
+      "note": "Two allowlisted publications put this round at different valuations on the same day. Proxima's own announcement and EU-Startups give €2.4bn; Sifted gives €2.5bn. The register publishes the company's own figure and records Sifted's beside it rather than picking one silently — nothing in either account explains the €100m gap.",
+      "source": "s2"
+    }
+  },
+  "becameUnicorn": {
+    "date": "2026-07",
+    "roundId": "r2",
+    "source": "s1"
+  },
+  "totalRaised": {
+    "amount": 650,
+    "currency": "EUR",
+    "approximate": true,
+    "source": "s4"
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "date": "2025-06",
+      "stage": "Series A",
+      "amount": 130,
+      "currency": "EUR",
+      "approximate": false,
+      "postMoney": null,
+      "leadInvestors": [
+        "Balderton Capital",
+        "Cherry Ventures"
+      ],
+      "investors": [
+        "Balderton Capital",
+        "Cherry Ventures",
+        "UVC Partners",
+        "Bayern Kapital",
+        "Club degli Investitori",
+        "DeepTech & Climate Fonds",
+        "Elaia",
+        "HTGF",
+        "Leitmotif",
+        "Lightspeed",
+        "OMNES Capital",
+        "redalpine",
+        "Visionaries Tomorrow"
+      ],
+      "source": "s3"
+    },
+    {
+      "id": "r2",
+      "date": "2026-07",
+      "stage": "Financing round",
+      "amount": 411,
+      "currency": "EUR",
+      "approximate": false,
+      "postMoney": 2400,
+      "leadInvestors": [
+        "XTX Ventures",
+        "East X Ventures"
+      ],
+      "investors": [
+        "XTX Ventures",
+        "East X Ventures",
+        "RWE",
+        "Google",
+        "KfW Capital",
+        "SPRIND",
+        "Burda Principal Investments",
+        "Plural",
+        "UVC Partners",
+        "Balderton Capital",
+        "Cherry Ventures",
+        "DST Global Partners",
+        "Brevan Howard Macro Venture",
+        "Lightspeed",
+        "DeepTech & Climate Fonds",
+        "redalpine",
+        "Leitmotif",
+        "Elaia",
+        "CDP Venture Capital",
+        "Bayern Kapital",
+        "EIC Fund"
+      ],
+      "source": "s1"
+    }
+  ],
+  "founders": [
+    {
+      "name": "Francesco Sciortino",
+      "role": "Co-Founder and CEO",
+      "current": true
+    },
+    {
+      "name": "Lucio Milanese",
+      "role": "Co-Founder and Chief External Affairs Officer",
+      "current": true
+    },
+    {
+      "name": "Jorrit Lion",
+      "role": "Co-Founder and Chief Scientist",
+      "current": true
+    },
+    {
+      "name": "Martin Kubie",
+      "role": "Co-Founder and Chief Engineer",
+      "current": true
+    },
+    {
+      "name": "Jonathan Schilling",
+      "role": "Co-Founder and Head of Labs",
+      "current": true
+    }
+  ],
+  "investors": [
+    "XTX Ventures",
+    "East X Ventures",
+    "Balderton Capital",
+    "Cherry Ventures",
+    "Google",
+    "RWE",
+    "KfW Capital",
+    "SPRIND",
+    "Burda Principal Investments",
+    "Plural",
+    "UVC Partners",
+    "DST Global Partners",
+    "Brevan Howard Macro Venture",
+    "Lightspeed",
+    "DeepTech & Climate Fonds",
+    "redalpine",
+    "Leitmotif",
+    "Elaia",
+    "CDP Venture Capital",
+    "Bayern Kapital",
+    "EIC Fund",
+    "HTGF",
+    "OMNES Capital",
+    "Club degli Investitori",
+    "Visionaries Tomorrow"
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "publication": "Company press release",
+      "title": "Proxima Fusion Raises €411 Million to Build Europe’s Commercial Fusion Champion",
+      "url": "https://www.proximafusion.com/press-news/proxima-fusion-raises-eu411-million-to-build-europes-commercial-fusion-champion",
+      "publishedOn": "2026-07-07",
+      "quote": "Munich, Oxford, Zurich (Europe), July 7, 2026 – Proxima Fusion today announced a €411 million ($468 million) financing round, bringing the company’s valuation to €2.4 billion ($2.7 billion) and establishing Proxima as the best-funded fusion company in Europe."
+    },
+    {
+      "id": "s2",
+      "publication": "Sifted",
+      "title": "Google backs Proxima Fusion in €411m raise",
+      "url": "https://sifted.eu/articles/google-proxima-fusion-411m-raise",
+      "publishedOn": "2026-07-07",
+      "quote": "Munich-headquartered Proxima Fusion has raised €411m at a €2.5bn valuation in a round led by XTX Ventures and East X Ventures."
+    },
+    {
+      "id": "s3",
+      "publication": "TechCrunch",
+      "title": "Proxima Fusion joins the club of well-funded nuclear contenders with €130M Series A",
+      "url": "https://techcrunch.com/2025/06/10/proxima-fusion-joins-the-club-of-well-funded-nuclear-contenders-with-e130m-series-a/",
+      "publishedOn": "2025-06-10",
+      "quote": "Most fusion companies that have raised over $100 million are based in the United States. Not Proxima Fusion, a German startup that has just secured a €130 million Series A round of funding (approximately $148 million) led by Balderton Capital and Cherry Ventures."
+    },
+    {
+      "id": "s4",
+      "publication": "Company press release",
+      "title": "Proxima Fusion Raises €411 Million to Build Europe’s Commercial Fusion Champion",
+      "url": "https://www.proximafusion.com/press-news/proxima-fusion-raises-eu411-million-to-build-europes-commercial-fusion-champion",
+      "publishedOn": "2026-07-07",
+      "quote": "In less than three years, Proxima has secured more than €650 million ($740 million), including €95 million in public grants."
+    }
+  ]
+}

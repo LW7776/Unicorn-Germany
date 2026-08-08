@@ -1,15 +1,245 @@
 {
  "stats": {
-  "count": 16,
-  "combinedValuationEurMillions": 74542.0,
-  "combinedValuationLabel": "~€74.5 bn",
-  "newInLast12Months": 3,
+  "count": 21,
+  "combinedValuationEurMillions": 82270.0,
+  "combinedValuationLabel": "~€82.3 bn",
+  "newInLast12Months": 4,
   "medianYearsToUnicorn": 6,
   "fxRateDisclosed": 0.92,
   "fxAsOf": "2026-08",
   "dataAsOf": "2026-08-07"
  },
  "companies": [
+  {
+   "slug": "1komma5",
+   "name": "1KOMMA5°",
+   "website": "https://1komma5.com",
+   "logo": "assets/logos/1komma5.svg",
+   "hq": {
+    "city": "Hamburg",
+    "country": "DE"
+   },
+   "foundedCountry": "DE",
+   "foundedYear": 2021,
+   "sectors": [
+    "Energy",
+    "Climate Tech"
+   ],
+   "thesis": {
+    "problem": "The companies that actually fit solar panels, batteries and heat pumps are small local electrical firms, thousands of them, each with a handful of technicians and no way to bid for a national customer or to make the finished system talk to the electricity market. The bottleneck in electrifying a house is not the hardware but the trade that installs it.",
+    "solution": "1KOMMA5° buys those installers and puts them on one platform, then connects everything they fit to Heartbeat AI — software that pools the batteries, heat pumps and cars it has installed into a virtual power plant and trades their flexibility. The installers give the company reach; the software is what it expects to be valued on."
+   },
+   "valuation": {
+    "amount": 1000,
+    "currency": "USD",
+    "approximate": false,
+    "asOf": "2023-06",
+    "round": "Series B",
+    "source": "s1"
+   },
+   "becameUnicorn": {
+    "date": "2023-06",
+    "roundId": "r1",
+    "source": "s1"
+   },
+   "totalRaised": {
+    "amount": 400,
+    "currency": "EUR",
+    "approximate": true,
+    "source": "s5"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2023-06",
+     "stage": "Series B",
+     "amount": 215,
+     "currency": "EUR",
+     "approximate": false,
+     "postMoney": 1000,
+     "postMoneyCurrency": "USD",
+     "postMoneySource": "s1",
+     "leadInvestors": [
+      "G2VP"
+     ],
+     "investors": [
+      "G2VP"
+     ],
+     "source": "s2",
+     "disputed": {
+      "note": "This round is widely reported as €430m — Tech.eu’s headline and standfirst both give that figure. The company’s own announcement splits it: “215 million Euro in equity … We have also set aside an additional 215 million Euro in re-participation options, which can be paid as part of the purchase price for new acquisitions.” Only the first €215m is money raised; the rest is acquisition currency 1KOMMA5° may issue later. The register records the equity and keeps the larger, better-known number here.",
+      "source": "s4"
+     },
+     "dateLabel": "Jun 2023",
+     "amountLabel": "€215 m"
+    },
+    {
+     "id": "r2",
+     "date": "2024-12",
+     "stage": "Pre-IPO round",
+     "amount": 150,
+     "currency": "EUR",
+     "approximate": false,
+     "postMoney": null,
+     "leadInvestors": [
+      "California State Teachers’ Retirement System"
+     ],
+     "investors": [
+      "California State Teachers’ Retirement System",
+      "G2 Venture Partners",
+      "2150",
+      "Norrsken VC",
+      "Hamilton Lane",
+      "b2venture",
+      "Eurazeo",
+      "eCapital"
+     ],
+     "source": "s3",
+     "dateLabel": "Dec 2024",
+     "amountLabel": "€150 m"
+    },
+    {
+     "id": "r3",
+     "date": "2025-07",
+     "stage": "Pre-IPO round extension",
+     "amount": null,
+     "currency": "EUR",
+     "approximate": false,
+     "postMoney": null,
+     "leadInvestors": [],
+     "investors": [
+      "Sabanci Climate Ventures"
+     ],
+     "source": "s5",
+     "dateLabel": "Jul 2025",
+     "amountLabel": null
+    }
+   ],
+   "founders": [
+    {
+     "name": "Philipp Schröder",
+     "role": "Co-Founder & Chief Executive Officer",
+     "current": true
+    },
+    {
+     "name": "Micha Grüber",
+     "role": "Co-Founder & Chief Financial Officer",
+     "current": true
+    },
+    {
+     "name": "Jannik Schall",
+     "role": "Co-Founder & Chief Product Officer",
+     "current": true
+    },
+    {
+     "name": "Philip Liesenfeld",
+     "role": "Co-Founder & Chief Operating Officer",
+     "current": true
+    }
+   ],
+   "investors": [
+    "G2VP",
+    "California State Teachers’ Retirement System",
+    "G2 Venture Partners",
+    "Hamilton Lane",
+    "Eurazeo",
+    "b2venture",
+    "eCapital",
+    "2150",
+    "Norrsken VC",
+    "Porsche Ventures",
+    "Blue Elephant Ventures",
+    "Sabanci Climate Ventures"
+   ],
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "Company press release",
+     "title": "1KOMMA5°: The Newest Unicorn in the CleanTech Industry",
+     "url": "https://1komma5.com/en/press/press-releases/1komma5-unicorn-en/",
+     "publishedOn": "2023-06-23",
+     "quote": "1KOMMA5° has become a unicorn! Only 23 months after our foundation, we have reached a valuation of 1 billion US-Dollar, a testament to the hard work and dedication of our team."
+    },
+    {
+     "id": "s2",
+     "publication": "Company press release",
+     "title": "1KOMMA5°: The Newest Unicorn in the CleanTech Industry",
+     "url": "https://1komma5.com/en/press/press-releases/1komma5-unicorn-en/",
+     "publishedOn": "2023-06-23",
+     "quote": "We are humbled and grateful to have raised 215 million Euro in equity for this mission, exceeding our target volume of 150 million Euro due to oversubscription."
+    },
+    {
+     "id": "s3",
+     "publication": "Sifted",
+     "title": "1Komma5 raises €150m to pave way for IPO",
+     "url": "https://sifted.eu/articles/1komma5-e150m-pre-ipo-news",
+     "publishedOn": "2024-12-20",
+     "quote": "German solar startup 1Komma5 has raised €150m, paving its way to a public listing. The funding is led by the California State Teachers’ Retirement System (Calstrs), a state pension fund."
+    },
+    {
+     "id": "s4",
+     "publication": "Tech.eu",
+     "title": "Hamburg’s 1KOMMA5° has raised €430 million - and just became a unicorn at just 23 months old",
+     "url": "https://tech.eu/2023/06/23/hamburg-s-1komma5-has-raised-430-million-and-just-become-a-unicorn-at-just-23-months-old/",
+     "publishedOn": "2023-06-23",
+     "quote": "Hamburg’s 1KOMMA5° has raised a €430 million series B round, and has shot into the coveted a unicorn spot in just 23 months. The round was led by G2VP and Ben Kortlang will join the board as vice chairman."
+    },
+    {
+     "id": "s5",
+     "publication": "Company press release",
+     "title": "1KOMMA5° extends pre-IPO round",
+     "url": "https://1komma5.com/en/press/press-releases/1komma5-extends-pre-ipo-round/",
+     "publishedOn": "2025-07-28",
+     "quote": "To date, 1KOMMA5° has raised almost €400 million in equity and remains debt-free."
+    },
+    {
+     "id": "s6",
+     "publication": "Sifted",
+     "title": "1Komma5 raises €150m to pave way for IPO",
+     "url": "https://sifted.eu/articles/1komma5-e150m-pre-ipo-news",
+     "publishedOn": "2024-12-20",
+     "quote": "The round means a slight increase in valuation, Sifted understands, but the company — which achieved unicorn status last year — did not disclose an updated figure."
+    }
+   ],
+   "display": {
+    "valuationLabel": "$1 bn",
+    "valuationAsOf": "Jun 2023",
+    "lastRoundLabel": "Jul 2025",
+    "lastRoundStage": "Pre-IPO round extension",
+    "totalRaisedLabel": "~€400 m",
+    "yearsToUnicorn": 2,
+    "becameUnicornLabel": "Jun 2023",
+    "unicornThresholdLabel": "$1bn",
+    "foundersLabel": "Philipp Schröder, Micha Grüber, Jannik Schall, Philip Liesenfeld",
+    "aged": true
+   },
+   "sort": {
+    "newest": [
+     2023,
+     6
+    ],
+    "valuationEur": 920.0,
+    "latestRound": [
+     2025,
+     7
+    ],
+    "name": "1komma5°"
+   },
+   "investorsOrdered": [
+    "G2VP",
+    "California State Teachers’ Retirement System",
+    "G2 Venture Partners",
+    "Hamilton Lane",
+    "Eurazeo",
+    "b2venture",
+    "eCapital",
+    "2150",
+    "Norrsken VC",
+    "Porsche Ventures",
+    "Blue Elephant Ventures",
+    "Sabanci Climate Ventures"
+   ]
+  },
   {
    "slug": "black-forest-labs",
    "name": "Black Forest Labs",
@@ -168,6 +398,7 @@
     "totalRaisedLabel": "~$450 m",
     "yearsToUnicorn": 1,
     "becameUnicornLabel": "Dec 2025",
+    "unicornThresholdLabel": "$1bn",
     "foundersLabel": "Robin Rombach, Patrick Esser, Andreas Blattmann",
     "aged": false
    },
@@ -413,6 +644,7 @@
     "totalRaisedLabel": "—",
     "yearsToUnicorn": 7,
     "becameUnicornLabel": "Jun 2018",
+    "unicornThresholdLabel": "$1bn",
     "foundersLabel": "Alexander Rinke, Bastian Nominacher, Martin Klenk",
     "aged": true
    },
@@ -601,6 +833,7 @@
     "totalRaisedLabel": "$274.7 m",
     "yearsToUnicorn": 4,
     "becameUnicornLabel": "Apr 2022",
+    "unicornThresholdLabel": "$1bn",
     "foundersLabel": "Daniel Khachab, Julian Hammer, Grégoire Ambroselli",
     "aged": true
    },
@@ -761,6 +994,7 @@
     "totalRaisedLabel": "—",
     "yearsToUnicorn": 15,
     "becameUnicornLabel": "Sep 2021",
+    "unicornThresholdLabel": "$1bn",
     "foundersLabel": "Dirk Hoerig",
     "aged": true
    },
@@ -918,6 +1152,7 @@
     "totalRaisedLabel": "—",
     "yearsToUnicorn": 6,
     "becameUnicornLabel": "Jan 2023",
+    "unicornThresholdLabel": "€1bn",
     "foundersLabel": "Jaroslaw Kutylowski",
     "aged": true
    },
@@ -943,6 +1178,204 @@
     "Bessemer Venture Partners",
     "Benchmark",
     "btov"
+   ]
+  },
+  {
+   "slug": "enpal",
+   "name": "Enpal",
+   "website": "https://www.enpal.de",
+   "logo": "assets/logos/enpal.svg",
+   "hq": {
+    "city": "Berlin",
+    "country": "DE"
+   },
+   "foundedCountry": "DE",
+   "foundedYear": 2017,
+   "sectors": [
+    "Energy",
+    "Climate Tech"
+   ],
+   "thesis": {
+    "problem": "A rooftop solar system costs a homeowner five figures up front, has to be specified, financed, installed, connected and maintained by four different trades, and pays for itself only over decades. That combination — a large cheque and a lot of coordination — is what keeps most roofs empty, not any doubt about the technology.",
+    "solution": "Enpal removes the cheque. It rents the whole system — panels, battery, wallbox, heat pump, and the software that schedules them — on a twenty-year subscription with no upfront cost, and trains its own installers rather than buying up existing ones. Financing that hardware is the actual business, which is why Enpal has raised far more in bank debt than in equity."
+   },
+   "valuation": {
+    "amount": 2200,
+    "currency": "EUR",
+    "approximate": false,
+    "asOf": "2023-01",
+    "round": "Series D",
+    "source": "s1"
+   },
+   "becameUnicorn": {
+    "date": "2021-10",
+    "roundId": "r1",
+    "source": "s2"
+   },
+   "totalRaised": {
+    "amount": null,
+    "currency": "EUR",
+    "approximate": false,
+    "source": "s1"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2021-10",
+     "stage": "Series C, final close",
+     "amount": 250,
+     "currency": "EUR",
+     "approximate": false,
+     "postMoney": 1100,
+     "postMoneyCurrency": "USD",
+     "leadInvestors": [
+      "SoftBank Vision Fund 2"
+     ],
+     "investors": [
+      "SoftBank Vision Fund 2",
+      "HV Capital",
+      "Peter Rive"
+     ],
+     "source": "s2",
+     "dateLabel": "Oct 2021",
+     "amountLabel": "€250 m"
+    },
+    {
+     "id": "r2",
+     "date": "2023-01",
+     "stage": "Series D",
+     "amount": 215,
+     "currency": "EUR",
+     "approximate": false,
+     "postMoney": 2200,
+     "leadInvestors": [
+      "TPG Rise Climate"
+     ],
+     "investors": [
+      "TPG Rise Climate",
+      "Westly Group",
+      "Activate Capital",
+      "HV Capital",
+      "SoftBank Vision Fund 2",
+      "Princeville Climate Tech"
+     ],
+     "source": "s1",
+     "dateLabel": "Jan 2023",
+     "amountLabel": "€215 m"
+    },
+    {
+     "id": "r3",
+     "date": "2025-04",
+     "stage": "Equity round",
+     "amount": 110,
+     "currency": "EUR",
+     "approximate": false,
+     "postMoney": null,
+     "leadInvestors": [
+      "TPG"
+     ],
+     "investors": [
+      "TPG"
+     ],
+     "source": "s3",
+     "dateLabel": "Apr 2025",
+     "amountLabel": "€110 m"
+    }
+   ],
+   "founders": [
+    {
+     "name": "Mario Kohle",
+     "role": "Founder & CEO",
+     "current": true
+    },
+    {
+     "name": "Viktor Wingert",
+     "role": "Co-founder & Chief Investment Officer",
+     "current": true
+    },
+    {
+     "name": "Jochen Ziervogel",
+     "role": "Co-founder",
+     "current": true
+    }
+   ],
+   "investors": [
+    "TPG Rise Climate",
+    "SoftBank Vision Fund 2",
+    "TPG",
+    "Westly Group",
+    "Activate Capital",
+    "HV Capital",
+    "Princeville Climate Tech",
+    "Peter Rive"
+   ],
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "Sifted",
+     "title": "Tesla backer bets on solar unicorn Enpal’s €215m Series D",
+     "url": "https://sifted.eu/articles/enpal-215m-solar-panels-news",
+     "publishedOn": "2023-01-09",
+     "quote": "Berlin-based solar startup Enpal is today announcing a €215m Series D, in a round led by US investor TPG Rise Climate with participation from early Tesla backer Westly Group. It values the six-year-old startup at €2.2bn."
+    },
+    {
+     "id": "s2",
+     "publication": "TechCrunch",
+     "title": "Enpal closes out Series C with $174M from SoftBank for tech to make it easier for homeowners to make the switch to solar energy",
+     "url": "https://techcrunch.com/2021/10/17/enpal-closes-out-series-c-with-174m-from-softbank-for-tech-to-make-it-easier-for-homeowners-to-make-the-switch-to-solar-energy/",
+     "publishedOn": "2021-10-17",
+     "quote": "The funding closes out its Series C at €250 million ($290 million), including €100 million that Enpal raised earlier this year from investors that included HV Capital and SolarCity co-founder Peter Rive. The investment values Enpal at €950 million ($1.1 billion) post-money, the company has confirmed."
+    },
+    {
+     "id": "s3",
+     "publication": "Sifted",
+     "title": "Enpal secures €110m round led by US PE firm TPG",
+     "url": "https://sifted.eu/articles/enpal-e110m-tpg-equity",
+     "publishedOn": "2025-04-07",
+     "quote": "German startup Enpal, which supplies green energy tech to consumers, has raised €110m, led by private equity firm TPG."
+    },
+    {
+     "id": "s4",
+     "publication": "Sifted",
+     "title": "Enpal secures €110m round led by US PE firm TPG",
+     "url": "https://sifted.eu/articles/enpal-e110m-tpg-equity",
+     "publishedOn": "2025-04-07",
+     "quote": "Enpal declined to comment on the valuation the round gives the company."
+    }
+   ],
+   "display": {
+    "valuationLabel": "€2.2 bn",
+    "valuationAsOf": "Jan 2023",
+    "lastRoundLabel": "Apr 2025",
+    "lastRoundStage": "Equity round",
+    "totalRaisedLabel": "—",
+    "yearsToUnicorn": 4,
+    "becameUnicornLabel": "Oct 2021",
+    "unicornThresholdLabel": "$1bn",
+    "foundersLabel": "Mario Kohle, Viktor Wingert, Jochen Ziervogel",
+    "aged": true
+   },
+   "sort": {
+    "newest": [
+     2021,
+     10
+    ],
+    "valuationEur": 2200,
+    "latestRound": [
+     2025,
+     4
+    ],
+    "name": "enpal"
+   },
+   "investorsOrdered": [
+    "TPG Rise Climate",
+    "SoftBank Vision Fund 2",
+    "TPG",
+    "Westly Group",
+    "Activate Capital",
+    "HV Capital",
+    "Princeville Climate Tech",
+    "Peter Rive"
    ]
   },
   {
@@ -1106,6 +1539,7 @@
     "totalRaisedLabel": "~$600 m",
     "yearsToUnicorn": 5,
     "becameUnicornLabel": "Jun 2021",
+    "unicornThresholdLabel": "$1bn",
     "foundersLabel": "Michael Wax, Erik Muttersbach, Ferry Heilemann, Fabian Heilemann",
     "aged": true
    },
@@ -1385,6 +1819,7 @@
     "totalRaisedLabel": "—",
     "yearsToUnicorn": 2,
     "becameUnicornLabel": "Sep 2023",
+    "unicornThresholdLabel": "€1bn",
     "foundersLabel": "Torsten Reil, Gundbert Scherf, Niklas Köhler",
     "aged": false
    },
@@ -1574,6 +2009,7 @@
     "totalRaisedLabel": "~€200 m",
     "yearsToUnicorn": 7,
     "becameUnicornLabel": "Aug 2026",
+    "unicornThresholdLabel": "€1bn",
     "foundersLabel": "Ante Spittler, Anton Rummel, Ferdinand Meyer, Stephan Haslebacher",
     "aged": false
    },
@@ -1761,6 +2197,7 @@
     "totalRaisedLabel": "~$1.8 bn",
     "yearsToUnicorn": 6,
     "becameUnicornLabel": "Jan 2019",
+    "unicornThresholdLabel": "$1bn",
     "foundersLabel": "Valentin Stalf, Maximilian Tayenthal",
     "aged": true
    },
@@ -1947,6 +2384,7 @@
     "totalRaisedLabel": "—",
     "yearsToUnicorn": 8,
     "becameUnicornLabel": "Jan 2026",
+    "unicornThresholdLabel": "$1bn",
     "foundersLabel": "Alberto Zamora, Matthias Jungblut, Stefan Wawrzinek",
     "aged": false
    },
@@ -2128,6 +2566,7 @@
     "totalRaisedLabel": "—",
     "yearsToUnicorn": 7,
     "becameUnicornLabel": "May 2025",
+    "unicornThresholdLabel": "$1bn",
     "foundersLabel": "Malte Kosub, Stefan Ostwald",
     "aged": false
    },
@@ -2322,6 +2761,7 @@
     "totalRaisedLabel": "—",
     "yearsToUnicorn": 6,
     "becameUnicornLabel": "Jan 2021",
+    "unicornThresholdLabel": "$1bn",
     "foundersLabel": "Hanno Renner, Roman Schumacher, Arseniy Vershinin, Jonas Rieke",
     "aged": true
    },
@@ -2348,6 +2788,260 @@
     "Picus",
     "Altimeter Capital",
     "Alkeon"
+   ]
+  },
+  {
+   "slug": "proxima-fusion",
+   "name": "Proxima Fusion",
+   "website": "https://www.proximafusion.com",
+   "logo": "assets/logos/proxima-fusion.png",
+   "hq": {
+    "city": "Munich",
+    "country": "DE"
+   },
+   "foundedCountry": "DE",
+   "foundedYear": 2023,
+   "sectors": [
+    "Fusion Energy",
+    "Deep Tech"
+   ],
+   "thesis": {
+    "problem": "Fusion power has been a laboratory result for decades rather than a product, because the machines that confine a plasma hot enough to fuse are either unstable or impossible to run continuously. The tokamak, the design most money has gone into, needs a current driven through the plasma and tends to disrupt; the stellarator is inherently steadier but its twisted magnets were long considered too hard to design and build.",
+    "solution": "Proxima Fusion is the first spin-out from the Max Planck Institute for Plasma Physics, where the world's largest stellarator, Wendelstein 7-X, was built. It uses simulation and high-temperature superconducting magnets to make that design manufacturable, and is building Alpha, a net-energy demonstrator near Munich, as the step before a commercial plant."
+   },
+   "valuation": {
+    "amount": 2400,
+    "currency": "EUR",
+    "approximate": false,
+    "asOf": "2026-07",
+    "round": "Financing round",
+    "source": "s1",
+    "disputed": {
+     "note": "Two allowlisted publications put this round at different valuations on the same day. Proxima's own announcement and EU-Startups give €2.4bn; Sifted gives €2.5bn. The register publishes the company's own figure and records Sifted's beside it rather than picking one silently — nothing in either account explains the €100m gap.",
+     "source": "s2"
+    }
+   },
+   "becameUnicorn": {
+    "date": "2026-07",
+    "roundId": "r2",
+    "source": "s1"
+   },
+   "totalRaised": {
+    "amount": 650,
+    "currency": "EUR",
+    "approximate": true,
+    "source": "s4"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2025-06",
+     "stage": "Series A",
+     "amount": 130,
+     "currency": "EUR",
+     "approximate": false,
+     "postMoney": null,
+     "leadInvestors": [
+      "Balderton Capital",
+      "Cherry Ventures"
+     ],
+     "investors": [
+      "Balderton Capital",
+      "Cherry Ventures",
+      "UVC Partners",
+      "Bayern Kapital",
+      "Club degli Investitori",
+      "DeepTech & Climate Fonds",
+      "Elaia",
+      "HTGF",
+      "Leitmotif",
+      "Lightspeed",
+      "OMNES Capital",
+      "redalpine",
+      "Visionaries Tomorrow"
+     ],
+     "source": "s3",
+     "dateLabel": "Jun 2025",
+     "amountLabel": "€130 m"
+    },
+    {
+     "id": "r2",
+     "date": "2026-07",
+     "stage": "Financing round",
+     "amount": 411,
+     "currency": "EUR",
+     "approximate": false,
+     "postMoney": 2400,
+     "leadInvestors": [
+      "XTX Ventures",
+      "East X Ventures"
+     ],
+     "investors": [
+      "XTX Ventures",
+      "East X Ventures",
+      "RWE",
+      "Google",
+      "KfW Capital",
+      "SPRIND",
+      "Burda Principal Investments",
+      "Plural",
+      "UVC Partners",
+      "Balderton Capital",
+      "Cherry Ventures",
+      "DST Global Partners",
+      "Brevan Howard Macro Venture",
+      "Lightspeed",
+      "DeepTech & Climate Fonds",
+      "redalpine",
+      "Leitmotif",
+      "Elaia",
+      "CDP Venture Capital",
+      "Bayern Kapital",
+      "EIC Fund"
+     ],
+     "source": "s1",
+     "dateLabel": "Jul 2026",
+     "amountLabel": "€411 m"
+    }
+   ],
+   "founders": [
+    {
+     "name": "Francesco Sciortino",
+     "role": "Co-Founder and CEO",
+     "current": true
+    },
+    {
+     "name": "Lucio Milanese",
+     "role": "Co-Founder and Chief External Affairs Officer",
+     "current": true
+    },
+    {
+     "name": "Jorrit Lion",
+     "role": "Co-Founder and Chief Scientist",
+     "current": true
+    },
+    {
+     "name": "Martin Kubie",
+     "role": "Co-Founder and Chief Engineer",
+     "current": true
+    },
+    {
+     "name": "Jonathan Schilling",
+     "role": "Co-Founder and Head of Labs",
+     "current": true
+    }
+   ],
+   "investors": [
+    "XTX Ventures",
+    "East X Ventures",
+    "Balderton Capital",
+    "Cherry Ventures",
+    "Google",
+    "RWE",
+    "KfW Capital",
+    "SPRIND",
+    "Burda Principal Investments",
+    "Plural",
+    "UVC Partners",
+    "DST Global Partners",
+    "Brevan Howard Macro Venture",
+    "Lightspeed",
+    "DeepTech & Climate Fonds",
+    "redalpine",
+    "Leitmotif",
+    "Elaia",
+    "CDP Venture Capital",
+    "Bayern Kapital",
+    "EIC Fund",
+    "HTGF",
+    "OMNES Capital",
+    "Club degli Investitori",
+    "Visionaries Tomorrow"
+   ],
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "Company press release",
+     "title": "Proxima Fusion Raises €411 Million to Build Europe’s Commercial Fusion Champion",
+     "url": "https://www.proximafusion.com/press-news/proxima-fusion-raises-eu411-million-to-build-europes-commercial-fusion-champion",
+     "publishedOn": "2026-07-07",
+     "quote": "Munich, Oxford, Zurich (Europe), July 7, 2026 – Proxima Fusion today announced a €411 million ($468 million) financing round, bringing the company’s valuation to €2.4 billion ($2.7 billion) and establishing Proxima as the best-funded fusion company in Europe."
+    },
+    {
+     "id": "s2",
+     "publication": "Sifted",
+     "title": "Google backs Proxima Fusion in €411m raise",
+     "url": "https://sifted.eu/articles/google-proxima-fusion-411m-raise",
+     "publishedOn": "2026-07-07",
+     "quote": "Munich-headquartered Proxima Fusion has raised €411m at a €2.5bn valuation in a round led by XTX Ventures and East X Ventures."
+    },
+    {
+     "id": "s3",
+     "publication": "TechCrunch",
+     "title": "Proxima Fusion joins the club of well-funded nuclear contenders with €130M Series A",
+     "url": "https://techcrunch.com/2025/06/10/proxima-fusion-joins-the-club-of-well-funded-nuclear-contenders-with-e130m-series-a/",
+     "publishedOn": "2025-06-10",
+     "quote": "Most fusion companies that have raised over $100 million are based in the United States. Not Proxima Fusion, a German startup that has just secured a €130 million Series A round of funding (approximately $148 million) led by Balderton Capital and Cherry Ventures."
+    },
+    {
+     "id": "s4",
+     "publication": "Company press release",
+     "title": "Proxima Fusion Raises €411 Million to Build Europe’s Commercial Fusion Champion",
+     "url": "https://www.proximafusion.com/press-news/proxima-fusion-raises-eu411-million-to-build-europes-commercial-fusion-champion",
+     "publishedOn": "2026-07-07",
+     "quote": "In less than three years, Proxima has secured more than €650 million ($740 million), including €95 million in public grants."
+    }
+   ],
+   "display": {
+    "valuationLabel": "€2.4 bn",
+    "valuationAsOf": "Jul 2026",
+    "lastRoundLabel": "Jul 2026",
+    "lastRoundStage": "Financing round",
+    "totalRaisedLabel": "~€650 m",
+    "yearsToUnicorn": 3,
+    "becameUnicornLabel": "Jul 2026",
+    "unicornThresholdLabel": "€1bn",
+    "foundersLabel": "Francesco Sciortino, Lucio Milanese, Jorrit Lion, Martin Kubie, Jonathan Schilling",
+    "aged": false
+   },
+   "sort": {
+    "newest": [
+     2026,
+     7
+    ],
+    "valuationEur": 2400,
+    "latestRound": [
+     2026,
+     7
+    ],
+    "name": "proxima fusion"
+   },
+   "investorsOrdered": [
+    "XTX Ventures",
+    "East X Ventures",
+    "Balderton Capital",
+    "Cherry Ventures",
+    "Google",
+    "RWE",
+    "KfW Capital",
+    "SPRIND",
+    "Burda Principal Investments",
+    "Plural",
+    "UVC Partners",
+    "DST Global Partners",
+    "Brevan Howard Macro Venture",
+    "Lightspeed",
+    "DeepTech & Climate Fonds",
+    "redalpine",
+    "Leitmotif",
+    "Elaia",
+    "CDP Venture Capital",
+    "Bayern Kapital",
+    "EIC Fund",
+    "HTGF",
+    "OMNES Capital",
+    "Club degli Investitori",
+    "Visionaries Tomorrow"
    ]
   },
   {
@@ -2543,6 +3237,7 @@
     "totalRaisedLabel": "—",
     "yearsToUnicorn": 1,
     "becameUnicornLabel": "Nov 2021",
+    "unicornThresholdLabel": "$1bn",
     "foundersLabel": "Tushar Ahluwalia, Shrestha Chowdhury, Oliver Dlugosch, Christoph Felix Gamon",
     "aged": true
    },
@@ -2570,6 +3265,400 @@
     "Upper90",
     "Jebsen Capital",
     "LatinLeap"
+   ]
+  },
+  {
+   "slug": "scalable-capital",
+   "name": "Scalable Capital",
+   "website": "https://de.scalable.capital",
+   "logo": "assets/logos/scalable-capital.png",
+   "hq": {
+    "city": "Munich",
+    "country": "DE"
+   },
+   "foundedCountry": "DE",
+   "foundedYear": 2014,
+   "sectors": [
+    "Fintech",
+    "Brokerage"
+   ],
+   "thesis": {
+    "problem": "In Germany, saving has traditionally meant a bank account, and investing has meant paying a bank a percentage every year for a fund it chose. The result is a country with high savings and low market participation: the cost of getting invested, and the effort of choosing, both sit above what a small saver will pay.",
+    "solution": "Scalable Capital started as an algorithmic wealth manager and became a broker as well, selling trades and savings plans on a flat monthly fee rather than a percentage of assets. It runs both halves on the same platform, alongside a white-label version for banks and its own European Investor Exchange."
+   },
+   "valuation": {
+    "amount": 1400,
+    "currency": "USD",
+    "approximate": false,
+    "asOf": "2023-12",
+    "round": "Series E extension",
+    "source": "s2"
+   },
+   "becameUnicorn": {
+    "date": "2021-06",
+    "roundId": "r2",
+    "source": "s3"
+   },
+   "totalRaised": {
+    "amount": 470,
+    "currency": "EUR",
+    "approximate": true,
+    "source": "s5"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2020-07",
+     "stage": "Series D",
+     "amount": 58,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": 460,
+     "leadInvestors": [],
+     "investors": [],
+     "source": "s4",
+     "dateLabel": "Jul 2020",
+     "amountLabel": "$58 m"
+    },
+    {
+     "id": "r2",
+     "date": "2021-06",
+     "stage": "Series E",
+     "amount": 180,
+     "currency": "USD",
+     "approximate": true,
+     "postMoney": 1400,
+     "leadInvestors": [
+      "Tencent"
+     ],
+     "investors": [
+      "Tencent",
+      "BlackRock",
+      "HV Capital",
+      "Tengelmann Ventures"
+     ],
+     "source": "s3",
+     "dateLabel": "Jun 2021",
+     "amountLabel": "~$180 m"
+    },
+    {
+     "id": "r3",
+     "date": "2023-12",
+     "stage": "Series E extension",
+     "amount": 60,
+     "currency": "EUR",
+     "approximate": false,
+     "postMoney": 1400,
+     "postMoneyCurrency": "USD",
+     "postMoneySource": "s2",
+     "leadInvestors": [
+      "Balderton Capital"
+     ],
+     "investors": [
+      "Balderton Capital",
+      "HV Capital"
+     ],
+     "source": "s1",
+     "dateLabel": "Dec 2023",
+     "amountLabel": "€60 m"
+    },
+    {
+     "id": "r4",
+     "date": "2025-06",
+     "stage": "Equity round",
+     "amount": 155,
+     "currency": "EUR",
+     "approximate": false,
+     "postMoney": null,
+     "leadInvestors": [
+      "Sofina",
+      "Noteus Partners"
+     ],
+     "investors": [
+      "Sofina",
+      "Noteus Partners",
+      "Balderton Capital",
+      "Tencent",
+      "HV Capital"
+     ],
+     "source": "s5",
+     "dateLabel": "Jun 2025",
+     "amountLabel": "€155 m"
+    }
+   ],
+   "founders": [
+    {
+     "name": "Erik Podzuweit",
+     "role": "Founder, Co-CEO",
+     "current": true
+    },
+    {
+     "name": "Florian Prucker",
+     "role": "Founder, Co-CEO",
+     "current": true
+    },
+    {
+     "name": "Adam French",
+     "role": "Co-founder",
+     "current": false
+    },
+    {
+     "name": "Stefan Mittnik",
+     "role": "Co-founder",
+     "current": false
+    }
+   ],
+   "investors": [
+    "Tencent",
+    "Balderton Capital",
+    "Sofina",
+    "Noteus Partners",
+    "BlackRock",
+    "HV Capital",
+    "Tengelmann Ventures"
+   ],
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "TechCrunch",
+     "title": "European neobroker Scalable Capital raises $65M on a flat $1.4B valuation",
+     "url": "https://techcrunch.com/2023/12/06/european-neobroker-scalable-capital-raises-65m-on-a-flat-1-4b-valuation/",
+     "publishedOn": "2023-12-06",
+     "quote": "The company has raised €60 million in equity ($65 million at today’s rates)."
+    },
+    {
+     "id": "s2",
+     "publication": "TechCrunch",
+     "title": "European neobroker Scalable Capital raises $65M on a flat $1.4B valuation",
+     "url": "https://techcrunch.com/2023/12/06/european-neobroker-scalable-capital-raises-65m-on-a-flat-1-4b-valuation/",
+     "publishedOn": "2023-12-06",
+     "quote": "Contrary to the startup’s name, this round is coming in at a flat valuation of $1.4 billion. This was the same valuation Scalable Capital had the last time it raised money — $180 million in 2021, a round led by Tencent, with BlackRock, HV and Tengelmann participating."
+    },
+    {
+     "id": "s3",
+     "publication": "TechCrunch",
+     "title": "European neobroker Scalable Capital raises $180M+ at a $1.4B valuation",
+     "url": "https://techcrunch.com/2021/06/08/european-neobroker-scalable-capital-raises-180m-at-a-1-4b-valuation/",
+     "publishedOn": "2021-06-08",
+     "quote": "Scalable Capital, a Munich/Berlin startup that provides tools to monitor and manage portfolios for those investing in shares, manage trades and exchange traded funds for a flat fee of €2.99 per month, has raised more than $180 million (around €150 million) to expand its business. The company confirmed to us that the investment, a Series E being led by China’s Tencent, is being done at a $1.4 billion valuation."
+    },
+    {
+     "id": "s4",
+     "publication": "TechCrunch",
+     "title": "European neobroker Scalable Capital raises $180M+ at a $1.4B valuation",
+     "url": "https://techcrunch.com/2021/06/08/european-neobroker-scalable-capital-raises-180m-at-a-1-4b-valuation/",
+     "publishedOn": "2021-06-08",
+     "quote": "It was only in July 2020, less than a year ago, that the startup raised a Series D of $58 million at a $460 million valuation."
+    },
+    {
+     "id": "s5",
+     "publication": "Company press release",
+     "title": "Scalable Capital receives €155 million and continues to expand its digital investment platform – Sofina and Noteus Partners lead funding round",
+     "url": "https://de.scalable.capital/en/newsroom/en-funding-round-2025",
+     "publishedOn": "2025-06-03",
+     "quote": "Munich, June 3, 2025: Scalable Capital has successfully completed a funding round, raising €155 million ($175 million). This is the company’s largest funding round to date and is led by Sofina and Noteus Partners. Existing investors Balderton Capital, Tencent, and HV Capital also participated, underlining their continued confidence in the company. Sofina is a global investment company, listed on Euronext Brussels. Noteus Partners is a pan-European technology investor specializing in growth equity. Investors have now invested over €470 million (over $535 million) in Scalable Capital."
+    }
+   ],
+   "display": {
+    "valuationLabel": "$1.4 bn",
+    "valuationAsOf": "Dec 2023",
+    "lastRoundLabel": "Jun 2025",
+    "lastRoundStage": "Equity round",
+    "totalRaisedLabel": "~€470 m",
+    "yearsToUnicorn": 7,
+    "becameUnicornLabel": "Jun 2021",
+    "unicornThresholdLabel": "$1bn",
+    "foundersLabel": "Erik Podzuweit, Florian Prucker, Adam French, Stefan Mittnik",
+    "aged": true
+   },
+   "sort": {
+    "newest": [
+     2021,
+     6
+    ],
+    "valuationEur": 1288.0,
+    "latestRound": [
+     2025,
+     6
+    ],
+    "name": "scalable capital"
+   },
+   "investorsOrdered": [
+    "Tencent",
+    "Balderton Capital",
+    "Sofina",
+    "Noteus Partners",
+    "BlackRock",
+    "HV Capital",
+    "Tengelmann Ventures"
+   ]
+  },
+  {
+   "slug": "sennder",
+   "name": "sennder",
+   "website": "https://www.sennder.com",
+   "logo": "assets/logos/sennder.svg",
+   "hq": {
+    "city": "Berlin",
+    "country": "DE"
+   },
+   "foundedCountry": "DE",
+   "foundedYear": 2015,
+   "sectors": [
+    "Logistics",
+    "Freight Forwarding"
+   ],
+   "thesis": {
+    "problem": "European road freight is a market of very large shippers and very small hauliers: a manufacturer with thousands of loads a week on one side, and on the other tens of thousands of carriers running a handful of trucks each. Matching them has historically been done by phone and fax through forwarders, and roughly a fifth of trucks run empty because nobody can see the whole board at once.",
+    "solution": "sennder is a digital forwarder: it contracts directly with the large shippers and dispatches the work across a connected fleet of third-party carriers through its own platform, so pricing, tracking and settlement are software rather than phone calls. It has grown as much by absorbing rivals — Everoad, Uber Freight’s European arm, C.H. Robinson’s European surface transport business — as organically."
+   },
+   "valuation": {
+    "amount": 1000,
+    "currency": "USD",
+    "approximate": true,
+    "asOf": "2021-01",
+    "round": "Series D",
+    "source": "s1",
+    "disputed": {
+     "note": "A €2bn figure is attached to sennder in Tech.eu’s December 2022 headline, “German logistics player Sennder primes new fundraise at €2 billion valuation”. The article body is about a raise that was being prepared, not one that closed: it reports sennder “taking on funds” at around double its January 2021 value, on Handelsblatt’s account, citing unnamed sources and €60m clinched so far. No completed round at that price has been reported since, so the register keeps the last valuation actually struck.",
+     "source": "s3"
+    }
+   },
+   "becameUnicorn": {
+    "date": "2021-01",
+    "roundId": "r1",
+    "source": "s1"
+   },
+   "totalRaised": {
+    "amount": null,
+    "currency": "USD",
+    "approximate": false,
+    "source": "s1"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2021-01",
+     "stage": "Series D",
+     "amount": 160,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": 1000,
+     "leadInvestors": [],
+     "investors": [
+      "Accel",
+      "Lakestar",
+      "HV Capital",
+      "Project A",
+      "Scania"
+     ],
+     "source": "s1",
+     "dateLabel": "Jan 2021",
+     "amountLabel": "$160 m"
+    },
+    {
+     "id": "r2",
+     "date": "2021-06",
+     "stage": "Series D, second close",
+     "amount": 80,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": null,
+     "leadInvestors": [],
+     "investors": [],
+     "source": "s3",
+     "dateLabel": "Jun 2021",
+     "amountLabel": "$80 m"
+    }
+   ],
+   "founders": [
+    {
+     "name": "David Nothacker",
+     "role": "Co-Founder & CEO",
+     "current": true
+    },
+    {
+     "name": "Julius Köhler",
+     "role": "Co-Founder & Managing Director",
+     "current": true
+    },
+    {
+     "name": "Nicolaus Schefenacker",
+     "role": "Co-Founder",
+     "current": true
+    }
+   ],
+   "investors": [
+    "Accel",
+    "Lakestar",
+    "HV Capital",
+    "Project A",
+    "Scania"
+   ],
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "Tech.eu",
+     "title": "Berlin-based digital freight forwarder Sennder bags $160 million at a $1 billion+ valuation",
+     "url": "https://tech.eu/2021/01/14/berlin-based-digital-freight-forwarder-sennder-bags-160-million-at-a-1-billion-valuation/",
+     "publishedOn": "2021-01-14",
+     "quote": "Berlin-based digital freight forwarder sennder has secured $160 million at a $1 billion+ valuation in growth funding to \"accelerate digitalization of European trucking\" and boost its expansion plans."
+    },
+    {
+     "id": "s2",
+     "publication": "TechCrunch",
+     "title": "Digital road freight forwarder Sennder raises $160M Series, plans European expansion",
+     "url": "https://techcrunch.com/2021/01/13/digital-road-freight-forwarder-sennder-raises-160m-series-plans-european-expansion/",
+     "publishedOn": "2021-01-13",
+     "quote": "Sennder, a large digital road freight forwarder based out of Germany, has raised $160 million in Series D financing. The round was led by an unnamed party, but round participants included Accel, Lakestar, HV Capital, Project A and Scania."
+    },
+    {
+     "id": "s3",
+     "publication": "Tech.eu",
+     "title": "German logistics player Sennder primes new fundraise at €2 billion valuation",
+     "url": "https://tech.eu/2022/12/14/sennder/",
+     "publishedOn": "2022-12-14",
+     "quote": "Sennder's existing investors include Accel, Lakestare, HV Capital, Project A and Scania. Its most recent funding haul was the second series D close in June 2021 which added $80 million to the $160 million in fund raised that January."
+    },
+    {
+     "id": "s4",
+     "publication": "Tech.eu",
+     "title": "German logistics player Sennder primes new fundraise at €2 billion valuation",
+     "url": "https://tech.eu/2022/12/14/sennder/",
+     "publishedOn": "2022-12-14",
+     "quote": "Berlin-based logistics services startup Sennder is taking on funds at around double the $1 billion or so value it received for equity issued January 2021, when it took $160 million to ramp up its digitised freight trucking strategy."
+    }
+   ],
+   "display": {
+    "valuationLabel": "~$1 bn",
+    "valuationAsOf": "Jan 2021",
+    "lastRoundLabel": "Jun 2021",
+    "lastRoundStage": "Series D, second close",
+    "totalRaisedLabel": "—",
+    "yearsToUnicorn": 6,
+    "becameUnicornLabel": "Jan 2021",
+    "unicornThresholdLabel": "$1bn",
+    "foundersLabel": "David Nothacker, Julius Köhler, Nicolaus Schefenacker",
+    "aged": true
+   },
+   "sort": {
+    "newest": [
+     2021,
+     1
+    ],
+    "valuationEur": 920.0,
+    "latestRound": [
+     2021,
+     6
+    ],
+    "name": "sennder"
+   },
+   "investorsOrdered": [
+    "Accel",
+    "Lakestar",
+    "HV Capital",
+    "Project A",
+    "Scania"
    ]
   },
   {
@@ -2717,6 +3806,7 @@
     "totalRaisedLabel": "—",
     "yearsToUnicorn": 8,
     "becameUnicornLabel": "Mar 2022",
+    "unicornThresholdLabel": "$1bn",
     "foundersLabel": "Martin Böhringer, Lutz Gerlach, Frank Wolf",
     "aged": true
    },
@@ -2874,6 +3964,7 @@
     "totalRaisedLabel": "~$330 m",
     "yearsToUnicorn": 6,
     "becameUnicornLabel": "Apr 2022",
+    "unicornThresholdLabel": "$1bn",
     "foundersLabel": "Mathis Büchi, Lino Teuteberg",
     "aged": true
    },
@@ -3055,6 +4146,7 @@
     "totalRaisedLabel": "~€1 bn",
     "yearsToUnicorn": 6,
     "becameUnicornLabel": "May 2021",
+    "unicornThresholdLabel": "$1bn",
     "foundersLabel": "Christian Hecker, Thomas Pischke, Marco Cancellieri",
     "aged": false
    },

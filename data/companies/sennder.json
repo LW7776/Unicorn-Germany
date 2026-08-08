@@ -1,0 +1,133 @@
+{
+  "slug": "sennder",
+  "name": "sennder",
+  "website": "https://www.sennder.com",
+  "logo": "assets/logos/sennder.svg",
+  "hq": {
+    "city": "Berlin",
+    "country": "DE"
+  },
+  "foundedCountry": "DE",
+  "foundedYear": 2015,
+  "sectors": [
+    "Logistics",
+    "Freight Forwarding"
+  ],
+  "thesis": {
+    "problem": "European road freight is a market of very large shippers and very small hauliers: a manufacturer with thousands of loads a week on one side, and on the other tens of thousands of carriers running a handful of trucks each. Matching them has historically been done by phone and fax through forwarders, and roughly a fifth of trucks run empty because nobody can see the whole board at once.",
+    "solution": "sennder is a digital forwarder: it contracts directly with the large shippers and dispatches the work across a connected fleet of third-party carriers through its own platform, so pricing, tracking and settlement are software rather than phone calls. It has grown as much by absorbing rivals — Everoad, Uber Freight’s European arm, C.H. Robinson’s European surface transport business — as organically."
+  },
+  "valuation": {
+    "amount": 1000,
+    "currency": "USD",
+    "approximate": true,
+    "asOf": "2021-01",
+    "round": "Series D",
+    "source": "s1",
+    "disputed": {
+      "note": "A €2bn figure is attached to sennder in Tech.eu’s December 2022 headline, “German logistics player Sennder primes new fundraise at €2 billion valuation”. The article body is about a raise that was being prepared, not one that closed: it reports sennder “taking on funds” at around double its January 2021 value, on Handelsblatt’s account, citing unnamed sources and €60m clinched so far. No completed round at that price has been reported since, so the register keeps the last valuation actually struck.",
+      "source": "s3"
+    }
+  },
+  "becameUnicorn": {
+    "date": "2021-01",
+    "roundId": "r1",
+    "source": "s1"
+  },
+  "totalRaised": {
+    "amount": null,
+    "currency": "USD",
+    "approximate": false,
+    "source": "s1"
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "date": "2021-01",
+      "stage": "Series D",
+      "amount": 160,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": 1000,
+      "leadInvestors": [],
+      "investors": [
+        "Accel",
+        "Lakestar",
+        "HV Capital",
+        "Project A",
+        "Scania"
+      ],
+      "source": "s1"
+    },
+    {
+      "id": "r2",
+      "date": "2021-06",
+      "stage": "Series D, second close",
+      "amount": 80,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": null,
+      "leadInvestors": [],
+      "investors": [],
+      "source": "s3"
+    }
+  ],
+  "founders": [
+    {
+      "name": "David Nothacker",
+      "role": "Co-Founder & CEO",
+      "current": true
+    },
+    {
+      "name": "Julius Köhler",
+      "role": "Co-Founder & Managing Director",
+      "current": true
+    },
+    {
+      "name": "Nicolaus Schefenacker",
+      "role": "Co-Founder",
+      "current": true
+    }
+  ],
+  "investors": [
+    "Accel",
+    "Lakestar",
+    "HV Capital",
+    "Project A",
+    "Scania"
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "publication": "Tech.eu",
+      "title": "Berlin-based digital freight forwarder Sennder bags $160 million at a $1 billion+ valuation",
+      "url": "https://tech.eu/2021/01/14/berlin-based-digital-freight-forwarder-sennder-bags-160-million-at-a-1-billion-valuation/",
+      "publishedOn": "2021-01-14",
+      "quote": "Berlin-based digital freight forwarder sennder has secured $160 million at a $1 billion+ valuation in growth funding to \"accelerate digitalization of European trucking\" and boost its expansion plans."
+    },
+    {
+      "id": "s2",
+      "publication": "TechCrunch",
+      "title": "Digital road freight forwarder Sennder raises $160M Series, plans European expansion",
+      "url": "https://techcrunch.com/2021/01/13/digital-road-freight-forwarder-sennder-raises-160m-series-plans-european-expansion/",
+      "publishedOn": "2021-01-13",
+      "quote": "Sennder, a large digital road freight forwarder based out of Germany, has raised $160 million in Series D financing. The round was led by an unnamed party, but round participants included Accel, Lakestar, HV Capital, Project A and Scania."
+    },
+    {
+      "id": "s3",
+      "publication": "Tech.eu",
+      "title": "German logistics player Sennder primes new fundraise at €2 billion valuation",
+      "url": "https://tech.eu/2022/12/14/sennder/",
+      "publishedOn": "2022-12-14",
+      "quote": "Sennder's existing investors include Accel, Lakestare, HV Capital, Project A and Scania. Its most recent funding haul was the second series D close in June 2021 which added $80 million to the $160 million in fund raised that January."
+    },
+    {
+      "id": "s4",
+      "publication": "Tech.eu",
+      "title": "German logistics player Sennder primes new fundraise at €2 billion valuation",
+      "url": "https://tech.eu/2022/12/14/sennder/",
+      "publishedOn": "2022-12-14",
+      "quote": "Berlin-based logistics services startup Sennder is taking on funds at around double the $1 billion or so value it received for equity issued January 2021, when it took $160 million to ramp up its digitised freight trucking strategy."
+    }
+  ]
+}

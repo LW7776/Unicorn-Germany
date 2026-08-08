@@ -1,0 +1,158 @@
+{
+  "slug": "enpal",
+  "name": "Enpal",
+  "website": "https://www.enpal.de",
+  "logo": "assets/logos/enpal.svg",
+  "hq": {
+    "city": "Berlin",
+    "country": "DE"
+  },
+  "foundedCountry": "DE",
+  "foundedYear": 2017,
+  "sectors": [
+    "Energy",
+    "Climate Tech"
+  ],
+  "thesis": {
+    "problem": "A rooftop solar system costs a homeowner five figures up front, has to be specified, financed, installed, connected and maintained by four different trades, and pays for itself only over decades. That combination — a large cheque and a lot of coordination — is what keeps most roofs empty, not any doubt about the technology.",
+    "solution": "Enpal removes the cheque. It rents the whole system — panels, battery, wallbox, heat pump, and the software that schedules them — on a twenty-year subscription with no upfront cost, and trains its own installers rather than buying up existing ones. Financing that hardware is the actual business, which is why Enpal has raised far more in bank debt than in equity."
+  },
+  "valuation": {
+    "amount": 2200,
+    "currency": "EUR",
+    "approximate": false,
+    "asOf": "2023-01",
+    "round": "Series D",
+    "source": "s1"
+  },
+  "becameUnicorn": {
+    "date": "2021-10",
+    "roundId": "r1",
+    "source": "s2"
+  },
+  "totalRaised": {
+    "amount": null,
+    "currency": "EUR",
+    "approximate": false,
+    "source": "s1"
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "date": "2021-10",
+      "stage": "Series C, final close",
+      "amount": 250,
+      "currency": "EUR",
+      "approximate": false,
+      "postMoney": 1100,
+      "postMoneyCurrency": "USD",
+      "leadInvestors": [
+        "SoftBank Vision Fund 2"
+      ],
+      "investors": [
+        "SoftBank Vision Fund 2",
+        "HV Capital",
+        "Peter Rive"
+      ],
+      "source": "s2"
+    },
+    {
+      "id": "r2",
+      "date": "2023-01",
+      "stage": "Series D",
+      "amount": 215,
+      "currency": "EUR",
+      "approximate": false,
+      "postMoney": 2200,
+      "leadInvestors": [
+        "TPG Rise Climate"
+      ],
+      "investors": [
+        "TPG Rise Climate",
+        "Westly Group",
+        "Activate Capital",
+        "HV Capital",
+        "SoftBank Vision Fund 2",
+        "Princeville Climate Tech"
+      ],
+      "source": "s1"
+    },
+    {
+      "id": "r3",
+      "date": "2025-04",
+      "stage": "Equity round",
+      "amount": 110,
+      "currency": "EUR",
+      "approximate": false,
+      "postMoney": null,
+      "leadInvestors": [
+        "TPG"
+      ],
+      "investors": [
+        "TPG"
+      ],
+      "source": "s3"
+    }
+  ],
+  "founders": [
+    {
+      "name": "Mario Kohle",
+      "role": "Founder & CEO",
+      "current": true
+    },
+    {
+      "name": "Viktor Wingert",
+      "role": "Co-founder & Chief Investment Officer",
+      "current": true
+    },
+    {
+      "name": "Jochen Ziervogel",
+      "role": "Co-founder",
+      "current": true
+    }
+  ],
+  "investors": [
+    "TPG Rise Climate",
+    "SoftBank Vision Fund 2",
+    "TPG",
+    "Westly Group",
+    "Activate Capital",
+    "HV Capital",
+    "Princeville Climate Tech",
+    "Peter Rive"
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "publication": "Sifted",
+      "title": "Tesla backer bets on solar unicorn Enpal’s €215m Series D",
+      "url": "https://sifted.eu/articles/enpal-215m-solar-panels-news",
+      "publishedOn": "2023-01-09",
+      "quote": "Berlin-based solar startup Enpal is today announcing a €215m Series D, in a round led by US investor TPG Rise Climate with participation from early Tesla backer Westly Group. It values the six-year-old startup at €2.2bn."
+    },
+    {
+      "id": "s2",
+      "publication": "TechCrunch",
+      "title": "Enpal closes out Series C with $174M from SoftBank for tech to make it easier for homeowners to make the switch to solar energy",
+      "url": "https://techcrunch.com/2021/10/17/enpal-closes-out-series-c-with-174m-from-softbank-for-tech-to-make-it-easier-for-homeowners-to-make-the-switch-to-solar-energy/",
+      "publishedOn": "2021-10-17",
+      "quote": "The funding closes out its Series C at €250 million ($290 million), including €100 million that Enpal raised earlier this year from investors that included HV Capital and SolarCity co-founder Peter Rive. The investment values Enpal at €950 million ($1.1 billion) post-money, the company has confirmed."
+    },
+    {
+      "id": "s3",
+      "publication": "Sifted",
+      "title": "Enpal secures €110m round led by US PE firm TPG",
+      "url": "https://sifted.eu/articles/enpal-e110m-tpg-equity",
+      "publishedOn": "2025-04-07",
+      "quote": "German startup Enpal, which supplies green energy tech to consumers, has raised €110m, led by private equity firm TPG."
+    },
+    {
+      "id": "s4",
+      "publication": "Sifted",
+      "title": "Enpal secures €110m round led by US PE firm TPG",
+      "url": "https://sifted.eu/articles/enpal-e110m-tpg-equity",
+      "publishedOn": "2025-04-07",
+      "quote": "Enpal declined to comment on the valuation the round gives the company."
+    }
+  ]
+}

@@ -116,16 +116,33 @@ def validate_company(record):
                 f"source {source.get('id')} publishedOn must be a real YYYY-MM-DD publication date")
         sources[source.get("id")] = source
 
-    def check_figure(label, figure, amount_key="amount"):
-        source_id = figure.get("source")
+    def check_figure(label, figure, amount_key="amount",
+                     currency_key="currency", source_key="source"):
+        """`currency_key` and `source_key` exist for a round's post-money, which is
+        routinely reported in a different currency from the round, and sometimes by a
+        different sentence, than the money raised.
+
+        A German company raises €215m and is then valued at "1 billion US-Dollar"; the
+        round is euros, the post-money is dollars, and forcing one `currency` onto both
+        would file a dollar figure under EUR — invisible on the page, wrong in the data,
+        and the data is the product. Likewise a company's own release can state the
+        equity raised in one paragraph and the valuation in another: one `source` per
+        round then means either the amount or the post-money has to be dropped, and
+        1KOMMA5° could not be published with both. `postMoneyCurrency` and
+        `postMoneySource` are optional and fall back to `currency` and `source`, so every
+        existing record is unaffected. Neither relaxes anything: whichever source is
+        named must still be allowlisted, dated and carry a quote stating that figure in
+        that currency.
+        """
+        source_id = figure.get(source_key) or figure.get("source")
         if source_id not in sources:
             errors.append(f"{label} cites unknown source {source_id!r}")
             return
         amount = figure.get(amount_key)
         if amount is None:
             return
-        if not quote_states_figure(
-                sources[source_id]["quote"], amount, figure.get("currency")):
+        currency = figure.get(currency_key) or figure.get("currency")
+        if not quote_states_figure(sources[source_id]["quote"], amount, currency):
             errors.append(
                 f"{label}: quote for source {source_id} does not state the figure {amount} "
                 f"and its currency — extend the quote to a sentence naming both")
@@ -170,7 +187,8 @@ def validate_company(record):
             errors.append(f"rounds must be in chronological order: {entry['id']} is out of order")
         previous = key
         check_figure(f"round {entry['id']}", entry)
-        check_figure(f"round {entry['id']} post-money", entry, amount_key="postMoney")
+        check_figure(f"round {entry['id']} post-money", entry, amount_key="postMoney",
+                     currency_key="postMoneyCurrency", source_key="postMoneySource")
         check_disputed(f"round {entry['id']}", entry)
 
     by_id = {entry.get("id"): entry for entry in rounds}

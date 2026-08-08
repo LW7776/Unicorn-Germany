@@ -22,7 +22,7 @@ from decimal import Decimal, ROUND_HALF_UP
 # unaffected (pytest.ini already puts the repo root on sys.path via pythonpath = .).
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 
-from tools.schema import date_sort_key, format_amount, format_date, parse_date
+from tools.schema import CURRENCY_SYMBOL, date_sort_key, format_amount, format_date, parse_date
 
 AGED_AFTER_MONTHS = 24
 
@@ -76,6 +76,24 @@ def _investors_leads_first(record):
     return [name for name in investors if name in leads] + [name for name in investors if name not in leads]
 
 
+def _unicorn_threshold_label(record):
+    """"$1bn" or "€1bn" — whichever threshold this company actually crossed.
+
+    The inclusion rule is "$1B **or** €1B, as reported", and which one a company
+    cleared is not decoration. Enpal's crossing round was priced at "€950 million
+    ($1.1 billion) post-money": over the dollar threshold, under the euro one. A
+    flag hard-coded to "crossed €1bn" sat on that row asserting the opposite of the
+    source quoted two inches below it, and the same was true of every record whose
+    crossing was reported in dollars. The label follows the crossing round's own
+    post-money currency instead, so it can only ever say what the source said.
+    """
+    by_id = {entry.get("id"): entry for entry in record.get("rounds", [])}
+    unicorn_round = by_id.get(record["becameUnicorn"].get("roundId")) or {}
+    currency = (unicorn_round.get("postMoneyCurrency")
+                or unicorn_round.get("currency") or "EUR")
+    return f"{CURRENCY_SYMBOL.get(currency, currency + ' ')}1bn"
+
+
 def derive_company(record, today, fx_rate=0.92):
     """today is an as-of reference (year, month) — usually derived from the data's
     own dataAsOf, not the current date. See build()."""
@@ -96,6 +114,7 @@ def derive_company(record, today, fx_rate=0.92):
         if record["totalRaised"].get("amount") is not None else "—",
         "yearsToUnicorn": unicorn_year - record["foundedYear"],
         "becameUnicornLabel": format_date(record["becameUnicorn"]["date"]),
+        "unicornThresholdLabel": _unicorn_threshold_label(record),
         "foundersLabel": ", ".join(f["name"] for f in founders) if founders else "—",
         "aged": _months_between(today, parse_date(valuation["asOf"])) > AGED_AFTER_MONTHS,
     }

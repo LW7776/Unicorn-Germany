@@ -28,6 +28,11 @@ are not covered by this repository's licence.
 | `parloa.svg` | https://www.parloa.com/ (header wordmark, inline SVG) | 2026-08-08 | Copied verbatim from the page |
 | `personio.svg` | https://www.personio.com/ (header wordmark, inline SVG) | 2026-08-08 | Copied verbatim from the page |
 | `trade-republic.svg` | https://traderepublic.com/en-de (header wordmark, inline SVG) | 2026-08-08 | Copied verbatim from the page |
+| `1komma5.svg` | https://1komma5.com/en/about-us/ (header mark, inline SVG) | 2026-08-08 | Copied verbatim; see note |
+| `enpal.svg` | https://www.enpal.de/ueber-uns (header wordmark, inline SVG) | 2026-08-08 | Copied verbatim from the page |
+| `proxima-fusion.png` | https://cdn.prod.website-files.com/65b10cc303e570e609b235c8/66163bb5ce1eda0f3c9cecdc_webclip.png | 2026-08-08 | Downloaded unchanged; see note |
+| `scalable-capital.png` | https://assets.scalable.capital/touch-icons/apple-touch-icon.png | 2026-08-08 | Downloaded unchanged; see note |
+| `sennder.svg` | https://a.storyblok.com/f/341309/ce59cf62f1/logo.svg | 2026-08-08 | Downloaded unchanged; see note |
 
 ## Notes
 
@@ -55,4 +60,18 @@ are not covered by this repository's licence.
   other marks; the plate does not upscale it, so it stays crisp.
 - **commercetools** and **Razor Group** serve their logos from the Webflow CDN their own
   sites run on rather than from their own domain. The URL recorded above is the exact asset
-  each company's own page loads.
+  each company's own page loads. The same is true of **Proxima Fusion** (Webflow) and
+  **sennder** (Storyblok): each URL above is the file that company's own page requests.
+- **1KOMMA5°** takes its colour from the page's `fill-brand-aubergine-500` class rather than
+  from a `fill` attribute, so a standalone file — which does not carry that class — renders
+  black. No colour value was edited, and the same is true of the `currentColor` files above.
+  The company also serves an `/icon.svg`, but that file is byte-broken: the degree sign in
+  "1K5°" is a raw `0xB0`, which is not valid UTF-8 and so fails to parse as XML at all.
+- **Proxima Fusion** and **Scalable Capital** both publish their wordmarks only as light
+  artwork for dark backgrounds — Proxima's `Typo.svg` is `#cedde8`, and Scalable's header
+  mark is drawn by script rather than served as a file. The stored files are therefore each
+  company's own webclip/touch icon: the same mark, in the company's own colours, on the
+  company's own tile, unaltered. Both are rasters (256 × 256 and 180 × 180) and so render
+  smaller than the vector marks; the plate does not upscale them, so they stay crisp.
+- **sennder** serves two variants; the stored file is the orange-on-transparent
+  `logo.svg` its own site uses, not the all-white `logo-invert.svg` for dark backgrounds.

@@ -1,0 +1,186 @@
+{
+  "slug": "1komma5",
+  "name": "1KOMMA5°",
+  "website": "https://1komma5.com",
+  "logo": "assets/logos/1komma5.svg",
+  "hq": {
+    "city": "Hamburg",
+    "country": "DE"
+  },
+  "foundedCountry": "DE",
+  "foundedYear": 2021,
+  "sectors": [
+    "Energy",
+    "Climate Tech"
+  ],
+  "thesis": {
+    "problem": "The companies that actually fit solar panels, batteries and heat pumps are small local electrical firms, thousands of them, each with a handful of technicians and no way to bid for a national customer or to make the finished system talk to the electricity market. The bottleneck in electrifying a house is not the hardware but the trade that installs it.",
+    "solution": "1KOMMA5° buys those installers and puts them on one platform, then connects everything they fit to Heartbeat AI — software that pools the batteries, heat pumps and cars it has installed into a virtual power plant and trades their flexibility. The installers give the company reach; the software is what it expects to be valued on."
+  },
+  "valuation": {
+    "amount": 1000,
+    "currency": "USD",
+    "approximate": false,
+    "asOf": "2023-06",
+    "round": "Series B",
+    "source": "s1"
+  },
+  "becameUnicorn": {
+    "date": "2023-06",
+    "roundId": "r1",
+    "source": "s1"
+  },
+  "totalRaised": {
+    "amount": 400,
+    "currency": "EUR",
+    "approximate": true,
+    "source": "s5"
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "date": "2023-06",
+      "stage": "Series B",
+      "amount": 215,
+      "currency": "EUR",
+      "approximate": false,
+      "postMoney": 1000,
+      "postMoneyCurrency": "USD",
+      "postMoneySource": "s1",
+      "leadInvestors": [
+        "G2VP"
+      ],
+      "investors": [
+        "G2VP"
+      ],
+      "source": "s2",
+      "disputed": {
+        "note": "This round is widely reported as €430m — Tech.eu’s headline and standfirst both give that figure. The company’s own announcement splits it: “215 million Euro in equity … We have also set aside an additional 215 million Euro in re-participation options, which can be paid as part of the purchase price for new acquisitions.” Only the first €215m is money raised; the rest is acquisition currency 1KOMMA5° may issue later. The register records the equity and keeps the larger, better-known number here.",
+        "source": "s4"
+      }
+    },
+    {
+      "id": "r2",
+      "date": "2024-12",
+      "stage": "Pre-IPO round",
+      "amount": 150,
+      "currency": "EUR",
+      "approximate": false,
+      "postMoney": null,
+      "leadInvestors": [
+        "California State Teachers’ Retirement System"
+      ],
+      "investors": [
+        "California State Teachers’ Retirement System",
+        "G2 Venture Partners",
+        "2150",
+        "Norrsken VC",
+        "Hamilton Lane",
+        "b2venture",
+        "Eurazeo",
+        "eCapital"
+      ],
+      "source": "s3"
+    },
+    {
+      "id": "r3",
+      "date": "2025-07",
+      "stage": "Pre-IPO round extension",
+      "amount": null,
+      "currency": "EUR",
+      "approximate": false,
+      "postMoney": null,
+      "leadInvestors": [],
+      "investors": [
+        "Sabanci Climate Ventures"
+      ],
+      "source": "s5"
+    }
+  ],
+  "founders": [
+    {
+      "name": "Philipp Schröder",
+      "role": "Co-Founder & Chief Executive Officer",
+      "current": true
+    },
+    {
+      "name": "Micha Grüber",
+      "role": "Co-Founder & Chief Financial Officer",
+      "current": true
+    },
+    {
+      "name": "Jannik Schall",
+      "role": "Co-Founder & Chief Product Officer",
+      "current": true
+    },
+    {
+      "name": "Philip Liesenfeld",
+      "role": "Co-Founder & Chief Operating Officer",
+      "current": true
+    }
+  ],
+  "investors": [
+    "G2VP",
+    "California State Teachers’ Retirement System",
+    "G2 Venture Partners",
+    "Hamilton Lane",
+    "Eurazeo",
+    "b2venture",
+    "eCapital",
+    "2150",
+    "Norrsken VC",
+    "Porsche Ventures",
+    "Blue Elephant Ventures",
+    "Sabanci Climate Ventures"
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "publication": "Company press release",
+      "title": "1KOMMA5°: The Newest Unicorn in the CleanTech Industry",
+      "url": "https://1komma5.com/en/press/press-releases/1komma5-unicorn-en/",
+      "publishedOn": "2023-06-23",
+      "quote": "1KOMMA5° has become a unicorn! Only 23 months after our foundation, we have reached a valuation of 1 billion US-Dollar, a testament to the hard work and dedication of our team."
+    },
+    {
+      "id": "s2",
+      "publication": "Company press release",
+      "title": "1KOMMA5°: The Newest Unicorn in the CleanTech Industry",
+      "url": "https://1komma5.com/en/press/press-releases/1komma5-unicorn-en/",
+      "publishedOn": "2023-06-23",
+      "quote": "We are humbled and grateful to have raised 215 million Euro in equity for this mission, exceeding our target volume of 150 million Euro due to oversubscription."
+    },
+    {
+      "id": "s3",
+      "publication": "Sifted",
+      "title": "1Komma5 raises €150m to pave way for IPO",
+      "url": "https://sifted.eu/articles/1komma5-e150m-pre-ipo-news",
+      "publishedOn": "2024-12-20",
+      "quote": "German solar startup 1Komma5 has raised €150m, paving its way to a public listing. The funding is led by the California State Teachers’ Retirement System (Calstrs), a state pension fund."
+    },
+    {
+      "id": "s4",
+      "publication": "Tech.eu",
+      "title": "Hamburg’s 1KOMMA5° has raised €430 million - and just became a unicorn at just 23 months old",
+      "url": "https://tech.eu/2023/06/23/hamburg-s-1komma5-has-raised-430-million-and-just-become-a-unicorn-at-just-23-months-old/",
+      "publishedOn": "2023-06-23",
+      "quote": "Hamburg’s 1KOMMA5° has raised a €430 million series B round, and has shot into the coveted a unicorn spot in just 23 months. The round was led by G2VP and Ben Kortlang will join the board as vice chairman."
+    },
+    {
+      "id": "s5",
+      "publication": "Company press release",
+      "title": "1KOMMA5° extends pre-IPO round",
+      "url": "https://1komma5.com/en/press/press-releases/1komma5-extends-pre-ipo-round/",
+      "publishedOn": "2025-07-28",
+      "quote": "To date, 1KOMMA5° has raised almost €400 million in equity and remains debt-free."
+    },
+    {
+      "id": "s6",
+      "publication": "Sifted",
+      "title": "1Komma5 raises €150m to pave way for IPO",
+      "url": "https://sifted.eu/articles/1komma5-e150m-pre-ipo-news",
+      "publishedOn": "2024-12-20",
+      "quote": "The round means a slight increase in valuation, Sifted understands, but the company — which achieved unicorn status last year — did not disclose an updated figure."
+    }
+  ]
+}
