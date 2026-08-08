@@ -139,12 +139,17 @@
   "founders": [
     {
       "name": "Torsten Reil",
-      "role": "Co-founder & CEO",
+      "role": "Co-founder & co-CEO",
       "current": true
     },
     {
       "name": "Gundbert Scherf",
-      "role": "Co-founder",
+      "role": "Co-founder & co-CEO",
+      "current": true
+    },
+    {
+      "name": "Niklas Köhler",
+      "role": "Co-founder, President & Chief Product Officer",
       "current": true
     }
   ],
@@ -207,6 +212,14 @@
       "url": "https://helsing.ai/newsroom/helsing-raises-euro209m-series-b-to-bolster-defence-ai-capabilities-for-democracies",
       "publishedOn": "2023-09-14",
       "quote": "This funding round follows a previous Series A (€102.5m) led by Prima Materia, an investment company founded by Daniel Ek, co-founder and CEO of Spotify."
+    },
+    {
+      "id": "s7",
+      "publication": "Sifted",
+      "title": "German AI defence startup Helsing raises €450m as defence tech heats up with VCs",
+      "url": "https://sifted.eu/articles/ai-defence-helsing-450-million-fundraise-news",
+      "publishedOn": "2024-07-11",
+      "quote": "“European security is at a crossroads,” and “speed is of the essence. This new funding round allows us to further up the tempo and invest in large-scale R&D and capabilities across all domains,” Helsing’s three founders, Niklas Köhler, Torsten Reil and Gundbert Scherf, said in a statement."
     },
     {
       "id": "s5",

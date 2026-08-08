@@ -130,20 +130,27 @@ def validate_company(record):
                 f"{label}: quote for source {source_id} does not state the figure {amount} "
                 f"and its currency — extend the quote to a sentence naming both")
 
+    def check_disputed(label, container):
+        """A conflicting figure recorded alongside the one on file, so the site never
+        silently picks one on the reader's behalf. Optional, and shaped and
+        source-checked identically wherever it appears — on `valuation`, and on any
+        round whose amount the sources disagree about."""
+        disputed = container.get("disputed")
+        if disputed is None:
+            return
+        if not isinstance(disputed, dict):
+            errors.append(f"{label}.disputed must be an object with note and source")
+            return
+        note = disputed.get("note")
+        if not isinstance(note, str) or not note.strip():
+            errors.append(f"{label}.disputed.note must be a non-empty string")
+        if disputed.get("source") not in sources:
+            errors.append(
+                f"{label}.disputed cites unknown source {disputed.get('source')!r}")
+
     check_figure("valuation", record["valuation"])
     check_figure("totalRaised", record["totalRaised"])
-
-    disputed = record["valuation"].get("disputed")
-    if disputed is not None:
-        if not isinstance(disputed, dict):
-            errors.append("valuation.disputed must be an object with note and source")
-        else:
-            note = disputed.get("note")
-            if not isinstance(note, str) or not note.strip():
-                errors.append("valuation.disputed.note must be a non-empty string")
-            if disputed.get("source") not in sources:
-                errors.append(
-                    f"valuation.disputed cites unknown source {disputed.get('source')!r}")
+    check_disputed("valuation", record["valuation"])
 
     for field, value in (("valuation.asOf", record["valuation"].get("asOf")),
                          ("becameUnicorn.date", record["becameUnicorn"].get("date"))):
@@ -164,6 +171,7 @@ def validate_company(record):
         previous = key
         check_figure(f"round {entry['id']}", entry)
         check_figure(f"round {entry['id']} post-money", entry, amount_key="postMoney")
+        check_disputed(f"round {entry['id']}", entry)
 
     by_id = {entry.get("id"): entry for entry in rounds}
     unicorn_round = by_id.get(record["becameUnicorn"].get("roundId"))
@@ -174,6 +182,31 @@ def validate_company(record):
         errors.append(
             f"round {unicorn_round['id']} post-money is below the "
             f"{THRESHOLD_MILLIONS}m inclusion threshold")
+    else:
+        # A record can be internally consistent and still name the wrong round: every
+        # figure sourced, every quote honest, and becameUnicorn pointing at a later
+        # round than the one that actually crossed. Nothing above catches that, because
+        # nothing above compares the rounds to each other — and the error escapes into
+        # published derived figures (yearsToUnicorn, the "crossed €1bn" flag, the
+        # newest-unicorn sort). If an earlier round already carries a post-money at or
+        # above the threshold, the company crossed there.
+        try:
+            unicorn_key = date_sort_key(unicorn_round["date"])
+        except (ValueError, KeyError):
+            unicorn_key = None
+        if unicorn_key is not None:
+            for entry in rounds:
+                if entry is unicorn_round or (entry.get("postMoney") or 0) < THRESHOLD_MILLIONS:
+                    continue
+                try:
+                    if date_sort_key(entry["date"]) >= unicorn_key:
+                        continue
+                except (ValueError, KeyError):
+                    continue
+                errors.append(
+                    f"round {entry['id']} ({entry['date']}) already has a post-money at or above "
+                    f"the {THRESHOLD_MILLIONS}m threshold, so becameUnicorn cannot be round "
+                    f"{unicorn_round['id']} ({unicorn_round['date']}) — the company crossed earlier")
 
     if rounds:
         try:

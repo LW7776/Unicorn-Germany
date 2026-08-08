@@ -21,12 +21,12 @@
     "solution": "Parloa sells a platform for building, testing and supervising AI agents that hold spoken and written conversations and then carry out the resulting task in the company's own systems. The emphasis is on the management layer — simulation before deployment, guardrails and human sign-off — so that a large enterprise can run many agents across languages and channels under one set of controls."
   },
   "valuation": {
-    "amount": 1000,
+    "amount": 3000,
     "currency": "USD",
     "approximate": false,
-    "asOf": "2025-05",
-    "round": "Series C",
-    "source": "s1"
+    "asOf": "2026-01",
+    "round": "Series D",
+    "source": "s3"
   },
   "becameUnicorn": {
     "date": "2025-05",
@@ -75,6 +75,26 @@
         "Mosaic Ventures"
       ],
       "source": "s1"
+    },
+    {
+      "id": "r3",
+      "date": "2026-01",
+      "stage": "Series D",
+      "amount": 350,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": 3000,
+      "leadInvestors": [
+        "General Catalyst"
+      ],
+      "investors": [
+        "General Catalyst",
+        "EQT Ventures",
+        "Altimeter Capital",
+        "Durable Capital Partners",
+        "Mosaic Ventures"
+      ],
+      "source": "s3"
     }
   ],
   "founders": [
@@ -114,6 +134,14 @@
       "url": "https://www.parloa.com/parloa-in-the-press/parloa-raises-120m-series-c-to-reinvent-customer-service-with-agentic-ai/",
       "publishedOn": "2025-05-06",
       "quote": "Since raising $66M in its Series B round just 12 months ago, Parloa released its groundbreaking AI Agent Management Platform, AMP, the industry’s first Agentic AI platform purpose-built for enterprise contact centers, and quadrupled its revenue."
+    },
+    {
+      "id": "s3",
+      "publication": "TechCrunch",
+      "title": "Parloa triples its valuation in 8 months to $3B with $350M raise",
+      "url": "https://techcrunch.com/2026/01/15/parloa-triples-its-valuation-in-8-months-to-3b-with-350m-raise/",
+      "publishedOn": "2026-01-15",
+      "quote": "Berlin-based Parloa has raised $350 million in Series D funding from existing investors, valuing the six-year-old customer service AI startup at $3 billion. The round comes just eight months after the company raised $120 million at a $1 billion valuation."
     }
   ]
 }

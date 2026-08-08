@@ -1,8 +1,8 @@
 {
  "stats": {
   "count": 8,
-  "combinedValuationEurMillions": 60880.0,
-  "combinedValuationLabel": "~€60.9 bn",
+  "combinedValuationEurMillions": 62720.0,
+  "combinedValuationLabel": "~€62.7 bn",
   "newInLast12Months": 1,
   "medianYearsToUnicorn": 6,
   "fxRateDisclosed": 0.92,
@@ -41,9 +41,9 @@
     "source": "s1"
    },
    "becameUnicorn": {
-    "date": "2019-11",
-    "roundId": "r1",
-    "source": "s2"
+    "date": "2018-06",
+    "roundId": "r0b",
+    "source": "s4"
    },
    "totalRaised": {
     "amount": null,
@@ -73,10 +73,13 @@
      "amount": 50,
      "currency": "USD",
      "approximate": false,
-     "postMoney": null,
+     "postMoney": 1000,
      "leadInvestors": [],
-     "investors": [],
-     "source": "s3",
+     "investors": [
+      "Accel",
+      "83North"
+     ],
+     "source": "s4",
      "dateLabel": "Jun 2018",
      "amountLabel": "$50 m"
     },
@@ -201,6 +204,14 @@
      "url": "https://www.celonis.com/news/press/celonis-secures-one-billion-to-help-customers-fight-economic-and-supply-change-challenges",
      "publishedOn": "2022-08-23",
      "quote": "In June 2021, Celonis announced its $1 billion Series D round at a valuation of $11 billion. The Series D followed the Series C financing round of $290 million in November 2019, a Series B of $50 million in June 2018, and a Series A of $27.5 million in June 2016."
+    },
+    {
+     "id": "s4",
+     "publication": "TechCrunch",
+     "title": "Celonis scores $50M Series B on $1B valuation",
+     "url": "https://techcrunch.com/2018/06/26/celonis-scores-50-million-series-b-on-1b-valuation",
+     "publishedOn": "2018-06-26",
+     "quote": "Celonis, a New York City enterprise startup, created a sophisticated software solution to help solve this problem, and today it announced a $50 million Series B investment from Accel and 83North on a $1 billion valuation."
     }
    ],
    "display": {
@@ -209,15 +220,15 @@
     "lastRoundLabel": "Aug 2022",
     "lastRoundStage": "Series D extension",
     "totalRaisedLabel": "—",
-    "yearsToUnicorn": 8,
-    "becameUnicornLabel": "Nov 2019",
+    "yearsToUnicorn": 7,
+    "becameUnicornLabel": "Jun 2018",
     "foundersLabel": "Alexander Rinke, Bastian Nominacher, Martin Klenk",
     "aged": true
    },
    "sort": {
     "newest": [
-     2019,
-     11
+     2018,
+     6
     ],
     "valuationEur": 11960.0,
     "latestRound": [
@@ -556,12 +567,17 @@
    "founders": [
     {
      "name": "Torsten Reil",
-     "role": "Co-founder & CEO",
+     "role": "Co-founder & co-CEO",
      "current": true
     },
     {
      "name": "Gundbert Scherf",
-     "role": "Co-founder",
+     "role": "Co-founder & co-CEO",
+     "current": true
+    },
+    {
+     "name": "Niklas Köhler",
+     "role": "Co-founder, President & Chief Product Officer",
      "current": true
     }
    ],
@@ -626,6 +642,14 @@
      "quote": "This funding round follows a previous Series A (€102.5m) led by Prima Materia, an investment company founded by Daniel Ek, co-founder and CEO of Spotify."
     },
     {
+     "id": "s7",
+     "publication": "Sifted",
+     "title": "German AI defence startup Helsing raises €450m as defence tech heats up with VCs",
+     "url": "https://sifted.eu/articles/ai-defence-helsing-450-million-fundraise-news",
+     "publishedOn": "2024-07-11",
+     "quote": "“European security is at a crossroads,” and “speed is of the essence. This new funding round allows us to further up the tempo and invest in large-scale R&D and capabilities across all domains,” Helsing’s three founders, Niklas Köhler, Torsten Reil and Gundbert Scherf, said in a statement."
+    },
+    {
      "id": "s5",
      "publication": "Tech.eu",
      "title": "Helsing raises €600M, more than doubling valuation to €12BN",
@@ -642,7 +666,7 @@
     "totalRaisedLabel": "—",
     "yearsToUnicorn": 2,
     "becameUnicornLabel": "Sep 2023",
-    "foundersLabel": "Torsten Reil, Gundbert Scherf",
+    "foundersLabel": "Torsten Reil, Gundbert Scherf, Niklas Köhler",
     "aged": false
    },
    "sort": {
@@ -754,6 +778,10 @@
       "Cherry Ventures"
      ],
      "source": "s1",
+     "disputed": {
+      "note": "Sifted, EU-Startups and Gründerszene all report this round as €30m; the €35m here is Moss's own figure for its own round.",
+      "source": "s4"
+     },
      "dateLabel": "Aug 2026",
      "amountLabel": "€35 m"
     }
@@ -1065,12 +1093,12 @@
     "solution": "Parloa sells a platform for building, testing and supervising AI agents that hold spoken and written conversations and then carry out the resulting task in the company's own systems. The emphasis is on the management layer — simulation before deployment, guardrails and human sign-off — so that a large enterprise can run many agents across languages and channels under one set of controls."
    },
    "valuation": {
-    "amount": 1000,
+    "amount": 3000,
     "currency": "USD",
     "approximate": false,
-    "asOf": "2025-05",
-    "round": "Series C",
-    "source": "s1"
+    "asOf": "2026-01",
+    "round": "Series D",
+    "source": "s3"
    },
    "becameUnicorn": {
     "date": "2025-05",
@@ -1123,6 +1151,28 @@
      "source": "s1",
      "dateLabel": "May 2025",
      "amountLabel": "$120 m"
+    },
+    {
+     "id": "r3",
+     "date": "2026-01",
+     "stage": "Series D",
+     "amount": 350,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": 3000,
+     "leadInvestors": [
+      "General Catalyst"
+     ],
+     "investors": [
+      "General Catalyst",
+      "EQT Ventures",
+      "Altimeter Capital",
+      "Durable Capital Partners",
+      "Mosaic Ventures"
+     ],
+     "source": "s3",
+     "dateLabel": "Jan 2026",
+     "amountLabel": "$350 m"
     }
    ],
    "founders": [
@@ -1162,13 +1212,21 @@
      "url": "https://www.parloa.com/parloa-in-the-press/parloa-raises-120m-series-c-to-reinvent-customer-service-with-agentic-ai/",
      "publishedOn": "2025-05-06",
      "quote": "Since raising $66M in its Series B round just 12 months ago, Parloa released its groundbreaking AI Agent Management Platform, AMP, the industry’s first Agentic AI platform purpose-built for enterprise contact centers, and quadrupled its revenue."
+    },
+    {
+     "id": "s3",
+     "publication": "TechCrunch",
+     "title": "Parloa triples its valuation in 8 months to $3B with $350M raise",
+     "url": "https://techcrunch.com/2026/01/15/parloa-triples-its-valuation-in-8-months-to-3b-with-350m-raise/",
+     "publishedOn": "2026-01-15",
+     "quote": "Berlin-based Parloa has raised $350 million in Series D funding from existing investors, valuing the six-year-old customer service AI startup at $3 billion. The round comes just eight months after the company raised $120 million at a $1 billion valuation."
     }
    ],
    "display": {
-    "valuationLabel": "$1 bn",
-    "valuationAsOf": "May 2025",
-    "lastRoundLabel": "May 2025",
-    "lastRoundStage": "Series C",
+    "valuationLabel": "$3 bn",
+    "valuationAsOf": "Jan 2026",
+    "lastRoundLabel": "Jan 2026",
+    "lastRoundStage": "Series D",
     "totalRaisedLabel": "—",
     "yearsToUnicorn": 7,
     "becameUnicornLabel": "May 2025",
@@ -1180,10 +1238,10 @@
      2025,
      5
     ],
-    "valuationEur": 920.0,
+    "valuationEur": 2760.0,
     "latestRound": [
-     2025,
-     5
+     2026,
+     1
     ],
     "name": "parloa"
    },

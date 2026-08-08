@@ -38,9 +38,11 @@ function figure(label, value, note, extra = "") {
   </div>`;
 }
 
-/** valuation.disputed: a conflicting figure recorded alongside the one on
-    file, flagged "Disputed", rather than the site silently picking
-    one on the reader's behalf. Renders a visible amber marker with the note
+/** A conflicting figure recorded alongside the one on file, flagged "Disputed",
+    rather than the site silently picking one on the reader's behalf. Used both
+    on `valuation` and on a round whose amount the sources disagree about — a
+    reader must be able to see the disagreement without opening every source.
+    Renders a visible amber marker with the note
     and a link to the disputed figure's own source, exactly like any other
     cited claim — note is escaped and the source link goes through the same
     isSafeUrl gate as every other link on this page. */
@@ -65,6 +67,7 @@ function timeline(company) {
       <span class="timeline__amount">${text(round.amountLabel)}</span>
       <span class="timeline__lead">${text((round.leadInvestors || []).join(", "))}</span>
       ${round.id === unicornId ? '<span class="timeline__flag">crossed €1bn</span>' : ""}
+      ${disputedBadge(round.disputed, company.sources)}
     </li>`).join("")}</ol>`;
 }
 

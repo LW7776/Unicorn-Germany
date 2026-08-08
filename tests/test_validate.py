@@ -148,3 +148,47 @@ def test_also_based_in_with_a_blank_entry_is_an_error(record):
 def test_also_based_in_that_is_not_a_list_is_an_error(record):
     record["alsoBasedIn"] = "New York"
     assert any("alsoBasedIn" in e for e in validate_company(record))
+
+
+def test_a_round_that_crossed_the_threshold_earlier_contradicts_becameUnicorn(record):
+    """The Celonis shape: every figure sourced, every quote honest, and becameUnicorn
+    still naming a later round than the one that actually crossed $1bn. Nothing else
+    in the validator compares rounds to each other, so nothing else catches it."""
+    record["rounds"][0]["postMoney"] = 1000
+    record["sources"][1]["quote"] = (
+        "Example GmbH raised 60 million euros in a Series B round led by Earlybird "
+        "on a 1 billion euro valuation.")
+    errors = validate_company(record)
+    assert any("crossed earlier" in e and "r1" in e and "r2" in e for e in errors)
+
+
+def test_repointing_becameUnicorn_at_the_earlier_round_clears_it(record):
+    record["rounds"][0]["postMoney"] = 1000
+    record["sources"][1]["quote"] = (
+        "Example GmbH raised 60 million euros in a Series B round led by Earlybird "
+        "on a 1 billion euro valuation.")
+    record["becameUnicorn"] = {"date": "2021-05", "roundId": "r1", "source": "s2"}
+    assert validate_company(record) == []
+
+
+def test_a_later_round_over_the_threshold_is_not_an_earlier_crossing(record):
+    """The ordinary case every record here has: rounds after the unicorn round are
+    naturally over the threshold too, and must not be reported."""
+    assert validate_company(record) == []
+
+
+def test_a_well_formed_disputed_round_amount_validates(record):
+    record["rounds"][1]["disputed"] = {
+        "note": "Other outlets report this round as 100 million euros.", "source": "s2"}
+    assert validate_company(record) == []
+
+
+def test_disputed_round_citing_an_unknown_source_is_an_error(record):
+    record["rounds"][1]["disputed"] = {"note": "Conflicting figure reported.", "source": "s99"}
+    assert any("round r2" in e and "disputed" in e and "s99" in e
+               for e in validate_company(record))
+
+
+def test_disputed_round_with_an_empty_note_is_an_error(record):
+    record["rounds"][1]["disputed"] = {"note": "", "source": "s2"}
+    assert any("round r2" in e and "disputed.note" in e for e in validate_company(record))

@@ -29,9 +29,9 @@
     "source": "s1"
   },
   "becameUnicorn": {
-    "date": "2019-11",
-    "roundId": "r1",
-    "source": "s2"
+    "date": "2018-06",
+    "roundId": "r0b",
+    "source": "s4"
   },
   "totalRaised": {
     "amount": null,
@@ -59,10 +59,13 @@
       "amount": 50,
       "currency": "USD",
       "approximate": false,
-      "postMoney": null,
+      "postMoney": 1000,
       "leadInvestors": [],
-      "investors": [],
-      "source": "s3"
+      "investors": [
+        "Accel",
+        "83North"
+      ],
+      "source": "s4"
     },
     {
       "id": "r1",
@@ -179,6 +182,14 @@
       "url": "https://www.celonis.com/news/press/celonis-secures-one-billion-to-help-customers-fight-economic-and-supply-change-challenges",
       "publishedOn": "2022-08-23",
       "quote": "In June 2021, Celonis announced its $1 billion Series D round at a valuation of $11 billion. The Series D followed the Series C financing round of $290 million in November 2019, a Series B of $50 million in June 2018, and a Series A of $27.5 million in June 2016."
+    },
+    {
+      "id": "s4",
+      "publication": "TechCrunch",
+      "title": "Celonis scores $50M Series B on $1B valuation",
+      "url": "https://techcrunch.com/2018/06/26/celonis-scores-50-million-series-b-on-1b-valuation",
+      "publishedOn": "2018-06-26",
+      "quote": "Celonis, a New York City enterprise startup, created a sophisticated software solution to help solve this problem, and today it announced a $50 million Series B investment from Accel and 83North on a $1 billion valuation."
     }
   ]
 }

@@ -72,7 +72,11 @@
         "Portage",
         "Cherry Ventures"
       ],
-      "source": "s1"
+      "source": "s1",
+      "disputed": {
+        "note": "Sifted, EU-Startups and Gründerszene all report this round as €30m; the €35m here is Moss's own figure for its own round.",
+        "source": "s4"
+      }
     }
   ],
   "founders": [

@@ -116,13 +116,14 @@ def derive_company(record, today, fx_rate=0.92):
         "latestRound": list(date_sort_key(last_round["date"])) if last_round else [0, 0],
         "name": record["name"].lower(),
     }
-    # valuation.disputed (a conflicting figure recorded alongside this one)
-    # needs no derivation of its own — validate.py has already
-    # checked its shape and that its source resolves, and `**record` below
-    # carries the untouched `valuation` object (disputed field included)
-    # straight into the output. detail.js reads it from there. The same is
-    # true of the optional top-level `alsoBasedIn` (dual-HQ companies) — it
-    # needs no derivation either, just the pass-through.
+    # `disputed` (a conflicting figure recorded alongside the one on file) needs
+    # no derivation of its own — validate.py has already checked its shape and
+    # that its source resolves. `**record` below carries the untouched
+    # `valuation` object straight into the output, and `**entry` above does the
+    # same for a round's, so detail.js reads both from there and renders them
+    # with one function. The same is true of the optional top-level
+    # `alsoBasedIn` (dual-HQ companies) — it needs no derivation either, just
+    # the pass-through.
     return {
         **record,
         "rounds": derived_rounds,

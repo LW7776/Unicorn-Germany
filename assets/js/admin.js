@@ -418,17 +418,22 @@ export function validateRecord(record) {
   checkFigure("valuation", record.valuation);
   checkFigure("totalRaised", record.totalRaised);
 
-  const disputed = record.valuation.disputed;
-  if (disputed !== undefined && disputed !== null) {
+  /** Optional everywhere it appears — on `valuation`, and on any round whose amount the
+      sources disagree about. Mirrors tools/validate.py's check_disputed(). */
+  const checkDisputed = (label, container) => {
+    const disputed = container.disputed;
+    if (disputed === undefined || disputed === null) return;
     if (!isPlainObject(disputed)) {
-      errors.push("valuation.disputed must be an object with note and source");
-    } else {
-      if (!isNonEmptyString(disputed.note)) errors.push("valuation.disputed.note must be a non-empty string");
-      if (!Object.prototype.hasOwnProperty.call(sourcesById, disputed.source)) {
-        errors.push(`valuation.disputed cites unknown source ${describe(disputed.source)}`);
-      }
+      errors.push(`${label}.disputed must be an object with note and source`);
+      return;
     }
-  }
+    if (!isNonEmptyString(disputed.note)) errors.push(`${label}.disputed.note must be a non-empty string`);
+    if (!Object.prototype.hasOwnProperty.call(sourcesById, disputed.source)) {
+      errors.push(`${label}.disputed cites unknown source ${describe(disputed.source)}`);
+    }
+  };
+
+  checkDisputed("valuation", record.valuation);
 
   for (const [label, value] of [["valuation.asOf", record.valuation.asOf], ["becameUnicorn.date", record.becameUnicorn.date]]) {
     try { parseDateLoose(value); } catch (exc) { errors.push(`${label}: ${exc.message}`); }
@@ -450,6 +455,7 @@ export function validateRecord(record) {
     previous = key;
     checkFigure(`round ${entry.id ?? "?"}`, entry);
     checkFigure(`round ${entry.id ?? "?"} post-money`, entry, "postMoney");
+    checkDisputed(`round ${entry.id ?? "?"}`, entry);
   }
 
   const roundsById = Object.fromEntries(rounds.map((entry) => [entry.id, entry]));
@@ -458,6 +464,22 @@ export function validateRecord(record) {
     errors.push(`becameUnicorn.roundId ${describe(record.becameUnicorn.roundId)} matches no round`);
   } else if ((unicornRound.postMoney || 0) < THRESHOLD_MILLIONS) {
     errors.push(`round ${unicornRound.id}: post-money is below the ${THRESHOLD_MILLIONS}m inclusion threshold`);
+  } else {
+    // An earlier round already over the threshold means the company crossed there, not
+    // here — mirrors tools/validate.py, which explains why nothing else catches it.
+    let unicornKey = null;
+    try { unicornKey = parseDateLoose(unicornRound.date); } catch { /* reported above */ }
+    if (unicornKey !== null) {
+      for (const entry of rounds) {
+        if (entry === unicornRound || (entry.postMoney || 0) < THRESHOLD_MILLIONS) continue;
+        try {
+          if (cmpDate(parseDateLoose(entry.date), unicornKey) >= 0) continue;
+        } catch { continue; }
+        errors.push(`round ${entry.id ?? "?"} (${entry.date}) already has a post-money at or above `
+          + `the ${THRESHOLD_MILLIONS}m threshold, so becameUnicorn cannot be round `
+          + `${unicornRound.id} (${unicornRound.date}) — the company crossed earlier`);
+      }
+    }
   }
 
   if (rounds.length) {
