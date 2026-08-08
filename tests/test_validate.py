@@ -61,9 +61,54 @@ def test_a_dollar_billion_round_meets_the_threshold(record):
     assert validate_company(record) == []
 
 
-def test_valuation_predating_the_last_round_is_an_error(record):
+def test_valuation_predating_a_last_round_that_discloses_a_post_money_is_an_error(record):
+    """The case worth catching: a newer round priced the company and the record
+    is still showing the older figure. This is the Parloa error."""
     record["valuation"]["asOf"] = "2022-01"
     assert any("predates" in e for e in validate_company(record))
+
+
+def test_valuation_predating_a_last_round_with_no_post_money_is_valid(record):
+    """Ordinary and honest: the company raised and said nothing about valuation.
+
+    Rejecting this shape kept Enpal, Scalable Capital and 1KOMMA5° out of the
+    register over evidence that does not exist — each has a sound valuation and
+    a later round whose price was simply never announced.
+    """
+    record["rounds"].append({
+        "id": "r3", "date": "2025-06", "stage": "Series D", "amount": None,
+        "currency": "EUR", "approximate": False, "postMoney": None,
+        "leadInvestors": [], "investors": [], "source": "s1"})
+    # valuation.asOf stays 2024-03 — now older than the 2025-06 round, which
+    # disclosed no price. This is Razor Group's shape, and Enpal's.
+    assert validate_company(record) == []
+
+
+def test_valuation_at_or_after_the_last_round_is_valid(record):
+    """Unchanged behaviour: the reference record dates both to 2024-03."""
+    assert validate_company(record) == []
+    record["valuation"]["asOf"] = "2025-06"
+    assert validate_company(record) == []
+
+
+def test_a_disclosed_post_money_mid_history_also_supersedes_the_valuation(record):
+    """Looking only at rounds[-1] would miss this.
+
+    A priced round in the middle of the history supersedes the headline just as
+    surely as one at the end, even when the newest round of all disclosed nothing.
+    """
+    record["valuation"]["asOf"] = "2022-01"
+    record["rounds"].append({
+        "id": "r3", "date": "2025-01", "stage": "Series D", "amount": None,
+        "currency": "EUR", "approximate": False, "postMoney": None,
+        "leadInvestors": [], "investors": [], "source": "s1"})
+    errors = validate_company(record)
+    assert any("predates round r2" in e for e in errors)
+
+
+def test_a_round_in_the_same_month_as_the_valuation_is_the_round_that_set_it(record):
+    """Strictly-after, not on-or-after: r2 and the valuation share 2024-03."""
+    assert validate_company(record) == []
 
 
 def test_unknown_unicorn_round_id_is_an_error(record):

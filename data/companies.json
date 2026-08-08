@@ -2373,11 +2373,11 @@
     "amount": 1200,
     "currency": "USD",
     "approximate": false,
-    "asOf": "2024-03",
+    "asOf": "2023-04",
     "round": "Series C",
-    "source": "s5",
+    "source": "s2",
     "disputed": {
-     "note": "A larger figure is widely attached to Razor: TechCrunch’s headline on the March 2024 Perch merger calls $1.7bn a valuation. Its article body measures something else — “the combined business has an enterprise value of $1.7 billion … with about $400 million of debt on its books”. Enterprise value counts that debt; a post-money equity valuation does not, and the post-money is what this register records. The $1.2bn here is Razor’s last stated post-money, struck at the April 2023 Series C and restated by TechCrunch at the time of the merger.",
+     "note": "A larger figure is widely attached to Razor: TechCrunch’s headline on the March 2024 Perch merger calls $1.7bn a valuation. Its article body measures something else — “the combined business has an enterprise value of $1.7 billion … with about $400 million of debt on its books”. Enterprise value counts that debt; a post-money equity valuation does not, and the post-money is what this register records. The $1.2bn here is Razor’s last stated post-money, struck at the April 2023 Series C — and still standing a year later, when TechCrunch wrote at the merger that “Razor’s last valuation, when it raised money about a year ago, was $1.2 billion.”",
      "source": "s3"
     }
    },
@@ -2537,7 +2537,7 @@
    ],
    "display": {
     "valuationLabel": "$1.2 bn",
-    "valuationAsOf": "Mar 2024",
+    "valuationAsOf": "Apr 2023",
     "lastRoundLabel": "Mar 2024",
     "lastRoundStage": "Perch merger financing",
     "totalRaisedLabel": "—",

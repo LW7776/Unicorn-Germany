@@ -209,11 +209,42 @@ def validate_company(record):
                     f"{unicorn_round['id']} ({unicorn_round['date']}) — the company crossed earlier")
 
     if rounds:
+        # A valuation older than a later round is only wrong when that later round
+        # said what the company was worth. Then the record is showing a superseded
+        # figure and the newer one is the one to publish — the Parloa error, where
+        # a $1bn valuation stood while a $3bn round had already been reported.
+        #
+        # It is not wrong when the later round disclosed no post-money at all,
+        # which is ordinary and honest: the company raised and said nothing about
+        # valuation, so the last publicly reported figure genuinely is still the
+        # earlier one. This check used to compare dates alone and reject that shape
+        # too, which kept qualifying companies out of the register over evidence
+        # that does not exist and never will — Enpal, Scalable Capital and 1KOMMA5°
+        # were all queued behind it, each with a sound valuation and a later round
+        # whose price was simply never announced.
+        #
+        # Every round after valuation.asOf is checked, not just the last one: a
+        # disclosed post-money in the middle of the history supersedes the headline
+        # just as surely as one at the end, and looking only at rounds[-1] would
+        # miss it. Rounds dated in the same month as the valuation are the rounds
+        # that set it, so the comparison is strictly-after.
         try:
-            if date_sort_key(record["valuation"]["asOf"]) < date_sort_key(rounds[-1]["date"]):
-                errors.append("valuation.asOf predates the most recent round")
+            valuation_key = date_sort_key(record["valuation"]["asOf"])
         except ValueError:
-            pass
+            valuation_key = None
+        if valuation_key is not None:
+            for entry in rounds:
+                if entry.get("postMoney") is None:
+                    continue
+                try:
+                    if date_sort_key(entry["date"]) <= valuation_key:
+                        continue
+                except (ValueError, KeyError):
+                    continue
+                errors.append(
+                    f"valuation.asOf ({record['valuation']['asOf']}) predates round "
+                    f"{entry.get('id')} ({entry['date']}), which discloses a post-money of "
+                    f"its own — that newer figure is the one to publish")
     return errors
 
 
