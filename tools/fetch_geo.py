@@ -39,6 +39,13 @@ CITY_COORDS = {
     "Dresden": (51.050, 13.738), "Bremen": (53.079, 8.802), "Aachen": (50.776, 6.084),
     "Heidelberg": (49.398, 8.672), "Münster": (51.960, 7.626), "Bonn": (50.735, 7.100),
     "Essen": (51.456, 7.012), "Mannheim": (49.487, 8.466),
+    # A city missing from this dict does not break the map — map.js counts it
+    # under "Not shown on the map" instead. That note is meant to be an honest
+    # fallback for a genuinely unplaceable HQ, not a holding pen for cities
+    # nobody got round to adding, so anything that turns up as a company's
+    # hq.city belongs here. Freiburg (Black Forest Labs) and Chemnitz
+    # (Staffbase) arrived with the second batch of records.
+    "Freiburg": (47.999, 7.842), "Chemnitz": (50.828, 12.921),
 }
 
 

@@ -149,10 +149,24 @@ def compute_stats(records, fx):
                 recent += 1
 
     years = [r["display"]["yearsToUnicorn"] for r in records]
+    # format_amount is exact by design: a company's own figure is rendered to
+    # whatever precision the source stated, so a $3.25bn valuation prints as
+    # "$3.25 bn" rather than being rounded into a number nobody reported.
+    #
+    # The combined headline is the one figure here that is not anyone's
+    # reported number. It sums mixed currencies through a single disclosed FX
+    # rate, which is why it already carries the "~" marker — and exactness
+    # would actively mislead: the current total lands on 75002, which rendered
+    # verbatim reads "~€75.002 bn" and implies a precision to the nearest
+    # million that an FX-converted aggregate cannot support. So this derived
+    # figure, and only this one, is rounded to a tenth of a billion before it
+    # is labelled. The unrounded sum stays in combinedValuationEurMillions for
+    # anyone who wants to recompute it.
+    combined_label_value = round(combined / 100) * 100
     return {
         "count": len(records),
         "combinedValuationEurMillions": combined,
-        "combinedValuationLabel": format_amount(combined, "EUR", True),
+        "combinedValuationLabel": format_amount(combined_label_value, "EUR", True),
         "newInLast12Months": recent,
         "medianYearsToUnicorn": round(statistics.median(years)) if years else 0,
         "fxRateDisclosed": rate,

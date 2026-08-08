@@ -46,6 +46,17 @@ def format_date(value):
     return f"{MONTHS[month - 1]} {year}" if month else str(year)
 
 
+def _trim_zeros(text):
+    """Drop a trailing fractional zero run: "13.00" -> "13", "1.40" -> "1.4".
+
+    The `"." in text` guard is load-bearing. On a string with no decimal point
+    a bare rstrip("0") eats significant digits — "130" becomes "13" — which is
+    a wrong figure, not a cosmetic one. Strings that still carry a point are
+    safe on their own, because rstrip stops at the "." it cannot strip.
+    """
+    return text.rstrip("0").rstrip(".") if "." in text else text
+
+
 def _plain_decimal(millions):
     """"102.5" for a fractional amount, "102" for a whole one — never "102.0".
 
@@ -56,19 +67,35 @@ def _plain_decimal(millions):
     return f"{millions:f}".rstrip("0").rstrip(".")
 
 
+def _exact_billions(millions):
+    """Millions expressed in billions with no rounding at all, trailing zeros
+    dropped: 13000 -> "13", 1400 -> "1.4", 3250 -> "3.25", 1075 -> "1.075".
+
+    This used to be f"{millions / 1000:.1f}", which had two faults at once.
+    It rounded to one decimal, so a $3.25bn valuation printed as "$3.2 bn" —
+    a figure no source stated, understating the company by $50m in the one
+    place a reader looks. And `.1f` rounds half-to-even, so the direction of
+    that error was not even predictable: 3.25 rounded down while 3.35 would
+    round up. Decimal division from the string form keeps the value exact, so
+    the label can only ever be the number that is on file.
+    """
+    return _trim_zeros(format(Decimal(str(millions)) / Decimal(1000), "f"))
+
+
 def format_amount(millions, currency, approximate):
     """Render millions as a compact figure: 13000/USD -> "~$13 bn".
 
-    Sub-billion amounts keep any fractional part: a €102.5m round renders as
-    "€102.5 m", not "€102 m". Truncating it would print a figure the source
-    never stated, which is the one thing this file exists to prevent.
+    No amount is ever rounded for display, at either scale. Sub-billion
+    amounts keep any fractional part — a €102.5m round renders as "€102.5 m",
+    not "€102 m" — and billion-scale amounts keep as many decimals as the
+    value actually has, so 3250 renders "$3.25 bn" and 13000 still renders
+    "$13 bn". Printing a figure the source never stated is the one thing this
+    file exists to prevent.
     """
     symbol = CURRENCY_SYMBOL.get(currency, currency + " ")
     prefix = "~" if approximate else ""
     if millions >= 1000:
-        billions = millions / 1000
-        number = f"{billions:.1f}".rstrip("0").rstrip(".")
-        return f"{prefix}{symbol}{number} bn"
+        return f"{prefix}{symbol}{_exact_billions(millions)} bn"
     return f"{prefix}{symbol}{_plain_decimal(millions)} m"
 
 
@@ -109,12 +136,22 @@ def _normalise_quote(quote):
 
 
 def _billion_forms(millions):
-    """How a source might print this amount in billions, rounded as sources round."""
+    """How a source might print this amount in billions, rounded as sources round.
+
+    The unrounded form is generated alongside the rounded ones, and it is not
+    redundant: quantising only to two and one places leaves a three-decimal
+    figure unmatchable. A record of 1075 produced just {"1.08", "1.1"}, so a
+    source that wrote "$1.075 billion" — the exact figure, and now exactly what
+    format_amount prints for it — failed the quote check and the round could
+    not be published at all. A figure the matcher cannot recognise is a figure
+    the register cannot carry, so the renderer and the matcher have to agree on
+    what the number looks like.
+    """
     exact = Decimal(str(millions)) / Decimal(1000)
-    forms = set()
+    forms = {_trim_zeros(format(exact, "f"))}
     for places in (2, 1):
         quantised = exact.quantize(Decimal("1." + "0" * places), rounding=ROUND_HALF_UP)
-        forms.add(format(quantised, "f").rstrip("0").rstrip("."))
+        forms.add(_trim_zeros(format(quantised, "f")))
     return forms
 
 

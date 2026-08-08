@@ -66,6 +66,25 @@ def test_stats_combine_valuations_at_the_disclosed_rate(record):
     assert stats["fxRateDisclosed"] == 0.92
 
 
+def test_the_combined_headline_is_rounded_but_the_underlying_sum_is_not(record):
+    """The one derived figure that must not inherit format_amount's exactness.
+
+    format_amount now renders a company's own valuation to whatever precision
+    the source stated, which is right for a sourced figure. The combined total
+    is nobody's reported number — it sums mixed currencies through one
+    disclosed FX rate — so rendering it verbatim would print something like
+    "~€75.002 bn" and imply accuracy to the nearest million. The label is
+    rounded to a tenth of a billion; the exact sum stays in the payload.
+    """
+    other = json.loads(FIXTURE.read_text(encoding="utf-8"))
+    other["slug"] = "second-gmbh"
+    other["valuation"] = {**other["valuation"], "amount": 73_002, "currency": "EUR"}
+    stats = compute_stats(
+        [derive_company(record, (2026, 8)), derive_company(other, (2026, 8))], FX)
+    assert stats["combinedValuationEurMillions"] == pytest.approx(74_202)
+    assert stats["combinedValuationLabel"] == "~€74.2 bn"
+
+
 def test_stats_count_new_unicorns_in_the_last_twelve_months():
     base = json.loads(FIXTURE.read_text(encoding="utf-8"))
     recent = derive_company({**base, "becameUnicorn": {**base["becameUnicorn"], "date": "2026-02"}}, (2026, 8))
