@@ -1,0 +1,143 @@
+{
+  "slug": "dash0",
+  "name": "Dash0",
+  "website": "https://www.dash0.com",
+  "logo": "assets/logos/dash0.png",
+  "hq": {
+    "city": "New York",
+    "country": "US"
+  },
+  "foundedCountry": "DE",
+  "foundedYear": 2023,
+  "sectors": [
+    "Enterprise Software",
+    "Artificial Intelligence"
+  ],
+  "thesis": {
+    "problem": "Observability — the tooling that tells an engineer why production broke — is sold by vendors whose pricing scales with how much data you send them and whose agents lock that data into proprietary formats. As systems grew and AI agents began writing and deploying code, the volume of alerts outgrew the number of humans available to read them, so the tools became, in Dash0's own words, expensive noise generators.",
+    "solution": "Dash0 is built natively on OpenTelemetry, the open standard for emitting traces, metrics and logs, so it ingests signals from any stack without proprietary agents and the customer's data stays portable. On top of that it runs Agent0, which is meant to diagnose and resolve production incidents autonomously rather than paging a person to read a dashboard."
+  },
+  "valuation": {
+    "amount": 1000,
+    "currency": "USD",
+    "approximate": false,
+    "asOf": "2026-03",
+    "round": "Series B",
+    "source": "s1"
+  },
+  "becameUnicorn": {
+    "date": "2026-03",
+    "roundId": "r2",
+    "source": "s1"
+  },
+  "totalRaised": {
+    "amount": 155,
+    "currency": "USD",
+    "approximate": false,
+    "source": "s1"
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "date": "2025-10",
+      "stage": "Series A",
+      "amount": 35,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": null,
+      "leadInvestors": [],
+      "investors": [
+        "Accel",
+        "Cherry Ventures",
+        "DIG Ventures"
+      ],
+      "source": "s3"
+    },
+    {
+      "id": "r2",
+      "date": "2026-03",
+      "stage": "Series B",
+      "amount": 110,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": 1000,
+      "postMoneyCurrency": "USD",
+      "postMoneySource": "s1",
+      "leadInvestors": [
+        "Balderton Capital"
+      ],
+      "investors": [
+        "Balderton Capital",
+        "DTCP Growth",
+        "Accel",
+        "Cherry Ventures",
+        "DIG Ventures",
+        "July Fund",
+        "T.Capital"
+      ],
+      "source": "s2",
+      "disputed": {
+        "note": "Before this round closed, Sifted reported it as a plan rather than a fact: “On Friday, Bloomberg reported the company was in talks with London-based Balderton Capital to lead a fresh round of funding, which would value Dash0 at $1bn.” The register does not publish talks — that is why Agile Robots and Isar Aerospace are not in it. What is published here is the closed round announced four weeks later, at the same price, by the company itself. The earlier report is kept beside it because a $1bn figure attached to Dash0 in February was not yet a valuation of anything.",
+        "source": "s5"
+      }
+    }
+  ],
+  "founders": [
+    {
+      "name": "Mirko Novakovic",
+      "role": "Founder & CEO",
+      "current": true
+    }
+  ],
+  "investors": [
+    "Balderton Capital",
+    "Accel",
+    "Cherry Ventures",
+    "DIG Ventures",
+    "DTCP Growth",
+    "July Fund",
+    "T.Capital"
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "publication": "Company press release",
+      "title": "Dash0 Raises $110M Series B at $1B Valuation to Build the AI Nervous System for Production",
+      "url": "https://www.dash0.com/blog/dash0-raises-usd110m-series-b",
+      "publishedOn": "2026-03-23",
+      "quote": "The round values Dash0 at $1 billion, making it the latest unicorn in enterprise infrastructure, and brings total funding to $155 million."
+    },
+    {
+      "id": "s2",
+      "publication": "Company press release",
+      "title": "Dash0 Raises $110M Series B at $1B Valuation to Build the AI Nervous System for Production",
+      "url": "https://www.dash0.com/blog/dash0-raises-usd110m-series-b",
+      "publishedOn": "2026-03-23",
+      "quote": "NEW YORK, 23rd March — Dash0, the Agentic observability platform built natively on OpenTelemetry, today announced a $110 million Series B funding round led by Balderton Capital."
+    },
+    {
+      "id": "s3",
+      "publication": "Sifted",
+      "title": "Dash0 targets $1bn valuation with Balderton-led funding round, reports say",
+      "url": "https://sifted.eu/articles/dash0-targets-1bn-valuation-with-balderton-led-funding-round-reports-say",
+      "publishedOn": "2026-02-27",
+      "quote": "The German-founded startup last raised a $35m Series A round in October"
+    },
+    {
+      "id": "s4",
+      "publication": "Company press release",
+      "title": "Dash0 Raises $110M Series B at $1B Valuation to Build the AI Nervous System for Production",
+      "url": "https://www.dash0.com/blog/dash0-raises-usd110m-series-b",
+      "publishedOn": "2026-03-23",
+      "quote": "Founded in 2023 in Germany and headquartered in New York, Dash0 provides engineering teams with a single, open platform to ingest, correlate, and act on signals from any stack without vendor lock-in, proprietary agents, or unpredictable pricing."
+    },
+    {
+      "id": "s5",
+      "publication": "Sifted",
+      "title": "Dash0 targets $1bn valuation with Balderton-led funding round, reports say",
+      "url": "https://sifted.eu/articles/dash0-targets-1bn-valuation-with-balderton-led-funding-round-reports-say",
+      "publishedOn": "2026-02-27",
+      "quote": "On Friday, Bloomberg reported the company was in talks with London-based Balderton Capital to lead a fresh round of funding, which would value Dash0 at $1bn, making it the latest European startup to achieve unicorn status."
+    }
+  ]
+}

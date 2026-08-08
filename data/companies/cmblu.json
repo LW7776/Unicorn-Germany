@@ -1,0 +1,93 @@
+{
+  "slug": "cmblu",
+  "name": "CMBlu Energy",
+  "website": "https://www.cmblu.com",
+  "logo": "assets/logos/cmblu.png",
+  "hq": {
+    "city": "Alzenau",
+    "country": "DE"
+  },
+  "foundedCountry": "DE",
+  "foundedYear": 2014,
+  "sectors": [
+    "Energy",
+    "Deep Tech"
+  ],
+  "thesis": {
+    "problem": "A grid running on wind and sun has too much power in the afternoon and none at three in the morning, and the batteries built to bridge that gap are lithium ones designed for cars: excellent for an hour or two of output, expensive and flammable across ten, and dependent on mined critical minerals from supply chains a European utility does not control.",
+    "solution": "CMBlu builds what it calls SolidFlow — a flow battery whose electrolyte is water-based and non-flammable and whose stored energy sits in proprietary solid materials made from abundant elements rather than critical minerals. Because a flow architecture separates how much power a system delivers from how much energy it holds, adding hours of duration means adding storage material rather than another whole battery, which is the economics that ten-hour discharge needs."
+  },
+  "valuation": {
+    "amount": 1000,
+    "currency": "EUR",
+    "approximate": true,
+    "asOf": "2026-04",
+    "round": "Series C, initial close",
+    "source": "s1"
+  },
+  "becameUnicorn": {
+    "date": "2026-04",
+    "roundId": "r1",
+    "source": "s1"
+  },
+  "totalRaised": {
+    "amount": null,
+    "currency": "EUR",
+    "approximate": false,
+    "source": "s1"
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "date": "2026-04",
+      "stage": "Series C, initial close",
+      "amount": 50,
+      "currency": "EUR",
+      "approximate": false,
+      "postMoney": 1000,
+      "postMoneyCurrency": "EUR",
+      "postMoneySource": "s1",
+      "leadInvestors": [],
+      "investors": [
+        "Samsung Ventures",
+        "STRABAG SE"
+      ],
+      "source": "s1",
+      "disputed": {
+        "note": "This is an initial close, not a completed round, and the register records it as one. CMBlu’s own announcement says the €50m is “a €50 million initial close of its Series C financing” and that it “will support manufacturing scale-up and accelerate early commercial deployments in Europe and the United States”. The valuation beside it is therefore struck at a partial close; a final close could restate both the round size and the price, and no source states either yet.",
+        "source": "s2"
+      }
+    }
+  ],
+  "founders": [],
+  "investors": [
+    "Samsung Ventures",
+    "STRABAG SE"
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "publication": "Company press release",
+      "title": "CMBlu Surpasses €1B+ Unicorn Threshold with €50M Initial Close of Series C, Defining Baseload Infrastructure for AI and Data Centers",
+      "url": "https://www.cmblu.com/press-media/cmblu-surpasses-eu1b-unicorn-threshold-with-eu50m-initial-close-of-series-c-defining-baseload-infrastructure-for-ai-and-data-centers",
+      "publishedOn": "2026-04-30",
+      "quote": "ALZENAU, GERMANY — APRIL 30, 2026 — CMBlu Energy has reached unicorn status, crossing the €1 billion valuation threshold following a €50 million initial close of its Series C financing with participation from Samsung Ventures."
+    },
+    {
+      "id": "s2",
+      "publication": "Company press release",
+      "title": "CMBlu Surpasses €1B+ Unicorn Threshold with €50M Initial Close of Series C, Defining Baseload Infrastructure for AI and Data Centers",
+      "url": "https://www.cmblu.com/press-media/cmblu-surpasses-eu1b-unicorn-threshold-with-eu50m-initial-close-of-series-c-defining-baseload-infrastructure-for-ai-and-data-centers",
+      "publishedOn": "2026-04-30",
+      "quote": "The initial close of Series C will support manufacturing scale-up and accelerate early commercial deployments in Europe and the United States."
+    },
+    {
+      "id": "s3",
+      "publication": "Company press release",
+      "title": "CMBlu Surpasses €1B+ Unicorn Threshold with €50M Initial Close of Series C, Defining Baseload Infrastructure for AI and Data Centers",
+      "url": "https://www.cmblu.com/press-media/cmblu-surpasses-eu1b-unicorn-threshold-with-eu50m-initial-close-of-series-c-defining-baseload-infrastructure-for-ai-and-data-centers",
+      "publishedOn": "2026-04-30",
+      "quote": "Founded in 2014, CMBlu evolved from one of Europe's largest lithium-free battery research laboratories into a rapidly scaling energy storage innovator."
+    }
+  ]
+}

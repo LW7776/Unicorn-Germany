@@ -46,6 +46,15 @@ CITY_COORDS = {
     # hq.city belongs here. Freiburg (Black Forest Labs) and Chemnitz
     # (Staffbase) arrived with the second batch of records.
     "Freiburg": (47.999, 7.842), "Chemnitz": (50.828, 12.921),
+    # Alzenau (CMBlu Energy) arrived with the fourth batch — the first entry
+    # that is a small town rather than a city, which is exactly why it has to
+    # be here: nothing about "Not shown on the map" would tell a reader that
+    # the missing bubble is a real place in Bavaria. Coordinates read off
+    # OpenStreetMap's Nominatim record for the town (ODbL, © OpenStreetMap
+    # contributors), not estimated, and projected by project_point below like
+    # every other city — no pixel value in data/geo/germany.json is placed by
+    # hand.
+    "Alzenau": (50.086, 9.073),
 }
 
 

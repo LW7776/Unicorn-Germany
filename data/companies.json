@@ -1,9 +1,9 @@
 {
  "stats": {
-  "count": 21,
-  "combinedValuationEurMillions": 82270.0,
-  "combinedValuationLabel": "~€82.3 bn",
-  "newInLast12Months": 4,
+  "count": 25,
+  "combinedValuationEurMillions": 87950.0,
+  "combinedValuationLabel": "~€88 bn",
+  "newInLast12Months": 7,
   "medianYearsToUnicorn": 6,
   "fxRateDisclosed": 0.92,
   "fxAsOf": "2026-08",
@@ -863,6 +863,129 @@
    ]
   },
   {
+   "slug": "cmblu",
+   "name": "CMBlu Energy",
+   "website": "https://www.cmblu.com",
+   "logo": "assets/logos/cmblu.png",
+   "hq": {
+    "city": "Alzenau",
+    "country": "DE"
+   },
+   "foundedCountry": "DE",
+   "foundedYear": 2014,
+   "sectors": [
+    "Energy",
+    "Deep Tech"
+   ],
+   "thesis": {
+    "problem": "A grid running on wind and sun has too much power in the afternoon and none at three in the morning, and the batteries built to bridge that gap are lithium ones designed for cars: excellent for an hour or two of output, expensive and flammable across ten, and dependent on mined critical minerals from supply chains a European utility does not control.",
+    "solution": "CMBlu builds what it calls SolidFlow — a flow battery whose electrolyte is water-based and non-flammable and whose stored energy sits in proprietary solid materials made from abundant elements rather than critical minerals. Because a flow architecture separates how much power a system delivers from how much energy it holds, adding hours of duration means adding storage material rather than another whole battery, which is the economics that ten-hour discharge needs."
+   },
+   "valuation": {
+    "amount": 1000,
+    "currency": "EUR",
+    "approximate": true,
+    "asOf": "2026-04",
+    "round": "Series C, initial close",
+    "source": "s1"
+   },
+   "becameUnicorn": {
+    "date": "2026-04",
+    "roundId": "r1",
+    "source": "s1"
+   },
+   "totalRaised": {
+    "amount": null,
+    "currency": "EUR",
+    "approximate": false,
+    "source": "s1"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2026-04",
+     "stage": "Series C, initial close",
+     "amount": 50,
+     "currency": "EUR",
+     "approximate": false,
+     "postMoney": 1000,
+     "postMoneyCurrency": "EUR",
+     "postMoneySource": "s1",
+     "leadInvestors": [],
+     "investors": [
+      "Samsung Ventures",
+      "STRABAG SE"
+     ],
+     "source": "s1",
+     "disputed": {
+      "note": "This is an initial close, not a completed round, and the register records it as one. CMBlu’s own announcement says the €50m is “a €50 million initial close of its Series C financing” and that it “will support manufacturing scale-up and accelerate early commercial deployments in Europe and the United States”. The valuation beside it is therefore struck at a partial close; a final close could restate both the round size and the price, and no source states either yet.",
+      "source": "s2"
+     },
+     "dateLabel": "Apr 2026",
+     "amountLabel": "€50 m"
+    }
+   ],
+   "founders": [],
+   "investors": [
+    "Samsung Ventures",
+    "STRABAG SE"
+   ],
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "Company press release",
+     "title": "CMBlu Surpasses €1B+ Unicorn Threshold with €50M Initial Close of Series C, Defining Baseload Infrastructure for AI and Data Centers",
+     "url": "https://www.cmblu.com/press-media/cmblu-surpasses-eu1b-unicorn-threshold-with-eu50m-initial-close-of-series-c-defining-baseload-infrastructure-for-ai-and-data-centers",
+     "publishedOn": "2026-04-30",
+     "quote": "ALZENAU, GERMANY — APRIL 30, 2026 — CMBlu Energy has reached unicorn status, crossing the €1 billion valuation threshold following a €50 million initial close of its Series C financing with participation from Samsung Ventures."
+    },
+    {
+     "id": "s2",
+     "publication": "Company press release",
+     "title": "CMBlu Surpasses €1B+ Unicorn Threshold with €50M Initial Close of Series C, Defining Baseload Infrastructure for AI and Data Centers",
+     "url": "https://www.cmblu.com/press-media/cmblu-surpasses-eu1b-unicorn-threshold-with-eu50m-initial-close-of-series-c-defining-baseload-infrastructure-for-ai-and-data-centers",
+     "publishedOn": "2026-04-30",
+     "quote": "The initial close of Series C will support manufacturing scale-up and accelerate early commercial deployments in Europe and the United States."
+    },
+    {
+     "id": "s3",
+     "publication": "Company press release",
+     "title": "CMBlu Surpasses €1B+ Unicorn Threshold with €50M Initial Close of Series C, Defining Baseload Infrastructure for AI and Data Centers",
+     "url": "https://www.cmblu.com/press-media/cmblu-surpasses-eu1b-unicorn-threshold-with-eu50m-initial-close-of-series-c-defining-baseload-infrastructure-for-ai-and-data-centers",
+     "publishedOn": "2026-04-30",
+     "quote": "Founded in 2014, CMBlu evolved from one of Europe's largest lithium-free battery research laboratories into a rapidly scaling energy storage innovator."
+    }
+   ],
+   "display": {
+    "valuationLabel": "~€1 bn",
+    "valuationAsOf": "Apr 2026",
+    "lastRoundLabel": "Apr 2026",
+    "lastRoundStage": "Series C, initial close",
+    "totalRaisedLabel": "—",
+    "yearsToUnicorn": 12,
+    "becameUnicornLabel": "Apr 2026",
+    "unicornThresholdLabel": "€1bn",
+    "foundersLabel": "—",
+    "aged": false
+   },
+   "sort": {
+    "newest": [
+     2026,
+     4
+    ],
+    "valuationEur": 1000,
+    "latestRound": [
+     2026,
+     4
+    ],
+    "name": "cmblu energy"
+   },
+   "investorsOrdered": [
+    "Samsung Ventures",
+    "STRABAG SE"
+   ]
+  },
+  {
    "slug": "commercetools",
    "name": "commercetools",
    "website": "https://commercetools.com",
@@ -1014,6 +1137,186 @@
     "Accel",
     "Insight Partners",
     "REWE Group"
+   ]
+  },
+  {
+   "slug": "dash0",
+   "name": "Dash0",
+   "website": "https://www.dash0.com",
+   "logo": "assets/logos/dash0.png",
+   "hq": {
+    "city": "New York",
+    "country": "US"
+   },
+   "foundedCountry": "DE",
+   "foundedYear": 2023,
+   "sectors": [
+    "Enterprise Software",
+    "Artificial Intelligence"
+   ],
+   "thesis": {
+    "problem": "Observability — the tooling that tells an engineer why production broke — is sold by vendors whose pricing scales with how much data you send them and whose agents lock that data into proprietary formats. As systems grew and AI agents began writing and deploying code, the volume of alerts outgrew the number of humans available to read them, so the tools became, in Dash0's own words, expensive noise generators.",
+    "solution": "Dash0 is built natively on OpenTelemetry, the open standard for emitting traces, metrics and logs, so it ingests signals from any stack without proprietary agents and the customer's data stays portable. On top of that it runs Agent0, which is meant to diagnose and resolve production incidents autonomously rather than paging a person to read a dashboard."
+   },
+   "valuation": {
+    "amount": 1000,
+    "currency": "USD",
+    "approximate": false,
+    "asOf": "2026-03",
+    "round": "Series B",
+    "source": "s1"
+   },
+   "becameUnicorn": {
+    "date": "2026-03",
+    "roundId": "r2",
+    "source": "s1"
+   },
+   "totalRaised": {
+    "amount": 155,
+    "currency": "USD",
+    "approximate": false,
+    "source": "s1"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2025-10",
+     "stage": "Series A",
+     "amount": 35,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": null,
+     "leadInvestors": [],
+     "investors": [
+      "Accel",
+      "Cherry Ventures",
+      "DIG Ventures"
+     ],
+     "source": "s3",
+     "dateLabel": "Oct 2025",
+     "amountLabel": "$35 m"
+    },
+    {
+     "id": "r2",
+     "date": "2026-03",
+     "stage": "Series B",
+     "amount": 110,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": 1000,
+     "postMoneyCurrency": "USD",
+     "postMoneySource": "s1",
+     "leadInvestors": [
+      "Balderton Capital"
+     ],
+     "investors": [
+      "Balderton Capital",
+      "DTCP Growth",
+      "Accel",
+      "Cherry Ventures",
+      "DIG Ventures",
+      "July Fund",
+      "T.Capital"
+     ],
+     "source": "s2",
+     "disputed": {
+      "note": "Before this round closed, Sifted reported it as a plan rather than a fact: “On Friday, Bloomberg reported the company was in talks with London-based Balderton Capital to lead a fresh round of funding, which would value Dash0 at $1bn.” The register does not publish talks — that is why Agile Robots and Isar Aerospace are not in it. What is published here is the closed round announced four weeks later, at the same price, by the company itself. The earlier report is kept beside it because a $1bn figure attached to Dash0 in February was not yet a valuation of anything.",
+      "source": "s5"
+     },
+     "dateLabel": "Mar 2026",
+     "amountLabel": "$110 m"
+    }
+   ],
+   "founders": [
+    {
+     "name": "Mirko Novakovic",
+     "role": "Founder & CEO",
+     "current": true
+    }
+   ],
+   "investors": [
+    "Balderton Capital",
+    "Accel",
+    "Cherry Ventures",
+    "DIG Ventures",
+    "DTCP Growth",
+    "July Fund",
+    "T.Capital"
+   ],
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "Company press release",
+     "title": "Dash0 Raises $110M Series B at $1B Valuation to Build the AI Nervous System for Production",
+     "url": "https://www.dash0.com/blog/dash0-raises-usd110m-series-b",
+     "publishedOn": "2026-03-23",
+     "quote": "The round values Dash0 at $1 billion, making it the latest unicorn in enterprise infrastructure, and brings total funding to $155 million."
+    },
+    {
+     "id": "s2",
+     "publication": "Company press release",
+     "title": "Dash0 Raises $110M Series B at $1B Valuation to Build the AI Nervous System for Production",
+     "url": "https://www.dash0.com/blog/dash0-raises-usd110m-series-b",
+     "publishedOn": "2026-03-23",
+     "quote": "NEW YORK, 23rd March — Dash0, the Agentic observability platform built natively on OpenTelemetry, today announced a $110 million Series B funding round led by Balderton Capital."
+    },
+    {
+     "id": "s3",
+     "publication": "Sifted",
+     "title": "Dash0 targets $1bn valuation with Balderton-led funding round, reports say",
+     "url": "https://sifted.eu/articles/dash0-targets-1bn-valuation-with-balderton-led-funding-round-reports-say",
+     "publishedOn": "2026-02-27",
+     "quote": "The German-founded startup last raised a $35m Series A round in October"
+    },
+    {
+     "id": "s4",
+     "publication": "Company press release",
+     "title": "Dash0 Raises $110M Series B at $1B Valuation to Build the AI Nervous System for Production",
+     "url": "https://www.dash0.com/blog/dash0-raises-usd110m-series-b",
+     "publishedOn": "2026-03-23",
+     "quote": "Founded in 2023 in Germany and headquartered in New York, Dash0 provides engineering teams with a single, open platform to ingest, correlate, and act on signals from any stack without vendor lock-in, proprietary agents, or unpredictable pricing."
+    },
+    {
+     "id": "s5",
+     "publication": "Sifted",
+     "title": "Dash0 targets $1bn valuation with Balderton-led funding round, reports say",
+     "url": "https://sifted.eu/articles/dash0-targets-1bn-valuation-with-balderton-led-funding-round-reports-say",
+     "publishedOn": "2026-02-27",
+     "quote": "On Friday, Bloomberg reported the company was in talks with London-based Balderton Capital to lead a fresh round of funding, which would value Dash0 at $1bn, making it the latest European startup to achieve unicorn status."
+    }
+   ],
+   "display": {
+    "valuationLabel": "$1 bn",
+    "valuationAsOf": "Mar 2026",
+    "lastRoundLabel": "Mar 2026",
+    "lastRoundStage": "Series B",
+    "totalRaisedLabel": "$155 m",
+    "yearsToUnicorn": 3,
+    "becameUnicornLabel": "Mar 2026",
+    "unicornThresholdLabel": "$1bn",
+    "foundersLabel": "Mirko Novakovic",
+    "aged": false
+   },
+   "sort": {
+    "newest": [
+     2026,
+     3
+    ],
+    "valuationEur": 920.0,
+    "latestRound": [
+     2026,
+     3
+    ],
+    "name": "dash0"
+   },
+   "investorsOrdered": [
+    "Balderton Capital",
+    "Accel",
+    "Cherry Ventures",
+    "DIG Ventures",
+    "DTCP Growth",
+    "July Fund",
+    "T.Capital"
    ]
   },
   {
@@ -1376,6 +1679,422 @@
     "HV Capital",
     "Princeville Climate Tech",
     "Peter Rive"
+   ]
+  },
+  {
+   "slug": "finn",
+   "name": "FINN",
+   "website": "https://www.finn.com",
+   "logo": "assets/logos/finn.svg",
+   "hq": {
+    "city": "Munich",
+    "country": "DE"
+   },
+   "foundedCountry": "DE",
+   "foundedYear": 2019,
+   "sectors": [
+    "Mobility",
+    "Automotive"
+   ],
+   "thesis": {
+    "problem": "Owning a car means a purchase or a three-year lease, plus insurance, registration, road tax, servicing and a resale problem at the end — a bundle of separate contracts that has to be assembled by the buyer and cannot be undone early. For anyone unsure how long they need a car, or whether they want an electric one, the commitment is the product's worst feature.",
+    "solution": "FINN sells the car as a subscription: one monthly price covering insurance, registration, tax, maintenance and servicing, ordered online in minutes from more than 25 manufacturers' ranges and delivered to the door. The company carries the fleet, the residual-value risk and the financing, which is why its scale shows up in debt facilities alongside equity, and why the operational question is utilisation rather than sales."
+   },
+   "valuation": {
+    "amount": 1000,
+    "currency": "EUR",
+    "approximate": true,
+    "asOf": "2026-06",
+    "round": "Series D",
+    "source": "s1"
+   },
+   "becameUnicorn": {
+    "date": "2026-06",
+    "roundId": "r1",
+    "source": "s1"
+   },
+   "totalRaised": {
+    "amount": null,
+    "currency": "EUR",
+    "approximate": false,
+    "source": "s2"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2026-06",
+     "stage": "Series D",
+     "amount": 100,
+     "currency": "EUR",
+     "approximate": true,
+     "postMoney": 1000,
+     "postMoneyCurrency": "EUR",
+     "postMoneySource": "s1",
+     "leadInvestors": [
+      "Portage"
+     ],
+     "investors": [
+      "Portage",
+      "SevenVentures",
+      "UVC Partners",
+      "Planet First Partners",
+      "Korelya Capital",
+      "White Star Capital",
+      "HV Capital",
+      "Picus Capital"
+     ],
+     "source": "s2",
+     "disputed": {
+      "note": "This round is reported almost everywhere as €140m — Sifted’s report of it says FINN “has become Germany’s newest unicorn after announcing a €140m Series D funding round on Wednesday.” The lead investor’s own announcement splits that figure: “nearly €100 million in equity financing” from the equity investors, plus “more than €40 million in debt capital” from BC Partners and Runway Growth. Only the first part is equity raised, so the register records €100m and keeps the better-known €140m here. This is the 1KOMMA5° problem in another costume, and it matters more than usual for a company that finances a vehicle fleet: debt is a working input to this business model, not a rounding difference.",
+      "source": "s3"
+     },
+     "dateLabel": "Jun 2026",
+     "amountLabel": "~€100 m"
+    }
+   ],
+   "founders": [
+    {
+     "name": "Maximilian Wühr",
+     "role": "Co-Founder & CEO",
+     "current": true
+    }
+   ],
+   "investors": [
+    "Portage",
+    "SevenVentures",
+    "UVC Partners",
+    "Planet First Partners",
+    "Korelya Capital",
+    "White Star Capital",
+    "HV Capital",
+    "Picus Capital"
+   ],
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "Investor press release",
+     "title": "FINN Raises €140 Million and Achieves Unicorn Status",
+     "url": "https://portageinvest.com/blog/finn-raises-e140-million-and-achieves-unicorn-status/",
+     "publishedOn": "2026-06-24",
+     "quote": "Following the successful completion of the Series D round, FINN’s valuation has surpassed €1 billion, officially elevating the company to unicorn status."
+    },
+    {
+     "id": "s2",
+     "publication": "Investor press release",
+     "title": "FINN Raises €140 Million and Achieves Unicorn Status",
+     "url": "https://portageinvest.com/blog/finn-raises-e140-million-and-achieves-unicorn-status/",
+     "publishedOn": "2026-06-24",
+     "quote": "Munich, June 24, 2026 – FINN, Germany’s leading car subscription platform, today announced the successful closing of its Series D funding round of nearly €100 million, marking another major milestone in the company’s growth journey."
+    },
+    {
+     "id": "s3",
+     "publication": "Sifted",
+     "title": "Car subscription company Finn becomes Germany’s newest unicorn",
+     "url": "https://sifted.eu/articles/finn-germanys-newest-unicorn",
+     "publishedOn": "2026-06-24",
+     "quote": "Munich-based car subscription company Finn has become Germany’s newest unicorn after announcing a €140m Series D funding round on Wednesday."
+    },
+    {
+     "id": "s4",
+     "publication": "Investor press release",
+     "title": "FINN Raises €140 Million and Achieves Unicorn Status",
+     "url": "https://portageinvest.com/blog/finn-raises-e140-million-and-achieves-unicorn-status/",
+     "publishedOn": "2026-06-24",
+     "quote": "FINN is Germany’s leading car subscription platform. Founded in Munich in 2019, the company enables customers to subscribe to vehicles from more than 25 brands entirely online, with insurance, financing, registration, taxes, and maintenance all included in one monthly payment."
+    }
+   ],
+   "display": {
+    "valuationLabel": "~€1 bn",
+    "valuationAsOf": "Jun 2026",
+    "lastRoundLabel": "Jun 2026",
+    "lastRoundStage": "Series D",
+    "totalRaisedLabel": "—",
+    "yearsToUnicorn": 7,
+    "becameUnicornLabel": "Jun 2026",
+    "unicornThresholdLabel": "€1bn",
+    "foundersLabel": "Maximilian Wühr",
+    "aged": false
+   },
+   "sort": {
+    "newest": [
+     2026,
+     6
+    ],
+    "valuationEur": 1000,
+    "latestRound": [
+     2026,
+     6
+    ],
+    "name": "finn"
+   },
+   "investorsOrdered": [
+    "Portage",
+    "SevenVentures",
+    "UVC Partners",
+    "Planet First Partners",
+    "Korelya Capital",
+    "White Star Capital",
+    "HV Capital",
+    "Picus Capital"
+   ]
+  },
+  {
+   "slug": "flix",
+   "name": "Flix",
+   "website": "https://corporate.flix.com",
+   "logo": "assets/logos/flix.svg",
+   "hq": {
+    "city": "Munich",
+    "country": "DE"
+   },
+   "foundedCountry": "DE",
+   "foundedYear": 2011,
+   "sectors": [
+    "Mobility",
+    "Travel"
+   ],
+   "thesis": {
+    "problem": "Long-distance coach travel was the cheapest way to cross a country and the least usable: hundreds of small regional operators, each with its own timetable, its own ticket office and no way for a passenger to find, compare or book a route that crossed two of them. Germany did not even permit intercity coach competition with the railway until 2013.",
+    "solution": "Flix owns almost no vehicles. It runs the network — planning routes, setting prices, selling tickets and carrying the brand — while independent bus and rail companies supply the drivers and the fleet and get a steady stream of passengers in return. The same platform has since been laid over trains as FlixTrain and over acquired operators abroad, including Türkiye's Kâmil Koç and the American intercity institution Greyhound."
+   },
+   "valuation": {
+    "amount": 3000,
+    "currency": "USD",
+    "approximate": true,
+    "asOf": "2021-06",
+    "round": "Series G",
+    "source": "s2",
+    "disputed": {
+     "note": "A newer and larger figure is attached to Flix, and the register does not publish it as the headline. When EQT and Kühne Holding took 35% of the company in July 2024, Bloomberg reported that they were “investing around €1 billion ($1.2 billion) in Flix in a deal valuing the business at more than €3 billion, people with knowledge of the matter said.” Two things keep that out of the valuation field. It is attributed to people with knowledge of the matter, not disclosed: Flix’s own announcement and EQT’s, both opened and read, describe the structure and state no figure at all. And the transaction was part primary and part secondary — EQT’s release says that “[i]n addition to a primary investment in Flix, EQT Future and Kühne Holding will acquire shares from existing shareholders” — so it prices the company at a deal rather than being a post-money struck by a round. The published $3bn+ is Flix’s own stated valuation from June 2021; the July 2024 figure is higher, so nothing here understates the company.",
+     "source": "s5"
+    }
+   },
+   "becameUnicorn": {
+    "date": "2019-07",
+    "roundId": "r1",
+    "source": "s4"
+   },
+   "totalRaised": {
+    "amount": null,
+    "currency": "USD",
+    "approximate": false,
+    "source": "s1"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2019-07",
+     "stage": "Series F, first close",
+     "amount": 500,
+     "currency": "EUR",
+     "approximate": true,
+     "postMoney": 2000,
+     "postMoneyCurrency": "USD",
+     "postMoneySource": "s4",
+     "leadInvestors": [],
+     "investors": [
+      "TCV",
+      "Permira",
+      "HV Holtzbrinck Ventures"
+     ],
+     "source": "s3",
+     "dateLabel": "Jul 2019",
+     "amountLabel": "~€500 m"
+    },
+    {
+     "id": "r2",
+     "date": "2019-08",
+     "stage": "Series F extension",
+     "amount": null,
+     "currency": "EUR",
+     "approximate": false,
+     "postMoney": 2000,
+     "postMoneyCurrency": "USD",
+     "postMoneySource": "s4",
+     "leadInvestors": [],
+     "investors": [
+      "Baillie Gifford",
+      "Luxor Capital Group",
+      "Odyssey 44",
+      "BlackRock"
+     ],
+     "source": "s4",
+     "dateLabel": "Aug 2019",
+     "amountLabel": null
+    },
+    {
+     "id": "r3",
+     "date": "2021-06",
+     "stage": "Series G",
+     "amount": 650,
+     "currency": "USD",
+     "approximate": true,
+     "postMoney": 3000,
+     "postMoneyCurrency": "USD",
+     "postMoneySource": "s2",
+     "leadInvestors": [],
+     "investors": [
+      "Canyon Partners",
+      "General Atlantic",
+      "Permira",
+      "TCV",
+      "HV Capital",
+      "BlackRock",
+      "Baillie Gifford",
+      "Silver Lake"
+     ],
+     "source": "s1",
+     "disputed": {
+      "note": "The $650m+ is not all equity. Flix’s own announcement calls it a “structured funding round, based on a mix of equity and debt”, and TechCrunch’s account of the same round quotes co-founder Jochen Engert describing it as a “balanced” mix of the two. Neither the company nor TechCrunch splits the figure, so the register records the round as its sources state it and flags here that the amount is not a pure equity raise. The $3bn+ post-money beside it is unaffected — that is a valuation, not a use of the money.",
+      "source": "s6"
+     },
+     "dateLabel": "Jun 2021",
+     "amountLabel": "~$650 m"
+    },
+    {
+     "id": "r4",
+     "date": "2024-07",
+     "stage": "EQT and Kühne Holding minority investment",
+     "amount": 1000,
+     "currency": "EUR",
+     "approximate": true,
+     "postMoney": null,
+     "leadInvestors": [],
+     "investors": [
+      "EQT",
+      "Kühne Holding"
+     ],
+     "source": "s5",
+     "dateLabel": "Jul 2024",
+     "amountLabel": "~€1 bn"
+    }
+   ],
+   "founders": [
+    {
+     "name": "André Schwämmlein",
+     "role": "Co-founder & CEO",
+     "current": true
+    },
+    {
+     "name": "Daniel Krauss",
+     "role": "Co-founder, CIO & CHRO",
+     "current": true
+    },
+    {
+     "name": "Jochen Engert",
+     "role": "Co-founder; Deputy Chairman of the Supervisory Board",
+     "current": true
+    }
+   ],
+   "investors": [
+    "EQT",
+    "Kühne Holding",
+    "General Atlantic",
+    "Permira",
+    "TCV",
+    "HV Capital",
+    "BlackRock",
+    "Baillie Gifford",
+    "Silver Lake",
+    "Canyon Partners",
+    "Luxor Capital Group",
+    "Odyssey 44"
+   ],
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "TechCrunch",
+     "title": "FlixMobility raises $650M+ at a $3B valuation to double down on buses and other transport in the US",
+     "url": "https://techcrunch.com/2021/06/02/flixmobility-raises-650m-at-a-3b-valuation-to-double-down-on-buses-and-other-transport-in-the-us/",
+     "publishedOn": "2021-06-02",
+     "quote": "FlixMobility, the parent company of the FlixBus coach network and the FlixTrain rail service, has closed more than $650 million in a Series G round of funding that values the Munich-based company at over $3 billion."
+    },
+    {
+     "id": "s2",
+     "publication": "Company press release",
+     "title": "FlixMobility raises over $650M in Funding at $3B Valuation planning further global expansion",
+     "url": "https://corporate.flix.com/press_releases/flixmobility-raises-over-650m-in-funding-at-3b-valuation-planning-further-global-expansion/",
+     "publishedOn": "2021-06-02",
+     "quote": "The company’s new valuation of more than $3 billion is significantly higher than the valuation of the last financing round in 2019, underlining the strong investor support by its founders, existing investors include General Atlantic, Permira, TCV, HV Capital, Blackrock, Baillie Gifford and SilverLake for FlixMobility and the success of its unique business model."
+    },
+    {
+     "id": "s3",
+     "publication": "TechCrunch",
+     "title": "FlixMobility extends Series F at $2B+ valuation as it gears up to add cars to its bus and train network",
+     "url": "https://techcrunch.com/2019/08/08/flixmobility-extends-series-f-at-2b-valuation-as-it-gears-up-to-add-cars-to-its-bus-and-train-network/",
+     "publishedOn": "2019-08-08",
+     "quote": "Back in July it emerged that FlixMobility — the company behind the network of ubiquitous green FlixBus coaches that crisscross Europe and parts of the U.S. — had raised about €500 million in the largest-ever round of funding for a German tech company."
+    },
+    {
+     "id": "s4",
+     "publication": "TechCrunch",
+     "title": "FlixMobility extends Series F at $2B+ valuation as it gears up to add cars to its bus and train network",
+     "url": "https://techcrunch.com/2019/08/08/flixmobility-extends-series-f-at-2b-valuation-as-it-gears-up-to-add-cars-to-its-bus-and-train-network/",
+     "publishedOn": "2019-08-08",
+     "quote": "Engert would not specify the exact size of the round, but he confirmed that it was at the same valuation as the first close of the Series F (which was just over $2 billion), and that the extra funding was “not double” the earlier amount, “but substantial.”"
+    },
+    {
+     "id": "s5",
+     "publication": "Bloomberg",
+     "title": "EQT, German Tycoon Buy €1 Billion Stake in Greyhound Owner Flix",
+     "url": "https://www.bloomberg.com/news/articles/2024-07-04/eqt-german-tycoon-buy-1-billion-stake-in-greyhound-owner-flix",
+     "publishedOn": "2024-07-04",
+     "quote": "They are investing around €1 billion ($1.2 billion) in Flix in a deal valuing the business at more than €3 billion, people with knowledge of the matter said."
+    },
+    {
+     "id": "s6",
+     "publication": "Company press release",
+     "title": "FlixMobility raises over $650M in Funding at $3B Valuation planning further global expansion",
+     "url": "https://corporate.flix.com/press_releases/flixmobility-raises-over-650m-in-funding-at-3b-valuation-planning-further-global-expansion/",
+     "publishedOn": "2021-06-02",
+     "quote": "The structured funding round, based on a mix of equity and debt, totals more than $650 million."
+    },
+    {
+     "id": "s7",
+     "publication": "Company press release",
+     "title": "Flix announces successful closing of investment from EQT and Kühne Holding – new Supervisory Board members appointed",
+     "url": "https://corporate.flix.com/press_releases/flix-announces-successful-closing-of-investment-from-eqt-and-kuehne-holding/",
+     "publishedOn": "2024-11-28",
+     "quote": "EQT, the global investment organization, together with Kühne Holding, representing one of the world’s leading logistics entrepreneurs and investors, acquired a 35% minority stake in Flix."
+    }
+   ],
+   "display": {
+    "valuationLabel": "~$3 bn",
+    "valuationAsOf": "Jun 2021",
+    "lastRoundLabel": "Jul 2024",
+    "lastRoundStage": "EQT and Kühne Holding minority investment",
+    "totalRaisedLabel": "—",
+    "yearsToUnicorn": 8,
+    "becameUnicornLabel": "Jul 2019",
+    "unicornThresholdLabel": "$1bn",
+    "foundersLabel": "André Schwämmlein, Daniel Krauss, Jochen Engert",
+    "aged": true
+   },
+   "sort": {
+    "newest": [
+     2019,
+     7
+    ],
+    "valuationEur": 2760.0,
+    "latestRound": [
+     2024,
+     7
+    ],
+    "name": "flix"
+   },
+   "investorsOrdered": [
+    "EQT",
+    "Kühne Holding",
+    "General Atlantic",
+    "Permira",
+    "TCV",
+    "HV Capital",
+    "BlackRock",
+    "Baillie Gifford",
+    "Silver Lake",
+    "Canyon Partners",
+    "Luxor Capital Group",
+    "Odyssey 44"
    ]
   },
   {

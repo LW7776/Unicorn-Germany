@@ -33,6 +33,10 @@ are not covered by this repository's licence.
 | `proxima-fusion.png` | https://cdn.prod.website-files.com/65b10cc303e570e609b235c8/66163bb5ce1eda0f3c9cecdc_webclip.png | 2026-08-08 | Downloaded unchanged; see note |
 | `scalable-capital.png` | https://assets.scalable.capital/touch-icons/apple-touch-icon.png | 2026-08-08 | Downloaded unchanged; see note |
 | `sennder.svg` | https://a.storyblok.com/f/341309/ce59cf62f1/logo.svg | 2026-08-08 | Downloaded unchanged; see note |
+| `flix.svg` | https://corporate.flix.com/wp-content/uploads/2024/04/Logo.svg | 2026-08-09 | Downloaded unchanged |
+| `finn.svg` | https://www.finn.com/en-DE (header wordmark, inline SVG) | 2026-08-09 | Copied verbatim; see note |
+| `cmblu.png` | https://cdn.prod.website-files.com/69cbaf5e811b5d975e23932c/69cbf10a32d894b7f979062e_webclip.png | 2026-08-09 | Downloaded unchanged; see note |
+| `dash0.png` | https://www.dash0.com/apple-touch-icon.png | 2026-08-09 | Downloaded unchanged; see note |
 
 ## Notes
 
@@ -53,6 +57,18 @@ are not covered by this repository's licence.
 - **Staffbase** serves its wordmark as an SVG `<symbol>` inside a hidden sprite, referenced
   by `<use>`. The symbol's contents were copied verbatim into a standalone `<svg>` carrying
   that symbol's own `viewBox` and the required `xmlns`. No path data or colour was changed.
+- **FINN** serves its wordmark inline in the site header, already the black variant (the
+  file its own markup calls `FINN-black`). The `<svg>` element was copied verbatim,
+  including the `<defs><clipPath>` its paths reference — without that block the mark
+  clips to nothing in a standalone file. Nothing was recoloured or redrawn.
+- **CMBlu** and **Dash0** both publish only a light-on-dark wordmark, invisible on the
+  register's light plate: CMBlu's letters are `#FFF9FB` and Dash0's single path is
+  `fill="white"`. Neither company serves a dark variant anywhere the site exposes —
+  CMBlu's press page links the same white file as its header. The stored files are
+  therefore each company's own site icon, served from its own property, in its own
+  colours, unaltered. This is the osapiens case again, and the same rule applies: use a
+  smaller official mark rather than edit a logo to make it legible.
+
 - **osapiens** publishes only white and on-dark logo files (`osapiens_logo_white.png`,
   `osapiens_logo_onDark_horzR-1.png`), both of which are invisible on the register's light
   plate. The stored file is therefore osapiens's own site icon — the same teal mark, in the

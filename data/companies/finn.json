@@ -1,0 +1,121 @@
+{
+  "slug": "finn",
+  "name": "FINN",
+  "website": "https://www.finn.com",
+  "logo": "assets/logos/finn.svg",
+  "hq": {
+    "city": "Munich",
+    "country": "DE"
+  },
+  "foundedCountry": "DE",
+  "foundedYear": 2019,
+  "sectors": [
+    "Mobility",
+    "Automotive"
+  ],
+  "thesis": {
+    "problem": "Owning a car means a purchase or a three-year lease, plus insurance, registration, road tax, servicing and a resale problem at the end — a bundle of separate contracts that has to be assembled by the buyer and cannot be undone early. For anyone unsure how long they need a car, or whether they want an electric one, the commitment is the product's worst feature.",
+    "solution": "FINN sells the car as a subscription: one monthly price covering insurance, registration, tax, maintenance and servicing, ordered online in minutes from more than 25 manufacturers' ranges and delivered to the door. The company carries the fleet, the residual-value risk and the financing, which is why its scale shows up in debt facilities alongside equity, and why the operational question is utilisation rather than sales."
+  },
+  "valuation": {
+    "amount": 1000,
+    "currency": "EUR",
+    "approximate": true,
+    "asOf": "2026-06",
+    "round": "Series D",
+    "source": "s1"
+  },
+  "becameUnicorn": {
+    "date": "2026-06",
+    "roundId": "r1",
+    "source": "s1"
+  },
+  "totalRaised": {
+    "amount": null,
+    "currency": "EUR",
+    "approximate": false,
+    "source": "s2"
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "date": "2026-06",
+      "stage": "Series D",
+      "amount": 100,
+      "currency": "EUR",
+      "approximate": true,
+      "postMoney": 1000,
+      "postMoneyCurrency": "EUR",
+      "postMoneySource": "s1",
+      "leadInvestors": [
+        "Portage"
+      ],
+      "investors": [
+        "Portage",
+        "SevenVentures",
+        "UVC Partners",
+        "Planet First Partners",
+        "Korelya Capital",
+        "White Star Capital",
+        "HV Capital",
+        "Picus Capital"
+      ],
+      "source": "s2",
+      "disputed": {
+        "note": "This round is reported almost everywhere as €140m — Sifted’s report of it says FINN “has become Germany’s newest unicorn after announcing a €140m Series D funding round on Wednesday.” The lead investor’s own announcement splits that figure: “nearly €100 million in equity financing” from the equity investors, plus “more than €40 million in debt capital” from BC Partners and Runway Growth. Only the first part is equity raised, so the register records €100m and keeps the better-known €140m here. This is the 1KOMMA5° problem in another costume, and it matters more than usual for a company that finances a vehicle fleet: debt is a working input to this business model, not a rounding difference.",
+        "source": "s3"
+      }
+    }
+  ],
+  "founders": [
+    {
+      "name": "Maximilian Wühr",
+      "role": "Co-Founder & CEO",
+      "current": true
+    }
+  ],
+  "investors": [
+    "Portage",
+    "SevenVentures",
+    "UVC Partners",
+    "Planet First Partners",
+    "Korelya Capital",
+    "White Star Capital",
+    "HV Capital",
+    "Picus Capital"
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "publication": "Investor press release",
+      "title": "FINN Raises €140 Million and Achieves Unicorn Status",
+      "url": "https://portageinvest.com/blog/finn-raises-e140-million-and-achieves-unicorn-status/",
+      "publishedOn": "2026-06-24",
+      "quote": "Following the successful completion of the Series D round, FINN’s valuation has surpassed €1 billion, officially elevating the company to unicorn status."
+    },
+    {
+      "id": "s2",
+      "publication": "Investor press release",
+      "title": "FINN Raises €140 Million and Achieves Unicorn Status",
+      "url": "https://portageinvest.com/blog/finn-raises-e140-million-and-achieves-unicorn-status/",
+      "publishedOn": "2026-06-24",
+      "quote": "Munich, June 24, 2026 – FINN, Germany’s leading car subscription platform, today announced the successful closing of its Series D funding round of nearly €100 million, marking another major milestone in the company’s growth journey."
+    },
+    {
+      "id": "s3",
+      "publication": "Sifted",
+      "title": "Car subscription company Finn becomes Germany’s newest unicorn",
+      "url": "https://sifted.eu/articles/finn-germanys-newest-unicorn",
+      "publishedOn": "2026-06-24",
+      "quote": "Munich-based car subscription company Finn has become Germany’s newest unicorn after announcing a €140m Series D funding round on Wednesday."
+    },
+    {
+      "id": "s4",
+      "publication": "Investor press release",
+      "title": "FINN Raises €140 Million and Achieves Unicorn Status",
+      "url": "https://portageinvest.com/blog/finn-raises-e140-million-and-achieves-unicorn-status/",
+      "publishedOn": "2026-06-24",
+      "quote": "FINN is Germany’s leading car subscription platform. Founded in Munich in 2019, the company enables customers to subscribe to vehicles from more than 25 brands entirely online, with insurance, financing, registration, taxes, and maintenance all included in one monthly payment."
+    }
+  ]
+}

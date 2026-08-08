@@ -1,0 +1,213 @@
+{
+  "slug": "flix",
+  "name": "Flix",
+  "website": "https://corporate.flix.com",
+  "logo": "assets/logos/flix.svg",
+  "hq": {
+    "city": "Munich",
+    "country": "DE"
+  },
+  "foundedCountry": "DE",
+  "foundedYear": 2011,
+  "sectors": [
+    "Mobility",
+    "Travel"
+  ],
+  "thesis": {
+    "problem": "Long-distance coach travel was the cheapest way to cross a country and the least usable: hundreds of small regional operators, each with its own timetable, its own ticket office and no way for a passenger to find, compare or book a route that crossed two of them. Germany did not even permit intercity coach competition with the railway until 2013.",
+    "solution": "Flix owns almost no vehicles. It runs the network — planning routes, setting prices, selling tickets and carrying the brand — while independent bus and rail companies supply the drivers and the fleet and get a steady stream of passengers in return. The same platform has since been laid over trains as FlixTrain and over acquired operators abroad, including Türkiye's Kâmil Koç and the American intercity institution Greyhound."
+  },
+  "valuation": {
+    "amount": 3000,
+    "currency": "USD",
+    "approximate": true,
+    "asOf": "2021-06",
+    "round": "Series G",
+    "source": "s2",
+    "disputed": {
+      "note": "A newer and larger figure is attached to Flix, and the register does not publish it as the headline. When EQT and Kühne Holding took 35% of the company in July 2024, Bloomberg reported that they were “investing around €1 billion ($1.2 billion) in Flix in a deal valuing the business at more than €3 billion, people with knowledge of the matter said.” Two things keep that out of the valuation field. It is attributed to people with knowledge of the matter, not disclosed: Flix’s own announcement and EQT’s, both opened and read, describe the structure and state no figure at all. And the transaction was part primary and part secondary — EQT’s release says that “[i]n addition to a primary investment in Flix, EQT Future and Kühne Holding will acquire shares from existing shareholders” — so it prices the company at a deal rather than being a post-money struck by a round. The published $3bn+ is Flix’s own stated valuation from June 2021; the July 2024 figure is higher, so nothing here understates the company.",
+      "source": "s5"
+    }
+  },
+  "becameUnicorn": {
+    "date": "2019-07",
+    "roundId": "r1",
+    "source": "s4"
+  },
+  "totalRaised": {
+    "amount": null,
+    "currency": "USD",
+    "approximate": false,
+    "source": "s1"
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "date": "2019-07",
+      "stage": "Series F, first close",
+      "amount": 500,
+      "currency": "EUR",
+      "approximate": true,
+      "postMoney": 2000,
+      "postMoneyCurrency": "USD",
+      "postMoneySource": "s4",
+      "leadInvestors": [],
+      "investors": [
+        "TCV",
+        "Permira",
+        "HV Holtzbrinck Ventures"
+      ],
+      "source": "s3"
+    },
+    {
+      "id": "r2",
+      "date": "2019-08",
+      "stage": "Series F extension",
+      "amount": null,
+      "currency": "EUR",
+      "approximate": false,
+      "postMoney": 2000,
+      "postMoneyCurrency": "USD",
+      "postMoneySource": "s4",
+      "leadInvestors": [],
+      "investors": [
+        "Baillie Gifford",
+        "Luxor Capital Group",
+        "Odyssey 44",
+        "BlackRock"
+      ],
+      "source": "s4"
+    },
+    {
+      "id": "r3",
+      "date": "2021-06",
+      "stage": "Series G",
+      "amount": 650,
+      "currency": "USD",
+      "approximate": true,
+      "postMoney": 3000,
+      "postMoneyCurrency": "USD",
+      "postMoneySource": "s2",
+      "leadInvestors": [],
+      "investors": [
+        "Canyon Partners",
+        "General Atlantic",
+        "Permira",
+        "TCV",
+        "HV Capital",
+        "BlackRock",
+        "Baillie Gifford",
+        "Silver Lake"
+      ],
+      "source": "s1",
+      "disputed": {
+        "note": "The $650m+ is not all equity. Flix’s own announcement calls it a “structured funding round, based on a mix of equity and debt”, and TechCrunch’s account of the same round quotes co-founder Jochen Engert describing it as a “balanced” mix of the two. Neither the company nor TechCrunch splits the figure, so the register records the round as its sources state it and flags here that the amount is not a pure equity raise. The $3bn+ post-money beside it is unaffected — that is a valuation, not a use of the money.",
+        "source": "s6"
+      }
+    },
+    {
+      "id": "r4",
+      "date": "2024-07",
+      "stage": "EQT and Kühne Holding minority investment",
+      "amount": 1000,
+      "currency": "EUR",
+      "approximate": true,
+      "postMoney": null,
+      "leadInvestors": [],
+      "investors": [
+        "EQT",
+        "Kühne Holding"
+      ],
+      "source": "s5"
+    }
+  ],
+  "founders": [
+    {
+      "name": "André Schwämmlein",
+      "role": "Co-founder & CEO",
+      "current": true
+    },
+    {
+      "name": "Daniel Krauss",
+      "role": "Co-founder, CIO & CHRO",
+      "current": true
+    },
+    {
+      "name": "Jochen Engert",
+      "role": "Co-founder; Deputy Chairman of the Supervisory Board",
+      "current": true
+    }
+  ],
+  "investors": [
+    "EQT",
+    "Kühne Holding",
+    "General Atlantic",
+    "Permira",
+    "TCV",
+    "HV Capital",
+    "BlackRock",
+    "Baillie Gifford",
+    "Silver Lake",
+    "Canyon Partners",
+    "Luxor Capital Group",
+    "Odyssey 44"
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "publication": "TechCrunch",
+      "title": "FlixMobility raises $650M+ at a $3B valuation to double down on buses and other transport in the US",
+      "url": "https://techcrunch.com/2021/06/02/flixmobility-raises-650m-at-a-3b-valuation-to-double-down-on-buses-and-other-transport-in-the-us/",
+      "publishedOn": "2021-06-02",
+      "quote": "FlixMobility, the parent company of the FlixBus coach network and the FlixTrain rail service, has closed more than $650 million in a Series G round of funding that values the Munich-based company at over $3 billion."
+    },
+    {
+      "id": "s2",
+      "publication": "Company press release",
+      "title": "FlixMobility raises over $650M in Funding at $3B Valuation planning further global expansion",
+      "url": "https://corporate.flix.com/press_releases/flixmobility-raises-over-650m-in-funding-at-3b-valuation-planning-further-global-expansion/",
+      "publishedOn": "2021-06-02",
+      "quote": "The company’s new valuation of more than $3 billion is significantly higher than the valuation of the last financing round in 2019, underlining the strong investor support by its founders, existing investors include General Atlantic, Permira, TCV, HV Capital, Blackrock, Baillie Gifford and SilverLake for FlixMobility and the success of its unique business model."
+    },
+    {
+      "id": "s3",
+      "publication": "TechCrunch",
+      "title": "FlixMobility extends Series F at $2B+ valuation as it gears up to add cars to its bus and train network",
+      "url": "https://techcrunch.com/2019/08/08/flixmobility-extends-series-f-at-2b-valuation-as-it-gears-up-to-add-cars-to-its-bus-and-train-network/",
+      "publishedOn": "2019-08-08",
+      "quote": "Back in July it emerged that FlixMobility — the company behind the network of ubiquitous green FlixBus coaches that crisscross Europe and parts of the U.S. — had raised about €500 million in the largest-ever round of funding for a German tech company."
+    },
+    {
+      "id": "s4",
+      "publication": "TechCrunch",
+      "title": "FlixMobility extends Series F at $2B+ valuation as it gears up to add cars to its bus and train network",
+      "url": "https://techcrunch.com/2019/08/08/flixmobility-extends-series-f-at-2b-valuation-as-it-gears-up-to-add-cars-to-its-bus-and-train-network/",
+      "publishedOn": "2019-08-08",
+      "quote": "Engert would not specify the exact size of the round, but he confirmed that it was at the same valuation as the first close of the Series F (which was just over $2 billion), and that the extra funding was “not double” the earlier amount, “but substantial.”"
+    },
+    {
+      "id": "s5",
+      "publication": "Bloomberg",
+      "title": "EQT, German Tycoon Buy €1 Billion Stake in Greyhound Owner Flix",
+      "url": "https://www.bloomberg.com/news/articles/2024-07-04/eqt-german-tycoon-buy-1-billion-stake-in-greyhound-owner-flix",
+      "publishedOn": "2024-07-04",
+      "quote": "They are investing around €1 billion ($1.2 billion) in Flix in a deal valuing the business at more than €3 billion, people with knowledge of the matter said."
+    },
+    {
+      "id": "s6",
+      "publication": "Company press release",
+      "title": "FlixMobility raises over $650M in Funding at $3B Valuation planning further global expansion",
+      "url": "https://corporate.flix.com/press_releases/flixmobility-raises-over-650m-in-funding-at-3b-valuation-planning-further-global-expansion/",
+      "publishedOn": "2021-06-02",
+      "quote": "The structured funding round, based on a mix of equity and debt, totals more than $650 million."
+    },
+    {
+      "id": "s7",
+      "publication": "Company press release",
+      "title": "Flix announces successful closing of investment from EQT and Kühne Holding – new Supervisory Board members appointed",
+      "url": "https://corporate.flix.com/press_releases/flix-announces-successful-closing-of-investment-from-eqt-and-kuehne-holding/",
+      "publishedOn": "2024-11-28",
+      "quote": "EQT, the global investment organization, together with Kühne Holding, representing one of the world’s leading logistics entrepreneurs and investors, acquired a 35% minority stake in Flix."
+    }
+  ]
+}
