@@ -19,6 +19,15 @@ publicly reported post-money valuation of at least $1B or €1B as reported.
 
 Last reviewed: **2026-08-08**.
 
+**Blocked publishers.** Several allowlisted publications return 403 to an automated
+fetch. That is not the same as unobtainable, and this file previously treated it as if it
+were: three entries were parked on "Bloomberg 403s". **A publisher that blocks direct
+fetching must be tried through a [Wayback Machine](https://web.archive.org) snapshot
+before its reporting is recorded as unreadable.** Two of those three entries changed on
+that check alone. Where a snapshot is used, the record still cites the publisher's own
+canonical URL — the archive is how the page was read, not a second source, and a snapshot
+that captured the publisher's own block page (HTTP 403) is not a read at all.
+
 ---
 
 ## Include — written (batch 1)
@@ -136,8 +145,8 @@ case the blocker is named precisely, so the next batch can act on it directly.
 |---|---|---|---|
 | **Quantum Systems** | Gilching, near Munich | The largest of them all: $1.2bn Series D at "~$8 billion on a post-money basis" ([company press release, 2026-07-02](https://quantum-systems.com/news/quantum-systems-raises-1-2bn-series-d-to-accelerate-growth-and-scale-software-defined-autonomous-systems-across-air-land-and-sea/)) | Still the **crossing**, not the valuation, and this batch could not shift it. It became a unicorn at the €160m Series C in May 2025; no allowlisted account prints that valuation as a numeral. Checked again and re-read this time: [Sifted, 2025-05-06](https://sifted.eu/articles/quantum-systems-160m-unicorn) says only "making it one of only a few unicorns in the European defence tech field"; [Tech.eu, 2025-11-28](https://tech.eu/2025/11/28/quantum-systems-180m-series-c-extension-lifts-company-to-3b/) and its lead investor's own release ([Balderton](https://www.balderton.com/news/quantum-systems-triples-valuation/)) both say the November extension "tripled its valuation" to "above €3 billion" but never state what it tripled *from*. Dividing €3bn by three would be arithmetic, not a source. quantum-systems.com returns 403 to this crawler on every page including its own Series C release, so the company's own wording cannot be read either. Needs one allowlisted page that prints the May 2025 figure |
 | **Neura Robotics** | Metzingen | $1.4bn Series C, Jun 2026, backed by Tether, Qualcomm, Amazon and Nvidia | Weaker on a first-hand read than the queue expected, so it was left out rather than published thin. The company's own release ([2026-06-10](https://neura-robotics.com/record-series-c/)) — opened and read in full — announces "a landmark Series C financing with a total round size of **up to** $1.4 billion" and states **no valuation at all**. The $7bn reaches an allowlisted page only at third hand: [Sifted](https://sifted.eu/articles/neura-robotics-1-4bn-series-c) writes "The new funding brings Neura's valuation to $7bn, the Financial Times reported, citing people familiar with the deal", and contemporaneous reporting adds that Neura declined to comment on the figure. A milestone-contingent round size and an unconfirmed, anonymously-sourced number that nobody calls a post-money is two of the three known error shapes at once. Publishable only if the FT's own page can be opened, or if the company states a figure |
-| **Isar Aerospace** | Munich (Ottobrunn) | €270m Series D closed Jun 2026 | Now checked first-hand and still blocked. Isar's **own** press release ([2026-06-09](https://isaraerospace.com/press/isar-aerospace-secures-eur-270m-to-provide-sovereign-space-capabilities-globally)) was opened and read end to end: it gives the round, the investors, the factory and the headcount, and states no valuation anywhere. Bloomberg, which is on the allowlist, still returns 403 to this crawler. The widely quoted "more than €2 billion" traces to profile pages, not to reporting |
-| **wefox** | Berlin | $4.5bn post-money at the May 2023 round ([TechCrunch](https://techcrunch.com/2023/05/16/wefox-secures-new-funding-at-45-billion-valuation-as-it-aims-for-profitability/)) | **Moved up from the exclusion list — the reason it was excluded does not survive a check.** wefox was held to be "marked down far below its 2022 peak", but no allowlisted publication has printed a wefox valuation below the threshold, or indeed any valuation since 2023. It sold subsidiaries and restructured, but the company itself is not insolvent, not listed and not acquired, and [Tech.eu, 2025-07-11](https://tech.eu/2025/07/11/eur151m-for-insurtech-unicorn-wefox/) still calls it an "Insurtech unicorn" while reporting a €151m raise. On the register's own rule — *a publicly reported post-money*, not a recent one, the same rule Taxfix and Choco are published under — wefox qualifies. What is missing is a first-hand read of the 2023 round and of what the €151m did to the cap table, which is a batch of work, not a blocker of principle |
+| **wefox** | Berlin | $4.5bn post-money at the May 2023 round ([TechCrunch](https://techcrunch.com/2023/05/16/wefox-secures-new-funding-at-45-billion-valuation-as-it-aims-for-profitability/)) | **Moved up from the exclusion list, but not on the reason first given here.** That reason — "no allowlisted publication has printed any valuation since 2023" — was wrong, and it was wrong because Bloomberg had been recorded as unreadable without trying the archive. Read through a Wayback snapshot, [Bloomberg, 2024-06-13](https://www.bloomberg.com/news/articles/2024-06-13/mubadala-favors-selling-fintech-wefox-against-founders-wishes) reports: "The Abu Dhabi sovereign wealth fund has told Wefox shareholders it expects an offer from Ardonagh that would give the German firm an **enterprise value** of as much as €550 million ($595 million), according to a presentation from Mubadala that was seen by Bloomberg." That figure does **not** settle wefox against rule 3, for the reason Razor Group and 1KOMMA5° already establish here: an enterprise value is not a post-money, and this one prices an *expected offer* in a sale the board went on to reject, not a completed round. So the €550m is neither a post-money nor a transaction. wefox is German, private, independent and not insolvent, and its last reported post-money is $4.5bn. **What would settle it either way is a post-money on a round since May 2023** — most obviously the €151m raised in 2025, for which no allowlisted source states a price |
+| **Flix** | Munich | More than €3bn at the EQT / Kühne Holding transaction, Jul 2024 | **Settled by the archive, having been parked on "Bloomberg 403s".** Read through a Wayback snapshot, [Bloomberg, 2024-07-04](https://www.bloomberg.com/news/articles/2024-07-04/eqt-german-tycoon-buy-1-billion-stake-in-greyhound-owner-flix) reports: "They are investing around €1 billion ($1.2 billion) in Flix in a deal valuing the business at more than €3 billion, people with knowledge of the matter said." EQT's own release, opened and read, confirms the structure — a 35% stake, "[i]n addition to a primary investment in Flix … shares from existing shareholders" — and states no figure. Flix is Munich-based, private (its listing was shelved) and independent. Nothing blocks a record except the writing of one. Two things it must say plainly: the figure is attributed to people with knowledge of the matter rather than disclosed, and the deal is part primary and part secondary, so it prices the company at the transaction rather than being a clean post-money |
 
 ## Exclude — verified
 
@@ -151,7 +160,7 @@ case the blocker is named precisely, so the next batch can act on it directly.
 | **Zalando**, **Delivery Hero**, **HelloFresh**, **Auto1**, **Ottobock** | Publicly listed, so not private. Ottobock is the most recent, listing in Frankfurt in October 2025. | Listed on the Frankfurt Stock Exchange |
 | **About You** | Acquired by Zalando and delisted; no longer independent. | Zalando/About You combination completed 2025 |
 | **Contentful** | The most surprising exclusion of this batch, and it was not on anyone's list of doubts. The Berlin-founded headless CMS closed a $175m Series F in 2021 at over $3bn — comfortably the largest valuation in the undecided pile — and it was **acquired by Salesforce**, announced 1 June 2026. Tech.eu: "Contentful, the German-founded content management company, is to be acquired by US software giant Salesforce, the companies announced today." The same piece notes it "closed a $175 million funding round in 2021, at a valuation of over $3 billion", so a company that would have entered the register near the top of it instead leaves at a reported discount to that price. Fails rule 2. | [Tech.eu, 2026-06-01](https://tech.eu/2026/06/01/berlin-based-contentful-snapped-up-by-salesforce/) |
-| **Volocopter** | Insolvency: Volocopter GmbH filed to open proceedings at the Karlsruhe local court in December 2024. Now settled against an allowlisted report rather than a search snippet. Fails rule 2. | [TechCrunch, 2024-12-30](https://techcrunch.com/2024/12/30/mercedes-backed-volocopter-files-for-bankruptcy/) |
+| **Volocopter** | Insolvent: "German electric air taxi company Volocopter has filed for bankruptcy protection". Fails rule 2. (An earlier draft of this row added that proceedings opened at the Karlsruhe local court. The cited piece does not say so, and nothing else opened here does either, so the detail is gone and the exclusion stands on what the source states.) | [TechCrunch, 2024-12-30](https://techcrunch.com/2024/12/30/mercedes-backed-volocopter-files-for-bankruptcy/) |
 | **Lilium** | Insolvent and wound down; TechCrunch's October 2025 piece describes it in the past tense as the "defunct electric aircraft startup" whose technology has ended up at Archer. Fails rule 2. | [TechCrunch, 2025-10-16](https://techcrunch.com/2025/10/16/defunct-electric-aircraft-startup-liliums-tech-lives-on-over-at-archer/) |
 | **Cognigy** | Acquired by NiCE — "US customer service giant NICE has paid almost $1bn to acquire Düsseldorf-based Cognigy in what is Europe's biggest AI acquisition to date". Fails rule 2, and note the price is *below* the threshold in any case. | [Sifted](https://sifted.eu/articles/cognigy-sells-for-almost-1bn-in-europes-biggest-ai-acquisition-yet), [Tech.eu, 2025-07-28](https://tech.eu/2025/07/28/german-ai-startup-cognigy-hoovered-up-by-us-customer-service-firm-nice/) |
 | **Tier Mobility** | Merged with Dott and the brand retired: "Tier becomes Dott following the merger of the two micromobility companies". No longer a standalone German company. Fails rule 2. | [TechCrunch, 2024-09-30](https://techcrunch.com/2024/09/30/tier-becomes-dott-following-the-merger-of-the-two-micromobility-companies/) |
@@ -171,14 +180,16 @@ reason given for excluding it turned out not to be a fact anyone has published.
 
 ## Rule 3 not established — a unicorn label without a post-money
 
-Both of these are routinely called German unicorns, and for both the *figure* behind the
-label turns out to be missing or to describe something else. That is worth publishing on its
-own, so they sit here rather than in the undecided queue.
+All three of these are routinely called German unicorns, and in each case the *figure* behind
+the label turns out to be missing, to describe something else, or to belong to a round that
+never happened. That is worth publishing on its own, so they sit here rather than in the
+undecided queue.
 
 | Company | HQ | What the source actually says |
 |---|---|---|
 | **Grover** | Berlin | Tech.eu's own piece announcing unicorn status is careful about what the money was: "As tech rental platform Grover achieves unicorn status, it's also raised over $2 billion in funding, the vast majority of which is debt" — and, later, "To date, Grover has raised over $2 billion, 90% of which is debt funding." No post-money equity valuation is stated anywhere in it. A subscription-rental company financing inventory with debt is not the same as a company valued above $1bn. ([Tech.eu, 2022-04-07](https://tech.eu/2022/04/07/berlins-grover-hits-super-grover-status-with-unicorn-valuation-but/)) |
 | **Agile Robots** | Munich | The most recent allowlisted reporting is about a round that has not happened: Sifted's June 2026 piece is headlined "SoftBank in talks to back Agile Robots' $800m round, reports say". Talks are not a post-money. ([Sifted, 2026-06-02](https://sifted.eu/articles/softbank-in-talks-to-back-agile-robotics-in-800m-round-reports-say)) |
+| **Isar Aerospace** | Munich (Ottobrunn) | Resolved this round, and it turns out to fail rule 3 rather than to be merely unread. Its **own** press release on the €270m Series D ([2026-06-09](https://isaraerospace.com/press/isar-aerospace-secures-eur-270m-to-provide-sovereign-space-capabilities-globally)) was opened and read end to end: round, investors, factory, headcount, and no valuation anywhere. The €2bn everyone quotes traces to Bloomberg's March 2026 piece, whose own URL slug is `isar-aerospace-in-talks-to-raise-250-million-ahead-of-launch` — talks, and about a €250m round that was superseded by the larger €270m one that actually closed three months later with no price attached. Talks are not a post-money, as Agile Robots above already establishes. The archive was tried, per the note at the top of this file, and does not rescue it either: all three Wayback captures of that Bloomberg URL are themselves HTTP 403 block pages, so there is no snapshot of the article to read |
 
 ## Undecided — queued for verification
 
@@ -187,18 +198,10 @@ publishable figure. Listed so that the queue is visible and nothing is quietly d
 each, the same three questions apply: German by founding or HQ, still independent and
 private, and a publicly reported post-money at or above the threshold.
 
-Raisin · Flix · Black Semiconductor · Marvel Fusion · instagrid · The Exploration Company
+Raisin · Black Semiconductor · Marvel Fusion · instagrid · The Exploration Company
 
 Notes on what specifically to settle:
 
-- **Flix** was checked this batch and is still short of rule 3, for a reason worth recording.
-  EQT's own announcement of the deal was opened and read
-  ([EQT, 2024-07-04](https://eqtgroup.com/news/eqt-and-kuhne-holding-invest-in-flix-the-global-travel-company-2024-07-04)):
-  it confirms EQT Future and Kühne Holding took "a 35% minority stake in Flix", partly
-  primary and partly bought from existing shareholders, and it states **no valuation at
-  all** — 2023 revenue and EBITDA, but no price. The €3bn attached to the deal everywhere
-  comes from Bloomberg, which is on the allowlist but returns 403 to this crawler. Flix is
-  German, private and independent; only the figure is missing.
 - **Raisin** is reported at over €2bn after a secondary in which existing holders sold more
   than €100m of stock. Every route to that figure this batch could find runs through
   publications that are not on the allowlist. Note also that a secondary sets a price for

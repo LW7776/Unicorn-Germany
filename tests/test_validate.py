@@ -277,3 +277,36 @@ def test_post_money_from_a_different_source_than_the_round_amount(record):
 def test_post_money_source_must_still_exist(record):
     record["rounds"][1]["postMoneySource"] = "s99"
     assert any("round r2 post-money" in e and "s99" in e for e in validate_company(record))
+
+
+def test_an_unknown_currency_code_is_rejected(record):
+    """"GBP" renders as "GBP 1bn" rather than failing, so nothing downstream would
+    catch it — and the crossing flag now inherits the same field."""
+    record["rounds"][1]["postMoneyCurrency"] = "GBP"
+    assert any("round r2.postMoneyCurrency" in e and "GBP" in e
+               for e in validate_company(record))
+
+
+def test_an_unknown_currency_on_the_valuation_is_rejected(record):
+    record["valuation"]["currency"] = "CHF"
+    assert any("valuation.currency" in e and "CHF" in e for e in validate_company(record))
+
+
+def test_a_misspelled_optional_round_field_is_rejected(record):
+    """postMoneyCurency is one letter short. Nothing reads it, `currency` is used
+    instead, and the record would otherwise validate clean while the page renders a
+    dollar post-money labelled in euros."""
+    record["rounds"][1]["postMoneyCurency"] = "USD"
+    assert any("unknown field" in e and "postMoneyCurency" in e
+               for e in validate_company(record))
+
+
+def test_the_known_round_fields_are_all_accepted(record):
+    record["sources"].append({
+        "id": "s3", "publication": "Company press release", "title": "Unicorn",
+        "url": "https://example.de/press/unicorn", "publishedOn": "2024-03-14",
+        "quote": "Example GmbH has reached a valuation of 1.2 billion euros."})
+    record["rounds"][1]["postMoneyCurrency"] = "EUR"
+    record["rounds"][1]["postMoneySource"] = "s3"
+    record["rounds"][1]["disputed"] = {"note": "Others report 100 million euros.", "source": "s2"}
+    assert validate_company(record) == []

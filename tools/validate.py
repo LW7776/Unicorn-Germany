@@ -23,7 +23,8 @@ import sys
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 
 from tools.schema import (
-    SOURCE_ALLOWLIST, date_sort_key, is_full_date, parse_date, quote_states_figure,
+    KNOWN_CURRENCIES, SOURCE_ALLOWLIST, date_sort_key, is_full_date, parse_date,
+    quote_states_figure,
 )
 
 REQUIRED = ["slug", "name", "website", "logo", "hq", "foundedCountry", "foundedYear",
@@ -31,6 +32,16 @@ REQUIRED = ["slug", "name", "website", "logo", "hq", "foundedCountry", "foundedY
             "rounds", "founders", "investors", "sources"]
 THRESHOLD_MILLIONS = 1000          # $1B or €1B, as reported. No FX conversion.
 SLUG = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
+
+# Every key a round may carry. A round is checked against this exactly, because the
+# optional fields resolve by *falling back* when absent: `postMoneyCurency` — one
+# letter short — is not an error anywhere else in this file. It is simply never
+# read, `currency` is used instead, and the record validates clean while the page
+# renders a figure under the wrong currency. A misspelled optional key is therefore
+# indistinguishable from an absent one unless the spelling itself is checked.
+ROUND_KEYS = {"id", "date", "stage", "amount", "currency", "approximate", "postMoney",
+              "postMoneyCurrency", "postMoneySource", "leadInvestors", "investors",
+              "source", "disputed"}
 
 
 def _require_string(errors, label, value):
@@ -165,9 +176,29 @@ def validate_company(record):
             errors.append(
                 f"{label}.disputed cites unknown source {disputed.get('source')!r}")
 
+    def check_currency(label, value):
+        """An unknown code is not a display bug to be absorbed — it is a figure
+        labelled in a currency no source used. It reaches the reader twice over:
+        format_amount prints "GBP 1bn", and the crossing flag built from the same
+        field says "crossed GBP1bn".
+
+        What this cannot check is the pairing of a code to a number inside prose.
+        quote_states_figure only asks whether the quote mentions the currency
+        *somewhere*, so a sentence like "€250 million … ($1.1 billion) post-money"
+        satisfies either label for either figure. That ambiguity is inherent to
+        presence-based matching and is not solved here; it is why the currency on a
+        post-money still has to be read off the source by a person.
+        """
+        if value is not None and value not in KNOWN_CURRENCIES:
+            errors.append(
+                f"{label} is not a currency this register can render: {value!r} "
+                f"(known: {', '.join(sorted(KNOWN_CURRENCIES))})")
+
     check_figure("valuation", record["valuation"])
     check_figure("totalRaised", record["totalRaised"])
     check_disputed("valuation", record["valuation"])
+    check_currency("valuation.currency", record["valuation"].get("currency"))
+    check_currency("totalRaised.currency", record["totalRaised"].get("currency"))
 
     for field, value in (("valuation.asOf", record["valuation"].get("asOf")),
                          ("becameUnicorn.date", record["becameUnicorn"].get("date"))):
@@ -190,6 +221,13 @@ def validate_company(record):
         check_figure(f"round {entry['id']} post-money", entry, amount_key="postMoney",
                      currency_key="postMoneyCurrency", source_key="postMoneySource")
         check_disputed(f"round {entry['id']}", entry)
+        check_currency(f"round {entry['id']}.currency", entry.get("currency"))
+        check_currency(f"round {entry['id']}.postMoneyCurrency",
+                       entry.get("postMoneyCurrency"))
+        for key_name in sorted(set(entry) - ROUND_KEYS):
+            errors.append(
+                f"round {entry['id']}: unknown field {key_name!r} — a misspelled "
+                f"optional field is silently ignored, so it is rejected by name")
 
     by_id = {entry.get("id"): entry for entry in rounds}
     unicorn_round = by_id.get(record["becameUnicorn"].get("roundId"))

@@ -13,6 +13,10 @@ SOURCE_ALLOWLIST = {
 }
 
 CURRENCY_SYMBOL = {"EUR": "€", "USD": "$"}
+# The only codes the renderer can actually display. format_amount falls back to
+# "<code> " for anything else, so an unknown code does not fail loudly — it prints
+# "GBP 1bn" on the page and the crossing flag inherits it. Validated, not assumed.
+KNOWN_CURRENCIES = frozenset(CURRENCY_SYMBOL)
 MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
           "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 

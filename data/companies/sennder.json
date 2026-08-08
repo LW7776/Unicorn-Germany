@@ -21,9 +21,9 @@
     "amount": 1000,
     "currency": "USD",
     "approximate": true,
-    "asOf": "2021-01",
-    "round": "Series D",
-    "source": "s1",
+    "asOf": "2021-06",
+    "round": "Series D, second close",
+    "source": "s5",
     "disputed": {
       "note": "A €2bn figure is attached to sennder in Tech.eu’s December 2022 headline, “German logistics player Sennder primes new fundraise at €2 billion valuation”. The article body is about a raise that was being prepared, not one that closed: it reports sennder “taking on funds” at around double its January 2021 value, on Handelsblatt’s account, citing unnamed sources and €60m clinched so far. No completed round at that price has been reported since, so the register keeps the last valuation actually struck.",
       "source": "s3"
@@ -35,10 +35,10 @@
     "source": "s1"
   },
   "totalRaised": {
-    "amount": null,
+    "amount": 350,
     "currency": "USD",
-    "approximate": false,
-    "source": "s1"
+    "approximate": true,
+    "source": "s7"
   },
   "rounds": [
     {
@@ -51,6 +51,7 @@
       "postMoney": 1000,
       "leadInvestors": [],
       "investors": [
+        "Hedosophia",
         "Accel",
         "Lakestar",
         "HV Capital",
@@ -66,10 +67,14 @@
       "amount": 80,
       "currency": "USD",
       "approximate": false,
-      "postMoney": null,
-      "leadInvestors": [],
-      "investors": [],
-      "source": "s3"
+      "postMoney": 1000,
+      "leadInvestors": [
+        "Baillie Gifford"
+      ],
+      "investors": [
+        "Baillie Gifford"
+      ],
+      "source": "s5"
     }
   ],
   "founders": [
@@ -90,11 +95,13 @@
     }
   ],
   "investors": [
+    "Baillie Gifford",
     "Accel",
     "Lakestar",
     "HV Capital",
     "Project A",
-    "Scania"
+    "Scania",
+    "Hedosophia"
   ],
   "sources": [
     {
@@ -128,6 +135,30 @@
       "url": "https://tech.eu/2022/12/14/sennder/",
       "publishedOn": "2022-12-14",
       "quote": "Berlin-based logistics services startup Sennder is taking on funds at around double the $1 billion or so value it received for equity issued January 2021, when it took $160 million to ramp up its digitised freight trucking strategy."
+    },
+    {
+      "id": "s5",
+      "publication": "TechCrunch",
+      "title": "Freight forwarder sennder raises $80M at a $1B+ valuation",
+      "url": "https://techcrunch.com/2021/06/01/freight-forwarder-sennder-raises-80m-at-a-1b-valuation/",
+      "publishedOn": "2021-06-01",
+      "quote": "Sennder, a digital freight forwarder that focuses on moving cargo around Europe (and specifically focusing on trucks and “full truck load”, FTL, freight forwarding), has raised $80 million in funding, at a valuation the company confirms is now over $1 billion."
+    },
+    {
+      "id": "s6",
+      "publication": "TechCrunch",
+      "title": "Freight forwarder sennder raises $80M at a $1B+ valuation",
+      "url": "https://techcrunch.com/2021/06/01/freight-forwarder-sennder-raises-80m-at-a-1b-valuation/",
+      "publishedOn": "2021-06-01",
+      "quote": "The Berlin-based startup has been on something of a funding tear this year. In January, it announced a $160 million round, and this $80 million is closing out its Series D. Baillie Gifford led this latest Series D extension, with Hedosophia, Accel, Lakestar, HV Capital, Project A and Scania all participating in the previous part of the Series D."
+    },
+    {
+      "id": "s7",
+      "publication": "TechCrunch",
+      "title": "Freight forwarder sennder raises $80M at a $1B+ valuation",
+      "url": "https://techcrunch.com/2021/06/01/freight-forwarder-sennder-raises-80m-at-a-1b-valuation/",
+      "publishedOn": "2021-06-01",
+      "quote": "The funding makes sennder, which has now raised some $350 million, one of the most well-funded of the freight forwarders, but it’s a hot area at the moment."
     }
   ]
 }

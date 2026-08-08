@@ -305,6 +305,13 @@ const REQUIRED_KEYS = ["slug", "name", "website", "logo", "hq", "foundedCountry"
   "sectors", "thesis", "valuation", "becameUnicorn", "totalRaised",
   "rounds", "founders", "investors", "sources"];
 const THRESHOLD_MILLIONS = 1000;
+/** Mirrors tools/schema.py KNOWN_CURRENCIES and tools/validate.py ROUND_KEYS. An
+    unknown code renders as "GBP 1bn" rather than failing, and a misspelled optional
+    key (postMoneyCurency) silently falls back to `currency` — both reach the reader
+    as a figure in a currency no source used, so both are rejected by name. */
+const KNOWN_CURRENCIES = ["EUR", "USD"];
+const ROUND_KEYS = ["id", "date", "stage", "amount", "currency", "approximate", "postMoney",
+  "postMoneyCurrency", "postMoneySource", "leadInvestors", "investors", "source", "disputed"];
 const SLUG_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
 function isNonEmptyString(value) {
@@ -437,7 +444,16 @@ export function validateRecord(record) {
     }
   };
 
+  const checkCurrency = (label, value) => {
+    if (value !== null && value !== undefined && !KNOWN_CURRENCIES.includes(value)) {
+      errors.push(`${label} is not a currency this register can render: ${describe(value)} `
+        + `(known: ${KNOWN_CURRENCIES.join(", ")})`);
+    }
+  };
+
   checkDisputed("valuation", record.valuation);
+  checkCurrency("valuation.currency", record.valuation.currency);
+  checkCurrency("totalRaised.currency", record.totalRaised && record.totalRaised.currency);
 
   for (const [label, value] of [["valuation.asOf", record.valuation.asOf], ["becameUnicorn.date", record.becameUnicorn.date]]) {
     try { parseDateLoose(value); } catch (exc) { errors.push(`${label}: ${exc.message}`); }
@@ -460,6 +476,12 @@ export function validateRecord(record) {
     checkFigure(`round ${entry.id ?? "?"}`, entry);
     checkFigure(`round ${entry.id ?? "?"} post-money`, entry, "postMoney", "postMoneyCurrency", "postMoneySource");
     checkDisputed(`round ${entry.id ?? "?"}`, entry);
+    checkCurrency(`round ${entry.id ?? "?"}.currency`, entry.currency);
+    checkCurrency(`round ${entry.id ?? "?"}.postMoneyCurrency`, entry.postMoneyCurrency);
+    for (const keyName of Object.keys(entry).filter((k) => !ROUND_KEYS.includes(k)).sort()) {
+      errors.push(`round ${entry.id ?? "?"}: unknown field ${describe(keyName)} — a misspelled `
+        + "optional field is silently ignored, so it is rejected by name");
+    }
   }
 
   const roundsById = Object.fromEntries(rounds.map((entry) => [entry.id, entry]));
@@ -487,11 +509,28 @@ export function validateRecord(record) {
   }
 
   if (rounds.length) {
-    try {
-      if (cmpDate(parseDateLoose(record.valuation.asOf), parseDateLoose(rounds[rounds.length - 1].date)) < 0) {
-        errors.push("valuation.asOf predates the most recent round");
+    // Mirrors tools/validate.py, which this had fallen behind. The old rule here
+    // compared valuation.asOf against rounds[last] on dates alone and rejected any
+    // valuation older than the most recent round. That is right only when the newer
+    // round said what the company was worth; when it disclosed no price — ordinary
+    // and honest — the last publicly reported figure genuinely is still the earlier
+    // one. The stale copy flagged Enpal, Scalable Capital and 1KOMMA5°, all three of
+    // which are published, so the form editor was reporting an error on records the
+    // authority accepts. Every round after asOf is checked, not just the last: a
+    // disclosed post-money mid-history supersedes the headline just as surely.
+    let valuationKey = null;
+    try { valuationKey = parseDateLoose(record.valuation.asOf); } catch { /* reported above */ }
+    if (valuationKey !== null) {
+      for (const entry of rounds) {
+        if (entry.postMoney === null || entry.postMoney === undefined) continue;
+        try {
+          if (cmpDate(parseDateLoose(entry.date), valuationKey) <= 0) continue;
+        } catch { continue; }
+        errors.push(`valuation.asOf (${record.valuation.asOf}) predates round `
+          + `${entry.id ?? "?"} (${entry.date}), which discloses a post-money of its own `
+          + "— that newer figure is the one to publish");
       }
-    } catch { /* already reported above, by the asOf/round-date checks themselves */ }
+    }
   }
 
   return errors;
