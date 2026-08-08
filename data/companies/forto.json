@@ -1,0 +1,150 @@
+{
+  "slug": "forto",
+  "name": "Forto",
+  "website": "https://forto.com",
+  "logo": "assets/logos/forto.svg",
+  "hq": {
+    "city": "Berlin",
+    "country": "DE"
+  },
+  "foundedCountry": "DE",
+  "foundedYear": 2016,
+  "sectors": [
+    "Logistics",
+    "Freight Forwarding"
+  ],
+  "thesis": {
+    "problem": "Moving a container from a factory in Asia to a warehouse in Europe still runs on email, spreadsheets and phone calls between a shipper, a forwarder, a carrier and a customs broker. The company paying for the freight usually cannot say where its goods are, what the delay will cost, or which of its routes is quietly losing money.",
+    "solution": "Forto acts as the freight forwarder itself and runs the booking, documents, customs and tracking on its own software, so the customer sees one live view of every shipment instead of reconstructing it from correspondence. Because the same platform records what each lane actually cost and how long it took, the data doubles as the basis for planning the next quarter's shipping."
+  },
+  "valuation": {
+    "amount": 2100,
+    "currency": "USD",
+    "approximate": false,
+    "asOf": "2022-03",
+    "round": "Series D",
+    "source": "s2"
+  },
+  "becameUnicorn": {
+    "date": "2021-06",
+    "roundId": "r1",
+    "source": "s1"
+  },
+  "totalRaised": {
+    "amount": 600,
+    "currency": "USD",
+    "approximate": true,
+    "source": "s3"
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "date": "2021-06",
+      "stage": "Investment round",
+      "amount": 240,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": 1200,
+      "leadInvestors": [
+        "SoftBank Vision Fund 2"
+      ],
+      "investors": [
+        "SoftBank Vision Fund 2",
+        "Citi Ventures",
+        "G Squared",
+        "Northzone",
+        "Cherry Ventures",
+        "Unbound"
+      ],
+      "source": "s1"
+    },
+    {
+      "id": "r2",
+      "date": "2022-03",
+      "stage": "Series D",
+      "amount": 250,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": 2100,
+      "leadInvestors": [
+        "Disruptive"
+      ],
+      "investors": [
+        "Disruptive",
+        "SoftBank Vision Fund 2",
+        "G Squared",
+        "Northzone",
+        "Unbound",
+        "A.P. Moeller Holding"
+      ],
+      "source": "s2"
+    }
+  ],
+  "founders": [
+    {
+      "name": "Michael Wax",
+      "role": "Co-founder & CEO",
+      "current": true
+    },
+    {
+      "name": "Erik Muttersbach",
+      "role": "Co-founder & CTO",
+      "current": true
+    },
+    {
+      "name": "Ferry Heilemann",
+      "role": "Co-founder"
+    },
+    {
+      "name": "Fabian Heilemann",
+      "role": "Co-founder"
+    }
+  ],
+  "investors": [
+    "Disruptive",
+    "SoftBank Vision Fund 2",
+    "G Squared",
+    "Northzone",
+    "Unbound",
+    "A.P. Moeller Holding",
+    "Citi Ventures",
+    "Cherry Ventures",
+    "Inven Capital",
+    "Iris Capital",
+    "Global Founders Capital"
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "publication": "TechCrunch",
+      "title": "Forto raises $240M in funding round led by SoftBank, taking its valuation to $1.2B",
+      "url": "https://techcrunch.com/2021/06/23/forto-raises-240m-in-funding-round-led-by-softbank-taking-its-valuation-to-1-2bn/",
+      "publishedOn": "2021-06-23",
+      "quote": "It’s now raised $240 million in a round led by SoftBank Vision Fund 2 to expand its trade shipments between China and Europe. Forto manages shipping containers from origin to destination. SoftBank is also hedging its bets after investing in China’s Full Truck Alliance (YMM.N), which plans a $20 billion IPO. That means Forto’s valuation is close to $1.2 billion, after it’s raised a total of $360 million."
+    },
+    {
+      "id": "s2",
+      "publication": "Company press release",
+      "title": "Forto Announces New Investment of $250 Million to Accelerate International Expansion and Broadening of Product Offering",
+      "url": "https://forto.com/en/press-releases/forto-announces-new-investment-of-250-million-to-accelerate-international-expansion-and-broadening-of-product-offering/",
+      "publishedOn": "2022-03-07",
+      "quote": "Forto, a leading provider of digitized freight forwarding and supply chain solutions, today announced that it has raised $250 Million in a pre-emptive Series D investment round led by Disruptive. Also participating in the round are existing investors including Softbank Vision Fund 2, G Squared, Northzone, Unbound, and A.P. Moeller Holding. The current round places the company valuation at $2.1 billion."
+    },
+    {
+      "id": "s3",
+      "publication": "Company press release",
+      "title": "Forto Announces New Investment of $250 Million to Accelerate International Expansion and Broadening of Product Offering",
+      "url": "https://forto.com/en/press-releases/forto-announces-new-investment-of-250-million-to-accelerate-international-expansion-and-broadening-of-product-offering/",
+      "publishedOn": "2022-03-07",
+      "quote": "The new funding builds upon the company’s significant financial position, with the total investment raised over $600 million to date."
+    },
+    {
+      "id": "s4",
+      "publication": "Tech.eu",
+      "title": "Berlin’s Forto notches $250 million taking its valuation to $2.1 billion",
+      "url": "https://tech.eu/2022/03/08/berlins-logistics-tech-startup-forto-notches-250-million-taking-its-valuation-to-21-billion/",
+      "publishedOn": "2022-03-08",
+      "quote": "Founded in 2016 as FreightHub by Ferry Heilemann, Erik Muttersbach, Michael Wax and Fabian Heilemann, the platform is on a mission to build better logistics and supply chain experiences."
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "slug": "osapiens",
+  "name": "osapiens",
+  "website": "https://osapiens.com",
+  "logo": "assets/logos/osapiens.png",
+  "hq": {
+    "city": "Mannheim",
+    "country": "DE"
+  },
+  "foundedCountry": "DE",
+  "foundedYear": 2018,
+  "sectors": [
+    "Enterprise Software",
+    "Sustainability & ESG"
+  ],
+  "thesis": {
+    "problem": "European law now makes a company answerable for things happening several tiers down its supply chain — forced labour at a subcontractor, deforestation behind a commodity, emissions it never measured. The evidence for those answers sits in purchasing systems, supplier questionnaires and site audits that were never built to be read together, so compliance becomes a rolling manual exercise repeated for every new regulation.",
+    "solution": "osapiens runs one cloud platform on which each reporting duty is a separate module drawing on the same supplier and transaction data, so a company answers a new rule by switching on an application rather than starting a new project. The products are sold to large enterprises as compliance tooling, and the pitch is that the same data, once collected properly, also shows where a supply chain is slow or wasteful."
+  },
+  "valuation": {
+    "amount": 1100,
+    "currency": "USD",
+    "approximate": true,
+    "asOf": "2026-01",
+    "round": "Series C",
+    "source": "s1"
+  },
+  "becameUnicorn": {
+    "date": "2026-01",
+    "roundId": "r3",
+    "source": "s3"
+  },
+  "totalRaised": {
+    "amount": null,
+    "currency": "USD",
+    "approximate": false,
+    "source": "s1"
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "date": "2023",
+      "stage": "Series A",
+      "amount": 27,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": null,
+      "leadInvestors": [
+        "Armira Growth"
+      ],
+      "investors": [
+        "Armira Growth"
+      ],
+      "source": "s2"
+    },
+    {
+      "id": "r2",
+      "date": "2024",
+      "stage": "Series B",
+      "amount": 120,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": null,
+      "leadInvestors": [
+        "Goldman Sachs Alternatives"
+      ],
+      "investors": [
+        "Goldman Sachs Alternatives"
+      ],
+      "source": "s2"
+    },
+    {
+      "id": "r3",
+      "date": "2026-01",
+      "stage": "Series C",
+      "amount": 100,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": 1100,
+      "leadInvestors": [
+        "Decarbonization Partners"
+      ],
+      "investors": [
+        "Decarbonization Partners"
+      ],
+      "source": "s1"
+    }
+  ],
+  "founders": [
+    {
+      "name": "Alberto Zamora",
+      "role": "Co-founder & co-CEO",
+      "current": true
+    },
+    {
+      "name": "Matthias Jungblut",
+      "role": "Co-founder & co-CEO",
+      "current": true
+    },
+    {
+      "name": "Stefan Wawrzinek",
+      "role": "Co-founder & Chair of the Board",
+      "current": true
+    }
+  ],
+  "investors": [
+    "Decarbonization Partners",
+    "Goldman Sachs Alternatives",
+    "Armira Growth"
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "publication": "Tech.eu",
+      "title": "German sustainability software outfit osapiens becomes unicorn, following $100M raise",
+      "url": "https://tech.eu/2026/01/14/german-startup-osapiens-becomes-unicorn-following-100m-funding-round/",
+      "publishedOn": "2026-01-14",
+      "quote": "German startup osapiens, which provides software-as-a-service (SaaS) services to help companies meet ESG targets, says it has become a unicorn after raising $100m. The Series C round was funded solely by Decarbonization Partners, the joint venture between BlackRock and Temasek focused on late-stage VC investing in decarbonising tech. The company is now valued at over $1.1bn, following this round, it said."
+    },
+    {
+      "id": "s2",
+      "publication": "Company press release",
+      "title": "osapiens secures US$ 100 million financing and becomes a Unicorn with investment from Decarbonization Partners",
+      "url": "https://osapiens.com/company-news/osapiens-series-c-funding-unicorn-decarbonization-partners/",
+      "publishedOn": "2026-01-14",
+      "quote": "Decarbonization Partners will join existing investors Goldman Sachs Alternatives, which led the US$ 120 million Series B in 2024, and Armira Growth, which led the US$ 27 million Series A investment in 2023."
+    },
+    {
+      "id": "s3",
+      "publication": "EU-Startups",
+      "title": "New German unicorn! Mannheim’s osapiens secures €85.8 milllion led by BlackRock–Temasek JV",
+      "url": "https://www.eu-startups.com/2026/01/new-german-unicorn-mannheims-osapiens-secures-e85-8m-led-by-blackrock-temasek-jv/",
+      "publishedOn": "2026-01-14",
+      "quote": "Mannheim-based osapiens, provider of enterprise software for sustainable growth, today announced that it has entered into an agreement for Decarbonization Partners to lead a €85.8 million ($100 million) Series C fundraising round. With this round, osapiens has hit unicorn status."
+    },
+    {
+      "id": "s4",
+      "publication": "EU-Startups",
+      "title": "New German unicorn! Mannheim’s osapiens secures €85.8 milllion led by BlackRock–Temasek JV",
+      "url": "https://www.eu-startups.com/2026/01/new-german-unicorn-mannheims-osapiens-secures-e85-8m-led-by-blackrock-temasek-jv/",
+      "publishedOn": "2026-01-14",
+      "quote": "Founded in 2018 by Alberto Zamora, Stefan Wawrzinek, and Matthias Jungblut, osapiens is an ESG platform and provider of enterprise software that enables companies to manage regulatory compliance, sustainability, and operational efficiency."
+    }
+  ]
+}

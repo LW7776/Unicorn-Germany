@@ -1,15 +1,206 @@
 {
  "stats": {
-  "count": 8,
-  "combinedValuationEurMillions": 62720.0,
-  "combinedValuationLabel": "~€62.7 bn",
-  "newInLast12Months": 1,
+  "count": 16,
+  "combinedValuationEurMillions": 75002.0,
+  "combinedValuationLabel": "~€75 bn",
+  "newInLast12Months": 3,
   "medianYearsToUnicorn": 6,
   "fxRateDisclosed": 0.92,
   "fxAsOf": "2026-08",
   "dataAsOf": "2026-08-07"
  },
  "companies": [
+  {
+   "slug": "black-forest-labs",
+   "name": "Black Forest Labs",
+   "website": "https://bfl.ai",
+   "logo": "assets/logos/black-forest-labs.svg",
+   "hq": {
+    "city": "Freiburg",
+    "country": "DE"
+   },
+   "alsoBasedIn": [
+    "San Francisco"
+   ],
+   "foundedCountry": "DE",
+   "foundedYear": 2024,
+   "sectors": [
+    "Artificial Intelligence",
+    "Generative Media"
+   ],
+   "thesis": {
+    "problem": "Image generation moved from research demo to production tool faster than the supply of models a company can actually build on. Most of the strongest systems are closed, reachable only through one vendor's API, which leaves a product team unable to run the model on its own infrastructure, inspect it, or fine-tune it for a house style.",
+    "solution": "Black Forest Labs trains its own image and editing models, publishes open-weight versions alongside commercial ones, and sells the larger models to companies that want them inside their own products. The bet is that the open releases spread the toolchain and the enterprise versions pay for the research, with the founders' record on latent diffusion as the evidence they can keep pace."
+   },
+   "valuation": {
+    "amount": 3250,
+    "currency": "USD",
+    "approximate": false,
+    "asOf": "2025-12",
+    "round": "Series B",
+    "source": "s1"
+   },
+   "becameUnicorn": {
+    "date": "2025-12",
+    "roundId": "r1",
+    "source": "s1"
+   },
+   "totalRaised": {
+    "amount": 450,
+    "currency": "USD",
+    "approximate": true,
+    "source": "s3"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2025-12",
+     "stage": "Series B",
+     "amount": 300,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": 3250,
+     "leadInvestors": [
+      "Salesforce Ventures",
+      "AMP"
+     ],
+     "investors": [
+      "Salesforce Ventures",
+      "AMP",
+      "Andreessen Horowitz",
+      "NVIDIA",
+      "Northzone",
+      "Creandum",
+      "Earlybird VC",
+      "BroadLight Capital",
+      "General Catalyst",
+      "Temasek",
+      "Bain Capital Ventures",
+      "Air Street Capital",
+      "Visionaries Club",
+      "Canva",
+      "Figma Ventures"
+     ],
+     "source": "s1",
+     "dateLabel": "Dec 2025",
+     "amountLabel": "$300 m"
+    }
+   ],
+   "founders": [
+    {
+     "name": "Robin Rombach",
+     "role": "Co-founder & CEO",
+     "current": true
+    },
+    {
+     "name": "Patrick Esser",
+     "role": "Co-founder"
+    },
+    {
+     "name": "Andreas Blattmann",
+     "role": "Co-founder"
+    }
+   ],
+   "investors": [
+    "Salesforce Ventures",
+    "AMP",
+    "Andreessen Horowitz",
+    "NVIDIA",
+    "Northzone",
+    "Creandum",
+    "Earlybird VC",
+    "BroadLight Capital",
+    "General Catalyst",
+    "Temasek",
+    "Bain Capital Ventures",
+    "Air Street Capital",
+    "Visionaries Club",
+    "Canva",
+    "Figma Ventures"
+   ],
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "Tech.eu",
+     "title": "Black Forest Labs secures $300M Series B at $3.25B valuation",
+     "url": "https://tech.eu/2025/12/01/black-forest-labs-secures-300m-series-b-at-325b-valuation/",
+     "publishedOn": "2025-12-01",
+     "quote": "Today Black Forest Labs has announced a $300 million Series B round at a $3.25 billion post-money valuation."
+    },
+    {
+     "id": "s2",
+     "publication": "Company press release",
+     "title": "Laying the Foundations for Visual Intelligence—Our $300M Series B",
+     "url": "https://bfl.ai/blog/our-300m-series-b",
+     "publishedOn": "2025-12-01",
+     "quote": "That’s why today, we're excited to announce our Series B of $300M at a $3.25B post-money valuation."
+    },
+    {
+     "id": "s3",
+     "publication": "Sifted",
+     "title": "German AI startup Black Forest Labs raises $300m Series B",
+     "url": "https://sifted.eu/articles/black-forest-labs-300m-series-b",
+     "publishedOn": "2025-12-01",
+     "quote": "The Freiburg-based startup has quietly raised over $450m in just over a year, attracting big name backers like Andreessen Horowitz, General Catalyst and Creandum."
+    },
+    {
+     "id": "s4",
+     "publication": "TechCrunch",
+     "title": "Black Forest Labs raises $300M at $3.25B valuation",
+     "url": "https://techcrunch.com/2025/12/01/black-forest-labs-raises-300m-at-3-25b-valuation/",
+     "publishedOn": "2025-12-01",
+     "quote": "Black Forest Labs’ co-founders, Robin Rombach, Patrick Esser, and Andreas Blattmann, were formerly researchers who helped create Stability AI’s Stable Diffusion models."
+    },
+    {
+     "id": "s5",
+     "publication": "EU-Startups",
+     "title": "Used by Adobe, Canva and Meta, Germany’s Black Forest Labs lands €258 million to scale its visual-AI platform",
+     "url": "https://www.eu-startups.com/2025/12/used-by-adobe-canva-and-meta-germanys-black-forest-labs-lands-e258-million-to-scale-its-visual-ai-platform/",
+     "publishedOn": "2025-12-01",
+     "quote": "The round follows a previously unannounced Series A led by Andreessen Horowitz, with participation from BroadLight Capital, Creandum, Earlybird VC, General Catalyst, Northzone, and Nvidia, bringing total funds raised to over €387 million ($450 million)."
+    }
+   ],
+   "display": {
+    "valuationLabel": "$3.2 bn",
+    "valuationAsOf": "Dec 2025",
+    "lastRoundLabel": "Dec 2025",
+    "lastRoundStage": "Series B",
+    "totalRaisedLabel": "~$450 m",
+    "yearsToUnicorn": 1,
+    "becameUnicornLabel": "Dec 2025",
+    "foundersLabel": "Robin Rombach, Patrick Esser, Andreas Blattmann",
+    "aged": false
+   },
+   "sort": {
+    "newest": [
+     2025,
+     12
+    ],
+    "valuationEur": 2990.0,
+    "latestRound": [
+     2025,
+     12
+    ],
+    "name": "black forest labs"
+   },
+   "investorsOrdered": [
+    "Salesforce Ventures",
+    "AMP",
+    "Andreessen Horowitz",
+    "NVIDIA",
+    "Northzone",
+    "Creandum",
+    "Earlybird VC",
+    "BroadLight Capital",
+    "General Catalyst",
+    "Temasek",
+    "Bain Capital Ventures",
+    "Air Street Capital",
+    "Visionaries Club",
+    "Canva",
+    "Figma Ventures"
+   ]
+  },
   {
    "slug": "celonis",
    "name": "Celonis",
@@ -254,6 +445,344 @@
    ]
   },
   {
+   "slug": "choco",
+   "name": "Choco",
+   "website": "https://choco.com",
+   "logo": "assets/logos/choco.svg",
+   "hq": {
+    "city": "Berlin",
+    "country": "DE"
+   },
+   "foundedCountry": "DE",
+   "foundedYear": 2018,
+   "sectors": [
+    "Foodtech",
+    "Supply Chain Software"
+   ],
+   "thesis": {
+    "problem": "Restaurants still order from their suppliers by voicemail, fax and scribbled note, and a wholesaler's sales desk spends its morning transcribing those messages into an order system. Every transcription is a chance to send the wrong quantity, and the wrong quantity is food that gets thrown away.",
+    "solution": "Choco gives the restaurant a messaging app for placing orders and the supplier a system that reads those orders straight into its own order processing, so the same instruction is only entered once. Selling to both sides of the same transaction is the point: the value only appears when the buyer and the seller are on the platform together."
+   },
+   "valuation": {
+    "amount": 1200,
+    "currency": "USD",
+    "approximate": false,
+    "asOf": "2022-04",
+    "round": "Series B2",
+    "source": "s1"
+   },
+   "becameUnicorn": {
+    "date": "2022-04",
+    "roundId": "r2",
+    "source": "s3"
+   },
+   "totalRaised": {
+    "amount": 274.7,
+    "currency": "USD",
+    "approximate": false,
+    "source": "s4"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2021-07",
+     "stage": "Series B",
+     "amount": 100,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": 600,
+     "leadInvestors": [
+      "Left Lane Capital"
+     ],
+     "investors": [
+      "Left Lane Capital",
+      "Insight Partners",
+      "Coatue Management",
+      "Bessemer Venture Partners"
+     ],
+     "source": "s2",
+     "dateLabel": "Jul 2021",
+     "amountLabel": "$100 m"
+    },
+    {
+     "id": "r2",
+     "date": "2022-04",
+     "stage": "Series B2",
+     "amount": 111,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": 1200,
+     "leadInvestors": [
+      "G Squared"
+     ],
+     "investors": [
+      "G Squared",
+      "Insight Partners",
+      "Bessemer Venture Partners",
+      "Coatue",
+      "Target Global",
+      "Atlantic Labs",
+      "Greyhound Capital",
+      "Leftlane Capital",
+      "Visionaries Club",
+      "Discovery Ventures"
+     ],
+     "source": "s1",
+     "dateLabel": "Apr 2022",
+     "amountLabel": "$111 m"
+    }
+   ],
+   "founders": [
+    {
+     "name": "Daniel Khachab",
+     "role": "Co-founder & CEO",
+     "current": true
+    },
+    {
+     "name": "Julian Hammer",
+     "role": "Co-founder"
+    },
+    {
+     "name": "Grégoire Ambroselli",
+     "role": "Co-founder"
+    }
+   ],
+   "investors": [
+    "G Squared",
+    "Insight Partners",
+    "Bessemer Venture Partners",
+    "Coatue",
+    "Left Lane Capital",
+    "Target Global",
+    "Atlantic Labs",
+    "Greyhound Capital",
+    "Visionaries Club",
+    "Discovery Ventures"
+   ],
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "Tech.eu",
+     "title": "Choco chalks up $111 million, punches ticket at the unicorn club",
+     "url": "https://tech.eu/2022/04/12/choco-chalks-up-111-million-punches-ticket-at-the-unicorn-club/",
+     "publishedOn": "2022-04-12",
+     "quote": "Berlin-based food supply chain management platform Choco has raised $111 million in a Series B2 funding round at a valuation of $1.2 billion."
+    },
+    {
+     "id": "s2",
+     "publication": "TechCrunch",
+     "title": "Choco bites into $100M Series B, at a $600M valuation, to build a more transparent, sustainable food supply chain",
+     "url": "https://techcrunch.com/2021/07/19/choco-bites-into-100m-series-b-at-a-600m-valuation-to-build-a-more-transparent-sustainable-food-supply-chain/",
+     "publishedOn": "2021-07-20",
+     "quote": "Berlin-based Choco, which has built ordering software for restaurants and their suppliers, is working to digitize the food supply chain and announced $100 million in Series B funding, led by Left Lane Capital, to give it a $600 million post-market valuation."
+    },
+    {
+     "id": "s3",
+     "publication": "Company press release",
+     "title": "Choco Achieves Unicorn Status in Quest to Drive Zero Food Waste in Supply Chains",
+     "url": "https://choco.com/us/press/choco-achieves-unicorn-status",
+     "publishedOn": "2022-04-12",
+     "quote": "Choco, the technology company building a better food system for restaurants and suppliers, announced today that it has raised $111 million in Series B2 funding with a valuation of $1.2 billion."
+    },
+    {
+     "id": "s4",
+     "publication": "Tech.eu",
+     "title": "Choco chalks up $111 million, punches ticket at the unicorn club",
+     "url": "https://tech.eu/2022/04/12/choco-chalks-up-111-million-punches-ticket-at-the-unicorn-club/",
+     "publishedOn": "2022-04-12",
+     "quote": "Since 2018, Choco has now raised a total of $274.7 million."
+    }
+   ],
+   "display": {
+    "valuationLabel": "$1.2 bn",
+    "valuationAsOf": "Apr 2022",
+    "lastRoundLabel": "Apr 2022",
+    "lastRoundStage": "Series B2",
+    "totalRaisedLabel": "$274.7 m",
+    "yearsToUnicorn": 4,
+    "becameUnicornLabel": "Apr 2022",
+    "foundersLabel": "Daniel Khachab, Julian Hammer, Grégoire Ambroselli",
+    "aged": true
+   },
+   "sort": {
+    "newest": [
+     2022,
+     4
+    ],
+    "valuationEur": 1104.0,
+    "latestRound": [
+     2022,
+     4
+    ],
+    "name": "choco"
+   },
+   "investorsOrdered": [
+    "G Squared",
+    "Left Lane Capital",
+    "Insight Partners",
+    "Bessemer Venture Partners",
+    "Coatue",
+    "Target Global",
+    "Atlantic Labs",
+    "Greyhound Capital",
+    "Visionaries Club",
+    "Discovery Ventures"
+   ]
+  },
+  {
+   "slug": "commercetools",
+   "name": "commercetools",
+   "website": "https://commercetools.com",
+   "logo": "assets/logos/commercetools.svg",
+   "hq": {
+    "city": "Munich",
+    "country": "DE"
+   },
+   "foundedCountry": "DE",
+   "foundedYear": 2006,
+   "sectors": [
+    "Enterprise Software",
+    "E-commerce Infrastructure"
+   ],
+   "thesis": {
+    "problem": "A large retailer's online shop is usually one monolithic platform that owns the product catalogue, the checkout, the pricing rules and the storefront design together. Changing anything customer-facing means a release of the whole system, which is why adding a new sales channel — an app, a kiosk, a marketplace listing — takes quarters rather than weeks.",
+    "solution": "commercetools separates the commerce engine from the storefront and exposes it as APIs, so a retailer builds whatever front end it wants against the same catalogue, cart and order services. That is the 'headless' argument the company has made since before the term was common, and its customers are large enough that the flexibility is worth the integration work."
+   },
+   "valuation": {
+    "amount": 1900,
+    "currency": "USD",
+    "approximate": false,
+    "asOf": "2021-09",
+    "round": "Series C",
+    "source": "s1"
+   },
+   "becameUnicorn": {
+    "date": "2021-09",
+    "roundId": "r2",
+    "source": "s1"
+   },
+   "totalRaised": {
+    "amount": null,
+    "currency": "USD",
+    "approximate": false,
+    "source": "s1"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2019-10",
+     "stage": "Growth round",
+     "amount": 145,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": 300,
+     "leadInvestors": [
+      "Insight Partners"
+     ],
+     "investors": [
+      "Insight Partners"
+     ],
+     "source": "s2",
+     "dateLabel": "Oct 2019",
+     "amountLabel": "$145 m"
+    },
+    {
+     "id": "r2",
+     "date": "2021-09",
+     "stage": "Series C",
+     "amount": 140,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": 1900,
+     "leadInvestors": [
+      "Accel"
+     ],
+     "investors": [
+      "Accel",
+      "Insight Partners",
+      "REWE Group"
+     ],
+     "source": "s1",
+     "dateLabel": "Sep 2021",
+     "amountLabel": "$140 m"
+    }
+   ],
+   "founders": [
+    {
+     "name": "Dirk Hoerig",
+     "role": "Founder & chief innovation officer",
+     "current": true
+    }
+   ],
+   "investors": [
+    "Accel",
+    "Insight Partners",
+    "REWE Group"
+   ],
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "TechCrunch",
+     "title": "Commercetools raises $140M at a $1.9B valuation as 'headless' commerce continues to boom",
+     "url": "https://techcrunch.com/2021/09/13/commercetools-raises-140m-at-a-1-9b-valuation-as-headless-commerce-continues-to-boom/",
+     "publishedOn": "2021-09-13",
+     "quote": "In the latest turn, Commercetools — a provider of e-commerce APIs that larger retailers can use to build customized payment, check-out, social commerce, marketplace and other services — has closed $140 million in funding, a Series C that CEO Dirk Hoerig has confirmed to me values the company at $1.9 billion."
+    },
+    {
+     "id": "s2",
+     "publication": "TechCrunch",
+     "title": "Commercetools raises $145M from Insight for Shopify-style e-commerce APIs for large enterprises",
+     "url": "https://techcrunch.com/2019/10/21/commercetools-raises-145m-from-insight-for-shopify-style-e-commerce-apis-for-large-enterprises/",
+     "publishedOn": "2019-10-21",
+     "quote": "Commercetools, a German startup that provides a set of APIs that power e-commerce sales and related functions for large businesses, has raised $145 million (€130 million) in a growth round of funding led by Insight Partners, at a valuation that we understand from a close source is around $300 million."
+    },
+    {
+     "id": "s3",
+     "publication": "TechCrunch",
+     "title": "Commercetools, a pioneer in ‘headless commerce’, lays off dozens of staff",
+     "url": "https://techcrunch.com/2025/02/26/commercetools-a-pioneer-in-headless-commerce-lays-off-dozens-of-staff/",
+     "publishedOn": "2025-02-27",
+     "quote": "Through all of this, Commercetools’ founder Dirk Hoerig led the company as CEO. He stepped away from the top position in July 2024, to be replaced by Burton. (Hoerig has retained a seat on the board and is the company’s chief innovation officer.)"
+    },
+    {
+     "id": "s4",
+     "publication": "EU-Startups",
+     "title": "Munich-based commercetools secures €119 million in Series C funding round to accelerate global growth",
+     "url": "https://www.eu-startups.com/2021/09/munich-based-commercetools-secures-e119-million-series-c-funding-round-to-accelerate-global-growth/",
+     "publishedOn": "2021-09-13",
+     "quote": "Founded in 2006, so not exactly a startup anymore but rather a fast-growing scale-up, commercetools provides a headless, API-first, multi-tenant SaaS commerce platform that is cloud-native and uses flexible microservices."
+    }
+   ],
+   "display": {
+    "valuationLabel": "$1.9 bn",
+    "valuationAsOf": "Sep 2021",
+    "lastRoundLabel": "Sep 2021",
+    "lastRoundStage": "Series C",
+    "totalRaisedLabel": "—",
+    "yearsToUnicorn": 15,
+    "becameUnicornLabel": "Sep 2021",
+    "foundersLabel": "Dirk Hoerig",
+    "aged": true
+   },
+   "sort": {
+    "newest": [
+     2021,
+     9
+    ],
+    "valuationEur": 1748.0,
+    "latestRound": [
+     2021,
+     9
+    ],
+    "name": "commercetools"
+   },
+   "investorsOrdered": [
+    "Accel",
+    "Insight Partners",
+    "REWE Group"
+   ]
+  },
+  {
    "slug": "deepl",
    "name": "DeepL",
    "website": "https://www.deepl.com",
@@ -414,6 +943,196 @@
     "Bessemer Venture Partners",
     "Benchmark",
     "btov"
+   ]
+  },
+  {
+   "slug": "forto",
+   "name": "Forto",
+   "website": "https://forto.com",
+   "logo": "assets/logos/forto.svg",
+   "hq": {
+    "city": "Berlin",
+    "country": "DE"
+   },
+   "foundedCountry": "DE",
+   "foundedYear": 2016,
+   "sectors": [
+    "Logistics",
+    "Freight Forwarding"
+   ],
+   "thesis": {
+    "problem": "Moving a container from a factory in Asia to a warehouse in Europe still runs on email, spreadsheets and phone calls between a shipper, a forwarder, a carrier and a customs broker. The company paying for the freight usually cannot say where its goods are, what the delay will cost, or which of its routes is quietly losing money.",
+    "solution": "Forto acts as the freight forwarder itself and runs the booking, documents, customs and tracking on its own software, so the customer sees one live view of every shipment instead of reconstructing it from correspondence. Because the same platform records what each lane actually cost and how long it took, the data doubles as the basis for planning the next quarter's shipping."
+   },
+   "valuation": {
+    "amount": 2100,
+    "currency": "USD",
+    "approximate": false,
+    "asOf": "2022-03",
+    "round": "Series D",
+    "source": "s2"
+   },
+   "becameUnicorn": {
+    "date": "2021-06",
+    "roundId": "r1",
+    "source": "s1"
+   },
+   "totalRaised": {
+    "amount": 600,
+    "currency": "USD",
+    "approximate": true,
+    "source": "s3"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2021-06",
+     "stage": "Investment round",
+     "amount": 240,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": 1200,
+     "leadInvestors": [
+      "SoftBank Vision Fund 2"
+     ],
+     "investors": [
+      "SoftBank Vision Fund 2",
+      "Citi Ventures",
+      "G Squared",
+      "Northzone",
+      "Cherry Ventures",
+      "Unbound"
+     ],
+     "source": "s1",
+     "dateLabel": "Jun 2021",
+     "amountLabel": "$240 m"
+    },
+    {
+     "id": "r2",
+     "date": "2022-03",
+     "stage": "Series D",
+     "amount": 250,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": 2100,
+     "leadInvestors": [
+      "Disruptive"
+     ],
+     "investors": [
+      "Disruptive",
+      "SoftBank Vision Fund 2",
+      "G Squared",
+      "Northzone",
+      "Unbound",
+      "A.P. Moeller Holding"
+     ],
+     "source": "s2",
+     "dateLabel": "Mar 2022",
+     "amountLabel": "$250 m"
+    }
+   ],
+   "founders": [
+    {
+     "name": "Michael Wax",
+     "role": "Co-founder & CEO",
+     "current": true
+    },
+    {
+     "name": "Erik Muttersbach",
+     "role": "Co-founder & CTO",
+     "current": true
+    },
+    {
+     "name": "Ferry Heilemann",
+     "role": "Co-founder"
+    },
+    {
+     "name": "Fabian Heilemann",
+     "role": "Co-founder"
+    }
+   ],
+   "investors": [
+    "Disruptive",
+    "SoftBank Vision Fund 2",
+    "G Squared",
+    "Northzone",
+    "Unbound",
+    "A.P. Moeller Holding",
+    "Citi Ventures",
+    "Cherry Ventures",
+    "Inven Capital",
+    "Iris Capital",
+    "Global Founders Capital"
+   ],
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "TechCrunch",
+     "title": "Forto raises $240M in funding round led by SoftBank, taking its valuation to $1.2B",
+     "url": "https://techcrunch.com/2021/06/23/forto-raises-240m-in-funding-round-led-by-softbank-taking-its-valuation-to-1-2bn/",
+     "publishedOn": "2021-06-23",
+     "quote": "It’s now raised $240 million in a round led by SoftBank Vision Fund 2 to expand its trade shipments between China and Europe. Forto manages shipping containers from origin to destination. SoftBank is also hedging its bets after investing in China’s Full Truck Alliance (YMM.N), which plans a $20 billion IPO. That means Forto’s valuation is close to $1.2 billion, after it’s raised a total of $360 million."
+    },
+    {
+     "id": "s2",
+     "publication": "Company press release",
+     "title": "Forto Announces New Investment of $250 Million to Accelerate International Expansion and Broadening of Product Offering",
+     "url": "https://forto.com/en/press-releases/forto-announces-new-investment-of-250-million-to-accelerate-international-expansion-and-broadening-of-product-offering/",
+     "publishedOn": "2022-03-07",
+     "quote": "Forto, a leading provider of digitized freight forwarding and supply chain solutions, today announced that it has raised $250 Million in a pre-emptive Series D investment round led by Disruptive. Also participating in the round are existing investors including Softbank Vision Fund 2, G Squared, Northzone, Unbound, and A.P. Moeller Holding. The current round places the company valuation at $2.1 billion."
+    },
+    {
+     "id": "s3",
+     "publication": "Company press release",
+     "title": "Forto Announces New Investment of $250 Million to Accelerate International Expansion and Broadening of Product Offering",
+     "url": "https://forto.com/en/press-releases/forto-announces-new-investment-of-250-million-to-accelerate-international-expansion-and-broadening-of-product-offering/",
+     "publishedOn": "2022-03-07",
+     "quote": "The new funding builds upon the company’s significant financial position, with the total investment raised over $600 million to date."
+    },
+    {
+     "id": "s4",
+     "publication": "Tech.eu",
+     "title": "Berlin’s Forto notches $250 million taking its valuation to $2.1 billion",
+     "url": "https://tech.eu/2022/03/08/berlins-logistics-tech-startup-forto-notches-250-million-taking-its-valuation-to-21-billion/",
+     "publishedOn": "2022-03-08",
+     "quote": "Founded in 2016 as FreightHub by Ferry Heilemann, Erik Muttersbach, Michael Wax and Fabian Heilemann, the platform is on a mission to build better logistics and supply chain experiences."
+    }
+   ],
+   "display": {
+    "valuationLabel": "$2.1 bn",
+    "valuationAsOf": "Mar 2022",
+    "lastRoundLabel": "Mar 2022",
+    "lastRoundStage": "Series D",
+    "totalRaisedLabel": "~$600 m",
+    "yearsToUnicorn": 5,
+    "becameUnicornLabel": "Jun 2021",
+    "foundersLabel": "Michael Wax, Erik Muttersbach, Ferry Heilemann, Fabian Heilemann",
+    "aged": true
+   },
+   "sort": {
+    "newest": [
+     2021,
+     6
+    ],
+    "valuationEur": 1932.0,
+    "latestRound": [
+     2022,
+     3
+    ],
+    "name": "forto"
+   },
+   "investorsOrdered": [
+    "Disruptive",
+    "SoftBank Vision Fund 2",
+    "G Squared",
+    "Northzone",
+    "Unbound",
+    "A.P. Moeller Holding",
+    "Citi Ventures",
+    "Cherry Ventures",
+    "Inven Capital",
+    "Iris Capital",
+    "Global Founders Capital"
    ]
   },
   {
@@ -1071,6 +1790,185 @@
    ]
   },
   {
+   "slug": "osapiens",
+   "name": "osapiens",
+   "website": "https://osapiens.com",
+   "logo": "assets/logos/osapiens.png",
+   "hq": {
+    "city": "Mannheim",
+    "country": "DE"
+   },
+   "foundedCountry": "DE",
+   "foundedYear": 2018,
+   "sectors": [
+    "Enterprise Software",
+    "Sustainability & ESG"
+   ],
+   "thesis": {
+    "problem": "European law now makes a company answerable for things happening several tiers down its supply chain — forced labour at a subcontractor, deforestation behind a commodity, emissions it never measured. The evidence for those answers sits in purchasing systems, supplier questionnaires and site audits that were never built to be read together, so compliance becomes a rolling manual exercise repeated for every new regulation.",
+    "solution": "osapiens runs one cloud platform on which each reporting duty is a separate module drawing on the same supplier and transaction data, so a company answers a new rule by switching on an application rather than starting a new project. The products are sold to large enterprises as compliance tooling, and the pitch is that the same data, once collected properly, also shows where a supply chain is slow or wasteful."
+   },
+   "valuation": {
+    "amount": 1100,
+    "currency": "USD",
+    "approximate": true,
+    "asOf": "2026-01",
+    "round": "Series C",
+    "source": "s1"
+   },
+   "becameUnicorn": {
+    "date": "2026-01",
+    "roundId": "r3",
+    "source": "s3"
+   },
+   "totalRaised": {
+    "amount": null,
+    "currency": "USD",
+    "approximate": false,
+    "source": "s1"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2023",
+     "stage": "Series A",
+     "amount": 27,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": null,
+     "leadInvestors": [
+      "Armira Growth"
+     ],
+     "investors": [
+      "Armira Growth"
+     ],
+     "source": "s2",
+     "dateLabel": "2023",
+     "amountLabel": "$27 m"
+    },
+    {
+     "id": "r2",
+     "date": "2024",
+     "stage": "Series B",
+     "amount": 120,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": null,
+     "leadInvestors": [
+      "Goldman Sachs Alternatives"
+     ],
+     "investors": [
+      "Goldman Sachs Alternatives"
+     ],
+     "source": "s2",
+     "dateLabel": "2024",
+     "amountLabel": "$120 m"
+    },
+    {
+     "id": "r3",
+     "date": "2026-01",
+     "stage": "Series C",
+     "amount": 100,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": 1100,
+     "leadInvestors": [
+      "Decarbonization Partners"
+     ],
+     "investors": [
+      "Decarbonization Partners"
+     ],
+     "source": "s1",
+     "dateLabel": "Jan 2026",
+     "amountLabel": "$100 m"
+    }
+   ],
+   "founders": [
+    {
+     "name": "Alberto Zamora",
+     "role": "Co-founder & co-CEO",
+     "current": true
+    },
+    {
+     "name": "Matthias Jungblut",
+     "role": "Co-founder & co-CEO",
+     "current": true
+    },
+    {
+     "name": "Stefan Wawrzinek",
+     "role": "Co-founder & Chair of the Board",
+     "current": true
+    }
+   ],
+   "investors": [
+    "Decarbonization Partners",
+    "Goldman Sachs Alternatives",
+    "Armira Growth"
+   ],
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "Tech.eu",
+     "title": "German sustainability software outfit osapiens becomes unicorn, following $100M raise",
+     "url": "https://tech.eu/2026/01/14/german-startup-osapiens-becomes-unicorn-following-100m-funding-round/",
+     "publishedOn": "2026-01-14",
+     "quote": "German startup osapiens, which provides software-as-a-service (SaaS) services to help companies meet ESG targets, says it has become a unicorn after raising $100m. The Series C round was funded solely by Decarbonization Partners, the joint venture between BlackRock and Temasek focused on late-stage VC investing in decarbonising tech. The company is now valued at over $1.1bn, following this round, it said."
+    },
+    {
+     "id": "s2",
+     "publication": "Company press release",
+     "title": "osapiens secures US$ 100 million financing and becomes a Unicorn with investment from Decarbonization Partners",
+     "url": "https://osapiens.com/company-news/osapiens-series-c-funding-unicorn-decarbonization-partners/",
+     "publishedOn": "2026-01-14",
+     "quote": "Decarbonization Partners will join existing investors Goldman Sachs Alternatives, which led the US$ 120 million Series B in 2024, and Armira Growth, which led the US$ 27 million Series A investment in 2023."
+    },
+    {
+     "id": "s3",
+     "publication": "EU-Startups",
+     "title": "New German unicorn! Mannheim’s osapiens secures €85.8 milllion led by BlackRock–Temasek JV",
+     "url": "https://www.eu-startups.com/2026/01/new-german-unicorn-mannheims-osapiens-secures-e85-8m-led-by-blackrock-temasek-jv/",
+     "publishedOn": "2026-01-14",
+     "quote": "Mannheim-based osapiens, provider of enterprise software for sustainable growth, today announced that it has entered into an agreement for Decarbonization Partners to lead a €85.8 million ($100 million) Series C fundraising round. With this round, osapiens has hit unicorn status."
+    },
+    {
+     "id": "s4",
+     "publication": "EU-Startups",
+     "title": "New German unicorn! Mannheim’s osapiens secures €85.8 milllion led by BlackRock–Temasek JV",
+     "url": "https://www.eu-startups.com/2026/01/new-german-unicorn-mannheims-osapiens-secures-e85-8m-led-by-blackrock-temasek-jv/",
+     "publishedOn": "2026-01-14",
+     "quote": "Founded in 2018 by Alberto Zamora, Stefan Wawrzinek, and Matthias Jungblut, osapiens is an ESG platform and provider of enterprise software that enables companies to manage regulatory compliance, sustainability, and operational efficiency."
+    }
+   ],
+   "display": {
+    "valuationLabel": "~$1.1 bn",
+    "valuationAsOf": "Jan 2026",
+    "lastRoundLabel": "Jan 2026",
+    "lastRoundStage": "Series C",
+    "totalRaisedLabel": "—",
+    "yearsToUnicorn": 8,
+    "becameUnicornLabel": "Jan 2026",
+    "foundersLabel": "Alberto Zamora, Matthias Jungblut, Stefan Wawrzinek",
+    "aged": false
+   },
+   "sort": {
+    "newest": [
+     2026,
+     1
+    ],
+    "valuationEur": 1012.0,
+    "latestRound": [
+     2026,
+     1
+    ],
+    "name": "osapiens"
+   },
+   "investorsOrdered": [
+    "Decarbonization Partners",
+    "Goldman Sachs Alternatives",
+    "Armira Growth"
+   ]
+  },
+  {
    "slug": "parloa",
    "name": "Parloa",
    "website": "https://www.parloa.com",
@@ -1450,6 +2348,545 @@
     "Picus",
     "Altimeter Capital",
     "Alkeon"
+   ]
+  },
+  {
+   "slug": "razor-group",
+   "name": "Razor Group",
+   "website": "https://www.razor-group.com",
+   "logo": "assets/logos/razor-group.svg",
+   "hq": {
+    "city": "Berlin",
+    "country": "DE"
+   },
+   "foundedCountry": "DE",
+   "foundedYear": 2020,
+   "sectors": [
+    "E-commerce",
+    "Consumer Brands"
+   ],
+   "thesis": {
+    "problem": "A great many small businesses sell one good product on Amazon and stall there, because the owner is also the buyer, the marketer and the logistics department. Individually they are too small to negotiate with factories or to fund the next product line; sold individually, they fetch a small-business price.",
+    "solution": "Razor Group buys those sellers outright and runs them on shared systems for sourcing, pricing, advertising and supply chain, so the combined group has the volume to bargain with manufacturers and the data to decide what to make next. Growth has come as much from absorbing rival aggregators — Stryze, then the American company Perch — as from buying merchants."
+   },
+   "valuation": {
+    "amount": 1700,
+    "currency": "USD",
+    "approximate": false,
+    "asOf": "2024-03",
+    "round": "Perch merger financing",
+    "source": "s3",
+    "disputed": {
+     "note": "TechCrunch’s headline calls the $1.7bn a valuation, but its article body describes the figure as the enterprise value of the combined Razor–Perch business, carried alongside about $400m of debt — which is not the same thing as a post-money equity valuation. Razor’s last stated equity valuation was $1.2bn in April 2023.",
+     "source": "s3"
+    }
+   },
+   "becameUnicorn": {
+    "date": "2021-11",
+    "roundId": "r1",
+    "source": "s1"
+   },
+   "totalRaised": {
+    "amount": null,
+    "currency": "USD",
+    "approximate": false,
+    "source": "s3"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2021-11",
+     "stage": "Series B",
+     "amount": 125,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": 1000,
+     "leadInvestors": [],
+     "investors": [
+      "Fortress Investment Group",
+      "468 Capital",
+      "Victory Park Capital",
+      "Presight Capital",
+      "BlackRock",
+      "Jebsen Capital",
+      "Redalpine",
+      "Global Founders Capital"
+     ],
+     "source": "s1",
+     "dateLabel": "Nov 2021",
+     "amountLabel": "$125 m"
+    },
+    {
+     "id": "r2",
+     "date": "2023-04",
+     "stage": "Series C",
+     "amount": 88.4,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": 1200,
+     "leadInvestors": [],
+     "investors": [
+      "Upper90",
+      "L Catterton",
+      "Presight Capital",
+      "BlackRock",
+      "Global Founders Capital",
+      "LatinLeap",
+      "Redalpine",
+      "468 Capital"
+     ],
+     "source": "s2",
+     "dateLabel": "Apr 2023",
+     "amountLabel": "$88.4 m"
+    },
+    {
+     "id": "r3",
+     "date": "2024-03",
+     "stage": "Perch merger financing",
+     "amount": 100,
+     "currency": "USD",
+     "approximate": true,
+     "postMoney": 1700,
+     "leadInvestors": [
+      "Presight Capital"
+     ],
+     "investors": [
+      "Presight Capital"
+     ],
+     "source": "s3",
+     "dateLabel": "Mar 2024",
+     "amountLabel": "~$100 m"
+    }
+   ],
+   "founders": [
+    {
+     "name": "Tushar Ahluwalia",
+     "role": "Co-founder & CEO",
+     "current": true
+    },
+    {
+     "name": "Shrestha Chowdhury",
+     "role": "Co-founder & CTO",
+     "current": true
+    },
+    {
+     "name": "Oliver Dlugosch",
+     "role": "Co-founder & COO",
+     "current": true
+    },
+    {
+     "name": "Christoph Felix Gamon",
+     "role": "Co-founder",
+     "current": true
+    }
+   ],
+   "investors": [
+    "Presight Capital",
+    "L Catterton",
+    "BlackRock",
+    "Victory Park Capital",
+    "Fortress Investment Group",
+    "468 Capital",
+    "Redalpine",
+    "Global Founders Capital",
+    "Upper90",
+    "Jebsen Capital",
+    "LatinLeap"
+   ],
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "TechCrunch",
+     "title": "Berlin’s Razor Group raises $125M at a $1B+ valuation for a platform to buy and scale third-party Amazon merchants",
+     "url": "https://techcrunch.com/2021/11/08/berlins-razor-group-raises-125m-at-a-1b-valuation-for-a-platform-to-buy-and-scale-third-party-amazon-merchants/",
+     "publishedOn": "2021-11-08",
+     "quote": "In the latest development, Berlin’s Razor Group — one of the more ambitious of the aggregators out of Europe — has now raised $125 million of equity funding in a Series B round that CEO and co-founder Tushar Ahluwalia said pushes the company past a $1 billion valuation."
+    },
+    {
+     "id": "s2",
+     "publication": "TechCrunch",
+     "title": "Razor Group, an e-commerce aggregator, closes Series C at $88M at $1.2B valuation, acquires Stryze to consolidate",
+     "url": "https://techcrunch.com/2023/04/17/razor-group-aggregator-stryze/",
+     "publishedOn": "2023-04-17",
+     "quote": "Upper90’s investment closes out Razor’s last funding round, which it’s calling its Series C, at €80 million ($88.4 million) — with other investors in the most recent round including L Catterton, Presight Capital, Blackrock, GFC, LatinLeap, Redalpine and 468 Capital. It also bumps Razor’s valuation up to $1.2 billion, sources at the company tell me."
+    },
+    {
+     "id": "s3",
+     "publication": "TechCrunch",
+     "title": "Razor and Perch merge, raise $100M on a $1.7B valuation as more roll-ups consolidate",
+     "url": "https://techcrunch.com/2024/03/04/razor-and-perch-merge-raise-100m-on-a-1-7b-valuation-as-more-roll-ups-consolidate/",
+     "publishedOn": "2024-03-04",
+     "quote": "Berlin’s Razor Group has acquired U.S.-based Perch, and on top of this it has raised just over $100 million led by Presight Capital with other undisclosed investors participating. The combined business has an enterprise value of $1.7 billion, the company said, with about $400 million of debt on its books that is not due to come up for payback for at least another four years, from what we understand."
+    },
+    {
+     "id": "s4",
+     "publication": "TechCrunch",
+     "title": "Berlin’s Razor Group raises $400M to buy and scale Amazon Marketplace merchants",
+     "url": "https://techcrunch.com/2021/05/04/berlins-razor-group-raises-400m-to-buy-and-scale-amazon-marketplace-merchants/",
+     "publishedOn": "2021-05-04",
+     "quote": "Razor Group itself is not even a year old but has been building out its business at a fast pace. Founded in August 2020, in the last eight months, CEO Tushar Ahluwalia said the startup has grown to 107 employees across four offices."
+    }
+   ],
+   "display": {
+    "valuationLabel": "$1.7 bn",
+    "valuationAsOf": "Mar 2024",
+    "lastRoundLabel": "Mar 2024",
+    "lastRoundStage": "Perch merger financing",
+    "totalRaisedLabel": "—",
+    "yearsToUnicorn": 1,
+    "becameUnicornLabel": "Nov 2021",
+    "foundersLabel": "Tushar Ahluwalia, Shrestha Chowdhury, Oliver Dlugosch, Christoph Felix Gamon",
+    "aged": true
+   },
+   "sort": {
+    "newest": [
+     2021,
+     11
+    ],
+    "valuationEur": 1564.0,
+    "latestRound": [
+     2024,
+     3
+    ],
+    "name": "razor group"
+   },
+   "investorsOrdered": [
+    "Presight Capital",
+    "L Catterton",
+    "BlackRock",
+    "Victory Park Capital",
+    "Fortress Investment Group",
+    "468 Capital",
+    "Redalpine",
+    "Global Founders Capital",
+    "Upper90",
+    "Jebsen Capital",
+    "LatinLeap"
+   ]
+  },
+  {
+   "slug": "staffbase",
+   "name": "Staffbase",
+   "website": "https://staffbase.com",
+   "logo": "assets/logos/staffbase.svg",
+   "hq": {
+    "city": "Chemnitz",
+    "country": "DE"
+   },
+   "foundedCountry": "DE",
+   "foundedYear": 2014,
+   "sectors": [
+    "Enterprise Software",
+    "Employee Communications"
+   ],
+   "thesis": {
+    "problem": "Most of the people a large employer needs to reach — on a production line, in a warehouse, driving a van — have no desk, no company laptop and often no company email address. Internal communication built around the intranet and the all-staff email therefore misses exactly the workforce it most needs during a safety notice or a shift change.",
+    "solution": "Staffbase gives the internal communications team one place to write a message and send it to a branded employee app, an email newsletter and an intranet at once, then reports who actually opened it. The customer is specifically the communications department rather than IT or HR, which is what separates it from the collaboration tools already installed alongside it."
+   },
+   "valuation": {
+    "amount": 1100,
+    "currency": "USD",
+    "approximate": false,
+    "asOf": "2022-03",
+    "round": "Series E",
+    "source": "s1"
+   },
+   "becameUnicorn": {
+    "date": "2022-03",
+    "roundId": "r2",
+    "source": "s1"
+   },
+   "totalRaised": {
+    "amount": null,
+    "currency": "USD",
+    "approximate": false,
+    "source": "s1"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2021-03",
+     "stage": "Series D",
+     "amount": 145,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": null,
+     "leadInvestors": [
+      "General Atlantic"
+     ],
+     "investors": [
+      "General Atlantic",
+      "Insight Partners",
+      "e.ventures",
+      "KIZOO",
+      "Capnamic Ventures"
+     ],
+     "source": "s2",
+     "dateLabel": "Mar 2021",
+     "amountLabel": "$145 m"
+    },
+    {
+     "id": "r2",
+     "date": "2022-03",
+     "stage": "Series E",
+     "amount": 115,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": 1100,
+     "leadInvestors": [
+      "General Atlantic"
+     ],
+     "investors": [
+      "General Atlantic",
+      "Insight Partners"
+     ],
+     "source": "s1",
+     "dateLabel": "Mar 2022",
+     "amountLabel": "$115 m"
+    }
+   ],
+   "founders": [
+    {
+     "name": "Martin Böhringer",
+     "role": "Co-founder & CEO",
+     "current": true
+    },
+    {
+     "name": "Lutz Gerlach",
+     "role": "Co-founder"
+    },
+    {
+     "name": "Frank Wolf",
+     "role": "Co-founder"
+    }
+   ],
+   "investors": [
+    "General Atlantic",
+    "Insight Partners",
+    "e.ventures",
+    "KIZOO",
+    "Capnamic Ventures"
+   ],
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "TechCrunch",
+     "title": "Staffbase raises $115M at a $1.1B valuation to help internal comms teams get their message across",
+     "url": "https://techcrunch.com/2022/03/15/staffbase-raises-115m-at-a-1-1b-valuation-to-help-internal-comms-teams-get-their-message-across/",
+     "publishedOn": "2022-03-15",
+     "quote": "Staffbase, which helps internal teams craft, send out and measure the impact of their communications with their organizations, has raised $115 million in funding, a Series E that catapults the company’s valuation to $1.1 billion."
+    },
+    {
+     "id": "s2",
+     "publication": "Company press release",
+     "title": "General Atlantic leads $145 million financing round in Staffbase",
+     "url": "https://staffbase.com/press/releases/series-d-financing-round",
+     "publishedOn": "2021-03-29",
+     "quote": "General Atlantic is leading a $145 million (€122 million) financing round in the Chemnitz, Germany-based start-up to help the company grow internationally and strengthen its global leadership in the employee engagement space."
+    },
+    {
+     "id": "s3",
+     "publication": "Company press release",
+     "title": "General Atlantic leads $145 million financing round in Staffbase",
+     "url": "https://staffbase.com/press/releases/series-d-financing-round",
+     "publishedOn": "2021-03-29",
+     "quote": "Staffbase founders (from left to right): Frank Wolf, Dr. Lutz Gerlach and Dr. Martin Böhringer"
+    },
+    {
+     "id": "s4",
+     "publication": "Company press release",
+     "title": "Staffbase Raises $115M at $1.1B Valuation to Achieve Global Leadership in Employee Communications Management",
+     "url": "https://staffbase.com/press/releases/staffbase-raises-115m-at-1-1b-valuation",
+     "publishedOn": "2022-03-15",
+     "quote": "Staffbase’s Series E funding round follows the company’s $145 million (€122 million) Series D led by General Atlantic in March 2021."
+    }
+   ],
+   "display": {
+    "valuationLabel": "$1.1 bn",
+    "valuationAsOf": "Mar 2022",
+    "lastRoundLabel": "Mar 2022",
+    "lastRoundStage": "Series E",
+    "totalRaisedLabel": "—",
+    "yearsToUnicorn": 8,
+    "becameUnicornLabel": "Mar 2022",
+    "foundersLabel": "Martin Böhringer, Lutz Gerlach, Frank Wolf",
+    "aged": true
+   },
+   "sort": {
+    "newest": [
+     2022,
+     3
+    ],
+    "valuationEur": 1012.0,
+    "latestRound": [
+     2022,
+     3
+    ],
+    "name": "staffbase"
+   },
+   "investorsOrdered": [
+    "General Atlantic",
+    "Insight Partners",
+    "e.ventures",
+    "KIZOO",
+    "Capnamic Ventures"
+   ]
+  },
+  {
+   "slug": "taxfix",
+   "name": "Taxfix",
+   "website": "https://taxfix.de",
+   "logo": "assets/logos/taxfix.svg",
+   "hq": {
+    "city": "Berlin",
+    "country": "DE"
+   },
+   "foundedCountry": "DE",
+   "foundedYear": 2016,
+   "sectors": [
+    "Fintech",
+    "Consumer Tax"
+   ],
+   "thesis": {
+    "problem": "Millions of employees in Germany, Italy and Spain are owed a tax refund and never claim it, because the return assumes vocabulary and paperwork most people do not have. The alternatives are a tax adviser whose fee can exceed the refund, or desktop software that still expects the user to know which boxes apply to them.",
+    "solution": "Taxfix replaces the form with a guided set of plain-language questions, selecting only the ones that fit the answers already given, and files the return for a flat fee once the refund is shown. The company is deliberately aimed at simple tax situations — salaried people with a payslip — rather than at the complex cases advisers are built for."
+   },
+   "valuation": {
+    "amount": 1000,
+    "currency": "USD",
+    "approximate": true,
+    "asOf": "2022-04",
+    "round": "Series D",
+    "source": "s1"
+   },
+   "becameUnicorn": {
+    "date": "2022-04",
+    "roundId": "r2",
+    "source": "s1"
+   },
+   "totalRaised": {
+    "amount": 330,
+    "currency": "USD",
+    "approximate": true,
+    "source": "s2"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2020-04",
+     "stage": "Series C",
+     "amount": 65,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": null,
+     "leadInvestors": [
+      "Index Ventures"
+     ],
+     "investors": [
+      "Index Ventures",
+      "Valar Ventures",
+      "Creandum",
+      "Redalpine"
+     ],
+     "source": "s3",
+     "dateLabel": "Apr 2020",
+     "amountLabel": "$65 m"
+    },
+    {
+     "id": "r2",
+     "date": "2022-04",
+     "stage": "Series D",
+     "amount": 220,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": 1000,
+     "leadInvestors": [
+      "Teachers’ Venture Growth"
+     ],
+     "investors": [
+      "Teachers’ Venture Growth",
+      "Index Ventures",
+      "Valar Ventures",
+      "Creandum",
+      "Redalpine"
+     ],
+     "source": "s1",
+     "dateLabel": "Apr 2022",
+     "amountLabel": "$220 m"
+    }
+   ],
+   "founders": [
+    {
+     "name": "Mathis Büchi",
+     "role": "Co-founder"
+    },
+    {
+     "name": "Lino Teuteberg",
+     "role": "Co-founder"
+    }
+   ],
+   "investors": [
+    "Teachers’ Venture Growth",
+    "Index Ventures",
+    "Valar Ventures",
+    "Creandum",
+    "Redalpine"
+   ],
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "TechCrunch",
+     "title": "Taxfix, the Berlin-based mobile tax filing app, raises $220M at a $1B+ valuation",
+     "url": "https://techcrunch.com/2022/04/27/taxfix-the-berlin-based-mobile-tax-filing-app-raises-220m-at-a-1b-valuation/",
+     "publishedOn": "2022-04-28",
+     "quote": "It has closed a Series D of $220 million at a valuation of over $1 billion, money that the startup will be using both to build in more products to extend its touch points with customers beyond annual use around tax time; and to expand to new markets beyond its current footprint of Germany, Spain and Italy."
+    },
+    {
+     "id": "s2",
+     "publication": "TechCrunch",
+     "title": "Taxfix, the Berlin-based mobile tax filing app, raises $220M at a $1B+ valuation",
+     "url": "https://techcrunch.com/2022/04/27/taxfix-the-berlin-based-mobile-tax-filing-app-raises-220m-at-a-1b-valuation/",
+     "publishedOn": "2022-04-28",
+     "quote": "This is a major round for the startup: Taxfix has raised around $330 million since being founded in 2016."
+    },
+    {
+     "id": "s3",
+     "publication": "Tech.eu",
+     "title": "Berlin's Taxfix lands $65 million Series C led by Index Ventures to grow automated tax return app",
+     "url": "https://tech.eu/brief/taxfix-series-c/",
+     "publishedOn": "2020-04-16",
+     "quote": "Taxfix, a Berlin-based automated tax software, has raised a $65 million Series C led by Index Ventures, with support from existing investors Valar Ventures, Creandum and Redalpine."
+    }
+   ],
+   "display": {
+    "valuationLabel": "~$1 bn",
+    "valuationAsOf": "Apr 2022",
+    "lastRoundLabel": "Apr 2022",
+    "lastRoundStage": "Series D",
+    "totalRaisedLabel": "~$330 m",
+    "yearsToUnicorn": 6,
+    "becameUnicornLabel": "Apr 2022",
+    "foundersLabel": "Mathis Büchi, Lino Teuteberg",
+    "aged": true
+   },
+   "sort": {
+    "newest": [
+     2022,
+     4
+    ],
+    "valuationEur": 920.0,
+    "latestRound": [
+     2022,
+     4
+    ],
+    "name": "taxfix"
+   },
+   "investorsOrdered": [
+    "Teachers’ Venture Growth",
+    "Index Ventures",
+    "Valar Ventures",
+    "Creandum",
+    "Redalpine"
    ]
   },
   {

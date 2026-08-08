@@ -1,0 +1,121 @@
+{
+  "slug": "commercetools",
+  "name": "commercetools",
+  "website": "https://commercetools.com",
+  "logo": "assets/logos/commercetools.svg",
+  "hq": {
+    "city": "Munich",
+    "country": "DE"
+  },
+  "foundedCountry": "DE",
+  "foundedYear": 2006,
+  "sectors": [
+    "Enterprise Software",
+    "E-commerce Infrastructure"
+  ],
+  "thesis": {
+    "problem": "A large retailer's online shop is usually one monolithic platform that owns the product catalogue, the checkout, the pricing rules and the storefront design together. Changing anything customer-facing means a release of the whole system, which is why adding a new sales channel — an app, a kiosk, a marketplace listing — takes quarters rather than weeks.",
+    "solution": "commercetools separates the commerce engine from the storefront and exposes it as APIs, so a retailer builds whatever front end it wants against the same catalogue, cart and order services. That is the 'headless' argument the company has made since before the term was common, and its customers are large enough that the flexibility is worth the integration work."
+  },
+  "valuation": {
+    "amount": 1900,
+    "currency": "USD",
+    "approximate": false,
+    "asOf": "2021-09",
+    "round": "Series C",
+    "source": "s1"
+  },
+  "becameUnicorn": {
+    "date": "2021-09",
+    "roundId": "r2",
+    "source": "s1"
+  },
+  "totalRaised": {
+    "amount": null,
+    "currency": "USD",
+    "approximate": false,
+    "source": "s1"
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "date": "2019-10",
+      "stage": "Growth round",
+      "amount": 145,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": 300,
+      "leadInvestors": [
+        "Insight Partners"
+      ],
+      "investors": [
+        "Insight Partners"
+      ],
+      "source": "s2"
+    },
+    {
+      "id": "r2",
+      "date": "2021-09",
+      "stage": "Series C",
+      "amount": 140,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": 1900,
+      "leadInvestors": [
+        "Accel"
+      ],
+      "investors": [
+        "Accel",
+        "Insight Partners",
+        "REWE Group"
+      ],
+      "source": "s1"
+    }
+  ],
+  "founders": [
+    {
+      "name": "Dirk Hoerig",
+      "role": "Founder & chief innovation officer",
+      "current": true
+    }
+  ],
+  "investors": [
+    "Accel",
+    "Insight Partners",
+    "REWE Group"
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "publication": "TechCrunch",
+      "title": "Commercetools raises $140M at a $1.9B valuation as 'headless' commerce continues to boom",
+      "url": "https://techcrunch.com/2021/09/13/commercetools-raises-140m-at-a-1-9b-valuation-as-headless-commerce-continues-to-boom/",
+      "publishedOn": "2021-09-13",
+      "quote": "In the latest turn, Commercetools — a provider of e-commerce APIs that larger retailers can use to build customized payment, check-out, social commerce, marketplace and other services — has closed $140 million in funding, a Series C that CEO Dirk Hoerig has confirmed to me values the company at $1.9 billion."
+    },
+    {
+      "id": "s2",
+      "publication": "TechCrunch",
+      "title": "Commercetools raises $145M from Insight for Shopify-style e-commerce APIs for large enterprises",
+      "url": "https://techcrunch.com/2019/10/21/commercetools-raises-145m-from-insight-for-shopify-style-e-commerce-apis-for-large-enterprises/",
+      "publishedOn": "2019-10-21",
+      "quote": "Commercetools, a German startup that provides a set of APIs that power e-commerce sales and related functions for large businesses, has raised $145 million (€130 million) in a growth round of funding led by Insight Partners, at a valuation that we understand from a close source is around $300 million."
+    },
+    {
+      "id": "s3",
+      "publication": "TechCrunch",
+      "title": "Commercetools, a pioneer in ‘headless commerce’, lays off dozens of staff",
+      "url": "https://techcrunch.com/2025/02/26/commercetools-a-pioneer-in-headless-commerce-lays-off-dozens-of-staff/",
+      "publishedOn": "2025-02-27",
+      "quote": "Through all of this, Commercetools’ founder Dirk Hoerig led the company as CEO. He stepped away from the top position in July 2024, to be replaced by Burton. (Hoerig has retained a seat on the board and is the company’s chief innovation officer.)"
+    },
+    {
+      "id": "s4",
+      "publication": "EU-Startups",
+      "title": "Munich-based commercetools secures €119 million in Series C funding round to accelerate global growth",
+      "url": "https://www.eu-startups.com/2021/09/munich-based-commercetools-secures-e119-million-series-c-funding-round-to-accelerate-global-growth/",
+      "publishedOn": "2021-09-13",
+      "quote": "Founded in 2006, so not exactly a startup anymore but rather a fast-growing scale-up, commercetools provides a headless, API-first, multi-tenant SaaS commerce platform that is cloud-native and uses flexible microservices."
+    }
+  ]
+}

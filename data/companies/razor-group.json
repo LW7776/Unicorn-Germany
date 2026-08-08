@@ -1,0 +1,172 @@
+{
+  "slug": "razor-group",
+  "name": "Razor Group",
+  "website": "https://www.razor-group.com",
+  "logo": "assets/logos/razor-group.svg",
+  "hq": {
+    "city": "Berlin",
+    "country": "DE"
+  },
+  "foundedCountry": "DE",
+  "foundedYear": 2020,
+  "sectors": [
+    "E-commerce",
+    "Consumer Brands"
+  ],
+  "thesis": {
+    "problem": "A great many small businesses sell one good product on Amazon and stall there, because the owner is also the buyer, the marketer and the logistics department. Individually they are too small to negotiate with factories or to fund the next product line; sold individually, they fetch a small-business price.",
+    "solution": "Razor Group buys those sellers outright and runs them on shared systems for sourcing, pricing, advertising and supply chain, so the combined group has the volume to bargain with manufacturers and the data to decide what to make next. Growth has come as much from absorbing rival aggregators — Stryze, then the American company Perch — as from buying merchants."
+  },
+  "valuation": {
+    "amount": 1700,
+    "currency": "USD",
+    "approximate": false,
+    "asOf": "2024-03",
+    "round": "Perch merger financing",
+    "source": "s3",
+    "disputed": {
+      "note": "TechCrunch’s headline calls the $1.7bn a valuation, but its article body describes the figure as the enterprise value of the combined Razor–Perch business, carried alongside about $400m of debt — which is not the same thing as a post-money equity valuation. Razor’s last stated equity valuation was $1.2bn in April 2023.",
+      "source": "s3"
+    }
+  },
+  "becameUnicorn": {
+    "date": "2021-11",
+    "roundId": "r1",
+    "source": "s1"
+  },
+  "totalRaised": {
+    "amount": null,
+    "currency": "USD",
+    "approximate": false,
+    "source": "s3"
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "date": "2021-11",
+      "stage": "Series B",
+      "amount": 125,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": 1000,
+      "leadInvestors": [],
+      "investors": [
+        "Fortress Investment Group",
+        "468 Capital",
+        "Victory Park Capital",
+        "Presight Capital",
+        "BlackRock",
+        "Jebsen Capital",
+        "Redalpine",
+        "Global Founders Capital"
+      ],
+      "source": "s1"
+    },
+    {
+      "id": "r2",
+      "date": "2023-04",
+      "stage": "Series C",
+      "amount": 88.4,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": 1200,
+      "leadInvestors": [],
+      "investors": [
+        "Upper90",
+        "L Catterton",
+        "Presight Capital",
+        "BlackRock",
+        "Global Founders Capital",
+        "LatinLeap",
+        "Redalpine",
+        "468 Capital"
+      ],
+      "source": "s2"
+    },
+    {
+      "id": "r3",
+      "date": "2024-03",
+      "stage": "Perch merger financing",
+      "amount": 100,
+      "currency": "USD",
+      "approximate": true,
+      "postMoney": 1700,
+      "leadInvestors": [
+        "Presight Capital"
+      ],
+      "investors": [
+        "Presight Capital"
+      ],
+      "source": "s3"
+    }
+  ],
+  "founders": [
+    {
+      "name": "Tushar Ahluwalia",
+      "role": "Co-founder & CEO",
+      "current": true
+    },
+    {
+      "name": "Shrestha Chowdhury",
+      "role": "Co-founder & CTO",
+      "current": true
+    },
+    {
+      "name": "Oliver Dlugosch",
+      "role": "Co-founder & COO",
+      "current": true
+    },
+    {
+      "name": "Christoph Felix Gamon",
+      "role": "Co-founder",
+      "current": true
+    }
+  ],
+  "investors": [
+    "Presight Capital",
+    "L Catterton",
+    "BlackRock",
+    "Victory Park Capital",
+    "Fortress Investment Group",
+    "468 Capital",
+    "Redalpine",
+    "Global Founders Capital",
+    "Upper90",
+    "Jebsen Capital",
+    "LatinLeap"
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "publication": "TechCrunch",
+      "title": "Berlin’s Razor Group raises $125M at a $1B+ valuation for a platform to buy and scale third-party Amazon merchants",
+      "url": "https://techcrunch.com/2021/11/08/berlins-razor-group-raises-125m-at-a-1b-valuation-for-a-platform-to-buy-and-scale-third-party-amazon-merchants/",
+      "publishedOn": "2021-11-08",
+      "quote": "In the latest development, Berlin’s Razor Group — one of the more ambitious of the aggregators out of Europe — has now raised $125 million of equity funding in a Series B round that CEO and co-founder Tushar Ahluwalia said pushes the company past a $1 billion valuation."
+    },
+    {
+      "id": "s2",
+      "publication": "TechCrunch",
+      "title": "Razor Group, an e-commerce aggregator, closes Series C at $88M at $1.2B valuation, acquires Stryze to consolidate",
+      "url": "https://techcrunch.com/2023/04/17/razor-group-aggregator-stryze/",
+      "publishedOn": "2023-04-17",
+      "quote": "Upper90’s investment closes out Razor’s last funding round, which it’s calling its Series C, at €80 million ($88.4 million) — with other investors in the most recent round including L Catterton, Presight Capital, Blackrock, GFC, LatinLeap, Redalpine and 468 Capital. It also bumps Razor’s valuation up to $1.2 billion, sources at the company tell me."
+    },
+    {
+      "id": "s3",
+      "publication": "TechCrunch",
+      "title": "Razor and Perch merge, raise $100M on a $1.7B valuation as more roll-ups consolidate",
+      "url": "https://techcrunch.com/2024/03/04/razor-and-perch-merge-raise-100m-on-a-1-7b-valuation-as-more-roll-ups-consolidate/",
+      "publishedOn": "2024-03-04",
+      "quote": "Berlin’s Razor Group has acquired U.S.-based Perch, and on top of this it has raised just over $100 million led by Presight Capital with other undisclosed investors participating. The combined business has an enterprise value of $1.7 billion, the company said, with about $400 million of debt on its books that is not due to come up for payback for at least another four years, from what we understand."
+    },
+    {
+      "id": "s4",
+      "publication": "TechCrunch",
+      "title": "Berlin’s Razor Group raises $400M to buy and scale Amazon Marketplace merchants",
+      "url": "https://techcrunch.com/2021/05/04/berlins-razor-group-raises-400m-to-buy-and-scale-amazon-marketplace-merchants/",
+      "publishedOn": "2021-05-04",
+      "quote": "Razor Group itself is not even a year old but has been building out its business at a fast pace. Founded in August 2020, in the last eight months, CEO Tushar Ahluwalia said the startup has grown to 107 employees across four offices."
+    }
+  ]
+}

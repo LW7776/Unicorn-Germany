@@ -1,0 +1,149 @@
+{
+  "slug": "black-forest-labs",
+  "name": "Black Forest Labs",
+  "website": "https://bfl.ai",
+  "logo": "assets/logos/black-forest-labs.svg",
+  "hq": {
+    "city": "Freiburg",
+    "country": "DE"
+  },
+  "alsoBasedIn": [
+    "San Francisco"
+  ],
+  "foundedCountry": "DE",
+  "foundedYear": 2024,
+  "sectors": [
+    "Artificial Intelligence",
+    "Generative Media"
+  ],
+  "thesis": {
+    "problem": "Image generation moved from research demo to production tool faster than the supply of models a company can actually build on. Most of the strongest systems are closed, reachable only through one vendor's API, which leaves a product team unable to run the model on its own infrastructure, inspect it, or fine-tune it for a house style.",
+    "solution": "Black Forest Labs trains its own image and editing models, publishes open-weight versions alongside commercial ones, and sells the larger models to companies that want them inside their own products. The bet is that the open releases spread the toolchain and the enterprise versions pay for the research, with the founders' record on latent diffusion as the evidence they can keep pace."
+  },
+  "valuation": {
+    "amount": 3250,
+    "currency": "USD",
+    "approximate": false,
+    "asOf": "2025-12",
+    "round": "Series B",
+    "source": "s1"
+  },
+  "becameUnicorn": {
+    "date": "2025-12",
+    "roundId": "r1",
+    "source": "s1"
+  },
+  "totalRaised": {
+    "amount": 450,
+    "currency": "USD",
+    "approximate": true,
+    "source": "s3"
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "date": "2025-12",
+      "stage": "Series B",
+      "amount": 300,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": 3250,
+      "leadInvestors": [
+        "Salesforce Ventures",
+        "AMP"
+      ],
+      "investors": [
+        "Salesforce Ventures",
+        "AMP",
+        "Andreessen Horowitz",
+        "NVIDIA",
+        "Northzone",
+        "Creandum",
+        "Earlybird VC",
+        "BroadLight Capital",
+        "General Catalyst",
+        "Temasek",
+        "Bain Capital Ventures",
+        "Air Street Capital",
+        "Visionaries Club",
+        "Canva",
+        "Figma Ventures"
+      ],
+      "source": "s1"
+    }
+  ],
+  "founders": [
+    {
+      "name": "Robin Rombach",
+      "role": "Co-founder & CEO",
+      "current": true
+    },
+    {
+      "name": "Patrick Esser",
+      "role": "Co-founder"
+    },
+    {
+      "name": "Andreas Blattmann",
+      "role": "Co-founder"
+    }
+  ],
+  "investors": [
+    "Salesforce Ventures",
+    "AMP",
+    "Andreessen Horowitz",
+    "NVIDIA",
+    "Northzone",
+    "Creandum",
+    "Earlybird VC",
+    "BroadLight Capital",
+    "General Catalyst",
+    "Temasek",
+    "Bain Capital Ventures",
+    "Air Street Capital",
+    "Visionaries Club",
+    "Canva",
+    "Figma Ventures"
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "publication": "Tech.eu",
+      "title": "Black Forest Labs secures $300M Series B at $3.25B valuation",
+      "url": "https://tech.eu/2025/12/01/black-forest-labs-secures-300m-series-b-at-325b-valuation/",
+      "publishedOn": "2025-12-01",
+      "quote": "Today Black Forest Labs has announced a $300 million Series B round at a $3.25 billion post-money valuation."
+    },
+    {
+      "id": "s2",
+      "publication": "Company press release",
+      "title": "Laying the Foundations for Visual Intelligence—Our $300M Series B",
+      "url": "https://bfl.ai/blog/our-300m-series-b",
+      "publishedOn": "2025-12-01",
+      "quote": "That’s why today, we're excited to announce our Series B of $300M at a $3.25B post-money valuation."
+    },
+    {
+      "id": "s3",
+      "publication": "Sifted",
+      "title": "German AI startup Black Forest Labs raises $300m Series B",
+      "url": "https://sifted.eu/articles/black-forest-labs-300m-series-b",
+      "publishedOn": "2025-12-01",
+      "quote": "The Freiburg-based startup has quietly raised over $450m in just over a year, attracting big name backers like Andreessen Horowitz, General Catalyst and Creandum."
+    },
+    {
+      "id": "s4",
+      "publication": "TechCrunch",
+      "title": "Black Forest Labs raises $300M at $3.25B valuation",
+      "url": "https://techcrunch.com/2025/12/01/black-forest-labs-raises-300m-at-3-25b-valuation/",
+      "publishedOn": "2025-12-01",
+      "quote": "Black Forest Labs’ co-founders, Robin Rombach, Patrick Esser, and Andreas Blattmann, were formerly researchers who helped create Stability AI’s Stable Diffusion models."
+    },
+    {
+      "id": "s5",
+      "publication": "EU-Startups",
+      "title": "Used by Adobe, Canva and Meta, Germany’s Black Forest Labs lands €258 million to scale its visual-AI platform",
+      "url": "https://www.eu-startups.com/2025/12/used-by-adobe-canva-and-meta-germanys-black-forest-labs-lands-e258-million-to-scale-its-visual-ai-platform/",
+      "publishedOn": "2025-12-01",
+      "quote": "The round follows a previously unannounced Series A led by Andreessen Horowitz, with participation from BroadLight Capital, Creandum, Earlybird VC, General Catalyst, Northzone, and Nvidia, bringing total funds raised to over €387 million ($450 million)."
+    }
+  ]
+}

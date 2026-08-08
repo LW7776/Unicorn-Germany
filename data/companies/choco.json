@@ -1,0 +1,146 @@
+{
+  "slug": "choco",
+  "name": "Choco",
+  "website": "https://choco.com",
+  "logo": "assets/logos/choco.svg",
+  "hq": {
+    "city": "Berlin",
+    "country": "DE"
+  },
+  "foundedCountry": "DE",
+  "foundedYear": 2018,
+  "sectors": [
+    "Foodtech",
+    "Supply Chain Software"
+  ],
+  "thesis": {
+    "problem": "Restaurants still order from their suppliers by voicemail, fax and scribbled note, and a wholesaler's sales desk spends its morning transcribing those messages into an order system. Every transcription is a chance to send the wrong quantity, and the wrong quantity is food that gets thrown away.",
+    "solution": "Choco gives the restaurant a messaging app for placing orders and the supplier a system that reads those orders straight into its own order processing, so the same instruction is only entered once. Selling to both sides of the same transaction is the point: the value only appears when the buyer and the seller are on the platform together."
+  },
+  "valuation": {
+    "amount": 1200,
+    "currency": "USD",
+    "approximate": false,
+    "asOf": "2022-04",
+    "round": "Series B2",
+    "source": "s1"
+  },
+  "becameUnicorn": {
+    "date": "2022-04",
+    "roundId": "r2",
+    "source": "s3"
+  },
+  "totalRaised": {
+    "amount": 274.7,
+    "currency": "USD",
+    "approximate": false,
+    "source": "s4"
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "date": "2021-07",
+      "stage": "Series B",
+      "amount": 100,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": 600,
+      "leadInvestors": [
+        "Left Lane Capital"
+      ],
+      "investors": [
+        "Left Lane Capital",
+        "Insight Partners",
+        "Coatue Management",
+        "Bessemer Venture Partners"
+      ],
+      "source": "s2"
+    },
+    {
+      "id": "r2",
+      "date": "2022-04",
+      "stage": "Series B2",
+      "amount": 111,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": 1200,
+      "leadInvestors": [
+        "G Squared"
+      ],
+      "investors": [
+        "G Squared",
+        "Insight Partners",
+        "Bessemer Venture Partners",
+        "Coatue",
+        "Target Global",
+        "Atlantic Labs",
+        "Greyhound Capital",
+        "Leftlane Capital",
+        "Visionaries Club",
+        "Discovery Ventures"
+      ],
+      "source": "s1"
+    }
+  ],
+  "founders": [
+    {
+      "name": "Daniel Khachab",
+      "role": "Co-founder & CEO",
+      "current": true
+    },
+    {
+      "name": "Julian Hammer",
+      "role": "Co-founder"
+    },
+    {
+      "name": "Grégoire Ambroselli",
+      "role": "Co-founder"
+    }
+  ],
+  "investors": [
+    "G Squared",
+    "Insight Partners",
+    "Bessemer Venture Partners",
+    "Coatue",
+    "Left Lane Capital",
+    "Target Global",
+    "Atlantic Labs",
+    "Greyhound Capital",
+    "Visionaries Club",
+    "Discovery Ventures"
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "publication": "Tech.eu",
+      "title": "Choco chalks up $111 million, punches ticket at the unicorn club",
+      "url": "https://tech.eu/2022/04/12/choco-chalks-up-111-million-punches-ticket-at-the-unicorn-club/",
+      "publishedOn": "2022-04-12",
+      "quote": "Berlin-based food supply chain management platform Choco has raised $111 million in a Series B2 funding round at a valuation of $1.2 billion."
+    },
+    {
+      "id": "s2",
+      "publication": "TechCrunch",
+      "title": "Choco bites into $100M Series B, at a $600M valuation, to build a more transparent, sustainable food supply chain",
+      "url": "https://techcrunch.com/2021/07/19/choco-bites-into-100m-series-b-at-a-600m-valuation-to-build-a-more-transparent-sustainable-food-supply-chain/",
+      "publishedOn": "2021-07-20",
+      "quote": "Berlin-based Choco, which has built ordering software for restaurants and their suppliers, is working to digitize the food supply chain and announced $100 million in Series B funding, led by Left Lane Capital, to give it a $600 million post-market valuation."
+    },
+    {
+      "id": "s3",
+      "publication": "Company press release",
+      "title": "Choco Achieves Unicorn Status in Quest to Drive Zero Food Waste in Supply Chains",
+      "url": "https://choco.com/us/press/choco-achieves-unicorn-status",
+      "publishedOn": "2022-04-12",
+      "quote": "Choco, the technology company building a better food system for restaurants and suppliers, announced today that it has raised $111 million in Series B2 funding with a valuation of $1.2 billion."
+    },
+    {
+      "id": "s4",
+      "publication": "Tech.eu",
+      "title": "Choco chalks up $111 million, punches ticket at the unicorn club",
+      "url": "https://tech.eu/2022/04/12/choco-chalks-up-111-million-punches-ticket-at-the-unicorn-club/",
+      "publishedOn": "2022-04-12",
+      "quote": "Since 2018, Choco has now raised a total of $274.7 million."
+    }
+  ]
+}

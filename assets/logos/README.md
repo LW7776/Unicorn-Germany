@@ -12,7 +12,15 @@ are not covered by this repository's licence.
 
 | File | Source URL | Retrieved | How |
 |---|---|---|---|
+| `black-forest-labs.svg` | https://bfl.ai/ (navbar wordmark, inline SVG) | 2026-08-08 | Copied verbatim from the page |
 | `celonis.svg` | https://www.celonis.com/src/assets/icons/logo.svg | 2026-08-08 | Downloaded unchanged |
+| `choco.svg` | https://choco.com/us/press (header wordmark, inline SVG) | 2026-08-08 | Copied verbatim; see note |
+| `commercetools.svg` | https://cdn.prod.website-files.com/6989ba4b19f7ea51fb4fc517/698c995a04b388752a6f3f2a_commercetools-logo-2024-B4HERo5H.svg | 2026-08-08 | Downloaded unchanged |
+| `forto.svg` | https://forto.com/wp-content/themes/forto-website/assets/images/logo.svg | 2026-08-08 | Downloaded unchanged |
+| `osapiens.png` | https://osapiens.com/wp-content/uploads/2024/05/65081d253c3c6d169ca690f0_favicon.png | 2026-08-08 | Downloaded unchanged; see note |
+| `razor-group.svg` | https://cdn.prod.website-files.com/659bd12259ec13f287424e42/659bd12259ec13f28742502c_razor%20logo-blu-01.svg | 2026-08-08 | Downloaded unchanged |
+| `staffbase.svg` | https://www.staffbase.com/en/about-us/ (header wordmark, inline SVG sprite) | 2026-08-08 | Copied verbatim; see note |
+| `taxfix.svg` | https://taxfix.de/en/about-us/ (header wordmark, inline SVG) | 2026-08-08 | Copied verbatim; `xmlns` added |
 | `deepl.svg` | https://www.deepl.com/img/logo/deepl-logo-text-blue.svg | 2026-08-08 | Downloaded unchanged |
 | `helsing.svg` | https://helsing.ai/ (header mark, inline SVG) | 2026-08-08 | Copied verbatim from the page |
 | `moss.svg` | https://www.getmoss.com/favicon/icon.svg | 2026-08-08 | Downloaded unchanged |
@@ -31,3 +39,20 @@ are not covered by this repository's licence.
 - Several files use `fill="currentColor"`. Rendered as an `<img>` on the register's light
   plate, that resolves to black, which is how each company shows the mark on light
   backgrounds. No colour value was edited.
+- **Choco** serves its wordmark inline with two attributes an HTML parser tolerates but a
+  standalone SVG file does not: `viewbox` in lowercase, and a leading space inside the
+  `xmlns` value. Both were corrected (`viewBox`, and the space removed) so the file parses
+  as XML; nothing else — no path, no colour, no dimension — was touched. Its fill comes
+  from the page's `fill-current` class, which a standalone file does not carry, so it
+  renders black, as Choco shows the mark on white.
+- **Staffbase** serves its wordmark as an SVG `<symbol>` inside a hidden sprite, referenced
+  by `<use>`. The symbol's contents were copied verbatim into a standalone `<svg>` carrying
+  that symbol's own `viewBox` and the required `xmlns`. No path data or colour was changed.
+- **osapiens** publishes only white and on-dark logo files (`osapiens_logo_white.png`,
+  `osapiens_logo_onDark_horzR-1.png`), both of which are invisible on the register's light
+  plate. The stored file is therefore osapiens's own site icon — the same teal mark, in the
+  company's own colour, unaltered. It is a 32 × 32 raster and so renders smaller than the
+  other marks; the plate does not upscale it, so it stays crisp.
+- **commercetools** and **Razor Group** serve their logos from the Webflow CDN their own
+  sites run on rather than from their own domain. The URL recorded above is the exact asset
+  each company's own page loads.

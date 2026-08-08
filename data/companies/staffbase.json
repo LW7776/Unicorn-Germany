@@ -1,0 +1,134 @@
+{
+  "slug": "staffbase",
+  "name": "Staffbase",
+  "website": "https://staffbase.com",
+  "logo": "assets/logos/staffbase.svg",
+  "hq": {
+    "city": "Chemnitz",
+    "country": "DE"
+  },
+  "foundedCountry": "DE",
+  "foundedYear": 2014,
+  "sectors": [
+    "Enterprise Software",
+    "Employee Communications"
+  ],
+  "thesis": {
+    "problem": "Most of the people a large employer needs to reach — on a production line, in a warehouse, driving a van — have no desk, no company laptop and often no company email address. Internal communication built around the intranet and the all-staff email therefore misses exactly the workforce it most needs during a safety notice or a shift change.",
+    "solution": "Staffbase gives the internal communications team one place to write a message and send it to a branded employee app, an email newsletter and an intranet at once, then reports who actually opened it. The customer is specifically the communications department rather than IT or HR, which is what separates it from the collaboration tools already installed alongside it."
+  },
+  "valuation": {
+    "amount": 1100,
+    "currency": "USD",
+    "approximate": false,
+    "asOf": "2022-03",
+    "round": "Series E",
+    "source": "s1"
+  },
+  "becameUnicorn": {
+    "date": "2022-03",
+    "roundId": "r2",
+    "source": "s1"
+  },
+  "totalRaised": {
+    "amount": null,
+    "currency": "USD",
+    "approximate": false,
+    "source": "s1"
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "date": "2021-03",
+      "stage": "Series D",
+      "amount": 145,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": null,
+      "leadInvestors": [
+        "General Atlantic"
+      ],
+      "investors": [
+        "General Atlantic",
+        "Insight Partners",
+        "e.ventures",
+        "KIZOO",
+        "Capnamic Ventures"
+      ],
+      "source": "s2"
+    },
+    {
+      "id": "r2",
+      "date": "2022-03",
+      "stage": "Series E",
+      "amount": 115,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": 1100,
+      "leadInvestors": [
+        "General Atlantic"
+      ],
+      "investors": [
+        "General Atlantic",
+        "Insight Partners"
+      ],
+      "source": "s1"
+    }
+  ],
+  "founders": [
+    {
+      "name": "Martin Böhringer",
+      "role": "Co-founder & CEO",
+      "current": true
+    },
+    {
+      "name": "Lutz Gerlach",
+      "role": "Co-founder"
+    },
+    {
+      "name": "Frank Wolf",
+      "role": "Co-founder"
+    }
+  ],
+  "investors": [
+    "General Atlantic",
+    "Insight Partners",
+    "e.ventures",
+    "KIZOO",
+    "Capnamic Ventures"
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "publication": "TechCrunch",
+      "title": "Staffbase raises $115M at a $1.1B valuation to help internal comms teams get their message across",
+      "url": "https://techcrunch.com/2022/03/15/staffbase-raises-115m-at-a-1-1b-valuation-to-help-internal-comms-teams-get-their-message-across/",
+      "publishedOn": "2022-03-15",
+      "quote": "Staffbase, which helps internal teams craft, send out and measure the impact of their communications with their organizations, has raised $115 million in funding, a Series E that catapults the company’s valuation to $1.1 billion."
+    },
+    {
+      "id": "s2",
+      "publication": "Company press release",
+      "title": "General Atlantic leads $145 million financing round in Staffbase",
+      "url": "https://staffbase.com/press/releases/series-d-financing-round",
+      "publishedOn": "2021-03-29",
+      "quote": "General Atlantic is leading a $145 million (€122 million) financing round in the Chemnitz, Germany-based start-up to help the company grow internationally and strengthen its global leadership in the employee engagement space."
+    },
+    {
+      "id": "s3",
+      "publication": "Company press release",
+      "title": "General Atlantic leads $145 million financing round in Staffbase",
+      "url": "https://staffbase.com/press/releases/series-d-financing-round",
+      "publishedOn": "2021-03-29",
+      "quote": "Staffbase founders (from left to right): Frank Wolf, Dr. Lutz Gerlach and Dr. Martin Böhringer"
+    },
+    {
+      "id": "s4",
+      "publication": "Company press release",
+      "title": "Staffbase Raises $115M at $1.1B Valuation to Achieve Global Leadership in Employee Communications Management",
+      "url": "https://staffbase.com/press/releases/staffbase-raises-115m-at-1-1b-valuation",
+      "publishedOn": "2022-03-15",
+      "quote": "Staffbase’s Series E funding round follows the company’s $145 million (€122 million) Series D led by General Atlantic in March 2021."
+    }
+  ]
+}
