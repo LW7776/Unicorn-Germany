@@ -85,6 +85,22 @@ def test_the_combined_headline_is_rounded_but_the_underlying_sum_is_not(record):
     assert stats["combinedValuationLabel"] == "~€74.2 bn"
 
 
+def test_the_combined_headline_rounds_a_half_up_not_to_even(record):
+    """round() would send 75050 to "~€75 bn"; half-up sends it to "~€75.1 bn".
+
+    Python's builtin rounds half to even, which is the trap that made
+    format_amount print $3.25bn as "$3.2 bn". Rounding half-up here and
+    half-to-even there is how that defect got in, so both use Decimal.
+    """
+    other = json.loads(FIXTURE.read_text(encoding="utf-8"))
+    other["slug"] = "second-gmbh"
+    other["valuation"] = {**other["valuation"], "amount": 73_850, "currency": "EUR"}
+    stats = compute_stats(
+        [derive_company(record, (2026, 8)), derive_company(other, (2026, 8))], FX)
+    assert stats["combinedValuationEurMillions"] == pytest.approx(75_050)
+    assert stats["combinedValuationLabel"] == "~€75.1 bn"
+
+
 def test_stats_count_new_unicorns_in_the_last_twelve_months():
     base = json.loads(FIXTURE.read_text(encoding="utf-8"))
     recent = derive_company({**base, "becameUnicorn": {**base["becameUnicorn"], "date": "2026-02"}}, (2026, 8))

@@ -1,8 +1,8 @@
 {
  "stats": {
   "count": 16,
-  "combinedValuationEurMillions": 75002.0,
-  "combinedValuationLabel": "~€75 bn",
+  "combinedValuationEurMillions": 74542.0,
+  "combinedValuationLabel": "~€74.5 bn",
   "newInLast12Months": 3,
   "medianYearsToUnicorn": 6,
   "fxRateDisclosed": 0.92,
@@ -2370,14 +2370,14 @@
     "solution": "Razor Group buys those sellers outright and runs them on shared systems for sourcing, pricing, advertising and supply chain, so the combined group has the volume to bargain with manufacturers and the data to decide what to make next. Growth has come as much from absorbing rival aggregators — Stryze, then the American company Perch — as from buying merchants."
    },
    "valuation": {
-    "amount": 1700,
+    "amount": 1200,
     "currency": "USD",
     "approximate": false,
     "asOf": "2024-03",
-    "round": "Perch merger financing",
-    "source": "s3",
+    "round": "Series C",
+    "source": "s5",
     "disputed": {
-     "note": "TechCrunch’s headline calls the $1.7bn a valuation, but its article body describes the figure as the enterprise value of the combined Razor–Perch business, carried alongside about $400m of debt — which is not the same thing as a post-money equity valuation. Razor’s last stated equity valuation was $1.2bn in April 2023.",
+     "note": "A larger figure is widely attached to Razor: TechCrunch’s headline on the March 2024 Perch merger calls $1.7bn a valuation. Its article body measures something else — “the combined business has an enterprise value of $1.7 billion … with about $400 million of debt on its books”. Enterprise value counts that debt; a post-money equity valuation does not, and the post-money is what this register records. The $1.2bn here is Razor’s last stated post-money, struck at the April 2023 Series C and restated by TechCrunch at the time of the merger.",
      "source": "s3"
     }
    },
@@ -2446,7 +2446,7 @@
      "amount": 100,
      "currency": "USD",
      "approximate": true,
-     "postMoney": 1700,
+     "postMoney": null,
      "leadInvestors": [
       "Presight Capital"
      ],
@@ -2524,11 +2524,19 @@
      "title": "Berlin’s Razor Group raises $400M to buy and scale Amazon Marketplace merchants",
      "url": "https://techcrunch.com/2021/05/04/berlins-razor-group-raises-400m-to-buy-and-scale-amazon-marketplace-merchants/",
      "publishedOn": "2021-05-04",
-     "quote": "Razor Group itself is not even a year old but has been building out its business at a fast pace. Founded in August 2020, in the last eight months, CEO Tushar Ahluwalia said the startup has grown to 107 employees across four offices."
+     "quote": "Razor Group itself is not even a year old but has been building out its business at a fast pace. Founded in August 2020, in the last eight months, CEO Tushar Ahluwalia said the startup has grown to 107 employees across four offices and is currently on track to cross $120 million (€100 million) in sales from the 30 brands it has already amassed in its stable in categories like personal wellness, sports and home and living."
+    },
+    {
+     "id": "s5",
+     "publication": "TechCrunch",
+     "title": "Razor and Perch merge, raise $100M on a $1.7B valuation as more roll-ups consolidate",
+     "url": "https://techcrunch.com/2024/03/04/razor-and-perch-merge-raise-100m-on-a-1-7b-valuation-as-more-roll-ups-consolidate/",
+     "publishedOn": "2024-03-04",
+     "quote": "Razor’s last valuation, when it raised money about a year ago, was $1.2 billion."
     }
    ],
    "display": {
-    "valuationLabel": "$1.7 bn",
+    "valuationLabel": "$1.2 bn",
     "valuationAsOf": "Mar 2024",
     "lastRoundLabel": "Mar 2024",
     "lastRoundStage": "Perch merger financing",
@@ -2543,7 +2551,7 @@
      2021,
      11
     ],
-    "valuationEur": 1564.0,
+    "valuationEur": 1104.0,
     "latestRound": [
      2024,
      3

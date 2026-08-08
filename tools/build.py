@@ -15,6 +15,7 @@ import json
 import pathlib
 import statistics
 import sys
+from decimal import Decimal, ROUND_HALF_UP
 
 # Allow `python3 tools/build.py` to resolve `tools.schema` even though running a
 # script puts only its own directory on sys.path, not the repo root. pytest is
@@ -162,7 +163,15 @@ def compute_stats(records, fx):
     # figure, and only this one, is rounded to a tenth of a billion before it
     # is labelled. The unrounded sum stays in combinedValuationEurMillions for
     # anyone who wants to recompute it.
-    combined_label_value = round(combined / 100) * 100
+    #
+    # ROUND_HALF_UP, not Python's built-in round(): the builtin rounds half to
+    # even, so a combined of 75050 would label "~€75 bn" rather than
+    # "~€75.1 bn" — the same banker's-rounding trap that made format_amount
+    # print a $3.25bn valuation as "$3.2 bn". _billion_forms already rounds
+    # this way; rounding half-up in one place and half-to-even in another is
+    # how that defect got in.
+    combined_label_value = int(
+        (Decimal(str(combined)) / 100).quantize(Decimal("1"), rounding=ROUND_HALF_UP)) * 100
     return {
         "count": len(records),
         "combinedValuationEurMillions": combined,
