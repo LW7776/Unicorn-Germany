@@ -34,6 +34,35 @@ def test_format_amount_renders_billions_with_approximate_marker():
     assert format_amount(850, "EUR", True) == "~€850 m"
 
 
+def test_format_amount_keeps_a_fractional_sub_billion_decimal():
+    """A €102.5m round must not print as "€102 m" — that is a figure no source stated."""
+    assert format_amount(102.5, "EUR", False) == "€102.5 m"
+    assert format_amount(27.5, "USD", True) == "~$27.5 m"
+
+
+def test_format_amount_is_unchanged_for_whole_sub_billion_amounts():
+    assert format_amount(850, "EUR", True) == "~€850 m"
+    assert format_amount(120, "USD", False) == "$120 m"
+    assert format_amount(50, "USD", False) == "$50 m"
+    assert format_amount(850.0, "EUR", True) == "~€850 m"
+
+
+def test_fractional_millions_are_recognised_in_english_and_german_forms():
+    assert quote_states_figure("a previous Series A of 102.5 million euros", 102.5, "EUR")
+    assert quote_states_figure("eine Series A über 102,5 Millionen Euro", 102.5, "EUR")
+    assert quote_states_figure("a Series A of $27.5 million in June 2016", 27.5, "USD")
+
+
+def test_a_fractional_amount_does_not_match_its_truncated_neighbour():
+    """102.5 and 102 are different numbers; the digit boundary must keep them apart."""
+    assert not quote_states_figure("a Series A of 102 million euros", 102.5, "EUR")
+
+
+def test_whole_sub_billion_matching_is_unchanged():
+    assert quote_states_figure("a Series B of $50 million in June 2018", 50, "USD")
+    assert not quote_states_figure("a Series B of $50.5 million", 50, "USD")
+
+
 def test_figure_variants_cover_how_sources_write_the_number():
     assert "13" in figure_variants(13000)
     variants = figure_variants(1400)

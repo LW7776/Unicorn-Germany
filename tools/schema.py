@@ -46,16 +46,30 @@ def format_date(value):
     return f"{MONTHS[month - 1]} {year}" if month else str(year)
 
 
+def _plain_decimal(millions):
+    """"102.5" for a fractional amount, "102" for a whole one — never "102.0".
+
+    Formatting through "f" rather than "g" keeps large values out of scientific
+    notation; the trailing "." left by rstrip("0") on a whole number is then
+    removed, and the decimal point guards the significant zeros in "850".
+    """
+    return f"{millions:f}".rstrip("0").rstrip(".")
+
+
 def format_amount(millions, currency, approximate):
-    """Render millions as a compact figure: 13000/USD -> "~$13 bn"."""
+    """Render millions as a compact figure: 13000/USD -> "~$13 bn".
+
+    Sub-billion amounts keep any fractional part: a €102.5m round renders as
+    "€102.5 m", not "€102 m". Truncating it would print a figure the source
+    never stated, which is the one thing this file exists to prevent.
+    """
     symbol = CURRENCY_SYMBOL.get(currency, currency + " ")
     prefix = "~" if approximate else ""
     if millions >= 1000:
         billions = millions / 1000
         number = f"{billions:.1f}".rstrip("0").rstrip(".")
         return f"{prefix}{symbol}{number} bn"
-    number = f"{millions:.0f}"
-    return f"{prefix}{symbol}{number} m"
+    return f"{prefix}{symbol}{_plain_decimal(millions)} m"
 
 
 def figure_variants(millions):
@@ -120,7 +134,23 @@ def _figure_forms(millions):
         forms.append((f"{millions:,.0f}".replace(",", "."), False))
         forms.append((f"{millions:,.0f}".replace(",", " "), False))
     else:
-        forms.append((f"{millions:.0f}", False))
+        # Sub-billion rounds are routinely fractional — a €102.5m Series A, a
+        # $27.5m seed. Sources print those with the decimal, English "102.5" or
+        # German "102,5", so both forms are generated; without them such a round
+        # has no expressible amount at all and a real, sourced round is silently
+        # dropped from the record.
+        #
+        # The bare integer is only generated when it *is* the amount. Rounding a
+        # fractional one to reach it (the old f"{millions:.0f}") yields a
+        # different number, and inconsistently: 102.5 -> "102" but 27.5 -> "28".
+        # That would let a quote saying "$28 million" satisfy a $27.5m record —
+        # a false positive in the only check standing between this dataset and
+        # an unsourced figure. For every whole amount this is byte-identical to
+        # the previous behaviour.
+        decimal = _plain_decimal(millions)
+        forms.append((decimal, False))
+        if "." in decimal:
+            forms.append((decimal.replace(".", ","), False))
     return forms
 
 

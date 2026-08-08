@@ -41,6 +41,30 @@
   },
   "rounds": [
     {
+      "id": "r0a",
+      "date": "2016-06",
+      "stage": "Series A",
+      "amount": 27.5,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": null,
+      "leadInvestors": [],
+      "investors": [],
+      "source": "s3"
+    },
+    {
+      "id": "r0b",
+      "date": "2018-06",
+      "stage": "Series B",
+      "amount": 50,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": null,
+      "leadInvestors": [],
+      "investors": [],
+      "source": "s3"
+    },
+    {
       "id": "r1",
       "date": "2019-11",
       "stage": "Series C",
@@ -154,7 +178,7 @@
       "title": "Celonis Secures $1 Billion to Help Customers Fight Economic and Supply Chain Challenges with Process Improvements",
       "url": "https://www.celonis.com/news/press/celonis-secures-one-billion-to-help-customers-fight-economic-and-supply-change-challenges",
       "publishedOn": "2022-08-23",
-      "quote": "In June 2021, Celonis announced its $1 billion Series D round at a valuation of $11 billion."
+      "quote": "In June 2021, Celonis announced its $1 billion Series D round at a valuation of $11 billion. The Series D followed the Series C financing round of $290 million in November 2019, a Series B of $50 million in June 2018, and a Series A of $27.5 million in June 2016."
     }
   ]
 }

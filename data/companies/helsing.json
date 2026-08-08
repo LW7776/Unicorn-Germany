@@ -38,6 +38,22 @@
   },
   "rounds": [
     {
+      "id": "r0",
+      "date": "2021",
+      "stage": "Series A",
+      "amount": 102.5,
+      "currency": "EUR",
+      "approximate": false,
+      "postMoney": null,
+      "leadInvestors": [
+        "Prima Materia"
+      ],
+      "investors": [
+        "Prima Materia"
+      ],
+      "source": "s6"
+    },
+    {
       "id": "r1",
       "date": "2023-09",
       "stage": "Series B",
@@ -183,6 +199,14 @@
       "url": "https://helsing.ai/newsroom/helsing-raises-eur600m-to-invest-in-european-technological-sovereignty",
       "publishedOn": "2025-06-17",
       "quote": "Today’s announcement follows Helsing’s Series C funding of €450m in July 2024, involving General Catalyst, Elad Gil, Accel, Saab, Lightspeed Ventures, Plural and Greenoaks."
+    },
+    {
+      "id": "s6",
+      "publication": "Company press release",
+      "title": "Helsing raises €209m Series B to bolster Defence AI Capabilities for Democracies",
+      "url": "https://helsing.ai/newsroom/helsing-raises-euro209m-series-b-to-bolster-defence-ai-capabilities-for-democracies",
+      "publishedOn": "2023-09-14",
+      "quote": "This funding round follows a previous Series A (€102.5m) led by Prima Materia, an investment company founded by Daniel Ek, co-founder and CEO of Spotify."
     },
     {
       "id": "s5",

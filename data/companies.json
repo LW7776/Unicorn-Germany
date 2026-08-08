@@ -53,6 +53,34 @@
    },
    "rounds": [
     {
+     "id": "r0a",
+     "date": "2016-06",
+     "stage": "Series A",
+     "amount": 27.5,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": null,
+     "leadInvestors": [],
+     "investors": [],
+     "source": "s3",
+     "dateLabel": "Jun 2016",
+     "amountLabel": "$27.5 m"
+    },
+    {
+     "id": "r0b",
+     "date": "2018-06",
+     "stage": "Series B",
+     "amount": 50,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": null,
+     "leadInvestors": [],
+     "investors": [],
+     "source": "s3",
+     "dateLabel": "Jun 2018",
+     "amountLabel": "$50 m"
+    },
+    {
      "id": "r1",
      "date": "2019-11",
      "stage": "Series C",
@@ -172,7 +200,7 @@
      "title": "Celonis Secures $1 Billion to Help Customers Fight Economic and Supply Chain Challenges with Process Improvements",
      "url": "https://www.celonis.com/news/press/celonis-secures-one-billion-to-help-customers-fight-economic-and-supply-change-challenges",
      "publishedOn": "2022-08-23",
-     "quote": "In June 2021, Celonis announced its $1 billion Series D round at a valuation of $11 billion."
+     "quote": "In June 2021, Celonis announced its $1 billion Series D round at a valuation of $11 billion. The Series D followed the Series C financing round of $290 million in November 2019, a Series B of $50 million in June 2018, and a Series A of $27.5 million in June 2016."
     }
    ],
    "display": {
@@ -417,6 +445,24 @@
    },
    "rounds": [
     {
+     "id": "r0",
+     "date": "2021",
+     "stage": "Series A",
+     "amount": 102.5,
+     "currency": "EUR",
+     "approximate": false,
+     "postMoney": null,
+     "leadInvestors": [
+      "Prima Materia"
+     ],
+     "investors": [
+      "Prima Materia"
+     ],
+     "source": "s6",
+     "dateLabel": "2021",
+     "amountLabel": "€102.5 m"
+    },
+    {
      "id": "r1",
      "date": "2023-09",
      "stage": "Series B",
@@ -570,6 +616,14 @@
      "url": "https://helsing.ai/newsroom/helsing-raises-eur600m-to-invest-in-european-technological-sovereignty",
      "publishedOn": "2025-06-17",
      "quote": "Today’s announcement follows Helsing’s Series C funding of €450m in July 2024, involving General Catalyst, Elad Gil, Accel, Saab, Lightspeed Ventures, Plural and Greenoaks."
+    },
+    {
+     "id": "s6",
+     "publication": "Company press release",
+     "title": "Helsing raises €209m Series B to bolster Defence AI Capabilities for Democracies",
+     "url": "https://helsing.ai/newsroom/helsing-raises-euro209m-series-b-to-bolster-defence-ai-capabilities-for-democracies",
+     "publishedOn": "2023-09-14",
+     "quote": "This funding round follows a previous Series A (€102.5m) led by Prima Materia, an investment company founded by Daniel Ek, co-founder and CEO of Spotify."
     },
     {
      "id": "s5",

@@ -196,7 +196,13 @@ function figureForms(millions) {
     forms.push([grouped.replace(/,/g, "."), false]);  // 13.000
     forms.push([grouped.replace(/,/g, " "), false]);  // 13 000
   } else {
-    forms.push([String(Math.round(millions)), false]);
+    // Fractional sub-billion rounds (a €102.5m Series A) are printed with their
+    // decimal, English "102.5" or German "102,5" — mirrors the same two forms in
+    // tools/schema.py's _figure_forms, including its refusal to round a
+    // fractional amount to a bare integer that is a different number.
+    const decimal = String(millions);
+    forms.push([decimal, false]);
+    if (!Number.isInteger(millions)) forms.push([decimal.replace(".", ","), false]);
   }
   return forms;
 }
