@@ -6,3 +6,5 @@ __pycache__/
 # turning up in data/geo/ from the shapefile work. It is a session transcript,
 # not project data.
 .Rhistory
+
+.Rhistory
