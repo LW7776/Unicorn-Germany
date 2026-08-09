@@ -35,7 +35,7 @@
   box-shadow: 0 12px 40px -12px color-mix(in srgb, var(--beam) 45%, transparent);
 }
 .cell__plate {
-  display: grid; place-items: center; background: var(--plate);
+  display: grid; place-items: center; background: var(--plate); color: var(--plate-ink);
   border-radius: 10px; padding: var(--space-4); min-height: 5.5rem;
 }
 .cell__plate img { max-height: 3rem; width: auto; object-fit: contain; }

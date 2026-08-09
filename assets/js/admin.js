@@ -799,9 +799,25 @@ export function mount(root = document) {
 
   // renderGroups() rebuilds the whole fieldset's innerHTML, so the button that was just
   // clicked no longer exists afterward — re-find its replacement and refocus it, rather
-  // than silently dropping focus back to <body> on every add/remove.
+  // than silently dropping focus back to <body> after Remove (there is no new row to
+  // send focus to there — the row is gone — so the Add button is the sensible landing
+  // spot, same as before).
   function refocusAdd(arrayKey) {
     form.querySelector(`[data-add="${arrayKey}"]`)?.focus();
+  }
+
+  // Task 19 fix: after Add, focus used to land back on the Add button itself, which
+  // makes an operator using a screen reader or keyboard Tab past the very row they
+  // just asked to fill in — they'd have to tab through every field of every existing
+  // row again to reach it. The new row's first field (its data-row markup comes from
+  // roundRow/founderRow/sourceRow, in the same FIELDS order used elsewhere) is the
+  // useful place to land, so an operator can start typing immediately. Falls back to
+  // the Add button only if the row somehow isn't found — never drops focus silently.
+  function focusFirstFieldInRow(arrayKey, index) {
+    const row = form.querySelector(`[data-row="${arrayKey}:${index}"]`);
+    const field = row?.querySelector("input, textarea, select");
+    if (field) field.focus();
+    else refocusAdd(arrayKey);
   }
 
   form.addEventListener("click", (event) => {
@@ -810,9 +826,10 @@ export function mount(root = document) {
       event.preventDefault();
       record[addKey] = record[addKey] || [];
       record[addKey].push(ROW_TEMPLATES[addKey](record[addKey].length + 1));
+      const newIndex = record[addKey].length - 1;
       renderGroups();
       refreshPreviewAndErrors();
-      refocusAdd(addKey);
+      focusFirstFieldInRow(addKey, newIndex);
       return;
     }
     const removeKey = event.target.closest("[data-remove]")?.dataset.remove;

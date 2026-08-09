@@ -10,14 +10,20 @@
 .admin__lede {
   color: var(--muted); max-width: 44rem; margin: 0 0 var(--space-5); line-height: 1.6;
 }
-.admin__lede code { font-size: .95em; }
+/* max(): the .95em optical shrink (mono against mono, so it only needs to be
+   subtle) is safe against .admin__lede's larger body-size text, but applied
+   on top of .admin__note's already-smallest --step--1 it dropped as low as
+   11.48px at 375px wide — under the site's 12px text floor. max() keeps the
+   shrink everywhere it has room and clamps to the floor where it doesn't,
+   rather than dropping the effect for both contexts. */
+.admin__lede code { font-size: max(12px, .95em); }
 
 .admin__note {
   max-width: 50rem; margin: 0 0 var(--space-6); padding: var(--space-4) var(--space-5);
   border: 1px solid color-mix(in srgb, var(--amber) 50%, transparent); border-radius: var(--radius);
   background: var(--panel); color: var(--ink); font-size: var(--step--1); line-height: 1.6;
 }
-.admin__note code { font-size: .95em; }
+.admin__note code { font-size: max(12px, .95em); }
 
 .admin__load { margin-bottom: var(--space-6); max-width: 26rem; }
 

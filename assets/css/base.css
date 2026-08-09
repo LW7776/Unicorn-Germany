@@ -89,6 +89,14 @@ img, svg { max-width: 100%; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: .01ms !important; animation-iteration-count: 1 !important;
+    /* animation-delay isn't just a startup pause here — detail.css's
+       .timeline__node uses it to stagger each round's reveal
+       (calc(var(--i) * 70ms)). Without zeroing it too, reduced motion would
+       shrink each node's own animation to instant but the nodes would still
+       pop in one after another at 70ms intervals — staggering by timing
+       rather than by motion, which still fails the "without staggering"
+       requirement it's meant to satisfy. */
+    animation-delay: 0s !important;
     transition-duration: .01ms !important; scroll-behavior: auto !important;
   }
 }

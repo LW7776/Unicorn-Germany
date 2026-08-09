@@ -6,6 +6,11 @@ const MAX_RADIUS = 46; // added on top of BASE_RADIUS for the most-represented c
 // `min-height: 44px` on buttons, selects and chips) — halved because it's
 // used as a circle radius, not a diameter.
 const MIN_HIT_TARGET_PX = 44;
+// The site's "no text below 12px" floor (docs/QA.md), plus a small buffer so
+// sub-pixel rounding never lands exactly on the edge — see labelFontSize
+// below, where this gets scaled back into the SVG's user units the same way
+// MIN_HIT_TARGET_PX is.
+const MIN_LABEL_PX = 13;
 // Used only if the SVG can't be measured (e.g. rendered with zero width);
 // matches this file's previous fixed-radius behaviour as a safety net.
 const FALLBACK_HIT_RADIUS = 65;
@@ -49,6 +54,16 @@ export async function renderMap(container, companies, { onSelectCity }) {
   // page — worse than the honest "Not shown on the map" fallback this check
   // routes it to instead, indistinguishable here from a city this file never
   // got coordinates for at all.
+  // Task 19 note: this checks the city's centre point against the viewBox,
+  // not the halo's outer edge (visibleRadius, computed later below — it
+  // depends on `max`, which depends on this function's own result, so
+  // checking the full circle here would be circular). A city whose centre
+  // clears the box by less than its eventual radius could still have its
+  // halo clipped by the SVG's default overflow:hidden. Verified against the
+  // shipped dataset (docs/QA.md): every placed city clears its edge by at
+  // least 151 viewBox units against a largest radius of 64 — not close.
+  // Revisit this function if a future city ever lands within ~65 units of
+  // an edge.
   function isPlaceable(city) {
     const coords = geoCities[city];
     if (!coords) return false;
@@ -79,10 +94,19 @@ export async function renderMap(container, companies, { onSelectCity }) {
   // width can be measured below — the viewBox scales content independent of
   // what's inside it, so this measurement doesn't need the city bubbles to
   // exist yet, and doesn't need a second layout pass after adding them.
+  // role="group" (not "img"): an svg with role="img" tells assistive tech to
+  // treat the whole element as one flat image and stop descending into its
+  // children — exactly wrong here, where each city is a separate role="button"
+  // that must stay individually reachable and announced. "group" keeps the
+  // accessible name (aria-label below) on the container while leaving every
+  // descendant in the tree; the outline path carries no information of its
+  // own (the cities and the note below it say everything a reader needs), so
+  // it's marked aria-hidden rather than left to surface as an unlabelled
+  // shape now that the parent no longer flattens it away automatically.
   container.innerHTML = `
-    <svg class="map__svg" viewBox="${escapeHtml(geo.viewBox)}" role="img"
+    <svg class="map__svg" viewBox="${escapeHtml(geo.viewBox)}" role="group"
          aria-label="German unicorns by headquarters city">
-      ${geo.outline ? `<path class="map__outline" d="${escapeHtml(geo.outline)}"/>` : ""}
+      ${geo.outline ? `<path class="map__outline" d="${escapeHtml(geo.outline)}" aria-hidden="true"/>` : ""}
     </svg>`;
   const svg = container.querySelector(".map__svg");
   const renderedWidth = svg.getBoundingClientRect().width;
@@ -94,6 +118,14 @@ export async function renderMap(container, companies, { onSelectCity }) {
   const targetHitRadius = scale > 0
     ? (MIN_HIT_TARGET_PX / 2) / scale
     : FALLBACK_HIT_RADIUS;
+  // Same scale-correction as targetHitRadius above, for the same reason: CSS
+  // font-size on SVG text is set in *user* units (register.css's .map__label
+  // is 22), so it shrinks along with everything else as the viewBox scales
+  // down on a narrow viewport — measured ~7.5px rendered at 375px wide,
+  // well under the site's 12px text floor. MIN_LABEL_PX is 13, a hair above
+  // that floor so sub-pixel rounding never lands exactly on the edge; never
+  // goes below the design's own 22 at wider viewports.
+  const labelFontSize = scale > 0 ? Math.max(22, MIN_LABEL_PX / scale) : 22;
 
   const positioned = known.map(([city, n]) => {
     const [x, y] = geoCities[city];
@@ -132,12 +164,17 @@ export async function renderMap(container, companies, { onSelectCity }) {
   svg.insertAdjacentHTML("beforeend", sized.map(({ city, n, x, y, visibleRadius, hitRadius }) => {
     const safeCity = escapeHtml(city);
     const label = `${safeCity}, ${n} ${n === 1 ? "company" : "companies"}`;
+    // .map__label repeats the same city+count already carried by this <g>'s
+    // aria-label (a visible echo for sighted users, since the halo alone
+    // doesn't show which city it is) — aria-hidden keeps it from being
+    // announced a second time now that the group is reachable and named.
     return `<g class="map__city" data-city="${safeCity}" tabindex="0" role="button"
                aria-label="${label}">
       <circle cx="${x}" cy="${y}" r="${hitRadius}" class="map__hit"/>
       <circle cx="${x}" cy="${y}" r="${visibleRadius}" class="map__halo"/>
       <circle cx="${x}" cy="${y}" r="4" class="map__pin"/>
-      <text x="${x}" y="${y - visibleRadius - 10}" class="map__label">${safeCity} · ${n}</text>
+      <text x="${x}" y="${y - visibleRadius - 10}" class="map__label" aria-hidden="true"
+            style="font-size:${labelFontSize}px">${safeCity} · ${n}</text>
     </g>`;
   }).join(""));
 
