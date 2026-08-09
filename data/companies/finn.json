@@ -70,8 +70,30 @@
   "founders": [
     {
       "name": "Maximilian Wühr",
-      "role": "Co-Founder & CEO",
+      "role": "Co-founder & CEO",
       "current": true
+    },
+    {
+      "name": "Nikolai Schröder",
+      "role": "Co-founder & Chief Operations Officer",
+      "current": true
+    },
+    {
+      "name": "Andreas Wixler",
+      "role": "Co-founder"
+    },
+    {
+      "name": "Max Beyer",
+      "role": "Co-founder"
+    },
+    {
+      "name": "Hans-Peter Ringer",
+      "role": "Co-founder"
+    },
+    {
+      "name": "Max-Josef Meier",
+      "role": "Co-founder; CEO until April 2023",
+      "current": false
     }
   ],
   "investors": [

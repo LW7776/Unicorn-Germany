@@ -29,5 +29,26 @@
   simplify to 330 points. Output file: `data/geo/germany.json`, 4,866 bytes.
 - **Regeneration**: `python3 tools/fetch_geo.py`. The ~14 MB source download
   is never committed — only the derived `germany.json` is. If the source is
-  unreachable, the script falls back to writing `outline: null` (bubbles
-  still render, just without a coastline); this run did not need that path.
+  unreachable, the script raises and leaves the committed file untouched
+  rather than writing a degraded one; this run did not need that path.
+- **New York** (Dash0's `hq.city`) was added to `CITY_COORDS` and projected
+  by the same `build_projection` as every other city, per its coordinates
+  read from OpenStreetMap's Nominatim record (city=New York City,
+  state=New York, country=USA: lat 40.7127281, lon -74.0060152). The result,
+  confirmed both in this file and by reading `.map__pin`'s live `cx`/`cy` off
+  the rendered page, is `[-7972.4, 2357.3]` — a long way outside the
+  `0 0 1000 1400` viewBox, because this projection is fit to Germany's own
+  bounding box and a point roughly 6,500 km to its west falls nowhere near
+  it. This is a real, confirmed regression, not a hypothetical one:
+  `assets/js/map.js` places a bubble for any city present in this file's
+  `cities` object without checking it falls inside the viewBox, and the
+  browser applies `overflow: hidden` to the map's `<svg>` (confirmed via
+  `getComputedStyle` on the live page), which clips that bubble to nothing.
+  Before this entry existed, Dash0 fell into `unplaced` and the page printed
+  "Not shown on the map: New York (1)" — a visible, honest admission. Now it
+  is `known` (New York has coordinates on file) but invisible, so the page
+  renders **no note at all** and the company simply isn't on the map, with
+  nothing telling a reader that. That is worse than the fallback it
+  replaced. Left as-is pending a decision on how (or whether) the register
+  should place a non-German HQ on a map of Germany at all; see
+  `docs/CANDIDATES.md`'s Dash0 note.

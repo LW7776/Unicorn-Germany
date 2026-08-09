@@ -37,6 +37,8 @@ are not covered by this repository's licence.
 | `finn.svg` | https://www.finn.com/en-DE (header wordmark, inline SVG) | 2026-08-09 | Copied verbatim; see note |
 | `cmblu.png` | https://cdn.prod.website-files.com/69cbaf5e811b5d975e23932c/69cbf10a32d894b7f979062e_webclip.png | 2026-08-09 | Downloaded unchanged; see note |
 | `dash0.png` | https://www.dash0.com/apple-touch-icon.png | 2026-08-09 | Downloaded unchanged; see note |
+| `n8n.png` | https://n8n.io/apple-touch-icon.png | 2026-08-09 | Downloaded unchanged; see note |
+| `stark.svg` | https://stark-defence.com (preloader mark, inline SVG) | 2026-08-09 | Copied verbatim from the page |
 
 ## Notes
 
@@ -91,3 +93,19 @@ are not covered by this repository's licence.
   smaller than the vector marks; the plate does not upscale them, so they stay crisp.
 - **sennder** serves two variants; the stored file is the orange-on-transparent
   `logo.svg` its own site uses, not the all-white `logo-invert.svg` for dark backgrounds.
+- **n8n** serves its header mark as an inline SVG (icon + "n8n" wordmark, both as vector
+  paths) whose paths carry no `fill` of their own — colour comes entirely from a
+  `.path-icon`/`.path-name` class pair the site's own stylesheet resolves per `data-theme`,
+  and in every theme the homepage uses, `.path-name` resolves to white or near-white
+  (`fill:#fff`, `fill:#fffc`), meant for a dark navbar. Copied out of that stylesheet's
+  context the paths inherit the root `<svg>`'s `fill="none"` and render nothing at all, so a
+  verbatim copy was not viable the way it was for Helsing or FINN. The stored file is instead
+  n8n's own `apple-touch-icon.png` — its pink flame mark, unaltered, on n8n's own opaque white
+  tile — the same precedent as Proxima Fusion and Scalable Capital's touch icons above. It is
+  a 180 × 180 raster and so renders smaller than the vector wordmarks; the plate does not
+  upscale it, so it stays crisp.
+- **Stark** serves its mark only inside the loading-screen preloader of its own homepage, as
+  an inline SVG; there is no separate downloadable file and no mark in the page's permanent
+  header. The `<svg>` element was copied verbatim, including its native `xmlns` (no attribute
+  needed adding, unlike the sprite- and fragment-served marks above). Nothing was recoloured
+  or redrawn.

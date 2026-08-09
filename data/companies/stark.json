@@ -1,0 +1,181 @@
+{
+  "slug": "stark",
+  "name": "Stark",
+  "website": "https://stark-defence.com",
+  "logo": "assets/logos/stark.svg",
+  "hq": {
+    "city": "Berlin",
+    "country": "DE"
+  },
+  "foundedCountry": "DE",
+  "foundedYear": 2024,
+  "sectors": [
+    "Defence"
+  ],
+  "thesis": {
+    "problem": "European defence procurement was built to buy small numbers of expensive platforms over decades. The war in Ukraine showed that attritable strike drones are consumed in thousands per month, and that the bottleneck is not designing one but manufacturing, iterating and fielding them faster than an adversary can adapt their countermeasures.",
+    "solution": "Stark builds loitering munitions — drones that hold over an area, find a target and destroy it on impact — and treats production rate as the product. Its stated use of the 2026 round is new electronic-warfare research facilities and scaling output to thousands of systems a month, which is the number that matters in a war of attrition rather than a unit-cost comparison against a missile."
+  },
+  "valuation": {
+    "amount": 3500,
+    "currency": "EUR",
+    "approximate": false,
+    "asOf": "2026-06",
+    "round": "Funding round",
+    "source": "s2"
+  },
+  "becameUnicorn": {
+    "date": "2026-01",
+    "roundId": "r2",
+    "source": "s3"
+  },
+  "totalRaised": {
+    "amount": null,
+    "currency": "USD",
+    "approximate": false,
+    "source": "s5"
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "date": "2025-08",
+      "stage": "Sequoia-led round",
+      "amount": 62,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": 500,
+      "postMoneyCurrency": "USD",
+      "postMoneySource": "s5",
+      "leadInvestors": [
+        "Sequoia Capital"
+      ],
+      "investors": [
+        "Sequoia Capital",
+        "Thiel Capital",
+        "NATO Innovation Fund",
+        "In-Q-Tel",
+        "Project A",
+        "Döpfner Capital"
+      ],
+      "source": "s4"
+    },
+    {
+      "id": "r2",
+      "date": "2026-01",
+      "stage": "Unannounced funding round",
+      "amount": null,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": 1000,
+      "postMoneyCurrency": "USD",
+      "postMoneySource": "s3",
+      "leadInvestors": [],
+      "investors": [],
+      "source": "s3",
+      "disputed": {
+        "note": "This is the round that crossed the threshold and it was never announced, so the register is publishing the least-disclosed figure in it. What supports the date and the numeral is Sifted, in June 2026, reporting its own earlier finding: the company “reached unicorn status in an unannounced January funding round valuing it at more than $1bn”. When Sifted first reported it in February, the size of the round was undisclosed, the source was Manager Magazin, and the valuation was confirmed only by “a person close to the company”, who put it in a different currency: “Stark is worth more than one billion.” Hence a round here with no amount and no investors — those were never published — and hence this note. A reader should weigh it accordingly: this is the crossing as an allowlisted publication states it, not as the company has ever confirmed it.",
+        "source": "s6"
+      }
+    },
+    {
+      "id": "r3",
+      "date": "2026-06",
+      "stage": "Funding round",
+      "amount": 500,
+      "currency": "EUR",
+      "approximate": false,
+      "postMoney": 3500,
+      "postMoneyCurrency": "EUR",
+      "postMoneySource": "s2",
+      "leadInvestors": [],
+      "investors": [
+        "Sequoia Capital",
+        "Founders Fund",
+        "NATO Innovation Fund",
+        "Project A",
+        "Air Street Capital",
+        "201 Ventures",
+        "Advent",
+        "Döpfner Capital"
+      ],
+      "source": "s1"
+    }
+  ],
+  "founders": [
+    {
+      "name": "Florian Seibel",
+      "role": "Founder",
+      "current": false
+    }
+  ],
+  "investors": [
+    "Sequoia Capital",
+    "Founders Fund",
+    "NATO Innovation Fund",
+    "Project A",
+    "Air Street Capital",
+    "201 Ventures",
+    "Advent",
+    "Döpfner Capital",
+    "Thiel Capital",
+    "In-Q-Tel"
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "publication": "Tech.eu",
+      "title": "Stark bags €500M in new funding",
+      "url": "https://tech.eu/2026/06/23/stark-bags-eur500-million-in-new-funding/",
+      "publishedOn": "2026-06-23",
+      "quote": "Stark, the German defence tech startup which makes weaponised drones, has today confirmed it has raised €500 million in new funding."
+    },
+    {
+      "id": "s2",
+      "publication": "Tech.eu",
+      "title": "Stark bags €500M in new funding",
+      "url": "https://tech.eu/2026/06/23/stark-bags-eur500-million-in-new-funding/",
+      "publishedOn": "2026-06-23",
+      "quote": "The funding round values Stark at €3.5bn."
+    },
+    {
+      "id": "s3",
+      "publication": "Sifted",
+      "title": "Drones startup Stark confirms €500m raise backed by Sequoia and Founders Fund",
+      "url": "https://sifted.eu/articles/stark-defence-drones-funding-round-confirms",
+      "publishedOn": "2026-06-23",
+      "quote": "Sifted previously reported that the company reached unicorn status in an unannounced January funding round valuing it at more than $1bn, after raising $62m last August in a Sequoia-led round."
+    },
+    {
+      "id": "s4",
+      "publication": "Sifted",
+      "title": "Drone startup Stark ‘reaches unicorn valuation’ following German armed forces deal",
+      "url": "https://sifted.eu/articles/stark-unicorn-valuation-following-german-armed-forces-deal",
+      "publishedOn": "2026-02-13",
+      "quote": "Prior to this latest unannounced raise, Stark had raised a $62m round in August last year, led by Sequoia Capital, with participation from Thiel Capital, the NATO Innovation Fund, In-Q-Tel, Project A and Döpfner Capital."
+    },
+    {
+      "id": "s5",
+      "publication": "Sifted",
+      "title": "Drone startup Stark ‘reaches unicorn valuation’ following German armed forces deal",
+      "url": "https://sifted.eu/articles/stark-unicorn-valuation-following-german-armed-forces-deal",
+      "publishedOn": "2026-02-13",
+      "quote": "That round valued the company at roughly $500m and brought its total disclosed funding to about $100m since its founding."
+    },
+    {
+      "id": "s6",
+      "publication": "Sifted",
+      "title": "Drone startup Stark ‘reaches unicorn valuation’ following German armed forces deal",
+      "url": "https://sifted.eu/articles/stark-unicorn-valuation-following-german-armed-forces-deal",
+      "publishedOn": "2026-02-13",
+      "quote": "German armed drone startup Stark has secured a fresh round of undisclosed funding that reportedly boosts its valuation above €1bn, Manager Magazin reports."
+    },
+    {
+      "id": "s7",
+      "publication": "Sifted",
+      "title": "Drones startup Stark confirms €500m raise backed by Sequoia and Founders Fund",
+      "url": "https://sifted.eu/articles/stark-defence-drones-funding-round-confirms",
+      "publishedOn": "2026-06-23",
+      "quote": "Stark was founded by Quantum Systems founder Florian Seibel, who has since stepped back from day-to-day operations and remains a founding investor."
+    }
+  ]
+}

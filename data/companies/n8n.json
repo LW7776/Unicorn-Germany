@@ -1,0 +1,164 @@
+{
+  "slug": "n8n",
+  "name": "n8n",
+  "website": "https://n8n.io",
+  "logo": "assets/logos/n8n.png",
+  "hq": {
+    "city": "Berlin",
+    "country": "DE"
+  },
+  "foundedCountry": "DE",
+  "foundedYear": 2019,
+  "sectors": [
+    "Enterprise Software",
+    "Artificial Intelligence"
+  ],
+  "thesis": {
+    "problem": "Automating work across a company's software means wiring together hundreds of separate tools, and the platforms that promise to do it are usually rigid: they own the logic, run only in their own cloud, and charge per task, so the bill grows with the very usage they encourage. Adding language models made it worse — organisations bought AI and then found nobody could connect it to the systems where the work actually happens.",
+    "solution": "n8n is a workflow automation platform whose canvas is visual but whose steps can drop into code, with more than a thousand integrations and the option to run it on the company's own infrastructure. Its bet is that the scarce thing in enterprise AI is not the model but the orchestration around it, so it sells the layer that lets an AI agent act on the systems a business already runs."
+  },
+  "valuation": {
+    "amount": 5200,
+    "currency": "USD",
+    "approximate": false,
+    "asOf": "2026-05",
+    "round": "Secondary",
+    "source": "s1"
+  },
+  "becameUnicorn": {
+    "date": "2025-10",
+    "roundId": "r2",
+    "source": "s3"
+  },
+  "totalRaised": {
+    "amount": 240,
+    "currency": "USD",
+    "approximate": false,
+    "source": "s4"
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "date": "2025-03",
+      "stage": "Funding round",
+      "amount": 60,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": null,
+      "leadInvestors": [],
+      "investors": [],
+      "source": "s4"
+    },
+    {
+      "id": "r2",
+      "date": "2025-10",
+      "stage": "Series C",
+      "amount": 180,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": 2500,
+      "postMoneyCurrency": "USD",
+      "postMoneySource": "s3",
+      "leadInvestors": [
+        "Accel"
+      ],
+      "investors": [
+        "Accel",
+        "Meritech",
+        "Redpoint",
+        "Evantic",
+        "Visionaries Club",
+        "T Capital",
+        "NVentures",
+        "Sequoia",
+        "HV Capital",
+        "Highland Europe",
+        "Felicis Ventures"
+      ],
+      "source": "s3"
+    },
+    {
+      "id": "r3",
+      "date": "2026-05",
+      "stage": "Secondary",
+      "amount": null,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": 5200,
+      "postMoneyCurrency": "USD",
+      "postMoneySource": "s1",
+      "leadInvestors": [],
+      "investors": [
+        "SAP"
+      ],
+      "source": "s1",
+      "disputed": {
+        "note": "The $5.2bn is set by a secondary, not by a priced primary round, and the register labels it as one rather than letting it read as new money. Tech.eu: “SAP’s investment in n8n comes courtesy of an n8n secondary share sale, which brings SAP to the n8n cap table for the first time.” SAP bought existing shares; no amount was disclosed, which is why this round carries no `amount`. The register does publish valuations struck by secondaries — Trade Republic’s €12.5bn is one — but says so, because a price at which existing holders sold is not the same measure as a post-money struck when new capital enters a company.",
+        "source": "s2"
+      }
+    }
+  ],
+  "founders": [
+    {
+      "name": "Jan Oberhauser",
+      "role": "Founder & CEO",
+      "current": true
+    }
+  ],
+  "investors": [
+    "SAP",
+    "Accel",
+    "Sequoia",
+    "Meritech",
+    "Redpoint",
+    "Evantic",
+    "Visionaries Club",
+    "T Capital",
+    "NVentures",
+    "HV Capital",
+    "Highland Europe",
+    "Felicis Ventures"
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "publication": "Tech.eu",
+      "title": "N8n's valuation doubles to $5.2BN following SAP strategic investment",
+      "url": "https://tech.eu/2026/05/12/n8n-s-valuation-doubles-to-5-2bn-following-sap-strategic-investment/",
+      "publishedOn": "2026-05-12",
+      "quote": "N8n, the Berlin-based startup which helps businesses automate tasks, has more than doubled its valuation to $5.2bn in less than a year following a strategic investment from German software giant SAP, it said today."
+    },
+    {
+      "id": "s2",
+      "publication": "Tech.eu",
+      "title": "N8n's valuation doubles to $5.2BN following SAP strategic investment",
+      "url": "https://tech.eu/2026/05/12/n8n-s-valuation-doubles-to-5-2bn-following-sap-strategic-investment/",
+      "publishedOn": "2026-05-12",
+      "quote": "SAP’s investment in n8n comes courtesy of an n8n secondary share sale, which brings SAP to the n8n cap table for the first time."
+    },
+    {
+      "id": "s3",
+      "publication": "Tech.eu",
+      "title": "Hyped AI business automation startup n8n raises $180M, valuing it at $2.5BN",
+      "url": "https://tech.eu/2025/10/09/hyped-ai-business-automation-startup-n8n-raises-180m-valuing-it-at-2bn/",
+      "publishedOn": "2025-10-09",
+      "quote": "N8n, the Berlin-based hyped AI startup which helps businesses automate tasks, has confirmed that it has raised $180m, valuing it at $2.5bn."
+    },
+    {
+      "id": "s4",
+      "publication": "Tech.eu",
+      "title": "Hyped AI business automation startup n8n raises $180M, valuing it at $2.5BN",
+      "url": "https://tech.eu/2025/10/09/hyped-ai-business-automation-startup-n8n-raises-180m-valuing-it-at-2bn/",
+      "publishedOn": "2025-10-09",
+      "quote": "N8n has now raised $240m in total since it was founded in 2019, having raised $60m in March this year."
+    },
+    {
+      "id": "s5",
+      "publication": "Tech.eu",
+      "title": "N8n's valuation doubles to $5.2BN following SAP strategic investment",
+      "url": "https://tech.eu/2026/05/12/n8n-s-valuation-doubles-to-5-2bn-following-sap-strategic-investment/",
+      "publishedOn": "2026-05-12",
+      "quote": "Jan Oberhauser, founder & CEO, n8n, said: \"For n8n, securing SAP as a strategic investor marks a pivotal moment."
+    }
+  ]
+}

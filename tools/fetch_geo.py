@@ -55,6 +55,21 @@ CITY_COORDS = {
     # every other city — no pixel value in data/geo/germany.json is placed by
     # hand.
     "Alzenau": (50.086, 9.073),
+    # New York (Dash0's hq.city) is the register's first non-German entry.
+    # Included for completeness — every hq.city a published record uses
+    # should have a coordinate on file rather than silently fall back to
+    # "Not shown on the map" — but this projection is built to fit Germany's
+    # own bounding box (build_projection, above), and a city roughly 6,500 km
+    # west of it projects a long way outside the 0-1000 x 0-1400 viewBox as a
+    # result: the map clips its content to the viewBox by default, so the
+    # bubble does not actually appear on the rendered map even though it is
+    # "known" rather than "unplaced". That is a real limitation of reusing
+    # one small-area projection for a point nowhere near it, not a bug in the
+    # projection itself, and it is not papered over here — see
+    # data/geo/README.md. Coordinates read off OpenStreetMap's Nominatim
+    # record for the city (ODbL, © OpenStreetMap contributors): city=New York
+    # City, state=New York, country=USA -> lat 40.7127281, lon -74.0060152.
+    "New York": (40.713, -74.006),
 }
 
 
