@@ -301,6 +301,113 @@ def test_a_misspelled_optional_round_field_is_rejected(record):
                for e in validate_company(record))
 
 
+# --------------------------------------------------------------------------------------
+# Undisclosed valuations. The inclusion rule is membership — private, independent, over a
+# billion — and the figure is a nice-to-have. These tests pin the shape that lets a
+# company whose unicorn status is sourced, but whose valuation nobody ever printed, be
+# expressed without inventing a number for it.
+# --------------------------------------------------------------------------------------
+
+UNICORN_QUOTE = {
+    "id": "s3", "publication": "TechCrunch", "title": "Europe's new unicorns",
+    "url": "https://techcrunch.com/2025/09/08/new-unicorns/", "publishedOn": "2025-09-08",
+    "quote": "German startup Example GmbH became a unicorn in March, according to PitchBook."}
+
+
+@pytest.fixture
+def undisclosed(record):
+    """The reference record with its figure removed and evidence put in its place."""
+    record["sources"].append(dict(UNICORN_QUOTE))
+    record["valuation"] = {
+        "amount": None, "currency": None, "approximate": False, "asOf": "2025-09",
+        "round": "Series C", "source": "s1",
+        "undisclosed": {"note": "No allowlisted source states a figure.", "source": "s3"}}
+    record["rounds"][1]["postMoney"] = None
+    record["rounds"][1]["undisclosed"] = {
+        "note": "The round that crossed; its price was never published.", "source": "s3"}
+    return record
+
+
+def test_a_valuation_with_no_amount_but_sourced_evidence_validates(undisclosed):
+    assert validate_company(undisclosed) == []
+
+
+def test_a_valuation_with_neither_an_amount_nor_evidence_is_an_error(record):
+    record["valuation"]["amount"] = None
+    assert any("no amount and no undisclosed evidence" in e for e in validate_company(record))
+
+
+def test_a_valuation_carrying_both_an_amount_and_undisclosed_evidence_is_an_error(undisclosed):
+    undisclosed["valuation"]["amount"] = 1200
+    undisclosed["valuation"]["currency"] = "EUR"
+    assert any("mutually exclusive" in e for e in validate_company(undisclosed))
+
+
+def test_undisclosed_citing_an_unknown_source_is_an_error(undisclosed):
+    undisclosed["valuation"]["undisclosed"]["source"] = "s99"
+    assert any("undisclosed" in e and "s99" in e for e in validate_company(undisclosed))
+
+
+def test_undisclosed_with_an_empty_note_is_an_error(undisclosed):
+    undisclosed["valuation"]["undisclosed"]["note"] = "   "
+    assert any("undisclosed.note" in e for e in validate_company(undisclosed))
+
+
+def test_undisclosed_that_is_not_an_object_is_an_error(undisclosed):
+    undisclosed["valuation"]["undisclosed"] = "no figure published"
+    assert any("undisclosed must be an object" in e for e in validate_company(undisclosed))
+
+
+def test_a_crossing_round_with_no_post_money_and_no_evidence_is_an_error(undisclosed):
+    """The gap this must never open: `postMoney: null` on its own would otherwise let any
+    round at all be named as the crossing."""
+    del undisclosed["rounds"][1]["undisclosed"]
+    errors = validate_company(undisclosed)
+    assert any("established qualitatively" in e for e in errors)
+
+
+def test_an_earlier_priced_round_still_invalidates_a_qualitative_crossing(undisclosed):
+    """The rule that caught Celonis, Forto, Enpal, Scalable Capital and Flix has to keep
+    working when the named round carries evidence instead of a figure — otherwise making
+    the crossing expressible without a number would quietly switch it off."""
+    undisclosed["rounds"][0]["postMoney"] = 1000
+    undisclosed["sources"][1]["quote"] = (
+        "Example GmbH raised 60 million euros in a Series B round led by Earlybird "
+        "on a 1 billion euro valuation.")
+    errors = validate_company(undisclosed)
+    assert any("crossed earlier" in e and "r1" in e and "r2" in e for e in errors)
+
+
+def test_a_priced_crossing_round_below_the_threshold_is_still_an_error(undisclosed):
+    """Evidence on the round does not excuse a figure that is on file and too small."""
+    undisclosed["rounds"][1]["postMoney"] = 400
+    undisclosed["sources"][0]["quote"] = (
+        "Example GmbH raised 120 million euros at a valuation of 400 million euros, "
+        "and has raised 300 million euros in total.")
+    assert any("threshold" in e for e in validate_company(undisclosed))
+
+
+def test_an_undisclosed_valuation_still_needs_a_parsable_as_of(undisclosed):
+    undisclosed["valuation"]["asOf"] = "September 2025"
+    assert any("valuation.asOf" in e for e in validate_company(undisclosed))
+
+
+def test_a_later_round_disclosing_a_post_money_still_supersedes_an_undisclosed_valuation(undisclosed):
+    """Whatever the headline is, a newer priced round is the figure to publish — and a
+    company with an undisclosed valuation and a later disclosed one should be publishing
+    the number, not the note."""
+    undisclosed["valuation"]["asOf"] = "2022-01"
+    undisclosed["rounds"][1]["postMoney"] = 1200
+    del undisclosed["rounds"][1]["undisclosed"]
+    undisclosed["becameUnicorn"] = {"date": "2024-03", "roundId": "r2", "source": "s1"}
+    assert any("predates round r2" in e for e in validate_company(undisclosed))
+
+
+def test_a_misspelled_undisclosed_on_a_round_is_rejected_by_name(record):
+    record["rounds"][1]["undisclosd"] = {"note": "x", "source": "s1"}
+    assert any("unknown field" in e and "undisclosd" in e for e in validate_company(record))
+
+
 def test_the_known_round_fields_are_all_accepted(record):
     record["sources"].append({
         "id": "s3", "publication": "Company press release", "title": "Unicorn",

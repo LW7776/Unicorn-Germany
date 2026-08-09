@@ -26,6 +26,24 @@ from tools.schema import CURRENCY_SYMBOL, date_sort_key, format_amount, format_d
 
 AGED_AFTER_MONTHS = 24
 
+# What the grid card and the detail window print where a figure would go, for a company
+# whose unicorn status is sourced but whose valuation no allowlisted source has ever
+# published. Two words, because one is not enough and a sentence is too many:
+#
+#   "Undisclosed"  says the true thing — nobody published a number — in the slot a
+#                  reader reads as "how much". On its own it would strip out the only
+#                  quantitative fact the register does know.
+#   ">1bn"         puts that fact back. No currency symbol, deliberately: the inclusion
+#                  rule is "$1B **or** €1B, as reported", and for these records the
+#                  source says "reached unicorn status" or "knackte die
+#                  Milliarden-Bewertung" without committing to one. Printing "$" here
+#                  would be the register asserting a currency nobody used.
+#
+# Rejected: a bare "—", which is what every other unknown field renders as and would
+# read as "worth nothing" beside "$8 bn"; and "€0", which it must never look like.
+UNDISCLOSED_VALUATION_LABEL = "Undisclosed"
+UNDISCLOSED_VALUATION_BADGE = ">1bn"
+
 
 def _months_between(later, earlier):
     (y1, m1), (y2, m2) = later, earlier
@@ -76,8 +94,9 @@ def _investors_leads_first(record):
     return [name for name in investors if name in leads] + [name for name in investors if name not in leads]
 
 
-def _unicorn_threshold_label(record):
-    """"$1bn" or "€1bn" — whichever threshold this company actually crossed.
+def _unicorn_labels(record):
+    """(threshold, flag) for the crossing: ("$1bn", "crossed $1bn"), or the pair used
+    when the crossing round published no price of its own.
 
     The inclusion rule is "$1B **or** €1B, as reported", and which one a company
     cleared is not decoration. Enpal's crossing round was priced at "€950 million
@@ -86,12 +105,21 @@ def _unicorn_threshold_label(record):
     source quoted two inches below it, and the same was true of every record whose
     crossing was reported in dollars. The label follows the crossing round's own
     post-money currency instead, so it can only ever say what the source said.
+
+    A round that carries `undisclosed` instead of a post-money has no currency to
+    follow, and falling back to the round's own — the currency of the *money raised* —
+    would print "crossed €1bn" off a €160m Series C whose valuation nobody stated. So
+    that case says what the source actually says and no more: "reached unicorn status",
+    and "Years to unicorn" rather than "Years to €1bn".
     """
     by_id = {entry.get("id"): entry for entry in record.get("rounds", [])}
     unicorn_round = by_id.get(record["becameUnicorn"].get("roundId")) or {}
+    if unicorn_round.get("postMoney") is None and unicorn_round.get("undisclosed"):
+        return "unicorn", "reached unicorn status"
     currency = (unicorn_round.get("postMoneyCurrency")
                 or unicorn_round.get("currency") or "EUR")
-    return f"{CURRENCY_SYMBOL.get(currency, currency + ' ')}1bn"
+    threshold = f"{CURRENCY_SYMBOL.get(currency, currency + ' ')}1bn"
+    return threshold, f"crossed {threshold}"
 
 
 def derive_company(record, today, fx_rate=0.92):
@@ -101,10 +129,22 @@ def derive_company(record, today, fx_rate=0.92):
     last_round = rounds[-1] if rounds else None
     unicorn_year, _ = parse_date(record["becameUnicorn"]["date"])
     founders = record.get("founders") or []
+    # validate.py guarantees exactly one of the two: an amount, or `undisclosed`
+    # evidence that the company is over the threshold. Nothing here has to cope with
+    # a record carrying neither.
+    valuation_undisclosed = valuation.get("amount") is None
+    threshold_label, unicorn_flag_label = _unicorn_labels(record)
 
     display = {
-        "valuationLabel": format_amount(
+        "valuationLabel": UNDISCLOSED_VALUATION_LABEL if valuation_undisclosed
+        else format_amount(
             valuation["amount"], valuation["currency"], valuation.get("approximate", False)),
+        "valuationUndisclosed": valuation_undisclosed,
+        "valuationUndisclosedBadge": UNDISCLOSED_VALUATION_BADGE if valuation_undisclosed else None,
+        # For an undisclosed valuation this is the date the *evidence* was reported —
+        # the day an allowlisted page said the company was a unicorn — not the day a
+        # figure was struck, because there is no figure. Same field, same staleness
+        # rule: evidence ages exactly like a number does.
         "valuationAsOf": format_date(valuation["asOf"]),
         "lastRoundLabel": format_date(last_round["date"]) if last_round else "—",
         "lastRoundStage": last_round["stage"] if last_round else "—",
@@ -114,7 +154,8 @@ def derive_company(record, today, fx_rate=0.92):
         if record["totalRaised"].get("amount") is not None else "—",
         "yearsToUnicorn": unicorn_year - record["foundedYear"],
         "becameUnicornLabel": format_date(record["becameUnicorn"]["date"]),
-        "unicornThresholdLabel": _unicorn_threshold_label(record),
+        "unicornThresholdLabel": threshold_label,
+        "unicornFlagLabel": unicorn_flag_label,
         "foundersLabel": ", ".join(f["name"] for f in founders) if founders else "—",
         "aged": _months_between(today, parse_date(valuation["asOf"])) > AGED_AFTER_MONTHS,
     }
@@ -132,7 +173,13 @@ def derive_company(record, today, fx_rate=0.92):
         # Ordering mixed currencies requires a common unit; this value is a sort key
         # only and is never displayed — display.valuationLabel stays in the source's
         # own currency, so "no FX conversion on a company's own figure" still holds.
-        "valuationEur": _to_eur(valuation["amount"], valuation["currency"], fx_rate),
+        #
+        # null for an undisclosed valuation, rather than 0 or a stand-in 1000: there is
+        # no figure to order by, and inventing one to make the comparator simpler is
+        # inventing one. controls.js sorts those to the end of the highest-valuation
+        # list, which is the honest place for "at least a billion, amount unknown".
+        "valuationEur": None if valuation_undisclosed
+        else _to_eur(valuation["amount"], valuation["currency"], fx_rate),
         "latestRound": list(date_sort_key(last_round["date"])) if last_round else [0, 0],
         "name": record["name"].lower(),
     }
@@ -155,8 +202,14 @@ def derive_company(record, today, fx_rate=0.92):
 
 def compute_stats(records, fx):
     rate = fx["USD_EUR"]
+    # Companies whose valuation is undisclosed are *excluded* from the sum, not counted
+    # as zero. Counting them as zero would understate the total by at least a billion
+    # each while the headline still claimed to cover the whole register — a wrong figure
+    # dressed as a complete one. The label below then says how many of the register the
+    # figure actually spans, so a reader can tell the difference without opening a file.
+    priced = [r for r in records if r["valuation"].get("amount") is not None]
     combined = sum(
-        _to_eur(r["valuation"]["amount"], r["valuation"]["currency"], rate) for r in records)
+        _to_eur(r["valuation"]["amount"], r["valuation"]["currency"], rate) for r in priced)
 
     data_as_of = _data_as_of(records)
     recent = 0
@@ -195,6 +248,12 @@ def compute_stats(records, fx):
         "count": len(records),
         "combinedValuationEurMillions": combined,
         "combinedValuationLabel": format_amount(combined_label_value, "EUR", True),
+        "combinedValuationCount": len(priced),
+        # The stat's own caption, settled here rather than hard-coded in register.js,
+        # because it is a fact about the data: "Combined value" is only the whole truth
+        # when every record contributed one.
+        "combinedValuationBasis": "Combined value" if len(priced) == len(records)
+        else f"Combined value · {len(priced)} of {len(records)} disclosed",
         "newInLast12Months": recent,
         "medianYearsToUnicorn": round(statistics.median(years)) if years else 0,
         "fxRateDisclosed": rate,

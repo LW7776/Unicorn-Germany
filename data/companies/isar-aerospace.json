@@ -1,0 +1,205 @@
+{
+ "slug": "isar-aerospace",
+ "name": "Isar Aerospace",
+ "website": "https://isaraerospace.com",
+ "logo": "assets/logos/isar-aerospace.png",
+ "hq": {
+  "city": "Munich",
+  "country": "DE"
+ },
+ "foundedCountry": "DE",
+ "foundedYear": 2018,
+ "sectors": [
+  "Space",
+  "Deep Tech"
+ ],
+ "thesis": {
+  "problem": "Europe can build satellites and cannot reliably launch them. Ariane 6 is sized for large payloads on a national cadence, Soyuz stopped being available in 2022, and the small and medium satellites that make up most of what Europe now wants in orbit — earth observation, connectivity, and increasingly sovereign defence capacity — have had to buy rides from American providers on American schedules and American terms.",
+  "solution": "Isar Aerospace builds Spectrum, a two-stage rocket sized for the payloads Europe actually flies rather than the ones a national programme was designed around, and manufactures it itself: engines, tanks and avionics in-house, additive manufacturing rather than a supplier chain across a dozen countries, on the argument that vertical integration is what makes launch cheap and the cadence predictable. It is a spinout of the Technical University of Munich and launches from Andøya in northern Norway."
+ },
+ "valuation": {
+  "amount": null,
+  "currency": null,
+  "approximate": false,
+  "asOf": "2025-09",
+  "round": "Convertible bond",
+  "source": "s4",
+  "undisclosed": {
+   "note": "Nobody has published a figure for Isar Aerospace, and the register spent a batch establishing that rather than assuming it. Its own release on the €270m Series D was opened and read end to end — round, investors, factory, headcount, no valuation anywhere — and Sifted's account of the same round states none either. The €2bn widely attached to the company traces to a Bloomberg piece whose own URL slug is “isar-aerospace-in-talks-to-raise-250-million-ahead-of-launch”: talks, about a smaller round that was superseded, and all three Wayback captures of that URL are themselves HTTP 403 block pages. What is stated plainly, by an allowlisted publication, is the status and the month: TechCrunch, listing Europe's new unicorns of 2025. That sentence carries no numeral, which is exactly why this record exists in this shape.",
+   "source": "s4"
+  }
+ },
+ "becameUnicorn": {
+  "date": "2025-06",
+  "roundId": "r2",
+  "source": "s4"
+ },
+ "totalRaised": {
+  "amount": null,
+  "currency": "EUR",
+  "approximate": false,
+  "source": "s3"
+ },
+ "rounds": [
+  {
+   "id": "r0",
+   "date": "2020-12",
+   "stage": "Series B",
+   "amount": 75,
+   "currency": "EUR",
+   "approximate": false,
+   "postMoney": null,
+   "leadInvestors": [
+    "Lakestar"
+   ],
+   "investors": [
+    "Lakestar",
+    "Earlybird",
+    "Vsquared Ventures"
+   ],
+   "source": "s1"
+  },
+  {
+   "id": "r1",
+   "date": "2023-03",
+   "stage": "Series C",
+   "amount": 165,
+   "currency": "USD",
+   "approximate": false,
+   "postMoney": null,
+   "leadInvestors": [
+    "7-Industries Holding"
+   ],
+   "investors": [
+    "7-Industries Holding",
+    "Bayern Kapital",
+    "Earlybird Venture Capital",
+    "HV Capital",
+    "Lakestar",
+    "Lombard Odier Investment Managers",
+    "Porsche SE",
+    "UVC Partners",
+    "Vsquared Ventures"
+   ],
+   "source": "s2"
+  },
+  {
+   "id": "r2",
+   "date": "2025-06",
+   "stage": "Convertible bond",
+   "amount": 150,
+   "currency": "EUR",
+   "approximate": false,
+   "postMoney": null,
+   "leadInvestors": [],
+   "investors": [
+    "Eldridge Industries"
+   ],
+   "source": "s4",
+   "undisclosed": {
+    "note": "The crossing, and an unusual one: the instrument that carried Isar Aerospace over the threshold was a convertible bond rather than a priced equity round, so there is no post-money to disclose and nobody has disclosed one. TechCrunch states the fact and the month in the same sentence as the instrument, which is what this record rests on. Note that the company's own university says the same thing — TUM's press release is titled “Isar Aerospace becomes a unicorn” — but a university announcing its spinout is not on the register's allowlist, so it is mentioned here and not cited.",
+    "source": "s4"
+   }
+  },
+  {
+   "id": "r3",
+   "date": "2026-06",
+   "stage": "Series D",
+   "amount": 270,
+   "currency": "EUR",
+   "approximate": false,
+   "postMoney": null,
+   "leadInvestors": [],
+   "investors": [
+    "Island Green Capital",
+    "Molten Ventures",
+    "HV Capital",
+    "Lakestar",
+    "UVC Partners"
+   ],
+   "source": "s3"
+  }
+ ],
+ "founders": [
+  {
+   "name": "Daniel Metzler",
+   "role": "Co-founder and CEO",
+   "current": true
+  },
+  {
+   "name": "Josef Fleischmann",
+   "role": "Co-founder",
+   "current": true
+  },
+  {
+   "name": "Markus Brandl",
+   "role": "Co-founder",
+   "current": true
+  }
+ ],
+ "investors": [
+  "Lakestar",
+  "7-Industries Holding",
+  "Earlybird",
+  "Earlybird Venture Capital",
+  "Vsquared Ventures",
+  "Bayern Kapital",
+  "HV Capital",
+  "Lombard Odier Investment Managers",
+  "Porsche SE",
+  "UVC Partners",
+  "Eldridge Industries",
+  "Island Green Capital",
+  "Molten Ventures"
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "publication": "TechCrunch",
+   "title": "Germany's Isar Aerospace raises $91M to get its satellite launch vehicle off the ground",
+   "url": "https://techcrunch.com/2020/12/08/germanys-isar-aerospace-raises-91m-to-get-its-satellite-launch-vehicle-off-the-ground/",
+   "publishedOn": "2020-12-08",
+   "quote": "Isar Aerospace, which is building a micro-satellite launcher significantly smaller and thus lower in price than bigger launchers on the market today, has picked up €75 million ($91 million) in funding."
+  },
+  {
+   "id": "s2",
+   "publication": "TechCrunch",
+   "title": "Isar Aerospace raises $165 million to bring more sovereign launch to Europe",
+   "url": "https://techcrunch.com/2023/03/28/isar-aerospace-raises-165-million-to-bring-more-sovereign-launch-to-europe/",
+   "publishedOn": "2023-03-28",
+   "quote": "German launch startup Isar Aerospace has scored $165 million (€155 million) in new funding as it races toward the inaugural flight of its Spectrum small rocket later this year."
+  },
+  {
+   "id": "s3",
+   "publication": "Sifted",
+   "title": "Isar Aerospace raises €270m to scale launch operations",
+   "url": "https://sifted.eu/articles/isar-aerospace-raises-e270m-to-scale-launch-operations",
+   "publishedOn": "2026-06-09",
+   "quote": "German rocket startup Isar Aerospace has raised €270m in fresh funding as Europe races to bolster its sovereign space capabilities amid growing geopolitical tensions."
+  },
+  {
+   "id": "s4",
+   "publication": "TechCrunch",
+   "title": "More than 10 European startups became unicorns this year",
+   "url": "https://techcrunch.com/2025/09/08/more-than-10-european-startups-became-unicorns-this-year/",
+   "publishedOn": "2025-09-08",
+   "quote": "German space startup Isar Aerospace became a unicorn in June after reaching an agreement with Eldridge Industries for a convertible bond of €150 million (approximately $173 million)."
+  },
+  {
+   "id": "s5",
+   "publication": "TechCrunch",
+   "title": "Germany's Isar Aerospace raises $91M to get its satellite launch vehicle off the ground",
+   "url": "https://techcrunch.com/2020/12/08/germanys-isar-aerospace-raises-91m-to-get-its-satellite-launch-vehicle-off-the-ground/",
+   "publishedOn": "2020-12-08",
+   "quote": "The startup is a spinout of TUM — the famous Munich Technical University — where co-founders Daniel Metzler, Josef Fleischmann and Markus Brandl all studied engineering."
+  },
+  {
+   "id": "s6",
+   "publication": "Sifted",
+   "title": "Isar Aerospace raises €270m to scale launch operations",
+   "url": "https://sifted.eu/articles/isar-aerospace-raises-e270m-to-scale-launch-operations",
+   "publishedOn": "2026-06-09",
+   "quote": "On Tuesday, the Munich-based startup announced new investors Island Green Capital and Molten Ventures had backed its Series D raise, alongside HV Capital, Lakestar and UVC Partners."
+  }
+ ]
+}

@@ -55,6 +55,18 @@ CITY_COORDS = {
     # every other city — no pixel value in data/geo/germany.json is placed by
     # hand.
     "Alzenau": (50.086, 9.073),
+    # Gilching (Quantum Systems), Metzingen (Neura Robotics) and Darmstadt
+    # (Focused Energy) arrived with the batch that followed the inclusion-policy
+    # change. Two of the three are towns rather than cities, for the same reason
+    # Alzenau was: where a company actually sits is not always where the trade
+    # press rounds it to. Handelsblatt places Quantum Systems "aus Gilching bei
+    # München" and Sifted calls the same company "Munich-based"; the register
+    # records the town and lets the map show it, rather than moving a company 25
+    # km to a name a reader would recognise. Coordinates read off OpenStreetMap's
+    # Nominatim records (ODbL, © OpenStreetMap contributors) and projected by
+    # project_point below like every other city.
+    "Gilching": (48.110, 11.292), "Metzingen": (48.537, 9.283),
+    "Darmstadt": (49.873, 8.651),
     # Deliberately NOT here: New York (Dash0's hq.city). This projection is
     # built to fit Germany's own bounding box (build_projection, above), so a
     # city roughly 6,500 km west of it projects nowhere near the 0-1000 x

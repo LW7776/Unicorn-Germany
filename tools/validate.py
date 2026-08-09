@@ -41,7 +41,7 @@ SLUG = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 # indistinguishable from an absent one unless the spelling itself is checked.
 ROUND_KEYS = {"id", "date", "stage", "amount", "currency", "approximate", "postMoney",
               "postMoneyCurrency", "postMoneySource", "leadInvestors", "investors",
-              "source", "disputed"}
+              "source", "disputed", "undisclosed"}
 
 
 def _require_string(errors, label, value):
@@ -176,6 +176,50 @@ def validate_company(record):
             errors.append(
                 f"{label}.disputed cites unknown source {disputed.get('source')!r}")
 
+    def check_undisclosed(label, container):
+        """Evidence that a company is over the threshold when no source prints a number.
+
+        The inclusion rule is membership, not arithmetic: a company is in the register
+        because it is private, independent and worth more than a billion. For most
+        records an allowlisted source states that as a numeral and `amount`/`postMoney`
+        carries it. For some it does not — Quantum Systems was reported as a unicorn by
+        Sifted, Tech.eu and its own lead investor, none of whom printed a figure, and the
+        old rule dropped it on that technicality alone.
+
+        `undisclosed` makes that case *expressible* without relaxing anything. It is an
+        object, `{note, source}`, and the source is checked exactly like every other
+        cited claim: it must resolve to a real entry in `sources`, that entry must be
+        allowlisted and dated (checked above, for every source), and its quote must be
+        non-empty. What this deliberately cannot do is check the quote *states a
+        figure* — there is no figure. The quote has to establish unicorn status
+        qualitatively ("reached unicorn status", "knackte die Milliarden-Bewertung"),
+        and only a person reading it can confirm that, exactly as only a person can
+        confirm which currency a post-money is in. What the register gains is that the
+        claim is still attached to a page someone opened; what it never gains is licence
+        to invent the number that page did not print.
+
+        Returns True when the container carries an `undisclosed` key at all, so callers
+        can tell "absent" from "present but malformed".
+        """
+        undisclosed = container.get("undisclosed")
+        if undisclosed is None:
+            return False
+        if not isinstance(undisclosed, dict):
+            errors.append(f"{label}.undisclosed must be an object with note and source")
+            return True
+        note = undisclosed.get("note")
+        if not isinstance(note, str) or not note.strip():
+            errors.append(f"{label}.undisclosed.note must be a non-empty string")
+        source_id = undisclosed.get("source")
+        if source_id not in sources:
+            errors.append(
+                f"{label}.undisclosed cites unknown source {source_id!r}")
+        elif not str(sources[source_id].get("quote") or "").strip():
+            errors.append(
+                f"{label}.undisclosed cites source {source_id}, whose quote is empty — "
+                f"an undisclosed valuation still has to point at a sentence somebody read")
+        return True
+
     def check_currency(label, value):
         """An unknown code is not a display bug to be absorbed — it is a figure
         labelled in a currency no source used. It reaches the reader twice over:
@@ -200,6 +244,22 @@ def validate_company(record):
     check_currency("valuation.currency", record["valuation"].get("currency"))
     check_currency("totalRaised.currency", record["totalRaised"].get("currency"))
 
+    # Exactly one of the two ways of carrying a valuation. Both at once is a record
+    # asserting a figure and denying one in the same object, and the page would have
+    # to pick; neither is a record with no valuation evidence at all, which is the one
+    # thing membership in this register rests on.
+    valuation_amount = record["valuation"].get("amount")
+    has_undisclosed = check_undisclosed("valuation", record["valuation"])
+    if valuation_amount is not None and has_undisclosed:
+        errors.append(
+            "valuation carries both an amount and an undisclosed note — they are "
+            "mutually exclusive; delete whichever the sources do not support")
+    elif valuation_amount is None and not has_undisclosed:
+        errors.append(
+            "valuation has no amount and no undisclosed evidence — a record must carry "
+            "one: either a sourced figure, or an `undisclosed` note whose quote states "
+            "the company is a unicorn")
+
     for field, value in (("valuation.asOf", record["valuation"].get("asOf")),
                          ("becameUnicorn.date", record["becameUnicorn"].get("date"))):
         try:
@@ -221,6 +281,7 @@ def validate_company(record):
         check_figure(f"round {entry['id']} post-money", entry, amount_key="postMoney",
                      currency_key="postMoneyCurrency", source_key="postMoneySource")
         check_disputed(f"round {entry['id']}", entry)
+        check_undisclosed(f"round {entry['id']}", entry)
         check_currency(f"round {entry['id']}.currency", entry.get("currency"))
         check_currency(f"round {entry['id']}.postMoneyCurrency",
                        entry.get("postMoneyCurrency"))
@@ -231,14 +292,40 @@ def validate_company(record):
 
     by_id = {entry.get("id"): entry for entry in rounds}
     unicorn_round = by_id.get(record["becameUnicorn"].get("roundId"))
+    crossing_admitted = False
     if unicorn_round is None:
         errors.append(
             f"becameUnicorn.roundId {record['becameUnicorn'].get('roundId')!r} matches no round")
-    elif (unicorn_round.get("postMoney") or 0) < THRESHOLD_MILLIONS:
-        errors.append(
-            f"round {unicorn_round['id']} post-money is below the "
-            f"{THRESHOLD_MILLIONS}m inclusion threshold")
     else:
+        # Three shapes, not two. A crossing round either states a post-money at or above
+        # the threshold, or states none at all and carries qualitative evidence instead
+        # (Quantum Systems crossed at a €160m Series C whose price nobody published;
+        # Isar Aerospace at a convertible bond). Only the third shape — a post-money that
+        # is stated and is under the threshold — is an error. A round with neither a
+        # figure nor evidence is caught by the same rule, because `undisclosed` is
+        # required whenever `postMoney` is null.
+        post_money = unicorn_round.get("postMoney")
+        crossing_admitted = True
+        if post_money is None:
+            if unicorn_round.get("undisclosed") is None:
+                crossing_admitted = False
+                errors.append(
+                    f"round {unicorn_round['id']} discloses no post-money, so the crossing "
+                    f"has to be established qualitatively: give that round an `undisclosed` "
+                    f"note citing a source whose quote states the company reached unicorn "
+                    f"status")
+        elif post_money < THRESHOLD_MILLIONS:
+            crossing_admitted = False
+            errors.append(
+                f"round {unicorn_round['id']} post-money is below the "
+                f"{THRESHOLD_MILLIONS}m inclusion threshold")
+    if crossing_admitted:
+        # Runs for a qualitative crossing too, and has to: "an earlier priced round
+        # above the threshold means the company crossed there" is exactly as true when
+        # the named round published no price of its own. That rule is what keeps
+        # becameUnicorn honest, and making the crossing expressible without a figure
+        # must not quietly switch it off.
+        #
         # A record can be internally consistent and still name the wrong round: every
         # figure sourced, every quote honest, and becameUnicorn pointing at a later
         # round than the one that actually crossed. Nothing above catches that, because

@@ -29,10 +29,10 @@ const text = (value) => escapeHtml(dash(value));
     output) that already escaped everything it interpolated, so it is dropped
     in unescaped — treat it the same as note/label if a future call site ever
     wants to pass raw data through it. */
-function figure(label, value, note, extra = "") {
+function figure(label, value, note, extra = "", valueClass = "") {
   return `<div class="fig">
     <span class="label">${text(label)}</span>
-    <span class="fig__value">${text(value)}</span>
+    <span class="fig__value${valueClass ? " " + valueClass : ""}">${text(value)}</span>
     ${note ? `<span class="fig__note">${text(note)}</span>` : ""}
     ${extra}
   </div>`;
@@ -56,12 +56,30 @@ function disputedBadge(disputed, sources) {
   </span>`;
 }
 
+/** The other half of `disputed`: evidence that a company (or a crossing round) is over
+    the threshold where no allowlisted source ever printed a figure. Shaped and
+    source-checked identically by tools/validate.py, and rendered in the same amber
+    signal — a qualification on a figure, not an error, and never an absence. It appears
+    on `valuation`, and on the crossing round whose post-money nobody disclosed. */
+function undisclosedBadge(undisclosed, sources, label = "valuation undisclosed") {
+  if (!undisclosed) return "";
+  const source = (sources || []).find((s) => s.id === undisclosed.source);
+  const link = source ? sourceLink(source) : text(undisclosed.source);
+  return `<span class="fig__disputed fig__undisclosed">
+    <span class="fig__disputed-badge">${text(label)}</span>
+    <span class="fig__disputed-note">${text(undisclosed.note)}</span> — ${link}
+  </span>`;
+}
+
 function timeline(company) {
   const unicornId = company.becameUnicorn.roundId;
-  // "$1bn" or "€1bn" — settled in tools/build.py from the crossing round's own
-  // post-money currency, because the inclusion rule is "$1B or €1B, as reported"
-  // and a company that crossed at "$1.1 billion" did not cross €1bn.
-  const threshold = text(company.display.unicornThresholdLabel);
+  // "crossed $1bn" / "crossed €1bn" — settled in tools/build.py from the crossing
+  // round's own post-money currency, because the inclusion rule is "$1B or €1B, as
+  // reported" and a company that crossed at "$1.1 billion" did not cross €1bn. When
+  // that round disclosed no price at all, the same function says "reached unicorn
+  // status" instead, rather than naming a threshold off the currency of the money
+  // raised — which is a different number in a different sentence.
+  const crossingFlag = text(company.display.unicornFlagLabel);
   return `<ol class="timeline">${company.rounds.map((round, index) => `
     <li class="timeline__node ${round.id === unicornId ? "is-unicorn" : ""}"
         style="--i:${index}">
@@ -70,7 +88,10 @@ function timeline(company) {
       <span class="timeline__stage">${text(round.stage)}</span>
       <span class="timeline__amount">${text(round.amountLabel)}</span>
       <span class="timeline__lead">${text((round.leadInvestors || []).join(", "))}</span>
-      ${round.id === unicornId ? `<span class="timeline__flag">crossed ${threshold}</span>` : ""}
+      ${round.id === unicornId ? `<span class="timeline__flag">${crossingFlag}</span>` : ""}
+      ${/* On a round the undisclosed thing is the price of the round, not the
+            company's headline valuation — say which. */""}
+      ${undisclosedBadge(round.undisclosed, company.sources, "post-money undisclosed")}
       ${disputedBadge(round.disputed, company.sources)}
     </li>`).join("")}</ol>`;
 }
@@ -123,8 +144,20 @@ function markup(company) {
     </div>
   </header>
   <div class="detail__figures">
-    ${figure("Valuation", d.valuationLabel, `as of ${dash(d.valuationAsOf)}${d.aged ? " · aged" : ""}`,
-      disputedBadge(company.valuation.disputed, company.sources))}
+    ${figure("Valuation", d.valuationLabel,
+      d.valuationUndisclosed
+        // "as of" a date, on a value that is not a figure, would read as though a
+        // figure had been struck then. What that date marks is when the evidence was
+        // published — say so, and keep the staleness flag it still drives.
+        ? `${dash(d.valuationUndisclosedBadge)} · reported ${dash(d.valuationAsOf)}${d.aged ? " · aged" : ""}`
+        : `as of ${dash(d.valuationAsOf)}${d.aged ? " · aged" : ""}`,
+      undisclosedBadge(company.valuation.undisclosed, company.sources)
+      + disputedBadge(company.valuation.disputed, company.sources),
+      // "Undisclosed" is a word, not a figure: eleven characters where the other
+      // tiles hold four or five ("$8 bn"). At the figure size it overruns a
+      // 11rem grid column and spills into the tile beside it, so it is set one
+      // step down — still the largest thing in its own tile, and it fits.
+      d.valuationUndisclosed ? "fig__value--undisclosed" : "")}
     ${figure("Last round", d.lastRoundStage, d.lastRoundLabel)}
     ${figure("Total raised", d.totalRaisedLabel)}
     ${figure(`Years to ${text(d.unicornThresholdLabel)}`, d.yearsToUnicorn, `unicorn ${dash(d.becameUnicornLabel)}`)}

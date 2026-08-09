@@ -39,6 +39,11 @@ are not covered by this repository's licence.
 | `dash0.png` | https://www.dash0.com/apple-touch-icon.png | 2026-08-09 | Downloaded unchanged; see note |
 | `n8n.png` | https://n8n.io/apple-touch-icon.png | 2026-08-09 | Downloaded unchanged; see note |
 | `stark.svg` | https://stark-defence.com (preloader mark, inline SVG) | 2026-08-09 | Copied verbatim from the page |
+| `quantum-systems.svg` | https://quantum-systems.com/wp-content/uploads/2025/05/logo.svg | 2026-08-09 | Downloaded unchanged; see note |
+| `neura-robotics.svg` | https://neura-robotics.com/wp-content/uploads/2026/01/01_NEURA_logo_black.svg | 2026-08-09 | Downloaded unchanged; see note |
+| `raisin.svg` | https://eu-images.contentstack.com/v3/assets/blt4a5ee0113ab335fb/blt6edc2e97ec97de8a/67e275e889873789f8f90165/Raisin_brand_evolution_Logo.svg | 2026-08-09 | Downloaded unchanged; see note |
+| `isar-aerospace.png` | https://isaraerospace.com/static/favicon/apple-touch-icon.png | 2026-08-09 | Downloaded unchanged; see note |
+| `focused-energy.svg` | https://cdn.prod.website-files.com/672b679d563c65aa8b967c48/6a2c81d9a257a161bc164b96_FE_Logo-black.svg | 2026-08-09 | Downloaded unchanged |
 
 ## Notes
 
@@ -104,6 +109,30 @@ are not covered by this repository's licence.
   tile — the same precedent as Proxima Fusion and Scalable Capital's touch icons above. It is
   a 180 × 180 raster and so renders smaller than the vector wordmarks; the plate does not
   upscale it, so it stays crisp.
+- **Quantum Systems** blocks this crawler on every HTML page of its own site (403), which
+  is why an earlier batch had to read its funding release through the Wayback Machine. Its
+  WordPress media endpoint answers normally, and the file above is the wordmark that
+  endpoint lists and the site header itself loads. Two variants sit side by side there:
+  `logo-1.svg` carries `fill="#fff"` for the dark navbar, and `logo.svg` carries no `fill`
+  at all, so it renders black — the same `currentColor`/no-fill case as several marks
+  above. The black one is stored, unedited.
+- **Neura Robotics** serves a white wordmark (`logo-white.svg`) as its header mark, its
+  favicon *and* its touch icon — invisible on the register's plate, and there is no dark
+  variant anywhere in the page markup. Rather than fall back to a site icon (the CMBlu and
+  Dash0 case), the company's own media library was queried and it does publish a black
+  wordmark, `01_NEURA_logo_black.svg`, used on its light-background pages. That file is
+  stored, unaltered — an official dark variant is always preferable to a smaller
+  substitute.
+- **Raisin** serves its wordmark from Contentstack, the CMS its own site runs on, exactly
+  as commercetools and sennder serve theirs from Webflow and Storyblok. The URL above is
+  the file raisin.com's own header requests. Raisin also serves a lighter
+  `raisin_light_blue_site_logo.svg`; the stored file is the full-strength `#3096FF`
+  brand-evolution wordmark the site uses on white.
+- **Isar Aerospace** publishes no standalone wordmark file — the mark in its header is
+  drawn from a sprite the page assembles at runtime. The stored file is the company's own
+  `apple-touch-icon.png`, its blue mark on its own tile, unaltered: the same precedent as
+  Proxima Fusion, Scalable Capital and n8n above. It is a 180 × 180 raster and renders
+  smaller than the vector wordmarks; the plate does not upscale it, so it stays crisp.
 - **Stark** serves its mark only inside the loading-screen preloader of its own homepage, as
   an inline SVG; there is no separate downloadable file and no mark in the page's permanent
   header. The `<svg>` element was copied verbatim, including its native `xmlns` (no attribute

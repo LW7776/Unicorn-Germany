@@ -22,7 +22,11 @@
   display: grid; gap: var(--space-1); padding: var(--space-4);
   border: 1px solid var(--stroke); border-radius: 10px; background: var(--panel);
 }
-.fig__value { font-size: var(--step-2); }
+.fig__value { font-size: var(--step-2); overflow-wrap: anywhere; }
+/* A word, not a figure. At --step-2 "Undisclosed" is wider than the 11rem column
+   the figures grid is built from and overruns the tile next to it; one step down
+   fits, and it is still the largest thing in its own tile. */
+.fig__value--undisclosed { font-size: var(--step-1); color: var(--muted); }
 .fig__note { color: var(--muted); font-size: var(--step--1); }
 .fig__disputed { display: block; margin-top: var(--space-2); font-size: var(--step--1); color: var(--amber); }
 .fig__disputed-badge {

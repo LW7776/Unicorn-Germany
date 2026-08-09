@@ -1,0 +1,205 @@
+{
+ "slug": "raisin",
+ "name": "Raisin",
+ "website": "https://www.raisin.com",
+ "logo": "assets/logos/raisin.svg",
+ "hq": {
+  "city": "Berlin",
+  "country": "DE"
+ },
+ "foundedCountry": "DE",
+ "foundedYear": 2012,
+ "sectors": [
+  "Fintech",
+  "Banking"
+ ],
+ "thesis": {
+  "problem": "Deposit rates inside the single market differ by percentage points, and almost nobody can reach them. A saver in Germany is offered whatever their own bank pays; opening an account with a bank in Portugal or Lithuania means a foreign onboarding process, a foreign language and a foreign deposit-guarantee scheme they have no way to assess. The rates exist, the guarantees exist, and the friction between them is what keeps hundreds of billions sitting still.",
+  "solution": "Raisin is a marketplace with one onboarding: the saver signs up once and can then place money with any partner bank on the platform across Europe, each covered by its own national deposit guarantee up to the EU-harmonised €100,000. The other half of the business is the mirror image — deposits-as-a-service sold to banks that want funding and to distributors that want a savings product without building one. It brokers tens of billions of euros and has been profitable since 2023."
+ },
+ "valuation": {
+  "amount": null,
+  "currency": null,
+  "approximate": false,
+  "asOf": "2024-12",
+  "round": "Secondary share sale",
+  "source": "s5",
+  "undisclosed": {
+   "note": "The figure everyone quotes for Raisin is “over two billion euros”, and it is over two billion euros in words rather than digits — Gründerszene spells it out, sourcing it to Finance Forward, and no allowlisted publication has printed it as a numeral. Handelsblatt separately calls the company “milliardenschwer” and nothing more precise. Two further things are worth a reader's attention. This valuation was set by a secondary sale in which existing holders sold shares, not by a priced primary round, so it is a price paid for stock changing hands rather than a post-money — the register publishes those (Trade Republic, n8n) and always labels them. And Raisin's unicorn status has not been continuous: investor Kinnevik marked it at €895m in 2022 and it lost the label, regaining it at the March 2023 upround this record dates the crossing to.",
+   "source": "s5"
+  }
+ },
+ "becameUnicorn": {
+  "date": "2023-03",
+  "roundId": "r3",
+  "source": "s4"
+ },
+ "totalRaised": {
+  "amount": null,
+  "currency": "EUR",
+  "approximate": false,
+  "source": "s3"
+ },
+ "rounds": [
+  {
+   "id": "r1",
+   "date": "2019-02",
+   "stage": "Series D",
+   "amount": 114,
+   "currency": "USD",
+   "approximate": false,
+   "postMoney": null,
+   "leadInvestors": [
+    "Index Ventures"
+   ],
+   "investors": [
+    "Index Ventures",
+    "PayPal",
+    "Ribbit Capital",
+    "Thrive Capital"
+   ],
+   "source": "s2"
+  },
+  {
+   "id": "r2",
+   "date": "2019-07",
+   "stage": "Goldman Sachs investment",
+   "amount": 28,
+   "currency": "USD",
+   "approximate": false,
+   "postMoney": null,
+   "leadInvestors": [
+    "Goldman Sachs"
+   ],
+   "investors": [
+    "Goldman Sachs"
+   ],
+   "source": "s2"
+  },
+  {
+   "id": "r3",
+   "date": "2023-03",
+   "stage": "Series E",
+   "amount": 60,
+   "currency": "EUR",
+   "approximate": false,
+   "postMoney": null,
+   "leadInvestors": [],
+   "investors": [
+    "Goldman Sachs",
+    "M&G Catalyst"
+   ],
+   "source": "s3",
+   "undisclosed": {
+    "note": "The crossing, and the company is the one that states it. Raisin had been a unicorn once before — Kinnevik marked the merged Raisin DS at €1.3bn in July 2021 — and then was not, after the same investor wrote it down to €895m in 2022. This €60m Series E restored the status, and co-founder Frank Freund says so in the round's own coverage: “Unser Unicorn-Status wurde mit der jetzigen Upround bestätigt.” No figure accompanies it, from the company or from anyone else, which is why the crossing is recorded qualitatively rather than with a post-money.",
+    "source": "s4"
+   }
+  },
+  {
+   "id": "r4",
+   "date": "2024-12",
+   "stage": "Secondary share sale",
+   "amount": 100,
+   "currency": "EUR",
+   "approximate": true,
+   "postMoney": null,
+   "leadInvestors": [],
+   "investors": [
+    "Tencent",
+    "Hedosophia",
+    "Vitruvian Partners"
+   ],
+   "source": "s6",
+   "disputed": {
+    "note": "Not new money into the company: existing holders — Thrive Capital and Christian Angermayer's Apeiron among them, and reportedly the founders in smaller amounts — sold stock to Tencent, Hedosophia and Vitruvian. The amount on file is the “mehr als 100 Millionen Euro” the reporting states and is therefore a floor rather than the sum, which is why it is flagged approximate. The valuation this transaction set is the one carried on the record above, in words rather than digits.",
+    "source": "s5"
+   }
+  }
+ ],
+ "founders": [
+  {
+   "name": "Tamaz Georgadze",
+   "role": "Co-founder and CEO",
+   "current": true
+  },
+  {
+   "name": "Frank Freund",
+   "role": "Co-founder and CFO",
+   "current": true
+  },
+  {
+   "name": "Michael Stephan",
+   "role": "Co-founder and COO",
+   "current": true
+  }
+ ],
+ "investors": [
+  "Goldman Sachs",
+  "Index Ventures",
+  "PayPal",
+  "Ribbit Capital",
+  "Thrive Capital",
+  "M&G Catalyst",
+  "Tencent",
+  "Hedosophia",
+  "Vitruvian Partners"
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "publication": "TechCrunch",
+   "title": "Raisin picks up $28M backing from Goldman Sachs for its savings and investment marketplace",
+   "url": "https://techcrunch.com/2019/07/16/goldman-sachs-backs-raisin/",
+   "publishedOn": "2019-07-16",
+   "quote": "Founded in 2012 by Dr. Tamaz Georgadze (CEO), Dr. Frank Freund (CFO) and Michael Stephan (COO)"
+  },
+  {
+   "id": "s2",
+   "publication": "TechCrunch",
+   "title": "Raisin picks up $28M backing from Goldman Sachs for its savings and investment marketplace",
+   "url": "https://techcrunch.com/2019/07/16/goldman-sachs-backs-raisin/",
+   "publishedOn": "2019-07-16",
+   "quote": "Goldman Sachs has invested $28 million (€25 million), following the company's $114 million in Series D in February."
+  },
+  {
+   "id": "s3",
+   "publication": "Tech.eu",
+   "title": "Goldman keeps on keepin' on with Raisin in fresh €60 million round",
+   "url": "https://tech.eu/2023/03/24/goldman-keeps-on-keepin-on-with-raisin-in-fresh-eur60-million-round/",
+   "publishedOn": "2023-03-24",
+   "quote": "Berlin-based fintech Raisin has closed a €60 million Series E funding round, surpassed 1 million customers, and been profitable for the past six months."
+  },
+  {
+   "id": "s4",
+   "publication": "Gründerszene",
+   "title": "Neue Finanzspritze: Tagesgeld-Fintech Raisin wieder Einhorn",
+   "url": "https://www.businessinsider.de/gruenderszene/fintech/raisin-zinsen-fintech-einhorn-investment/",
+   "publishedOn": "2023-03-23",
+   "quote": "Mit ein wenig Stolz im derzeitigen Marktumfeld können wir so viel verraten: Unser Unicorn-Status wurde mit der jetzigen Upround bestätigt"
+  },
+  {
+   "id": "s5",
+   "publication": "Gründerszene",
+   "title": "Kurz vor IPO: Bewertung von Raisin steigt auf über zwei Milliarden Euro",
+   "url": "https://www.businessinsider.de/gruenderszene/business/kurz-vor-ipo-bewertung-von-raisin-steigt-auf-ueber-zwei-milliarden-euro/",
+   "publishedOn": "2024-12-03",
+   "quote": "Raisin liegt nun bei einer Bewertung von über zwei Milliarden Euro"
+  },
+  {
+   "id": "s6",
+   "publication": "Gründerszene",
+   "title": "Kurz vor IPO: Bewertung von Raisin steigt auf über zwei Milliarden Euro",
+   "url": "https://www.businessinsider.de/gruenderszene/business/kurz-vor-ipo-bewertung-von-raisin-steigt-auf-ueber-zwei-milliarden-euro/",
+   "publishedOn": "2024-12-03",
+   "quote": "Nun haben bestehende Investoren des Geldanlage-Startups Anteile in Höhe von mehr als 100 Millionen Euro verkauft."
+  },
+  {
+   "id": "s7",
+   "publication": "Handelsblatt",
+   "title": "Start-ups: Raisin macht erneut Gewinn – was das für das Fintech bedeutet",
+   "url": "https://www.handelsblatt.com/finanzen/banken-versicherungen/start-ups-raisin-macht-erneut-gewinn-was-das-fuer-das-fintech-bedeutet/100181890.html",
+   "publishedOn": "2025-12-08",
+   "quote": "Wir wollen das Unternehmen – ob gelistet oder nicht – so führen, als ob es börsennotiert wäre"
+  }
+ ]
+}

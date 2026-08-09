@@ -1,9 +1,11 @@
 {
  "stats": {
-  "count": 27,
-  "combinedValuationEurMillions": 96234.0,
-  "combinedValuationLabel": "~€96.2 bn",
-  "newInLast12Months": 9,
+  "count": 32,
+  "combinedValuationEurMillions": 110034.0,
+  "combinedValuationLabel": "~€110 bn",
+  "combinedValuationCount": 29,
+  "combinedValuationBasis": "Combined value · 29 of 32 disclosed",
+  "newInLast12Months": 11,
   "medianYearsToUnicorn": 6,
   "fxRateDisclosed": 0.92,
   "fxAsOf": "2026-08",
@@ -203,6 +205,8 @@
    ],
    "display": {
     "valuationLabel": "$1 bn",
+    "valuationUndisclosed": false,
+    "valuationUndisclosedBadge": null,
     "valuationAsOf": "Jun 2023",
     "lastRoundLabel": "Jul 2025",
     "lastRoundStage": "Pre-IPO round extension",
@@ -210,6 +214,7 @@
     "yearsToUnicorn": 2,
     "becameUnicornLabel": "Jun 2023",
     "unicornThresholdLabel": "$1bn",
+    "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Philipp Schröder, Micha Grüber, Jannik Schall, Philip Liesenfeld",
     "aged": true
    },
@@ -392,6 +397,8 @@
    ],
    "display": {
     "valuationLabel": "$3.25 bn",
+    "valuationUndisclosed": false,
+    "valuationUndisclosedBadge": null,
     "valuationAsOf": "Dec 2025",
     "lastRoundLabel": "Dec 2025",
     "lastRoundStage": "Series B",
@@ -399,6 +406,7 @@
     "yearsToUnicorn": 1,
     "becameUnicornLabel": "Dec 2025",
     "unicornThresholdLabel": "$1bn",
+    "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Robin Rombach, Patrick Esser, Andreas Blattmann",
     "aged": false
    },
@@ -638,6 +646,8 @@
    ],
    "display": {
     "valuationLabel": "~$13 bn",
+    "valuationUndisclosed": false,
+    "valuationUndisclosedBadge": null,
     "valuationAsOf": "Aug 2022",
     "lastRoundLabel": "Aug 2022",
     "lastRoundStage": "Series D extension",
@@ -645,6 +655,7 @@
     "yearsToUnicorn": 7,
     "becameUnicornLabel": "Jun 2018",
     "unicornThresholdLabel": "$1bn",
+    "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Alexander Rinke, Bastian Nominacher, Martin Klenk",
     "aged": true
    },
@@ -827,6 +838,8 @@
    ],
    "display": {
     "valuationLabel": "$1.2 bn",
+    "valuationUndisclosed": false,
+    "valuationUndisclosedBadge": null,
     "valuationAsOf": "Apr 2022",
     "lastRoundLabel": "Apr 2022",
     "lastRoundStage": "Series B2",
@@ -834,6 +847,7 @@
     "yearsToUnicorn": 4,
     "becameUnicornLabel": "Apr 2022",
     "unicornThresholdLabel": "$1bn",
+    "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Daniel Khachab, Julian Hammer, Grégoire Ambroselli",
     "aged": true
    },
@@ -958,6 +972,8 @@
    ],
    "display": {
     "valuationLabel": "~€1 bn",
+    "valuationUndisclosed": false,
+    "valuationUndisclosedBadge": null,
     "valuationAsOf": "Apr 2026",
     "lastRoundLabel": "Apr 2026",
     "lastRoundStage": "Series C, initial close",
@@ -965,6 +981,7 @@
     "yearsToUnicorn": 12,
     "becameUnicornLabel": "Apr 2026",
     "unicornThresholdLabel": "€1bn",
+    "unicornFlagLabel": "crossed €1bn",
     "foundersLabel": "—",
     "aged": false
    },
@@ -1111,6 +1128,8 @@
    ],
    "display": {
     "valuationLabel": "$1.9 bn",
+    "valuationUndisclosed": false,
+    "valuationUndisclosedBadge": null,
     "valuationAsOf": "Sep 2021",
     "lastRoundLabel": "Sep 2021",
     "lastRoundStage": "Series C",
@@ -1118,6 +1137,7 @@
     "yearsToUnicorn": 15,
     "becameUnicornLabel": "Sep 2021",
     "unicornThresholdLabel": "$1bn",
+    "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Dirk Hoerig",
     "aged": true
    },
@@ -1315,6 +1335,8 @@
    ],
    "display": {
     "valuationLabel": "$1 bn",
+    "valuationUndisclosed": false,
+    "valuationUndisclosedBadge": null,
     "valuationAsOf": "Mar 2026",
     "lastRoundLabel": "Mar 2026",
     "lastRoundStage": "Series B",
@@ -1322,6 +1344,7 @@
     "yearsToUnicorn": 3,
     "becameUnicornLabel": "Mar 2026",
     "unicornThresholdLabel": "$1bn",
+    "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Mirko Novakovic, Ben Blackmore, Miel Donkers, Marcel Birkner, Michele Mancioppi",
     "aged": false
    },
@@ -1477,6 +1500,8 @@
    ],
    "display": {
     "valuationLabel": "$2 bn",
+    "valuationUndisclosed": false,
+    "valuationUndisclosedBadge": null,
     "valuationAsOf": "May 2024",
     "lastRoundLabel": "May 2024",
     "lastRoundStage": "Growth round",
@@ -1484,6 +1509,7 @@
     "yearsToUnicorn": 6,
     "becameUnicornLabel": "Jan 2023",
     "unicornThresholdLabel": "€1bn",
+    "unicornFlagLabel": "crossed €1bn",
     "foundersLabel": "Jaroslaw Kutylowski",
     "aged": true
    },
@@ -1676,6 +1702,8 @@
    ],
    "display": {
     "valuationLabel": "€2.2 bn",
+    "valuationUndisclosed": false,
+    "valuationUndisclosedBadge": null,
     "valuationAsOf": "Jan 2023",
     "lastRoundLabel": "Apr 2025",
     "lastRoundStage": "Equity round",
@@ -1683,6 +1711,7 @@
     "yearsToUnicorn": 4,
     "becameUnicornLabel": "Oct 2021",
     "unicornThresholdLabel": "$1bn",
+    "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Mario Kohle, Viktor Wingert, Jochen Ziervogel",
     "aged": true
    },
@@ -1866,6 +1895,8 @@
    ],
    "display": {
     "valuationLabel": "~€1 bn",
+    "valuationUndisclosed": false,
+    "valuationUndisclosedBadge": null,
     "valuationAsOf": "Jun 2026",
     "lastRoundLabel": "Jun 2026",
     "lastRoundStage": "Series D",
@@ -1873,6 +1904,7 @@
     "yearsToUnicorn": 7,
     "becameUnicornLabel": "Jun 2026",
     "unicornThresholdLabel": "€1bn",
+    "unicornFlagLabel": "crossed €1bn",
     "foundersLabel": "Maximilian Wühr, Nikolai Schröder, Max Beyer, Max-Josef Meier",
     "aged": false
    },
@@ -2130,6 +2162,8 @@
    ],
    "display": {
     "valuationLabel": "~$3 bn",
+    "valuationUndisclosed": false,
+    "valuationUndisclosedBadge": null,
     "valuationAsOf": "Jun 2021",
     "lastRoundLabel": "Jul 2024",
     "lastRoundStage": "EQT and Kühne Holding minority investment",
@@ -2137,6 +2171,7 @@
     "yearsToUnicorn": 8,
     "becameUnicornLabel": "Jul 2019",
     "unicornThresholdLabel": "$1bn",
+    "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "André Schwämmlein, Daniel Krauss, Jochen Engert",
     "aged": true
    },
@@ -2165,6 +2200,173 @@
     "Canyon Partners",
     "Luxor Capital Group",
     "Odyssey 44"
+   ]
+  },
+  {
+   "slug": "focused-energy",
+   "name": "Focused Energy",
+   "website": "https://www.focused-energy.co",
+   "logo": "assets/logos/focused-energy.svg",
+   "hq": {
+    "city": "Darmstadt",
+    "country": "DE"
+   },
+   "alsoBasedIn": [
+    "Austin"
+   ],
+   "foundedCountry": "DE",
+   "foundedYear": 2021,
+   "sectors": [
+    "Fusion Energy",
+    "Energy"
+   ],
+   "thesis": {
+    "problem": "A grid built on wind and solar needs something firm underneath it that is not gas, and the candidates are few. Fission carries a waste and siting problem Germany has already legislated its way out of; fusion has spent seventy years being thirty years away. What changed is that the US National Ignition Facility got more energy out of a laser-driven fusion target than went into it, which turned the question from whether the physics works into whether anyone can build a machine that does it several times a second, commercially.",
+    "solution": "Focused Energy pursues inertial confinement: banks of extremely powerful lasers compress a fuel pellet until it fuses, repeated at a rate that makes a power station rather than an experiment. It is a spinout of the Technical University of Darmstadt, it bought two of the world's most powerful existing lasers rather than waiting to build them, and it plans its first laser fusion plant on the site of the decommissioned Biblis nuclear station in Hesse by the mid-2030s."
+   },
+   "valuation": {
+    "amount": null,
+    "currency": null,
+    "approximate": false,
+    "asOf": "2026-07",
+    "round": "Series A",
+    "source": "s3",
+    "undisclosed": {
+     "note": "No source states a figure, and this record spent two batches establishing that. The company's own release on the $240m Series A claims only that it “makes it the most valuable fusion company in Europe” — a superlative, not a number — and TechCrunch's account of the same round, read in full, carries no valuation either. Secondary write-ups outside the allowlist put it “close to one billion dollars”, which if accurate would be *below* the threshold and would keep the company out; that is why this entry stayed excluded until an allowlisted publication said otherwise. Gründerszene now does, twice over: in its round-up of the seven German startups that became unicorns in the first half of 2026, and again in the sentence quoted here. Membership is sourced; the figure is not, and this register will not manufacture one from a superlative.",
+     "source": "s3"
+    }
+   },
+   "becameUnicorn": {
+    "date": "2026-05",
+    "roundId": "r1",
+    "source": "s3"
+   },
+   "totalRaised": {
+    "amount": 300,
+    "currency": "USD",
+    "approximate": false,
+    "source": "s4"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2026-05",
+     "stage": "Series A",
+     "amount": 240,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": null,
+     "leadInvestors": [],
+     "investors": [
+      "RWE",
+      "SPRIND",
+      "Prime Movers Lab",
+      "European Innovation Council Fund"
+     ],
+     "source": "s1",
+     "undisclosed": {
+      "note": "The crossing round, and no price was attached to it by anyone. Handelsblatt and TechCrunch both cover the round without a valuation; Gründerszene reports the same round as the moment the company passed a billion — “knackte die Milliarden-Bewertung” — without saying what the figure was. Note that the round is dated here to May, when the company announced it and the German press reported it, not to TechCrunch's June write-up.",
+      "source": "s3"
+     },
+     "dateLabel": "May 2026",
+     "amountLabel": "$240 m"
+    }
+   ],
+   "founders": [
+    {
+     "name": "Thomas Forner",
+     "role": "Co-founder and CEO",
+     "current": true
+    }
+   ],
+   "investors": [
+    "RWE",
+    "SPRIND",
+    "Prime Movers Lab",
+    "European Innovation Council Fund"
+   ],
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "TechCrunch",
+     "title": "Focused Energy raises whopping $240M Series A for laser-powered fusion tech",
+     "url": "https://techcrunch.com/2026/06/02/focused-energy-raises-whopping-240m-series-a-for-laser-powered-fusion-tech/",
+     "publishedOn": "2026-06-02",
+     "quote": "Focused Energy recently raised an oversubscribed $240 million Series A round, one of the largest early-stage rounds for a fusion power startup."
+    },
+    {
+     "id": "s2",
+     "publication": "TechCrunch",
+     "title": "Focused Energy raises whopping $240M Series A for laser-powered fusion tech",
+     "url": "https://techcrunch.com/2026/06/02/focused-energy-raises-whopping-240m-series-a-for-laser-powered-fusion-tech/",
+     "publishedOn": "2026-06-02",
+     "quote": "The round also included participation from the German Federal Agency for Breakthrough Innovation (SPRIND), Prime Movers Lab, and the European Innovation Council Fund."
+    },
+    {
+     "id": "s3",
+     "publication": "Gründerszene",
+     "title": "Sieben neue Unicorns: Diese deutschen Startups sind jetzt Milliarden wert",
+     "url": "https://www.businessinsider.de/gruenderszene/sieben-neue-unicorns-diese-deutschen-startups-sind-jetzt-milliarden-wert/",
+     "publishedOn": "2026-07-03",
+     "quote": "Im Mai schloss sich das deutsche Fusions-Startup Focused Energy an, sichert sich 240 Millionen US-Dollar und knackte die Milliarden-Bewertung."
+    },
+    {
+     "id": "s4",
+     "publication": "TechCrunch",
+     "title": "Focused Energy raises whopping $240M Series A for laser-powered fusion tech",
+     "url": "https://techcrunch.com/2026/06/02/focused-energy-raises-whopping-240m-series-a-for-laser-powered-fusion-tech/",
+     "publishedOn": "2026-06-02",
+     "quote": "The new round, announced last week, brings the company's total private capital raised to $300 million, the company told TechCrunch."
+    },
+    {
+     "id": "s5",
+     "publication": "Sifted",
+     "title": "Mapping Europe's nuclear fusion industry",
+     "url": "https://sifted.eu/articles/mapping-europes-nuclear-fusion-industry",
+     "publishedOn": "2023-07-27",
+     "quote": "Focused Energy is a spinout from Germany's Technical University of Darmstadt developing laser-based nuclear fusion."
+    },
+    {
+     "id": "s6",
+     "publication": "Gründerszene",
+     "title": "240 Millionen für deutsches Fusions-Startup: Europas neuer Energie-Gigant?",
+     "url": "https://www.businessinsider.de/gruenderszene/240-millionen-fuer-deutsches-fusions-startup-europas-neuer-energie-gigant/",
+     "publishedOn": "2026-05-28",
+     "quote": "Das Darmstädter Fusions-Startup Focused Energy"
+    }
+   ],
+   "display": {
+    "valuationLabel": "Undisclosed",
+    "valuationUndisclosed": true,
+    "valuationUndisclosedBadge": ">1bn",
+    "valuationAsOf": "Jul 2026",
+    "lastRoundLabel": "May 2026",
+    "lastRoundStage": "Series A",
+    "totalRaisedLabel": "$300 m",
+    "yearsToUnicorn": 5,
+    "becameUnicornLabel": "May 2026",
+    "unicornThresholdLabel": "unicorn",
+    "unicornFlagLabel": "reached unicorn status",
+    "foundersLabel": "Thomas Forner",
+    "aged": false
+   },
+   "sort": {
+    "newest": [
+     2026,
+     5
+    ],
+    "valuationEur": null,
+    "latestRound": [
+     2026,
+     5
+    ],
+    "name": "focused energy"
+   },
+   "investorsOrdered": [
+    "RWE",
+    "SPRIND",
+    "Prime Movers Lab",
+    "European Innovation Council Fund"
    ]
   },
   {
@@ -2322,6 +2524,8 @@
    ],
    "display": {
     "valuationLabel": "$2.1 bn",
+    "valuationUndisclosed": false,
+    "valuationUndisclosedBadge": null,
     "valuationAsOf": "Mar 2022",
     "lastRoundLabel": "Mar 2022",
     "lastRoundStage": "Series D",
@@ -2329,6 +2533,7 @@
     "yearsToUnicorn": 5,
     "becameUnicornLabel": "Jun 2021",
     "unicornThresholdLabel": "$1bn",
+    "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Michael Wax, Erik Muttersbach, Ferry Heilemann, Fabian Heilemann",
     "aged": true
    },
@@ -2602,6 +2807,8 @@
    ],
    "display": {
     "valuationLabel": "$18 bn",
+    "valuationUndisclosed": false,
+    "valuationUndisclosedBadge": null,
     "valuationAsOf": "Jul 2026",
     "lastRoundLabel": "Jul 2026",
     "lastRoundStage": "Series E",
@@ -2609,6 +2816,7 @@
     "yearsToUnicorn": 2,
     "becameUnicornLabel": "Sep 2023",
     "unicornThresholdLabel": "€1bn",
+    "unicornFlagLabel": "crossed €1bn",
     "foundersLabel": "Torsten Reil, Gundbert Scherf, Niklas Köhler",
     "aged": false
    },
@@ -2642,6 +2850,261 @@
     "JPMorganChase",
     "Canada Pension Plan Investment Board",
     "Stepstone"
+   ]
+  },
+  {
+   "slug": "isar-aerospace",
+   "name": "Isar Aerospace",
+   "website": "https://isaraerospace.com",
+   "logo": "assets/logos/isar-aerospace.png",
+   "hq": {
+    "city": "Munich",
+    "country": "DE"
+   },
+   "foundedCountry": "DE",
+   "foundedYear": 2018,
+   "sectors": [
+    "Space",
+    "Deep Tech"
+   ],
+   "thesis": {
+    "problem": "Europe can build satellites and cannot reliably launch them. Ariane 6 is sized for large payloads on a national cadence, Soyuz stopped being available in 2022, and the small and medium satellites that make up most of what Europe now wants in orbit — earth observation, connectivity, and increasingly sovereign defence capacity — have had to buy rides from American providers on American schedules and American terms.",
+    "solution": "Isar Aerospace builds Spectrum, a two-stage rocket sized for the payloads Europe actually flies rather than the ones a national programme was designed around, and manufactures it itself: engines, tanks and avionics in-house, additive manufacturing rather than a supplier chain across a dozen countries, on the argument that vertical integration is what makes launch cheap and the cadence predictable. It is a spinout of the Technical University of Munich and launches from Andøya in northern Norway."
+   },
+   "valuation": {
+    "amount": null,
+    "currency": null,
+    "approximate": false,
+    "asOf": "2025-09",
+    "round": "Convertible bond",
+    "source": "s4",
+    "undisclosed": {
+     "note": "Nobody has published a figure for Isar Aerospace, and the register spent a batch establishing that rather than assuming it. Its own release on the €270m Series D was opened and read end to end — round, investors, factory, headcount, no valuation anywhere — and Sifted's account of the same round states none either. The €2bn widely attached to the company traces to a Bloomberg piece whose own URL slug is “isar-aerospace-in-talks-to-raise-250-million-ahead-of-launch”: talks, about a smaller round that was superseded, and all three Wayback captures of that URL are themselves HTTP 403 block pages. What is stated plainly, by an allowlisted publication, is the status and the month: TechCrunch, listing Europe's new unicorns of 2025. That sentence carries no numeral, which is exactly why this record exists in this shape.",
+     "source": "s4"
+    }
+   },
+   "becameUnicorn": {
+    "date": "2025-06",
+    "roundId": "r2",
+    "source": "s4"
+   },
+   "totalRaised": {
+    "amount": null,
+    "currency": "EUR",
+    "approximate": false,
+    "source": "s3"
+   },
+   "rounds": [
+    {
+     "id": "r0",
+     "date": "2020-12",
+     "stage": "Series B",
+     "amount": 75,
+     "currency": "EUR",
+     "approximate": false,
+     "postMoney": null,
+     "leadInvestors": [
+      "Lakestar"
+     ],
+     "investors": [
+      "Lakestar",
+      "Earlybird",
+      "Vsquared Ventures"
+     ],
+     "source": "s1",
+     "dateLabel": "Dec 2020",
+     "amountLabel": "€75 m"
+    },
+    {
+     "id": "r1",
+     "date": "2023-03",
+     "stage": "Series C",
+     "amount": 165,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": null,
+     "leadInvestors": [
+      "7-Industries Holding"
+     ],
+     "investors": [
+      "7-Industries Holding",
+      "Bayern Kapital",
+      "Earlybird Venture Capital",
+      "HV Capital",
+      "Lakestar",
+      "Lombard Odier Investment Managers",
+      "Porsche SE",
+      "UVC Partners",
+      "Vsquared Ventures"
+     ],
+     "source": "s2",
+     "dateLabel": "Mar 2023",
+     "amountLabel": "$165 m"
+    },
+    {
+     "id": "r2",
+     "date": "2025-06",
+     "stage": "Convertible bond",
+     "amount": 150,
+     "currency": "EUR",
+     "approximate": false,
+     "postMoney": null,
+     "leadInvestors": [],
+     "investors": [
+      "Eldridge Industries"
+     ],
+     "source": "s4",
+     "undisclosed": {
+      "note": "The crossing, and an unusual one: the instrument that carried Isar Aerospace over the threshold was a convertible bond rather than a priced equity round, so there is no post-money to disclose and nobody has disclosed one. TechCrunch states the fact and the month in the same sentence as the instrument, which is what this record rests on. Note that the company's own university says the same thing — TUM's press release is titled “Isar Aerospace becomes a unicorn” — but a university announcing its spinout is not on the register's allowlist, so it is mentioned here and not cited.",
+      "source": "s4"
+     },
+     "dateLabel": "Jun 2025",
+     "amountLabel": "€150 m"
+    },
+    {
+     "id": "r3",
+     "date": "2026-06",
+     "stage": "Series D",
+     "amount": 270,
+     "currency": "EUR",
+     "approximate": false,
+     "postMoney": null,
+     "leadInvestors": [],
+     "investors": [
+      "Island Green Capital",
+      "Molten Ventures",
+      "HV Capital",
+      "Lakestar",
+      "UVC Partners"
+     ],
+     "source": "s3",
+     "dateLabel": "Jun 2026",
+     "amountLabel": "€270 m"
+    }
+   ],
+   "founders": [
+    {
+     "name": "Daniel Metzler",
+     "role": "Co-founder and CEO",
+     "current": true
+    },
+    {
+     "name": "Josef Fleischmann",
+     "role": "Co-founder",
+     "current": true
+    },
+    {
+     "name": "Markus Brandl",
+     "role": "Co-founder",
+     "current": true
+    }
+   ],
+   "investors": [
+    "Lakestar",
+    "7-Industries Holding",
+    "Earlybird",
+    "Earlybird Venture Capital",
+    "Vsquared Ventures",
+    "Bayern Kapital",
+    "HV Capital",
+    "Lombard Odier Investment Managers",
+    "Porsche SE",
+    "UVC Partners",
+    "Eldridge Industries",
+    "Island Green Capital",
+    "Molten Ventures"
+   ],
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "TechCrunch",
+     "title": "Germany's Isar Aerospace raises $91M to get its satellite launch vehicle off the ground",
+     "url": "https://techcrunch.com/2020/12/08/germanys-isar-aerospace-raises-91m-to-get-its-satellite-launch-vehicle-off-the-ground/",
+     "publishedOn": "2020-12-08",
+     "quote": "Isar Aerospace, which is building a micro-satellite launcher significantly smaller and thus lower in price than bigger launchers on the market today, has picked up €75 million ($91 million) in funding."
+    },
+    {
+     "id": "s2",
+     "publication": "TechCrunch",
+     "title": "Isar Aerospace raises $165 million to bring more sovereign launch to Europe",
+     "url": "https://techcrunch.com/2023/03/28/isar-aerospace-raises-165-million-to-bring-more-sovereign-launch-to-europe/",
+     "publishedOn": "2023-03-28",
+     "quote": "German launch startup Isar Aerospace has scored $165 million (€155 million) in new funding as it races toward the inaugural flight of its Spectrum small rocket later this year."
+    },
+    {
+     "id": "s3",
+     "publication": "Sifted",
+     "title": "Isar Aerospace raises €270m to scale launch operations",
+     "url": "https://sifted.eu/articles/isar-aerospace-raises-e270m-to-scale-launch-operations",
+     "publishedOn": "2026-06-09",
+     "quote": "German rocket startup Isar Aerospace has raised €270m in fresh funding as Europe races to bolster its sovereign space capabilities amid growing geopolitical tensions."
+    },
+    {
+     "id": "s4",
+     "publication": "TechCrunch",
+     "title": "More than 10 European startups became unicorns this year",
+     "url": "https://techcrunch.com/2025/09/08/more-than-10-european-startups-became-unicorns-this-year/",
+     "publishedOn": "2025-09-08",
+     "quote": "German space startup Isar Aerospace became a unicorn in June after reaching an agreement with Eldridge Industries for a convertible bond of €150 million (approximately $173 million)."
+    },
+    {
+     "id": "s5",
+     "publication": "TechCrunch",
+     "title": "Germany's Isar Aerospace raises $91M to get its satellite launch vehicle off the ground",
+     "url": "https://techcrunch.com/2020/12/08/germanys-isar-aerospace-raises-91m-to-get-its-satellite-launch-vehicle-off-the-ground/",
+     "publishedOn": "2020-12-08",
+     "quote": "The startup is a spinout of TUM — the famous Munich Technical University — where co-founders Daniel Metzler, Josef Fleischmann and Markus Brandl all studied engineering."
+    },
+    {
+     "id": "s6",
+     "publication": "Sifted",
+     "title": "Isar Aerospace raises €270m to scale launch operations",
+     "url": "https://sifted.eu/articles/isar-aerospace-raises-e270m-to-scale-launch-operations",
+     "publishedOn": "2026-06-09",
+     "quote": "On Tuesday, the Munich-based startup announced new investors Island Green Capital and Molten Ventures had backed its Series D raise, alongside HV Capital, Lakestar and UVC Partners."
+    }
+   ],
+   "display": {
+    "valuationLabel": "Undisclosed",
+    "valuationUndisclosed": true,
+    "valuationUndisclosedBadge": ">1bn",
+    "valuationAsOf": "Sep 2025",
+    "lastRoundLabel": "Jun 2026",
+    "lastRoundStage": "Series D",
+    "totalRaisedLabel": "—",
+    "yearsToUnicorn": 7,
+    "becameUnicornLabel": "Jun 2025",
+    "unicornThresholdLabel": "unicorn",
+    "unicornFlagLabel": "reached unicorn status",
+    "foundersLabel": "Daniel Metzler, Josef Fleischmann, Markus Brandl",
+    "aged": false
+   },
+   "sort": {
+    "newest": [
+     2025,
+     6
+    ],
+    "valuationEur": null,
+    "latestRound": [
+     2026,
+     6
+    ],
+    "name": "isar aerospace"
+   },
+   "investorsOrdered": [
+    "Lakestar",
+    "7-Industries Holding",
+    "Earlybird",
+    "Earlybird Venture Capital",
+    "Vsquared Ventures",
+    "Bayern Kapital",
+    "HV Capital",
+    "Lombard Odier Investment Managers",
+    "Porsche SE",
+    "UVC Partners",
+    "Eldridge Industries",
+    "Island Green Capital",
+    "Molten Ventures"
    ]
   },
   {
@@ -2792,6 +3255,8 @@
    ],
    "display": {
     "valuationLabel": "€1 bn",
+    "valuationUndisclosed": false,
+    "valuationUndisclosedBadge": null,
     "valuationAsOf": "Aug 2026",
     "lastRoundLabel": "Aug 2026",
     "lastRoundStage": "Series C",
@@ -2799,6 +3264,7 @@
     "yearsToUnicorn": 7,
     "becameUnicornLabel": "Aug 2026",
     "unicornThresholdLabel": "€1bn",
+    "unicornFlagLabel": "crossed €1bn",
     "foundersLabel": "Ante Spittler, Anton Rummel, Ferdinand Meyer, Stephan Haslebacher",
     "aged": false
    },
@@ -2980,6 +3446,8 @@
    ],
    "display": {
     "valuationLabel": "~$9 bn",
+    "valuationUndisclosed": false,
+    "valuationUndisclosedBadge": null,
     "valuationAsOf": "Oct 2021",
     "lastRoundLabel": "Oct 2021",
     "lastRoundStage": "Series E",
@@ -2987,6 +3455,7 @@
     "yearsToUnicorn": 6,
     "becameUnicornLabel": "Jan 2019",
     "unicornThresholdLabel": "$1bn",
+    "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Valentin Stalf, Maximilian Tayenthal",
     "aged": true
    },
@@ -3186,6 +3655,8 @@
    ],
    "display": {
     "valuationLabel": "$5.2 bn",
+    "valuationUndisclosed": false,
+    "valuationUndisclosedBadge": null,
     "valuationAsOf": "May 2026",
     "lastRoundLabel": "May 2026",
     "lastRoundStage": "Secondary",
@@ -3193,6 +3664,7 @@
     "yearsToUnicorn": 6,
     "becameUnicornLabel": "Oct 2025",
     "unicornThresholdLabel": "$1bn",
+    "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Jan Oberhauser",
     "aged": false
    },
@@ -3221,6 +3693,225 @@
     "HV Capital",
     "Highland Europe",
     "Felicis Ventures"
+   ]
+  },
+  {
+   "slug": "neura-robotics",
+   "name": "Neura Robotics",
+   "website": "https://neura-robotics.com",
+   "logo": "assets/logos/neura-robotics.svg",
+   "hq": {
+    "city": "Metzingen",
+    "country": "DE"
+   },
+   "foundedCountry": "DE",
+   "foundedYear": 2019,
+   "sectors": [
+    "Robotics",
+    "Artificial Intelligence"
+   ],
+   "thesis": {
+    "problem": "Industrial robots are precise and blind. They repeat a taught path inside a safety cage because they cannot perceive what is around them, which means every new task is a re-installation and every task involving a person is a fence. That is workable for a car plant running one model for six years and useless for the labour shortage everyone actually has — the jobs nobody can staff are varied, unstructured and next to people.",
+    "solution": "Neura Robotics builds what it calls cognitive robots: arms and humanoids with sensing built into the machine rather than bolted around it, so they can work without a cage and be taught by demonstration instead of programmed. The company designs its own sensors, drives and software stack rather than integrating other people's, and is betting that the same platform serves an industrial arm, a service robot and a humanoid — which is why a robotics company is raising at the scale of an AI one."
+   },
+   "valuation": {
+    "amount": 7000,
+    "currency": "USD",
+    "approximate": false,
+    "asOf": "2026-06",
+    "round": "Series C",
+    "source": "s3",
+    "disputed": {
+     "note": "Neura itself has never stated a valuation. Its own announcement of this round gives a size and no price, and it declined to comment on the figure. The $7bn reaches an allowlisted page at second hand — Sifted attributes it to the Financial Times “citing people familiar with the deal” — and at third hand in Gründerszene, which prints it flatly as fact in its round-up of 2026's German unicorns: “Die Bewertung: sieben Milliarden Dollar und damit Einhorn-Status.” Two independent allowlisted publications carrying the same number is why it is published here rather than left undisclosed; that neither traces to the company is why it is flagged. A reader should treat the membership as solid and the figure as reported rather than confirmed.",
+     "source": "s5"
+    }
+   },
+   "becameUnicorn": {
+    "date": "2026-06",
+    "roundId": "r2",
+    "source": "s3"
+   },
+   "totalRaised": {
+    "amount": null,
+    "currency": "USD",
+    "approximate": false,
+    "source": "s2"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2025-01",
+     "stage": "Series B",
+     "amount": 120,
+     "currency": "EUR",
+     "approximate": false,
+     "postMoney": null,
+     "leadInvestors": [
+      "Lingotto Investment Management"
+     ],
+     "investors": [
+      "Lingotto Investment Management",
+      "BlueCrest Capital Management",
+      "Volvo Cars Tech Fund",
+      "InterAlpen Partners",
+      "Vsquared Ventures",
+      "HV Capital",
+      "Delta Electronics",
+      "C4 Ventures",
+      "L-Bank"
+     ],
+     "source": "s1",
+     "dateLabel": "Jan 2025",
+     "amountLabel": "€120 m"
+    },
+    {
+     "id": "r2",
+     "date": "2026-06",
+     "stage": "Series C",
+     "amount": 1400,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": 7000,
+     "postMoneyCurrency": "USD",
+     "postMoneySource": "s3",
+     "leadInvestors": [],
+     "investors": [
+      "Tether",
+      "Qualcomm",
+      "Amazon",
+      "Nvidia",
+      "Bosch",
+      "Schaeffler",
+      "European Investment Bank"
+     ],
+     "source": "s2",
+     "disputed": {
+      "note": "Sifted reports the round flatly as “a $1.4bn Series C round”, which is the figure on file here. The company's own announcement, and Tech.eu reporting it, say “up to $1.4 billion” — a ceiling that unlocks in tranches rather than a sum already wired. The register records the number the allowlisted reporting states and shows the qualifier beside it rather than choosing between them.",
+      "source": "s4"
+     },
+     "dateLabel": "Jun 2026",
+     "amountLabel": "$1.4 bn"
+    }
+   ],
+   "founders": [
+    {
+     "name": "David Reger",
+     "role": "Founder and CEO",
+     "current": true
+    }
+   ],
+   "investors": [
+    "Lingotto Investment Management",
+    "Tether",
+    "Qualcomm",
+    "Amazon",
+    "Nvidia",
+    "Bosch",
+    "Schaeffler",
+    "European Investment Bank",
+    "BlueCrest Capital Management",
+    "Volvo Cars Tech Fund",
+    "InterAlpen Partners",
+    "Vsquared Ventures",
+    "HV Capital",
+    "Delta Electronics",
+    "C4 Ventures",
+    "L-Bank"
+   ],
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "Sifted",
+     "title": "German robotics startup Neura Robotics raises €120m Series B",
+     "url": "https://sifted.eu/articles/neura-robotics-raises-120m-news",
+     "publishedOn": "2025-01-15",
+     "quote": "German robotics company Neura Robotics has raised €120m in Series B financing to develop \"cognitive\" robots capable of \"seeing\", walking and manipulating objects."
+    },
+    {
+     "id": "s2",
+     "publication": "Sifted",
+     "title": "Neura Robotics raises $1.4bn backed by Amazon, Nvidia and Qualcomm",
+     "url": "https://sifted.eu/articles/neura-robotics-1-4bn-series-c",
+     "publishedOn": "2026-06-10",
+     "quote": "German startup Neura Robotics has raised a $1.4bn Series C round from investors including crypto group Tether, Qualcomm, Amazon and Nvidia."
+    },
+    {
+     "id": "s3",
+     "publication": "Sifted",
+     "title": "Neura Robotics raises $1.4bn backed by Amazon, Nvidia and Qualcomm",
+     "url": "https://sifted.eu/articles/neura-robotics-1-4bn-series-c",
+     "publishedOn": "2026-06-10",
+     "quote": "The new funding brings Neura's valuation to $7bn, the Financial Times reported, citing people familiar with the deal."
+    },
+    {
+     "id": "s4",
+     "publication": "Tech.eu",
+     "title": "NEURA Robotics secures up to $1.4B Series C to scale physical AI and cognitive robotics platform",
+     "url": "https://tech.eu/2026/06/10/neura-robotics-secures-up-to-14b-series-c-to-scale-physical-ai-and-cognitive-robotics-platform/",
+     "publishedOn": "2026-06-10",
+     "quote": "NEURA Robotics has announced up to $1.4 billion in Series C funding to accelerate the development of its physical AI platform."
+    },
+    {
+     "id": "s5",
+     "publication": "Gründerszene",
+     "title": "Sieben neue Unicorns: Diese deutschen Startups sind jetzt Milliarden wert",
+     "url": "https://www.businessinsider.de/gruenderszene/sieben-neue-unicorns-diese-deutschen-startups-sind-jetzt-milliarden-wert/",
+     "publishedOn": "2026-07-03",
+     "quote": "Die Bewertung: sieben Milliarden Dollar und damit Einhorn-Status."
+    },
+    {
+     "id": "s6",
+     "publication": "Sifted",
+     "title": "German robotics startup Neura Robotics raises €120m Series B",
+     "url": "https://sifted.eu/articles/neura-robotics-raises-120m-news",
+     "publishedOn": "2025-01-15",
+     "quote": "Neura Robotics' round was led by Lingotto Investment Management; Blue Crest Capital Management, Volvo Cars Tech Fund, InterAlpen Partners, Vsquared Ventures, HV Capital, Delta Electronics, C4 Ventures, L-Bank and the company's founder and CEO David Reger also participated."
+    }
+   ],
+   "display": {
+    "valuationLabel": "$7 bn",
+    "valuationUndisclosed": false,
+    "valuationUndisclosedBadge": null,
+    "valuationAsOf": "Jun 2026",
+    "lastRoundLabel": "Jun 2026",
+    "lastRoundStage": "Series C",
+    "totalRaisedLabel": "—",
+    "yearsToUnicorn": 7,
+    "becameUnicornLabel": "Jun 2026",
+    "unicornThresholdLabel": "$1bn",
+    "unicornFlagLabel": "crossed $1bn",
+    "foundersLabel": "David Reger",
+    "aged": false
+   },
+   "sort": {
+    "newest": [
+     2026,
+     6
+    ],
+    "valuationEur": 6440.0,
+    "latestRound": [
+     2026,
+     6
+    ],
+    "name": "neura robotics"
+   },
+   "investorsOrdered": [
+    "Lingotto Investment Management",
+    "Tether",
+    "Qualcomm",
+    "Amazon",
+    "Nvidia",
+    "Bosch",
+    "Schaeffler",
+    "European Investment Bank",
+    "BlueCrest Capital Management",
+    "Volvo Cars Tech Fund",
+    "InterAlpen Partners",
+    "Vsquared Ventures",
+    "HV Capital",
+    "Delta Electronics",
+    "C4 Ventures",
+    "L-Bank"
    ]
   },
   {
@@ -3375,6 +4066,8 @@
    ],
    "display": {
     "valuationLabel": "~$1.1 bn",
+    "valuationUndisclosed": false,
+    "valuationUndisclosedBadge": null,
     "valuationAsOf": "Jan 2026",
     "lastRoundLabel": "Jan 2026",
     "lastRoundStage": "Series C",
@@ -3382,6 +4075,7 @@
     "yearsToUnicorn": 8,
     "becameUnicornLabel": "Jan 2026",
     "unicornThresholdLabel": "$1bn",
+    "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Alberto Zamora, Matthias Jungblut, Stefan Wawrzinek",
     "aged": false
    },
@@ -3557,6 +4251,8 @@
    ],
    "display": {
     "valuationLabel": "$3 bn",
+    "valuationUndisclosed": false,
+    "valuationUndisclosedBadge": null,
     "valuationAsOf": "Jan 2026",
     "lastRoundLabel": "Jan 2026",
     "lastRoundStage": "Series D",
@@ -3564,6 +4260,7 @@
     "yearsToUnicorn": 7,
     "becameUnicornLabel": "May 2025",
     "unicornThresholdLabel": "$1bn",
+    "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Malte Kosub, Stefan Ostwald",
     "aged": false
    },
@@ -3752,6 +4449,8 @@
    ],
    "display": {
     "valuationLabel": "$8.5 bn",
+    "valuationUndisclosed": false,
+    "valuationUndisclosedBadge": null,
     "valuationAsOf": "Jun 2022",
     "lastRoundLabel": "Jun 2022",
     "lastRoundStage": "Series E (second close)",
@@ -3759,6 +4458,7 @@
     "yearsToUnicorn": 6,
     "becameUnicornLabel": "Jan 2021",
     "unicornThresholdLabel": "$1bn",
+    "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Hanno Renner, Roman Schumacher, Arseniy Vershinin, Jonas Rieke",
     "aged": true
    },
@@ -3991,6 +4691,8 @@
    ],
    "display": {
     "valuationLabel": "€2.4 bn",
+    "valuationUndisclosed": false,
+    "valuationUndisclosedBadge": null,
     "valuationAsOf": "Jul 2026",
     "lastRoundLabel": "Jul 2026",
     "lastRoundStage": "Financing round",
@@ -3998,6 +4700,7 @@
     "yearsToUnicorn": 3,
     "becameUnicornLabel": "Jul 2026",
     "unicornThresholdLabel": "€1bn",
+    "unicornFlagLabel": "crossed €1bn",
     "foundersLabel": "Francesco Sciortino, Lucio Milanese, Jorrit Lion, Martin Kubie, Jonathan Schilling",
     "aged": false
    },
@@ -4039,6 +4742,518 @@
     "OMNES Capital",
     "Club degli Investitori",
     "Visionaries Tomorrow"
+   ]
+  },
+  {
+   "slug": "quantum-systems",
+   "name": "Quantum Systems",
+   "website": "https://quantum-systems.com",
+   "logo": "assets/logos/quantum-systems.svg",
+   "hq": {
+    "city": "Gilching",
+    "country": "DE"
+   },
+   "foundedCountry": "DE",
+   "foundedYear": 2015,
+   "sectors": [
+    "Defence",
+    "Artificial Intelligence"
+   ],
+   "thesis": {
+    "problem": "A reconnaissance drone is only useful if the picture it brings back is current, and European armies spent two decades buying small numbers of expensive airframes on procurement cycles measured in years. Ukraine changed the arithmetic: what a unit needs is a system a soldier can carry, launch without a runway, fly beyond line of sight and replace when it is lost — and a manufacturer close enough to the front to change the software every few weeks as jamming evolves.",
+    "solution": "Quantum Systems builds vertical-take-off fixed-wing drones — they lift like a helicopter and cruise like an aeroplane, so they need no launcher and still hold an area for hours — and sells the autonomy stack alongside the airframe. The dual-use framing is deliberate and commercial: the same aircraft surveys pipelines, mines and farmland, which keeps a civilian revenue line under a defence business whose orders arrive in bursts. Its systems flew over 19,000 missions in Ukraine in 2025."
+   },
+   "valuation": {
+    "amount": 8000,
+    "currency": "USD",
+    "approximate": false,
+    "asOf": "2026-07",
+    "round": "Series D",
+    "source": "s6"
+   },
+   "becameUnicorn": {
+    "date": "2025-05",
+    "roundId": "r1",
+    "source": "s3"
+   },
+   "totalRaised": {
+    "amount": null,
+    "currency": "USD",
+    "approximate": false,
+    "source": "s6"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2025-05",
+     "stage": "Series C",
+     "amount": 160,
+     "currency": "EUR",
+     "approximate": false,
+     "postMoney": null,
+     "leadInvestors": [
+      "Balderton Capital"
+     ],
+     "investors": [
+      "Balderton Capital",
+      "Hensoldt",
+      "Airbus Defence and Space",
+      "Bullhound Capital",
+      "LP&E AG",
+      "HV Capital",
+      "Project A",
+      "Peter Thiel",
+      "DTCP",
+      "Omnes Capital",
+      "Airbus Ventures",
+      "Porsche SE",
+      "Notion"
+     ],
+     "source": "s1",
+     "undisclosed": {
+      "note": "This is the round that crossed, and no source has ever printed the number it crossed at. Sifted, Tech.eu, EU-Startups and lead investor Balderton all covered it; the company's own release — recovered from the Wayback Machine, because quantum-systems.com blocks this crawler — gives the round, the investors and the total raised, and states no valuation at all. What is stated, and stated flatly rather than as an estimate, is the threshold: Handelsblatt, the same week, “Mit der neuen Finanzierung wird das Start-up mit mehr als einer Milliarde Dollar bewertet.” Under the register's previous rule, that sentence could not be recorded because it contains no numeral to check a figure against, and one of Germany's best-known unicorns was left out on that technicality. The November extension that “tripled its valuation” to above €3 billion is the next figure anyone published; dividing that by three would be arithmetic, not a source.",
+      "source": "s2"
+     },
+     "dateLabel": "May 2025",
+     "amountLabel": "€160 m"
+    },
+    {
+     "id": "r2",
+     "date": "2025-11",
+     "stage": "Series C extension",
+     "amount": 180,
+     "currency": "EUR",
+     "approximate": false,
+     "postMoney": 3000,
+     "postMoneyCurrency": "EUR",
+     "postMoneySource": "s5",
+     "leadInvestors": [
+      "Balderton Capital"
+     ],
+     "investors": [
+      "Balderton Capital"
+     ],
+     "source": "s4",
+     "dateLabel": "Nov 2025",
+     "amountLabel": "€180 m"
+    },
+    {
+     "id": "r3",
+     "date": "2026-07",
+     "stage": "Series D",
+     "amount": 1200,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": 8000,
+     "postMoneyCurrency": "USD",
+     "postMoneySource": "s6",
+     "leadInvestors": [
+      "Blackstone",
+      "Noteus",
+      "Airbus",
+      "Advent"
+     ],
+     "investors": [
+      "Blackstone",
+      "Noteus",
+      "Airbus",
+      "Advent",
+      "Balderton Capital",
+      "HV Capital"
+     ],
+     "source": "s6",
+     "dateLabel": "Jul 2026",
+     "amountLabel": "$1.2 bn"
+    }
+   ],
+   "founders": [
+    {
+     "name": "Florian Seibel",
+     "role": "Co-founder and co-CEO",
+     "current": true
+    }
+   ],
+   "investors": [
+    "Balderton Capital",
+    "Blackstone",
+    "Noteus",
+    "Airbus",
+    "Advent",
+    "HV Capital",
+    "Hensoldt",
+    "Airbus Defence and Space",
+    "Bullhound Capital",
+    "LP&E AG",
+    "Project A",
+    "Peter Thiel",
+    "DTCP",
+    "Omnes Capital",
+    "Airbus Ventures",
+    "Porsche SE",
+    "Notion"
+   ],
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "Sifted",
+     "title": "Drones startup Quantum Systems hits unicorn status with €160m Series C",
+     "url": "https://sifted.eu/articles/quantum-systems-160m-unicorn",
+     "publishedOn": "2025-05-06",
+     "quote": "Autonomous drones startup Quantum Systems has raised €160m in Series C funding led by British VC Balderton Capital, making it one of only a few unicorns in the European defence tech field."
+    },
+    {
+     "id": "s2",
+     "publication": "Handelsblatt",
+     "title": "Quantum Systems: Das erste deutsche Einhorn 2025 ist ein Drohnen-Start-up",
+     "url": "https://www.handelsblatt.com/technik/it-internet/quantum-systems-das-erste-deutsche-einhorn-2025-ist-ein-drohnen-start-up/100126365.html",
+     "publishedOn": "2025-05-07",
+     "quote": "Mit der neuen Finanzierung wird das Start-up mit mehr als einer Milliarde Dollar bewertet."
+    },
+    {
+     "id": "s3",
+     "publication": "TechCrunch",
+     "title": "More than 10 European startups became unicorns this year",
+     "url": "https://techcrunch.com/2025/09/08/more-than-10-european-startups-became-unicorns-this-year/",
+     "publishedOn": "2025-09-08",
+     "quote": "German dual-use startup Quantum Systems became a unicorn in May 2025, according to PitchBook, upon raising a €160 million Series C (approximately $172 million) to accelerate its global expansion, scale production, and advance its autonomous drone systems, software, and AI."
+    },
+    {
+     "id": "s4",
+     "publication": "Tech.eu",
+     "title": "Quantum Systems' €180M Series C extension lifts company to €3B+",
+     "url": "https://tech.eu/2025/11/28/quantum-systems-180m-series-c-extension-lifts-company-to-3b/",
+     "publishedOn": "2025-11-28",
+     "quote": "Europe's first dual-use unicorn, Quantum Systems, has tripled its valuation and raised €180 million in a Series C Extension led by Balderton Capital."
+    },
+    {
+     "id": "s5",
+     "publication": "Tech.eu",
+     "title": "Quantum Systems' €180M Series C extension lifts company to €3B+",
+     "url": "https://tech.eu/2025/11/28/quantum-systems-180m-series-c-extension-lifts-company-to-3b/",
+     "publishedOn": "2025-11-28",
+     "quote": "The company's valuation is now above €3 billion."
+    },
+    {
+     "id": "s6",
+     "publication": "Tech.eu",
+     "title": "Quantum Systems raises $1.2BN at $8BN valuation",
+     "url": "https://tech.eu/2026/07/02/quantum-systems-raises-12bn-at-8bn-valuation/",
+     "publishedOn": "2026-07-02",
+     "quote": "German drone manufacturer Quantum Systems has raised $1.2bn in fresh funding, in a round which more than doubles its valuation to $8bn, it said today."
+    },
+    {
+     "id": "s7",
+     "publication": "Handelsblatt",
+     "title": "Quantum Systems: Das erste deutsche Einhorn 2025 ist ein Drohnen-Start-up",
+     "url": "https://www.handelsblatt.com/technik/it-internet/quantum-systems-das-erste-deutsche-einhorn-2025-ist-ein-drohnen-start-up/100126365.html",
+     "publishedOn": "2025-05-07",
+     "quote": "Quantum Systems aus Gilching bei München gilt als führender Hersteller von kompakten Drohnen"
+    },
+    {
+     "id": "s8",
+     "publication": "Sifted",
+     "title": "Quantum Systems CEO Florian Seibel: 'The big challenge is to not become like one of the primes'",
+     "url": "https://sifted.eu/articles/quantum-systems-ceo-prime",
+     "publishedOn": "2025-09-01",
+     "quote": "CEO and cofounder Florian Seibel told the Sifted Podcast recently"
+    }
+   ],
+   "display": {
+    "valuationLabel": "$8 bn",
+    "valuationUndisclosed": false,
+    "valuationUndisclosedBadge": null,
+    "valuationAsOf": "Jul 2026",
+    "lastRoundLabel": "Jul 2026",
+    "lastRoundStage": "Series D",
+    "totalRaisedLabel": "—",
+    "yearsToUnicorn": 10,
+    "becameUnicornLabel": "May 2025",
+    "unicornThresholdLabel": "unicorn",
+    "unicornFlagLabel": "reached unicorn status",
+    "foundersLabel": "Florian Seibel",
+    "aged": false
+   },
+   "sort": {
+    "newest": [
+     2025,
+     5
+    ],
+    "valuationEur": 7360.0,
+    "latestRound": [
+     2026,
+     7
+    ],
+    "name": "quantum systems"
+   },
+   "investorsOrdered": [
+    "Balderton Capital",
+    "Blackstone",
+    "Noteus",
+    "Airbus",
+    "Advent",
+    "HV Capital",
+    "Hensoldt",
+    "Airbus Defence and Space",
+    "Bullhound Capital",
+    "LP&E AG",
+    "Project A",
+    "Peter Thiel",
+    "DTCP",
+    "Omnes Capital",
+    "Airbus Ventures",
+    "Porsche SE",
+    "Notion"
+   ]
+  },
+  {
+   "slug": "raisin",
+   "name": "Raisin",
+   "website": "https://www.raisin.com",
+   "logo": "assets/logos/raisin.svg",
+   "hq": {
+    "city": "Berlin",
+    "country": "DE"
+   },
+   "foundedCountry": "DE",
+   "foundedYear": 2012,
+   "sectors": [
+    "Fintech",
+    "Banking"
+   ],
+   "thesis": {
+    "problem": "Deposit rates inside the single market differ by percentage points, and almost nobody can reach them. A saver in Germany is offered whatever their own bank pays; opening an account with a bank in Portugal or Lithuania means a foreign onboarding process, a foreign language and a foreign deposit-guarantee scheme they have no way to assess. The rates exist, the guarantees exist, and the friction between them is what keeps hundreds of billions sitting still.",
+    "solution": "Raisin is a marketplace with one onboarding: the saver signs up once and can then place money with any partner bank on the platform across Europe, each covered by its own national deposit guarantee up to the EU-harmonised €100,000. The other half of the business is the mirror image — deposits-as-a-service sold to banks that want funding and to distributors that want a savings product without building one. It brokers tens of billions of euros and has been profitable since 2023."
+   },
+   "valuation": {
+    "amount": null,
+    "currency": null,
+    "approximate": false,
+    "asOf": "2024-12",
+    "round": "Secondary share sale",
+    "source": "s5",
+    "undisclosed": {
+     "note": "The figure everyone quotes for Raisin is “over two billion euros”, and it is over two billion euros in words rather than digits — Gründerszene spells it out, sourcing it to Finance Forward, and no allowlisted publication has printed it as a numeral. Handelsblatt separately calls the company “milliardenschwer” and nothing more precise. Two further things are worth a reader's attention. This valuation was set by a secondary sale in which existing holders sold shares, not by a priced primary round, so it is a price paid for stock changing hands rather than a post-money — the register publishes those (Trade Republic, n8n) and always labels them. And Raisin's unicorn status has not been continuous: investor Kinnevik marked it at €895m in 2022 and it lost the label, regaining it at the March 2023 upround this record dates the crossing to.",
+     "source": "s5"
+    }
+   },
+   "becameUnicorn": {
+    "date": "2023-03",
+    "roundId": "r3",
+    "source": "s4"
+   },
+   "totalRaised": {
+    "amount": null,
+    "currency": "EUR",
+    "approximate": false,
+    "source": "s3"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2019-02",
+     "stage": "Series D",
+     "amount": 114,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": null,
+     "leadInvestors": [
+      "Index Ventures"
+     ],
+     "investors": [
+      "Index Ventures",
+      "PayPal",
+      "Ribbit Capital",
+      "Thrive Capital"
+     ],
+     "source": "s2",
+     "dateLabel": "Feb 2019",
+     "amountLabel": "$114 m"
+    },
+    {
+     "id": "r2",
+     "date": "2019-07",
+     "stage": "Goldman Sachs investment",
+     "amount": 28,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": null,
+     "leadInvestors": [
+      "Goldman Sachs"
+     ],
+     "investors": [
+      "Goldman Sachs"
+     ],
+     "source": "s2",
+     "dateLabel": "Jul 2019",
+     "amountLabel": "$28 m"
+    },
+    {
+     "id": "r3",
+     "date": "2023-03",
+     "stage": "Series E",
+     "amount": 60,
+     "currency": "EUR",
+     "approximate": false,
+     "postMoney": null,
+     "leadInvestors": [],
+     "investors": [
+      "Goldman Sachs",
+      "M&G Catalyst"
+     ],
+     "source": "s3",
+     "undisclosed": {
+      "note": "The crossing, and the company is the one that states it. Raisin had been a unicorn once before — Kinnevik marked the merged Raisin DS at €1.3bn in July 2021 — and then was not, after the same investor wrote it down to €895m in 2022. This €60m Series E restored the status, and co-founder Frank Freund says so in the round's own coverage: “Unser Unicorn-Status wurde mit der jetzigen Upround bestätigt.” No figure accompanies it, from the company or from anyone else, which is why the crossing is recorded qualitatively rather than with a post-money.",
+      "source": "s4"
+     },
+     "dateLabel": "Mar 2023",
+     "amountLabel": "€60 m"
+    },
+    {
+     "id": "r4",
+     "date": "2024-12",
+     "stage": "Secondary share sale",
+     "amount": 100,
+     "currency": "EUR",
+     "approximate": true,
+     "postMoney": null,
+     "leadInvestors": [],
+     "investors": [
+      "Tencent",
+      "Hedosophia",
+      "Vitruvian Partners"
+     ],
+     "source": "s6",
+     "disputed": {
+      "note": "Not new money into the company: existing holders — Thrive Capital and Christian Angermayer's Apeiron among them, and reportedly the founders in smaller amounts — sold stock to Tencent, Hedosophia and Vitruvian. The amount on file is the “mehr als 100 Millionen Euro” the reporting states and is therefore a floor rather than the sum, which is why it is flagged approximate. The valuation this transaction set is the one carried on the record above, in words rather than digits.",
+      "source": "s5"
+     },
+     "dateLabel": "Dec 2024",
+     "amountLabel": "~€100 m"
+    }
+   ],
+   "founders": [
+    {
+     "name": "Tamaz Georgadze",
+     "role": "Co-founder and CEO",
+     "current": true
+    },
+    {
+     "name": "Frank Freund",
+     "role": "Co-founder and CFO",
+     "current": true
+    },
+    {
+     "name": "Michael Stephan",
+     "role": "Co-founder and COO",
+     "current": true
+    }
+   ],
+   "investors": [
+    "Goldman Sachs",
+    "Index Ventures",
+    "PayPal",
+    "Ribbit Capital",
+    "Thrive Capital",
+    "M&G Catalyst",
+    "Tencent",
+    "Hedosophia",
+    "Vitruvian Partners"
+   ],
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "TechCrunch",
+     "title": "Raisin picks up $28M backing from Goldman Sachs for its savings and investment marketplace",
+     "url": "https://techcrunch.com/2019/07/16/goldman-sachs-backs-raisin/",
+     "publishedOn": "2019-07-16",
+     "quote": "Founded in 2012 by Dr. Tamaz Georgadze (CEO), Dr. Frank Freund (CFO) and Michael Stephan (COO)"
+    },
+    {
+     "id": "s2",
+     "publication": "TechCrunch",
+     "title": "Raisin picks up $28M backing from Goldman Sachs for its savings and investment marketplace",
+     "url": "https://techcrunch.com/2019/07/16/goldman-sachs-backs-raisin/",
+     "publishedOn": "2019-07-16",
+     "quote": "Goldman Sachs has invested $28 million (€25 million), following the company's $114 million in Series D in February."
+    },
+    {
+     "id": "s3",
+     "publication": "Tech.eu",
+     "title": "Goldman keeps on keepin' on with Raisin in fresh €60 million round",
+     "url": "https://tech.eu/2023/03/24/goldman-keeps-on-keepin-on-with-raisin-in-fresh-eur60-million-round/",
+     "publishedOn": "2023-03-24",
+     "quote": "Berlin-based fintech Raisin has closed a €60 million Series E funding round, surpassed 1 million customers, and been profitable for the past six months."
+    },
+    {
+     "id": "s4",
+     "publication": "Gründerszene",
+     "title": "Neue Finanzspritze: Tagesgeld-Fintech Raisin wieder Einhorn",
+     "url": "https://www.businessinsider.de/gruenderszene/fintech/raisin-zinsen-fintech-einhorn-investment/",
+     "publishedOn": "2023-03-23",
+     "quote": "Mit ein wenig Stolz im derzeitigen Marktumfeld können wir so viel verraten: Unser Unicorn-Status wurde mit der jetzigen Upround bestätigt"
+    },
+    {
+     "id": "s5",
+     "publication": "Gründerszene",
+     "title": "Kurz vor IPO: Bewertung von Raisin steigt auf über zwei Milliarden Euro",
+     "url": "https://www.businessinsider.de/gruenderszene/business/kurz-vor-ipo-bewertung-von-raisin-steigt-auf-ueber-zwei-milliarden-euro/",
+     "publishedOn": "2024-12-03",
+     "quote": "Raisin liegt nun bei einer Bewertung von über zwei Milliarden Euro"
+    },
+    {
+     "id": "s6",
+     "publication": "Gründerszene",
+     "title": "Kurz vor IPO: Bewertung von Raisin steigt auf über zwei Milliarden Euro",
+     "url": "https://www.businessinsider.de/gruenderszene/business/kurz-vor-ipo-bewertung-von-raisin-steigt-auf-ueber-zwei-milliarden-euro/",
+     "publishedOn": "2024-12-03",
+     "quote": "Nun haben bestehende Investoren des Geldanlage-Startups Anteile in Höhe von mehr als 100 Millionen Euro verkauft."
+    },
+    {
+     "id": "s7",
+     "publication": "Handelsblatt",
+     "title": "Start-ups: Raisin macht erneut Gewinn – was das für das Fintech bedeutet",
+     "url": "https://www.handelsblatt.com/finanzen/banken-versicherungen/start-ups-raisin-macht-erneut-gewinn-was-das-fuer-das-fintech-bedeutet/100181890.html",
+     "publishedOn": "2025-12-08",
+     "quote": "Wir wollen das Unternehmen – ob gelistet oder nicht – so führen, als ob es börsennotiert wäre"
+    }
+   ],
+   "display": {
+    "valuationLabel": "Undisclosed",
+    "valuationUndisclosed": true,
+    "valuationUndisclosedBadge": ">1bn",
+    "valuationAsOf": "Dec 2024",
+    "lastRoundLabel": "Dec 2024",
+    "lastRoundStage": "Secondary share sale",
+    "totalRaisedLabel": "—",
+    "yearsToUnicorn": 11,
+    "becameUnicornLabel": "Mar 2023",
+    "unicornThresholdLabel": "unicorn",
+    "unicornFlagLabel": "reached unicorn status",
+    "foundersLabel": "Tamaz Georgadze, Frank Freund, Michael Stephan",
+    "aged": false
+   },
+   "sort": {
+    "newest": [
+     2023,
+     3
+    ],
+    "valuationEur": null,
+    "latestRound": [
+     2024,
+     12
+    ],
+    "name": "raisin"
+   },
+   "investorsOrdered": [
+    "Goldman Sachs",
+    "Index Ventures",
+    "PayPal",
+    "Ribbit Capital",
+    "Thrive Capital",
+    "M&G Catalyst",
+    "Tencent",
+    "Hedosophia",
+    "Vitruvian Partners"
    ]
   },
   {
@@ -4228,6 +5443,8 @@
    ],
    "display": {
     "valuationLabel": "$1.2 bn",
+    "valuationUndisclosed": false,
+    "valuationUndisclosedBadge": null,
     "valuationAsOf": "Apr 2023",
     "lastRoundLabel": "Mar 2024",
     "lastRoundStage": "Perch merger financing",
@@ -4235,6 +5452,7 @@
     "yearsToUnicorn": 1,
     "becameUnicornLabel": "Nov 2021",
     "unicornThresholdLabel": "$1bn",
+    "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Tushar Ahluwalia, Shrestha Chowdhury, Oliver Dlugosch, Christoph Felix Gamon",
     "aged": true
    },
@@ -4458,6 +5676,8 @@
    ],
    "display": {
     "valuationLabel": "$1.4 bn",
+    "valuationUndisclosed": false,
+    "valuationUndisclosedBadge": null,
     "valuationAsOf": "Dec 2023",
     "lastRoundLabel": "Jun 2025",
     "lastRoundStage": "Equity round",
@@ -4465,6 +5685,7 @@
     "yearsToUnicorn": 7,
     "becameUnicornLabel": "Jun 2021",
     "unicornThresholdLabel": "$1bn",
+    "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Erik Podzuweit, Florian Prucker, Adam French, Stefan Mittnik",
     "aged": true
    },
@@ -4659,6 +5880,8 @@
    ],
    "display": {
     "valuationLabel": "~$1 bn",
+    "valuationUndisclosed": false,
+    "valuationUndisclosedBadge": null,
     "valuationAsOf": "Jun 2021",
     "lastRoundLabel": "Jun 2021",
     "lastRoundStage": "Series D, second close",
@@ -4666,6 +5889,7 @@
     "yearsToUnicorn": 6,
     "becameUnicornLabel": "Jan 2021",
     "unicornThresholdLabel": "$1bn",
+    "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "David Nothacker, Julius Köhler, Nicolaus Schefenacker",
     "aged": true
    },
@@ -4830,6 +6054,8 @@
    ],
    "display": {
     "valuationLabel": "$1.1 bn",
+    "valuationUndisclosed": false,
+    "valuationUndisclosedBadge": null,
     "valuationAsOf": "Mar 2022",
     "lastRoundLabel": "Mar 2022",
     "lastRoundStage": "Series E",
@@ -4837,6 +6063,7 @@
     "yearsToUnicorn": 8,
     "becameUnicornLabel": "Mar 2022",
     "unicornThresholdLabel": "$1bn",
+    "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Martin Böhringer, Lutz Gerlach, Frank Wolf",
     "aged": true
    },
@@ -5048,6 +6275,8 @@
    ],
    "display": {
     "valuationLabel": "€3.5 bn",
+    "valuationUndisclosed": false,
+    "valuationUndisclosedBadge": null,
     "valuationAsOf": "Jun 2026",
     "lastRoundLabel": "Jun 2026",
     "lastRoundStage": "Funding round",
@@ -5055,6 +6284,7 @@
     "yearsToUnicorn": 2,
     "becameUnicornLabel": "Jan 2026",
     "unicornThresholdLabel": "$1bn",
+    "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Florian Seibel",
     "aged": false
    },
@@ -5211,6 +6441,8 @@
    ],
    "display": {
     "valuationLabel": "~$1 bn",
+    "valuationUndisclosed": false,
+    "valuationUndisclosedBadge": null,
     "valuationAsOf": "Apr 2022",
     "lastRoundLabel": "Apr 2022",
     "lastRoundStage": "Series D",
@@ -5218,6 +6450,7 @@
     "yearsToUnicorn": 6,
     "becameUnicornLabel": "Apr 2022",
     "unicornThresholdLabel": "$1bn",
+    "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Mathis Büchi, Lino Teuteberg",
     "aged": true
    },
@@ -5393,6 +6626,8 @@
    ],
    "display": {
     "valuationLabel": "€12.5 bn",
+    "valuationUndisclosed": false,
+    "valuationUndisclosedBadge": null,
     "valuationAsOf": "Dec 2025",
     "lastRoundLabel": "Dec 2025",
     "lastRoundStage": "Secondary",
@@ -5400,6 +6635,7 @@
     "yearsToUnicorn": 6,
     "becameUnicornLabel": "May 2021",
     "unicornThresholdLabel": "$1bn",
+    "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Christian Hecker, Thomas Pischke, Marco Cancellieri",
     "aged": false
    },

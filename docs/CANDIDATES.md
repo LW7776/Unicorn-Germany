@@ -18,18 +18,35 @@ that fact is worth publishing. Several of the entries below were more work than 
 that made it in.
 
 **"Cannot be established" is a statement about evidence, not about the company.** It means
-the register's [sourcing rules](UPDATING.md) could not confirm the figure: nobody on the
-allowlist printed it, or what they printed measures something else, or the page that has it
-cannot be opened. Some of the largest and best-known companies in German technology are in
-that section. It is not a judgement that they are small, doubtful or unimportant, and it is
-not a claim that they are *not* unicorns — only that this register will not print a number
-it could not read.
+the register's [sourcing rules](UPDATING.md) could not confirm that the company is over the
+threshold: nobody on the allowlist says so, or what they printed measures something else, or
+the page that has it cannot be opened. Some of the largest and best-known companies in German
+technology are in that section. It is not a judgement that they are small, doubtful or
+unimportant, and it is not a claim that they are *not* unicorns — only that this register will
+not publish a claim it could not read. It used to say "will not print a number it could not
+read", and that was too narrow a test: a register can honestly publish a company without
+publishing a number, and since August 2026 it does.
 
 A company qualifies only if all three of the [inclusion rules](UPDATING.md#inclusion-rules)
-hold: German by founding **or** headquarters, currently independent and private, and a
-publicly reported post-money valuation of at least $1B or €1B as reported. A company that
+hold: German by founding **or** headquarters, currently independent and private, and
+publicly reported to be worth at least $1B or €1B as reported. A company that
 cannot be shown to satisfy all three does not go in the register — "cannot be established" is
 a reason to leave a name out, the same as "exclude", not a softer form of inclusion.
+
+**Rule 3 changed in August 2026, and this whole file was re-read against the new version.** It
+used to demand a quotable *numeral* — a post-money printed in digits somewhere on the
+allowlist. It now asks whether the company is publicly reported to be over the threshold at
+all, and a valuation nobody has ever put a number to can be recorded as
+[undisclosed](UPDATING.md#inclusion-rules) rather than disqualifying the company. Nothing
+about the sourcing discipline moved: every claim still needs an allowlisted, dated source and
+a verbatim quote from a page that was opened, and no figure may ever be inferred to fill a
+gap. What changed is that "an allowlisted source states this company is a unicorn, and none
+prints the figure" became something the dataset can *say*, instead of a technicality that
+deleted a company from a register of German unicorns. **Five entries moved out of "cannot be
+established" on that basis** and are written up as batch 5 below. Every remaining row in that
+section was re-checked against the new rule too, did not move, and now records why not — the
+change is narrow, and it is not a licence to relax the other two rules or to read a headline
+as a finding.
 
 **Status meanings**
 
@@ -55,9 +72,14 @@ fetching must be tried through a [Wayback Machine](https://web.archive.org) snap
 before its reporting is recorded as unreadable.** Where a snapshot is used, the record
 still cites the publisher's own canonical URL — the archive is how the page was read, not
 a second source, and a snapshot that captured the publisher's own block page (HTTP 403)
-is not a read at all. This batch extended the practice from publishers to *companies*:
+is not a read at all. Batch 4 extended the practice from publishers to *companies*:
 quantum-systems.com 403s this crawler on every page, and its own funding release was
-recovered from the archive and read. It did not rescue the entry, but it settled it.
+recovered from the archive and read. It did not rescue the entry, but it settled it — and
+batch 5 found a second route past the same block, since that site's WordPress media endpoint
+answers normally even though every HTML page 403s, which is where its logo came from.
+Batch 5 also retired a standing assumption: Business Insider's Gründerszene pages, recorded
+here twice as unreadable behind "Lade Premium-Inhalte…", now return their full bodies. Three
+of this batch's five rest on them.
 
 ---
 
@@ -238,6 +260,104 @@ Notes carried into the records:
   because a conflict between an unread headline and a confirmed figure is not the same kind
   of thing as a quote that has actually been read and disagrees.
 
+## Include — written (batch 5)
+
+Five names, all five previously in "cannot be established", all five moved by the rule change
+described at the top of this file. They are the whole of that section's movement: everything
+else in it was re-checked and stayed.
+
+| Company | HQ | Valuation as reported | Evidence |
+|---|---|---|---|
+| **Quantum Systems** | Gilching | $8bn, Jul 2026, Series D | [Tech.eu](https://tech.eu/2026/07/02/quantum-systems-raises-12bn-at-8bn-valuation/) |
+| **Neura Robotics** | Metzingen | $7bn, Jun 2026, Series C | [Sifted](https://sifted.eu/articles/neura-robotics-1-4bn-series-c), [Gründerszene](https://www.businessinsider.de/gruenderszene/sieben-neue-unicorns-diese-deutschen-startups-sind-jetzt-milliarden-wert/) |
+| **Raisin** | Berlin | **undisclosed** — "über zwei Milliarden Euro", Dec 2024, secondary | [Gründerszene](https://www.businessinsider.de/gruenderszene/business/kurz-vor-ipo-bewertung-von-raisin-steigt-auf-ueber-zwei-milliarden-euro/) |
+| **Isar Aerospace** | Munich | **undisclosed** — "became a unicorn in June", Jun 2025, convertible bond | [TechCrunch](https://techcrunch.com/2025/09/08/more-than-10-european-startups-became-unicorns-this-year/) |
+| **Focused Energy** | Darmstadt / Austin | **undisclosed** — "knackte die Milliarden-Bewertung", May 2026, Series A | [Gründerszene](https://www.businessinsider.de/gruenderszene/sieben-neue-unicorns-diese-deutschen-startups-sind-jetzt-milliarden-wert/) |
+
+Three of the five are published with **no valuation figure at all**, which is the whole point
+of the change. Each carries an `undisclosed` note naming what is known, what is not, and the
+sentence that establishes membership — and each renders on the site as "Undisclosed" beside an
+amber `>1bn` marker rather than as a blank, a dash or a zero.
+
+Notes carried into the records:
+
+- **Quantum Systems** is the case the rule was changed for, and it turned out to need only
+  half of it. Its *valuation* was never the problem: Tech.eu prints "$1.2bn in fresh funding,
+  in a round which more than doubles its valuation to $8bn" and the record publishes that.
+  What kept it out was the **crossing**. It became a unicorn at the €160m Series C of May
+  2025, and no allowlisted account prints that round's valuation as a numeral — Sifted says
+  only "making it one of only a few unicorns in the European defence tech field"; the
+  company's own release, recovered from the Wayback Machine because quantum-systems.com 403s
+  this crawler, gives the round, the investors and the total raised and states no valuation;
+  Tech.eu and Balderton both say the November extension "tripled its valuation" to above €3bn
+  without saying what it tripled *from*. Two sources settled it in words rather than digits:
+  Handelsblatt, the same week, "Mit der neuen Finanzierung wird das Start-up mit mehr als
+  einer Milliarde Dollar bewertet", and TechCrunch four months later, "Quantum Systems became
+  a unicorn in May 2025, according to PitchBook". So the record now has a numeric valuation
+  and a *qualitative crossing round* — `postMoney: null` plus an `undisclosed` note — which is
+  a shape that did not exist before this batch. Both figures the November extension disclosed
+  (€180m raised, above €3bn post-money) are recorded on their own round, so the earlier-crossing
+  check still has something to compare against.
+- **Neura Robotics is published on a number, not on a note, and that is a judgement call worth
+  showing.** The $7bn reaches an allowlisted page at second hand — Sifted, "the Financial
+  Times reported, citing people familiar with the deal" — and Neura declined to comment on it.
+  On its own that is the Flix shape, where an attributed figure was kept out of the valuation
+  field. What tips it the other way is a second, independent allowlisted account stating the
+  same figure flatly as fact rather than as a report: Gründerszene's round-up of 2026's German
+  unicorns, "Die Bewertung: sieben Milliarden Dollar und damit Einhorn-Status." The figure is
+  published with a `disputed` note saying exactly this, because the owner's rule explicitly
+  allows a badge where the valuation is contestable. The round carries a second `disputed`
+  note: Sifted reports "a $1.4bn Series C round", while the company and Tech.eu say "**up to**
+  $1.4 billion" — a milestone ceiling, not a sum already wired.
+- **Raisin's figure is in words, and that is the only reason it is undisclosed.** Gründerszene
+  states it — "Raisin liegt nun bei einer Bewertung von über zwei Milliarden Euro" — and
+  spells the number out, so there is no numeral for the quote check to match, exactly the
+  situation the new rule exists for. Handelsblatt independently calls the company
+  "milliardenschwer" and nothing more precise. Two further facts are carried into the record
+  rather than smoothed over. The valuation was set by a **secondary** in which existing
+  holders sold stock, not by a priced round, and is labelled as one. And Raisin's unicorn
+  status has **not been continuous**: Kinnevik marked the merged Raisin DS at €1.3bn in July
+  2021, wrote it down to €895m in 2022 — at which point Gründerszene's own headline was
+  "Raisin verliert Unicorn-Status" — and the March 2023 Series E restored it, with co-founder
+  Frank Freund saying so in that round's coverage: "Unser Unicorn-Status wurde mit der
+  jetzigen Upround bestätigt." `becameUnicorn` therefore points at March 2023, the crossing
+  that currently holds, not at 2021. Rule 2 was checked rather than assumed: Raisin has
+  planned an IPO since 2024 and has not listed, and its CFO was still saying in December 2025
+  that the company is run "ob gelistet oder nicht".
+- **Isar Aerospace crossed on a convertible bond**, which is why no post-money exists to
+  publish and why the previous rule could never have admitted it. TechCrunch states the
+  instrument, the month and the status in one sentence: "German space startup Isar Aerospace
+  became a unicorn in June after reaching an agreement with Eldridge Industries for a
+  convertible bond of €150 million". Everything the earlier review found still stands — the
+  company's own €270m Series D release states no valuation, Sifted's account of it states
+  none, and the €2bn widely attached to the company traces to a Bloomberg piece whose own URL
+  slug says "in-talks-to-raise-250-million" and whose three Wayback captures are all 403 block
+  pages. None of that had to be resolved to publish the company; it only had to stop being
+  *required*. Note that its own university's press release is titled "Isar Aerospace becomes a
+  unicorn" — a primary source, but a university is not on the allowlist, so it is mentioned in
+  the record's note and not cited.
+- **Focused Energy is the one whose earlier exclusion actively pointed the wrong way.** The
+  previous review found secondary write-ups putting it "close to one billion dollars", which
+  if accurate would be *below* the threshold, and its own release claims only that the round
+  "makes it the most valuable fusion company in Europe" — a superlative, not a figure.
+  Gründerszene has since said the opposite in plain terms, twice: in the sentence quoted in
+  the record ("sichert sich 240 Millionen US-Dollar und knackte die Milliarden-Bewertung") and
+  by listing the company among the seven German startups that became unicorns in the first
+  half of 2026. The record dates the round to **May** — when the company announced it and the
+  German press reported it — rather than to TechCrunch's June write-up, which itself says the
+  round was "announced last week". Darmstadt joins the map; Austin is recorded in
+  `alsoBasedIn` on Sifted's own line, "HQ: Darmstadt, Germany and Austin, Texas, USA". Its
+  $11m Series A of 2023 is deliberately **not** in the rounds list: the only allowlisted
+  account of it (Sifted) attributes the figure to Dealroom, and a data platform relayed by a
+  publisher is a lead rather than the publisher's own finding.
+- **Gilching, Metzingen and Darmstadt** were added to `data/geo/germany.json` by re-running
+  `tools/fetch_geo.py` with coordinates read off OpenStreetMap. Two of the three are towns
+  rather than cities. Quantum Systems in particular is called "Munich-based" by Sifted and
+  "aus Gilching bei München" by Handelsblatt; the register records the town and lets the map
+  place it, rather than moving a company 25 km for the sake of a name a reader would
+  recognise. Re-running the script left the outline byte-identical — no pixel in that file is
+  placed by hand.
+
 ## Cannot be established
 
 No rule is shown to fail. The evidence the rules demand either does not exist or cannot be
@@ -245,19 +365,22 @@ reached, and each row names the single thing that would change that. **Several o
 larger than anything in the register.** They are absent for want of a readable sentence, not
 for want of standing.
 
+**Every row here was re-read against the August 2026 rule change**, which asks only whether an
+allowlisted source reports the company over the threshold, in words or in digits. Five rows
+left this section as a result and are written up as batch 5 above. The rows that remain are
+not here because a numeral is missing — they are here because *no allowlisted sentence says
+the company is a unicorn at all*, in any form, or because what exists describes a round that
+has not closed. That is a different gap, and the change does not touch it. Each row below now
+says so explicitly.
+
 | Company | HQ | What is missing, and what would settle it |
 |---|---|---|
-| **Quantum Systems** | Gilching, near Munich | Would be the largest entry in the register: $1.2bn Series D at "~$8 billion on a post-money basis" ([company press release, 2026-07-02](https://quantum-systems.com/news/quantum-systems-raises-1-2bn-series-d-to-accelerate-growth-and-scale-software-defined-autonomous-systems-across-air-land-and-sea/)). What is missing is the **crossing**, and this batch closed the last avenue for finding it. It became a unicorn at the €160m Series C of May 2025 and no allowlisted account prints that valuation as a numeral: [Sifted, 2025-05-06](https://sifted.eu/articles/quantum-systems-160m-unicorn) says only "making it one of only a few unicorns in the European defence tech field"; [EU-Startups, 2025-05-06](https://www.eu-startups.com/2025/05/german-quantum-systems-raises-e160-million-to-target-global-leadership-in-aerial-intelligence-solutions/) covers the identical round — same funding total, same lead, same day — and states neither a valuation nor even the word "unicorn"; eu-startups.com also 403s this crawler, so that page was read through a [Wayback snapshot](https://web.archive.org/web/20251206133222/https://www.eu-startups.com/2025/05/german-quantum-systems-raises-e160-million-to-target-global-leadership-in-aerial-intelligence-solutions) instead. [Tech.eu, 2025-11-28](https://tech.eu/2025/11/28/quantum-systems-180m-series-c-extension-lifts-company-to-3b/) and lead investor [Balderton](https://www.balderton.com/news/quantum-systems-triples-valuation/) both say the November extension "tripled its valuation" to "above €3 billion" without saying what it tripled *from*. quantum-systems.com 403s this crawler, so the company's own wording was previously unread — **that has now been fixed and it does not help**. The Series C release was recovered from the [Wayback Machine](https://web.archive.org/web/20250512124858/https://quantum-systems.com/au/2025/05/05/quantum-systems-raises-euro160m/) and read end to end: it gives the round (€160m), the investors, the total raised (€310m) and no valuation at all. Publishing it now would mean pointing `becameUnicorn` at November 2025 while knowing the company crossed in May — the exact error three published records were corrected for. **Settled by:** one allowlisted page printing the May 2025 figure as a numeral. Dividing €3bn by three is arithmetic, not a source |
-| **Neura Robotics** | Metzingen | $1.4bn Series C, June 2026, backed by Tether, Qualcomm, Amazon and Nvidia. The $7bn everyone quotes reaches an allowlisted page only at third hand: [Sifted](https://sifted.eu/articles/neura-robotics-1-4bn-series-c) writes "The new funding brings Neura's valuation to $7bn, the Financial Times reported, citing people familiar with the deal", and Neura declined to comment on it. The company's own release ([2026-06-10](https://neura-robotics.com/record-series-c/)), opened and read in full, announces "a landmark Series C financing with a total round size of **up to** $1.4 billion" and states no valuation. A milestone-contingent round size plus an unconfirmed, anonymously-sourced number nobody calls a post-money is two known error shapes at once. Re-tried this batch: the FT is on the allowlist but ft.com is not reachable by this crawler, directly or through search, and no Wayback capture of the article was found. **Settled by:** the FT's own page becoming readable, or Neura stating a figure |
-| **Raisin** | Berlin | Reported at over €2bn after a secondary in which existing holders sold more than €100m of stock to Tencent, Hedosophia and Vitruvian. Re-checked this batch: every route to that figure still runs through publications that are not on the allowlist. Note also that a secondary sets a price for shares changing hands rather than a post-money — the register can carry that (Trade Republic is published on one) but must label it as what it is. **Settled by:** any allowlisted publication printing the €2bn |
-| **The Exploration Company** | Munich | Still in talks: $300m at more than $2bn, attributed to the FT and unconfirmed by the company, with the reporting itself cautioning that terms could move or the deal fall away. Re-checked in August 2026 and nothing has closed. One caveat on the re-check, stated rather than glossed: a Bloomberg item of 26 July 2026 appears to relay the same FT report, and **that page was not opened** — bloomberg.com 403s this crawler and the archive was rate-limiting at the time of the check — so it is not cited here and nothing is claimed about its contents. The entry rests on the reporting already read. Talks are not a post-money. **Settled by:** the round closing with a stated price |
-| **Agile Robots** | Munich | The most recent allowlisted reporting is about a round that has not happened: Sifted's June 2026 piece is headlined "SoftBank in talks to back Agile Robots' $800m round, reports say". Talks are not a post-money. ([Sifted, 2026-06-02](https://sifted.eu/articles/softbank-in-talks-to-back-agile-robotics-in-800m-round-reports-say)) **Settled by:** the round closing with a stated price |
-| **Isar Aerospace** | Munich (Ottobrunn) | Fails on the figure, not on obscurity. Its **own** release on the €270m Series D ([2026-06-09](https://isaraerospace.com/press/isar-aerospace-secures-eur-270m-to-provide-sovereign-space-capabilities-globally)) was opened and read end to end: round, investors, factory, headcount, no valuation anywhere. The €2bn everyone quotes traces to a Bloomberg piece whose own URL slug is `isar-aerospace-in-talks-to-raise-250-million-ahead-of-launch` — talks, and about a €250m round superseded by the larger €270m one that actually closed with no price attached. The archive was tried: all three Wayback captures of that URL are themselves HTTP 403 block pages. **Settled by:** any allowlisted page stating a post-money for a round that closed |
-| **Grover** | Berlin | Tech.eu's own piece announcing unicorn status is careful about what the money was: "As tech rental platform Grover achieves unicorn status, it's also raised over $2 billion in funding, the vast majority of which is debt" — and, later, "To date, Grover has raised over $2 billion, 90% of which is debt funding." No post-money equity valuation appears anywhere in it. ([Tech.eu, 2022-04-07](https://tech.eu/2022/04/07/berlins-grover-hits-super-grover-status-with-unicorn-valuation-but/)) **Settled by:** an equity post-money, as distinct from cumulative funding |
-| **Focused Energy** | Darmstadt | New to this file, and it arrived on a list of 2026's German unicorns. It does not clear rule 3. Its own release on the $240m Series A ([2026-05-27](https://www.focused-energy.co/news-release/focused-energy-sets-a-new-benchmark-240-million-for-the-largest-series-a-financing-in-the-global-fusion-industry)) was opened and read in full: it claims the round "makes it the most valuable fusion company in Europe" — a superlative, not a figure — and states no valuation. [TechCrunch's account](https://techcrunch.com/2026/06/02/focused-energy-raises-whopping-240m-series-a-for-laser-powered-fusion-tech/) of the same round, also read in full, contains no valuation either. Secondary write-ups put it "close to one billion dollars", which if accurate is *below* the threshold. **Settled by:** an allowlisted page stating a post-money at or above $1B/€1B |
-| **Marvel Fusion** · **instagrid** · **Black Semiconductor** | — | Grouped because the gap is identical and the answer is the same. No allowlisted publication has printed a post-money at or above the threshold for any of the three, and their disclosed raises are an order of magnitude below the level at which one would be expected — Marvel Fusion's Series B extension runs to about €113m, Black Semiconductor's Series A to under $30m of equity. "Almost certainly below the threshold" is a good guess and this file does not publish guesses in either direction. **Settled by:** an allowlisted page stating a post-money |
-| **Mambu** | — | The HQ limb verifiably fails: TechCrunch, opened and read, calls it "Amsterdam/London-based Mambu" at the €4.9bn Series E ([2021-12-09](https://techcrunch.com/2021/12/09/mambu-nabs-266m-at-a-5-5b-valuation-to-double-down-on-embedded-financial-service-and-banking-apis/)). The founding limb rests on a Berlin origin that no allowlisted publication states. Same shape as wefox, arrived at from the opposite direction. **Settled by:** an allowlisted or primary record of a German founding |
-| **SumUp** | — | The gap is rule 1, not the figure. The HQ limb verifiably fails: TechCrunch, opened and read, calls it "the London-based company" in the same piece that reports its valuation ([2022-06-23](https://techcrunch.com/2022/06/23/sumup-raises-624m-at-8-5b-valuation-with-its-payments-and-business-tech-now-used-by-4m-smbs/): "values SumUp at €8 billion ($8.5 billion)") — a figure this file previously, and wrongly, characterised as debt rather than a post-money; the same sentence shows it is reported as the latter. That correction does not rescue the entry. The founding limb rests on a founding story no allowlisted publication states a location for. Same shape as Mambu, London standing in for Amsterdam. **Settled by:** an allowlisted or primary record of a German founding |
+| **The Exploration Company** | Munich | Still in talks: $300m at more than $2bn, attributed to the FT and unconfirmed by the company, with the reporting itself cautioning that terms could move or the deal fall away. Re-checked in August 2026 and nothing has closed. One caveat on the re-check, stated rather than glossed: a Bloomberg item of 26 July 2026 appears to relay the same FT report, and **that page was not opened** — bloomberg.com 403s this crawler and the archive was rate-limiting at the time of the check — so it is not cited here and nothing is claimed about its contents. The entry rests on the reporting already read. Talks are not a post-money. **Re-checked against the new rule and unmoved:** no allowlisted publication says this company *is* a unicorn, in words or digits — they say a round is being discussed at a price. Dropping the numeral requirement does not turn a deal that has not happened into one that has. **Settled by:** the round closing, or any allowlisted page stating the company has passed the threshold |
+| **Agile Robots** | Munich | The most recent allowlisted reporting is about a round that has not happened: Sifted's June 2026 piece is headlined "SoftBank in talks to back Agile Robots' $800m round, reports say". Talks are not a post-money. ([Sifted, 2026-06-02](https://sifted.eu/articles/softbank-in-talks-to-back-agile-robotics-in-800m-round-reports-say)) **Re-checked against the new rule and unmoved.** The obvious hope was that some allowlisted piece calls it a unicorn in passing, since it is widely described as Germany's first robotics unicorn. TechCrunch's March 2026 piece on its Google DeepMind partnership was opened and read for exactly that: it gives the headquarters ("Munich, Germany-based Agile Robots"), the founding year and the funding ("has raised more than $270 million in venture capital funding"), and states no valuation and no unicorn status anywhere. **Settled by:** the round closing, or any allowlisted page stating the company is over the threshold |
+| **Grover** | Berlin | Tech.eu's own piece announcing unicorn status is careful about what the money was: "As tech rental platform Grover achieves unicorn status, it's also raised over $2 billion in funding, the vast majority of which is debt" — and, later, "To date, Grover has raised over $2 billion, 90% of which is debt funding." No post-money equity valuation appears anywhere in it. ([Tech.eu, 2022-04-07](https://tech.eu/2022/04/07/berlins-grover-hits-super-grover-status-with-unicorn-valuation-but/)) **This is the row the new rule comes closest to moving, and it does not move it.** "Achieves unicorn status" is exactly the kind of qualitative statement that now counts — but rule 3 asks what a company *is* worth, not what it was worth in April 2022, and this sentence is four years old and the only one of its kind. Since then Grover has raised a €50m bridge (July 2024) rather than a priced up-round, and the same Tech.eu piece is at pains to say the money behind the label was "over $2 billion, 90% of which is debt". The register does publish valuations years old and flags them as aged; what it will not do is publish a four-year-old *status* claim, with no figure attached and a later down-round-shaped financing after it, as though it described the company today. **Settled by:** any allowlisted page from the last two years stating Grover is over the threshold, in words or digits |
+| **Marvel Fusion** · **instagrid** · **Black Semiconductor** | — | Grouped because the gap is identical and the answer is the same. No allowlisted publication has printed a post-money at or above the threshold for any of the three, and their disclosed raises are an order of magnitude below the level at which one would be expected — Marvel Fusion's Series B extension runs to about €113m, Black Semiconductor's Series A to under $30m of equity. "Almost certainly below the threshold" is a good guess and this file does not publish guesses in either direction. **Re-checked against the new rule and unmoved:** none of the three has an allowlisted sentence calling it a unicorn either, so there is nothing for the qualitative route to carry. The gap here was never the numeral. **Settled by:** an allowlisted page stating a post-money, or stating the company has passed the threshold |
+| **Mambu** | — | The HQ limb verifiably fails: TechCrunch, opened and read, calls it "Amsterdam/London-based Mambu" at the €4.9bn Series E ([2021-12-09](https://techcrunch.com/2021/12/09/mambu-nabs-266m-at-a-5-5b-valuation-to-double-down-on-embedded-financial-service-and-banking-apis/)). The founding limb rests on a Berlin origin that no allowlisted publication states. Same shape as wefox, arrived at from the opposite direction. Unaffected by the rule change, which touches rule 3 only. **Settled by:** an allowlisted or primary record of a German founding |
+| **SumUp** | — | The gap is rule 1, not the figure. The HQ limb verifiably fails: TechCrunch, opened and read, calls it "the London-based company" in the same piece that reports its valuation ([2022-06-23](https://techcrunch.com/2022/06/23/sumup-raises-624m-at-8-5b-valuation-with-its-payments-and-business-tech-now-used-by-4m-smbs/): "values SumUp at €8 billion ($8.5 billion)") — a figure this file previously, and wrongly, characterised as debt rather than a post-money; the same sentence shows it is reported as the latter. That correction does not rescue the entry. The founding limb rests on a founding story no allowlisted publication states a location for. Same shape as Mambu, London standing in for Amsterdam. Unaffected by the rule change, which touches rule 3 only — SumUp's figure was never the problem. **Settled by:** an allowlisted or primary record of a German founding |
 
 ## Exclude — verified
 
@@ -294,15 +417,33 @@ figure but a company that was never looked at.
    read — both pages were fetched and both stop at "Lade Premium-Inhalte…". Four names were
    nonetheless visible in search summaries of those pages, and because a summary is not a
    read, all four were then chased to primary sources independently and the summary discarded: **osapiens** (already published), **Dash0** and **CMBlu
-   Energy** (both published in this batch), and **Focused Energy** (chased, and found to
-   state no valuation — above). A paywalled list is a lead, never a source.
+   Energy** (both published in batch 4), and **Focused Energy** (chased, found to state no
+   valuation, excluded — and published in batch 5 once the rule stopped requiring one).
+   A paywalled list is a lead, never a source. **This changed in batch 5 and is worth
+   recording**: the same Gründerszene round-up that stopped at "Lade Premium-Inhalte…" now
+   returns its full body, so the 2026 list was finally *read* rather than inferred from a
+   search summary. It names seven German companies that became unicorns in the first half of
+   2026 — osapiens, Dash0, Stark, CMBlu, Focused Energy, Neura Robotics and FINN — six of
+   which were already published from their own primary sources, and the seventh of which
+   (Focused Energy) is published in batch 5 with that page as its evidence. A list that
+   agrees, company for company, with a register assembled independently of it is the closest
+   thing to an external check this file has. The same piece also reports **Clark** losing
+   unicorn status on falling revenue, and **Contentful**'s sale to Salesforce, which is
+   already recorded under exclusions.
 3. **Sifted's German "soonicorn" list**, which names the companies closest to the threshold
    from below: **Vivid** (excluded above, €775m), **Proxima Fusion** (since crossed;
-   published in batch 3) and **Finn** (since crossed; published in this batch).
+   published in batch 3) and **Finn** (since crossed; published in batch 4).
+4. **TechCrunch's European unicorn round-ups**, added as a sweep in batch 5 and the source of
+   two of its five. The [2025 list](https://techcrunch.com/2025/09/08/more-than-10-european-startups-became-unicorns-this-year/)
+   names **Isar Aerospace** and **Quantum Systems** with the month each crossed and no figure
+   for either — worthless under the old rule, decisive under the new one. Its
+   [January 2026 list](https://techcrunch.com/2026/01/31/meet-the-new-european-unicorns-of-2026/)
+   and its [deep-tech spinout survey](https://techcrunch.com/2025/12/30/76-european-deep-tech-university-spinouts-reached-unicorn-or-centaur-status/)
+   were both read in full and produced no German name not already on this page.
 
-Everything those sweeps produced now appears somewhere above with a verdict: 27 rows carry
+Everything those sweeps produced now appears somewhere above with a verdict: 32 rows carry
 **include**, matching the register's own count company for company, 19 carry **exclude**, and
-13 carry **cannot be established** — every row settled, none left as a placeholder.
+8 carry **cannot be established** — every row settled, none left as a placeholder.
 
 One row above carries no headquarters city, and deliberately: Marvel Fusion, instagrid and
 Black Semiconductor are excluded from the register on rule 3, so no page stating their

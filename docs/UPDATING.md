@@ -17,12 +17,58 @@ A company qualifies only if all three hold:
    (Celonis is headquartered in both Munich and New York) use the optional `alsoBasedIn` field
    rather than being hidden. Being German only by investor base does not qualify.
 2. **Currently independent and private.** Not IPO'd, not acquired, not insolvent.
-3. **A publicly reported post-money valuation of at least $1B or €1B**, in the currency the
-   source used. Either threshold qualifies, and a company's own figures are never converted
-   between currencies. The register also publishes valuations struck by a secondary sale of
-   existing shares rather than a primary round (Trade Republic, n8n) — a secondary prices the
+3. **Publicly reported to be worth at least $1B or €1B.** Either threshold qualifies, in the
+   currency the source used, and a company's own figures are never converted between
+   currencies. The register also publishes valuations struck by a secondary sale of existing
+   shares rather than a primary round (Trade Republic, n8n, Raisin) — a secondary prices the
    company too, just not by new capital entering it, and every such case is labelled as a
    secondary rather than left to read as a post-money it isn't.
+
+**Membership is the test; the figure is a nice-to-have.** Rule 3 used to demand a *quotable
+numeral* — a post-money a source had printed in digits — and that excluded companies nobody
+disputes are unicorns, on a technicality about how a sentence happened to be written. Quantum
+Systems was the clearest case: Sifted, Tech.eu, its own lead investor and Handelsblatt all
+reported it had passed a billion, and not one of them printed the number, so it fell out of a
+register of German unicorns.
+
+So a valuation may now be recorded as **undisclosed**:
+
+```jsonc
+"valuation": {
+  "amount": null,                       // no figure, because no source printed one
+  "currency": null,
+  "asOf": "2025-09",                    // when the *evidence* was reported
+  "source": "s4",
+  "undisclosed": {
+    "note": "What is and isn't known, and why there is no number.",
+    "source": "s4"                      // a quote establishing unicorn status in words
+  }
+}
+```
+
+The sourcing discipline is unchanged and non-negotiable. `undisclosed.source` must resolve to
+an allowlisted, dated source with a real quote from a page someone actually opened, exactly
+like every other cited claim — the validator checks all of that. What it cannot check is that
+the quote *means* what the note says, because there is no figure to match: the sentence has to
+establish unicorn status qualitatively ("became a unicorn in June", "mit mehr als einer
+Milliarde Dollar bewertet", "knackte die Milliarden-Bewertung"), and only a person reading it
+can confirm that. **Never fill the gap with a number no source printed.** Dividing a later
+"tripled its valuation" by three is arithmetic, not a source.
+
+Two consequences worth knowing before you use it:
+
+- **`amount` and `undisclosed` are mutually exclusive, and a record must carry one.** If a
+  source prints a figure, publish the figure. `undisclosed` is for when none does — not a way
+  to avoid checking a quote.
+- **`becameUnicorn` still names a round**, and that round's `postMoney` may be `null` if it
+  carries its own `undisclosed` note. The rule that an *earlier* round with a post-money above
+  the threshold means the company crossed there still applies, unchanged — a qualitative
+  crossing is not a way around it.
+
+On the site, an undisclosed valuation renders as **Undisclosed** with an amber `>1bn` marker
+beside it, never as "—" and never as a zero, and such companies are left out of the "combined
+value" headline rather than counted as nothing — the headline says how many of the register it
+covers.
 
 ## Monthly, automatic
 

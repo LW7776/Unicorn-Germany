@@ -16,7 +16,10 @@ export function renderFooter(container, { fxRateDisclosed, fxAsOf } = {}) {
   const asOf = escapeHtml(fxAsOf);
   container.innerHTML = `
     <p>Figures are indicative and carry the date they were reported.
-       Combined value converts USD at ${rate} (${asOf}).</p>
+       Combined value converts USD at ${rate} (${asOf}) and covers only the companies
+       whose valuation a source has published — the ones marked
+       <span class="footer__mark">Undisclosed</span> are left out of it rather than
+       counted as nothing.</p>
     <nav aria-label="Footer">
       <a href="policy.html">Policy</a> · <a href="about.html">About</a> ·
       <a href="impressum.html">Impressum</a> ·

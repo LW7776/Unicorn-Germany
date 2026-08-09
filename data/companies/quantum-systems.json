@@ -1,0 +1,209 @@
+{
+ "slug": "quantum-systems",
+ "name": "Quantum Systems",
+ "website": "https://quantum-systems.com",
+ "logo": "assets/logos/quantum-systems.svg",
+ "hq": {
+  "city": "Gilching",
+  "country": "DE"
+ },
+ "foundedCountry": "DE",
+ "foundedYear": 2015,
+ "sectors": [
+  "Defence",
+  "Artificial Intelligence"
+ ],
+ "thesis": {
+  "problem": "A reconnaissance drone is only useful if the picture it brings back is current, and European armies spent two decades buying small numbers of expensive airframes on procurement cycles measured in years. Ukraine changed the arithmetic: what a unit needs is a system a soldier can carry, launch without a runway, fly beyond line of sight and replace when it is lost — and a manufacturer close enough to the front to change the software every few weeks as jamming evolves.",
+  "solution": "Quantum Systems builds vertical-take-off fixed-wing drones — they lift like a helicopter and cruise like an aeroplane, so they need no launcher and still hold an area for hours — and sells the autonomy stack alongside the airframe. The dual-use framing is deliberate and commercial: the same aircraft surveys pipelines, mines and farmland, which keeps a civilian revenue line under a defence business whose orders arrive in bursts. Its systems flew over 19,000 missions in Ukraine in 2025."
+ },
+ "valuation": {
+  "amount": 8000,
+  "currency": "USD",
+  "approximate": false,
+  "asOf": "2026-07",
+  "round": "Series D",
+  "source": "s6"
+ },
+ "becameUnicorn": {
+  "date": "2025-05",
+  "roundId": "r1",
+  "source": "s3"
+ },
+ "totalRaised": {
+  "amount": null,
+  "currency": "USD",
+  "approximate": false,
+  "source": "s6"
+ },
+ "rounds": [
+  {
+   "id": "r1",
+   "date": "2025-05",
+   "stage": "Series C",
+   "amount": 160,
+   "currency": "EUR",
+   "approximate": false,
+   "postMoney": null,
+   "leadInvestors": [
+    "Balderton Capital"
+   ],
+   "investors": [
+    "Balderton Capital",
+    "Hensoldt",
+    "Airbus Defence and Space",
+    "Bullhound Capital",
+    "LP&E AG",
+    "HV Capital",
+    "Project A",
+    "Peter Thiel",
+    "DTCP",
+    "Omnes Capital",
+    "Airbus Ventures",
+    "Porsche SE",
+    "Notion"
+   ],
+   "source": "s1",
+   "undisclosed": {
+    "note": "This is the round that crossed, and no source has ever printed the number it crossed at. Sifted, Tech.eu, EU-Startups and lead investor Balderton all covered it; the company's own release — recovered from the Wayback Machine, because quantum-systems.com blocks this crawler — gives the round, the investors and the total raised, and states no valuation at all. What is stated, and stated flatly rather than as an estimate, is the threshold: Handelsblatt, the same week, “Mit der neuen Finanzierung wird das Start-up mit mehr als einer Milliarde Dollar bewertet.” Under the register's previous rule, that sentence could not be recorded because it contains no numeral to check a figure against, and one of Germany's best-known unicorns was left out on that technicality. The November extension that “tripled its valuation” to above €3 billion is the next figure anyone published; dividing that by three would be arithmetic, not a source.",
+    "source": "s2"
+   }
+  },
+  {
+   "id": "r2",
+   "date": "2025-11",
+   "stage": "Series C extension",
+   "amount": 180,
+   "currency": "EUR",
+   "approximate": false,
+   "postMoney": 3000,
+   "postMoneyCurrency": "EUR",
+   "postMoneySource": "s5",
+   "leadInvestors": [
+    "Balderton Capital"
+   ],
+   "investors": [
+    "Balderton Capital"
+   ],
+   "source": "s4"
+  },
+  {
+   "id": "r3",
+   "date": "2026-07",
+   "stage": "Series D",
+   "amount": 1200,
+   "currency": "USD",
+   "approximate": false,
+   "postMoney": 8000,
+   "postMoneyCurrency": "USD",
+   "postMoneySource": "s6",
+   "leadInvestors": [
+    "Blackstone",
+    "Noteus",
+    "Airbus",
+    "Advent"
+   ],
+   "investors": [
+    "Blackstone",
+    "Noteus",
+    "Airbus",
+    "Advent",
+    "Balderton Capital",
+    "HV Capital"
+   ],
+   "source": "s6"
+  }
+ ],
+ "founders": [
+  {
+   "name": "Florian Seibel",
+   "role": "Co-founder and co-CEO",
+   "current": true
+  }
+ ],
+ "investors": [
+  "Balderton Capital",
+  "Blackstone",
+  "Noteus",
+  "Airbus",
+  "Advent",
+  "HV Capital",
+  "Hensoldt",
+  "Airbus Defence and Space",
+  "Bullhound Capital",
+  "LP&E AG",
+  "Project A",
+  "Peter Thiel",
+  "DTCP",
+  "Omnes Capital",
+  "Airbus Ventures",
+  "Porsche SE",
+  "Notion"
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "publication": "Sifted",
+   "title": "Drones startup Quantum Systems hits unicorn status with €160m Series C",
+   "url": "https://sifted.eu/articles/quantum-systems-160m-unicorn",
+   "publishedOn": "2025-05-06",
+   "quote": "Autonomous drones startup Quantum Systems has raised €160m in Series C funding led by British VC Balderton Capital, making it one of only a few unicorns in the European defence tech field."
+  },
+  {
+   "id": "s2",
+   "publication": "Handelsblatt",
+   "title": "Quantum Systems: Das erste deutsche Einhorn 2025 ist ein Drohnen-Start-up",
+   "url": "https://www.handelsblatt.com/technik/it-internet/quantum-systems-das-erste-deutsche-einhorn-2025-ist-ein-drohnen-start-up/100126365.html",
+   "publishedOn": "2025-05-07",
+   "quote": "Mit der neuen Finanzierung wird das Start-up mit mehr als einer Milliarde Dollar bewertet."
+  },
+  {
+   "id": "s3",
+   "publication": "TechCrunch",
+   "title": "More than 10 European startups became unicorns this year",
+   "url": "https://techcrunch.com/2025/09/08/more-than-10-european-startups-became-unicorns-this-year/",
+   "publishedOn": "2025-09-08",
+   "quote": "German dual-use startup Quantum Systems became a unicorn in May 2025, according to PitchBook, upon raising a €160 million Series C (approximately $172 million) to accelerate its global expansion, scale production, and advance its autonomous drone systems, software, and AI."
+  },
+  {
+   "id": "s4",
+   "publication": "Tech.eu",
+   "title": "Quantum Systems' €180M Series C extension lifts company to €3B+",
+   "url": "https://tech.eu/2025/11/28/quantum-systems-180m-series-c-extension-lifts-company-to-3b/",
+   "publishedOn": "2025-11-28",
+   "quote": "Europe's first dual-use unicorn, Quantum Systems, has tripled its valuation and raised €180 million in a Series C Extension led by Balderton Capital."
+  },
+  {
+   "id": "s5",
+   "publication": "Tech.eu",
+   "title": "Quantum Systems' €180M Series C extension lifts company to €3B+",
+   "url": "https://tech.eu/2025/11/28/quantum-systems-180m-series-c-extension-lifts-company-to-3b/",
+   "publishedOn": "2025-11-28",
+   "quote": "The company's valuation is now above €3 billion."
+  },
+  {
+   "id": "s6",
+   "publication": "Tech.eu",
+   "title": "Quantum Systems raises $1.2BN at $8BN valuation",
+   "url": "https://tech.eu/2026/07/02/quantum-systems-raises-12bn-at-8bn-valuation/",
+   "publishedOn": "2026-07-02",
+   "quote": "German drone manufacturer Quantum Systems has raised $1.2bn in fresh funding, in a round which more than doubles its valuation to $8bn, it said today."
+  },
+  {
+   "id": "s7",
+   "publication": "Handelsblatt",
+   "title": "Quantum Systems: Das erste deutsche Einhorn 2025 ist ein Drohnen-Start-up",
+   "url": "https://www.handelsblatt.com/technik/it-internet/quantum-systems-das-erste-deutsche-einhorn-2025-ist-ein-drohnen-start-up/100126365.html",
+   "publishedOn": "2025-05-07",
+   "quote": "Quantum Systems aus Gilching bei München gilt als führender Hersteller von kompakten Drohnen"
+  },
+  {
+   "id": "s8",
+   "publication": "Sifted",
+   "title": "Quantum Systems CEO Florian Seibel: 'The big challenge is to not become like one of the primes'",
+   "url": "https://sifted.eu/articles/quantum-systems-ceo-prime",
+   "publishedOn": "2025-09-01",
+   "quote": "CEO and cofounder Florian Seibel told the Sifted Podcast recently"
+  }
+ ]
+}

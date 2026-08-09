@@ -154,3 +154,86 @@ def test_unicorn_threshold_label_follows_the_crossing_round_currency(record):
 
 def test_unicorn_threshold_label_defaults_to_the_round_currency(record):
     assert derive_company(record, (2024, 3))["display"]["unicornThresholdLabel"] == "€1bn"
+
+
+def test_the_crossing_flag_names_the_threshold_when_the_round_was_priced(record):
+    assert derive_company(record, (2024, 3))["display"]["unicornFlagLabel"] == "crossed €1bn"
+
+
+# --------------------------------------------------------------------------------------
+# Undisclosed valuations, rendered.
+# --------------------------------------------------------------------------------------
+
+def _undisclosed(record):
+    record["sources"].append({
+        "id": "s3", "publication": "TechCrunch", "title": "Europe's new unicorns",
+        "url": "https://techcrunch.com/2025/09/08/new-unicorns/", "publishedOn": "2025-09-08",
+        "quote": "German startup Example GmbH became a unicorn in March."})
+    record["valuation"] = {
+        "amount": None, "currency": None, "approximate": False, "asOf": "2025-09",
+        "round": "Series C", "source": "s1",
+        "undisclosed": {"note": "No allowlisted source states a figure.", "source": "s3"}}
+    record["rounds"][1]["postMoney"] = None
+    record["rounds"][1]["undisclosed"] = {"note": "Price never published.", "source": "s3"}
+    return record
+
+
+def test_an_undisclosed_valuation_never_renders_as_a_figure_or_a_dash(record):
+    """It must not read as "worth nothing" beside real numbers, and it must not read as
+    a number nobody published either."""
+    display = derive_company(_undisclosed(record), today=(2026, 8))["display"]
+    assert display["valuationLabel"] == "Undisclosed"
+    assert display["valuationUndisclosed"] is True
+    assert display["valuationUndisclosedBadge"] == ">1bn"
+
+
+def test_a_priced_valuation_carries_no_undisclosed_marker(record):
+    display = derive_company(record, today=(2026, 8))["display"]
+    assert display["valuationUndisclosed"] is False
+    assert display["valuationUndisclosedBadge"] is None
+
+
+def test_a_qualitative_crossing_says_so_rather_than_naming_a_threshold(record):
+    """Falling back to the round's own currency would print "crossed €1bn" off the
+    currency of the money *raised*, which is a different number in a different sentence."""
+    display = derive_company(_undisclosed(record), today=(2026, 8))["display"]
+    assert display["unicornFlagLabel"] == "reached unicorn status"
+    assert display["unicornThresholdLabel"] == "unicorn"
+
+
+def test_an_undisclosed_valuation_has_no_sort_key_rather_than_a_zero(record):
+    derived = derive_company(_undisclosed(record), today=(2026, 8))
+    assert derived["sort"]["valuationEur"] is None
+
+
+def test_an_undisclosed_valuation_still_ages(record):
+    """asOf on an undisclosed valuation dates the evidence, and evidence goes stale
+    exactly like a figure does."""
+    undisclosed = _undisclosed(record)
+    assert derive_company(undisclosed, today=(2028, 8))["display"]["aged"] is True
+    assert derive_company(undisclosed, today=(2026, 8))["display"]["aged"] is False
+
+
+def test_the_combined_stat_excludes_undisclosed_records_rather_than_counting_them_as_zero(record):
+    other = json.loads(FIXTURE.read_text(encoding="utf-8"))
+    other["slug"] = "second-gmbh"
+    stats = compute_stats(
+        [derive_company(record, (2026, 8)),
+         derive_company(_undisclosed(other), (2026, 8))], FX)
+    assert stats["count"] == 2
+    assert stats["combinedValuationEurMillions"] == pytest.approx(1200)
+    assert stats["combinedValuationCount"] == 1
+
+
+def test_the_combined_stat_caption_says_what_it_actually_sums(record):
+    """A total covering part of the register must not be captioned as covering all of
+    it — the reader has to be able to tell without opening a data file."""
+    other = json.loads(FIXTURE.read_text(encoding="utf-8"))
+    other["slug"] = "second-gmbh"
+    partial = compute_stats(
+        [derive_company(record, (2026, 8)),
+         derive_company(_undisclosed(other), (2026, 8))], FX)
+    assert partial["combinedValuationBasis"] == "Combined value · 1 of 2 disclosed"
+
+    whole = compute_stats([derive_company(record, (2026, 8))], FX)
+    assert whole["combinedValuationBasis"] == "Combined value"

@@ -1,8 +1,24 @@
 import { escapeHtml } from "./html.js";
 
+// sort.valuationEur is null for a company whose valuation no source has published
+// (tools/build.py declines to invent a stand-in figure just to make this comparator
+// simpler). Those sort to the end of "Highest valuation" — "at least a billion, amount
+// unknown" belongs below every known figure, not above them — and A–Z amongst
+// themselves so the tail is stable rather than arbitrary. Subtracting null would have
+// coerced it to 0 and produced the same tail by accident, which is not the same thing
+// as producing it on purpose: any future non-EUR-zero handling would have silently
+// broken it.
+function byValuation(a, b) {
+  const left = a.sort.valuationEur, right = b.sort.valuationEur;
+  if (left === null && right === null) return a.sort.name.localeCompare(b.sort.name);
+  if (left === null) return 1;
+  if (right === null) return -1;
+  return right - left;
+}
+
 const SORTS = {
   newest: (a, b) => cmp(b.sort.newest, a.sort.newest),
-  valuation: (a, b) => b.sort.valuationEur - a.sort.valuationEur,
+  valuation: byValuation,
   latest: (a, b) => cmp(b.sort.latestRound, a.sort.latestRound),
   name: (a, b) => a.sort.name.localeCompare(b.sort.name),
 };

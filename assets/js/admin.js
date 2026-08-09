@@ -41,7 +41,7 @@ export const FIELDS = [
   { key: "thesis.problem", label: "The problem", type: "textarea", group: "Sectors & story" },
   { key: "thesis.solution", label: "Technology & business model", type: "textarea", group: "Sectors & story" },
 
-  { key: "valuation.amount", label: "Valuation (millions)", type: "number", hint: "in the currency below", group: "Valuation" },
+  { key: "valuation.amount", label: "Valuation (millions)", type: "number", hint: "in the currency below — leave blank only if you fill in the two undisclosed fields", group: "Valuation" },
   { key: "valuation.currency", label: "Currency", hint: "EUR or USD", group: "Valuation" },
   { key: "valuation.approximate", label: "Approximate", type: "checkbox", group: "Valuation" },
   { key: "valuation.asOf", label: "As of", hint: "YYYY or YYYY-MM", group: "Valuation" },
@@ -49,6 +49,8 @@ export const FIELDS = [
   { key: "valuation.source", label: "Source id", hint: "matches a source id below", group: "Valuation" },
   { key: "valuation.disputed.note", label: "Disputed note", hint: "optional — leave both disputed fields blank if not disputed", group: "Valuation" },
   { key: "valuation.disputed.source", label: "Disputed source id", hint: "optional — required together with the note above", group: "Valuation" },
+  { key: "valuation.undisclosed.note", label: "Undisclosed note", hint: "only when no source publishes a figure — explain what is known and how", group: "Valuation" },
+  { key: "valuation.undisclosed.source", label: "Undisclosed source id", hint: "a source whose quote states this company is a unicorn", group: "Valuation" },
 
   { key: "becameUnicorn.date", label: "Became a unicorn on", hint: "YYYY or YYYY-MM", group: "Became a unicorn" },
   { key: "becameUnicorn.roundId", label: "Crossing round id", hint: "must match a round id below", group: "Became a unicorn" },
@@ -311,7 +313,8 @@ const THRESHOLD_MILLIONS = 1000;
     as a figure in a currency no source used, so both are rejected by name. */
 const KNOWN_CURRENCIES = ["EUR", "USD"];
 const ROUND_KEYS = ["id", "date", "stage", "amount", "currency", "approximate", "postMoney",
-  "postMoneyCurrency", "postMoneySource", "leadInvestors", "investors", "source", "disputed"];
+  "postMoneyCurrency", "postMoneySource", "leadInvestors", "investors", "source", "disputed",
+  "undisclosed"];
 const SLUG_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
 function isNonEmptyString(value) {
@@ -444,6 +447,29 @@ export function validateRecord(record) {
     }
   };
 
+  /** Mirrors tools/validate.py's check_undisclosed(): the route by which a company
+      whose unicorn status is sourced but whose valuation nobody published can still be
+      expressed. Returns true when the key is present at all, so the caller can tell
+      "absent" from "present but malformed". The quote is checked for existence, never
+      for a figure — there is no figure; whether the sentence really establishes unicorn
+      status is a judgement only the operator reading it can make. */
+  const checkUndisclosed = (label, container) => {
+    const undisclosed = container.undisclosed;
+    if (undisclosed === undefined || undisclosed === null) return false;
+    if (!isPlainObject(undisclosed)) {
+      errors.push(`${label}.undisclosed must be an object with note and source`);
+      return true;
+    }
+    if (!isNonEmptyString(undisclosed.note)) errors.push(`${label}.undisclosed.note must be a non-empty string`);
+    if (!Object.prototype.hasOwnProperty.call(sourcesById, undisclosed.source)) {
+      errors.push(`${label}.undisclosed cites unknown source ${describe(undisclosed.source)}`);
+    } else if (!isNonEmptyString(sourcesById[undisclosed.source].quote)) {
+      errors.push(`${label}.undisclosed cites source ${undisclosed.source}, whose quote is empty `
+        + "— an undisclosed valuation still has to point at a sentence somebody read");
+    }
+    return true;
+  };
+
   const checkCurrency = (label, value) => {
     if (value !== null && value !== undefined && !KNOWN_CURRENCIES.includes(value)) {
       errors.push(`${label} is not a currency this register can render: ${describe(value)} `
@@ -454,6 +480,18 @@ export function validateRecord(record) {
   checkDisputed("valuation", record.valuation);
   checkCurrency("valuation.currency", record.valuation.currency);
   checkCurrency("totalRaised.currency", record.totalRaised && record.totalRaised.currency);
+
+  // Exactly one of the two ways of carrying a valuation — mirrors tools/validate.py.
+  const valuationAmount = record.valuation.amount;
+  const hasUndisclosed = checkUndisclosed("valuation", record.valuation);
+  if (valuationAmount !== null && valuationAmount !== undefined && hasUndisclosed) {
+    errors.push("valuation carries both an amount and an undisclosed note — they are "
+      + "mutually exclusive; delete whichever the sources do not support");
+  } else if ((valuationAmount === null || valuationAmount === undefined) && !hasUndisclosed) {
+    errors.push("valuation has no amount and no undisclosed evidence — a record must carry "
+      + "one: either a sourced figure, or an `undisclosed` note whose quote states the "
+      + "company is a unicorn");
+  }
 
   for (const [label, value] of [["valuation.asOf", record.valuation.asOf], ["becameUnicorn.date", record.becameUnicorn.date]]) {
     try { parseDateLoose(value); } catch (exc) { errors.push(`${label}: ${exc.message}`); }
@@ -476,6 +514,7 @@ export function validateRecord(record) {
     checkFigure(`round ${entry.id ?? "?"}`, entry);
     checkFigure(`round ${entry.id ?? "?"} post-money`, entry, "postMoney", "postMoneyCurrency", "postMoneySource");
     checkDisputed(`round ${entry.id ?? "?"}`, entry);
+    checkUndisclosed(`round ${entry.id ?? "?"}`, entry);
     checkCurrency(`round ${entry.id ?? "?"}.currency`, entry.currency);
     checkCurrency(`round ${entry.id ?? "?"}.postMoneyCurrency`, entry.postMoneyCurrency);
     for (const keyName of Object.keys(entry).filter((k) => !ROUND_KEYS.includes(k)).sort()) {
@@ -486,13 +525,29 @@ export function validateRecord(record) {
 
   const roundsById = Object.fromEntries(rounds.map((entry) => [entry.id, entry]));
   const unicornRound = roundsById[record.becameUnicorn.roundId];
+  // Three shapes, not two — mirrors tools/validate.py. A crossing round either states a
+  // post-money at or above the threshold, or states none and carries `undisclosed`
+  // evidence instead. Only a stated post-money *under* the threshold is an error.
+  let crossingAdmitted = false;
   if (!unicornRound) {
     errors.push(`becameUnicorn.roundId ${describe(record.becameUnicorn.roundId)} matches no round`);
-  } else if ((unicornRound.postMoney || 0) < THRESHOLD_MILLIONS) {
+  } else if (unicornRound.postMoney === null || unicornRound.postMoney === undefined) {
+    crossingAdmitted = unicornRound.undisclosed !== null && unicornRound.undisclosed !== undefined;
+    if (!crossingAdmitted) {
+      errors.push(`round ${unicornRound.id}: discloses no post-money, so the crossing has to be `
+        + "established qualitatively: give that round an `undisclosed` note citing a source "
+        + "whose quote states the company reached unicorn status");
+    }
+  } else if (unicornRound.postMoney < THRESHOLD_MILLIONS) {
     errors.push(`round ${unicornRound.id}: post-money is below the ${THRESHOLD_MILLIONS}m inclusion threshold`);
   } else {
+    crossingAdmitted = true;
+  }
+  if (crossingAdmitted) {
     // An earlier round already over the threshold means the company crossed there, not
     // here — mirrors tools/validate.py, which explains why nothing else catches it.
+    // Runs for a qualitative crossing too: that rule is exactly as true when the named
+    // round published no price of its own.
     let unicornKey = null;
     try { unicornKey = parseDateLoose(unicornRound.date); } catch { /* reported above */ }
     if (unicornKey !== null) {
@@ -557,9 +612,14 @@ export function validateRecord(record) {
     load-then-download byte-identical to the source file. */
 export function buildRecord(formState) {
   const record = structuredClone(formState);
-  if (record.valuation && record.valuation.disputed) {
-    const { note, source } = record.valuation.disputed;
-    if (!isNonEmptyString(note) && !isNonEmptyString(source)) delete record.valuation.disputed;
+  // `undisclosed` gets the identical treatment for the identical reason: validate.py
+  // rejects a present `undisclosed` whose note is empty, so blank-both can only ever be
+  // something the operator typed and cleared in this session, never something on disk.
+  for (const key of ["disputed", "undisclosed"]) {
+    if (record.valuation && record.valuation[key]) {
+      const { note, source } = record.valuation[key];
+      if (!isNonEmptyString(note) && !isNonEmptyString(source)) delete record.valuation[key];
+    }
   }
   return record;
 }
