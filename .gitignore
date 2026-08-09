@@ -2,3 +2,7 @@
 __pycache__/
 *.pyc
 .claude/
+# R writes one of these into whatever directory it was started in; one keeps
+# turning up in data/geo/ from the shapefile work. It is a session transcript,
+# not project data.
+.Rhistory

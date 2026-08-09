@@ -5,10 +5,17 @@ import { enterRegister } from "./transition.js";
 import { wireDetail } from "./detail.js";
 import { renderMap } from "./map.js";
 import { renderFooter } from "./footer.js";
+import { renderFunding, weekFromHash } from "./funding.js";
 
 async function loadData() {
   const response = await fetch("data/companies.json", { cache: "no-cache" });
   if (!response.ok) throw new Error(`companies.json ${response.status}`);
+  return response.json();
+}
+
+async function loadFunding() {
+  const response = await fetch("data/funding.json", { cache: "no-cache" });
+  if (!response.ok) throw new Error(`funding.json ${response.status}`);
   return response.json();
 }
 
@@ -67,7 +74,41 @@ export async function boot() {
 
   wireDetail(data.companies);
 
+  const roundup = document.querySelector("[data-roundup]");
+  // The round-up is a second dataset with a second sourcing standard, so a
+  // failure to load it must not take the register down with it — the register
+  // is the product. Its own catch leaves the block explaining itself in place
+  // of the weeks, rather than leaving a titled empty section on the page.
+  try {
+    const funding = await loadFunding();
+    window.__funding = renderFunding(roundup, funding, data.companies);
+  } catch (error) {
+    console.error(error);
+    roundup.innerHTML =
+      '<div class="roundup__head"><p class="label">Weekly funding</p>' +
+      '<h2 class="roundup__title">German rounds, week by week.</h2>' +
+      '<p class="roundup__empty">The funding round-up could not be loaded. ' +
+      'Reload the page, or <a href="https://github.com/LW7776/Unicorn-Germany/issues">report this on GitHub</a>.</p></div>';
+  }
+
+  const reveal = () => { roundup.hidden = false; };
+
+  // A shared #funding link — the topbar's own entry, or #funding/2026-W30 for
+  // one particular week — would otherwise land on a section still hidden
+  // behind the hero. Enter the register straight away in that one case,
+  // without the flight: the visitor asked for a specific place on the page,
+  // not for the transition that leads to it.
+  if (location.hash === "#funding" || weekFromHash(location.hash)) {
+    document.querySelector("[data-hero]").hidden = true;
+    document.querySelector("[data-register]").hidden = false;
+    document.querySelector("[data-topbar]").hidden = false;
+    sky.stop();
+    reveal();
+    roundup.scrollIntoView();
+  }
+
   document.querySelector("[data-enter]").addEventListener("click", () => {
+    reveal();
     enterRegister({
       hero: document.querySelector("[data-hero]"),
       register: document.querySelector("[data-register]"),

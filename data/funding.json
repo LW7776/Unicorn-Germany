@@ -1,0 +1,469 @@
+{
+ "weeks": [
+  {
+   "week": "2026-W32",
+   "start": "2026-08-03",
+   "end": "2026-08-09",
+   "lead": [
+    {
+     "id": "l1",
+     "company": "Moss",
+     "hq": "Berlin",
+     "stage": "Series C",
+     "amount": 30,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": 1000,
+     "valuationCurrency": "EUR",
+     "founders": [
+      "Ante Spittler",
+      "Anton Rummel",
+      "Ferdinand Meyer",
+      "Stephan Haslebacher"
+     ],
+     "investors": [
+      "Portage",
+      "Cherry Ventures"
+     ],
+     "text": "Another one. Moss closed a €30m Series C led by Portage at a valuation north of €1bn — Europe's newest unicorn on the day Sifted wrote it up, and Germany's newest on any reading. Ante Spittler and his three co-founders started in 2019 selling corporate cards to mid-market finance teams; the company now sits between those teams and every euro that leaves the business, with the receipt, the approval and the ERP line attached to each one. That is a boring, enormous job, and Berlin's fintech bench keeps producing companies willing to do it rather than chasing the consumer app. Moss is already in this register — its entry carries this round and the crossing it produced.",
+     "source": {
+      "publication": "EU-Startups",
+      "title": "Berlin-based Moss hits unicorn status after closing €30 million Series C to expand its Finance AI suite",
+      "url": "https://www.eu-startups.com/2026/08/berlin-based-moss-hits-unicorn-status-after-closing-e30-million-series-c-to-expand-its-finance-ai-suite/",
+      "publishedOn": "2026-08-05",
+      "publishedLabel": "5 Aug 2026"
+     },
+     "amountLabel": "€30 m",
+     "valuationLabel": "€1 bn",
+     "foundersLabel": "Ante Spittler, Anton Rummel, Ferdinand Meyer and Stephan Haslebacher",
+     "investorsLabel": "Portage and Cherry Ventures"
+    },
+    {
+     "id": "l2",
+     "company": "NavVis",
+     "hq": "Munich",
+     "stage": "Series D",
+     "amount": 73.7,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Felix Reinshagen",
+      "Georg Schroth",
+      "Robert Huitl",
+      "Sebastian Hilsenbeck"
+     ],
+     "investors": [
+      "The Jordan Company",
+      "Yttrium",
+      "KOZO KEIKAKU ENGINEERING",
+      "Cipio Partners"
+     ],
+     "text": "NavVis raised €73.7m in a Series D led by the American private equity firm The Jordan Company, thirteen years after four researchers spun it out of the Technical University of Munich. It maps the inside of buildings — factories, plants, the mission-critical infrastructure nobody photographs — and keeps the digital copy synchronised with the physical one; Felix Reinshagen says customers trust it with billions of square metres of that data. This is the German pattern in a single line: a decade of unfashionable engineering, a growth round from abroad, and the company still headquartered in Munich.",
+     "source": {
+      "publication": "EU-Startups",
+      "title": "Munich-based NavVis raises €73.7 million to build its spatial data engine and accelerate AI roadmap",
+      "url": "https://www.eu-startups.com/2026/08/munich-based-navvis-raises-e74-5-million-to-build-its-spatial-data-engine-and-accelerate-ai-roadmap/",
+      "publishedOn": "2026-08-07",
+      "publishedLabel": "7 Aug 2026"
+     },
+     "amountLabel": "€73.7 m",
+     "valuationLabel": null,
+     "foundersLabel": "Felix Reinshagen, Georg Schroth, Robert Huitl and Sebastian Hilsenbeck",
+     "investorsLabel": "The Jordan Company, Yttrium, KOZO KEIKAKU ENGINEERING and Cipio Partners"
+    }
+   ],
+   "more": [
+    {
+     "id": "m1",
+     "company": "conmeet",
+     "hq": null,
+     "stage": "Seed",
+     "amount": 6,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Benedikt Kisner",
+      "Leandro Ananias",
+      "Lennart Eckerlein"
+     ],
+     "investors": [
+      "Reimann Investors Venture Capital",
+      "Smedvig Ventures",
+      "May Ventures"
+     ],
+     "source": {
+      "publication": "Tech.eu",
+      "title": "conmeet raises €6M to power construction businesses with AI",
+      "url": "https://tech.eu/2026/08/05/conmeet-raises-eur6m-to-power-construction-businesses-with-ai/",
+      "publishedOn": "2026-08-05",
+      "publishedLabel": "5 Aug 2026"
+     },
+     "amountLabel": "€6 m",
+     "valuationLabel": null,
+     "foundersLabel": "Benedikt Kisner, Leandro Ananias and Lennart Eckerlein",
+     "investorsLabel": "Reimann Investors Venture Capital, Smedvig Ventures and May Ventures"
+    }
+   ],
+   "rangeLabel": "3–9 Aug 2026",
+   "shortLabel": "W32",
+   "yearLabel": "2026",
+   "roundCount": 3,
+   "moreCount": 1
+  },
+  {
+   "week": "2026-W31",
+   "start": "2026-07-27",
+   "end": "2026-08-02",
+   "lead": [
+    {
+     "id": "l1",
+     "company": "metr",
+     "hq": null,
+     "stage": "Series B",
+     "amount": 10.5,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [],
+     "investors": [],
+     "text": "metr secured €10.5m in a Series B — energy and heating management sold into German housing stock, which is the least fashionable corner of climate software and the one with the most tonnes of CO2 sitting in it. It was a thin week for Germany: six of the roughly fifty European rounds Tech.eu tracked were German, and none of them was larger than €12m. Late July is when the country goes on holiday, and the funding calendar goes with it. A quiet week is not a verdict on the pipeline; it is a verdict on the month.",
+     "source": {
+      "publication": "Tech.eu",
+      "title": "European tech weekly recap: €878M in weekly deals and key trends from H1 2026",
+      "url": "https://tech.eu/2026/08/03/european-tech-weekly-recap-eur878m-in-weekly-deals-and-key-trends-from-h1-2026/",
+      "publishedOn": "2026-08-03",
+      "publishedLabel": "3 Aug 2026"
+     },
+     "amountLabel": "€10.5 m",
+     "valuationLabel": null,
+     "foundersLabel": null,
+     "investorsLabel": null
+    },
+    {
+     "id": "l2",
+     "company": "5U AI",
+     "hq": "Munich",
+     "stage": "Pre-seed",
+     "amount": 3.2,
+     "currency": "USD",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Yagiz Abik",
+      "Fehmi Şener"
+     ],
+     "investors": [
+      "Emerge Capital"
+     ],
+     "text": "5U AI raised $3.2m in pre-seed funding led by London's Emerge Capital, a year after two Technical University of Munich graduates founded it. It builds digital workers for freight forwarding — quoting, bookings, shipment tracking, invoice reconciliation — and, unusually, records the reasoning behind each decision rather than only the outcome, so a freight team can audit why the machine did what it did. Munich keeps producing exactly this: industrial software sold to people who move physical things. It is the least hyped part of the German ecosystem and reliably one of the most durable.",
+     "source": {
+      "publication": "Tech.eu",
+      "title": "5U AI lands $3.2M pre-seed for AI freight workforce platform",
+      "url": "https://tech.eu/2026/07/28/5u-ai-lands-32m-pre-seed-for-ai-freight-workforce-platform/",
+      "publishedOn": "2026-07-28",
+      "publishedLabel": "28 Jul 2026"
+     },
+     "amountLabel": "$3.2 m",
+     "valuationLabel": null,
+     "foundersLabel": "Yagiz Abik and Fehmi Şener",
+     "investorsLabel": "Emerge Capital"
+    }
+   ],
+   "more": [
+    {
+     "id": "m1",
+     "company": "PadelCity",
+     "hq": null,
+     "stage": "Investment",
+     "amount": 12,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [],
+     "investors": [],
+     "source": {
+      "publication": "Tech.eu",
+      "title": "European tech weekly recap: €878M in weekly deals and key trends from H1 2026",
+      "url": "https://tech.eu/2026/08/03/european-tech-weekly-recap-eur878m-in-weekly-deals-and-key-trends-from-h1-2026/",
+      "publishedOn": "2026-08-03",
+      "publishedLabel": "3 Aug 2026"
+     },
+     "amountLabel": "€12 m",
+     "valuationLabel": null,
+     "foundersLabel": null,
+     "investorsLabel": null
+    },
+    {
+     "id": "m2",
+     "company": "EVERSION",
+     "hq": null,
+     "stage": "Seed",
+     "amount": 2.3,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [],
+     "investors": [],
+     "source": {
+      "publication": "Tech.eu",
+      "title": "European tech weekly recap: €878M in weekly deals and key trends from H1 2026",
+      "url": "https://tech.eu/2026/08/03/european-tech-weekly-recap-eur878m-in-weekly-deals-and-key-trends-from-h1-2026/",
+      "publishedOn": "2026-08-03",
+      "publishedLabel": "3 Aug 2026"
+     },
+     "amountLabel": "€2.3 m",
+     "valuationLabel": null,
+     "foundersLabel": null,
+     "investorsLabel": null
+    },
+    {
+     "id": "m3",
+     "company": "Celsio",
+     "hq": null,
+     "stage": "Investment",
+     "amount": 1.2,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [],
+     "investors": [
+      "Caesar Ventures",
+      "CDTM.vc"
+     ],
+     "source": {
+      "publication": "Tech.eu",
+      "title": "European tech weekly recap: €878M in weekly deals and key trends from H1 2026",
+      "url": "https://tech.eu/2026/08/03/european-tech-weekly-recap-eur878m-in-weekly-deals-and-key-trends-from-h1-2026/",
+      "publishedOn": "2026-08-03",
+      "publishedLabel": "3 Aug 2026"
+     },
+     "amountLabel": "€1.2 m",
+     "valuationLabel": null,
+     "foundersLabel": null,
+     "investorsLabel": "Caesar Ventures and CDTM.vc"
+    }
+   ],
+   "rangeLabel": "27 Jul – 2 Aug 2026",
+   "shortLabel": "W31",
+   "yearLabel": "2026",
+   "roundCount": 5,
+   "moreCount": 3
+  },
+  {
+   "week": "2026-W30",
+   "start": "2026-07-20",
+   "end": "2026-07-26",
+   "lead": [
+    {
+     "id": "l1",
+     "company": "telli",
+     "hq": "Berlin",
+     "stage": "Seed",
+     "amount": 13.1,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Seb Hapte-Selassie",
+      "Philipp Baumanns",
+      "Finn zur Muehlen"
+     ],
+     "investors": [
+      "redalpine",
+      "Cherry Ventures",
+      "Y Combinator"
+     ],
+     "text": "telli took €13.1m in seed money led by redalpine, with Cherry Ventures and Y Combinator following on, taking a two-year-old Berlin company past €16m raised in total. Its founders are betting that customer operations are one system pretending to be five — calls, CRMs, tickets, dashboards, each with its own queue and its own manual work behind it — and that AI belongs in the middle of that, running the operation rather than summarising it afterwards. It is a fat, unglamorous target, and unglamorous B2B software sold to people with real operational pain is precisely what Germany has been quietly good at for a decade.",
+     "source": {
+      "publication": "EU-Startups",
+      "title": "YC-backed telli raises €13.1 million to build AI for B2C customer operations",
+      "url": "https://www.eu-startups.com/2026/07/yc-backed-telli-raises-e13-1-million-to-build-ai-for-b2c-customer-operations/",
+      "publishedOn": "2026-07-23",
+      "publishedLabel": "23 Jul 2026"
+     },
+     "amountLabel": "€13.1 m",
+     "valuationLabel": null,
+     "foundersLabel": "Seb Hapte-Selassie, Philipp Baumanns and Finn zur Muehlen",
+     "investorsLabel": "redalpine, Cherry Ventures and Y Combinator"
+    }
+   ],
+   "more": [
+    {
+     "id": "m1",
+     "company": "kausable",
+     "hq": null,
+     "stage": "Seed",
+     "amount": 12,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Johannes Haux",
+      "Benjamin Herdeanu",
+      "Gregor Ramien"
+     ],
+     "investors": [
+      "UVC Partners",
+      "Entourage",
+      "HTGF",
+      "Mätch VC"
+     ],
+     "source": {
+      "publication": "EU-Startups",
+      "title": "German DeepTech startup kausable raises €12 million to develop reasoning-first AI that adapts without retraining",
+      "url": "https://www.eu-startups.com/2026/07/german-deeptech-startup-kausable-raises-e12-million-to-develop-reasoning-first-ai-that-adapts-without-retraining/",
+      "publishedOn": "2026-07-23",
+      "publishedLabel": "23 Jul 2026"
+     },
+     "amountLabel": "€12 m",
+     "valuationLabel": null,
+     "foundersLabel": "Johannes Haux, Benjamin Herdeanu and Gregor Ramien",
+     "investorsLabel": "UVC Partners, Entourage, HTGF and Mätch VC"
+    },
+    {
+     "id": "m2",
+     "company": "deltaVision",
+     "hq": "Munich",
+     "stage": "First round",
+     "amount": 10.2,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Alex Plebuch",
+      "Denis Kiefel",
+      "Matthias Günther"
+     ],
+     "investors": [
+      "KT Ventures",
+      "Valemount Capital",
+      "Futury Capital"
+     ],
+     "source": {
+      "publication": "EU-Startups",
+      "title": "Profitable space startup deltaVision secures €10.2 million to provide the “cardiovascular system for spacecraft”",
+      "url": "https://www.eu-startups.com/2026/07/profitable-space-startup-deltavision-secures-e10-2-million-to-provide-the-cardiovascular-system-for-spacecraft/",
+      "publishedOn": "2026-07-21",
+      "publishedLabel": "21 Jul 2026"
+     },
+     "amountLabel": "€10.2 m",
+     "valuationLabel": null,
+     "foundersLabel": "Alex Plebuch, Denis Kiefel and Matthias Günther",
+     "investorsLabel": "KT Ventures, Valemount Capital and Futury Capital"
+    },
+    {
+     "id": "m3",
+     "company": "Deutsche Sanierungsberatung",
+     "hq": "Berlin",
+     "stage": "Series A",
+     "amount": 10,
+     "currency": "EUR",
+     "approximate": true,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [],
+     "investors": [
+      "Simon Capital",
+      "VERBUND X Ventures",
+      "IBB Ventures",
+      "Vireo Ventures",
+      "Atlantic Food Labs"
+     ],
+     "source": {
+      "publication": "EU-Startups",
+      "title": "Berlin’s Deutsche Sanierungsberatung raises over €10 million to accelerate climate-neutral home renovations",
+      "url": "https://www.eu-startups.com/2026/07/berlin-based-deutsche-sanierungsberatung-raises-over-e10-million-to-accelerate-climate-neutral-home-renovations/",
+      "publishedOn": "2026-07-21",
+      "publishedLabel": "21 Jul 2026"
+     },
+     "amountLabel": "~€10 m",
+     "valuationLabel": null,
+     "foundersLabel": null,
+     "investorsLabel": "Simon Capital, VERBUND X Ventures, IBB Ventures, Vireo Ventures and Atlantic Food Labs"
+    },
+    {
+     "id": "m4",
+     "company": "Omio",
+     "hq": "Berlin",
+     "stage": "Strategic investment",
+     "amount": 8.7,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Naren Shaam"
+     ],
+     "investors": [
+      "Granite-Integral"
+     ],
+     "source": {
+      "publication": "EU-Startups",
+      "title": "Omio raises €8.7 million strategic investment for Asian expansion",
+      "url": "https://www.eu-startups.com/2026/07/omio-raises-e8-7-million-strategic-investment-for-asian-expansion/",
+      "publishedOn": "2026-07-21",
+      "publishedLabel": "21 Jul 2026"
+     },
+     "amountLabel": "€8.7 m",
+     "valuationLabel": null,
+     "foundersLabel": "Naren Shaam",
+     "investorsLabel": "Granite-Integral"
+    },
+    {
+     "id": "m5",
+     "company": "Aampere",
+     "hq": "Munich",
+     "stage": "Venture round",
+     "amount": 4.2,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Florian Reister",
+      "Niko Schmidt",
+      "Maximilian Rost"
+     ],
+     "investors": [
+      "Trind Ventures",
+      "Vend Marketplaces ASA",
+      "G-FUND"
+     ],
+     "source": {
+      "publication": "EU-Startups",
+      "title": "Munich’s Aampere charges up with €4.2 million to expand its used EV resale platform across Europe",
+      "url": "https://www.eu-startups.com/2026/07/munichs-aampere-charges-up-with-e4-2-million-to-expand-its-used-ev-resale-platform-across-europe/",
+      "publishedOn": "2026-07-23",
+      "publishedLabel": "23 Jul 2026"
+     },
+     "amountLabel": "€4.2 m",
+     "valuationLabel": null,
+     "foundersLabel": "Florian Reister, Niko Schmidt and Maximilian Rost",
+     "investorsLabel": "Trind Ventures, Vend Marketplaces ASA and G-FUND"
+    }
+   ],
+   "rangeLabel": "20–26 Jul 2026",
+   "shortLabel": "W30",
+   "yearLabel": "2026",
+   "roundCount": 6,
+   "moreCount": 5
+  }
+ ],
+ "stats": {
+  "weekCount": 3,
+  "roundCount": 14,
+  "latestWeek": "2026-W32"
+ }
+}

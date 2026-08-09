@@ -88,23 +88,45 @@
       confirms every figure in it carries a dated, quoted source — the same check runs on every
       proposed change, with no exception and no separate publish path. The site itself is static
       HTML, CSS and JavaScript: no build step, no framework, no database, served at no cost by
-      GitHub Pages. The one standing automation is a GitHub Action that reads trade-press feeds
-      once a month and opens an issue listing what it finds. It never edits company data itself;
-      turning a candidate into a real update is a separate, human-reviewed step.
+      GitHub Pages. Two standing automations read the allowlisted trade-press feeds: a weekly one
+      that drafts the funding round-up, and a full register sweep every eight weeks. Neither edits
+      the dataset itself; both produce something a person reviews before anything is published.
+    </p>
+    <p>
+      The <strong>weekly funding round-up</strong> below the register is a second dataset with a
+      second, deliberately lighter standard, and the page says so where you read it. Every round
+      in it carries a dated link to the reporting behind it, from the same allowlisted
+      publications — but those figures are <em>not</em> quote-checked the way the register's are.
+      It covers German companies generally, not only unicorns, so it is a record of what the
+      country's ecosystem raised rather than a register of what it is worth. The two are kept in
+      separate files, behind separate validators, so neither standard can quietly become the
+      other.
     </p>
   </section>
 
   <section aria-labelledby="updates">
     <h2 id="updates">How updating works</h2>
     <p>
-      An automated scan runs monthly and can also be triggered on demand. It reads the RSS feeds
-      of the allowlisted trade press, matches articles against tracked company names and trigger
-      words — <em>raises, Series, valuation, unicorn, IPO, insolvency</em> — and flags candidates:
-      companies not yet tracked whose headline reports a valuation at or above $1B or €1B, or
-      existing companies with a new figure to record. The scan does not check nationality — that
-      is for the person reviewing the issue to confirm, the same as everything else it flags. The
-      scan opens a GitHub issue listing what it found, with the headline, publication and link
-      for each candidate.
+      Two scans run on different clocks, and they are looking for different things.
+    </p>
+    <p>
+      <strong>Every Monday</strong>, a job reads the allowlisted feeds for the week just ended,
+      drafts the funding round-up from the articles it finds, and opens a pull request. This is
+      now what catches a new unicorn: a company crosses a billion <em>by raising</em>, and that
+      round is announced, so it reaches the feeds within days. Where a round belongs to a company
+      already in the register, the pull request says so at the top — that entry's figure is now
+      out of date.
+    </p>
+    <p>
+      <strong>Every eight weeks</strong>, a fuller sweep runs over the same feeds and opens an
+      issue instead. It matches articles against tracked company names and trigger words —
+      <em>raises, Series, valuation, unicorn, IPO, insolvency</em> — and flags candidates. Its
+      real job is what a funding announcement never announces: a company that quietly IPOs, is
+      acquired, or becomes insolvent stops qualifying without any round to report, and a
+      valuation nobody has repriced in two years goes stale with no event at all. None of that
+      arrives on a funding wire, and none of it is urgent to the day. Neither scan checks
+      nationality — that is for the person reviewing to confirm, the same as everything else
+      they flag.
     </p>
     <p>
       Nothing is published from that issue automatically. A person reads the flagged articles,

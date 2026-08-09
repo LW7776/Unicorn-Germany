@@ -1,0 +1,167 @@
+{
+ "week": "2026-W30",
+ "start": "2026-07-20",
+ "end": "2026-07-26",
+ "lead": [
+  {
+   "id": "l1",
+   "company": "telli",
+   "hq": "Berlin",
+   "stage": "Seed",
+   "amount": 13.1,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "Seb Hapte-Selassie",
+    "Philipp Baumanns",
+    "Finn zur Muehlen"
+   ],
+   "investors": [
+    "redalpine",
+    "Cherry Ventures",
+    "Y Combinator"
+   ],
+   "text": "telli took €13.1m in seed money led by redalpine, with Cherry Ventures and Y Combinator following on, taking a two-year-old Berlin company past €16m raised in total. Its founders are betting that customer operations are one system pretending to be five — calls, CRMs, tickets, dashboards, each with its own queue and its own manual work behind it — and that AI belongs in the middle of that, running the operation rather than summarising it afterwards. It is a fat, unglamorous target, and unglamorous B2B software sold to people with real operational pain is precisely what Germany has been quietly good at for a decade.",
+   "source": {
+    "publication": "EU-Startups",
+    "title": "YC-backed telli raises €13.1 million to build AI for B2C customer operations",
+    "url": "https://www.eu-startups.com/2026/07/yc-backed-telli-raises-e13-1-million-to-build-ai-for-b2c-customer-operations/",
+    "publishedOn": "2026-07-23"
+   }
+  }
+ ],
+ "more": [
+  {
+   "id": "m1",
+   "company": "kausable",
+   "hq": null,
+   "stage": "Seed",
+   "amount": 12,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "Johannes Haux",
+    "Benjamin Herdeanu",
+    "Gregor Ramien"
+   ],
+   "investors": [
+    "UVC Partners",
+    "Entourage",
+    "HTGF",
+    "Mätch VC"
+   ],
+   "source": {
+    "publication": "EU-Startups",
+    "title": "German DeepTech startup kausable raises €12 million to develop reasoning-first AI that adapts without retraining",
+    "url": "https://www.eu-startups.com/2026/07/german-deeptech-startup-kausable-raises-e12-million-to-develop-reasoning-first-ai-that-adapts-without-retraining/",
+    "publishedOn": "2026-07-23"
+   }
+  },
+  {
+   "id": "m2",
+   "company": "deltaVision",
+   "hq": "Munich",
+   "stage": "First round",
+   "amount": 10.2,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "Alex Plebuch",
+    "Denis Kiefel",
+    "Matthias Günther"
+   ],
+   "investors": [
+    "KT Ventures",
+    "Valemount Capital",
+    "Futury Capital"
+   ],
+   "source": {
+    "publication": "EU-Startups",
+    "title": "Profitable space startup deltaVision secures €10.2 million to provide the “cardiovascular system for spacecraft”",
+    "url": "https://www.eu-startups.com/2026/07/profitable-space-startup-deltavision-secures-e10-2-million-to-provide-the-cardiovascular-system-for-spacecraft/",
+    "publishedOn": "2026-07-21"
+   }
+  },
+  {
+   "id": "m3",
+   "company": "Deutsche Sanierungsberatung",
+   "hq": "Berlin",
+   "stage": "Series A",
+   "amount": 10,
+   "currency": "EUR",
+   "approximate": true,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [],
+   "investors": [
+    "Simon Capital",
+    "VERBUND X Ventures",
+    "IBB Ventures",
+    "Vireo Ventures",
+    "Atlantic Food Labs"
+   ],
+   "source": {
+    "publication": "EU-Startups",
+    "title": "Berlin’s Deutsche Sanierungsberatung raises over €10 million to accelerate climate-neutral home renovations",
+    "url": "https://www.eu-startups.com/2026/07/berlin-based-deutsche-sanierungsberatung-raises-over-e10-million-to-accelerate-climate-neutral-home-renovations/",
+    "publishedOn": "2026-07-21"
+   }
+  },
+  {
+   "id": "m4",
+   "company": "Omio",
+   "hq": "Berlin",
+   "stage": "Strategic investment",
+   "amount": 8.7,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "Naren Shaam"
+   ],
+   "investors": [
+    "Granite-Integral"
+   ],
+   "source": {
+    "publication": "EU-Startups",
+    "title": "Omio raises €8.7 million strategic investment for Asian expansion",
+    "url": "https://www.eu-startups.com/2026/07/omio-raises-e8-7-million-strategic-investment-for-asian-expansion/",
+    "publishedOn": "2026-07-21"
+   }
+  },
+  {
+   "id": "m5",
+   "company": "Aampere",
+   "hq": "Munich",
+   "stage": "Venture round",
+   "amount": 4.2,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "Florian Reister",
+    "Niko Schmidt",
+    "Maximilian Rost"
+   ],
+   "investors": [
+    "Trind Ventures",
+    "Vend Marketplaces ASA",
+    "G-FUND"
+   ],
+   "source": {
+    "publication": "EU-Startups",
+    "title": "Munich’s Aampere charges up with €4.2 million to expand its used EV resale platform across Europe",
+    "url": "https://www.eu-startups.com/2026/07/munichs-aampere-charges-up-with-e4-2-million-to-expand-its-used-ev-resale-platform-across-europe/",
+    "publishedOn": "2026-07-23"
+   }
+  }
+ ]
+}

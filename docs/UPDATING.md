@@ -1,7 +1,8 @@
 # Updating the register
 
-Nothing here edits the dataset automatically. The monthly scan only *proposes*. There are
-three ways to change the content, and all three end in the same place: a validated commit.
+Nothing here edits the dataset automatically. The scheduled scans only *propose* — one opens an
+issue, the other opens a pull request. There are three ways to change the content, and all three
+end in the same place: a validated commit.
 
 | Route | Needs | Use it when |
 |---|---|---|
@@ -70,10 +71,131 @@ beside it, never as "—" and never as a zero, and such companies are left out o
 value" headline rather than counted as nothing — the headline says how many of the register it
 covers.
 
-## Monthly, automatic
+## The two automations
 
-On the 1st of each month the `watch` workflow reads the allowlisted feeds and opens an issue
-listing candidate changes. Trigger it early from **Actions → watch → Run workflow**.
+Two jobs read the same allowlisted feeds, on different clocks, looking for different things.
+Neither publishes anything by itself.
+
+| | `weekly-funding` | `watch` |
+|---|---|---|
+| Runs | Every Monday, 07:00 UTC | Every 8 weeks, Monday 06:00 UTC |
+| Looks for | German funding rounds — any company, not only unicorns | Anything that changes the register |
+| Produces | A pull request with one week of the round-up | An issue listing candidate changes |
+| Touches the dataset | No — a pull request you review | No — an issue you read |
+
+**Why the sweep dropped from monthly to eight-weekly.** The weekly scan is now what catches a
+new unicorn: a company that crosses a billion does it *by raising*, and that round is announced,
+so it appears in the funding feeds within days. Waiting up to a month for the sweep to notice
+was the slow path to the same fact.
+
+What the eight-weekly sweep is for is everything a funding announcement never announces. A
+company that IPOs stops qualifying, and there is no round to report. So does one that is
+acquired, and one that becomes insolvent. And a valuation nobody has repriced for two years goes
+stale without any event at all — no announcement is ever made about a number quietly ageing.
+None of that arrives on a funding wire, and none of it is urgent to the day, which is exactly
+why it suits a slower, more thorough pass.
+
+Both can be triggered by hand from **Actions → (the workflow) → Run workflow**. A manual `watch`
+run always sweeps, regardless of which week it is.
+
+## Setting up the weekly funding round-up
+
+`weekly-funding` calls the Anthropic API, so it needs an API key. **The repository does not have
+one yet** — until it is added, the workflow fails on its first step with a message saying so,
+and nothing else runs.
+
+To add it:
+
+1. Go to <https://console.anthropic.com/settings/keys> and **Create Key**. Copy it — the console
+   shows it once.
+2. In this repository, open **Settings → Secrets and variables → Actions**.
+3. Click **New repository secret**.
+4. Name it exactly `ANTHROPIC_API_KEY` — the workflow looks for that name and nothing else.
+   Paste the key as the value, and **Add secret**.
+5. Check it works: **Actions → weekly-funding → Run workflow**. Leave the week blank to draft
+   the week that just ended.
+
+The key is never printed, never committed, and is only readable by Actions. If it leaks, revoke
+it in the console and add a new one — no code change is needed.
+
+### What the job actually does
+
+1. Fetches the allowlisted feeds (the same `tools/watch.py` code the sweep uses), walking a few
+   pages back so a Monday run still sees the previous Tuesday.
+2. Keeps articles published inside the week that mention Germany and a funding event.
+3. Asks Claude to pick the lead round(s), write them up, and list the rest — **from those
+   articles only**.
+4. Checks the answer back against the fetched text: every company, founder, amount and valuation
+   must appear in the article cited beside it, and the citation must be a page this run actually
+   fetched. Anything that fails is rejected and nothing is written.
+5. Validates the file with `tools/validate_funding.py`.
+6. Opens a pull request. It never commits to `main`.
+
+If a company already in `data/companies/` appears in the week, the pull request says so at the
+top and its title is marked *(touches the register)* — that company's register entry now carries
+an out-of-date figure, and the round-up must not be the only place the new one appears.
+
+A week with no qualifying German rounds is a real outcome: the job says so and opens nothing.
+
+## The funding round-up, by hand
+
+One file per ISO week, `data/funding/<year>-W<week>.json`:
+
+```jsonc
+{
+  "week": "2026-W30",
+  "start": "2026-07-20",             // must be that week's Monday
+  "end": "2026-07-26",               //  ... and its Sunday
+  "lead": [ /* 1-2 rounds, each with a `text` write-up */ ],
+  "more": [ /* up to 5 rounds, listed only, no `text` */ ]
+}
+```
+
+Every round in either list:
+
+```jsonc
+{
+  "id": "l1",
+  "company": "telli",
+  "hq": "Berlin",                    // or null when no source says
+  "stage": "Seed",                   // or null
+  "amount": 13.1,                    // millions of `currency`
+  "currency": "EUR",                 // EUR or USD
+  "approximate": false,              // true for "over €10 million"
+  "valuation": null,                 // millions, or null when none was reported
+  "valuationCurrency": null,         // required whenever `valuation` is set
+  "founders": ["..."],               // [] when the source names none — never guessed
+  "investors": ["..."],
+  "text": "One paragraph.",          // lead rounds only
+  "source": {
+    "publication": "EU-Startups",    // same allowlist as the register
+    "title": "...",
+    "url": "https://...",
+    "publishedOn": "2026-07-23"
+  }
+}
+```
+
+**The sourcing standard is lighter than the register's, and the site says so.** Every round needs
+a real link, a real publication date, an allowlisted publication, and figures a source states.
+There is **no quote gate** — you do not record a verbatim sentence per figure, and
+`tools/validate_funding.py` does not ask for one. What has not changed: you may never invent a
+figure, a founder or a round. If a source does not name the founders, leave the list empty; the
+page drops the clause and the sentence closes up around it.
+
+The two standards must never be confused by a reader, which is why the block states its own in a
+line under its heading, and why the round-up lives in its own files behind its own validator.
+
+Then:
+
+```
+python3 tools/build.py            # regenerates data/funding.json (and companies.json)
+python3 tools/validate_funding.py
+python3 -m pytest
+```
+
+Commit the week file *and* the regenerated `data/funding.json`. CI fails on a pull request if
+the generated file does not match its sources.
 
 ## Route A — edit in the browser
 
@@ -119,11 +241,12 @@ Paste this into Claude Code:
 
 1. Edit or add `data/companies/<slug>.json`.
 2. `python3 tools/build.py`
-3. `python3 -m pytest && python3 tools/validate.py`
+3. `python3 -m pytest && python3 tools/validate.py && python3 tools/validate_funding.py`
 4. Commit both the company file and the regenerated `data/companies.json`.
 
-On a pull request, CI fails if `data/companies.json` does not match the source files, so step 2
-is not optional there. On a direct push to `main`, `rebuild.yml` regenerates it for you.
+On a pull request, CI fails if `data/companies.json` or `data/funding.json` does not match its
+source files, so step 2 is not optional there. On a direct push to `main`, `rebuild.yml`
+regenerates both for you.
 
 ## Removing a company
 

@@ -7,6 +7,7 @@ Run: python3 tools/watch.py
 """
 import datetime as dt
 import email.utils
+import html
 import json
 import pathlib
 import re
@@ -60,6 +61,26 @@ NEW_UNICORN_SIGNAL = re.compile(
 USER_AGENT = "german-unicorns-watch/1.0 (+https://github.com)"
 MAX_RESPONSE_BYTES = 5 * 1024 * 1024  # a well-formed RSS/Atom feed is well under this; caps a misbehaving origin
 ATOM_NS = "{http://www.w3.org/2005/Atom}"
+CONTENT_NS = "{http://purl.org/rss/1.0/modules/content/}"
+
+# How much of an item's body to keep. Most feeds on the allowlist put the full
+# article in <content:encoded>, which is what lets the weekly funding job work
+# from the reporting itself rather than from headlines — but a body is
+# unbounded, and the whole point of MAX_RESPONSE_BYTES is not to let a
+# misbehaving origin decide how much memory this process uses.
+MAX_SUMMARY_CHARS = 12000
+
+_TAGS = re.compile(r"<[^>]+>")
+_WHITESPACE = re.compile(r"\s+")
+
+
+def strip_html(markup):
+    """Feed bodies are HTML inside XML. Nothing here renders them, so tags are
+    dropped rather than escaped: the consumer is a language model reading prose
+    and a substring check verifying figures, and both are better served by text."""
+    text = _TAGS.sub(" ", markup or "")
+    text = html.unescape(text)
+    return _WHITESPACE.sub(" ", text).strip()[:MAX_SUMMARY_CHARS]
 
 
 def _parse_date(raw):
@@ -94,6 +115,12 @@ def parse_feed(xml_text, source):
     schema change, an empty document) legitimately parses to zero items here —
     scan() is responsible for turning that into a feedErrors entry rather than
     letting it look like a quiet month.
+
+    Each item also carries a `summary`: the item's body, tags stripped, from
+    <content:encoded> where the feed provides it and <description> otherwise.
+    watch.py itself only ever reads titles — the monthly candidate scan matches
+    on headlines — but tools/weekly_funding.py needs the reporting itself, and
+    parsing these feeds in two places is how two parsers drift apart.
     """
     root = ET.fromstring(xml_text)
     items = []
@@ -105,6 +132,8 @@ def parse_feed(xml_text, source):
                 "title": (node.findtext("title") or "").strip(),
                 "link": (node.findtext("link") or "").strip(),
                 "published": _parse_date(node.findtext("pubDate")),
+                "summary": strip_html(node.findtext(f"{CONTENT_NS}encoded")
+                                      or node.findtext("description")),
                 "source": source,
             })
         return items
@@ -118,6 +147,10 @@ def parse_feed(xml_text, source):
             "title": title,
             "link": _atom_link(node),
             "published": _parse_date(published),
+            "summary": strip_html(node.findtext(f"{ATOM_NS}content")
+                                  or node.findtext("content")
+                                  or node.findtext(f"{ATOM_NS}summary")
+                                  or node.findtext("summary")),
             "source": source,
         })
     return items

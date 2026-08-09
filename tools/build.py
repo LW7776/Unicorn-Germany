@@ -1,13 +1,22 @@
-"""Merges data/companies/*.json into one data/companies.json with everything derived.
+"""Merges the per-record source files into the two JSON payloads the site fetches.
+
+data/companies/*.json -> data/companies.json  (the register)
+data/funding/*.json   -> data/funding.json    (the weekly round-up)
 
 Python computes; JavaScript only renders. Every label, sort key, statistic and
 staleness flag is settled here so the browser code stays thin and this stays testable.
 
-data/companies.json is committed and CI diffs a freshly generated copy against it, so
-the output must be a pure function of the input files: nothing here may read the
+Both outputs are committed and CI diffs freshly generated copies against them, so
+each must be a pure function of its input files: nothing here may read the
 wall clock. The "as of" reference used throughout (for staleness and for the
 twelve-month window) is derived from the data itself — the latest `publishedOn`
-date across every source of every record — not from today's date.
+date across every source of every record — not from today's date. The round-up
+orders itself by ISO week id, which is likewise in the data.
+
+The funding build lives here rather than in a sibling script so that
+`python3 tools/build.py` remains the one build command: rebuild.yml and
+validate.yml already run it, so neither generated file can go stale because
+somebody added a second command and a workflow forgot it.
 
 Run: python3 tools/build.py
 """
@@ -22,7 +31,8 @@ from decimal import Decimal, ROUND_HALF_UP
 # unaffected (pytest.ini already puts the repo root on sys.path via pythonpath = .).
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 
-from tools.schema import CURRENCY_SYMBOL, date_sort_key, format_amount, format_date, parse_date
+from tools.schema import (
+    CURRENCY_SYMBOL, MONTHS, date_sort_key, format_amount, format_date, parse_date)
 
 AGED_AFTER_MONTHS = 24
 
@@ -288,6 +298,136 @@ def build(src="data/companies", out="data/companies.json", fx_path="data/fx.json
     return payload
 
 
+# ---------------------------------------------------------------------------
+# The weekly funding round-up.
+#
+# A deliberately separate payload from data/companies.json. The register's
+# promise is that every figure is quote-checked; the round-up's is that every
+# round is sourced and linked. Merging them into one file would invite a reader
+# — and, worse, a future renderer — to treat one standard as the other's. The
+# page says which is which in a single line above the block; the data keeps
+# them in separate files so nothing has to remember.
+# ---------------------------------------------------------------------------
+
+# Rendered where a founder list would go when the source never printed one.
+# Not "—": the sentence reads "Company X, from founders Y, secured Z", and an
+# em dash in the middle of it asserts that the founders are unknown to anyone.
+# What is actually true is that this source did not name them, so the clause is
+# dropped entirely and the sentence closes up around the gap.
+NO_FOUNDERS_LABEL = None
+
+
+def _day_label(date_str, with_year=True, with_month=True):
+    """"23 Jul 2026" from a YYYY-MM-DD string, with either tail trimmable so a
+    date range can share its month and year rather than repeating them."""
+    year, month, day = int(date_str[0:4]), int(date_str[5:7]), int(date_str[8:10])
+    parts = [str(day)]
+    if with_month:
+        parts.append(MONTHS[month - 1])
+    if with_year:
+        parts.append(str(year))
+    return " ".join(parts)
+
+
+def format_range(start, end):
+    """"20–26 Jul 2026", or "27 Jul – 2 Aug 2026" across a month boundary.
+
+    An en dash, and spaced only when the operands themselves contain spaces —
+    "20–26 Jul" reads as one span, "27 Jul–2 Aug" reads as a typo.
+    """
+    same_year = start[0:4] == end[0:4]
+    same_month = same_year and start[5:7] == end[5:7]
+    if same_month:
+        return f"{_day_label(start, with_year=False, with_month=False)}–{_day_label(end)}"
+    if same_year:
+        return f"{_day_label(start, with_year=False)} – {_day_label(end)}"
+    return f"{_day_label(start)} – {_day_label(end)}"
+
+
+def format_names(names):
+    """"A, B and C" — the serial comma deliberately omitted, because this runs
+    inside the owner's sentence template rather than standing on its own."""
+    names = [n for n in (names or []) if n]
+    if not names:
+        return NO_FOUNDERS_LABEL
+    if len(names) == 1:
+        return names[0]
+    return f"{', '.join(names[:-1])} and {names[-1]}"
+
+
+def derive_round(entry):
+    """Every label the browser prints, settled here.
+
+    `valuationLabel` is None rather than "—" when no valuation was reported:
+    the owner's format puts it in parentheses, and "(at a — valuation)" is
+    worse than no parenthetical at all. The renderer omits the clause.
+    """
+    amount_label = format_amount(
+        entry["amount"], entry["currency"], entry.get("approximate", False))
+    valuation = entry.get("valuation")
+    valuation_label = (
+        format_amount(valuation, entry.get("valuationCurrency") or entry["currency"], False)
+        if valuation is not None else None)
+    source = entry["source"]
+    return {
+        **entry,
+        "amountLabel": amount_label,
+        "valuationLabel": valuation_label,
+        "foundersLabel": format_names(entry.get("founders")),
+        "investorsLabel": format_names(entry.get("investors")),
+        "source": {**source, "publishedLabel": _day_label(source["publishedOn"])},
+    }
+
+
+def derive_week(record):
+    lead = [derive_round(entry) for entry in record["lead"]]
+    more = [derive_round(entry) for entry in record["more"]]
+    return {
+        **record,
+        "lead": lead,
+        "more": more,
+        "rangeLabel": format_range(record["start"], record["end"]),
+        # "W30" is what the selectable card shows; the week id carries the year
+        # for anything that needs to disambiguate across a new year.
+        "shortLabel": f"W{record['week'].split('-W')[1]}",
+        "yearLabel": record["week"].split("-W")[0],
+        "roundCount": len(lead) + len(more),
+        "moreCount": len(more),
+    }
+
+
+def build_funding(src="data/funding", out="data/funding.json"):
+    """Merge the weekly files into one payload, newest first.
+
+    Newest-first is a string sort on the ISO week id, which is correct because
+    the id is zero-padded and year-major ("2026-W09" < "2026-W30" < "2027-W01").
+    No wall clock is consulted: which week is newest is a fact about the files.
+    """
+    records = [
+        json.loads(f.read_text(encoding="utf-8"))
+        for f in sorted(pathlib.Path(src).glob("*.json"))
+    ]
+    weeks = [derive_week(record) for record in
+             sorted(records, key=lambda r: r["week"], reverse=True)]
+    payload = {
+        "weeks": weeks,
+        "stats": {
+            "weekCount": len(weeks),
+            "roundCount": sum(week["roundCount"] for week in weeks),
+            # The newest week is what the block selects by default. Settled here
+            # so the browser never has to decide "newest" for itself.
+            "latestWeek": weeks[0]["week"] if weeks else None,
+        },
+    }
+    out_path = pathlib.Path(out)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(json.dumps(payload, ensure_ascii=False, indent=1), encoding="utf-8")
+    return payload
+
+
 if __name__ == "__main__":
     result = build()
     print(f"Built {result['stats']['count']} companies -> data/companies.json")
+    funding = build_funding()
+    print(f"Built {funding['stats']['weekCount']} funding weeks "
+          f"({funding['stats']['roundCount']} rounds) -> data/funding.json")

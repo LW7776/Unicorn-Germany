@@ -1,0 +1,114 @@
+{
+ "week": "2026-W31",
+ "start": "2026-07-27",
+ "end": "2026-08-02",
+ "lead": [
+  {
+   "id": "l1",
+   "company": "metr",
+   "hq": null,
+   "stage": "Series B",
+   "amount": 10.5,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [],
+   "investors": [],
+   "text": "metr secured €10.5m in a Series B — energy and heating management sold into German housing stock, which is the least fashionable corner of climate software and the one with the most tonnes of CO2 sitting in it. It was a thin week for Germany: six of the roughly fifty European rounds Tech.eu tracked were German, and none of them was larger than €12m. Late July is when the country goes on holiday, and the funding calendar goes with it. A quiet week is not a verdict on the pipeline; it is a verdict on the month.",
+   "source": {
+    "publication": "Tech.eu",
+    "title": "European tech weekly recap: €878M in weekly deals and key trends from H1 2026",
+    "url": "https://tech.eu/2026/08/03/european-tech-weekly-recap-eur878m-in-weekly-deals-and-key-trends-from-h1-2026/",
+    "publishedOn": "2026-08-03"
+   }
+  },
+  {
+   "id": "l2",
+   "company": "5U AI",
+   "hq": "Munich",
+   "stage": "Pre-seed",
+   "amount": 3.2,
+   "currency": "USD",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "Yagiz Abik",
+    "Fehmi Şener"
+   ],
+   "investors": [
+    "Emerge Capital"
+   ],
+   "text": "5U AI raised $3.2m in pre-seed funding led by London's Emerge Capital, a year after two Technical University of Munich graduates founded it. It builds digital workers for freight forwarding — quoting, bookings, shipment tracking, invoice reconciliation — and, unusually, records the reasoning behind each decision rather than only the outcome, so a freight team can audit why the machine did what it did. Munich keeps producing exactly this: industrial software sold to people who move physical things. It is the least hyped part of the German ecosystem and reliably one of the most durable.",
+   "source": {
+    "publication": "Tech.eu",
+    "title": "5U AI lands $3.2M pre-seed for AI freight workforce platform",
+    "url": "https://tech.eu/2026/07/28/5u-ai-lands-32m-pre-seed-for-ai-freight-workforce-platform/",
+    "publishedOn": "2026-07-28"
+   }
+  }
+ ],
+ "more": [
+  {
+   "id": "m1",
+   "company": "PadelCity",
+   "hq": null,
+   "stage": "Investment",
+   "amount": 12,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [],
+   "investors": [],
+   "source": {
+    "publication": "Tech.eu",
+    "title": "European tech weekly recap: €878M in weekly deals and key trends from H1 2026",
+    "url": "https://tech.eu/2026/08/03/european-tech-weekly-recap-eur878m-in-weekly-deals-and-key-trends-from-h1-2026/",
+    "publishedOn": "2026-08-03"
+   }
+  },
+  {
+   "id": "m2",
+   "company": "EVERSION",
+   "hq": null,
+   "stage": "Seed",
+   "amount": 2.3,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [],
+   "investors": [],
+   "source": {
+    "publication": "Tech.eu",
+    "title": "European tech weekly recap: €878M in weekly deals and key trends from H1 2026",
+    "url": "https://tech.eu/2026/08/03/european-tech-weekly-recap-eur878m-in-weekly-deals-and-key-trends-from-h1-2026/",
+    "publishedOn": "2026-08-03"
+   }
+  },
+  {
+   "id": "m3",
+   "company": "Celsio",
+   "hq": null,
+   "stage": "Investment",
+   "amount": 1.2,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [],
+   "investors": [
+    "Caesar Ventures",
+    "CDTM.vc"
+   ],
+   "source": {
+    "publication": "Tech.eu",
+    "title": "European tech weekly recap: €878M in weekly deals and key trends from H1 2026",
+    "url": "https://tech.eu/2026/08/03/european-tech-weekly-recap-eur878m-in-weekly-deals-and-key-trends-from-h1-2026/",
+    "publishedOn": "2026-08-03"
+   }
+  }
+ ]
+}

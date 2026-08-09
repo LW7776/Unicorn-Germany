@@ -17,13 +17,21 @@ file, and it is committed like any other — nothing is built at deploy time.
 - [`admin.html`](admin.html) — a local form editor (`assets/js/admin.js`) for one company at a time. It
   mirrors `tools/validate.py`'s rules in the browser so mistakes show up while typing, then
   downloads or copies the JSON to commit — it never writes to the repository itself.
-- `tools/build.py` merges those files into `data/companies.json`, computing every derived
-  label, sort key and staleness flag so the browser code stays thin.
+- `tools/build.py` merges those files into `data/companies.json`, and the weekly funding
+  files into `data/funding.json`, computing every derived label, sort key and staleness flag
+  so the browser code stays thin.
 - `tools/validate.py` refuses to publish a figure that isn't backed by a quoted, dated,
   allowlisted source. This is the sole gate that can block a publish — `admin.js`'s mirror of
   the same rules is a convenience, not an authority.
-- `tools/watch.py` scans a short allowlist of trade-press feeds once a month and opens an
-  issue listing candidate changes — it never edits the dataset itself.
+- `data/funding/<year>-W<week>.json` is the weekly funding round-up: German rounds generally,
+  not only unicorns. `tools/validate_funding.py` gates it on a deliberately lighter standard —
+  every round linked, dated and allowlisted, but **not** quote-checked. The two standards live
+  in separate files behind separate validators so neither can quietly become the other.
+- `tools/weekly_funding.py` drafts one week from the feeds via the Anthropic API, then checks
+  every company, founder and figure back against the article cited for it before writing
+  anything.
+- `tools/watch.py` scans a short allowlist of trade-press feeds and opens an issue listing
+  candidate changes — it never edits the dataset itself.
 - `.github/workflows/rebuild.yml` regenerates `data/companies.json` after a push that edits
   `data/companies/**` directly on `main` (the GitHub-web-editor and files-and-terminal
   routes). It validates first and only then rebuilds, so a bad hand edit is never published —
@@ -49,18 +57,24 @@ Also useful while editing data:
 ```bash
 python3 tools/validate.py        # check every company file against the schema and sourcing rules
 python3 tools/check_contrast.py  # confirm the colour palette clears the WCAG AA 4.5:1 floor
-python3 tools/watch.py           # run the monthly candidate scan locally
+python3 tools/validate_funding.py  # check the weekly funding files
+python3 tools/watch.py           # run the register candidate scan locally
 ```
 
 ## Continuous integration
 
-Every push and pull request runs the test suite, the contrast check and the validator
+Every push and pull request runs the test suite, the contrast check and both validators
 (`.github/workflows/validate.yml`). Pull requests additionally fail if `data/companies.json`
-is stale — that is, if it doesn't match what `tools/build.py` produces from the current
-`data/companies/*.json` — so a regenerated file can never be forgotten in review.
+or `data/funding.json` is stale — that is, if it doesn't match what `tools/build.py` produces
+from the current source files — so a regenerated file can never be forgotten in review.
 
-A scheduled workflow (`.github/workflows/watch.yml`) runs the monthly candidate scan and opens
-a GitHub issue with anything it finds. Nothing is ever published automatically; see
+Two scheduled workflows read the feeds. `.github/workflows/weekly-funding.yml` runs every
+Monday, drafts that week of the funding round-up and opens a **pull request**;
+`.github/workflows/watch.yml` runs the full register sweep every eight weeks and opens a
+GitHub **issue**. The weekly scan is what catches a new unicorn, because a company crosses a
+billion by raising and that round gets announced; the eight-weekly sweep catches what funding
+news never announces — quiet IPOs, acquisitions, insolvencies and ageing valuations. Nothing
+is ever published automatically; see
 [`docs/UPDATING.md`](docs/UPDATING.md) for the routes from an open candidate to a merged,
 validated change.
 

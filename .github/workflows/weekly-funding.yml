@@ -1,0 +1,157 @@
+name: weekly-funding
+
+# Drafts one week of the funding round-up and opens a pull request. It never
+# commits to main and never publishes: a person reads the diff, checks the
+# links, and merges. Everything this job produces is a proposal.
+on:
+  schedule: [{ cron: "0 7 * * 1" }]      # 07:00 UTC every Monday
+  workflow_dispatch:
+    inputs:
+      week:
+        description: 'ISO week to draft, e.g. "2026-W30". Blank = the week that just ended.'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  # Two runs drafting the same week would race on the same branch. Queue them
+  # rather than cancelling: a half-pushed branch is worse than a slow one.
+  group: weekly-funding
+  cancel-in-progress: false
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      # FIRST, before anything else costs time or makes a network call. The
+      # secret does not exist until the repository owner adds it, and a job
+      # that fails ten steps later with an SDK stack trace teaches nobody
+      # anything. See docs/UPDATING.md for the exact steps.
+      - name: Require the ANTHROPIC_API_KEY secret
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -z "${ANTHROPIC_API_KEY}" ]; then
+            echo "::error title=ANTHROPIC_API_KEY is not set::This workflow needs an Anthropic API key and the repository does not have one yet. Add it at Settings → Secrets and variables → Actions → New repository secret, named exactly ANTHROPIC_API_KEY, with a key from https://console.anthropic.com/settings/keys. Then re-run this workflow from Actions → weekly-funding → Run workflow. Nothing was drafted and nothing was changed."
+            exit 1
+          fi
+          echo "ANTHROPIC_API_KEY is present."
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+
+      - name: Install the Anthropic SDK
+        run: pip install --quiet anthropic
+
+      # Exit codes are load-bearing here:
+      #   0  a week was drafted and written
+      #   2  the feeds carried no German funding news for that week — a real
+      #      and unremarkable outcome, not a failure. Nothing is written, and
+      #      no pull request is opened.
+      #   1  something was drafted but could not be traced back to the articles
+      #      that were fetched, or failed validation. Nothing is written, and
+      #      the job fails loudly.
+      - name: Draft the week
+        id: draft
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          set +e
+          python tools/weekly_funding.py \
+            ${{ inputs.week && format('--week {0}', inputs.week) || '--last-complete-week' }} \
+            --report funding-report.json
+          code=$?
+          set -e
+          echo "code=$code" >> "$GITHUB_OUTPUT"
+          if [ "$code" = "2" ]; then
+            echo "quiet=true" >> "$GITHUB_OUTPUT"
+            echo "::notice title=No German funding news this week::The allowlisted feeds carried nothing that qualified. No file was written and no pull request was opened."
+            exit 0
+          fi
+          exit $code
+
+      - name: Rebuild the generated payloads
+        if: steps.draft.outputs.quiet != 'true'
+        run: python tools/build.py
+
+      # The written file has already been validated in-process before it was
+      # saved. This runs the validator again, from the command line, against
+      # what is actually on disk — the same gate CI applies to a human's edit.
+      # A week that cannot pass it must never reach a pull request.
+      - name: Validate before proposing anything
+        if: steps.draft.outputs.quiet != 'true'
+        run: |
+          python tools/validate_funding.py
+          python tools/validate.py
+
+      - name: Open the pull request
+        if: steps.draft.outputs.quiet != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          WEEK=$(python -c "import json;print(json.load(open('funding-report.json'))['week'])")
+          BRANCH="funding/${WEEK}"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          # Only the round-up's own files. companies.json is regenerated above
+          # so the validator runs against a real build, but this job has no
+          # business proposing register changes.
+          git add "data/funding/${WEEK}.json" data/funding.json
+          if git diff --staged --quiet; then
+            echo "::notice::Nothing changed; no pull request opened."
+            exit 0
+          fi
+          git commit -m "feat: funding round-up for ${WEEK}"
+          git push --force-with-lease origin "$BRANCH"
+
+          python - <<'PY' > pr-body.md
+          import json
+          r = json.load(open("funding-report.json"))
+          def line(e):
+              return (f"- **{e['company']}** — {e['currency']} {e['amount']}m · "
+                      f"[source]({e['url']}) · {e['publishedOn']}")
+          print(f"Drafted from {r['articles']} article(s) in the allowlisted feeds "
+                f"for ISO week {r['week']}.\n")
+          if r["tracked"]:
+              print("## ⚠️ Companies already in the register\n")
+              print("These raised this week **and** have an entry in `data/companies/`. "
+                    "The register entry is now out of date — update it in this pull "
+                    "request or immediately after it, so the round-up is not the only "
+                    "place the new figure appears.\n")
+              for t in r["tracked"]:
+                  print(f"- **{t['company']}** → `data/companies/{t['slug']}.json` "
+                        f"— {t['currency']} {t['amount']}m · [source]({t['source']})")
+              print()
+          print("## Lead write-ups\n")
+          for e in r["lead"]:
+              print(line(e))
+          print("\n## Also raised\n")
+          print("\n".join(line(e) for e in r["more"]) or "_none_")
+          if r["feedErrors"]:
+              print("\n## Feed errors\n")
+              for err in r["feedErrors"]:
+                  print(f"- {err}")
+          print("\n---\n")
+          print("**Before merging:** open every source link and check the figure, the "
+                "founders and the date against the page. Every round here is linked and "
+                "dated, but — unlike the register — none of it is quote-checked, so the "
+                "review *is* the check. Read the lead write-ups for claims the sources "
+                "do not support, especially superlatives.\n")
+          print("Nothing has been published. Merging this opens the usual rebuild path.")
+          PY
+
+          TITLE="Funding round-up: ${WEEK}"
+          if [ -n "$(python -c "import json;print('x' if json.load(open('funding-report.json'))['tracked'] else '')")" ]; then
+            TITLE="${TITLE} (touches the register)"
+          fi
+          gh pr create --base main --head "$BRANCH" --title "$TITLE" --body-file pr-body.md

@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - 'data/companies/**'      # note: does NOT match data/companies.json, so no loop
+      - 'data/funding/**'        # likewise does NOT match data/funding.json
       - 'data/fx.json'
   workflow_dispatch:
 
@@ -24,9 +25,11 @@ jobs:
 
       - name: Validate before anything is published
         id: validate
-        run: python tools/validate.py 2>&1 | tee validate.log
+        run: |
+          python tools/validate.py 2>&1 | tee validate.log
+          python tools/validate_funding.py 2>&1 | tee -a validate.log
 
-      - name: Regenerate companies.json
+      - name: Regenerate companies.json and funding.json
         id: build
         run: python tools/build.py
 
@@ -35,8 +38,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/companies.json
-          git diff --staged --quiet || git commit -m "chore: rebuild companies.json"
+          git add data/companies.json data/funding.json
+          git diff --staged --quiet || git commit -m "chore: rebuild generated data"
           git push
 
       # if: failure() fires for ANY failed step above, not just a bad validate.py run — a

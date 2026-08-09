@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="assets/css/base.css">
 <link rel="stylesheet" href="assets/css/hero.css">
 <link rel="stylesheet" href="assets/css/register.css">
+<link rel="stylesheet" href="assets/css/funding.css">
 <link rel="stylesheet" href="assets/css/detail.css">
 </head>
 <body>
@@ -19,6 +20,7 @@
   <nav class="topbar__nav" aria-label="Main">
     <button type="button" data-view="grid" aria-pressed="true">Companies</button>
     <button type="button" data-view="map" aria-pressed="false">Map</button>
+    <a href="#funding">Funding</a>
     <a href="policy.html">Policy</a>
     <a href="about.html">About</a>
     <button type="button" data-open-search aria-label="Search companies">Search</button>
@@ -49,6 +51,11 @@
   <div class="grid" data-grid role="list"></div>
   <div class="map" data-map hidden></div>
 </main>
+
+<!-- The weekly funding round-up: German rounds generally, not only unicorns.
+     Hidden alongside the register until the hero transition completes, so the
+     landing view stays the hero alone. -->
+<section class="roundup" id="funding" data-roundup aria-label="Weekly funding round-up" hidden></section>
 
 <dialog class="detail" data-detail aria-label="Company detail"></dialog>
 

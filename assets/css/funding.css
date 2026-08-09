@@ -1,0 +1,117 @@
+/* The weekly funding round-up. Same tokens, same surfaces and same hairlines as
+   the register grid — this is another view of the same dataset's world, not a
+   second visual system. Mono for every figure and date (the body default),
+   serif for the lead write-ups, the display face for headings. */
+
+.roundup {
+  max-width: 72rem; margin: 0 auto;
+  padding: var(--space-8) var(--space-6);
+  border-top: 1px solid var(--stroke);
+  display: grid; gap: var(--space-6);
+}
+/* Author `display: grid` beats the UA's `[hidden] { display: none }` at equal
+   specificity, exactly as it does for .grid, .map and .topbar — without this
+   the block would render through the hero, before anyone has entered. */
+.roundup[hidden] { display: none; }
+
+.roundup__head { display: grid; gap: var(--space-3); max-width: 46rem; }
+.roundup__title { font-size: var(--step-2); }
+/* The sentence that keeps this block's standard from being read as the
+   register's. Muted, but full width and directly under the heading — it is a
+   qualification on everything below, not a footnote. */
+.roundup__standard {
+  margin: 0; color: var(--muted); font-size: var(--step--1); max-width: 46rem;
+}
+
+/* --- the week cards ------------------------------------------------------ */
+.roundup__weeks { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+.weekcard {
+  display: grid; gap: var(--space-1); text-align: left;
+  padding: var(--space-3) var(--space-4); min-height: 44px;
+  background: var(--panel); color: var(--muted);
+  border: 1px solid var(--stroke); border-radius: var(--radius);
+  transition: border-color var(--dur-fast) var(--ease-out),
+              background var(--dur-fast) var(--ease-out),
+              color var(--dur-fast) var(--ease-out);
+}
+.weekcard:hover { background: var(--panel-hover); color: var(--ink); }
+.weekcard[aria-selected="true"] {
+  color: var(--ink); border-color: var(--beam); background: var(--panel-hover);
+}
+.weekcard__id {
+  font-size: var(--step-1); font-family: var(--font-mono); letter-spacing: .02em;
+}
+.weekcard__range { font-size: var(--step--1); }
+.weekcard__count { font-size: var(--step--1); color: var(--muted); }
+.weekcard[aria-selected="true"] .weekcard__count { color: var(--beam-text); }
+
+/* --- the selected week --------------------------------------------------- */
+.roundup__panel { display: grid; gap: var(--space-6); }
+/* The panel is programmatically focusable (tabindex="0") so a keyboard user
+   who selects a week can Tab straight into its content; it is not a control,
+   so it must not paint a focus ring on mouse selection — :focus-visible in
+   base.css already handles that distinction. */
+
+.roundup__leads { display: grid; gap: var(--space-5); }
+/* Two lead write-ups sit side by side where there is room; the modifier is
+   conditional rather than an auto-fit because a single column stranded beside
+   empty space reads as a second story that failed to load.
+   A lone lead is capped at a readable measure instead of stretching across the
+   full 72rem: serif prose at that width runs to well over a hundred characters
+   a line, which is where the eye starts losing its place on the return sweep. */
+.roundup__leads:not(.roundup__leads--pair) .lead { max-width: 48rem; }
+@media (min-width: 60rem) {
+  .roundup__leads--pair { grid-template-columns: 1fr 1fr; }
+}
+
+.lead {
+  display: grid; gap: var(--space-4); align-content: start;
+  padding: var(--space-5);
+  background: var(--panel); border: 1px solid var(--stroke); border-radius: var(--radius);
+}
+.lead__head { display: grid; gap: var(--space-2); }
+.lead__company { font-size: var(--step-1); }
+.lead__figure { margin: 0; font-size: var(--step-1); color: var(--ink); }
+.lead__meta { margin: 0; color: var(--muted); font-size: var(--step--1); }
+.lead__text { margin: 0; }
+.lead__people { margin: 0; font-size: var(--step--1); color: var(--muted); }
+.lead__people .label { display: block; }
+.lead__source {
+  margin: 0; font-size: var(--step--1);
+  padding-top: var(--space-3); border-top: 1px solid var(--stroke);
+}
+
+/* --- the compact list ---------------------------------------------------- */
+.roundup__more { display: grid; gap: var(--space-3); }
+.roundup__list { list-style: none; margin: 0; padding: 0; display: grid; }
+.roundup__item {
+  display: grid; gap: var(--space-2);
+  padding: var(--space-4) 0; border-top: 1px solid var(--stroke);
+}
+.roundup__list > :last-child { border-bottom: 1px solid var(--stroke); }
+.roundup__line { color: var(--ink); }
+.roundup__company { color: var(--ink); }
+/* Figures are mono and full-strength ink; the prose around them recedes. The
+   whole block already inherits the mono body face, so this exists to keep a
+   figure legible if the surrounding sentence ever changes family. */
+.roundup__figure { font-family: var(--font-mono); color: var(--ink); }
+.roundup__valuation, .roundup__meta { color: var(--muted); }
+.roundup__meta { font-size: var(--step--1); display: block; }
+.roundup__cite { color: var(--muted); }
+.roundup__date { font-family: var(--font-mono); white-space: nowrap; }
+.roundup__empty { margin: 0; color: var(--muted); font-size: var(--step--1); }
+
+/* A company that is also in the register. A quiet inline marker, not a badge:
+   it qualifies the name rather than competing with the figure beside it. */
+.roundup__tracked {
+  margin-left: var(--space-2); font-size: var(--step--1);
+  color: var(--beam-text); white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .roundup { padding: var(--space-7) var(--space-4); }
+  /* Below ~480px the cards no longer fit two to a row without truncating the
+     date range, so they become a vertical stack rather than shrinking type. */
+  .roundup__weeks { display: grid; grid-template-columns: 1fr; }
+  .lead { padding: var(--space-4); }
+}
