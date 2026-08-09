@@ -10,9 +10,9 @@
   "foundedCountry": "DE",
   "foundedYear": 2014,
   "sectors": [
-    "Energy",
-    "Deep Tech"
+    "Climate and Energy"
   ],
+  "niche": "Flow Battery Storage",
   "thesis": {
     "problem": "A grid running on wind and sun has too much power in the afternoon and none at three in the morning, and the batteries built to bridge that gap are lithium ones designed for cars: excellent for an hour or two of output, expensive and flammable across ten, and dependent on mined critical minerals from supply chains a European utility does not control.",
     "solution": "CMBlu builds what it calls SolidFlow — a flow battery whose electrolyte is water-based and non-flammable and whose stored energy sits in proprietary solid materials made from abundant elements rather than critical minerals. Because a flow architecture separates how much power a system delivers from how much energy it holds, adding hours of duration means adding storage material rather than another whole battery, which is the economics that ten-hour discharge needs."

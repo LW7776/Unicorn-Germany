@@ -138,7 +138,15 @@ function markup(company) {
     <div>
       <h2>${name}</h2>
       <p class="detail__meta">
-        ${text(company.hq.city)}${alsoBasedIn} · ${text((company.sectors || []).join(", "))} · Founded ${text(company.foundedYear)}
+        ${text(company.hq.city)}${alsoBasedIn} · ${
+          // `sectors` now holds the broad industry (or industries) that also drive
+          // the grid's filter chips — deliberately coarse. `niche` is the specific
+          // descriptor that would make a near-useless filter chip ("Process
+          // Mining", "Spend Management") but is exactly the detail a reader wants
+          // once they have opened one company, so it still appears here, right
+          // beside the broad category rather than replacing it.
+          text([...(company.sectors || []), company.niche].filter(Boolean).join(", "))
+        } · Founded ${text(company.foundedYear)}
       </p>
       ${site}
     </div>

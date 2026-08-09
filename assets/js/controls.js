@@ -33,6 +33,11 @@ export function applyState(companies, state) {
     .filter((c) => !query
       || c.name.toLowerCase().includes(query)
       || (c.sectors || []).join(" ").toLowerCase().includes(query)
+      // `sectors` is now a handful of broad industries shared across the register
+      // (the chips), so the specific term a searcher is likelier to type — "Process
+      // Mining", "Spend Management" — lives in `niche` instead. Both stay
+      // searchable; only `sectors` drives the chips below.
+      || (c.niche ?? "").toLowerCase().includes(query)
       || (c.hq?.city ?? "").toLowerCase().includes(query)
       || (c.investors || []).join(" ").toLowerCase().includes(query))
     .sort(SORTS[state.sort]);

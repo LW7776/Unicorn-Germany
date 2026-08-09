@@ -10,9 +10,9 @@
   "foundedCountry": "DE",
   "foundedYear": 2019,
   "sectors": [
-    "Enterprise Software",
-    "Artificial Intelligence"
+    "Enterprise Software"
   ],
+  "niche": "Workflow Automation",
   "thesis": {
     "problem": "Automating work across a company's software means wiring together hundreds of separate tools, and the platforms that promise to do it are usually rigid: they own the logic, run only in their own cloud, and charge per task, so the bill grows with the very usage they encourage. Adding language models made it worse — organisations bought AI and then found nobody could connect it to the systems where the work actually happens.",
     "solution": "n8n is a workflow automation platform whose canvas is visual but whose steps can drop into code, with more than a thousand integrations and the option to run it on the company's own infrastructure. Its bet is that the scarce thing in enterprise AI is not the model but the orchestration around it, so it sells the layer that lets an AI agent act on the systems a business already runs."

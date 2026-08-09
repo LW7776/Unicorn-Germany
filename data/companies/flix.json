@@ -10,9 +10,9 @@
   "foundedCountry": "DE",
   "foundedYear": 2011,
   "sectors": [
-    "Mobility",
-    "Travel"
+    "Mobility and Logistics"
   ],
+  "niche": "Long-Distance Travel",
   "thesis": {
     "problem": "Long-distance coach travel was the cheapest way to cross a country and the least usable: hundreds of small regional operators, each with its own timetable, its own ticket office and no way for a passenger to find, compare or book a route that crossed two of them. Germany did not even permit intercity coach competition with the railway until 2013.",
     "solution": "Flix owns almost no vehicles. It runs the network — planning routes, setting prices, selling tickets and carrying the brand — while independent bus and rail companies supply the drivers and the fleet and get a steady stream of passengers in return. The same platform has since been laid over trains as FlixTrain and over acquired operators abroad, including Türkiye's Kâmil Koç and the American intercity institution Greyhound."

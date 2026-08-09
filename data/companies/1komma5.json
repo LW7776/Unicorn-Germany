@@ -10,9 +10,9 @@
   "foundedCountry": "DE",
   "foundedYear": 2021,
   "sectors": [
-    "Energy",
-    "Climate Tech"
+    "Climate and Energy"
   ],
+  "niche": "Climate Tech",
   "thesis": {
     "problem": "The companies that actually fit solar panels, batteries and heat pumps are small local electrical firms, thousands of them, each with a handful of technicians and no way to bid for a national customer or to make the finished system talk to the electricity market. The bottleneck in electrifying a house is not the hardware but the trade that installs it.",
     "solution": "1KOMMA5° buys those installers and puts them on one platform, then connects everything they fit to Heartbeat AI — software that pools the batteries, heat pumps and cars it has installed into a virtual power plant and trades their flexibility. The installers give the company reach; the software is what it expects to be valued on."

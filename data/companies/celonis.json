@@ -13,9 +13,9 @@
   "foundedCountry": "DE",
   "foundedYear": 2011,
   "sectors": [
-    "Enterprise Software",
-    "Process Mining"
+    "Enterprise Software"
   ],
+  "niche": "Process Mining",
   "thesis": {
     "problem": "Large companies cannot see how their own processes actually run. An order-to-cash or purchase-to-pay flow touches ERP, CRM and supply-chain systems that each hold a fragment of the truth, so the duplicated payments, manual rework and stalled deliveries hiding inside them stay invisible to the people accountable for them.",
     "solution": "Celonis reconstructs the real path of every transaction from the event logs those systems already write, compares it against how the process was supposed to run, and quantifies the cost of each deviation. The product is sold to large enterprises as a platform that both diagnoses the gap and triggers the corrective action inside the underlying system."

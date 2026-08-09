@@ -10,8 +10,9 @@
   "foundedCountry": "DE",
   "foundedYear": 2024,
   "sectors": [
-    "Defence"
+    "Defence and Aerospace"
   ],
+  "niche": "Loitering Munitions",
   "thesis": {
     "problem": "European defence procurement was built to buy small numbers of expensive platforms over decades. The war in Ukraine showed that attritable strike drones are consumed in thousands per month, and that the bottleneck is not designing one but manufacturing, iterating and fielding them faster than an adversary can adapt their countermeasures.",
     "solution": "Stark builds loitering munitions — drones that hold over an area, find a target and destroy it on impact — and treats production rate as the product. Its stated use of the 2026 round is new electronic-warfare research facilities and scaling output to thousands of systems a month, which is the number that matters in a war of attrition rather than a unit-cost comparison against a missile."

@@ -10,9 +10,9 @@
   "foundedCountry": "DE",
   "foundedYear": 2017,
   "sectors": [
-    "Energy",
-    "Climate Tech"
+    "Climate and Energy"
   ],
+  "niche": "Climate Tech",
   "thesis": {
     "problem": "A rooftop solar system costs a homeowner five figures up front, has to be specified, financed, installed, connected and maintained by four different trades, and pays for itself only over decades. That combination — a large cheque and a lot of coordination — is what keeps most roofs empty, not any doubt about the technology.",
     "solution": "Enpal removes the cheque. It rents the whole system — panels, battery, wallbox, heat pump, and the software that schedules them — on a twenty-year subscription with no upfront cost, and trains its own installers rather than buying up existing ones. Financing that hardware is the actual business, which is why Enpal has raised far more in bank debt than in equity."

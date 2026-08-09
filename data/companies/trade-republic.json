@@ -10,9 +10,9 @@
   "foundedCountry": "DE",
   "foundedYear": 2015,
   "sectors": [
-    "Fintech",
-    "Brokerage"
+    "Fintech"
   ],
+  "niche": "Brokerage",
   "thesis": {
     "problem": "Retail investing in Europe was priced and packaged for people who already had money. Bank brokerage carried per-order commissions and custody fees large enough to make small, regular savings uneconomic, which left most Europeans dependent on state pensions they are unlikely to be able to live on.",
     "solution": "Trade Republic is a mobile broker with a full German banking licence: commission-free savings plans, fractional shares and ETFs, plus bonds, derivatives and crypto, with a flat external settlement fee instead of a percentage. It earns on order flow, interest on customer deposits and card interchange rather than trading commissions, and now operates across most of western Europe."

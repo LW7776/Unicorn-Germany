@@ -24,9 +24,9 @@
    "foundedCountry": "DE",
    "foundedYear": 2021,
    "sectors": [
-    "Energy",
-    "Climate Tech"
+    "Climate and Energy"
    ],
+   "niche": "Climate Tech",
    "thesis": {
     "problem": "The companies that actually fit solar panels, batteries and heat pumps are small local electrical firms, thousands of them, each with a handful of technicians and no way to bid for a national customer or to make the finished system talk to the electricity market. The bottleneck in electrifying a house is not the hardware but the trade that installs it.",
     "solution": "1KOMMA5° buys those installers and puts them on one platform, then connects everything they fit to Heartbeat AI — software that pools the batteries, heat pumps and cars it has installed into a virtual power plant and trades their flexibility. The installers give the company reach; the software is what it expects to be valued on."
@@ -260,9 +260,9 @@
    "foundedCountry": "DE",
    "foundedYear": 2024,
    "sectors": [
-    "Artificial Intelligence",
-    "Generative Media"
+    "Artificial Intelligence"
    ],
+   "niche": "Generative Media",
    "thesis": {
     "problem": "Image generation moved from research demo to production tool faster than the supply of models a company can actually build on. Most of the strongest systems are closed, reachable only through one vendor's API, which leaves a product team unable to run the model on its own infrastructure, inspect it, or fine-tune it for a house style.",
     "solution": "Black Forest Labs trains its own image and editing models, publishes open-weight versions alongside commercial ones, and sells the larger models to companies that want them inside their own products. The bet is that the open releases spread the toolchain and the enterprise versions pay for the research, with the founders' record on latent diffusion as the evidence they can keep pace."
@@ -455,9 +455,9 @@
    "foundedCountry": "DE",
    "foundedYear": 2011,
    "sectors": [
-    "Enterprise Software",
-    "Process Mining"
+    "Enterprise Software"
    ],
+   "niche": "Process Mining",
    "thesis": {
     "problem": "Large companies cannot see how their own processes actually run. An order-to-cash or purchase-to-pay flow touches ERP, CRM and supply-chain systems that each hold a fragment of the truth, so the duplicated payments, manual rework and stalled deliveries hiding inside them stay invisible to the people accountable for them.",
     "solution": "Celonis reconstructs the real path of every transaction from the event logs those systems already write, compares it against how the process was supposed to run, and quantifies the cost of each deviation. The product is sold to large enterprises as a platform that both diagnoses the gap and triggers the corrective action inside the underlying system."
@@ -699,9 +699,9 @@
    "foundedCountry": "DE",
    "foundedYear": 2018,
    "sectors": [
-    "Foodtech",
-    "Supply Chain Software"
+    "Enterprise Software"
    ],
+   "niche": "Foodtech",
    "thesis": {
     "problem": "Restaurants still order from their suppliers by voicemail, fax and scribbled note, and a wholesaler's sales desk spends its morning transcribing those messages into an order system. Every transcription is a chance to send the wrong quantity, and the wrong quantity is food that gets thrown away.",
     "solution": "Choco gives the restaurant a messaging app for placing orders and the supplier a system that reads those orders straight into its own order processing, so the same instruction is only entered once. Selling to both sides of the same transaction is the point: the value only appears when the buyer and the seller are on the platform together."
@@ -888,9 +888,9 @@
    "foundedCountry": "DE",
    "foundedYear": 2014,
    "sectors": [
-    "Energy",
-    "Deep Tech"
+    "Climate and Energy"
    ],
+   "niche": "Flow Battery Storage",
    "thesis": {
     "problem": "A grid running on wind and sun has too much power in the afternoon and none at three in the morning, and the batteries built to bridge that gap are lithium ones designed for cars: excellent for an hour or two of output, expensive and flammable across ten, and dependent on mined critical minerals from supply chains a European utility does not control.",
     "solution": "CMBlu builds what it calls SolidFlow — a flow battery whose electrolyte is water-based and non-flammable and whose stored energy sits in proprietary solid materials made from abundant elements rather than critical minerals. Because a flow architecture separates how much power a system delivers from how much energy it holds, adding hours of duration means adding storage material rather than another whole battery, which is the economics that ten-hour discharge needs."
@@ -1014,9 +1014,9 @@
    "foundedCountry": "DE",
    "foundedYear": 2006,
    "sectors": [
-    "Enterprise Software",
-    "E-commerce Infrastructure"
+    "E-commerce and Retail"
    ],
+   "niche": "E-commerce Infrastructure",
    "thesis": {
     "problem": "A large retailer's online shop is usually one monolithic platform that owns the product catalogue, the checkout, the pricing rules and the storefront design together. Changing anything customer-facing means a release of the whole system, which is why adding a new sales channel — an app, a kiosk, a marketplace listing — takes quarters rather than weeks.",
     "solution": "commercetools separates the commerce engine from the storefront and exposes it as APIs, so a retailer builds whatever front end it wants against the same catalogue, cart and order services. That is the 'headless' argument the company has made since before the term was common, and its customers are large enough that the flexibility is worth the integration work."
@@ -1171,9 +1171,9 @@
    "foundedCountry": "DE",
    "foundedYear": 2023,
    "sectors": [
-    "Enterprise Software",
-    "Artificial Intelligence"
+    "Enterprise Software"
    ],
+   "niche": "Observability",
    "thesis": {
     "problem": "Observability — the tooling that tells an engineer why production broke — is sold by vendors whose pricing scales with how much data you send them and whose agents lock that data into proprietary formats. As systems grew and AI agents began writing and deploying code, the volume of alerts outgrew the number of humans available to read them, so the tools became, in Dash0's own words, expensive noise generators.",
     "solution": "Dash0 is built natively on OpenTelemetry, the open standard for emitting traces, metrics and logs, so it ingests signals from any stack without proprietary agents and the customer's data stays portable. On top of that it runs Agent0, which is meant to diagnose and resolve production incidents autonomously rather than paging a person to read a dashboard."
@@ -1382,9 +1382,9 @@
    "foundedCountry": "DE",
    "foundedYear": 2017,
    "sectors": [
-    "Artificial Intelligence",
-    "Language Technology"
+    "Artificial Intelligence"
    ],
+   "niche": "Language Technology",
    "thesis": {
     "problem": "Free machine translation is tuned for gist, not for text a company would put its name to. Businesses working across European languages either paid human translators for every contract, support reply and manual, or accepted output that read as translated — and most general-purpose engines would not let regulated firms keep the text off a third party's training data.",
     "solution": "DeepL trains its own translation and writing models rather than fine-tuning someone else's, and sells them to businesses as an API and as apps that plug into the tools staff already use. Enterprise contracts cover data handling and glossaries so that terminology stays consistent, and the same model line has been extended into writing assistance and spoken translation."
@@ -1549,9 +1549,9 @@
    "foundedCountry": "DE",
    "foundedYear": 2017,
    "sectors": [
-    "Energy",
-    "Climate Tech"
+    "Climate and Energy"
    ],
+   "niche": "Climate Tech",
    "thesis": {
     "problem": "A rooftop solar system costs a homeowner five figures up front, has to be specified, financed, installed, connected and maintained by four different trades, and pays for itself only over decades. That combination — a large cheque and a lot of coordination — is what keeps most roofs empty, not any doubt about the technology.",
     "solution": "Enpal removes the cheque. It rents the whole system — panels, battery, wallbox, heat pump, and the software that schedules them — on a twenty-year subscription with no upfront cost, and trains its own installers rather than buying up existing ones. Financing that hardware is the actual business, which is why Enpal has raised far more in bank debt than in equity."
@@ -1750,9 +1750,9 @@
    "foundedCountry": "DE",
    "foundedYear": 2019,
    "sectors": [
-    "Mobility",
-    "Automotive"
+    "Mobility and Logistics"
    ],
+   "niche": "Car Subscription",
    "thesis": {
     "problem": "Owning a car means a purchase or a three-year lease, plus insurance, registration, road tax, servicing and a resale problem at the end — a bundle of separate contracts that has to be assembled by the buyer and cannot be undone early. For anyone unsure how long they need a car, or whether they want an electric one, the commitment is the product's worst feature.",
     "solution": "FINN sells the car as a subscription: one monthly price covering insurance, registration, tax, maintenance and servicing, ordered online in minutes from more than 25 manufacturers' ranges and delivered to the door. The company carries the fleet, the residual-value risk and the financing, which is why its scale shows up in debt facilities alongside equity, and why the operational question is utilisation rather than sales."
@@ -1944,9 +1944,9 @@
    "foundedCountry": "DE",
    "foundedYear": 2011,
    "sectors": [
-    "Mobility",
-    "Travel"
+    "Mobility and Logistics"
    ],
+   "niche": "Long-Distance Travel",
    "thesis": {
     "problem": "Long-distance coach travel was the cheapest way to cross a country and the least usable: hundreds of small regional operators, each with its own timetable, its own ticket office and no way for a passenger to find, compare or book a route that crossed two of them. Germany did not even permit intercity coach competition with the railway until 2013.",
     "solution": "Flix owns almost no vehicles. It runs the network — planning routes, setting prices, selling tickets and carrying the brand — while independent bus and rail companies supply the drivers and the fleet and get a steady stream of passengers in return. The same platform has since been laid over trains as FlixTrain and over acquired operators abroad, including Türkiye's Kâmil Koç and the American intercity institution Greyhound."
@@ -2217,9 +2217,9 @@
    "foundedCountry": "DE",
    "foundedYear": 2021,
    "sectors": [
-    "Fusion Energy",
-    "Energy"
+    "Climate and Energy"
    ],
+   "niche": "Fusion Energy",
    "thesis": {
     "problem": "A grid built on wind and solar needs something firm underneath it that is not gas, and the candidates are few. Fission carries a waste and siting problem Germany has already legislated its way out of; fusion has spent seventy years being thirty years away. What changed is that the US National Ignition Facility got more energy out of a laser-driven fusion target than went into it, which turned the question from whether the physics works into whether anyone can build a machine that does it several times a second, commercially.",
     "solution": "Focused Energy pursues inertial confinement: banks of extremely powerful lasers compress a fuel pellet until it fuses, repeated at a rate that makes a power station rather than an experiment. It is a spinout of the Technical University of Darmstadt, it bought two of the world's most powerful existing lasers rather than waiting to build them, and it plans its first laser fusion plant on the site of the decommissioned Biblis nuclear station in Hesse by the mid-2030s."
@@ -2381,9 +2381,9 @@
    "foundedCountry": "DE",
    "foundedYear": 2016,
    "sectors": [
-    "Logistics",
-    "Freight Forwarding"
+    "Mobility and Logistics"
    ],
+   "niche": "Freight Forwarding",
    "thesis": {
     "problem": "Moving a container from a factory in Asia to a warehouse in Europe still runs on email, spreadsheets and phone calls between a shipper, a forwarder, a carrier and a customs broker. The company paying for the freight usually cannot say where its goods are, what the delay will cost, or which of its routes is quietly losing money.",
     "solution": "Forto acts as the freight forwarder itself and runs the booking, documents, customs and tracking on its own software, so the customer sees one live view of every shipment instead of reconstructing it from correspondence. Because the same platform records what each lane actually cost and how long it took, the data doubles as the basis for planning the next quarter's shipping."
@@ -2575,9 +2575,9 @@
    "foundedCountry": "DE",
    "foundedYear": 2021,
    "sectors": [
-    "Defence",
-    "Artificial Intelligence"
+    "Defence and Aerospace"
    ],
+   "niche": "Defence Software",
    "thesis": {
     "problem": "European armed forces run on hardware procured over decades, and the sensor data those platforms produce is largely unused at the speed a decision needs it. Buying capability through traditional prime contractors takes years, which leaves European and NATO forces reliant on American software for battlefield awareness.",
     "solution": "Helsing writes defence software rather than building the platforms it runs on: models that fuse feeds from cameras, radar and other sensors into a live picture of a battlespace, delivered as updatable software into existing aircraft, vehicles and drones. It funds its own research and sells directly to governments and to prime manufacturers as a partner, and has since extended into building strike drones and underwater systems of its own."
@@ -2864,9 +2864,9 @@
    "foundedCountry": "DE",
    "foundedYear": 2018,
    "sectors": [
-    "Space",
-    "Deep Tech"
+    "Defence and Aerospace"
    ],
+   "niche": "Launch Vehicles",
    "thesis": {
     "problem": "Europe can build satellites and cannot reliably launch them. Ariane 6 is sized for large payloads on a national cadence, Soyuz stopped being available in 2022, and the small and medium satellites that make up most of what Europe now wants in orbit — earth observation, connectivity, and increasingly sovereign defence capacity — have had to buy rides from American providers on American schedules and American terms.",
     "solution": "Isar Aerospace builds Spectrum, a two-stage rocket sized for the payloads Europe actually flies rather than the ones a national programme was designed around, and manufactures it itself: engines, tanks and avionics in-house, additive manufacturing rather than a supplier chain across a dozen countries, on the argument that vertical integration is what makes launch cheap and the cadence predictable. It is a spinout of the Technical University of Munich and launches from Andøya in northern Norway."
@@ -3119,9 +3119,9 @@
    "foundedCountry": "DE",
    "foundedYear": 2019,
    "sectors": [
-    "Fintech",
-    "Spend Management"
+    "Fintech"
    ],
+   "niche": "Spend Management",
    "thesis": {
     "problem": "In a mid-sized company, money leaves before finance knows about it. Employees pay on shared cards or their own, receipts arrive weeks later, and invoices are approved over email, so the finance team spends the month reconstructing what was spent rather than controlling it as it happens.",
     "solution": "Moss issues corporate cards with per-team budgets and approval rules, and pairs them with invoice capture and reimbursements in the same system, so every payment carries its receipt, cost centre and approver from the moment it is made. Entries flow into the accounting and ERP systems the company already runs, and the newer AI features are built to prepare work for sign-off rather than to act unsupervised."
@@ -3298,9 +3298,9 @@
    "foundedCountry": "DE",
    "foundedYear": 2013,
    "sectors": [
-    "Fintech",
-    "Banking"
+    "Fintech"
    ],
+   "niche": "Banking",
    "thesis": {
     "problem": "Opening and running a current account in Europe meant a branch appointment, paper forms and a statement that arrived days after the money moved. Incumbent banks carried the cost of that branch network into their fee schedules, and charged again on every foreign transaction.",
     "solution": "N26 is a bank built as a smartphone app on its own German banking licence: sign-up by video identification, a card the customer freezes and unfreezes themselves, and instant push notifications on every transaction. Running without branches lets it offer free basic accounts and earn instead on paid tiers, card interchange and add-on products such as savings and insurance."
@@ -3496,9 +3496,9 @@
    "foundedCountry": "DE",
    "foundedYear": 2019,
    "sectors": [
-    "Enterprise Software",
-    "Artificial Intelligence"
+    "Enterprise Software"
    ],
+   "niche": "Workflow Automation",
    "thesis": {
     "problem": "Automating work across a company's software means wiring together hundreds of separate tools, and the platforms that promise to do it are usually rigid: they own the logic, run only in their own cloud, and charge per task, so the bill grows with the very usage they encourage. Adding language models made it worse — organisations bought AI and then found nobody could connect it to the systems where the work actually happens.",
     "solution": "n8n is a workflow automation platform whose canvas is visual but whose steps can drop into code, with more than a thousand integrations and the option to run it on the company's own infrastructure. Its bet is that the scarce thing in enterprise AI is not the model but the orchestration around it, so it sells the layer that lets an AI agent act on the systems a business already runs."
@@ -3707,9 +3707,9 @@
    "foundedCountry": "DE",
    "foundedYear": 2019,
    "sectors": [
-    "Robotics",
     "Artificial Intelligence"
    ],
+   "niche": "Robotics",
    "thesis": {
     "problem": "Industrial robots are precise and blind. They repeat a taught path inside a safety cage because they cannot perceive what is around them, which means every new task is a re-installation and every task involving a person is a fence. That is workable for a car plant running one model for six years and useless for the labour shortage everyone actually has — the jobs nobody can staff are varied, unstructured and next to people.",
     "solution": "Neura Robotics builds what it calls cognitive robots: arms and humanoids with sensing built into the machine rather than bolted around it, so they can work without a cage and be taught by demonstration instead of programmed. The company designs its own sensors, drives and software stack rather than integrating other people's, and is betting that the same platform serves an industrial arm, a service robot and a humanoid — which is why a robotics company is raising at the scale of an AI one."
@@ -3926,9 +3926,9 @@
    "foundedCountry": "DE",
    "foundedYear": 2018,
    "sectors": [
-    "Enterprise Software",
-    "Sustainability & ESG"
+    "Enterprise Software"
    ],
+   "niche": "Sustainability & ESG",
    "thesis": {
     "problem": "European law now makes a company answerable for things happening several tiers down its supply chain — forced labour at a subcontractor, deforestation behind a commodity, emissions it never measured. The evidence for those answers sits in purchasing systems, supplier questionnaires and site audits that were never built to be read together, so compliance becomes a rolling manual exercise repeated for every new regulation.",
     "solution": "osapiens runs one cloud platform on which each reporting duty is a separate module drawing on the same supplier and transaction data, so a company answers a new rule by switching on an application rather than starting a new project. The products are sold to large enterprises as compliance tooling, and the pitch is that the same data, once collected properly, also shows where a supply chain is slow or wasteful."
@@ -4112,9 +4112,9 @@
    "foundedCountry": "DE",
    "foundedYear": 2018,
    "sectors": [
-    "Artificial Intelligence",
-    "Customer Experience"
+    "Artificial Intelligence"
    ],
+   "niche": "Customer Experience",
    "thesis": {
     "problem": "Enterprise contact centres are expensive to staff and slow to scale, and the automation sold to them was built on rigid decision trees that break the moment a caller phrases something unexpectedly. Large brands that wanted to hand routine calls to software found it either failed the customer or could not be trusted to act on their systems.",
     "solution": "Parloa sells a platform for building, testing and supervising AI agents that hold spoken and written conversations and then carry out the resulting task in the company's own systems. The emphasis is on the management layer — simulation before deployment, guardrails and human sign-off — so that a large enterprise can run many agents across languages and channels under one set of controls."
@@ -4298,9 +4298,9 @@
    "foundedCountry": "DE",
    "foundedYear": 2015,
    "sectors": [
-    "Enterprise Software",
-    "HR Tech"
+    "Enterprise Software"
    ],
+   "niche": "HR Tech",
    "thesis": {
     "problem": "Enterprise HR suites are priced and configured for companies with thousands of staff and an HR department to run them. The small and mid-sized firms that employ most of Europe were left running recruitment, contracts, absence and payroll preparation across spreadsheets, email threads and paper files.",
     "solution": "Personio packages the whole employee lifecycle — applicant tracking, onboarding, digital personnel files, absence, performance and payroll preparation — into one subscription that a company without a dedicated HR systems team can configure itself. It is sold per employee per month and localised for each European country's payroll and employment rules."
@@ -4499,9 +4499,9 @@
    "foundedCountry": "DE",
    "foundedYear": 2023,
    "sectors": [
-    "Fusion Energy",
-    "Deep Tech"
+    "Climate and Energy"
    ],
+   "niche": "Fusion Energy",
    "thesis": {
     "problem": "Fusion power has been a laboratory result for decades rather than a product, because the machines that confine a plasma hot enough to fuse are either unstable or impossible to run continuously. The tokamak, the design most money has gone into, needs a current driven through the plasma and tends to disrupt; the stellarator is inherently steadier but its twisted magnets were long considered too hard to design and build.",
     "solution": "Proxima Fusion is the first spin-out from the Max Planck Institute for Plasma Physics, where the world's largest stellarator, Wendelstein 7-X, was built. It uses simulation and high-temperature superconducting magnets to make that design manufacturable, and is building Alpha, a net-energy demonstrator near Munich, as the step before a commercial plant."
@@ -4756,9 +4756,9 @@
    "foundedCountry": "DE",
    "foundedYear": 2015,
    "sectors": [
-    "Defence",
-    "Artificial Intelligence"
+    "Defence and Aerospace"
    ],
+   "niche": "Reconnaissance Drones",
    "thesis": {
     "problem": "A reconnaissance drone is only useful if the picture it brings back is current, and European armies spent two decades buying small numbers of expensive airframes on procurement cycles measured in years. Ukraine changed the arithmetic: what a unit needs is a system a soldier can carry, launch without a runway, fly beyond line of sight and replace when it is lost — and a manufacturer close enough to the front to change the software every few weeks as jamming evolves.",
     "solution": "Quantum Systems builds vertical-take-off fixed-wing drones — they lift like a helicopter and cruise like an aeroplane, so they need no launcher and still hold an area for hours — and sells the autonomy stack alongside the airframe. The dual-use framing is deliberate and commercial: the same aircraft surveys pipelines, mines and farmland, which keeps a civilian revenue line under a defence business whose orders arrive in bursts. Its systems flew over 19,000 missions in Ukraine in 2025."
@@ -5017,9 +5017,9 @@
    "foundedCountry": "DE",
    "foundedYear": 2012,
    "sectors": [
-    "Fintech",
-    "Banking"
+    "Fintech"
    ],
+   "niche": "Savings Marketplace",
    "thesis": {
     "problem": "Deposit rates inside the single market differ by percentage points, and almost nobody can reach them. A saver in Germany is offered whatever their own bank pays; opening an account with a bank in Portugal or Lithuania means a foreign onboarding process, a foreign language and a foreign deposit-guarantee scheme they have no way to assess. The rates exist, the guarantees exist, and the friction between them is what keeps hundreds of billions sitting still.",
     "solution": "Raisin is a marketplace with one onboarding: the saver signs up once and can then place money with any partner bank on the platform across Europe, each covered by its own national deposit guarantee up to the EU-harmonised €100,000. The other half of the business is the mirror image — deposits-as-a-service sold to banks that want funding and to distributors that want a savings product without building one. It brokers tens of billions of euros and has been profitable since 2023."
@@ -5268,9 +5268,9 @@
    "foundedCountry": "DE",
    "foundedYear": 2020,
    "sectors": [
-    "E-commerce",
-    "Consumer Brands"
+    "E-commerce and Retail"
    ],
+   "niche": "Consumer Brands",
    "thesis": {
     "problem": "A great many small businesses sell one good product on Amazon and stall there, because the owner is also the buyer, the marketer and the logistics department. Individually they are too small to negotiate with factories or to fund the next product line; sold individually, they fetch a small-business price.",
     "solution": "Razor Group buys those sellers outright and runs them on shared systems for sourcing, pricing, advertising and supply chain, so the combined group has the volume to bargain with manufacturers and the data to decide what to make next. Growth has come as much from absorbing rival aggregators — Stryze, then the American company Perch — as from buying merchants."
@@ -5494,9 +5494,9 @@
    "foundedCountry": "DE",
    "foundedYear": 2014,
    "sectors": [
-    "Fintech",
-    "Brokerage"
+    "Fintech"
    ],
+   "niche": "Brokerage",
    "thesis": {
     "problem": "In Germany, saving has traditionally meant a bank account, and investing has meant paying a bank a percentage every year for a fund it chose. The result is a country with high savings and low market participation: the cost of getting invested, and the effort of choosing, both sit above what a small saver will pay.",
     "solution": "Scalable Capital started as an algorithmic wealth manager and became a broker as well, selling trades and savings plans on a flat monthly fee rather than a percentage of assets. It runs both halves on the same platform, alongside a white-label version for banks and its own European Investor Exchange."
@@ -5723,9 +5723,9 @@
    "foundedCountry": "DE",
    "foundedYear": 2015,
    "sectors": [
-    "Logistics",
-    "Freight Forwarding"
+    "Mobility and Logistics"
    ],
+   "niche": "Freight Forwarding",
    "thesis": {
     "problem": "European road freight is a market of very large shippers and very small hauliers: a manufacturer with thousands of loads a week on one side, and on the other tens of thousands of carriers running a handful of trucks each. Matching them has historically been done by phone and fax through forwarders, and roughly a fifth of trucks run empty because nobody can see the whole board at once.",
     "solution": "sennder is a digital forwarder: it contracts directly with the large shippers and dispatches the work across a connected fleet of third-party carriers through its own platform, so pricing, tracking and settlement are software rather than phone calls. It has grown as much by absorbing rivals — Everoad, Uber Freight’s European arm, C.H. Robinson’s European surface transport business — as organically."
@@ -5927,9 +5927,9 @@
    "foundedCountry": "DE",
    "foundedYear": 2014,
    "sectors": [
-    "Enterprise Software",
-    "Employee Communications"
+    "Enterprise Software"
    ],
+   "niche": "Employee Communications",
    "thesis": {
     "problem": "Most of the people a large employer needs to reach — on a production line, in a warehouse, driving a van — have no desk, no company laptop and often no company email address. Internal communication built around the intranet and the all-staff email therefore misses exactly the workforce it most needs during a safety notice or a shift change.",
     "solution": "Staffbase gives the internal communications team one place to write a message and send it to a branded employee app, an email newsletter and an intranet at once, then reports who actually opened it. The customer is specifically the communications department rather than IT or HR, which is what separates it from the collaboration tools already installed alongside it."
@@ -6099,8 +6099,9 @@
    "foundedCountry": "DE",
    "foundedYear": 2024,
    "sectors": [
-    "Defence"
+    "Defence and Aerospace"
    ],
+   "niche": "Loitering Munitions",
    "thesis": {
     "problem": "European defence procurement was built to buy small numbers of expensive platforms over decades. The war in Ukraine showed that attritable strike drones are consumed in thousands per month, and that the bottleneck is not designing one but manufacturing, iterating and fielding them faster than an adversary can adapt their countermeasures.",
     "solution": "Stark builds loitering munitions — drones that hold over an area, find a target and destroy it on impact — and treats production rate as the product. Its stated use of the 2026 round is new electronic-warfare research facilities and scaling output to thousands of systems a month, which is the number that matters in a war of attrition rather than a unit-cost comparison against a missile."
@@ -6325,9 +6326,9 @@
    "foundedCountry": "DE",
    "foundedYear": 2016,
    "sectors": [
-    "Fintech",
-    "Consumer Tax"
+    "Fintech"
    ],
+   "niche": "Consumer Tax",
    "thesis": {
     "problem": "Millions of employees in Germany, Italy and Spain are owed a tax refund and never claim it, because the return assumes vocabulary and paperwork most people do not have. The alternatives are a tax adviser whose fee can exceed the refund, or desktop software that still expects the user to know which boxes apply to them.",
     "solution": "Taxfix replaces the form with a guided set of plain-language questions, selecting only the ones that fit the answers already given, and files the return for a flat fee once the refund is shown. The company is deliberately aimed at simple tax situations — salaried people with a payslip — rather than at the complex cases advisers are built for."
@@ -6486,9 +6487,9 @@
    "foundedCountry": "DE",
    "foundedYear": 2015,
    "sectors": [
-    "Fintech",
-    "Brokerage"
+    "Fintech"
    ],
+   "niche": "Brokerage",
    "thesis": {
     "problem": "Retail investing in Europe was priced and packaged for people who already had money. Bank brokerage carried per-order commissions and custody fees large enough to make small, regular savings uneconomic, which left most Europeans dependent on state pensions they are unlikely to be able to live on.",
     "solution": "Trade Republic is a mobile broker with a full German banking licence: commission-free savings plans, fractional shares and ETFs, plus bonds, derivatives and crypto, with a flat external settlement fee instead of a percentage. It earns on order flow, interest on customer deposits and card interchange rather than trading commissions, and now operates across most of western Europe."

@@ -10,9 +10,9 @@
   "foundedCountry": "DE",
   "foundedYear": 2021,
   "sectors": [
-    "Defence",
-    "Artificial Intelligence"
+    "Defence and Aerospace"
   ],
+  "niche": "Defence Software",
   "thesis": {
     "problem": "European armed forces run on hardware procured over decades, and the sensor data those platforms produce is largely unused at the speed a decision needs it. Buying capability through traditional prime contractors takes years, which leaves European and NATO forces reliant on American software for battlefield awareness.",
     "solution": "Helsing writes defence software rather than building the platforms it runs on: models that fuse feeds from cameras, radar and other sensors into a live picture of a battlespace, delivered as updatable software into existing aircraft, vehicles and drones. It funds its own research and sells directly to governments and to prime manufacturers as a partner, and has since extended into building strike drones and underwater systems of its own."

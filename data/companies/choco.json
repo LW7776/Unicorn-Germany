@@ -10,9 +10,9 @@
   "foundedCountry": "DE",
   "foundedYear": 2018,
   "sectors": [
-    "Foodtech",
-    "Supply Chain Software"
+    "Enterprise Software"
   ],
+  "niche": "Foodtech",
   "thesis": {
     "problem": "Restaurants still order from their suppliers by voicemail, fax and scribbled note, and a wholesaler's sales desk spends its morning transcribing those messages into an order system. Every transcription is a chance to send the wrong quantity, and the wrong quantity is food that gets thrown away.",
     "solution": "Choco gives the restaurant a messaging app for placing orders and the supplier a system that reads those orders straight into its own order processing, so the same instruction is only entered once. Selling to both sides of the same transaction is the point: the value only appears when the buyer and the seller are on the platform together."

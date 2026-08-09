@@ -10,9 +10,9 @@
   "foundedCountry": "DE",
   "foundedYear": 2013,
   "sectors": [
-    "Fintech",
-    "Banking"
+    "Fintech"
   ],
+  "niche": "Banking",
   "thesis": {
     "problem": "Opening and running a current account in Europe meant a branch appointment, paper forms and a statement that arrived days after the money moved. Incumbent banks carried the cost of that branch network into their fee schedules, and charged again on every foreign transaction.",
     "solution": "N26 is a bank built as a smartphone app on its own German banking licence: sign-up by video identification, a card the customer freezes and unfreezes themselves, and instant push notifications on every transaction. Running without branches lets it offer free basic accounts and earn instead on paid tiers, card interchange and add-on products such as savings and insurance."

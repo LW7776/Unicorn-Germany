@@ -154,6 +154,21 @@ def test_empty_sectors_is_an_error(record):
     assert any("sectors" in e for e in validate_company(record))
 
 
+def test_null_niche_is_an_error(record):
+    record["niche"] = None
+    assert any("niche" in e for e in validate_company(record))
+
+
+def test_blank_niche_is_an_error(record):
+    record["niche"] = "   "
+    assert any("niche" in e for e in validate_company(record))
+
+
+def test_missing_niche_is_an_error(record):
+    del record["niche"]
+    assert any("niche" in e for e in validate_company(record))
+
+
 def test_hq_missing_city_is_an_error(record):
     del record["hq"]["city"]
     assert any("hq.city" in e for e in validate_company(record))

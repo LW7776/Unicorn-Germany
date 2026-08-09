@@ -1,59 +1,113 @@
 {
- "slug": "neura-robotics",
- "name": "Neura Robotics",
- "website": "https://neura-robotics.com",
- "logo": "assets/logos/neura-robotics.svg",
- "hq": {
-  "city": "Metzingen",
-  "country": "DE"
- },
- "foundedCountry": "DE",
- "foundedYear": 2019,
- "sectors": [
-  "Robotics",
-  "Artificial Intelligence"
- ],
- "thesis": {
-  "problem": "Industrial robots are precise and blind. They repeat a taught path inside a safety cage because they cannot perceive what is around them, which means every new task is a re-installation and every task involving a person is a fence. That is workable for a car plant running one model for six years and useless for the labour shortage everyone actually has — the jobs nobody can staff are varied, unstructured and next to people.",
-  "solution": "Neura Robotics builds what it calls cognitive robots: arms and humanoids with sensing built into the machine rather than bolted around it, so they can work without a cage and be taught by demonstration instead of programmed. The company designs its own sensors, drives and software stack rather than integrating other people's, and is betting that the same platform serves an industrial arm, a service robot and a humanoid — which is why a robotics company is raising at the scale of an AI one."
- },
- "valuation": {
-  "amount": 7000,
-  "currency": "USD",
-  "approximate": false,
-  "asOf": "2026-06",
-  "round": "Series C",
-  "source": "s3",
-  "disputed": {
-   "note": "Neura itself has never stated a valuation. Its own announcement of this round gives a size and no price, and it declined to comment on the figure. The $7bn reaches an allowlisted page at second hand — Sifted attributes it to the Financial Times “citing people familiar with the deal” — and at third hand in Gründerszene, which prints it flatly as fact in its round-up of 2026's German unicorns: “Die Bewertung: sieben Milliarden Dollar und damit Einhorn-Status.” Two independent allowlisted publications carrying the same number is why it is published here rather than left undisclosed; that neither traces to the company is why it is flagged. A reader should treat the membership as solid and the figure as reported rather than confirmed.",
-   "source": "s5"
-  }
- },
- "becameUnicorn": {
-  "date": "2026-06",
-  "roundId": "r2",
-  "source": "s3"
- },
- "totalRaised": {
-  "amount": null,
-  "currency": "USD",
-  "approximate": false,
-  "source": "s2"
- },
- "rounds": [
-  {
-   "id": "r1",
-   "date": "2025-01",
-   "stage": "Series B",
-   "amount": 120,
-   "currency": "EUR",
-   "approximate": false,
-   "postMoney": null,
-   "leadInvestors": [
-    "Lingotto Investment Management"
-   ],
-   "investors": [
+  "slug": "neura-robotics",
+  "name": "Neura Robotics",
+  "website": "https://neura-robotics.com",
+  "logo": "assets/logos/neura-robotics.svg",
+  "hq": {
+    "city": "Metzingen",
+    "country": "DE"
+  },
+  "foundedCountry": "DE",
+  "foundedYear": 2019,
+  "sectors": [
+    "Artificial Intelligence"
+  ],
+  "niche": "Robotics",
+  "thesis": {
+    "problem": "Industrial robots are precise and blind. They repeat a taught path inside a safety cage because they cannot perceive what is around them, which means every new task is a re-installation and every task involving a person is a fence. That is workable for a car plant running one model for six years and useless for the labour shortage everyone actually has — the jobs nobody can staff are varied, unstructured and next to people.",
+    "solution": "Neura Robotics builds what it calls cognitive robots: arms and humanoids with sensing built into the machine rather than bolted around it, so they can work without a cage and be taught by demonstration instead of programmed. The company designs its own sensors, drives and software stack rather than integrating other people's, and is betting that the same platform serves an industrial arm, a service robot and a humanoid — which is why a robotics company is raising at the scale of an AI one."
+  },
+  "valuation": {
+    "amount": 7000,
+    "currency": "USD",
+    "approximate": false,
+    "asOf": "2026-06",
+    "round": "Series C",
+    "source": "s3",
+    "disputed": {
+      "note": "Neura itself has never stated a valuation. Its own announcement of this round gives a size and no price, and it declined to comment on the figure. The $7bn reaches an allowlisted page at second hand — Sifted attributes it to the Financial Times “citing people familiar with the deal” — and at third hand in Gründerszene, which prints it flatly as fact in its round-up of 2026's German unicorns: “Die Bewertung: sieben Milliarden Dollar und damit Einhorn-Status.” Two independent allowlisted publications carrying the same number is why it is published here rather than left undisclosed; that neither traces to the company is why it is flagged. A reader should treat the membership as solid and the figure as reported rather than confirmed.",
+      "source": "s5"
+    }
+  },
+  "becameUnicorn": {
+    "date": "2026-06",
+    "roundId": "r2",
+    "source": "s3"
+  },
+  "totalRaised": {
+    "amount": null,
+    "currency": "USD",
+    "approximate": false,
+    "source": "s2"
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "date": "2025-01",
+      "stage": "Series B",
+      "amount": 120,
+      "currency": "EUR",
+      "approximate": false,
+      "postMoney": null,
+      "leadInvestors": [
+        "Lingotto Investment Management"
+      ],
+      "investors": [
+        "Lingotto Investment Management",
+        "BlueCrest Capital Management",
+        "Volvo Cars Tech Fund",
+        "InterAlpen Partners",
+        "Vsquared Ventures",
+        "HV Capital",
+        "Delta Electronics",
+        "C4 Ventures",
+        "L-Bank"
+      ],
+      "source": "s1"
+    },
+    {
+      "id": "r2",
+      "date": "2026-06",
+      "stage": "Series C",
+      "amount": 1400,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": 7000,
+      "postMoneyCurrency": "USD",
+      "postMoneySource": "s3",
+      "leadInvestors": [],
+      "investors": [
+        "Tether",
+        "Qualcomm",
+        "Amazon",
+        "Nvidia",
+        "Bosch",
+        "Schaeffler",
+        "European Investment Bank"
+      ],
+      "source": "s2",
+      "disputed": {
+        "note": "Sifted reports the round flatly as “a $1.4bn Series C round”, which is the figure on file here. The company's own announcement, and Tech.eu reporting it, say “up to $1.4 billion” — a ceiling that unlocks in tranches rather than a sum already wired. The register records the number the allowlisted reporting states and shows the qualifier beside it rather than choosing between them.",
+        "source": "s4"
+      }
+    }
+  ],
+  "founders": [
+    {
+      "name": "David Reger",
+      "role": "Founder and CEO",
+      "current": true
+    }
+  ],
+  "investors": [
     "Lingotto Investment Management",
+    "Tether",
+    "Qualcomm",
+    "Amazon",
+    "Nvidia",
+    "Bosch",
+    "Schaeffler",
+    "European Investment Bank",
     "BlueCrest Capital Management",
     "Volvo Cars Tech Fund",
     "InterAlpen Partners",
@@ -62,109 +116,55 @@
     "Delta Electronics",
     "C4 Ventures",
     "L-Bank"
-   ],
-   "source": "s1"
-  },
-  {
-   "id": "r2",
-   "date": "2026-06",
-   "stage": "Series C",
-   "amount": 1400,
-   "currency": "USD",
-   "approximate": false,
-   "postMoney": 7000,
-   "postMoneyCurrency": "USD",
-   "postMoneySource": "s3",
-   "leadInvestors": [],
-   "investors": [
-    "Tether",
-    "Qualcomm",
-    "Amazon",
-    "Nvidia",
-    "Bosch",
-    "Schaeffler",
-    "European Investment Bank"
-   ],
-   "source": "s2",
-   "disputed": {
-    "note": "Sifted reports the round flatly as “a $1.4bn Series C round”, which is the figure on file here. The company's own announcement, and Tech.eu reporting it, say “up to $1.4 billion” — a ceiling that unlocks in tranches rather than a sum already wired. The register records the number the allowlisted reporting states and shows the qualifier beside it rather than choosing between them.",
-    "source": "s4"
-   }
-  }
- ],
- "founders": [
-  {
-   "name": "David Reger",
-   "role": "Founder and CEO",
-   "current": true
-  }
- ],
- "investors": [
-  "Lingotto Investment Management",
-  "Tether",
-  "Qualcomm",
-  "Amazon",
-  "Nvidia",
-  "Bosch",
-  "Schaeffler",
-  "European Investment Bank",
-  "BlueCrest Capital Management",
-  "Volvo Cars Tech Fund",
-  "InterAlpen Partners",
-  "Vsquared Ventures",
-  "HV Capital",
-  "Delta Electronics",
-  "C4 Ventures",
-  "L-Bank"
- ],
- "sources": [
-  {
-   "id": "s1",
-   "publication": "Sifted",
-   "title": "German robotics startup Neura Robotics raises €120m Series B",
-   "url": "https://sifted.eu/articles/neura-robotics-raises-120m-news",
-   "publishedOn": "2025-01-15",
-   "quote": "German robotics company Neura Robotics has raised €120m in Series B financing to develop \"cognitive\" robots capable of \"seeing\", walking and manipulating objects."
-  },
-  {
-   "id": "s2",
-   "publication": "Sifted",
-   "title": "Neura Robotics raises $1.4bn backed by Amazon, Nvidia and Qualcomm",
-   "url": "https://sifted.eu/articles/neura-robotics-1-4bn-series-c",
-   "publishedOn": "2026-06-10",
-   "quote": "German startup Neura Robotics has raised a $1.4bn Series C round from investors including crypto group Tether, Qualcomm, Amazon and Nvidia."
-  },
-  {
-   "id": "s3",
-   "publication": "Sifted",
-   "title": "Neura Robotics raises $1.4bn backed by Amazon, Nvidia and Qualcomm",
-   "url": "https://sifted.eu/articles/neura-robotics-1-4bn-series-c",
-   "publishedOn": "2026-06-10",
-   "quote": "The new funding brings Neura's valuation to $7bn, the Financial Times reported, citing people familiar with the deal."
-  },
-  {
-   "id": "s4",
-   "publication": "Tech.eu",
-   "title": "NEURA Robotics secures up to $1.4B Series C to scale physical AI and cognitive robotics platform",
-   "url": "https://tech.eu/2026/06/10/neura-robotics-secures-up-to-14b-series-c-to-scale-physical-ai-and-cognitive-robotics-platform/",
-   "publishedOn": "2026-06-10",
-   "quote": "NEURA Robotics has announced up to $1.4 billion in Series C funding to accelerate the development of its physical AI platform."
-  },
-  {
-   "id": "s5",
-   "publication": "Gründerszene",
-   "title": "Sieben neue Unicorns: Diese deutschen Startups sind jetzt Milliarden wert",
-   "url": "https://www.businessinsider.de/gruenderszene/sieben-neue-unicorns-diese-deutschen-startups-sind-jetzt-milliarden-wert/",
-   "publishedOn": "2026-07-03",
-   "quote": "Die Bewertung: sieben Milliarden Dollar und damit Einhorn-Status."
-  },
-  {
-   "id": "s6",
-   "publication": "Sifted",
-   "title": "German robotics startup Neura Robotics raises €120m Series B",
-   "url": "https://sifted.eu/articles/neura-robotics-raises-120m-news",
-   "publishedOn": "2025-01-15",
-   "quote": "Neura Robotics' round was led by Lingotto Investment Management; Blue Crest Capital Management, Volvo Cars Tech Fund, InterAlpen Partners, Vsquared Ventures, HV Capital, Delta Electronics, C4 Ventures, L-Bank and the company's founder and CEO David Reger also participated."
-  }
- ]
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "publication": "Sifted",
+      "title": "German robotics startup Neura Robotics raises €120m Series B",
+      "url": "https://sifted.eu/articles/neura-robotics-raises-120m-news",
+      "publishedOn": "2025-01-15",
+      "quote": "German robotics company Neura Robotics has raised €120m in Series B financing to develop \"cognitive\" robots capable of \"seeing\", walking and manipulating objects."
+    },
+    {
+      "id": "s2",
+      "publication": "Sifted",
+      "title": "Neura Robotics raises $1.4bn backed by Amazon, Nvidia and Qualcomm",
+      "url": "https://sifted.eu/articles/neura-robotics-1-4bn-series-c",
+      "publishedOn": "2026-06-10",
+      "quote": "German startup Neura Robotics has raised a $1.4bn Series C round from investors including crypto group Tether, Qualcomm, Amazon and Nvidia."
+    },
+    {
+      "id": "s3",
+      "publication": "Sifted",
+      "title": "Neura Robotics raises $1.4bn backed by Amazon, Nvidia and Qualcomm",
+      "url": "https://sifted.eu/articles/neura-robotics-1-4bn-series-c",
+      "publishedOn": "2026-06-10",
+      "quote": "The new funding brings Neura's valuation to $7bn, the Financial Times reported, citing people familiar with the deal."
+    },
+    {
+      "id": "s4",
+      "publication": "Tech.eu",
+      "title": "NEURA Robotics secures up to $1.4B Series C to scale physical AI and cognitive robotics platform",
+      "url": "https://tech.eu/2026/06/10/neura-robotics-secures-up-to-14b-series-c-to-scale-physical-ai-and-cognitive-robotics-platform/",
+      "publishedOn": "2026-06-10",
+      "quote": "NEURA Robotics has announced up to $1.4 billion in Series C funding to accelerate the development of its physical AI platform."
+    },
+    {
+      "id": "s5",
+      "publication": "Gründerszene",
+      "title": "Sieben neue Unicorns: Diese deutschen Startups sind jetzt Milliarden wert",
+      "url": "https://www.businessinsider.de/gruenderszene/sieben-neue-unicorns-diese-deutschen-startups-sind-jetzt-milliarden-wert/",
+      "publishedOn": "2026-07-03",
+      "quote": "Die Bewertung: sieben Milliarden Dollar und damit Einhorn-Status."
+    },
+    {
+      "id": "s6",
+      "publication": "Sifted",
+      "title": "German robotics startup Neura Robotics raises €120m Series B",
+      "url": "https://sifted.eu/articles/neura-robotics-raises-120m-news",
+      "publishedOn": "2025-01-15",
+      "quote": "Neura Robotics' round was led by Lingotto Investment Management; Blue Crest Capital Management, Volvo Cars Tech Fund, InterAlpen Partners, Vsquared Ventures, HV Capital, Delta Electronics, C4 Ventures, L-Bank and the company's founder and CEO David Reger also participated."
+    }
+  ]
 }

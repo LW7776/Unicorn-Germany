@@ -13,9 +13,9 @@
   "foundedCountry": "DE",
   "foundedYear": 2024,
   "sectors": [
-    "Artificial Intelligence",
-    "Generative Media"
+    "Artificial Intelligence"
   ],
+  "niche": "Generative Media",
   "thesis": {
     "problem": "Image generation moved from research demo to production tool faster than the supply of models a company can actually build on. Most of the strongest systems are closed, reachable only through one vendor's API, which leaves a product team unable to run the model on its own infrastructure, inspect it, or fine-tune it for a house style.",
     "solution": "Black Forest Labs trains its own image and editing models, publishes open-weight versions alongside commercial ones, and sells the larger models to companies that want them inside their own products. The bet is that the open releases spread the toolchain and the enterprise versions pay for the research, with the founders' record on latent diffusion as the evidence they can keep pace."

@@ -10,9 +10,9 @@
   "foundedCountry": "DE",
   "foundedYear": 2019,
   "sectors": [
-    "Fintech",
-    "Spend Management"
+    "Fintech"
   ],
+  "niche": "Spend Management",
   "thesis": {
     "problem": "In a mid-sized company, money leaves before finance knows about it. Employees pay on shared cards or their own, receipts arrive weeks later, and invoices are approved over email, so the finance team spends the month reconstructing what was spent rather than controlling it as it happens.",
     "solution": "Moss issues corporate cards with per-team budgets and approval rules, and pairs them with invoice capture and reimbursements in the same system, so every payment carries its receipt, cost centre and approver from the moment it is made. Entries flow into the accounting and ERP systems the company already runs, and the newer AI features are built to prepare work for sign-off rather than to act unsupervised."

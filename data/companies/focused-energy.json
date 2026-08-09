@@ -1,132 +1,132 @@
 {
- "slug": "focused-energy",
- "name": "Focused Energy",
- "website": "https://www.focused-energy.co",
- "logo": "assets/logos/focused-energy.svg",
- "hq": {
-  "city": "Darmstadt",
-  "country": "DE"
- },
- "alsoBasedIn": [
-  "Austin"
- ],
- "foundedCountry": "DE",
- "foundedYear": 2021,
- "sectors": [
-  "Fusion Energy",
-  "Energy"
- ],
- "thesis": {
-  "problem": "A grid built on wind and solar needs something firm underneath it that is not gas, and the candidates are few. Fission carries a waste and siting problem Germany has already legislated its way out of; fusion has spent seventy years being thirty years away. What changed is that the US National Ignition Facility got more energy out of a laser-driven fusion target than went into it, which turned the question from whether the physics works into whether anyone can build a machine that does it several times a second, commercially.",
-  "solution": "Focused Energy pursues inertial confinement: banks of extremely powerful lasers compress a fuel pellet until it fuses, repeated at a rate that makes a power station rather than an experiment. It is a spinout of the Technical University of Darmstadt, it bought two of the world's most powerful existing lasers rather than waiting to build them, and it plans its first laser fusion plant on the site of the decommissioned Biblis nuclear station in Hesse by the mid-2030s."
- },
- "valuation": {
-  "amount": null,
-  "currency": null,
-  "approximate": false,
-  "asOf": "2026-07",
-  "round": "Series A",
-  "source": "s3",
-  "undisclosed": {
-   "note": "No source states a figure, and this record spent two batches establishing that. The company's own release on the $240m Series A claims only that it “makes it the most valuable fusion company in Europe” — a superlative, not a number — and TechCrunch's account of the same round, read in full, carries no valuation either. Secondary write-ups outside the allowlist put it “close to one billion dollars”, which if accurate would be *below* the threshold and would keep the company out; that is why this entry stayed excluded until an allowlisted publication said otherwise. Gründerszene now does, twice over: in its round-up of the seven German startups that became unicorns in the first half of 2026, and again in the sentence quoted here. Membership is sourced; the figure is not, and this register will not manufacture one from a superlative.",
-   "source": "s3"
-  }
- },
- "becameUnicorn": {
-  "date": "2026-05",
-  "roundId": "r1",
-  "source": "s3"
- },
- "totalRaised": {
-  "amount": 300,
-  "currency": "USD",
-  "approximate": false,
-  "source": "s4"
- },
- "rounds": [
-  {
-   "id": "r1",
-   "date": "2026-05",
-   "stage": "Series A",
-   "amount": 240,
-   "currency": "USD",
-   "approximate": false,
-   "postMoney": null,
-   "leadInvestors": [],
-   "investors": [
+  "slug": "focused-energy",
+  "name": "Focused Energy",
+  "website": "https://www.focused-energy.co",
+  "logo": "assets/logos/focused-energy.svg",
+  "hq": {
+    "city": "Darmstadt",
+    "country": "DE"
+  },
+  "alsoBasedIn": [
+    "Austin"
+  ],
+  "foundedCountry": "DE",
+  "foundedYear": 2021,
+  "sectors": [
+    "Climate and Energy"
+  ],
+  "niche": "Fusion Energy",
+  "thesis": {
+    "problem": "A grid built on wind and solar needs something firm underneath it that is not gas, and the candidates are few. Fission carries a waste and siting problem Germany has already legislated its way out of; fusion has spent seventy years being thirty years away. What changed is that the US National Ignition Facility got more energy out of a laser-driven fusion target than went into it, which turned the question from whether the physics works into whether anyone can build a machine that does it several times a second, commercially.",
+    "solution": "Focused Energy pursues inertial confinement: banks of extremely powerful lasers compress a fuel pellet until it fuses, repeated at a rate that makes a power station rather than an experiment. It is a spinout of the Technical University of Darmstadt, it bought two of the world's most powerful existing lasers rather than waiting to build them, and it plans its first laser fusion plant on the site of the decommissioned Biblis nuclear station in Hesse by the mid-2030s."
+  },
+  "valuation": {
+    "amount": null,
+    "currency": null,
+    "approximate": false,
+    "asOf": "2026-07",
+    "round": "Series A",
+    "source": "s3",
+    "undisclosed": {
+      "note": "No source states a figure, and this record spent two batches establishing that. The company's own release on the $240m Series A claims only that it “makes it the most valuable fusion company in Europe” — a superlative, not a number — and TechCrunch's account of the same round, read in full, carries no valuation either. Secondary write-ups outside the allowlist put it “close to one billion dollars”, which if accurate would be *below* the threshold and would keep the company out; that is why this entry stayed excluded until an allowlisted publication said otherwise. Gründerszene now does, twice over: in its round-up of the seven German startups that became unicorns in the first half of 2026, and again in the sentence quoted here. Membership is sourced; the figure is not, and this register will not manufacture one from a superlative.",
+      "source": "s3"
+    }
+  },
+  "becameUnicorn": {
+    "date": "2026-05",
+    "roundId": "r1",
+    "source": "s3"
+  },
+  "totalRaised": {
+    "amount": 300,
+    "currency": "USD",
+    "approximate": false,
+    "source": "s4"
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "date": "2026-05",
+      "stage": "Series A",
+      "amount": 240,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": null,
+      "leadInvestors": [],
+      "investors": [
+        "RWE",
+        "SPRIND",
+        "Prime Movers Lab",
+        "European Innovation Council Fund"
+      ],
+      "source": "s1",
+      "undisclosed": {
+        "note": "The crossing round, and no price was attached to it by anyone. Handelsblatt and TechCrunch both cover the round without a valuation; Gründerszene reports the same round as the moment the company passed a billion — “knackte die Milliarden-Bewertung” — without saying what the figure was. Note that the round is dated here to May, when the company announced it and the German press reported it, not to TechCrunch's June write-up.",
+        "source": "s3"
+      }
+    }
+  ],
+  "founders": [
+    {
+      "name": "Thomas Forner",
+      "role": "Co-founder and CEO",
+      "current": true
+    }
+  ],
+  "investors": [
     "RWE",
     "SPRIND",
     "Prime Movers Lab",
     "European Innovation Council Fund"
-   ],
-   "source": "s1",
-   "undisclosed": {
-    "note": "The crossing round, and no price was attached to it by anyone. Handelsblatt and TechCrunch both cover the round without a valuation; Gründerszene reports the same round as the moment the company passed a billion — “knackte die Milliarden-Bewertung” — without saying what the figure was. Note that the round is dated here to May, when the company announced it and the German press reported it, not to TechCrunch's June write-up.",
-    "source": "s3"
-   }
-  }
- ],
- "founders": [
-  {
-   "name": "Thomas Forner",
-   "role": "Co-founder and CEO",
-   "current": true
-  }
- ],
- "investors": [
-  "RWE",
-  "SPRIND",
-  "Prime Movers Lab",
-  "European Innovation Council Fund"
- ],
- "sources": [
-  {
-   "id": "s1",
-   "publication": "TechCrunch",
-   "title": "Focused Energy raises whopping $240M Series A for laser-powered fusion tech",
-   "url": "https://techcrunch.com/2026/06/02/focused-energy-raises-whopping-240m-series-a-for-laser-powered-fusion-tech/",
-   "publishedOn": "2026-06-02",
-   "quote": "Focused Energy recently raised an oversubscribed $240 million Series A round, one of the largest early-stage rounds for a fusion power startup."
-  },
-  {
-   "id": "s2",
-   "publication": "TechCrunch",
-   "title": "Focused Energy raises whopping $240M Series A for laser-powered fusion tech",
-   "url": "https://techcrunch.com/2026/06/02/focused-energy-raises-whopping-240m-series-a-for-laser-powered-fusion-tech/",
-   "publishedOn": "2026-06-02",
-   "quote": "The round also included participation from the German Federal Agency for Breakthrough Innovation (SPRIND), Prime Movers Lab, and the European Innovation Council Fund."
-  },
-  {
-   "id": "s3",
-   "publication": "Gründerszene",
-   "title": "Sieben neue Unicorns: Diese deutschen Startups sind jetzt Milliarden wert",
-   "url": "https://www.businessinsider.de/gruenderszene/sieben-neue-unicorns-diese-deutschen-startups-sind-jetzt-milliarden-wert/",
-   "publishedOn": "2026-07-03",
-   "quote": "Im Mai schloss sich das deutsche Fusions-Startup Focused Energy an, sichert sich 240 Millionen US-Dollar und knackte die Milliarden-Bewertung."
-  },
-  {
-   "id": "s4",
-   "publication": "TechCrunch",
-   "title": "Focused Energy raises whopping $240M Series A for laser-powered fusion tech",
-   "url": "https://techcrunch.com/2026/06/02/focused-energy-raises-whopping-240m-series-a-for-laser-powered-fusion-tech/",
-   "publishedOn": "2026-06-02",
-   "quote": "The new round, announced last week, brings the company's total private capital raised to $300 million, the company told TechCrunch."
-  },
-  {
-   "id": "s5",
-   "publication": "Sifted",
-   "title": "Mapping Europe's nuclear fusion industry",
-   "url": "https://sifted.eu/articles/mapping-europes-nuclear-fusion-industry",
-   "publishedOn": "2023-07-27",
-   "quote": "Focused Energy is a spinout from Germany's Technical University of Darmstadt developing laser-based nuclear fusion."
-  },
-  {
-   "id": "s6",
-   "publication": "Gründerszene",
-   "title": "240 Millionen für deutsches Fusions-Startup: Europas neuer Energie-Gigant?",
-   "url": "https://www.businessinsider.de/gruenderszene/240-millionen-fuer-deutsches-fusions-startup-europas-neuer-energie-gigant/",
-   "publishedOn": "2026-05-28",
-   "quote": "Das Darmstädter Fusions-Startup Focused Energy"
-  }
- ]
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "publication": "TechCrunch",
+      "title": "Focused Energy raises whopping $240M Series A for laser-powered fusion tech",
+      "url": "https://techcrunch.com/2026/06/02/focused-energy-raises-whopping-240m-series-a-for-laser-powered-fusion-tech/",
+      "publishedOn": "2026-06-02",
+      "quote": "Focused Energy recently raised an oversubscribed $240 million Series A round, one of the largest early-stage rounds for a fusion power startup."
+    },
+    {
+      "id": "s2",
+      "publication": "TechCrunch",
+      "title": "Focused Energy raises whopping $240M Series A for laser-powered fusion tech",
+      "url": "https://techcrunch.com/2026/06/02/focused-energy-raises-whopping-240m-series-a-for-laser-powered-fusion-tech/",
+      "publishedOn": "2026-06-02",
+      "quote": "The round also included participation from the German Federal Agency for Breakthrough Innovation (SPRIND), Prime Movers Lab, and the European Innovation Council Fund."
+    },
+    {
+      "id": "s3",
+      "publication": "Gründerszene",
+      "title": "Sieben neue Unicorns: Diese deutschen Startups sind jetzt Milliarden wert",
+      "url": "https://www.businessinsider.de/gruenderszene/sieben-neue-unicorns-diese-deutschen-startups-sind-jetzt-milliarden-wert/",
+      "publishedOn": "2026-07-03",
+      "quote": "Im Mai schloss sich das deutsche Fusions-Startup Focused Energy an, sichert sich 240 Millionen US-Dollar und knackte die Milliarden-Bewertung."
+    },
+    {
+      "id": "s4",
+      "publication": "TechCrunch",
+      "title": "Focused Energy raises whopping $240M Series A for laser-powered fusion tech",
+      "url": "https://techcrunch.com/2026/06/02/focused-energy-raises-whopping-240m-series-a-for-laser-powered-fusion-tech/",
+      "publishedOn": "2026-06-02",
+      "quote": "The new round, announced last week, brings the company's total private capital raised to $300 million, the company told TechCrunch."
+    },
+    {
+      "id": "s5",
+      "publication": "Sifted",
+      "title": "Mapping Europe's nuclear fusion industry",
+      "url": "https://sifted.eu/articles/mapping-europes-nuclear-fusion-industry",
+      "publishedOn": "2023-07-27",
+      "quote": "Focused Energy is a spinout from Germany's Technical University of Darmstadt developing laser-based nuclear fusion."
+    },
+    {
+      "id": "s6",
+      "publication": "Gründerszene",
+      "title": "240 Millionen für deutsches Fusions-Startup: Europas neuer Energie-Gigant?",
+      "url": "https://www.businessinsider.de/gruenderszene/240-millionen-fuer-deutsches-fusions-startup-europas-neuer-energie-gigant/",
+      "publishedOn": "2026-05-28",
+      "quote": "Das Darmstädter Fusions-Startup Focused Energy"
+    }
+  ]
 }

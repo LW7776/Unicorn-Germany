@@ -10,9 +10,9 @@
   "foundedCountry": "DE",
   "foundedYear": 2015,
   "sectors": [
-    "Enterprise Software",
-    "HR Tech"
+    "Enterprise Software"
   ],
+  "niche": "HR Tech",
   "thesis": {
     "problem": "Enterprise HR suites are priced and configured for companies with thousands of staff and an HR department to run them. The small and mid-sized firms that employ most of Europe were left running recruitment, contracts, absence and payroll preparation across spreadsheets, email threads and paper files.",
     "solution": "Personio packages the whole employee lifecycle — applicant tracking, onboarding, digital personnel files, absence, performance and payroll preparation — into one subscription that a company without a dedicated HR systems team can configure itself. It is sold per employee per month and localised for each European country's payroll and employment rules."

@@ -37,7 +37,8 @@ export const FIELDS = [
   { key: "foundedCountry", label: "Founded in (country)", group: "Location & founding" },
   { key: "foundedYear", label: "Founded year", type: "number", step: "1", group: "Location & founding" },
 
-  { key: "sectors", label: "Sectors", hint: "comma separated", list: true, group: "Sectors & story" },
+  { key: "sectors", label: "Sectors", hint: "broad industries only, comma separated — these drive the filter chips, so keep them coarse (e.g. \"Climate and Energy\", not a per-company descriptor)", list: true, group: "Sectors & story" },
+  { key: "niche", label: "Niche", hint: "the specific descriptor, e.g. \"Process Mining\" — shown in the detail window, not a filter chip", group: "Sectors & story" },
   { key: "thesis.problem", label: "The problem", type: "textarea", group: "Sectors & story" },
   { key: "thesis.solution", label: "Technology & business model", type: "textarea", group: "Sectors & story" },
 
@@ -272,7 +273,7 @@ export function createBlankRecord() {
     slug: "", name: "", website: "", logo: "",
     hq: { city: "", country: "" },
     foundedCountry: "", foundedYear: null,
-    sectors: [],
+    sectors: [], niche: "",
     thesis: { problem: "", solution: "" },
     valuation: { amount: null, currency: "", approximate: false, asOf: "", round: "", source: "" },
     becameUnicorn: { date: "", roundId: "", source: "" },
@@ -304,7 +305,7 @@ export function stripDerived(builtCompany) {
    "invalid" — per the brief's required behaviour.
    --------------------------------------------------------------------------------------- */
 const REQUIRED_KEYS = ["slug", "name", "website", "logo", "hq", "foundedCountry", "foundedYear",
-  "sectors", "thesis", "valuation", "becameUnicorn", "totalRaised",
+  "sectors", "niche", "thesis", "valuation", "becameUnicorn", "totalRaised",
   "rounds", "founders", "investors", "sources"];
 const THRESHOLD_MILLIONS = 1000;
 /** Mirrors tools/schema.py KNOWN_CURRENCIES and tools/validate.py ROUND_KEYS. An
@@ -333,6 +334,10 @@ function typeErrors(record) {
     requireString(errors, label, record[key]);
   }
 
+  // Mirrors tools/validate.py: `sectors` is the broad-industry chip vocabulary
+  // (coarse, shared across the register); `niche` is the specific descriptor that
+  // belongs in the detail window instead of a filter chip. Checked the same way —
+  // sectors as a non-empty list of strings, niche as a single non-empty string.
   const sectors = record.sectors;
   if (!Array.isArray(sectors) || sectors.length === 0) {
     errors.push("sectors must be a non-empty list");
@@ -341,6 +346,7 @@ function typeErrors(record) {
       if (typeof entry !== "string" || !entry.trim()) errors.push(`sectors contains a non-string or empty entry: ${describe(entry)}`);
     }
   }
+  requireString(errors, "niche", record.niche);
 
   if (!isPlainObject(record.hq)) {
     errors.push("hq must be an object with city and country");

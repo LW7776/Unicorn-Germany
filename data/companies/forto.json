@@ -10,9 +10,9 @@
   "foundedCountry": "DE",
   "foundedYear": 2016,
   "sectors": [
-    "Logistics",
-    "Freight Forwarding"
+    "Mobility and Logistics"
   ],
+  "niche": "Freight Forwarding",
   "thesis": {
     "problem": "Moving a container from a factory in Asia to a warehouse in Europe still runs on email, spreadsheets and phone calls between a shipper, a forwarder, a carrier and a customs broker. The company paying for the freight usually cannot say where its goods are, what the delay will cost, or which of its routes is quietly losing money.",
     "solution": "Forto acts as the freight forwarder itself and runs the booking, documents, customs and tracking on its own software, so the customer sees one live view of every shipment instead of reconstructing it from correspondence. Because the same platform records what each lane actually cost and how long it took, the data doubles as the basis for planning the next quarter's shipping."

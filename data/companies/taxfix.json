@@ -10,9 +10,9 @@
   "foundedCountry": "DE",
   "foundedYear": 2016,
   "sectors": [
-    "Fintech",
-    "Consumer Tax"
+    "Fintech"
   ],
+  "niche": "Consumer Tax",
   "thesis": {
     "problem": "Millions of employees in Germany, Italy and Spain are owed a tax refund and never claim it, because the return assumes vocabulary and paperwork most people do not have. The alternatives are a tax adviser whose fee can exceed the refund, or desktop software that still expects the user to know which boxes apply to them.",
     "solution": "Taxfix replaces the form with a guided set of plain-language questions, selecting only the ones that fit the answers already given, and files the return for a flat fee once the refund is shown. The company is deliberately aimed at simple tax situations — salaried people with a payslip — rather than at the complex cases advisers are built for."

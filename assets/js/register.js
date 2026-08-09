@@ -18,7 +18,16 @@ function cell(company, index) {
   const slug = escapeHtml(company.slug);
   const logo = escapeHtml(company.logo);
   const valuationLabel = escapeHtml(company.display.valuationLabel);
-  const lastRoundLabel = escapeHtml(company.display.lastRoundLabel);
+  // The crossing date, not the last funding round: the grid's default sort is
+  // "Newest unicorn" (sort.newest, itself becameUnicorn.date — see tools/build.py),
+  // so the one date printed on every card has to be the date that ordering is
+  // actually keyed on. Showing the last round here instead answered a different
+  // question ("when did they last raise?") that happened to look plausible next to
+  // "Newest unicorn" without agreeing with it. display.becameUnicornLabel is
+  // already precomputed for exactly this (tools/build.py's derive_company); the
+  // detail window still shows last round *and* crossing, since both are
+  // legitimately relevant once a reader opens a company.
+  const becameUnicornLabel = escapeHtml(company.display.becameUnicornLabel);
   // The accessible name has to carry the qualification too — a screen reader reading
   // "Isar Aerospace, Undisclosed" off the card would be told strictly less than a
   // sighted reader, who can see the ">1bn" beside it.
@@ -33,7 +42,7 @@ function cell(company, index) {
         <img src="${logo}" alt="${name} logo" loading="lazy" decoding="async">
       </span>
       <span class="cell__figure${company.display.valuationUndisclosed ? " cell__figure--undisclosed" : ""}">${valuationLabel}${undisclosed}${aged}</span>
-      <span class="cell__meta">Last round · ${lastRoundLabel}</span>
+      <span class="cell__meta">Unicorn since · ${becameUnicornLabel}</span>
     </button>`;
 }
 

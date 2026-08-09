@@ -7,6 +7,7 @@
   "foundedCountry": "DE",
   "foundedYear": 2015,
   "sectors": ["Enterprise Software"],
+  "niche": "Procurement Workflow",
   "thesis": {"problem": "Procurement runs on email.", "solution": "A workflow tool, sold per seat."},
   "valuation": {"amount": 1200, "currency": "EUR", "approximate": true, "asOf": "2024-03", "round": "Series C", "source": "s1"},
   "becameUnicorn": {"date": "2024-03", "roundId": "r2", "source": "s1"},

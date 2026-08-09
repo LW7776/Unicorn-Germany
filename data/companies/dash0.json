@@ -10,9 +10,9 @@
   "foundedCountry": "DE",
   "foundedYear": 2023,
   "sectors": [
-    "Enterprise Software",
-    "Artificial Intelligence"
+    "Enterprise Software"
   ],
+  "niche": "Observability",
   "thesis": {
     "problem": "Observability — the tooling that tells an engineer why production broke — is sold by vendors whose pricing scales with how much data you send them and whose agents lock that data into proprietary formats. As systems grew and AI agents began writing and deploying code, the volume of alerts outgrew the number of humans available to read them, so the tools became, in Dash0's own words, expensive noise generators.",
     "solution": "Dash0 is built natively on OpenTelemetry, the open standard for emitting traces, metrics and logs, so it ingests signals from any stack without proprietary agents and the customer's data stays portable. On top of that it runs Agent0, which is meant to diagnose and resolve production incidents autonomously rather than paging a person to read a dashboard."

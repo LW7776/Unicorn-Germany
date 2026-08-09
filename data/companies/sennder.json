@@ -10,9 +10,9 @@
   "foundedCountry": "DE",
   "foundedYear": 2015,
   "sectors": [
-    "Logistics",
-    "Freight Forwarding"
+    "Mobility and Logistics"
   ],
+  "niche": "Freight Forwarding",
   "thesis": {
     "problem": "European road freight is a market of very large shippers and very small hauliers: a manufacturer with thousands of loads a week on one side, and on the other tens of thousands of carriers running a handful of trucks each. Matching them has historically been done by phone and fax through forwarders, and roughly a fifth of trucks run empty because nobody can see the whole board at once.",
     "solution": "sennder is a digital forwarder: it contracts directly with the large shippers and dispatches the work across a connected fleet of third-party carriers through its own platform, so pricing, tracking and settlement are software rather than phone calls. It has grown as much by absorbing rivals — Everoad, Uber Freight’s European arm, C.H. Robinson’s European surface transport business — as organically."

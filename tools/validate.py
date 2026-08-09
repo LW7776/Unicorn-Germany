@@ -28,7 +28,7 @@ from tools.schema import (
 )
 
 REQUIRED = ["slug", "name", "website", "logo", "hq", "foundedCountry", "foundedYear",
-            "sectors", "thesis", "valuation", "becameUnicorn", "totalRaised",
+            "sectors", "niche", "thesis", "valuation", "becameUnicorn", "totalRaised",
             "rounds", "founders", "investors", "sources"]
 THRESHOLD_MILLIONS = 1000          # $1B or €1B, as reported. No FX conversion.
 SLUG = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
@@ -60,6 +60,14 @@ def _validate_types(record):
                         ("logo", "logo"), ("slug", "slug")):
         _require_string(errors, label, record.get(key))
 
+    # `sectors` is the broad-industry filter vocabulary (a handful of chips shared
+    # across the whole register, e.g. "Climate and Energy") — deliberately coarse so
+    # a chip groups several companies rather than isolating one. `niche` is the
+    # opposite: the specific descriptor (e.g. "Process Mining") that would make a
+    # near-useless filter chip but is exactly the detail a reader wants in the
+    # header of a single company's page. Both are checked here; only `sectors`
+    # feeds the chips (controls.js), and only `niche` is a plain string rather than
+    # a list — a company has several industries at most, but one specific niche.
     sectors = record.get("sectors")
     if not isinstance(sectors, list) or not sectors:
         errors.append("sectors must be a non-empty list")
@@ -67,6 +75,8 @@ def _validate_types(record):
         for entry in sectors:
             if not isinstance(entry, str) or not entry.strip():
                 errors.append(f"sectors contains a non-string or empty entry: {entry!r}")
+
+    _require_string(errors, "niche", record.get("niche"))
 
     hq = record.get("hq")
     if not isinstance(hq, dict):

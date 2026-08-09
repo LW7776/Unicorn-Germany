@@ -10,9 +10,9 @@
   "foundedCountry": "DE",
   "foundedYear": 2014,
   "sectors": [
-    "Fintech",
-    "Brokerage"
+    "Fintech"
   ],
+  "niche": "Brokerage",
   "thesis": {
     "problem": "In Germany, saving has traditionally meant a bank account, and investing has meant paying a bank a percentage every year for a fund it chose. The result is a country with high savings and low market participation: the cost of getting invested, and the effort of choosing, both sit above what a small saver will pay.",
     "solution": "Scalable Capital started as an algorithmic wealth manager and became a broker as well, selling trades and savings plans on a flat monthly fee rather than a percentage of assets. It runs both halves on the same platform, alongside a white-label version for banks and its own European Investor Exchange."

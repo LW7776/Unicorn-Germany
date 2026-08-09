@@ -10,9 +10,9 @@
   "foundedCountry": "DE",
   "foundedYear": 2017,
   "sectors": [
-    "Artificial Intelligence",
-    "Language Technology"
+    "Artificial Intelligence"
   ],
+  "niche": "Language Technology",
   "thesis": {
     "problem": "Free machine translation is tuned for gist, not for text a company would put its name to. Businesses working across European languages either paid human translators for every contract, support reply and manual, or accepted output that read as translated — and most general-purpose engines would not let regulated firms keep the text off a third party's training data.",
     "solution": "DeepL trains its own translation and writing models rather than fine-tuning someone else's, and sells them to businesses as an API and as apps that plug into the tools staff already use. Enterprise contracts cover data handling and glossaries so that terminology stays consistent, and the same model line has been extended into writing assistance and spoken translation."
