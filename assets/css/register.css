@@ -39,10 +39,24 @@
   border-radius: 10px; padding: var(--space-4); min-height: 5.5rem;
 }
 .cell__plate img { max-height: 3rem; width: auto; object-fit: contain; }
-.cell__figure { font-size: var(--step-1); }
+/* Flex-wrap, not a plain inline run, and the reason is a real overflow rather
+   than tidiness. register.js writes the figure and its markers as adjacent
+   elements with no whitespace between them — `${valuationLabel}${undisclosed}`
+   — so the browser sees one unbreakable sequence and the cell's min-content
+   becomes the width of "Undisclosed>1bn": about 174px. A grid item cannot
+   shrink below its min-content, so that one card forced its track wider than
+   the 9.5rem minimum and pushed the whole grid past the viewport — the page
+   scrolled sideways by 11px at 375px, 19px at 360px. Letting the marker wrap
+   onto its own line drops min-content to the longest single token and the
+   overflow goes with it. The gap replaces the markers' old margin-left, so
+   spacing is unchanged when everything does fit on one line. */
+.cell__figure {
+  font-size: var(--step-1);
+  display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2);
+}
 .cell__meta { font-size: var(--step--1); color: var(--muted); }
 .cell__aged, .cell__undisclosed {
-  margin-left: var(--space-2); padding: 0 var(--space-2); border-radius: 4px;
+  padding: 0 var(--space-2); border-radius: 4px;
   font-size: var(--step--1); color: var(--amber);
   border: 1px solid color-mix(in srgb, var(--amber) 45%, transparent);
 }

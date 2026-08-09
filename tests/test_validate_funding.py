@@ -187,6 +187,72 @@ def test_a_currency_with_no_valuation_under_it_is_rejected(week):
 
 # --- shape discipline -------------------------------------------------------
 
+# --- a conflicting figure, recorded rather than reconciled ------------------
+
+A_NOTE = {
+    "text": "€35m is the company's own figure; the trade press reports €30m.",
+    "source": {
+        "publication": "Sifted",
+        "title": "Company raises €30m",
+        "url": "https://sifted.eu/articles/x/",
+        "publishedOn": "2026-07-23",
+    },
+}
+
+
+def test_a_note_carrying_the_other_figure_is_valid(week):
+    week["more"][0]["note"] = A_NOTE
+    assert validate_week(week) == []
+
+
+def test_a_note_must_carry_its_own_source(week):
+    """The point of the note is that the *other* figure is as traceable as the
+    published one — a bare sentence would make it less so, not more."""
+    week["more"][0]["note"] = {"text": "The trade press reports €30m."}
+    assert any("note is missing source" in e for e in validate_week(week))
+
+
+def test_a_notes_source_is_held_to_the_same_standard(week):
+    week["more"][0]["note"] = {**A_NOTE,
+                               "source": {**A_NOTE["source"], "publication": "Some Blog"}}
+    assert any("note.source publication not on the allowlist" in e
+               for e in validate_week(week))
+    week["more"][0]["note"] = {**A_NOTE,
+                               "source": {**A_NOTE["source"], "url": "not a url"}}
+    assert any("note.source.url must be an absolute" in e for e in validate_week(week))
+
+
+def test_an_empty_note_is_rejected(week):
+    week["more"][0]["note"] = {**A_NOTE, "text": "  "}
+    assert any("note.text must be a non-empty string" in e for e in validate_week(week))
+
+
+def test_the_moss_round_publishes_the_companys_own_figure_with_the_disagreement():
+    """The register publishes Moss's €35m for its own round and records the
+    press's €30m beside it. The round-up has to reach the same answer, or the
+    same site states two different figures for one round."""
+    record = json.loads((WEEKS / "2026-W32.json").read_text(encoding="utf-8"))
+    moss = next(r for r in record["lead"] if r["company"] == "Moss")
+    assert moss["amount"] == 35
+    assert moss["source"]["publication"] == "Company press release"
+    assert "30m" in moss["note"]["text"]
+    assert moss["note"]["source"]["publication"] == "Sifted"
+    assert "€35m" in moss["text"] and "€30m" not in moss["text"]
+
+
+def test_the_register_and_the_roundup_agree_on_moss():
+    """The check that would have caught this: the two datasets must not state
+    different figures for the same round."""
+    register = json.loads(
+        (WEEKS.parent / "companies" / "moss.json").read_text(encoding="utf-8"))
+    series_c = next(r for r in register["rounds"] if r["stage"] == "Series C")
+    record = json.loads((WEEKS / "2026-W32.json").read_text(encoding="utf-8"))
+    moss = next(r for r in record["lead"] if r["company"] == "Moss")
+    assert moss["amount"] == series_c["amount"]
+    assert moss["currency"] == series_c["currency"]
+    assert moss["valuation"] == series_c["postMoney"]
+
+
 def test_a_misspelled_optional_field_is_rejected_by_name(week):
     week["more"][0]["valuationCurency"] = "EUR"
     assert any("unknown field 'valuationCurency'" in e for e in validate_week(week))

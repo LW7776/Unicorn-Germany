@@ -101,6 +101,21 @@
 .roundup__date { font-family: var(--font-mono); white-space: nowrap; }
 .roundup__empty { margin: 0; color: var(--muted); font-size: var(--step--1); }
 
+/* A conflicting figure for the same round. Amber, because DESIGN.md reserves
+   amber for aged and disputed signals and the register's own `disputed` marker
+   already uses it — a reader who has met one has met the other. */
+.roundup__note {
+  display: block; font-size: var(--step--1); color: var(--muted);
+  padding: var(--space-2) var(--space-3);
+  border-left: 2px solid color-mix(in srgb, var(--amber) 55%, transparent);
+  background: var(--panel);
+}
+.roundup__note-badge {
+  color: var(--amber); text-transform: uppercase;
+  letter-spacing: .12em; font-size: var(--step--1); margin-right: var(--space-2);
+}
+.roundup__note-text { color: var(--ink); }
+
 /* A company that is also in the register. A quiet inline marker, not a badge:
    it qualifies the name rather than competing with the figure beside it. */
 .roundup__tracked {

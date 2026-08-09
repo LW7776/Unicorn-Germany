@@ -40,6 +40,21 @@ def test_no_valuation_means_no_label_rather_than_a_dash():
     assert derive_round(a_round())["valuationLabel"] is None
 
 
+def test_a_note_gets_its_own_dated_label():
+    """The conflicting figure's citation is dated the same way the published
+    one is, so the two are equally traceable on the page."""
+    derived = derive_round(a_round(note={
+        "text": "The trade press reports €30m.",
+        "source": {"publication": "Sifted", "title": "t",
+                   "url": "https://sifted.eu/x/", "publishedOn": "2026-08-05"},
+    }))
+    assert derived["note"]["source"]["publishedLabel"] == "5 Aug 2026"
+
+
+def test_a_round_with_no_note_carries_no_note_key():
+    assert "note" not in derive_round(a_round())
+
+
 def test_founders_are_joined_for_the_owners_sentence():
     assert format_names(["A"]) == "A"
     assert format_names(["A", "B"]) == "A and B"

@@ -172,9 +172,30 @@ Every round in either list:
     "title": "...",
     "url": "https://...",
     "publishedOn": "2026-07-23"
+  },
+  "note": {                          // optional: a conflicting figure, recorded
+    "text": "€35m is the company's own figure; the trade press reports €30m.",
+    "source": { /* same four fields, for the *other* figure */ }
   }
 }
 ```
+
+### When sources disagree about a round
+
+They do, often: a company announces €35m and the trade press reports €30m. Resolve it the way
+the register already does — **publish the company's own figure for its own round, cite the
+company's own announcement, and record the disagreement in `note` with its own link.** Do not
+silently pick one. The `note` carries a full source of its own, held to the same allowlist and
+date rules, so the figure you did *not* publish is exactly as traceable as the one you did.
+
+Moss's W32 Series C is the worked example: `data/funding/2026-W32.json` publishes €35m sourced
+to Moss's own release, with Sifted's €30m in the note — and `data/companies/moss.json` publishes
+the same €35m with the same disagreement in its `disputed` field. **If a round appears in both
+datasets, they must not state different figures.** A test asserts exactly that for Moss.
+
+The weekly job never writes a `note`: it cites one article per round, so it cannot see a
+disagreement. Spotting one is a review job, which is why the pull request asks you to open every
+source link.
 
 **The sourcing standard is lighter than the register's, and the site says so.** Every round needs
 a real link, a real publication date, an allowlisted publication, and figures a source states.

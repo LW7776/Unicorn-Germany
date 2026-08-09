@@ -8,7 +8,7 @@
    "company": "Moss",
    "hq": "Berlin",
    "stage": "Series C",
-   "amount": 30,
+   "amount": 35,
    "currency": "EUR",
    "approximate": false,
    "valuation": 1000,
@@ -23,12 +23,21 @@
     "Portage",
     "Cherry Ventures"
    ],
-   "text": "Another one. Moss closed a €30m Series C led by Portage at a valuation north of €1bn — Europe's newest unicorn on the day Sifted wrote it up, and Germany's newest on any reading. Ante Spittler and his three co-founders started in 2019 selling corporate cards to mid-market finance teams; the company now sits between those teams and every euro that leaves the business, with the receipt, the approval and the ERP line attached to each one. That is a boring, enormous job, and Berlin's fintech bench keeps producing companies willing to do it rather than chasing the consumer app. Moss is already in this register — its entry carries this round and the crossing it produced.",
+   "text": "Another one. Moss closed a €35m Series C led by Portage at a valuation north of €1bn — Europe's newest unicorn on the day Sifted wrote it up, and Germany's newest on any reading. Ante Spittler and his three co-founders started in 2019 selling corporate cards to mid-market finance teams; the company now sits between those teams and every euro that leaves the business, with the receipt, the approval and the ERP line attached to each one. That is a boring, enormous job, and Berlin's fintech bench keeps producing companies willing to do it rather than chasing the consumer app. Moss is already in this register — its entry carries this round and the crossing it produced.",
    "source": {
-    "publication": "EU-Startups",
-    "title": "Berlin-based Moss hits unicorn status after closing €30 million Series C to expand its Finance AI suite",
-    "url": "https://www.eu-startups.com/2026/08/berlin-based-moss-hits-unicorn-status-after-closing-e30-million-series-c-to-expand-its-finance-ai-suite/",
+    "publication": "Company press release",
+    "title": "Moss hits a €1 billion valuation and bets on Finance AI shaped by finance teams",
+    "url": "https://www.getmoss.com/magazine/moss-series-c",
     "publishedOn": "2026-08-05"
+   },
+   "note": {
+    "text": "€35m is Moss's own figure for its own round. Sifted, EU-Startups and Gründerszene all report the round as €30m. The register publishes the same €35m, with the same disagreement recorded.",
+    "source": {
+     "publication": "Sifted",
+     "title": "Fintech startup Moss crowned Europe’s newest unicorn with €30m Series C",
+     "url": "https://sifted.eu/articles/moss-unicorn-series-c/",
+     "publishedOn": "2026-08-05"
+    }
    }
   },
   {

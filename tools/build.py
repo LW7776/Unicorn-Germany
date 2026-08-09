@@ -369,7 +369,7 @@ def derive_round(entry):
         format_amount(valuation, entry.get("valuationCurrency") or entry["currency"], False)
         if valuation is not None else None)
     source = entry["source"]
-    return {
+    derived = {
         **entry,
         "amountLabel": amount_label,
         "valuationLabel": valuation_label,
@@ -377,6 +377,17 @@ def derive_round(entry):
         "investorsLabel": format_names(entry.get("investors")),
         "source": {**source, "publishedLabel": _day_label(source["publishedOn"])},
     }
+    # A conflicting figure recorded beside the published one, with its own
+    # citation — the round-up's counterpart to the register's `disputed`, and
+    # dated the same way so the two figures are equally traceable.
+    note = entry.get("note")
+    if note:
+        derived["note"] = {
+            **note,
+            "source": {**note["source"],
+                       "publishedLabel": _day_label(note["source"]["publishedOn"])},
+        }
+    return derived
 
 
 def derive_week(record):

@@ -51,7 +51,8 @@ WEEK_ID = re.compile(r"^(\d{4})-W(\d{2})$")
 # validate.py checks ROUND_KEYS by name: a misspelled optional field is
 # indistinguishable from an absent one, and silently renders nothing.
 ROUND_KEYS = {"id", "company", "hq", "stage", "amount", "currency", "approximate",
-              "valuation", "valuationCurrency", "founders", "investors", "source"}
+              "valuation", "valuationCurrency", "founders", "investors", "source",
+              "note"}
 LEAD_KEYS = ROUND_KEYS | {"text"}
 SOURCE_KEYS = {"publication", "title", "url", "publishedOn"}
 WEEK_KEYS = {"week", "start", "end", "lead", "more"}
@@ -215,6 +216,37 @@ def _validate_round(errors, label, entry, start, is_lead):
                 f"prose is an additional round; move it to `more`")
 
     _validate_source(errors, label, entry.get("source"), start)
+    _validate_note(errors, label, entry.get("note"), start)
+
+
+def _validate_note(errors, label, note, start):
+    """A second, conflicting figure for the same round, recorded rather than
+    reconciled.
+
+    Sources disagree about a round more often than is comfortable: a company
+    announces €35m and the trade press reports €30m, because they are counting
+    different things or working from different briefings. The register already
+    settled how to handle that — publish the company's own figure for its own
+    round, and record the disagreement beside it with its own citation — and the
+    round-up has to reach the same answer, or the same site states two different
+    numbers for one round and a reader concludes something is broken.
+
+    So a note is not free text. It carries its own source, checked exactly like
+    the round's: allowlisted, dated, and a URL a reader can open. The whole point
+    is that the *other* figure is as traceable as the published one.
+    """
+    if note is None:
+        return
+    if not isinstance(note, dict):
+        errors.append(f"{label}.note must be an object with text and source")
+        return
+    for key in sorted({"text", "source"} - set(note)):
+        errors.append(f"{label}.note is missing {key}")
+    for key in sorted(set(note) - {"text", "source"}):
+        errors.append(f"{label}.note: unknown field {key!r}")
+    _require_string(errors, f"{label}.note.text", note.get("text"))
+    if "source" in note:
+        _validate_source(errors, f"{label}.note", note.get("source"), start)
 
 
 def validate_week(record):

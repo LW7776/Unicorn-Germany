@@ -58,6 +58,25 @@ function valuationClause(round) {
     : "";
 }
 
+/** A conflicting figure for the same round, shown rather than reconciled.
+
+    Sources disagree about round sizes more often than is comfortable — a
+    company announces one number and the trade press reports another. The
+    register's answer is `disputed`: publish the company's own figure for its
+    own round and put the disagreement next to it, in amber, with its own link.
+    This is the same answer in the same colour, because a reader who sees €35m
+    here and €35m on the company card, with both noting the €30m press figure,
+    learns something true; a reader who sees €35m in one place and €30m in the
+    other just concludes the site is broken. */
+function noteBadge(note) {
+  if (!note) return "";
+  return `<span class="roundup__note">
+    <span class="roundup__note-badge">disputed</span>
+    <span class="roundup__note-text">${escapeHtml(note.text)}</span>
+    ${sourceCite(note.source)}
+  </span>`;
+}
+
 function leadCard(round, slugByName) {
   const company = escapeHtml(round.company);
   // hq and stage are optional: a weekly recap line often gives a figure and a
@@ -79,6 +98,7 @@ function leadCard(round, slugByName) {
         <p class="lead__figure">${escapeHtml(round.amountLabel)}${valuationClause(round)}</p>
         ${meta ? `<p class="lead__meta">${meta}</p>` : ""}
       </header>
+      ${noteBadge(round.note)}
       <p class="prose lead__text">${escapeHtml(round.text)}</p>
       ${founders}${investors}
       <p class="lead__source">${sourceCite(round.source)}</p>
@@ -99,6 +119,7 @@ function moreItem(round, slugByName) {
       <span class="roundup__line">${company}${from} secured
         <span class="roundup__figure">${escapeHtml(round.amountLabel)}</span>${valuationClause(round)}${registerLink(round.company, slugByName)}</span>
       <span class="roundup__meta">${sourceCite(round.source)}</span>
+      ${noteBadge(round.note)}
     </li>`;
 }
 
