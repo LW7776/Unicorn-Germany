@@ -55,21 +55,19 @@ CITY_COORDS = {
     # every other city — no pixel value in data/geo/germany.json is placed by
     # hand.
     "Alzenau": (50.086, 9.073),
-    # New York (Dash0's hq.city) is the register's first non-German entry.
-    # Included for completeness — every hq.city a published record uses
-    # should have a coordinate on file rather than silently fall back to
-    # "Not shown on the map" — but this projection is built to fit Germany's
-    # own bounding box (build_projection, above), and a city roughly 6,500 km
-    # west of it projects a long way outside the 0-1000 x 0-1400 viewBox as a
-    # result: the map clips its content to the viewBox by default, so the
-    # bubble does not actually appear on the rendered map even though it is
-    # "known" rather than "unplaced". That is a real limitation of reusing
-    # one small-area projection for a point nowhere near it, not a bug in the
-    # projection itself, and it is not papered over here — see
-    # data/geo/README.md. Coordinates read off OpenStreetMap's Nominatim
-    # record for the city (ODbL, © OpenStreetMap contributors): city=New York
-    # City, state=New York, country=USA -> lat 40.7127281, lon -74.0060152.
-    "New York": (40.713, -74.006),
+    # Deliberately NOT here: New York (Dash0's hq.city). This projection is
+    # built to fit Germany's own bounding box (build_projection, above), so a
+    # city roughly 6,500 km west of it projects nowhere near the 0-1000 x
+    # 0-1400 viewBox — a prior version of this file added it anyway, and the
+    # bubble simply didn't render, clipped by the SVG's own viewBox, with
+    # nothing telling a reader why. A map of Germany cannot place a New York
+    # headquarters, so Dash0 belongs in "Not shown on the map" like any other
+    # unplaceable city, and this dict only ever holds cities that actually
+    # fall inside Germany's projected bounds. assets/js/map.js enforces that
+    # rule at render time too (a city whose projected point falls outside the
+    # viewBox is treated as unplaced even if it has an entry here), so this
+    # comment is a should-not-recur note, not the only thing standing between
+    # a future entry and a silently invisible bubble. See data/geo/README.md.
 }
 
 

@@ -9,6 +9,22 @@ const MIN_HIT_TARGET_PX = 44;
 // Used only if the SVG can't be measured (e.g. rendered with zero width);
 // matches this file's previous fixed-radius behaviour as a safety net.
 const FALLBACK_HIT_RADIUS = 65;
+// Fallback only for a viewBox string that's missing or malformed — matches
+// tools/fetch_geo.py's own VIEW_W/VIEW_H. Not used on any real, current
+// data/geo/germany.json, which always carries "0 0 1000 1400".
+const FALLBACK_VIEWBOX = { minX: 0, minY: 0, width: 1000, height: 1400 };
+
+/** Parses an SVG viewBox string ("minX minY width height") into its four
+    numbers. Reused for both the bounds check below and the hit-target scale
+    calculation further down, so the two can never read a different box —
+    and so neither one hard-codes 1000x1400, which would silently go stale
+    if data/geo/germany.json were ever regenerated at another size. */
+function parseViewBox(viewBox) {
+  const parts = (viewBox || "").trim().split(/\s+/).map(Number);
+  if (parts.length !== 4 || parts.some((n) => !Number.isFinite(n))) return FALLBACK_VIEWBOX;
+  const [minX, minY, width, height] = parts;
+  return { minX, minY, width, height };
+}
 
 /** company.hq.city comes from data/companies.json, an automated pipeline's
     output — untrusted the same as every other field rendered from it. Every
@@ -20,12 +36,34 @@ export async function renderMap(container, companies, { onSelectCity }) {
   if (!response.ok) throw new Error(`data/geo/germany.json ${response.status}`);
   const geo = await response.json();
   const geoCities = geo.cities || {};
+  const viewBox = parseViewBox(geo.viewBox);
+
+  // A city counts as placeable only if this file has coordinates for it AND
+  // those coordinates actually fall inside the map's own viewBox. The two
+  // used to be the same check, but a projection built for Germany's bounding
+  // box can produce a coordinate for a real, named city (e.g. Dash0's New
+  // York) that lands thousands of units outside it — "has an entry" is not
+  // the same guarantee as "is on the map". The SVG clips anything outside
+  // its viewBox by default, so treating an out-of-bounds point as `known`
+  // would silently drop its bubble with no visible trace anywhere on the
+  // page — worse than the honest "Not shown on the map" fallback this check
+  // routes it to instead, indistinguishable here from a city this file never
+  // got coordinates for at all.
+  function isPlaceable(city) {
+    const coords = geoCities[city];
+    if (!coords) return false;
+    const [x, y] = coords;
+    return x >= viewBox.minX && x <= viewBox.minX + viewBox.width &&
+      y >= viewBox.minY && y <= viewBox.minY + viewBox.height;
+  }
 
   // A company with no hq at all, or an hq with no city, isn't the same as a
   // company whose city just isn't on the map — it's missing data, and the
   // site's rule is that missing data is shown, never silently dropped. Count
   // it separately from `unplaced` (which is a real, named city this file
-  // just doesn't have coordinates for).
+  // either has no coordinates for, or whose coordinates fall outside the
+  // viewBox — both render identically, as "not shown", because both mean
+  // the same thing to a reader: this map cannot place this city).
   let missingLocation = 0;
   const counts = companies.reduce((acc, c) => {
     const city = c.hq?.city;
@@ -33,8 +71,8 @@ export async function renderMap(container, companies, { onSelectCity }) {
     acc[city] = (acc[city] || 0) + 1;
     return acc;
   }, {});
-  const known = Object.entries(counts).filter(([city]) => geoCities[city]);
-  const unplaced = Object.entries(counts).filter(([city]) => !geoCities[city]);
+  const known = Object.entries(counts).filter(([city]) => isPlaceable(city));
+  const unplaced = Object.entries(counts).filter(([city]) => !isPlaceable(city));
   const max = Math.max(1, ...known.map(([, n]) => n));
 
   // Render the outline (and an empty <svg>) first so its actual rendered CSS
@@ -47,9 +85,8 @@ export async function renderMap(container, companies, { onSelectCity }) {
       ${geo.outline ? `<path class="map__outline" d="${escapeHtml(geo.outline)}"/>` : ""}
     </svg>`;
   const svg = container.querySelector(".map__svg");
-  const viewBoxWidth = Number((geo.viewBox || "").split(" ")[2]) || 1000;
   const renderedWidth = svg.getBoundingClientRect().width;
-  const scale = renderedWidth / viewBoxWidth;
+  const scale = renderedWidth / viewBox.width;
   // The 44px target converted from CSS pixels into *this render's* viewBox
   // units. Unlike a fixed viewBox-unit radius, this actually tracks 44px at
   // whatever width the SVG is currently drawn at, instead of only being

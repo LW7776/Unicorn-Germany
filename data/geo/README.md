@@ -26,29 +26,38 @@
   projected pixel space with tolerance `epsilon = 3.5px`, after splitting the
   closed ring into two open chains (plain RDP degenerates on a closed ring's
   zero-length start/end baseline). The mainland ring's raw 2,373 points
-  simplify to 330 points. Output file: `data/geo/germany.json`, 4,866 bytes.
+  simplify to 330 points. Output file: `data/geo/germany.json`, 4,986 bytes.
 - **Regeneration**: `python3 tools/fetch_geo.py`. The ~14 MB source download
   is never committed — only the derived `germany.json` is. If the source is
   unreachable, the script raises and leaves the committed file untouched
   rather than writing a degraded one; this run did not need that path.
-- **New York** (Dash0's `hq.city`) was added to `CITY_COORDS` and projected
-  by the same `build_projection` as every other city, per its coordinates
-  read from OpenStreetMap's Nominatim record (city=New York City,
-  state=New York, country=USA: lat 40.7127281, lon -74.0060152). The result,
-  confirmed both in this file and by reading `.map__pin`'s live `cx`/`cy` off
-  the rendered page, is `[-7972.4, 2357.3]` — a long way outside the
-  `0 0 1000 1400` viewBox, because this projection is fit to Germany's own
-  bounding box and a point roughly 6,500 km to its west falls nowhere near
-  it. This is a real, confirmed regression, not a hypothetical one:
-  `assets/js/map.js` places a bubble for any city present in this file's
-  `cities` object without checking it falls inside the viewBox, and the
-  browser applies `overflow: hidden` to the map's `<svg>` (confirmed via
-  `getComputedStyle` on the live page), which clips that bubble to nothing.
-  Before this entry existed, Dash0 fell into `unplaced` and the page printed
-  "Not shown on the map: New York (1)" — a visible, honest admission. Now it
-  is `known` (New York has coordinates on file) but invisible, so the page
-  renders **no note at all** and the company simply isn't on the map, with
-  nothing telling a reader that. That is worse than the fallback it
-  replaced. Left as-is pending a decision on how (or whether) the register
-  should place a non-German HQ on a map of Germany at all; see
-  `docs/CANDIDATES.md`'s Dash0 note.
+- **Only cities inside Germany's projected bounds belong in `CITY_COORDS`.**
+  This projection is built to fit Germany's own bounding box
+  (`build_projection`, above); it has no sensible answer for a point far
+  outside it. A city outside Germany — Dash0's New York headquarters is the
+  case that exposed this — projects to a coordinate thousands of units past
+  the `0 0 1000 1400` viewBox, and an SVG clips anything outside its viewBox
+  by default, so a bubble placed there simply doesn't render, on any city,
+  every time.
+
+  This was tried once: New York was added to `CITY_COORDS`, projected to
+  `[-7972.4, 2357.3]`, and confirmed live (via `getComputedStyle` on the
+  rendered `<svg>`, and by reading `.map__pin`'s actual `cx`/`cy` off the
+  page) to be clipped to nothing. Worse, because `assets/js/map.js` used to
+  treat "has an entry in this file" as the whole test for placeable, New York
+  counted as `known` rather than `unplaced` — so it dropped out of the "Not
+  shown on the map" note too, and the page gave no indication anywhere that
+  Dash0 was missing. That was a regression on the honest fallback it
+  replaced, and it has been reverted: New York is not in `CITY_COORDS`, and
+  Dash0 is shown in the "Not shown on the map" note, same as any other HQ
+  this map cannot place.
+
+  `assets/js/map.js` now enforces the rule at render time as well as this
+  file honouring it by convention: `renderMap` parses the live `viewBox` and
+  treats a city as placeable only if its coordinates fall inside it, so an
+  out-of-bounds entry — however it got into this file — is routed to the
+  "Not shown" note exactly like a missing one, and cannot silently vanish a
+  company's bubble again. See `docs/CANDIDATES.md`'s Dash0 note for the
+  register-level reasoning (rule 1 is satisfied by founding, not HQ, so
+  Dash0 stays in the register with a foreign HQ that this map, by design,
+  cannot draw).
