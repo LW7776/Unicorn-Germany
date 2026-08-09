@@ -19,7 +19,10 @@ A company qualifies only if all three hold:
 2. **Currently independent and private.** Not IPO'd, not acquired, not insolvent.
 3. **A publicly reported post-money valuation of at least $1B or €1B**, in the currency the
    source used. Either threshold qualifies, and a company's own figures are never converted
-   between currencies.
+   between currencies. The register also publishes valuations struck by a secondary sale of
+   existing shares rather than a primary round (Trade Republic, n8n) — a secondary prices the
+   company too, just not by new capital entering it, and every such case is labelled as a
+   secondary rather than left to read as a post-money it isn't.
 
 ## Monthly, automatic
 

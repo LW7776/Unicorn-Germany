@@ -58,7 +58,8 @@
         "Korelya Capital",
         "White Star Capital",
         "HV Capital",
-        "Picus Capital"
+        "Picus Capital",
+        "Keen Venture Partners"
       ],
       "source": "s2",
       "disputed": {
@@ -79,16 +80,9 @@
       "current": true
     },
     {
-      "name": "Andreas Wixler",
-      "role": "Co-founder"
-    },
-    {
       "name": "Max Beyer",
-      "role": "Co-founder"
-    },
-    {
-      "name": "Hans-Peter Ringer",
-      "role": "Co-founder"
+      "role": "Co-founder & CFO until December 2024",
+      "current": false
     },
     {
       "name": "Max-Josef Meier",
@@ -104,7 +98,8 @@
     "Korelya Capital",
     "White Star Capital",
     "HV Capital",
-    "Picus Capital"
+    "Picus Capital",
+    "Keen Venture Partners"
   ],
   "sources": [
     {
@@ -138,6 +133,22 @@
       "url": "https://portageinvest.com/blog/finn-raises-e140-million-and-achieves-unicorn-status/",
       "publishedOn": "2026-06-24",
       "quote": "FINN is Germany’s leading car subscription platform. Founded in Munich in 2019, the company enables customers to subscribe to vehicles from more than 25 brands entirely online, with insurance, financing, registration, taxes, and maintenance all included in one monthly payment."
+    },
+    {
+      "id": "s5",
+      "publication": "Company press release",
+      "title": "FINN sammelt 140 Millionen Euro ein und erreicht Unicorn-Status",
+      "url": "https://www.finn.com/de-DE/presse/series-d",
+      "publishedOn": "2026-06-24",
+      "quote": "darunter Planet First Partners, Korelya Capital, White Star Capital, HV Capital, Picus Capital und Keen Venture Partners."
+    },
+    {
+      "id": "s6",
+      "publication": "Company press release",
+      "title": "CFO und Co-Founder Max Beyer verlässt FINN auf eigenen Wunsch",
+      "url": "https://www.finn.com/de-DE/presse/max-beyer-ruecktritt",
+      "publishedOn": "2024-12-20",
+      "quote": "Beyer verlässt das Unternehmen am 31.12.2024 auf eigenen Wunsch, um nun mehr seiner Zeit seinem kürzlich geborenen Nachwuchs zu widmen."
     }
   ]
 }

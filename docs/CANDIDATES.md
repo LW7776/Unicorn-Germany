@@ -5,14 +5,12 @@
 it. It is not a shortlist or a backlog, and it is the only place a reader can check what was
 looked at and why a name is, or isn't, on the register.
 
-**It is not guaranteed to be complete.** Two kinds of gap are possible, and both are worth
-naming rather than implying away. A company can simply not have been looked at yet — the
-sweeps recorded near the end of this file are an attempt to close that gap, not proof it is
-fully closed. And this file's write-up can lag the register it describes: as of the review
-date below, **n8n** and **Stark** are published — `data/companies/n8n.json` and
-`data/companies/stark.json` carry full sourcing — without a matching row here yet. Where the
-two disagree, `data/companies/` is the current truth and this file is the reasoning trail
-behind everything else in it.
+**It is not guaranteed to be complete.** A company can simply not have been looked at yet —
+the sweeps recorded near the end of this file are an attempt to close that gap, not proof it
+is fully closed — and this file's own write-up can in principle lag the register it
+describes, if a record is ever added faster than its reasoning is written down. Where the two
+would ever disagree, `data/companies/` is the current truth and this file is the reasoning
+trail behind everything else in it.
 
 **Exclusions are as deliberate as inclusions.** A name dropping off this list is usually a
 fact — an IPO, an acquisition, an insolvency, a markdown, a headquarters that moved — and
@@ -157,7 +155,7 @@ Notes carried into the records:
   source in dollars. `postMoneySource` exists because 1KOMMA5°'s own release states the
   equity raised in one paragraph and the valuation in another. Neither relaxes a check.
 
-## Include — written (batch 4, final)
+## Include — written (batch 4)
 
 | Company | HQ | Valuation as reported | Evidence |
 |---|---|---|---|
@@ -165,9 +163,15 @@ Notes carried into the records:
 | **FINN** | Munich | over €1bn, Jun 2026, Series D | [Investor press release (Portage, lead)](https://portageinvest.com/blog/finn-raises-e140-million-and-achieves-unicorn-status/) |
 | **CMBlu Energy** | Alzenau | over €1bn, Apr 2026, Series C initial close | [Company press release](https://www.cmblu.com/press-media/cmblu-surpasses-eu1b-unicorn-threshold-with-eu50m-initial-close-of-series-c-defining-baseload-infrastructure-for-ai-and-data-centers) |
 | **Dash0** | New York (founded in Germany) | $1bn, Mar 2026, Series B | [Company press release](https://www.dash0.com/blog/dash0-raises-usd110m-series-b) |
+| **n8n** | Berlin | $5.2bn, May 2026, secondary | [Tech.eu](https://tech.eu/2026/05/12/n8n-s-valuation-doubles-to-5-2bn-following-sap-strategic-investment/) |
+| **Stark** | Berlin | €3.5bn, Jun 2026, funding round | [Tech.eu](https://tech.eu/2026/06/23/stark-bags-eur500-million-in-new-funding/) |
 
-Four, not the six or seven the queue implied. Two of the names this batch was sent to write
-did not survive contact with their own sources; both are below.
+Six published here, from two different routes. Flix, FINN, CMBlu Energy and Dash0 are what
+this batch's own queue produced — four, not the six or seven the queue implied, since two of
+the names it carried did not survive contact with their own sources and are below instead.
+n8n and Stark followed afterward on a direct instruction to add them, outside that queue's
+own research; both were checked against the same three rules as everything else here rather
+than taken on trust, and are written up below alongside the four the queue did produce.
 
 Notes carried into the records:
 
@@ -212,6 +216,27 @@ Notes carried into the records:
   allowlisted page in February as an *in-talks* figure; the record publishes the round that
   closed four weeks later at that price, announced by the company, and keeps the earlier
   report in a `disputed` note.
+- **n8n**'s $5.2bn is set by a secondary share sale, not a priced primary round, and the
+  record labels it as one rather than letting it read as new money: Tech.eu, "SAP's
+  investment in n8n comes courtesy of an n8n secondary share sale, which brings SAP to the
+  n8n cap table for the first time." Rule 3 says "post-money" with no carve-out for this; the
+  register already publishes a secondary elsewhere too (Trade Republic's €12.5bn), always
+  labelled as what it is — see the note added to [UPDATING.md](UPDATING.md#inclusion-rules).
+- **Stark**'s crossing round (Jan 2026, over $1bn) was never announced by the company at all.
+  The register publishes it anyway because an allowlisted source states both the date and the
+  threshold as its own confirmed finding, not a rumour: Sifted, in June 2026, "reached
+  unicorn status in an unannounced January funding round valuing it at more than $1bn" — a
+  figure that traces in turn to Manager Magazin and "a person close to the company," which is
+  why that round carries no amount and no investors on file. **Open question, not resolved:**
+  Bloomberg's own headline for the June 2026 round that made Stark's status public reads "at
+  a €3.2 Billion Valuation," against the €3.5bn Tech.eu and the company itself state for the
+  identical announcement — and Bloomberg's own URL for that piece keeps the slug
+  `...at-3-5-billion-valuation`, so even Bloomberg's headline and its own link disagree.
+  bloomberg.com 403s this crawler and no Wayback capture could be retrieved (rate-limited at
+  every attempt), so the piece itself has not been read and no claim is made about what it
+  says beyond its headline. Recorded here rather than as a `disputed` note on the record,
+  because a conflict between an unread headline and a confirmed figure is not the same kind
+  of thing as a quote that has actually been read and disagrees.
 
 ## Cannot be established
 
@@ -252,7 +277,7 @@ for want of standing.
 | **Lilium** | Insolvent and wound down; TechCrunch's October 2025 piece describes it in the past tense as the "defunct electric aircraft startup" whose technology has ended up at Archer. Fails rule 2. | [TechCrunch, 2025-10-16](https://techcrunch.com/2025/10/16/defunct-electric-aircraft-startup-liliums-tech-lives-on-over-at-archer/) |
 | **Cognigy** | Acquired by NiCE — "US customer service giant NICE has paid almost $1bn to acquire Düsseldorf-based Cognigy in what is Europe's biggest AI acquisition to date". Fails rule 2, and note the price is *below* the threshold in any case. | [Sifted](https://sifted.eu/articles/cognigy-sells-for-almost-1bn-in-europes-biggest-ai-acquisition-yet), [Tech.eu, 2025-07-28](https://tech.eu/2025/07/28/german-ai-startup-cognigy-hoovered-up-by-us-customer-service-firm-nice/) |
 | **Tier Mobility** | Merged with Dott and the brand retired: "Tier becomes Dott following the merger of the two micromobility companies". No longer a standalone German company. Fails rule 2. | [TechCrunch, 2024-09-30](https://techcrunch.com/2024/09/30/tier-becomes-dott-following-the-merger-of-the-two-micromobility-companies/) |
-| **wefox** | Fails rule 1's headquarters limb, verifiably, and the founding limb is contested rather than established, so there is nothing left to qualify it on. wefox's own imprint gives "wefox Holding AG, Räffelstrasse 26, 8045 Zürich, Switzerland", "[e]ntered in the commercial register of the Canton of Zürich"; its own release of 31 July 2024, datelined Zurich, says "[t]hese two transactions largely complete the announced exit of wefox from the German market"; and its site now lists exactly three businesses — Austria, the Netherlands and Switzerland. The founding limb is all that could save it, and it is contested rather than settled: TechCrunch wrote "Founded out of Berlin in 2015" in July 2022 but "founded in 2014" in its own December 2019 piece, and wefox's own boilerplate says only "Founded in 2015", never where. The $4.5bn of May 2023 is real and sourced (TechCrunch, 2023-05-16: "Wefox managed to maintain the same valuation of $4.5 billion") but moot while rule 1 fails. Note separately that the €550m Bloomberg figure of 2024 settles nothing either way: it is an enterprise value for an offer the board rejected, so it is neither a post-money nor a completed transaction. **Settled by:** a primary record — a Handelsregister entry or a company statement — of where wefox was originally incorporated, which would revisit this against rule 1's founding limb rather than its headquarters. | [wefox imprint](https://www.wefox.com/imprint), [wefox exit release, 2024-07-31](https://www.wefox.com/press/wefox-successfully-completes-two-transactions-to-exit-the-german-market), [TechCrunch, 2022-07-11](https://techcrunch.com/2022/07/11/wefox-grabs-400m-at-4-5b-valuation-to-buck-the-insurtech-downturn-trend/), [TechCrunch, 2019-12-10](https://techcrunch.com/2019/12/10/wefox-unicorn/), [TechCrunch, 2023-05-16](https://techcrunch.com/2023/05/16/wefox-secures-new-funding-at-45-billion-valuation-as-it-aims-for-profitability/) |
+| **wefox** | Fails rule 1's headquarters limb, verifiably, and the founding limb is contested rather than established, so there is nothing left to qualify it on. wefox's own imprint gives "wefox Holding AG, Räffelstrasse 26, 8045 Zürich, Switzerland", "[e]ntered in the commercial register of the Canton of Zürich"; its own release of 31 July 2024, datelined Zurich, says "[t]hese two transactions largely complete the announced exit of wefox from the German market"; and its site now lists exactly three businesses — Austria, the Netherlands and Switzerland. The founding limb is all that could save it, and it is contested rather than settled: TechCrunch wrote "Founded out of Berlin in 2015" in July 2022, but its own March 2019 piece has co-founder Julian Teicke describing the company's revenue "since being founded in 2014" — a different year, from the company's own CEO, in a different TechCrunch piece than the one this row previously (and wrongly) cited — and wefox's own boilerplate says only "Founded in 2015", never where. The $4.5bn of May 2023 is real and sourced (TechCrunch, 2023-05-16: "Wefox managed to maintain the same valuation of $4.5 billion") but moot while rule 1 fails. Note separately that the [€550m Bloomberg figure of 2024](https://www.bloomberg.com/news/articles/2024-06-13/mubadala-favors-selling-fintech-wefox-against-founders-wishes) settles nothing either way: it is an enterprise value for an offer the board rejected, so it is neither a post-money nor a completed transaction. **Settled by:** a primary record — a Handelsregister entry or a company statement — of where wefox was originally incorporated, which would revisit this against rule 1's founding limb rather than its headquarters. | [wefox imprint](https://www.wefox.com/imprint), [wefox exit release, 2024-07-31](https://www.wefox.com/press/wefox-successfully-completes-two-transactions-to-exit-the-german-market), [TechCrunch, 2022-07-11](https://techcrunch.com/2022/07/11/wefox-grabs-400m-at-4-5b-valuation-to-buck-the-insurtech-downturn-trend/), [TechCrunch, 2019-03-05](https://techcrunch.com/2019/03/05/wefox-group-the-berlin-based-insurance-tech-startup-raises-125m-series-b-led-by-mubadala/), [TechCrunch, 2023-05-16](https://techcrunch.com/2023/05/16/wefox-secures-new-funding-at-45-billion-valuation-as-it-aims-for-profitability/), [Bloomberg, 2024-06-13](https://www.bloomberg.com/news/articles/2024-06-13/mubadala-favors-selling-fintech-wefox-against-founders-wishes) |
 
 ## How the list was swept for names nobody had considered
 
@@ -275,11 +300,9 @@ figure but a company that was never looked at.
    from below: **Vivid** (excluded above, €775m), **Proxima Fusion** (since crossed;
    published in batch 3) and **Finn** (since crossed; published in this batch).
 
-Everything those sweeps produced now appears somewhere above with a verdict: 25 rows carry
-**include**, 19 carry **exclude**, and 13 carry **cannot be established** — every row settled,
-none left as a placeholder. The register itself currently publishes 27 companies; the two not
-yet written up as a row here (**n8n**, **Stark**) are named at the top of this file instead,
-so the gap between what's published and what's written up is disclosed rather than silent.
+Everything those sweeps produced now appears somewhere above with a verdict: 27 rows carry
+**include**, matching the register's own count company for company, 19 carry **exclude**, and
+13 carry **cannot be established** — every row settled, none left as a placeholder.
 
 One row above carries no headquarters city, and deliberately: Marvel Fusion, instagrid and
 Black Semiconductor are excluded from the register on rule 3, so no page stating their

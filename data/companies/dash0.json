@@ -85,7 +85,27 @@
   "founders": [
     {
       "name": "Mirko Novakovic",
-      "role": "Founder & CEO",
+      "role": "CEO and Co-Founder",
+      "current": true
+    },
+    {
+      "name": "Ben Blackmore",
+      "role": "Co-Founder",
+      "current": true
+    },
+    {
+      "name": "Miel Donkers",
+      "role": "Co-Founder",
+      "current": true
+    },
+    {
+      "name": "Marcel Birkner",
+      "role": "Co-Founder",
+      "current": true
+    },
+    {
+      "name": "Michele Mancioppi",
+      "role": "Co-Founder",
       "current": true
     }
   ],
@@ -138,6 +158,14 @@
       "url": "https://sifted.eu/articles/dash0-targets-1bn-valuation-with-balderton-led-funding-round-reports-say",
       "publishedOn": "2026-02-27",
       "quote": "On Friday, Bloomberg reported the company was in talks with London-based Balderton Capital to lead a fresh round of funding, which would value Dash0 at $1bn, making it the latest European startup to achieve unicorn status."
+    },
+    {
+      "id": "s6",
+      "publication": "Company press release",
+      "title": "Dash0 announces $9.5M seed financing, led by Accel, to simplify observability for developers everywhere",
+      "url": "https://www.dash0.com/blog/dash0-seed-financing",
+      "publishedOn": "2024-11-04",
+      "quote": "Mirko and his co-founders Ben Blackmore, Miel Donkers, Marcel Birkner, and Michele Mancioppi built Dash0 from the ground up on top of these standards to empower developers with an observability framework that is easier to install, integrate, and use than legacy alternatives."
     }
   ]
 }

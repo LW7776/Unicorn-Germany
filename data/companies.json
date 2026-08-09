@@ -1230,7 +1230,27 @@
    "founders": [
     {
      "name": "Mirko Novakovic",
-     "role": "Founder & CEO",
+     "role": "CEO and Co-Founder",
+     "current": true
+    },
+    {
+     "name": "Ben Blackmore",
+     "role": "Co-Founder",
+     "current": true
+    },
+    {
+     "name": "Miel Donkers",
+     "role": "Co-Founder",
+     "current": true
+    },
+    {
+     "name": "Marcel Birkner",
+     "role": "Co-Founder",
+     "current": true
+    },
+    {
+     "name": "Michele Mancioppi",
+     "role": "Co-Founder",
      "current": true
     }
    ],
@@ -1283,6 +1303,14 @@
      "url": "https://sifted.eu/articles/dash0-targets-1bn-valuation-with-balderton-led-funding-round-reports-say",
      "publishedOn": "2026-02-27",
      "quote": "On Friday, Bloomberg reported the company was in talks with London-based Balderton Capital to lead a fresh round of funding, which would value Dash0 at $1bn, making it the latest European startup to achieve unicorn status."
+    },
+    {
+     "id": "s6",
+     "publication": "Company press release",
+     "title": "Dash0 announces $9.5M seed financing, led by Accel, to simplify observability for developers everywhere",
+     "url": "https://www.dash0.com/blog/dash0-seed-financing",
+     "publishedOn": "2024-11-04",
+     "quote": "Mirko and his co-founders Ben Blackmore, Miel Donkers, Marcel Birkner, and Michele Mancioppi built Dash0 from the ground up on top of these standards to empower developers with an observability framework that is easier to install, integrate, and use than legacy alternatives."
     }
    ],
    "display": {
@@ -1294,7 +1322,7 @@
     "yearsToUnicorn": 3,
     "becameUnicornLabel": "Mar 2026",
     "unicornThresholdLabel": "$1bn",
-    "foundersLabel": "Mirko Novakovic",
+    "foundersLabel": "Mirko Novakovic, Ben Blackmore, Miel Donkers, Marcel Birkner, Michele Mancioppi",
     "aged": false
    },
    "sort": {
@@ -1741,7 +1769,8 @@
       "Korelya Capital",
       "White Star Capital",
       "HV Capital",
-      "Picus Capital"
+      "Picus Capital",
+      "Keen Venture Partners"
      ],
      "source": "s2",
      "disputed": {
@@ -1764,16 +1793,9 @@
      "current": true
     },
     {
-     "name": "Andreas Wixler",
-     "role": "Co-founder"
-    },
-    {
      "name": "Max Beyer",
-     "role": "Co-founder"
-    },
-    {
-     "name": "Hans-Peter Ringer",
-     "role": "Co-founder"
+     "role": "Co-founder & CFO until December 2024",
+     "current": false
     },
     {
      "name": "Max-Josef Meier",
@@ -1789,7 +1811,8 @@
     "Korelya Capital",
     "White Star Capital",
     "HV Capital",
-    "Picus Capital"
+    "Picus Capital",
+    "Keen Venture Partners"
    ],
    "sources": [
     {
@@ -1823,6 +1846,22 @@
      "url": "https://portageinvest.com/blog/finn-raises-e140-million-and-achieves-unicorn-status/",
      "publishedOn": "2026-06-24",
      "quote": "FINN is Germany’s leading car subscription platform. Founded in Munich in 2019, the company enables customers to subscribe to vehicles from more than 25 brands entirely online, with insurance, financing, registration, taxes, and maintenance all included in one monthly payment."
+    },
+    {
+     "id": "s5",
+     "publication": "Company press release",
+     "title": "FINN sammelt 140 Millionen Euro ein und erreicht Unicorn-Status",
+     "url": "https://www.finn.com/de-DE/presse/series-d",
+     "publishedOn": "2026-06-24",
+     "quote": "darunter Planet First Partners, Korelya Capital, White Star Capital, HV Capital, Picus Capital und Keen Venture Partners."
+    },
+    {
+     "id": "s6",
+     "publication": "Company press release",
+     "title": "CFO und Co-Founder Max Beyer verlässt FINN auf eigenen Wunsch",
+     "url": "https://www.finn.com/de-DE/presse/max-beyer-ruecktritt",
+     "publishedOn": "2024-12-20",
+     "quote": "Beyer verlässt das Unternehmen am 31.12.2024 auf eigenen Wunsch, um nun mehr seiner Zeit seinem kürzlich geborenen Nachwuchs zu widmen."
     }
    ],
    "display": {
@@ -1834,7 +1873,7 @@
     "yearsToUnicorn": 7,
     "becameUnicornLabel": "Jun 2026",
     "unicornThresholdLabel": "€1bn",
-    "foundersLabel": "Maximilian Wühr, Nikolai Schröder, Andreas Wixler, Max Beyer, Hans-Peter Ringer, Max-Josef Meier",
+    "foundersLabel": "Maximilian Wühr, Nikolai Schröder, Max Beyer, Max-Josef Meier",
     "aged": false
    },
    "sort": {
@@ -1857,7 +1896,8 @@
     "Korelya Capital",
     "White Star Capital",
     "HV Capital",
-    "Picus Capital"
+    "Picus Capital",
+    "Keen Venture Partners"
    ]
   },
   {
@@ -2078,6 +2118,14 @@
      "url": "https://corporate.flix.com/press_releases/flix-announces-successful-closing-of-investment-from-eqt-and-kuehne-holding/",
      "publishedOn": "2024-11-28",
      "quote": "EQT, the global investment organization, together with Kühne Holding, representing one of the world’s leading logistics entrepreneurs and investors, acquired a 35% minority stake in Flix."
+    },
+    {
+     "id": "s8",
+     "publication": "Investor press release",
+     "title": "EQT and Kühne Holding invest in Flix, the global travel company",
+     "url": "https://eqtgroup.com/news/eqt-and-kuhne-holding-invest-in-flix-the-global-travel-company-2024-07-04",
+     "publishedOn": "2024-07-04",
+     "quote": "In addition to a primary investment in Flix, EQT Future and Kühne Holding will acquire shares from existing shareholders to build a long-term anchor shareholding in Flix."
     }
    ],
    "display": {
