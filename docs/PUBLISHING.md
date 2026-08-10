@@ -1,27 +1,25 @@
 # Publishing checklist
 
-The site is finished and verified locally. Four steps put it online. Do them in order —
-step 1 is a legal requirement, not a formality.
+The site is finished and verified locally. Four steps put it online. Do them in order.
+Step 1 is a legal requirement, not a formality.
 
 Repository: `https://github.com/LW7776/Unicorn-Germany`
 Live URL once Pages is on: `https://lw7776.github.io/Unicorn-Germany/`
 
 ---
 
-## 1. Fill in the Impressum — before anything is served
+## 1. The Impressum. Done, but check it before anything is served
 
-`impressum.html` carries five placeholders and a visible warning banner:
+`impressum.html` now carries the operator's real details, and the placeholders and the
+publish-blocker banner are gone:
 
 ```
-[OPERATOR NAME]  [STREET AND NUMBER]  [POSTCODE AND CITY]  [CONTACT EMAIL]
+Lan Lukas Welge · Berlin, Germany · lanlukas.welge@gmail.com
 ```
 
-German law (§5 DDG) requires a real name, postal address and contact on a site like this,
-and the exposure for getting it wrong is an Abmahnung. Nobody but you can supply these,
-which is why they were never guessed.
-
-Replace all five, then delete the warning banner (the block marked
-`<!-- PUBLISH BLOCKER -->`).
+German law (§5 DDG) requires a real name, address and contact on a site like this, and the
+exposure for getting it wrong is an Abmahnung. Read the page once and confirm those three
+lines are still current before you serve anything.
 
 ## 2. Push
 
