@@ -85,6 +85,18 @@ export function mountControls({ container, companies, onChange }) {
           ${cities.map((c) => `<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join("")}
         </select>
       </label>
+      ${/* The only way into the map. It used to be a nav entry beside Companies,
+            which sold it as a separate destination; it is a second way of looking
+            at the same 32 records, so it lives with the other controls that decide
+            what the register shows. main.js wires both buttons by [data-view]
+            after this markup is written. */""}
+      <div class="controls__select controls__view">
+        <span class="label" id="controls-view">View</span>
+        <div class="viewtoggle" role="group" aria-labelledby="controls-view">
+          <button class="viewtoggle__btn" type="button" data-view="grid" aria-pressed="true">Grid</button>
+          <button class="viewtoggle__btn" type="button" data-view="map" aria-pressed="false">Map</button>
+        </div>
+      </div>
     </div>
     <div class="chips" role="radiogroup" aria-label="Filter by sector">
       <button class="chip" type="button" role="radio" data-sector="" aria-checked="true" tabindex="0">All sectors</button>

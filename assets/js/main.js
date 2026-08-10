@@ -3,6 +3,7 @@ import { mountControls } from "./controls.js";
 import { renderGrid, renderStats } from "./register.js";
 import { enterRegister } from "./transition.js";
 import { wireDetail } from "./detail.js";
+import { openCityWindow, wireCityWindow } from "./city.js";
 import { renderMap } from "./map.js";
 import { renderFooter } from "./footer.js";
 import { renderFunding, weekFromHash } from "./funding.js";
@@ -41,36 +42,41 @@ export async function boot() {
   window.__controls = controls;
 
   const mapEl = document.querySelector("[data-map]");
+  const showView = async (view) => {
+    const isMap = view === "map";
+    document.querySelectorAll("[data-view]").forEach((button) =>
+      button.setAttribute("aria-pressed", String(button.dataset.view === view)));
+    grid.hidden = isMap;
+    mapEl.hidden = !isMap;
+    if (!isMap) return;
+    try {
+      // The map shows every company's headquarters, independent of the
+      // grid's current search/sector/city filters — those apply to what
+      // the grid lists, not to what the map summarises.
+      await renderMap(mapEl, data.companies, {
+        // A city is a place to look at companies, not a filter to apply to a
+        // list somewhere else. Clicking one opens the city window over the
+        // map; the company detail then opens over that, and closing the
+        // detail takes both down (see assets/js/city.js).
+        onSelectCity: (city, node) => openCityWindow(city, { returnFocus: node }),
+      });
+    } catch (error) {
+      // data/geo/germany.json failing to fetch or parse must not leave
+      // the map view blank with no explanation — the grid is still one
+      // click away via the other [data-view] button.
+      console.error(error);
+      mapEl.innerHTML = '<p class="map__note">The map could not be loaded. Try the company list instead.</p>';
+    }
+  };
   document.querySelectorAll("[data-view]").forEach((button) => {
-    button.addEventListener("click", async () => {
-      const isMap = button.dataset.view === "map";
-      document.querySelectorAll("[data-view]").forEach((other) =>
-        other.setAttribute("aria-pressed", String(other === button)));
-      grid.hidden = isMap;
-      mapEl.hidden = !isMap;
-      if (isMap) {
-        try {
-          // The map shows every company's headquarters, independent of the
-          // grid's current search/sector/city filters — those apply to what
-          // the grid lists, not to what the map summarises.
-          await renderMap(mapEl, data.companies, {
-            onSelectCity: (city) => {
-              controls.setCity(city);
-              document.querySelector('[data-view="grid"]').click();
-            },
-          });
-        } catch (error) {
-          // data/geo/germany.json failing to fetch or parse must not leave
-          // the map tab blank with no explanation — the grid is still one
-          // click away via the other [data-view] button.
-          console.error(error);
-          mapEl.innerHTML = '<p class="map__note">The map could not be loaded. Try the company list instead.</p>';
-        }
-      }
-    });
+    button.addEventListener("click", () => showView(button.dataset.view));
   });
+  // The topbar's Companies entry is an anchor to the register, but from the map
+  // view "Companies" has to mean the list, not just a scroll position.
+  document.querySelector("[data-companies-link]")?.addEventListener("click", () => showView("grid"));
 
   wireDetail(data.companies);
+  wireCityWindow(data.companies);
 
   const roundup = document.querySelector("[data-roundup]");
   // The round-up is a second dataset with a second sourcing standard, so a

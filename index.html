@@ -17,9 +17,11 @@
 
 <header class="topbar" data-topbar hidden>
   <a class="topbar__mark" href="#register">GERMAN&nbsp;UNICORNS</a>
+  <!-- The map has no entry of its own. It is a way of looking at the companies,
+       not a separate destination, so it is reached from the grid/map toggle
+       inside the register and from nowhere else. -->
   <nav class="topbar__nav" aria-label="Main">
-    <button type="button" data-view="grid" aria-pressed="true">Companies</button>
-    <button type="button" data-view="map" aria-pressed="false">Map</button>
+    <a href="#register" data-companies-link>Companies</a>
     <a href="#funding">Funding</a>
     <a href="about.html">About</a>
     <button type="button" data-open-search aria-label="Search companies">Search</button>
@@ -52,6 +54,7 @@
      landing view stays the hero alone. -->
 <section class="roundup" id="funding" data-roundup aria-label="Weekly funding round-up" hidden></section>
 
+<dialog class="city" data-city-window aria-label="Companies in this city"></dialog>
 <dialog class="detail" data-detail aria-label="Company detail"></dialog>
 
 <footer class="footer" data-footer></footer>

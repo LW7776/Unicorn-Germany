@@ -4,6 +4,42 @@
   border: 1px solid var(--stroke); border-radius: var(--radius); overflow: auto;
 }
 .detail::backdrop { background: rgba(4, 5, 8, .72); backdrop-filter: blur(10px); }
+/* The city window, opened over the map and closed together with any company
+   detail opened out of it. Same chrome as .detail, deliberately: it is the same
+   kind of object, one step shallower. */
+.city {
+  width: min(44rem, 92vw); max-height: 82vh; padding: var(--space-7);
+  background: var(--deep); color: var(--ink);
+  border: 1px solid var(--stroke); border-radius: var(--radius); overflow: auto;
+}
+.city::backdrop { background: rgba(4, 5, 8, .72); backdrop-filter: blur(10px); }
+.city__head h2 { font-size: var(--step-3); margin-top: var(--space-2); }
+.city__meta { color: var(--muted); margin: var(--space-2) 0 0; }
+.city__list {
+  list-style: none; margin: var(--space-6) 0 0; padding: 0;
+  display: grid; gap: var(--space-3);
+}
+.city__item {
+  width: 100%; display: grid; align-items: center; gap: var(--space-4);
+  grid-template-columns: 5rem 1fr auto; padding: var(--space-3);
+  text-align: left; color: var(--ink);
+  background: var(--panel); border: 1px solid var(--stroke); border-radius: 10px;
+  transition: border-color var(--dur-fast) var(--ease-out),
+              background var(--dur-fast) var(--ease-out);
+}
+.city__item:hover {
+  background: var(--panel-hover);
+  border-color: color-mix(in srgb, var(--beam) 55%, transparent);
+}
+.city__plate { min-height: 3rem; padding: var(--space-3); }
+.city__plate img { max-height: 1.75rem; width: auto; object-fit: contain; }
+.city__figure { color: var(--muted); font-size: var(--step--1); }
+@media (max-width: 600px) {
+  .city { padding: var(--space-5); width: 96vw; }
+  .city__item { grid-template-columns: 4rem 1fr; }
+  .city__figure { grid-column: 2; }
+}
+
 .detail__close {
   position: sticky; top: 0; float: right; display: grid; place-items: center;
   width: 44px; height: 44px; border-radius: 50%;

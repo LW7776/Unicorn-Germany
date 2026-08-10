@@ -15,7 +15,41 @@ import { escapeHtml, isSafeUrl } from "./html.js";
 // same way transition.js and constellation.js already gate their animations.
 const REDUCED = matchMedia("(prefers-reduced-motion: reduce)");
 
-let dialog, current, all = [];
+// `all` is the whole register and is set once, by wireDetail. `roster` is the
+// list the ←/→ keys step through, which is not always the same thing: a company
+// opened from the city window steps through that city's companies. Keeping them
+// apart matters because every slug lookup below (grid clicks, deep links) has to
+// search the full register — when these were one variable, opening a company
+// from a narrowed list quietly narrowed the lookup table too, and the next grid
+// click on anything outside that list found nothing.
+let dialog, current, all = [], roster = [];
+
+// Cleanup after the window is gone runs exactly once per opening, whichever of
+// the four routes out was taken: the close button, the backdrop, Escape (which
+// fires the native `close` event and never reaches closeDetail) or a
+// programmatic close. `settled` is what makes "exactly once" true when two of
+// those fire in sequence, as the button path does.
+let settled = true;
+const closeListeners = new Set();
+
+/** Subscribe to "the company window has gone away". city.js uses this to take
+    its own window down with it, and it deliberately does not sit on the `close`
+    event alone: three of the four routes out go through closeDetail(), so a
+    subscriber keeps working even where a browser is stingy about firing
+    `close`. */
+export function onDetailClose(listener) {
+  closeListeners.add(listener);
+}
+
+function afterClose() {
+  if (settled) return;
+  settled = true;
+  document.body.style.overflow = "";
+  // ESC-closing must not leave the #/<slug> hash dangling, or a reload would
+  // silently reopen the company the reader just dismissed.
+  if (location.hash.startsWith("#/")) history.replaceState(null, "", location.pathname);
+  closeListeners.forEach((listener) => listener());
+}
 
 const dash = (value) => (value === null || value === undefined || value === "" ? "—" : value);
 /** Escape after applying the "—" fallback — safe for any scalar, including
@@ -198,7 +232,9 @@ function markup(company) {
     behaviour — that URL is meant to be shareable and back-navigable. */
 export function openDetail(company, context = {}) {
   dialog = dialog || document.querySelector("[data-detail]");
-  all = context.companies || all;
+  // A lateral ←/→ step keeps the roster it is stepping through; anything else
+  // sets a new one, defaulting to the whole register.
+  if (!context.replace) roster = context.companies || all;
   current = company;
   dialog.innerHTML = markup(company);
   if (!dialog.open) dialog.showModal();
@@ -208,6 +244,7 @@ export function openDetail(company, context = {}) {
   } else {
     location.hash = `#/${company.slug}`;
   }
+  settled = false;
   dialog.querySelector("[data-close]").focus();
   if (!REDUCED.matches) {
     dialog.animate({ opacity: [0, 1], transform: ["translateY(18px) scale(.985)", "none"] },
@@ -217,41 +254,37 @@ export function openDetail(company, context = {}) {
 
 export function closeDetail() {
   if (dialog?.open) dialog.close();
-  document.body.style.overflow = "";
-  if (location.hash.startsWith("#/")) history.replaceState(null, "", location.pathname);
+  afterClose();
 }
 
 export function wireDetail(companies) {
   dialog = document.querySelector("[data-detail]");
   all = companies;
+  roster = companies;
 
   dialog.addEventListener("click", (event) => {
     if (event.target.closest("[data-close]") || event.target === dialog) closeDetail();
   });
-  // ESC triggers the browser's native dialog cancel/close, bypassing closeDetail()
-  // entirely — this listener is the only thing that runs then, so it has to do
-  // the full cleanup (not just the overflow reset) or ESC-closing leaves the
-  // #/<slug> hash dangling and a reload would silently reopen the company.
-  dialog.addEventListener("close", () => {
-    document.body.style.overflow = "";
-    if (location.hash.startsWith("#/")) history.replaceState(null, "", location.pathname);
-  });
+  // ESC triggers the browser's native dialog cancel/close and never reaches
+  // closeDetail(), so this is the one route where the event is the only signal.
+  // afterClose() is idempotent, so the button path firing both is harmless.
+  dialog.addEventListener("close", afterClose);
   dialog.addEventListener("keydown", (event) => {
     if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
     // Holding the key auto-repeats keydown; without this, each repeat would
     // still have opened a company (just onto a replaced history entry), so
     // holding ArrowRight would blow through the whole list in a blink.
     if (event.repeat) return;
-    const index = all.findIndex((c) => c.slug === current.slug);
+    const index = roster.findIndex((c) => c.slug === current.slug);
     const next = event.key === "ArrowRight" ? index + 1 : index - 1;
-    if (all[next]) openDetail(all[next], { replace: true });
+    if (roster[next]) openDetail(roster[next], { replace: true });
   });
 
   document.querySelector("[data-grid]").addEventListener("click", (event) => {
     const cell = event.target.closest(".cell");
     if (!cell) return;
     const company = all.find((c) => c.slug === cell.dataset.slug);
-    if (company) openDetail(company, { companies: all });
+    if (company) openDetail(company);
   });
 
   const routeFromHash = () => {
@@ -259,7 +292,12 @@ export function wireDetail(companies) {
     if (!slug) return;
     const company = all.find((c) => c.slug === slug);
     if (company) {
-      openDetail(company, { companies: all });
+      // openDetail writes the hash itself, so this fires again a moment after
+      // every open. Re-rendering the window that is already showing this exact
+      // company would replay the entry animation, move focus back to the close
+      // button and reset the roster the ←/→ keys are stepping through.
+      if (dialog.open && current?.slug === slug) return;
+      openDetail(company);
     } else if (dialog.open) {
       // The hash points at a slug that doesn't exist (bad deep link, edited
       // by hand, or a Back/Forward step landing on a stale entry) while a

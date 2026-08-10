@@ -82,6 +82,23 @@
   min-height: 44px; padding: var(--space-2) var(--space-4); background: var(--panel);
   border: 1px solid var(--stroke); border-radius: 999px; color: var(--ink); font: inherit;
 }
+/* The grid/map toggle, the only route into the map now that it has no nav entry.
+   A two-button segment rather than a select, because there are exactly two states
+   and both should be visible at once. */
+.viewtoggle {
+  display: flex; border: 1px solid var(--stroke); border-radius: 999px;
+  background: var(--panel); overflow: hidden;
+}
+.viewtoggle__btn {
+  min-height: 44px; padding: var(--space-2) var(--space-5);
+  background: transparent; border: 0; color: var(--muted);
+  font-size: var(--step--1); letter-spacing: .1em; text-transform: uppercase;
+  transition: color var(--dur-fast) var(--ease-out),
+              background var(--dur-fast) var(--ease-out);
+}
+.viewtoggle__btn:hover { color: var(--ink); }
+.viewtoggle__btn[aria-pressed="true"] { color: var(--ink); background: var(--panel-hover); }
+
 .chips { display: flex; flex-wrap: wrap; gap: var(--space-2); }
 .chip {
   min-height: 44px; padding: var(--space-2) var(--space-4); border-radius: 999px;

@@ -234,21 +234,31 @@ export async function renderMap(container, companies, { onSelectCity }) {
     // (correct-but-small) rather than loosen the clamp to hit 44px exactly
     // at the cost of occasional misfires.
     extraHtml += `<p class="map__note map__note--hint">Cities close together on the map ` +
-      `may be easier to pick from the city dropdown above.</p>`;
+      `may be easier to pick from the city filter above.</p>`;
   }
   container.insertAdjacentHTML("beforeend", extraHtml);
+
+  // Selecting a city opens a window over the map, and closing that window has to
+  // hand focus back to the city it came from — so the resolved city's own <g> is
+  // handed to the caller alongside its name. It is looked up rather than assumed
+  // to be `node`, because resolveCity can legitimately answer with a *different*
+  // city from the one whose hit circle caught the click.
+  const nodeFor = (city) => container.querySelector(`[data-city="${CSS.escape(city)}"]`);
 
   container.querySelectorAll("[data-city]").forEach((node) => {
     // Mouse/touch: the point that was actually clicked may sit inside more
     // than one city's hit circle (see resolveCity above) — resolve by
     // nearest centre rather than trusting which <g> the event landed on.
-    node.addEventListener("click", (event) => onSelectCity(resolveCity(event, node.dataset.city)));
+    node.addEventListener("click", (event) => {
+      const city = resolveCity(event, node.dataset.city);
+      onSelectCity(city, nodeFor(city));
+    });
     // Keyboard: the focused element unambiguously identifies one city —
     // there's no click point to disambiguate, so no geometry needed here.
     node.addEventListener("keydown", (event) => {
       if (event.key === "Enter" || event.key === " ") {
         event.preventDefault();
-        onSelectCity(node.dataset.city);
+        onSelectCity(node.dataset.city, node);
       }
     });
   });
