@@ -2,93 +2,26 @@
  "week": "2026-W32",
  "start": "2026-08-03",
  "end": "2026-08-09",
- "lead": [
+ "lead": [],
+ "more": [
   {
-   "id": "l1",
-   "company": "Moss",
-   "hq": "Berlin",
-   "stage": "Series C",
-   "amount": 35,
-   "currency": "EUR",
-   "approximate": false,
-   "valuation": 1000,
-   "valuationCurrency": "EUR",
-   "founders": [
-    "Ante Spittler",
-    "Anton Rummel",
-    "Ferdinand Meyer",
-    "Stephan Haslebacher"
-   ],
-   "investors": [
-    "Portage",
-    "Cherry Ventures"
-   ],
-   "text": "Moss has raised a huge €35m Series C at a €1bn valuation. Germany's newest unicorn. Founded in 2019 by Ante Spittler with three co-founders, Moss now works with mid-market finance teams across Europe, sitting between those teams and every euro that leaves the business, with the receipt, the approval and the ERP line attached to each one. Round led by Portage with Cherry Ventures following on. That is the ninth German company past a billion inside twelve months. Congratulations to the team. Made in Germany. Built by startups.",
-   "source": {
-    "publication": "Company press release",
-    "title": "Moss hits a €1 billion valuation and bets on Finance AI shaped by finance teams",
-    "url": "https://www.getmoss.com/magazine/moss-series-c",
-    "publishedOn": "2026-08-05"
-   }
-  },
-  {
-   "id": "l2",
    "company": "NavVis",
    "hq": "Munich",
-   "stage": "Series D",
+   "stage": null,
    "amount": 73.7,
    "currency": "EUR",
    "approximate": false,
    "valuation": null,
    "valuationCurrency": null,
-   "founders": [
-    "Felix Reinshagen",
-    "Georg Schroth",
-    "Robert Huitl",
-    "Sebastian Hilsenbeck"
-   ],
-   "investors": [
-    "The Jordan Company",
-    "Yttrium",
-    "KOZO KEIKAKU ENGINEERING",
-    "Cipio Partners"
-   ],
-   "text": "NavVis has raised a huge €73.7m Series D. Spun out of the Technical University of Munich thirteen years ago by four researchers, NavVis maps the inside of factories, plants and the mission-critical infrastructure nobody photographs, and keeps the digital copy synchronised with the physical one. Round led by the American private equity firm The Jordan Company, with Yttrium, KOZO KEIKAKU ENGINEERING and Cipio Partners following on. Felix Reinshagen says customers trust it with billions of square metres of that data. Thirteen years of unfashionable engineering, a growth round from abroad, and the headquarters still in Munich. Congratulations to the team. Made in Germany. Built by startups.",
+   "founders": [],
+   "investors": [],
    "source": {
     "publication": "EU-Startups",
     "title": "Munich-based NavVis raises €73.7 million to build its spatial data engine and accelerate AI roadmap",
     "url": "https://www.eu-startups.com/2026/08/munich-based-navvis-raises-e74-5-million-to-build-its-spatial-data-engine-and-accelerate-ai-roadmap/",
     "publishedOn": "2026-08-07"
-   }
-  }
- ],
- "more": [
-  {
-   "id": "m1",
-   "company": "conmeet",
-   "hq": null,
-   "stage": "Seed",
-   "amount": 6,
-   "currency": "EUR",
-   "approximate": false,
-   "valuation": null,
-   "valuationCurrency": null,
-   "founders": [
-    "Benedikt Kisner",
-    "Leandro Ananias",
-    "Lennart Eckerlein"
-   ],
-   "investors": [
-    "Reimann Investors Venture Capital",
-    "Smedvig Ventures",
-    "May Ventures"
-   ],
-   "source": {
-    "publication": "Tech.eu",
-    "title": "conmeet raises €6M to power construction businesses with AI",
-    "url": "https://tech.eu/2026/08/05/conmeet-raises-eur6m-to-power-construction-businesses-with-ai/",
-    "publishedOn": "2026-08-05"
-   }
+   },
+   "id": "m1"
   }
  ]
 }
