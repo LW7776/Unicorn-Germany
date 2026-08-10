@@ -2,17 +2,51 @@
   position: relative; min-height: 100svh; display: grid; place-items: center;
   padding: var(--space-6); overflow: hidden;
 }
-.hero__canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
-.hero__inner { position: relative; max-width: 80rem; text-align: center; }
+
+/* The hero is three layers, and the z-indexes are explicit because they are the
+   whole idea: the stamped wordmark at the back, the constellation over it, the
+   statement in front of both. Left implicit, the canvas (absolute) and the inner
+   block (relative) would order themselves by document position, which is true
+   today and one markup edit away from not being. */
+.hero__ghost {
+  position: absolute; inset: 0; z-index: 0; margin: 0;
+  display: grid; align-content: center; justify-items: center;
+  font-family: var(--font-display); font-weight: 800; font-stretch: 125%;
+  font-size: clamp(3.5rem, 19vw, 15rem); line-height: .82; letter-spacing: -.035em;
+  text-align: center;
+  /* One long word per line, never wrapped: a broken wordmark is a typo, not a
+     texture. It overhangs the viewport on a narrow screen by design, and .hero's
+     own `overflow: hidden` above is what clips it — the same rule under both
+     .hero and .hero--lifted, so neither state can leak a horizontal scrollbar. */
+  white-space: nowrap;
+  color: var(--ghost-ink);
+  pointer-events: none; user-select: none; -webkit-user-select: none;
+}
+.hero__ghost span { display: block; }
+.hero__canvas { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; }
+.hero__inner { position: relative; z-index: 2; max-width: 80rem; text-align: center; }
 .hero__eyebrow { margin: 0 0 var(--space-5); }
 .hero__title { font-size: var(--step-6); text-wrap: balance; }
-.hero__title span { display: inline; }
+/* The child combinator matters now that each word is a span of its own inside
+   these two: `.hero__title span` would put every *word* on its own line at
+   1200px, which is what happened the first time. */
+.hero__title > span { display: inline; }
 
 /* Wide enough for the composed two-line reading; below this the sentence
    flows as one unit so text-wrap: balance can distribute it without orphans. */
 @media (min-width: 1200px) {
-  .hero__title span { display: block; }
+  .hero__title > span { display: block; }
 }
+
+/* inline-block so a word can be moved and blurred on load. It inherits
+   everything else, so with assets/js/hero.js absent this is the plain sentence
+   it has always been. */
+.hero__word { display: inline-block; }
+/* Applied by hero.js immediately before it animates, and removed the moment the
+   last word lands. It is never in the stylesheet's reach otherwise: a reader
+   with no JavaScript, or with prefers-reduced-motion set, must never meet a
+   headline that starts at zero opacity and waits for a script to reveal it. */
+.hero__title--kinetic .hero__word { opacity: 0; }
 .hero__cta {
   margin-top: var(--space-7); display: inline-flex; gap: var(--space-3); align-items: center;
   padding: var(--space-4) var(--space-6); border-radius: 999px;

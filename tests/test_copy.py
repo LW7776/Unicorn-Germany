@@ -32,6 +32,10 @@ TITLES_QUOTED_VERBATIM = {
 
 HTML_PAGES = ["index.html", "about.html", "impressum.html"]
 HTML_COMMENT = re.compile(r"<!--.*?-->", re.DOTALL)
+# A stylesheet is not copy. index.html and about.html each carry one <noscript>
+# <style> so their section reveals cannot leave content hidden without
+# JavaScript, and CSS separates declarations with semicolons.
+HTML_STYLE = re.compile(r"<style\b[^>]*>.*?</style>", re.DOTALL | re.IGNORECASE)
 # `&nbsp;` is markup, not a semicolon anybody reads.
 HTML_ENTITY = re.compile(r"&(?:#\d+|#x[0-9a-fA-F]+|[a-zA-Z][a-zA-Z0-9]*);")
 
@@ -97,12 +101,17 @@ def test_no_banned_punctuation_in_the_funding_writeups():
 
 
 def test_no_banned_punctuation_in_the_static_pages():
-    """HTML comments are notes to the next maintainer, not copy, and character
-    references are markup, so both come out before the check."""
+    """HTML comments are notes to the next maintainer, character references are
+    markup, and the contents of a <style> element are a stylesheet, which is a
+    CSS declaration list and not a sentence anyone reads. All three come out
+    before the check, on the same principle: the ban is on punctuation a reader
+    meets, and none of these is ever rendered. Everything between the tags still
+    is, which is the whole surface this is guarding."""
     pairs = []
     for page in HTML_PAGES:
         source = (ROOT / page).read_text(encoding="utf-8")
-        pairs.append((page, HTML_ENTITY.sub("", HTML_COMMENT.sub("", source))))
+        stripped = HTML_STYLE.sub("", HTML_COMMENT.sub("", source))
+        pairs.append((page, HTML_ENTITY.sub("", stripped)))
     assert _offences(pairs) == []
 
 

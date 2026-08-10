@@ -107,6 +107,28 @@ img, svg { max-width: 100%; }
   .footer__nav { grid-template-columns: repeat(2, minmax(7rem, 1fr)); }
 }
 
+/* Section reveals. The hidden state is here, not in assets/js/reveal.js, so a
+   block is never painted at full strength and then hidden again for a frame
+   while the module boots. Two things make that safe rather than reckless: the
+   whole rule sits inside `no-preference`, so a reader who has asked for less
+   motion never meets a hidden element at all, and every page carries the
+   <noscript> counterpart below for a reader with no JavaScript. reveal.js adds
+   the class; a failure anywhere in it reveals everything immediately. */
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal] {
+    opacity: 0; transform: translateY(14px);
+    transition: opacity 620ms var(--ease-out), transform 620ms var(--ease-out);
+  }
+  [data-reveal].is-revealed { opacity: 1; transform: none; }
+}
+/* Printing is the one context that has a layout but no viewport to scroll
+   through, so an IntersectionObserver keyed on entering the viewport may never
+   fire for a block below the first page and it would print blank. Nothing on a
+   sheet of paper moves in any case. */
+@media print {
+  [data-reveal] { opacity: 1 !important; transform: none !important; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: .01ms !important; animation-iteration-count: 1 !important;

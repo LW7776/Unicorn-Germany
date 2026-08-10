@@ -14,6 +14,23 @@
   --plate: #F7F8FA;
   --plate-ink: #14161A;   /* the only token for text on --plate; every other ink is for dark surfaces */
 
+  /* --- Depth ---------------------------------------------------------------
+     The ghosted hero wordmark, the ambient pools the register floats over, the
+     glass highlight on a stat card and the inner shadow that seats a logo plate
+     into its surface. Every one of these is a new *strength* of a colour already
+     in the table above, never a new hue: blue and violet remain the only accents
+     and amber keeps every caveat to itself. The percentages are low on purpose —
+     these are depth cues, and the moment one is legible as a colour it has
+     stopped doing its job and started competing with the content in front of it.
+     tools/check_contrast.py carries the surfaces they produce, so text over them
+     is held to the same 4.5:1 floor as text over --void. */
+  --ghost-ink: color-mix(in srgb, var(--ink) 5%, transparent);
+  --ambient-beam: color-mix(in srgb, var(--beam) 8%, transparent);
+  --ambient-violet: color-mix(in srgb, var(--violet) 6%, transparent);
+  --glass-highlight: color-mix(in srgb, var(--ink) 16%, transparent);
+  --plate-inset: color-mix(in srgb, var(--plate-ink) 20%, transparent);
+  --plate-inset-ring: color-mix(in srgb, var(--plate-ink) 9%, transparent);
+
   --font-display: "Archivo", system-ui, sans-serif;
   --font-prose: "Source Serif 4", Georgia, serif;
   --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
@@ -33,6 +50,11 @@
 
   --ease-out: cubic-bezier(.22, 1, .36, 1);
   --dur-fast: 180ms;
+  /* The top of DESIGN.md's 150–250ms micro-interaction band. Used where a
+     hover has further to travel than a colour change — a card lifting, a map
+     halo swelling — so the movement reads as considered rather than twitchy. */
+  --dur-med: 240ms;
   --dur-slow: 1200ms;
   --radius: 14px;
+  --blur-glass: 16px;
 }

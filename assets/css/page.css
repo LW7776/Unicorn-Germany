@@ -59,22 +59,33 @@
 /* `display: flex` on the summary suppresses Chrome's disclosure triangle;
    `list-style: none` covers Firefox and the ::-webkit- rule covers Safari. All
    three are needed, and the chevron replaces what they remove. */
+/* The row height is the page. Nine hairline-divided questions read as a
+   reference table at --space-5 and as a considered set of answers at --space-6,
+   and the difference is entirely how much air each one is given. The padding is
+   the whole of it: no fills, no cards, no rules other than the hairline. */
 .qa__q {
   display: flex; align-items: center; justify-content: space-between;
-  gap: var(--space-5); padding: var(--space-5) 0; min-height: 44px;
+  gap: var(--space-5); padding: var(--space-6) 0; min-height: 44px;
   cursor: pointer; list-style: none; color: var(--ink);
   font-family: var(--font-display); font-weight: 800; font-stretch: 112%;
-  font-size: var(--step-1); letter-spacing: -.01em; line-height: 1.2;
-  transition: color var(--dur-fast) var(--ease-out);
+  font-size: var(--step-1); letter-spacing: -.01em; line-height: 1.25;
+  transition: color var(--dur-med) var(--ease-out);
 }
 .qa__q::-webkit-details-marker { display: none; }
 .qa__q:hover { color: var(--beam-text); }
+/* Rotation was already here. What was missing is that the chevron did not
+   acknowledge the pointer at all until you clicked, so a row read as inert
+   until it moved. Now it takes the accent and steps down a hair towards the
+   answer it is about to open, in the same band as every other hover. */
 .qa__chevron {
   flex: none; color: var(--muted);
-  transition: transform var(--dur-fast) var(--ease-out);
+  transition: transform var(--dur-med) var(--ease-out),
+              color var(--dur-med) var(--ease-out);
 }
+.qa__q:hover .qa__chevron { color: var(--beam-text); transform: translateY(2px); }
 .qa__row[open] .qa__chevron { transform: rotate(180deg); }
-.qa__a { padding-bottom: var(--space-5); max-width: 34rem; }
+.qa__row[open] .qa__q:hover .qa__chevron { transform: rotate(180deg) translateY(2px); }
+.qa__a { padding-bottom: var(--space-6); max-width: 34rem; }
 .qa__a p { font-family: var(--font-prose); margin: 0; line-height: 1.6; }
 /* Figures read off the data at runtime (the twelve-month count, the FX rate), in
    the mono face every other number on the site uses. */

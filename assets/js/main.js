@@ -1,5 +1,8 @@
 import { Constellation } from "./constellation.js";
 import { mountControls } from "./controls.js";
+import { playHeroHeadline } from "./hero.js";
+import { revealWithin } from "./reveal.js";
+import { renderIntroVisualisations } from "./viz.js";
 import { renderGrid, renderStats } from "./register.js";
 import { enterRegister } from "./transition.js";
 import { wireDetail } from "./detail.js";
@@ -21,6 +24,11 @@ async function loadFunding() {
 }
 
 export async function boot() {
+  // Before the fetch, not after it. The hero is already on screen and the
+  // headline's arrival is about the moment the page appears, so it must not
+  // wait on a network round trip it has nothing to do with.
+  playHeroHeadline();
+
   const data = await loadData();
   window.__data = data;
 
@@ -32,6 +40,7 @@ export async function boot() {
   const grid = document.querySelector("[data-grid]");
   renderGrid(grid, data.companies);
   renderStats(document.querySelector("[data-stats]"), data.stats);
+  renderIntroVisualisations(document.querySelector("[data-viz]"), data.stats);
   renderFooter(document.querySelector("[data-footer]"));
 
   const controls = mountControls({
@@ -95,6 +104,11 @@ export async function boot() {
       'Reload the page, or <a href="https://github.com/LW7776/Unicorn-Germany/issues">report this on GitHub</a>.</p></div>';
   }
 
+  // Everything the round-up renders exists now, so the section reveals can be
+  // wired in one pass over the whole document. Elements are marked as they are
+  // observed, so this is safe to have missed nothing and safe to run once.
+  revealWithin();
+
   const reveal = () => { roundup.hidden = false; };
 
   // A shared #funding link — the topbar's own entry, or #funding/2026-W30 for
@@ -132,6 +146,10 @@ export async function boot() {
 
 boot().catch((error) => {
   console.error(error);
+  // boot() throws before it gets to wiring the reveals, and base.css starts
+  // every [data-reveal] block at zero opacity. Reveal them unconditionally here
+  // so a failed load leaves the page showing what it has, not a blank one.
+  revealWithin();
   document.querySelector("[data-hero]").insertAdjacentHTML(
     "beforeend",
     '<p class="hero__error" role="alert">The register could not be loaded. ' +

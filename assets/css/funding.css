@@ -30,11 +30,21 @@
   padding: var(--space-3) var(--space-4); min-height: 44px;
   background: var(--panel); color: var(--muted);
   border: 1px solid var(--stroke); border-radius: var(--radius);
-  transition: border-color var(--dur-fast) var(--ease-out),
-              background var(--dur-fast) var(--ease-out),
-              color var(--dur-fast) var(--ease-out);
+  transition: border-color var(--dur-med) var(--ease-out),
+              background var(--dur-med) var(--ease-out),
+              color var(--dur-med) var(--ease-out),
+              transform var(--dur-med) var(--ease-out),
+              box-shadow var(--dur-med) var(--ease-out);
 }
-.weekcard:hover { background: var(--panel-hover); color: var(--ink); }
+/* The same lift and bloom a register cell gets, at the smaller scale a week card
+   is drawn at. These are the other selectable objects on the page, and they had
+   been changing colour while the cards above them moved. */
+.weekcard:hover {
+  background: var(--panel-hover); color: var(--ink);
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--beam) 50%, transparent);
+  box-shadow: 0 10px 30px -14px color-mix(in srgb, var(--beam) 45%, transparent);
+}
 .weekcard[aria-selected="true"] {
   color: var(--ink); border-color: var(--beam); background: var(--panel-hover);
 }

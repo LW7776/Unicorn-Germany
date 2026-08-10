@@ -8,6 +8,11 @@
 <link rel="stylesheet" href="assets/css/tokens.css">
 <link rel="stylesheet" href="assets/css/base.css">
 <link rel="stylesheet" href="assets/css/page.css">
+<!-- assets/js/reveal.js brings each block up as it reaches the viewport, and
+     base.css starts them at zero opacity so none is ever painted and then
+     snatched back. With no JavaScript there is nothing to bring them up, so
+     the hidden state has to be undone here. -->
+<noscript><style>[data-reveal]{opacity:1;transform:none}</style></noscript>
 </head>
 <body>
 <a class="visually-hidden" href="#main">Skip to the content</a>
@@ -21,8 +26,10 @@
 </header>
 
 <main class="page page--qa" id="main">
-  <p class="label">About</p>
-  <h1 class="page__title">Everything important, kept short.</h1>
+  <div class="page__opener" data-reveal>
+    <p class="label">About</p>
+    <h1 class="page__title">Everything important, kept short.</h1>
+  </div>
 
   <!-- Native <details>/<summary>: the disclosure is keyboard operable and
        announced as expandable without a line of script, and it degrades to
@@ -30,7 +37,7 @@
        only motion, and base.css already flattens every transition under
        prefers-reduced-motion. -->
   <div class="qa">
-    <details class="qa__row" id="why">
+    <details class="qa__row" data-reveal id="why">
       <summary class="qa__q">
         Why do unicorns matter?
         <svg class="qa__chevron" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
@@ -45,7 +52,7 @@
       </div>
     </details>
 
-    <details class="qa__row" id="momentum">
+    <details class="qa__row" data-reveal id="momentum">
       <summary class="qa__q">
         Is the momentum real?
         <svg class="qa__chevron" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
@@ -61,7 +68,7 @@
       </div>
     </details>
 
-    <details class="qa__row" id="help">
+    <details class="qa__row" data-reveal id="help">
       <summary class="qa__q">
         What would help most?
         <svg class="qa__chevron" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
@@ -88,7 +95,7 @@
       </div>
     </details>
 
-    <details class="qa__row" id="data">
+    <details class="qa__row" data-reveal id="data">
       <summary class="qa__q">
         Where does the data come from?
         <svg class="qa__chevron" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
@@ -108,7 +115,7 @@
       </div>
     </details>
 
-    <details class="qa__row" id="updates">
+    <details class="qa__row" data-reveal id="updates">
       <summary class="qa__q">
         How often does this update?
         <svg class="qa__chevron" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
@@ -126,7 +133,7 @@
       </div>
     </details>
 
-    <details class="qa__row" id="undisclosed">
+    <details class="qa__row" data-reveal id="undisclosed">
       <summary class="qa__q">
         What does Undisclosed mean?
         <svg class="qa__chevron" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
@@ -143,7 +150,7 @@
       </div>
     </details>
 
-    <details class="qa__row" id="disputed">
+    <details class="qa__row" data-reveal id="disputed">
       <summary class="qa__q">
         Why do some figures carry a disputed note?
         <svg class="qa__chevron" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
@@ -160,7 +167,7 @@
       </div>
     </details>
 
-    <details class="qa__row" id="built">
+    <details class="qa__row" data-reveal id="built">
       <summary class="qa__q">
         How is this built?
         <svg class="qa__chevron" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
@@ -180,7 +187,7 @@
       </div>
     </details>
 
-    <details class="qa__row" id="corrections">
+    <details class="qa__row" data-reveal id="corrections">
       <summary class="qa__q">
         Who runs this and how do I report an error?
         <svg class="qa__chevron" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">

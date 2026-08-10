@@ -1,4 +1,26 @@
-.register { padding: calc(var(--space-8) + 3rem) var(--space-6) var(--space-8); }
+.register {
+  padding: calc(var(--space-8) + 3rem) var(--space-6) var(--space-8);
+  /* Both for the ambient field below: `relative` gives it something to be
+     positioned against, and `isolation` makes .register its own stacking
+     context so a z-index of -1 stays inside this section instead of sliding
+     behind the page background and disappearing. */
+  position: relative; isolation: isolate;
+}
+/* The ambient field. Two soft pools in the two accents already in the palette,
+   at --ambient-beam and --ambient-violet, which exist for exactly this and are
+   too weak to read as colour. It is here because the glass cells below need
+   something to be glass over: a blurred panel against a flat near-black is just
+   a slightly lighter near-black. It does not move. The drifting version of this
+   idea lives on the hero canvas, where there is already a paint loop to put it
+   in and a reduced-motion gate around that loop, and the top of the register is
+   not somewhere a reader should find something moving behind the figures. */
+.register::before {
+  content: ""; position: absolute; inset: 0 0 auto; z-index: -1;
+  height: min(140vh, 92rem); pointer-events: none;
+  background:
+    radial-gradient(58rem 40rem at 16% 10%, var(--ambient-beam), transparent 70%),
+    radial-gradient(50rem 36rem at 88% 42%, var(--ambient-violet), transparent 72%);
+}
 
 /* The section opener. Display type at the hero's own scale, one phrase carrying a
    soft gradient tint, and a lot of air around it — the register's summary numbers
@@ -13,14 +35,93 @@
   -webkit-text-fill-color: transparent; color: transparent;
 }
 .intro__lede { color: var(--muted); max-width: 44rem; margin: 0; }
+
+/* --- the two intro visualisations --------------------------------------------
+   Built by assets/js/viz.js from figures settled in tools/build.py. Side by side
+   where there is room, stacked below it. Neither is allowed to grow past a
+   readable width: a nine-column strip stretched across 60rem turns a shape into
+   a wallpaper pattern. */
+.intro__viz {
+  display: grid; gap: var(--space-6) var(--space-7); margin-top: var(--space-7);
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  align-items: start;
+}
+.viz { margin: 0; display: grid; gap: var(--space-4); max-width: 34rem; }
+.viz__cap { display: grid; gap: var(--space-2); }
+.viz__note { color: var(--muted); font-size: var(--step--1); }
+
+/* The crossings strip. The bars are SVG, stretched to the container with
+   preserveAspectRatio="none" — a rectangle survives a non-uniform stretch
+   unchanged, which is why the chart is made of rectangles. The type is HTML in
+   grids sharing the same column count, so it stays on the site's own type scale
+   and its 12px floor at every width instead of shrinking with the drawing. */
+.strip { display: grid; gap: var(--space-2); }
+.strip__row { list-style: none; margin: 0; padding: 0; display: grid; }
+.strip__row li { text-align: center; font-size: var(--step--1); letter-spacing: -.02em; }
+.strip__row--counts li { color: var(--ink); }
+.strip__row--years li { color: var(--muted); }
+.strip__chart { display: block; width: 100%; height: 6rem; }
+/* Every year gets a track, so a year in which nobody crossed reads as an empty
+   column rather than as a column that is not there. */
+.strip__track { fill: var(--panel); }
+.strip__bar { fill: var(--beam); transition: fill var(--dur-med) var(--ease-out); }
+.strip__bar:hover { fill: var(--beam-text); }
+
+/* The sector bar. Square ends and hairline gaps, in keeping with the strip
+   above it. The segment fills ramp between the two existing accents and carry no
+   meaning on their own: the legend under the bar names every segment and prints
+   its count. */
+.sectorbar { display: block; width: 100%; height: .8rem; }
+.sectorlegend { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-3); }
+.sectorlegend__item {
+  display: grid; grid-template-columns: .55rem 1fr auto; gap: var(--space-3);
+  align-items: center; font-size: var(--step--1); color: var(--muted);
+}
+.sectorlegend__swatch { width: .55rem; height: .55rem; border-radius: 2px; }
+.sectorlegend__count { color: var(--ink); font-family: var(--font-mono); }
+
+/* The degradation, used when there is no shape to draw. */
+.viz__figures { list-style: none; margin: 0; padding: 0; display: grid; }
+.viz__figures li {
+  display: flex; justify-content: space-between; gap: var(--space-4);
+  padding: var(--space-2) 0; border-bottom: 1px solid var(--stroke);
+  font-size: var(--step--1);
+}
+.viz__figures-label { color: var(--muted); }
+.viz__figures-value { color: var(--ink); }
+
 .stats {
   display: grid; gap: var(--space-4); margin-bottom: var(--space-7);
   grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
 }
+/* Glass over the ambient field. The blur is what makes the pools behind read as
+   depth rather than as a stain on a flat surface, and the hairline highlight
+   along the top edge is the one place light is allowed to catch. Backdrop-filter
+   is progressive: without it these are the same translucent panels they were,
+   which is a perfectly good card and not a broken one. The figures stay --ink,
+   which tools/check_contrast.py holds at 13.6:1 over the worst case of glass on
+   both pools at once. */
 .stat {
+  position: relative; overflow: hidden;
   display: grid; gap: var(--space-2); padding: var(--space-5);
   border: 1px solid var(--stroke); border-radius: var(--radius); background: var(--panel);
+  backdrop-filter: blur(var(--blur-glass)); -webkit-backdrop-filter: blur(var(--blur-glass));
   text-decoration: none; color: inherit;
+  transition: transform var(--dur-med) var(--ease-out),
+              border-color var(--dur-med) var(--ease-out),
+              background var(--dur-med) var(--ease-out);
+}
+.stat::before {
+  content: ""; position: absolute; inset: 0 0 auto; height: 1px; pointer-events: none;
+  background: linear-gradient(90deg, transparent, var(--glass-highlight) 24%,
+              var(--glass-highlight) 76%, transparent);
+}
+/* Only the freshness card is a link, so only it acknowledges the pointer with
+   movement. A tile that lifts under the cursor and then does nothing when
+   clicked is a promise the card cannot keep. */
+a.stat:hover {
+  transform: translateY(-2px); background: var(--panel-hover);
+  border-color: color-mix(in srgb, var(--beam) 45%, transparent);
 }
 .stat__value { font-size: var(--step-2); color: var(--ink); }
 .stat--freshness .stat__value { font-size: var(--step-1); color: var(--beam-text); white-space: nowrap; }
@@ -48,9 +149,18 @@
   transform: translateY(-3px); border-color: color-mix(in srgb, var(--beam) 55%, transparent);
   box-shadow: 0 12px 40px -12px color-mix(in srgb, var(--beam) 45%, transparent);
 }
+/* The white plate is the one light surface on the site, and left flat it reads
+   as a sticker laid on top of the card. A hairline ring and a shallow shadow
+   under its top edge seat it into the surface instead, as though the plate were
+   set into the panel rather than resting on it. Both are mixes of --plate-ink,
+   so this is the plate's own shadow and no new colour enters. Nothing here
+   touches the logo: the inset stops at the plate's edge, and DESIGN.md's "logos
+   are never altered" is about the mark, which is untouched. */
 .cell__plate {
   display: grid; place-items: center; background: var(--plate); color: var(--plate-ink);
   border-radius: 10px; padding: var(--space-4); min-height: 5.5rem;
+  box-shadow: inset 0 1px 3px var(--plate-inset),
+              inset 0 0 0 1px var(--plate-inset-ring);
 }
 .cell__plate img { max-height: 3rem; width: auto; object-fit: contain; }
 /* Flex-wrap, not a plain inline run, and the reason is a real overflow rather
@@ -110,14 +220,27 @@
   transition: color var(--dur-fast) var(--ease-out),
               background var(--dur-fast) var(--ease-out);
 }
-.viewtoggle__btn:hover { color: var(--ink); }
+.viewtoggle__btn:hover { color: var(--ink); background: var(--panel-hover); }
 .viewtoggle__btn[aria-pressed="true"] { color: var(--ink); background: var(--panel-hover); }
 
 .chips { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+/* Named properties rather than `all`: `all` sweeps up whatever anyone adds to
+   this rule later, which is how a transition ends up animating something nobody
+   intended. The lift is a single pixel, because a chip is a small target and
+   anything more makes a row of them look like it is bubbling. */
 .chip {
   min-height: 44px; padding: var(--space-2) var(--space-4); border-radius: 999px;
   background: transparent; border: 1px solid var(--stroke); color: var(--muted);
-  font-size: var(--step--1); transition: all var(--dur-fast) var(--ease-out);
+  font-size: var(--step--1);
+  transition: color var(--dur-fast) var(--ease-out),
+              border-color var(--dur-fast) var(--ease-out),
+              background var(--dur-fast) var(--ease-out),
+              transform var(--dur-fast) var(--ease-out);
+}
+.chip:hover {
+  color: var(--ink); background: var(--panel);
+  border-color: color-mix(in srgb, var(--beam) 45%, transparent);
+  transform: translateY(-1px);
 }
 .chip[aria-checked="true"] { color: var(--ink); border-color: var(--beam); background: var(--panel); }
 .controls__count { color: var(--muted); font-size: var(--step--1); margin: 0; }
@@ -130,11 +253,21 @@
 .map[hidden] { display: none; }
 .map__svg { width: min(46rem, 100%); height: auto; }
 .map__outline { fill: var(--panel); stroke: var(--stroke); stroke-width: 2; }
+/* The halo swells slightly under the pointer as well as changing fill, so a
+   cluster acknowledges the cursor the way a card does. It is the halo that
+   scales and not the <g>, deliberately: the invisible .map__hit circle inside
+   the same group is sized in map.js to a measured 44px target and capped against
+   its nearest neighbour, and scaling the group would quietly resize that hit
+   area out from under both calculations. transform-box: fill-box is what makes
+   the origin the circle's own centre rather than the SVG's. */
 .map__halo {
   fill: color-mix(in srgb, var(--beam) 22%, transparent);
   stroke: color-mix(in srgb, var(--beam) 60%, transparent); stroke-width: 1.5;
-  transition: fill var(--dur-fast) var(--ease-out);
+  transform-box: fill-box; transform-origin: center;
+  transition: fill var(--dur-med) var(--ease-out),
+              transform var(--dur-med) var(--ease-out);
 }
+.map__city:hover .map__halo, .map__city:focus-visible .map__halo { transform: scale(1.07); }
 .map__city { cursor: pointer; }
 /* Invisible, sized in map.js to target a 44px hit area at the SVG's actual
    rendered size, capped so it never reaches past the midpoint to the

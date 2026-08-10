@@ -17,6 +17,17 @@ TEXT_TOKENS = ["--ink", "--muted", "--beam-text", "--amber", "--violet"]
 PANEL_ALPHA = 0.045
 PANEL_HOVER_ALPHA = 0.075
 
+# tokens.css's depth layer. The hero's ghosted wordmark is --ink at this strength
+# over --void; the register's ambient pools are --beam and --violet at theirs, and
+# they overlap, so the surface checked below is the worst case of both pools
+# stacked. Glass cells then sit on top of that overlap, which is the lightest
+# background any body text on this site is ever set against — which is exactly why
+# it has to be in here. Change a percentage in tokens.css and change it here too:
+# these numbers are the only reason the depth layer is allowed to exist.
+GHOST_INK_ALPHA = 0.05
+AMBIENT_BEAM_ALPHA = 0.08
+AMBIENT_VIOLET_ALPHA = 0.06
+
 
 def _rgb(hex_colour):
     hex_colour = hex_colour.lstrip("#")
@@ -30,11 +41,24 @@ def composite(foreground, background, alpha):
     return "#%02X%02X%02X" % blended
 
 
+_GHOST = composite(TOKENS["--ink"], TOKENS["--void"], GHOST_INK_ALPHA)
+_AMBIENT = composite(
+    TOKENS["--violet"],
+    composite(TOKENS["--beam"], TOKENS["--void"], AMBIENT_BEAM_ALPHA),
+    AMBIENT_VIOLET_ALPHA,
+)
+
 SURFACES = {
     "--void": TOKENS["--void"],
     "--deep": TOKENS["--deep"],
     "--panel": composite("#FFFFFF", TOKENS["--deep"], PANEL_ALPHA),
     "--panel-hover": composite("#FFFFFF", TOKENS["--deep"], PANEL_HOVER_ALPHA),
+    # The hero headline is set over its own ghosted wordmark.
+    "--ghost-ink": _GHOST,
+    # Both ambient pools at once, and glass sitting on that overlap.
+    "--ambient": _AMBIENT,
+    "--panel/ambient": composite("#FFFFFF", _AMBIENT, PANEL_ALPHA),
+    "--panel-hover/ambient": composite("#FFFFFF", _AMBIENT, PANEL_HOVER_ALPHA),
 }
 
 

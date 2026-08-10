@@ -188,13 +188,17 @@ export function renderFunding(container, funding, companies = []) {
     ? requested
     : (funding.stats?.latestWeek || weeks[0].week);
 
+  // data-reveal on the two blocks that are rendered once. Deliberately not on
+  // the panel below them: it is re-rendered every time a week is selected, so
+  // its contents are new elements each time and would fade in again on every
+  // click — a reveal is an arrival, and arriving repeatedly is a flicker.
   container.innerHTML = `
-    <div class="roundup__head">
+    <div class="roundup__head" data-reveal>
       <p class="label">Weekly funding</p>
       <h2 class="roundup__title">German rounds, week by week.</h2>
       <p class="roundup__standard">${escapeHtml(STANDARD)}</p>
     </div>
-    <div class="roundup__weeks" role="tablist" aria-label="Select a week" data-weeks>
+    <div class="roundup__weeks" role="tablist" aria-label="Select a week" data-weeks data-reveal>
       ${weeks.map((week) => weekCard(week, week.week === current)).join("")}
     </div>
     <div class="roundup__panel" role="tabpanel" id="roundup-panel"

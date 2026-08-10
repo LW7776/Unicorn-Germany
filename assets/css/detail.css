@@ -24,12 +24,14 @@
   grid-template-columns: 5rem 1fr auto; padding: var(--space-3);
   text-align: left; color: var(--ink);
   background: var(--panel); border: 1px solid var(--stroke); border-radius: 10px;
-  transition: border-color var(--dur-fast) var(--ease-out),
-              background var(--dur-fast) var(--ease-out);
+  transition: border-color var(--dur-med) var(--ease-out),
+              background var(--dur-med) var(--ease-out),
+              transform var(--dur-med) var(--ease-out);
 }
 .city__item:hover {
   background: var(--panel-hover);
   border-color: color-mix(in srgb, var(--beam) 55%, transparent);
+  transform: translateY(-2px);
 }
 .city__plate { min-height: 3rem; padding: var(--space-3); }
 .city__plate img { max-height: 1.75rem; width: auto; object-fit: contain; }

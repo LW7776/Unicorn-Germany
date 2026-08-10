@@ -47,3 +47,27 @@ def test_the_answers_are_disclosure_widgets_and_not_hand_rolled():
     rows = html.count('<details class="qa__row"')
     assert rows == html.count('<summary class="qa__q">') == 9
     assert 'aria-expanded' not in html
+
+
+def test_exactly_one_phrase_on_the_site_carries_the_gradient():
+    """docs/BRAND.md gives the gradient to one phrase at a time, and DESIGN.md's
+    "one bold element per screen" is the reason. It is a signature while it is
+    rare and a habit the moment it is not, and nothing about the CSS itself stops
+    a second one being added, so this is the thing that does.
+
+    The phrase is `Built by startups.` in the Companies intro (.intro__accent).
+    A gradient set in type is `background-clip: text`, prefixed or not, so
+    counting the unprefixed property counts the rules regardless of prefixing."""
+    css = "\n".join(
+        path.read_text(encoding="utf-8")
+        for path in sorted((ROOT / "assets" / "css").glob("*.css")))
+    # Comments out first: this file's own rule is explained in a comment that
+    # names the property, and a test that counts its own documentation passes
+    # for the wrong reason.
+    declarations = re.sub(r"/\*.*?\*/", "", css, flags=re.DOTALL)
+    # The lookbehind is what keeps the -webkit- prefix from being counted as a
+    # second phrase: a prefixed and unprefixed pair is one declaration written
+    # twice for Safari, not two tinted phrases.
+    tinted = re.findall(r"(?<!-)\bbackground-clip\s*:\s*text", declarations)
+    assert len(tinted) == 1, f"expected one gradient-tinted phrase, found {len(tinted)}"
+    assert ".intro__accent" in declarations

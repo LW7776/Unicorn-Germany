@@ -1,4 +1,5 @@
 import { renderFooter } from "./footer.js";
+import { revealWithin } from "./reveal.js";
 
 /** Boot script for the static pages, about.html and impressum.html. These pages
     carry no register of their own, so they skip main.js entirely.
@@ -37,6 +38,11 @@ function openLinkedRow() {
 }
 
 async function boot() {
+  // First, and before any await. base.css holds every [data-reveal] block at
+  // zero opacity, so the sooner this runs the sooner the page is guaranteed
+  // readable — and there is nothing here it needs to wait for.
+  revealWithin();
+
   renderFooter(document.querySelector("[data-footer]"));
 
   addEventListener("hashchange", openLinkedRow);
@@ -60,6 +66,7 @@ boot().catch((error) => {
   // costs the reader nothing beyond a possibly stale number. The footer is the
   // one thing that renders empty, so it says so.
   console.error(error);
+  revealWithin();
   const footer = document.querySelector("[data-footer]");
   if (footer && !footer.innerHTML.trim()) {
     footer.innerHTML =
