@@ -544,6 +544,10 @@ def build() -> str:
     banner = build_banner(build_date)
 
     html_parts = [
+        # The bundle carries €, ö, ü and em-dashes. The publishing wrapper supplies the
+        # <head>, so declare the encoding ourselves rather than depend on what it emits —
+        # a mis-decoded page turns every euro sign into mojibake.
+        '<meta charset="utf-8">',
         f"<title>{title}</title>",
         f"<style>\n{css}\n</style>",
         banner,
