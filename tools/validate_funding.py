@@ -24,6 +24,16 @@ What the two files *do* share is tools/schema.py: the source allowlist, the
 currency vocabulary and the date grammar. Those are facts about the project, not
 about either standard, and duplicating them is how an allowlist drifts.
 
+TWO SHAPES OF WEEK, ONE STANDARD
+--------------------------------
+A week may be *written up* (one or two lead rounds with prose, plus a list) or
+merely *listed* (`lead` empty, every round in `more`). The listed shape is what
+the weekly routine produces when it has no API key to write prose with. Both
+shapes are held to exactly the same sourcing rule — every round linked, dated
+and attributed — because the difference between them is how much was written,
+not how much was checked. A week with neither a lead nor a list is rejected:
+that is an empty page, and a quiet week is skipped instead.
+
 "Resolvable source URL" is checked structurally — an absolute http(s) URL with a
 host — and not by fetching it. A validator that reaches the network is a
 validator that fails when a publisher has a bad afternoon, and CI would then
@@ -281,9 +291,16 @@ def validate_week(record):
         errors.append("more must be a list")
         return errors
 
-    if not lead:
-        errors.append("lead must carry at least one written-up round")
-    elif len(lead) > MAX_LEAD:
+    # An empty `lead` is legal, and deliberately so. A week is published in one
+    # of two ways: written up, or listed. The listed form is what the weekly
+    # routine produces when no API key is available to write prose — the rounds
+    # are still fetched, sourced, linked and dated, they simply carry no
+    # paragraph. Requiring a lead would mean the choice was between a written
+    # week and *no week at all*, and a missing week is not more truthful than a
+    # list. What is never legal is a week with nothing in it: that is a page
+    # announcing an empty container, and the routine skips it rather than
+    # publishing it.
+    if len(lead) > MAX_LEAD:
         errors.append(
             f"lead carries {len(lead)} rounds; at most {MAX_LEAD} are written up "
             f"in a week — move the rest to `more`")
@@ -291,6 +308,11 @@ def validate_week(record):
         errors.append(
             f"more carries {len(more)} rounds; the cap is {MAX_MORE} so a week "
             f"stays readable — drop the smallest, or promote one to `lead`")
+    if not lead and not more:
+        errors.append(
+            "a week must carry at least one round in `lead` or `more` — a week "
+            "with neither is an empty page, and a quiet week is skipped rather "
+            "than published")
 
     for index, entry in enumerate(lead):
         _validate_round(errors, f"lead[{index}]", entry, start, is_lead=True)

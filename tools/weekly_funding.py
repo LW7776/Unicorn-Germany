@@ -2,12 +2,25 @@
 
 Run: python3 tools/weekly_funding.py --week 2026-W30 [--out data/funding]
      python3 tools/weekly_funding.py --last-complete-week --today 2026-08-10
+     python3 tools/weekly_funding.py --last-complete-week --list-only
 
 It fetches the feeds tools/watch.py already knows how to fetch, keeps the items
 published inside the week, asks Claude to pick the lead round(s) and write them
 up, and then — before anything is written — checks the model's answer back
 against the fetched text. The result is a draft for a human to read in a pull
 request. Nothing here commits, and nothing here publishes.
+
+TWO MODES
+---------
+Full mode is the above. `--list-only` is the same job with the model taken out
+of it: no API call is made, nothing is written in prose, and the week is
+published with an empty `lead` and the rounds in `more`. It exists because the
+routine has to run on a schedule whether or not the repository holds an
+ANTHROPIC_API_KEY, and a week published as a list of linked, dated rounds is a
+smaller thing than a written week but it is still true. What list-only mode
+must never do is guess: every field it emits is lifted out of the headline it
+cites, and an article it cannot read a company and a figure out of is dropped
+rather than half-parsed. See `read_headline` below.
 
 THE THREE GUARDS
 ----------------
@@ -249,6 +262,268 @@ def collect(week, feeds=None, fetcher=None):
     return articles[:MAX_ARTICLES], errors
 
 
+# --- list-only mode: reading the headline, with no model in the loop --------
+#
+# Everything below is deliberately mechanical. It reads a company name, an
+# amount and a currency out of an article's own headline, and emits nothing it
+# could not point at in that headline. The bar it has to clear is not "extract
+# as many rounds as possible" — it is "never publish a company or a figure the
+# cited page does not say". So every step here fails closed: an ambiguous
+# headline yields None and the article is dropped. A quiet week is a real
+# outcome; a wrong company name attached to a real link is not.
+
+# Amounts. Both orders occur in the trade press: "€12 million" (English) and
+# "50 Millionen Euro" (German). A scale word is *required* in both — a bare
+# "€12" is not a round size anyone can rely on, and reading it as millions
+# would be an assumption rather than a reading.
+_SCALES = {
+    "m": 1, "mn": 1, "million": 1, "millions": 1, "millionen": 1,
+    "b": 1000, "bn": 1000, "billion": 1000, "billions": 1000,
+    "milliarde": 1000, "milliarden": 1000,
+}
+_SCALE_WORDS = "|".join(sorted(_SCALES, key=len, reverse=True))
+_NUMBER = r"\d{1,4}(?:[.,]\d{1,3})?"
+
+AMOUNT_CURRENCY_FIRST = re.compile(
+    rf"(?P<currency>€|\$|\bEUR\b|\bUSD\b)\s?(?P<number>{_NUMBER})\s?"
+    rf"(?P<scale>{_SCALE_WORDS})\b", re.I)
+AMOUNT_CURRENCY_LAST = re.compile(
+    rf"(?P<number>{_NUMBER})\s?(?P<scale>{_SCALE_WORDS})\b[\s-]?"
+    rf"(?P<currency>€|\$|\bEUR\b|\bUSD\b|euros?|dollars?)", re.I)
+
+_CURRENCIES = {"€": "EUR", "$": "USD", "eur": "EUR", "usd": "USD",
+               "euro": "EUR", "euros": "EUR", "dollar": "USD", "dollars": "USD"}
+
+# "over €10 million", "rund 50 Millionen": the figure is a boundary, not the
+# round. The register's `approximate` flag exists exactly for this, and the
+# renderer prints "about" beside such a number rather than stating it flat.
+APPROXIMATE_HINT = re.compile(
+    r"\bover\b|\bmore than\b|\bnearly\b|\balmost\b|\baround\b|\babout\b|"
+    r"\bup to\b|\bat least\b|\bunder\b|\brund\b|\bknapp\b|\bmehr als\b|"
+    r"\büber\b|\bfast\b|~", re.I)
+
+# The verb that separates the company from the round. Everything before the
+# first match is the candidate name; everything after is the round.
+RAISE_VERB = re.compile(
+    r"\b(?:raises|raised|secures|secured|lands|landed|closes|closed|bags|"
+    r"bagged|nets|netted|scores|scored|snags|snagged|picks up|picked up|"
+    r"pockets|pocketed|banks|banked|sammelt|erhält|bekommt|sichert|holt)\b",
+    re.I)
+
+# Headline furniture that sits between a publication's own framing and the
+# company: "Exclusive: ", "Berlin-based ", "German AI startup ". Stripped
+# iteratively from the front of the candidate.
+LEADING_LABEL = re.compile(r"^\s*(?:exclusive|breaking|scoop|update|just in)\s*[:\-–—]\s*", re.I)
+GERMAN_CITIES = {
+    "berlin", "munich", "münchen", "hamburg", "cologne", "köln", "frankfurt",
+    "stuttgart", "leipzig", "düsseldorf", "dusseldorf", "karlsruhe", "dresden",
+    "heidelberg", "aachen", "bremen", "hannover", "hanover", "nuremberg",
+    "nürnberg", "potsdam", "darmstadt", "mannheim", "münster", "muenster",
+    "bonn", "essen", "dortmund", "freiburg", "tübingen", "tuebingen", "jena",
+}
+DESCRIPTOR = re.compile(
+    r"^(?:"
+    r"[A-Za-zÄÖÜäöüß][\w.&'’-]*-(?:based|headquartered|founded|born|native)"
+    r"|German(?:y(?:'s|’s)?)?|Deutsche[rsn]?|Berlin(?:'s|’s)?"
+    r"|[A-ZÄÖÜ][\w.&'’-]*(?:'s|’s)"
+    r"|AI|B2B|B2C|SaaS|API|EV|HR|IT"
+    r"|fintech|insurtech|proptech|healthtech|biotech|medtech|deeptech|foodtech"
+    r"|adtech|agritech|legaltech|edtech|regtech|climate|cleantech|greentech"
+    r"|quantum|defence|defense|logistics|mobility|energy|robotics|space"
+    r"|crypto|web3|semiconductor|battery|solar|hydrogen|aerospace|drone"
+    r"|tech|software|hardware|data|cloud|security|cybersecurity|payments"
+    r"|banking|insurance|health|mobile|gaming|retail|industrial|manufacturing"
+    r"|startup|start-up|scaleup|scale-up|company|firm|platform|venture|maker"
+    r"|developer|provider|specialist|unicorn|group|business|player|outfit"
+    r"|Startup|Jungunternehmen|Unternehmen"
+    r")\s+", re.I)
+
+# Auxiliaries and adverbs that sit between the name and the verb and would
+# otherwise be read as part of the name: "Beispiel has raised", "Beispiel just
+# closed", "Beispiel today secures".
+TRAILING_FILLER = {
+    "has", "have", "had", "just", "also", "now", "today", "again", "hat",
+    "haben", "reportedly", "officially", "finally", "successfully", "quietly",
+}
+
+# What is left after stripping must still be a name. These are the words that
+# most often survive the strip and are not one.
+NOT_A_NAME = {
+    "the", "a", "an", "this", "it", "they", "he", "she", "we", "you", "and",
+    "or", "another", "new", "one", "two", "three", "startup", "company",
+    "firm", "founder", "founders", "investor", "investors", "report", "report:",
+    "exclusive", "das", "der", "die", "ein", "eine", "einen",
+}
+
+# Headlines that are not a closed German round, whatever else they contain.
+# A VC closing a fund, a rumour, an acquisition and a listing all match the
+# funding vocabulary and none of them belongs in a round-up of rounds.
+NOT_A_ROUND = re.compile(
+    r"\bin talks\b|\bis raising\b|\bto raise\b|\bseeks?\b|\bseeking\b|"
+    r"\bcould\b|\bmay\b|\bmight\b|\breportedly\b|\brumou?red\b|\bplans to\b|"
+    r"\bset to\b|\bexpected to\b|\bacquir(?:e|es|ed|ing)\b|\bacquisition\b|"
+    r"\bmerger\b|\bmerges\b|\bIPO\b|\bgoes public\b|\blists on\b|"
+    r"\binsolven\w*\b|\bshuts? down\b|\blay(?:s|ing)? off\b|"
+    r"\b(?:launch(?:es|ed)|clos(?:es|ed)|raises)\b[^.]{0,40}\b(?:fund|vehicle)\b|"
+    r"\bfund\s+[IVX]+\b|\bübernimmt\b|\bübernahme\b|\bbörsengang\b",
+    re.I)
+
+STAGE = re.compile(r"\b(pre-seed|pre seed|seed|series\s+[a-g])\b", re.I)
+
+
+def _to_millions(number, scale):
+    """"1,2" + "Milliarden" -> 1200.0. A comma with one or two digits behind it
+    is a German decimal point; anything else is a thousands separator, which is
+    the only reading that makes "1,200 million" and "1,2 Milliarden" both come
+    out right."""
+    text = number.strip()
+    if "," in text and len(text.split(",")[-1]) <= 2 and "." not in text:
+        text = text.replace(",", ".")
+    else:
+        text = text.replace(",", "")
+    return round(float(text) * _SCALES[scale.lower()], 4)
+
+
+def read_amount(text):
+    """(amount in millions, currency) from a headline, or None.
+
+    Requires a currency marker *and* a scale word, in either order. Anything
+    less is not a figure a reader could check against the page.
+    """
+    for pattern in (AMOUNT_CURRENCY_FIRST, AMOUNT_CURRENCY_LAST):
+        match = pattern.search(text)
+        if not match:
+            continue
+        currency = _CURRENCIES.get(match.group("currency").strip().lower())
+        if not currency:
+            continue
+        try:
+            amount = _to_millions(match.group("number"), match.group("scale"))
+        except (ValueError, KeyError):
+            continue
+        if amount > 0:
+            return amount, currency
+    return None
+
+
+def read_company(headline):
+    """(company, hq) from a headline, or (None, None).
+
+    The company is whatever stands between the publication's own framing and
+    the verb: "Berlin-based Beispiel raises …" leaves "Beispiel". The strip is
+    conservative in the direction that matters — if what remains does not look
+    like a name, this returns None and the round is dropped, because a wrong
+    name beside a real link is worse than a round the round-up missed.
+    """
+    verb = RAISE_VERB.search(headline)
+    if not verb:
+        return None, None
+    candidate = headline[:verb.start()]
+    candidate = LEADING_LABEL.sub("", candidate)
+    # A publication's own prefix ("Funding news – ") ends at the last dash or
+    # colon before the verb; the company is what follows it.
+    for separator in (" — ", " – ", " - ", ": ", " | "):
+        if separator in candidate:
+            candidate = candidate.rsplit(separator, 1)[1]
+    candidate = candidate.strip()
+
+    hq = None
+    for _ in range(6):                      # bounded: descriptors do not nest deeply
+        match = DESCRIPTOR.match(candidate)
+        if not match:
+            break
+        word = match.group(0).strip()
+        city = re.split(r"-|'s|’s", word, maxsplit=1)[0].lower()
+        if hq is None and city in GERMAN_CITIES:
+            hq = word.split("-")[0].split("'")[0].split("’")[0]
+        candidate = candidate[match.end():]
+
+    # "Beispiel has raised …", "Beispiel just closed …": the auxiliary belongs
+    # to the verb, not to the name, and it arrives on this side of the split.
+    candidate = candidate.strip(" ,–—-·|’'\"")
+    while True:
+        words = candidate.split()
+        if words and words[-1].lower() in TRAILING_FILLER:
+            candidate = " ".join(words[:-1])
+            continue
+        break
+
+    candidate = candidate.strip(" ,–—-·|’'\"")
+    words = candidate.split()
+    if not (1 <= len(words) <= 4) or len(candidate) > 50:
+        return None, None
+    if not re.search(r"[A-Za-zÄÖÜäöüß0-9]", candidate):
+        return None, None
+    if candidate.lower() in NOT_A_NAME or words[0].lower() in NOT_A_NAME:
+        return None, None
+    return candidate, hq
+
+
+def read_headline(article):
+    """One round from one article, or None.
+
+    Every field comes out of `article["title"]`, which is the headline of the
+    page whose URL is filed beside it. founders and investors are always empty:
+    a headline that names them is rare, and a list this job guessed at is the
+    one thing the lighter sourcing standard still forbids.
+    """
+    headline = article["title"]
+    if NOT_A_ROUND.search(headline):
+        return None
+    figure = read_amount(headline)
+    if not figure:
+        return None
+    company, hq = read_company(headline)
+    if not company:
+        return None
+    amount, currency = figure
+    stage = STAGE.search(headline)
+    return {
+        "company": company,
+        "hq": hq,
+        "stage": stage.group(0).title().replace("Pre Seed", "Pre-Seed") if stage else None,
+        "amount": amount,
+        "currency": currency,
+        "approximate": bool(APPROXIMATE_HINT.search(headline)),
+        "valuation": None,
+        "valuationCurrency": None,
+        "founders": [],
+        "investors": [],
+        "source": {
+            "publication": article["publication"],
+            "title": article["title"],
+            "url": article["url"],
+            "publishedOn": article["publishedOn"],
+        },
+    }
+
+
+def list_week(week, articles, cap=MAX_MORE):
+    """The whole week as a list, with no lead and no prose.
+
+    Deduplicated by company — two publications covering the same round is the
+    normal case, not a second round — and capped at the same `more` limit a
+    written week uses, keeping the largest, which is the same rule the model is
+    given in full mode.
+    """
+    start, end = week_bounds(week)
+    rounds, seen = [], set()
+    for article in articles:
+        entry = read_headline(article)
+        if entry is None:
+            continue
+        key = entry["company"].casefold()
+        if key in seen:
+            continue
+        seen.add(key)
+        rounds.append(entry)
+    rounds.sort(key=lambda e: e["amount"], reverse=True)
+    rounds = rounds[:cap]
+    for index, entry in enumerate(rounds):
+        entry["id"] = f"m{index + 1}"
+    return {"week": week, "start": start, "end": end, "lead": [], "more": rounds}
+
+
 # --- the model call ---------------------------------------------------------
 
 def build_prompt(week, articles):
@@ -448,6 +723,11 @@ def main(argv=None):
     parser.add_argument("--today", help="YYYY-MM-DD; defaults to the system date")
     parser.add_argument("--out", default="data/funding")
     parser.add_argument("--report", help="write a JSON run report here (for the PR body)")
+    parser.add_argument(
+        "--list-only", action="store_true",
+        help="publish the week as a list with no lead and no prose, making no "
+             "API call at all. This is what the weekly routine does when the "
+             "repository holds no ANTHROPIC_API_KEY.")
     args = parser.parse_args(argv)
 
     today = dt.date.fromisoformat(args.today) if args.today else dt.date.today()
@@ -466,16 +746,26 @@ def main(argv=None):
         print("nothing to draft; no file written")
         return 2
 
-    drafted = draft(week, articles)
-    problems = verify(drafted["lead"] + drafted["more"], articles)
-    if problems:
-        for problem in problems:
-            print(f"! unverified: {problem}", file=sys.stderr)
-        print("draft rejected: a claim could not be traced to the article cited "
-              "for it; no file written", file=sys.stderr)
-        return 1
+    if args.list_only:
+        # No model call, no prose, no lead. Every field below was read out of a
+        # headline this run fetched — see read_headline.
+        record = list_week(week, articles)
+        if not record["more"]:
+            print("no round could be read from this week's headlines; "
+                  "no file written")
+            return 2
+        print(f"list-only: {len(record['more'])} round(s) read from headlines")
+    else:
+        drafted = draft(week, articles)
+        problems = verify(drafted["lead"] + drafted["more"], articles)
+        if problems:
+            for problem in problems:
+                print(f"! unverified: {problem}", file=sys.stderr)
+            print("draft rejected: a claim could not be traced to the article "
+                  "cited for it; no file written", file=sys.stderr)
+            return 1
+        record = assemble(week, drafted, articles)
 
-    record = assemble(week, drafted, articles)
     validation = validate_week(record)
     if validation:
         for error in validation:
@@ -494,6 +784,7 @@ def main(argv=None):
         tracked = tracked_companies(record)
         pathlib.Path(args.report).write_text(json.dumps({
             "week": week,
+            "mode": "list-only" if args.list_only else "full",
             "articles": len(articles),
             "feedErrors": errors,
             "lead": [{"company": e["company"], "amount": e["amount"],

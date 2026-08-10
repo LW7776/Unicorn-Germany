@@ -55,22 +55,42 @@ before the first Monday.
 - Tick **Allow GitHub Actions to create and approve pull requests**. Without it
   `weekly-funding.yml` cannot open its pull request.
 
-## 5. The Anthropic API key — not being used
+## 5. The Anthropic API key — optional, and the schedule runs without it
 
-The operator chose to draft the funding round-up on request rather than on a timer, so no
-key is held and `weekly-funding.yml`'s Monday schedule is commented out. The job still works
-on demand from the Actions tab, it simply needs the secret to exist first.
+No key is held, and the Monday schedule is **on** regardless. Those two facts used to be in
+conflict, which is why the schedule was previously switched off. They no longer are:
+`weekly-funding.yml` picks its mode from what the repository actually has.
 
-Everything below applies only if that changes later.
+- **No `ANTHROPIC_API_KEY`** (the current state): the job makes no model call at all. It fetches
+  the week's German rounds from the same allowlisted feeds and opens a pull request publishing
+  them as a list, each round carrying company, amount, currency, source link and publication
+  date read out of the headline that states it. Nothing is invented and nothing is written in
+  prose. The page marks the week as listed rather than written up.
+- **With the key**: the same job additionally asks Claude to pick the lead round or two and write
+  them up in the site's voice, with every claim checked back against the fetched article text.
+
+So the key buys prose, not coverage. Nothing breaks without it, no run turns red for want of it,
+and adding or removing it later needs no code change.
 
 ### If you do add one
 
 **Settings → Secrets and variables → Actions → New repository secret**
 
-Name it exactly `ANTHROPIC_API_KEY`.
+Name it exactly `ANTHROPIC_API_KEY`. Full steps and what each mode may and may not do are in
+[docs/UPDATING.md](UPDATING.md#the-weekly-round-up-in-two-modes).
 
-Until it exists, the weekly funding workflow fails on its first step with a message naming
-the secret, and publishes nothing. The three demo weeks stay on the site either way.
+## 5b. Optional: let the funding pull request merge itself
+
+**Settings → Secrets and variables → Actions → Variables → New repository variable**, named
+`FUNDING_AUTO_MERGE`, value `true`.
+
+Unset — the default — the weekly pull request waits for a person, which is what the site's About
+page promises. Set to `true`, the workflow enables auto-merge and the week lands on its own once
+`validate.yml` passes. That also needs **Settings → General → Allow auto-merge**; without it the
+pull request simply stays open, which is the safe failure. Note what you are trading: validation
+proves a week is well-formed, sourced, linked and dated, and cannot prove that a company name was
+read correctly out of a headline. The register sweep should stay manual either way, since it
+proposes changes to published company figures.
 
 ## 6. Check the sweep works without waiting eight weeks
 
@@ -85,11 +105,16 @@ key and proves the permissions are right, rather than discovering they are not i
 | Workflow | When | What it does |
 |---|---|---|
 | `validate.yml` | every push and pull request | tests, contrast, validation, and refuses a stale `data/companies.json` |
-| `weekly-funding.yml` | on request only, schedule off | drafts a funding week and opens a pull request |
+| `weekly-funding.yml` | every Monday 07:00 UTC, plus on request, by API, and by webhook | drafts or lists a funding week and opens a pull request |
 | `watch.yml` | every 8 weeks | re-checks the register and opens an issue listing candidates |
 | `rebuild.yml` | any hand edit to `data/companies/` | validates first, and only rebuilds if it passes |
 
-Nothing merges itself. Every automated change arrives as a pull request or an issue.
+Every automated change arrives as a pull request or an issue, and nothing merges itself unless
+`FUNDING_AUTO_MERGE` is set to `true` (section 5b). The weekly round-up can also be started from
+outside GitHub — an HTTP POST to the `workflow_dispatch` or `repository_dispatch` endpoint, with
+the `curl` and the token scope written out in
+[docs/UPDATING.md](UPDATING.md#starting-a-run-yourself-three-ways). Neither route publishes: both
+end at an open pull request.
 
 ## How an update reaches the live site
 
@@ -101,11 +126,9 @@ workflow runs  ->  opens a pull request  ->  you merge it
 That merge is the only manual step, and it is deliberate. It is the point where a person
 sees what the automation wrote before the public does.
 
-If you would rather it were hands-off, turn on **Settings → General → Allow auto-merge** and
-enable auto-merge on the weekly funding pull request. It then merges itself once
-`validate.yml` passes. You gain a site that updates with no involvement, and you give up the
-review step. The register sweep should stay manual either way, since it proposes changes to
-published company figures.
+If you would rather it were hands-off, section 5b turns that step over to the machine:
+`FUNDING_AUTO_MERGE=true` plus **Settings → General → Allow auto-merge**. You gain a site that
+updates with no involvement, and you give up the review step.
 
 ## Editing by hand
 

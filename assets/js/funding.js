@@ -123,11 +123,29 @@ function moreItem(round, slugByName) {
     </li>`;
 }
 
+/** A week can arrive written up or merely listed — tools/validate_funding.py
+    accepts both, and the weekly routine produces the listed shape when it has
+    no API key to write prose with. A lead-less week must therefore not render
+    an empty slot where a write-up would be: an empty container looks like a
+    fault, and a reader who sees one concludes something failed rather than
+    that nothing was written. So the panel says which kind of week this is, in
+    a line, and goes straight to the list. */
+const LISTED_ONLY =
+  "No round was written up this week. What follows is every German round the " +
+  "allowlisted feeds reported, listed with its source.";
+
 function weekPanel(week, slugByName) {
-  const leads = week.lead.map((round) => leadCard(round, slugByName)).join("");
+  const written = week.lead.length > 0;
+  const leads = written
+    ? `<div class="roundup__leads${week.lead.length > 1 ? " roundup__leads--pair" : ""}">${
+        week.lead.map((round) => leadCard(round, slugByName)).join("")}</div>`
+    : `<p class="roundup__empty">${escapeHtml(LISTED_ONLY)}</p>`;
+  // "Also raised" only reads correctly under a write-up. With nothing above
+  // it, the list is the week rather than an addendum to it.
+  const heading = written ? "Also raised this week" : "Raised this week";
   const more = week.more.length
     ? `<section class="roundup__more" aria-labelledby="roundup-more">
-         <h3 class="label" id="roundup-more">Also raised this week</h3>
+         <h3 class="label" id="roundup-more">${heading}</h3>
          <ul class="roundup__list">${week.more.map((round) => moreItem(round, slugByName)).join("")}</ul>
        </section>`
     // A week with no additional rounds says so rather than showing an empty
@@ -135,7 +153,7 @@ function weekPanel(week, slugByName) {
     // over blank space reads as a rendering fault.
     : `<p class="roundup__empty">No further German rounds were reported this week.</p>`;
   return `
-    <div class="roundup__leads${week.lead.length > 1 ? " roundup__leads--pair" : ""}">${leads}</div>
+    ${leads}
     ${more}`;
 }
 

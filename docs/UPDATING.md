@@ -1,8 +1,10 @@
 # Updating the register
 
 Nothing here edits the dataset automatically. The scheduled scans only *propose* — one opens an
-issue, the other opens a pull request. There are three ways to change the content, and all three
-end in the same place: a validated commit.
+issue, the other opens a pull request, and both wait for a person unless the repository has been
+told otherwise (see [Letting the pull request merge itself](#letting-the-pull-request-merge-itself)).
+There are three ways to change the content, and all three end in the same place: a validated
+commit.
 
 | Route | Needs | Use it when |
 |---|---|---|
@@ -78,7 +80,7 @@ Neither publishes anything by itself.
 
 | | `weekly-funding` | `watch` |
 |---|---|---|
-| Runs | On request, from the Actions tab. Schedule off | Every 8 weeks, Monday 06:00 UTC |
+| Runs | Every Monday 07:00 UTC. Also on demand, by API, and by webhook | Every 8 weeks, Monday 06:00 UTC |
 | Looks for | German funding rounds — any company, not only unicorns | Anything that changes the register |
 | Produces | A pull request with one week of the round-up | An issue listing candidate changes |
 | Touches the dataset | No — a pull request you review | No — an issue you read |
@@ -98,13 +100,34 @@ why it suits a slower, more thorough pass.
 Both can be triggered by hand from **Actions → (the workflow) → Run workflow**. A manual `watch`
 run always sweeps, regardless of which week it is.
 
-## Setting up the weekly funding round-up
+## The weekly round-up, in two modes
 
-`weekly-funding` calls the Anthropic API, so it needs an API key. **The repository does not have
-one yet** — until it is added, the workflow fails on its first step with a message saying so,
-and nothing else runs.
+`weekly-funding` runs on a schedule and needs no attention. What it produces depends on one
+thing: whether the repository holds an `ANTHROPIC_API_KEY`.
 
-To add it:
+| | Full mode | List-only mode |
+|---|---|---|
+| Chosen when | The secret exists | The secret is absent, **or** the run was started with **List only** ticked |
+| Model call | Yes, one | **None at all** |
+| Lead rounds | 1-2, written up in the site's voice | `lead` is empty |
+| Supporting list | Up to 5 rounds | Up to 5 rounds |
+| Per round | Company, HQ, stage, amount, currency, founders, investors, source, date | Company, amount, currency, source, date, plus HQ and stage where the headline gives them. Founders and investors are always empty |
+
+**The repository currently holds no key, so the schedule runs in list-only mode.** That is a
+deliberate design, not a degraded one: the routine was rebuilt so a missing secret changes what a
+week *says*, never whether a week *happens*. The site keeps moving, and it never claims a
+write-up it did not produce.
+
+**What list-only mode may and may not do.** Every field it publishes is lifted out of the
+headline of the page it cites. It reads a company name, an amount and a currency out of that
+headline, and if it cannot read all three cleanly it drops the article rather than half-parsing
+it. It never infers a founder, an investor or a valuation, and it never carries anything over
+from what a model happens to know. The consequence is that it misses real rounds whose headline
+is phrased awkwardly, and that is the correct trade: a round the site missed is a gap, and a
+wrong company name beside a real link is a falsehood. The page says which kind of week it is
+showing in place of the write-up, so nobody is left assuming the prose went missing.
+
+### Adding the key, if you want written weeks
 
 1. Go to <https://console.anthropic.com/settings/keys> and **Create Key**. Copy it — the console
    shows it once.
@@ -116,26 +139,108 @@ To add it:
    the week that just ended.
 
 The key is never printed, never committed, and is only readable by Actions. If it leaks, revoke
-it in the console and add a new one — no code change is needed.
+it in the console and add a new one — no code change is needed. Removing it later breaks nothing:
+the next Monday simply produces a listed week instead of a written one.
 
 ### What the job actually does
 
 1. Fetches the allowlisted feeds (the same `tools/watch.py` code the sweep uses), walking a few
    pages back so a Monday run still sees the previous Tuesday.
 2. Keeps articles published inside the week that mention Germany and a funding event.
-3. Asks Claude to pick the lead round(s), write them up, and list the rest — **from those
-   articles only**.
-4. Checks the answer back against the fetched text: every company, founder, amount and valuation
-   must appear in the article cited beside it, and the citation must be a page this run actually
-   fetched. Anything that fails is rejected and nothing is written.
-5. Validates the file with `tools/validate_funding.py`.
-6. Opens a pull request. It never commits to `main`.
+3. **Full mode:** asks Claude to pick the lead round(s), write them up, and list the rest —
+   **from those articles only** — then checks the answer back against the fetched text. Every
+   company, founder, amount and valuation must appear in the article cited beside it, and the
+   citation must be a page this run actually fetched. Anything that fails is rejected and
+   nothing is written.
+   **List-only mode:** reads each headline mechanically into a round, drops the ones it cannot
+   read, deduplicates by company, and keeps the largest five.
+4. Validates the file with `tools/validate_funding.py`, which accepts both shapes of week and
+   holds both to the same sourcing rule.
+5. Opens a pull request. It never commits to `main`. If validation fails, nothing is proposed
+   and the run fails loudly.
 
 If a company already in `data/companies/` appears in the week, the pull request says so at the
 top and its title is marked *(touches the register)* — that company's register entry now carries
-an out-of-date figure, and the round-up must not be the only place the new one appears.
+an out-of-date figure, and the round-up must not be the only place the new one appears. A listed
+week is marked *(listed, not written up)* in the title too, so the difference is visible before
+the diff is opened.
 
-A week with no qualifying German rounds is a real outcome: the job says so and opens nothing.
+A week with no qualifying German rounds is a real outcome: the job says so in the run log and
+opens nothing. An empty pull request is never created, because a page announcing an empty week
+is worse than no update at all.
+
+### Starting a run yourself: three ways
+
+**By hand.** **Actions → weekly-funding → Run workflow.** Two optional inputs: a `week`
+("2026-W30", blank means the week that just ended) and **List only**, which forces the listed
+shape even when the key exists. Useful for seeing what a listed week looks like before you have
+to rely on one.
+
+**By API.** The same manual trigger, over HTTP. `ref` is required and names the branch the
+workflow file is read from.
+
+```bash
+curl -X POST \
+  -H "Accept: application/vnd.github+json" \
+  -H "Authorization: Bearer $GITHUB_TOKEN" \
+  -H "X-GitHub-Api-Version: 2022-11-28" \
+  https://api.github.com/repos/LW7776/Unicorn-Germany/actions/workflows/weekly-funding.yml/dispatches \
+  -d '{"ref":"main","inputs":{"week":"2026-W30","list_only":"true"}}'
+```
+
+**By webhook.** `repository_dispatch` is the trigger an external system fires: a cron box, an
+automation step, a script on someone else's machine. The event type must be exactly
+`draft-funding-week`, and the optional week travels in `client_payload`, because
+`repository_dispatch` has no `inputs`.
+
+```bash
+curl -X POST \
+  -H "Accept: application/vnd.github+json" \
+  -H "Authorization: Bearer $GITHUB_TOKEN" \
+  -H "X-GitHub-Api-Version: 2022-11-28" \
+  https://api.github.com/repos/LW7776/Unicorn-Germany/dispatches \
+  -d '{"event_type":"draft-funding-week","client_payload":{"week":"2026-W30"}}'
+```
+
+Omit `client_payload` entirely, or send `{}`, to draft the week that just ended.
+
+**Which token.** Both endpoints need a token with write access to Actions on this repository:
+
+- A **fine-grained personal access token** scoped to this repository with **Actions: Read and
+  write**. The `repository_dispatch` endpoint additionally needs **Contents: Read and write**.
+- Or a **classic** personal access token with the `repo` scope.
+
+The repository's own `GITHUB_TOKEN` cannot start either of these. A workflow triggered by that
+token does not trigger further workflows, which is GitHub's loop guard and is working as
+intended.
+
+**Never put a real token in this file, in a workflow, or in a commit.** Export it in the shell
+that runs the `curl`, or keep it in whatever secret store the calling system already has. A token
+pasted into a repository is a token that has to be revoked.
+
+Neither route publishes anything. Both end where the schedule ends, at an open pull request.
+
+### Letting the pull request merge itself
+
+By default the pull request waits for a person. That is the reviewed path, and it is what the
+site's own About page promises when it says someone checks the links.
+
+To hand that step over, set a repository **variable** (not a secret): **Settings → Secrets and
+variables → Actions → Variables → New repository variable**, named `FUNDING_AUTO_MERGE`, with the
+value `true`. The workflow then enables auto-merge on the pull request it opens, and the week
+lands by itself as soon as `validate.yml` passes.
+
+| `FUNDING_AUTO_MERGE` | What happens to the pull request |
+|---|---|
+| unset, or anything other than `true` (the default) | It stays open until a person merges it |
+| `true` | It merges itself once `validate.yml` is green |
+
+Two things are worth knowing before turning it on. **Auto-merge must also be enabled for the
+repository** (Settings → General → Allow auto-merge), and if it is not, the run logs a warning
+and the pull request simply stays open, which is the safe failure. And **validation is not
+review**: CI checks that a week is well-formed, sourced, linked and dated, which is precisely
+what cannot tell you that a headline was read correctly. With auto-merge on, a listed week
+reaches the public site without anyone having opened a source link.
 
 ## The funding round-up, by hand
 
@@ -146,10 +251,16 @@ One file per ISO week, `data/funding/<year>-W<week>.json`:
   "week": "2026-W30",
   "start": "2026-07-20",             // must be that week's Monday
   "end": "2026-07-26",               //  ... and its Sunday
-  "lead": [ /* 1-2 rounds, each with a `text` write-up */ ],
+  "lead": [ /* 0-2 rounds, each with a `text` write-up */ ],
   "more": [ /* up to 5 rounds, listed only, no `text` */ ]
 }
 ```
+
+`lead` may be **empty**, which publishes the week as a plain list: same rounds, same sourcing
+rule, no prose. That is the shape the weekly routine produces without an API key, and the page
+says so where a write-up would be. What is rejected is a week with *neither* a lead nor a list,
+because an empty week is a page announcing nothing. Writing one up by hand later is just an edit
+to the same file.
 
 Every round in either list:
 

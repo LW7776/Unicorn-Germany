@@ -3,9 +3,10 @@ import datetime as dt
 
 import pytest
 
-from tools.validate_funding import validate_week
+from tools.validate_funding import MAX_MORE, validate_week
 from tools.weekly_funding import (
-    assemble, collect, last_complete_week, states_figure, tracked_companies, verify)
+    assemble, collect, last_complete_week, list_week, read_amount, read_company,
+    read_headline, states_figure, tracked_companies, verify)
 
 ITEM_TEMPLATE = """<?xml version="1.0" encoding="UTF-8"?>
 <rss xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel>{items}</channel></rss>"""
@@ -280,3 +281,138 @@ def test_a_company_already_in_the_register_is_flagged(articles, tmp_path):
 def test_an_untracked_company_is_not_flagged(articles, tmp_path):
     record = assemble("2026-W30", {"lead": [a_draft()], "more": []}, articles)
     assert tracked_companies(record, companies_dir=str(tmp_path)) == []
+
+
+# --- list-only mode: no model, nothing invented -----------------------------
+#
+# The bar these tests hold the extractor to is not recall. It is that every
+# field it emits can be pointed at in the headline it cites, and that a
+# headline it cannot read cleanly produces nothing at all.
+
+def an_article(title, **overrides):
+    entry = {
+        "id": "a1", "publication": "Tech.eu", "title": title,
+        "url": "https://tech.eu/2026/07/22/x/", "publishedOn": "2026-07-22",
+        "text": "",
+    }
+    entry.update(overrides)
+    return entry
+
+
+@pytest.mark.parametrize("headline,expected", [
+    ("Beispiel raises €12 million", (12.0, "EUR")),
+    ("Beispiel raises €12M in Series A", (12.0, "EUR")),
+    ("Beispiel raises $50 million", (50.0, "USD")),
+    ("Beispiel raises $1.2bn at a new valuation", (1200.0, "USD")),
+    ("Beispiel raises EUR 7.5 million", (7.5, "EUR")),
+    ("Beispiel sammelt 50 Millionen Euro ein", (50.0, "EUR")),
+    ("Beispiel sammelt 1,2 Milliarden Euro ein", (1200.0, "EUR")),
+    ("Beispiel raises 30 million euros", (30.0, "EUR")),
+])
+def test_a_figure_is_read_in_both_word_orders_and_both_languages(headline, expected):
+    assert read_amount(headline) == expected
+
+
+@pytest.mark.parametrize("headline", [
+    "Beispiel raises €12",                 # no scale word: 12 what?
+    "Beispiel raises 12 million",          # no currency
+    "Beispiel raises a Series A round",    # no figure at all
+    "Beispiel raises £12 million",         # a currency this site cannot render
+])
+def test_an_unreadable_figure_yields_nothing_rather_than_a_guess(headline):
+    assert read_amount(headline) is None
+
+
+@pytest.mark.parametrize("headline,company,hq", [
+    ("Berlin-based Beispiel raises €12 million", "Beispiel", "Berlin"),
+    ("Munich's Beispiel GmbH secures $20 million", "Beispiel GmbH", "Munich"),
+    ("German AI startup Beispiel lands €9m seed", "Beispiel", None),
+    ("Beispiel raises €12 million", "Beispiel", None),
+    ("Hamburg-based fintech Beispiel Bank closes €30M Series B",
+     "Beispiel Bank", "Hamburg"),
+    ("Exclusive: Berlin-based Beispiel raises €12 million", "Beispiel", "Berlin"),
+    # The auxiliary belongs to the verb, not to the name.
+    ("Beispiel has raised €12 million", "Beispiel", None),
+    ("Berlin-based Beispiel just closed a €12M round", "Beispiel", "Berlin"),
+])
+def test_the_company_is_what_stands_between_the_framing_and_the_verb(
+        headline, company, hq):
+    assert read_company(headline) == (company, hq)
+
+
+@pytest.mark.parametrize("headline", [
+    "The startup raises €12 million",                    # no name survives the strip
+    "Beispiel is a Berlin company with €12 million",     # no raise verb
+    "A very long run of words that is plainly a sentence and not a company name at all raises €12 million",
+])
+def test_a_headline_with_no_readable_company_is_dropped(headline):
+    assert read_company(headline)[0] is None
+
+
+@pytest.mark.parametrize("headline", [
+    "Some VC closes €200 million fund IV",
+    "Beispiel is in talks to raise €12 million",
+    "Beispiel reportedly raises €12 million",
+    "Grosse AG acquires Beispiel for €12 million",
+    "Beispiel raises €12 million ahead of its IPO",
+])
+def test_what_is_not_a_closed_round_is_not_listed(headline):
+    assert read_headline(an_article(headline)) is None
+
+
+def test_a_read_round_carries_a_company_a_figure_a_link_and_a_date():
+    entry = read_headline(an_article(
+        "Berlin-based Beispiel raises €12 million in a Series A"))
+    assert entry["company"] == "Beispiel"
+    assert (entry["amount"], entry["currency"]) == (12.0, "EUR")
+    assert entry["hq"] == "Berlin" and entry["stage"] == "Series A"
+    assert entry["source"]["url"] == "https://tech.eu/2026/07/22/x/"
+    assert entry["source"]["publishedOn"] == "2026-07-22"
+    # Never guessed, in either mode.
+    assert entry["founders"] == [] and entry["investors"] == []
+    assert entry["valuation"] is None
+
+
+def test_a_loose_figure_is_marked_approximate_rather_than_stated_flat():
+    entry = read_headline(an_article("Beispiel raises over €10 million"))
+    assert entry["approximate"] is True
+    assert read_headline(an_article("Beispiel raises €10 million"))["approximate"] is False
+
+
+def test_a_listed_week_passes_the_validator_with_an_empty_lead():
+    record = list_week("2026-W30", [
+        an_article("Berlin-based Beispiel raises €12 million Series A"),
+        an_article("Munich's Zweitens secures $30 million",
+                   url="https://tech.eu/2026/07/23/zweitens/"),
+    ])
+    assert record["lead"] == []
+    assert [e["company"] for e in record["more"]] == ["Zweitens", "Beispiel"]
+    assert [e["id"] for e in record["more"]] == ["m1", "m2"]
+    assert validate_week(record) == []
+
+
+def test_two_publications_on_one_round_are_one_round():
+    record = list_week("2026-W30", [
+        an_article("Berlin-based Beispiel raises €12 million"),
+        an_article("Beispiel raises €12M in Series A", publication="Sifted",
+                   url="https://sifted.eu/2026/07/22/beispiel/"),
+    ])
+    assert len(record["more"]) == 1
+
+
+def test_the_list_is_capped_the_same_way_a_written_week_is():
+    record = list_week("2026-W30", [
+        an_article(f"Firma{i} raises €{i}0 million",
+                   url=f"https://tech.eu/2026/07/22/f{i}/")
+        for i in range(1, 9)
+    ])
+    assert len(record["more"]) == MAX_MORE
+    # Kept the largest, which is the rule full mode gives the model.
+    assert record["more"][0]["amount"] == 80.0
+
+
+def test_a_week_whose_headlines_cannot_be_read_lists_nothing():
+    """Better an empty result the workflow skips than a page of half-parsed
+    names. The caller turns this into "nothing to propose", not into a file."""
+    record = list_week("2026-W30", [an_article("A quiet week for German startups")])
+    assert record["more"] == []

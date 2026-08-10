@@ -69,12 +69,16 @@ or `data/funding.json` is stale — that is, if it doesn't match what `tools/bui
 from the current source files — so a regenerated file can never be forgotten in review.
 
 Two scheduled workflows read the feeds. `.github/workflows/weekly-funding.yml` runs every
-Monday, drafts that week of the funding round-up and opens a **pull request**;
+Monday, compiles that week of the funding round-up and opens a **pull request** (writing the
+lead rounds up when an `ANTHROPIC_API_KEY` is available, and otherwise publishing the week as a
+plain list of sourced rounds with no model call at all);
 `.github/workflows/watch.yml` runs the full register sweep every eight weeks and opens a
 GitHub **issue**. The weekly scan is what catches a new unicorn, because a company crosses a
 billion by raising and that round gets announced; the eight-weekly sweep catches what funding
-news never announces — quiet IPOs, acquisitions, insolvencies and ageing valuations. Nothing
-is ever published automatically; see
+news never announces — quiet IPOs, acquisitions, insolvencies and ageing valuations. The weekly
+routine can also be started by API or webhook. Nothing is published automatically unless the
+repository variable `FUNDING_AUTO_MERGE` is set to `true`, which hands the merge step to the
+machine and is off by default; see
 [`docs/UPDATING.md`](docs/UPDATING.md) for the routes from an open candidate to a merged,
 validated change.
 

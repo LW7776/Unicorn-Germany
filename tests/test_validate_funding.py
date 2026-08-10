@@ -104,9 +104,27 @@ def test_a_third_lead_round_is_rejected(week):
     assert any("at most 2" in e for e in validate_week(week))
 
 
-def test_a_week_with_no_lead_round_is_rejected(week):
+def test_a_week_with_no_lead_round_is_accepted(week):
+    """A week may be listed rather than written up.
+
+    This is not a relaxation of the sourcing rule — every round in the list is
+    still linked, dated and attributed, and the checks below all still run on
+    it. It is a statement about how much prose a week carries. The weekly
+    routine produces this shape when it has no API key to write with, and the
+    alternative to accepting it is not a written week, it is no week: the
+    rounds would be fetched, verified and then thrown away for want of a
+    paragraph. The renderer says which kind of week it is showing.
+    """
     week["lead"] = []
-    assert any("at least one" in e for e in validate_week(week))
+    assert validate_week(week) == []
+
+
+def test_a_week_with_neither_a_lead_nor_a_list_is_rejected(week):
+    """The one shape that is still an error. A week with nothing in it is a
+    page announcing an empty container; a genuinely quiet week is skipped
+    upstream rather than published as this."""
+    week["lead"], week["more"] = [], []
+    assert any("at least one round" in e for e in validate_week(week))
 
 
 # --- the lead / more distinction --------------------------------------------
