@@ -299,6 +299,12 @@ def compute_stats(records, fx):
         "fxRateDisclosed": rate,
         "fxAsOf": fx["asOf"],
         "dataAsOf": data_as_of,
+        # Settled here like every other label. register.js used to carry its own
+        # month-name table and format this string in the browser, which is the one
+        # thing this module exists to prevent, and it rendered the day away as well:
+        # dataAsOf is a full publication date, and every other full date on the site
+        # (the round-up's) prints as "7 Aug 2026" through _day_label.
+        "dataAsOfLabel": _day_label(data_as_of) if data_as_of else None,
     }
 
 

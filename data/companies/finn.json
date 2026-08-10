@@ -63,7 +63,7 @@
       ],
       "source": "s2",
       "disputed": {
-        "note": "This round is reported almost everywhere as €140m — Sifted’s report of it says FINN “has become Germany’s newest unicorn after announcing a €140m Series D funding round on Wednesday.” The lead investor’s own announcement splits that figure: “nearly €100 million in equity financing” from the equity investors, plus “more than €40 million in debt capital” from BC Partners and Runway Growth. Only the first part is equity raised, so the register records €100m and keeps the better-known €140m here. This is the 1KOMMA5° problem in another costume, and it matters more than usual for a company that finances a vehicle fleet: debt is a working input to this business model, not a rounding difference.",
+        "note": "The €140m widely reported for this round is nearly €100m of equity plus more than €40m of debt, and only the equity is recorded here.",
         "source": "s3"
       }
     }

@@ -25,7 +25,7 @@
     "round": "Series G",
     "source": "s2",
     "disputed": {
-      "note": "A newer and larger figure is attached to Flix, and the register does not publish it as the headline. When EQT and Kühne Holding took 35% of the company in July 2024, Bloomberg reported that they were “investing around €1 billion ($1.2 billion) in Flix in a deal valuing the business at more than €3 billion, people with knowledge of the matter said.” Two things keep that out of the valuation field. It is attributed to people with knowledge of the matter, not disclosed: Flix’s own announcement and EQT’s, both opened and read, describe the structure and state no figure at all. And the transaction was part primary and part secondary — EQT’s release says that “[i]n addition to a primary investment in Flix, EQT Future and Kühne Holding will acquire shares from existing shareholders” — so it prices the company at a deal rather than being a post-money struck by a round. The published $3bn+ is Flix’s own stated valuation from June 2021; the July 2024 figure is higher, so nothing here understates the company.",
+      "note": "Bloomberg put the July 2024 EQT and Kühne deal at more than €3bn, attributed to people with knowledge of the matter rather than disclosed by anyone, so the published figure stays Flix's own from June 2021.",
       "source": "s5"
     }
   },
@@ -99,11 +99,7 @@
         "Baillie Gifford",
         "Silver Lake"
       ],
-      "source": "s1",
-      "disputed": {
-        "note": "The $650m+ is not all equity. Flix’s own announcement calls it a “structured funding round, based on a mix of equity and debt”, and TechCrunch’s account of the same round quotes co-founder Jochen Engert describing it as a “balanced” mix of the two. Neither the company nor TechCrunch splits the figure, so the register records the round as its sources state it and flags here that the amount is not a pure equity raise. The $3bn+ post-money beside it is unaffected — that is a valuation, not a use of the money.",
-        "source": "s6"
-      }
+      "source": "s1"
     },
     {
       "id": "r4",

@@ -25,7 +25,7 @@
     "round": "Series C",
     "source": "s3",
     "disputed": {
-      "note": "Neura itself has never stated a valuation. Its own announcement of this round gives a size and no price, and it declined to comment on the figure. The $7bn reaches an allowlisted page at second hand — Sifted attributes it to the Financial Times “citing people familiar with the deal” — and at third hand in Gründerszene, which prints it flatly as fact in its round-up of 2026's German unicorns: “Die Bewertung: sieben Milliarden Dollar und damit Einhorn-Status.” Two independent allowlisted publications carrying the same number is why it is published here rather than left undisclosed; that neither traces to the company is why it is flagged. A reader should treat the membership as solid and the figure as reported rather than confirmed.",
+      "note": "Neura has never stated a valuation, and the $7bn reaches the register at second hand through Sifted citing the Financial Times and through Gründerszene repeating it.",
       "source": "s5"
     }
   },
@@ -85,11 +85,7 @@
         "Schaeffler",
         "European Investment Bank"
       ],
-      "source": "s2",
-      "disputed": {
-        "note": "Sifted reports the round flatly as “a $1.4bn Series C round”, which is the figure on file here. The company's own announcement, and Tech.eu reporting it, say “up to $1.4 billion” — a ceiling that unlocks in tranches rather than a sum already wired. The register records the number the allowlisted reporting states and shows the qualifier beside it rather than choosing between them.",
-        "source": "s4"
-      }
+      "source": "s2"
     }
   ],
   "founders": [

@@ -74,7 +74,7 @@
       "investors": [],
       "source": "s3",
       "disputed": {
-        "note": "This is the round that crossed the threshold and it was never announced, so the register is publishing the least-disclosed figure in it. What supports the date and the numeral is Sifted, in June 2026, reporting its own earlier finding: the company “reached unicorn status in an unannounced January funding round valuing it at more than $1bn”. When Sifted first reported it in February, the size of the round was undisclosed, the source was Manager Magazin, and the valuation was confirmed only by “a person close to the company”, who put it in a different currency: “Stark is worth more than one billion.” Hence a round here with no amount and no investors — those were never published — and hence this note. A reader should weigh it accordingly: this is the crossing as an allowlisted publication states it, not as the company has ever confirmed it.",
+        "note": "This crossing round was never announced by the company, and Sifted reports it from its own earlier finding.",
         "source": "s6"
       }
     },

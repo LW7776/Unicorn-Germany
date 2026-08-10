@@ -25,7 +25,7 @@
     "round": "Series D, second close",
     "source": "s5",
     "disputed": {
-      "note": "A €2bn figure is attached to sennder in Tech.eu’s December 2022 headline, “German logistics player Sennder primes new fundraise at €2 billion valuation”. The article body is about a raise that was being prepared, not one that closed: it reports sennder “taking on funds” at around double its January 2021 value, on Handelsblatt’s account, citing unnamed sources and €60m clinched so far. No completed round at that price has been reported since, so the register keeps the last valuation actually struck.",
+      "note": "Tech.eu's €2bn describes a raise that was being prepared in December 2022, and no completed round at that price has been reported since.",
       "source": "s3"
     }
   },

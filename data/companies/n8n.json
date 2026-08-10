@@ -93,7 +93,7 @@
       ],
       "source": "s1",
       "disputed": {
-        "note": "The $5.2bn is set by a secondary, not by a priced primary round, and the register labels it as one rather than letting it read as new money. Tech.eu: “SAP’s investment in n8n comes courtesy of an n8n secondary share sale, which brings SAP to the n8n cap table for the first time.” SAP bought existing shares; no amount was disclosed, which is why this round carries no `amount`. The register does publish valuations struck by secondaries — Trade Republic’s €12.5bn is one — but says so, because a price at which existing holders sold is not the same measure as a post-money struck when new capital enters a company.",
+        "note": "This valuation was set by a secondary share sale rather than by new money entering the company.",
         "source": "s2"
       }
     }

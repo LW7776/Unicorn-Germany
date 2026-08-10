@@ -50,21 +50,11 @@ export function renderGrid(container, companies) {
   container.innerHTML = companies.map(cell).join("");
 }
 
-const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-
-/** "2026-07-18" -> "Jul 2026". Month precision matches how every other date renders. */
-function asOfLabel(dataAsOf) {
-  if (!dataAsOf) return "—";
-  const [year, month] = dataAsOf.split("-");
-  return `${MONTHS[Number(month) - 1]} ${year}`;
-}
-
 export function renderStats(container, stats) {
-  // stats.dataAsOf is a YYYY-MM-DD string, or null when the dataset is empty
-  // (see tools/build.py:_data_as_of) — never a wall-clock value, and never
-  // assumed present.
-  const freshness = escapeHtml(asOfLabel(stats.dataAsOf));
+  // stats.dataAsOfLabel is settled in tools/build.py, like every other label on
+  // this page, and is null when the dataset is empty (see build.py's
+  // _data_as_of) — never a wall-clock value, and never assumed present.
+  const freshness = escapeHtml(stats.dataAsOfLabel || "—");
   const items = [
     ["Unicorns", stats.count],
     // Not a fixed string: companies whose valuation no source has published are left
@@ -85,8 +75,8 @@ export function renderStats(container, stats) {
       <span class="stat__value">${escapeHtml(value)}</span>
       <span class="label">${label}</span>
     </div>`).join("") + `
-    <a class="stat stat--freshness" href="about.html#built">
-      <span class="stat__value">Data as of ${freshness}</span>
-      <span class="label">How this is verified</span>
+    <a class="stat stat--freshness" href="about.html#data">
+      <span class="stat__value">${freshness}</span>
+      <span class="label">Data as of</span>
     </a>`;
 }

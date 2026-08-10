@@ -23,11 +23,7 @@
     "approximate": false,
     "asOf": "2026-07",
     "round": "Financing round",
-    "source": "s1",
-    "disputed": {
-      "note": "Two allowlisted publications put this round at different valuations on the same day. Proxima's own announcement and EU-Startups give €2.4bn; Sifted gives €2.5bn. The register publishes the company's own figure and records Sifted's beside it rather than picking one silently — nothing in either account explains the €100m gap.",
-      "source": "s2"
-    }
+    "source": "s1"
   },
   "becameUnicorn": {
     "date": "2026-07",

@@ -227,17 +227,23 @@ def test_an_empty_note_is_rejected(week):
     assert any("note.text must be a non-empty string" in e for e in validate_week(week))
 
 
-def test_the_moss_round_publishes_the_companys_own_figure_with_the_disagreement():
-    """The register publishes Moss's €35m for its own round and records the
-    press's €30m beside it. The round-up has to reach the same answer, or the
-    same site states two different figures for one round."""
+def test_the_moss_round_publishes_the_companys_own_figure_and_says_no_more():
+    """€35m comes from Moss's own announcement of its own round, and a note
+    explaining that three publications printed €30m adds nothing a reader can act
+    on. The disputed marker is reserved for a disagreement that would change what
+    somebody believes, so this round carries none, on either side of the site."""
     record = json.loads((WEEKS / "2026-W32.json").read_text(encoding="utf-8"))
     moss = next(r for r in record["lead"] if r["company"] == "Moss")
     assert moss["amount"] == 35
     assert moss["source"]["publication"] == "Company press release"
-    assert "30m" in moss["note"]["text"]
-    assert moss["note"]["source"]["publication"] == "Sifted"
+    assert "note" not in moss
     assert "€35m" in moss["text"] and "€30m" not in moss["text"]
+
+    register = json.loads(
+        (WEEKS.parent / "companies" / "moss.json").read_text(encoding="utf-8"))
+    series_c = next(r for r in register["rounds"] if r["stage"] == "Series C")
+    assert "disputed" not in series_c
+    assert "disputed" not in register["valuation"]
 
 
 def test_the_register_and_the_roundup_agree_on_moss():

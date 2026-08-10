@@ -23,11 +23,7 @@
     "approximate": false,
     "asOf": "2026-08",
     "round": "Series C",
-    "source": "s1",
-    "disputed": {
-      "note": "Gründerszene reports the same round in dollars — “mehr als eine Milliarde Dollar” — where Moss, Sifted and EU-Startups give €1bn.",
-      "source": "s3"
-    }
+    "source": "s1"
   },
   "becameUnicorn": {
     "date": "2026-08",
@@ -72,11 +68,7 @@
         "Portage",
         "Cherry Ventures"
       ],
-      "source": "s1",
-      "disputed": {
-        "note": "Sifted, EU-Startups and Gründerszene all report this round as €30m; the €35m here is Moss's own figure for its own round.",
-        "source": "s4"
-      }
+      "source": "s1"
     }
   ],
   "founders": [

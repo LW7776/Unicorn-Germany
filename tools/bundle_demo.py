@@ -238,8 +238,8 @@ JS_PATCHES: dict[str, list[tuple[re.Pattern, str]]] = {
     ],
     "register.js": [
         (
-            re.compile(re.escape('href="about.html#built"')),
-            'href="#page/about/about-built"',
+            re.compile(re.escape('href="about.html#data"')),
+            'href="#page/about/about-data"',
         ),
     ],
 }
@@ -464,8 +464,12 @@ DEMO_ROUTER_JS = """
     Object.entries(sections).forEach(([key, node]) => { if (node) node.hidden = key !== id; });
     setCurrentNav(id);
     const target = scrollToId && document.getElementById(scrollToId);
-    if (target) target.scrollIntoView();
-    else window.scrollTo(0, 0);
+    // About's answers are <details> rows, closed by default -- a deep link into
+    // one has to open it, or the fragment scroll lands on a shut summary.
+    if (target) {
+      if (target.tagName === "DETAILS") target.open = true;
+      target.scrollIntoView();
+    } else window.scrollTo(0, 0);
   }
 
   function hashRoute() {

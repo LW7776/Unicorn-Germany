@@ -75,11 +75,7 @@
         "July Fund",
         "T.Capital"
       ],
-      "source": "s2",
-      "disputed": {
-        "note": "Before this round closed, Sifted reported it as a plan rather than a fact: “On Friday, Bloomberg reported the company was in talks with London-based Balderton Capital to lead a fresh round of funding, which would value Dash0 at $1bn.” The register does not publish talks — that is why Agile Robots and Isar Aerospace are not in it. What is published here is the closed round announced four weeks later, at the same price, by the company itself. The earlier report is kept beside it because a $1bn figure attached to Dash0 in February was not yet a valuation of anything.",
-        "source": "s5"
-      }
+      "source": "s2"
     }
   ],
   "founders": [

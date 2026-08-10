@@ -9,7 +9,8 @@
   "medianYearsToUnicorn": 6,
   "fxRateDisclosed": 0.92,
   "fxAsOf": "2026-08",
-  "dataAsOf": "2026-08-07"
+  "dataAsOf": "2026-08-07",
+  "dataAsOfLabel": "7 Aug 2026"
  },
  "companies": [
   {
@@ -69,7 +70,7 @@
      ],
      "source": "s2",
      "disputed": {
-      "note": "This round is widely reported as €430m — Tech.eu’s headline and standfirst both give that figure. The company’s own announcement splits it: “215 million Euro in equity … We have also set aside an additional 215 million Euro in re-participation options, which can be paid as part of the purchase price for new acquisitions.” Only the first €215m is money raised; the rest is acquisition currency 1KOMMA5° may issue later. The register records the equity and keeps the larger, better-known number here.",
+      "note": "The €430m widely reported for this round is €215m of equity plus €215m of re-participation options the company may issue for later acquisitions, and only the equity is money raised.",
       "source": "s4"
      },
      "dateLabel": "Jun 2023",
@@ -927,10 +928,6 @@
       "STRABAG SE"
      ],
      "source": "s1",
-     "disputed": {
-      "note": "This is an initial close, not a completed round, and the register records it as one. CMBlu’s own announcement says the €50m is “a €50 million initial close of its Series C financing” and that it “will support manufacturing scale-up and accelerate early commercial deployments in Europe and the United States”. The valuation beside it is therefore struck at a partial close; a final close could restate both the round size and the price, and no source states either yet.",
-      "source": "s2"
-     },
      "dateLabel": "Apr 2026",
      "amountLabel": "€50 m"
     }
@@ -1233,10 +1230,6 @@
       "T.Capital"
      ],
      "source": "s2",
-     "disputed": {
-      "note": "Before this round closed, Sifted reported it as a plan rather than a fact: “On Friday, Bloomberg reported the company was in talks with London-based Balderton Capital to lead a fresh round of funding, which would value Dash0 at $1bn.” The register does not publish talks — that is why Agile Robots and Isar Aerospace are not in it. What is published here is the closed round announced four weeks later, at the same price, by the company itself. The earlier report is kept beside it because a $1bn figure attached to Dash0 in February was not yet a valuation of anything.",
-      "source": "s5"
-     },
      "dateLabel": "Mar 2026",
      "amountLabel": "$110 m"
     }
@@ -1794,7 +1787,7 @@
      ],
      "source": "s2",
      "disputed": {
-      "note": "This round is reported almost everywhere as €140m — Sifted’s report of it says FINN “has become Germany’s newest unicorn after announcing a €140m Series D funding round on Wednesday.” The lead investor’s own announcement splits that figure: “nearly €100 million in equity financing” from the equity investors, plus “more than €40 million in debt capital” from BC Partners and Runway Growth. Only the first part is equity raised, so the register records €100m and keeps the better-known €140m here. This is the 1KOMMA5° problem in another costume, and it matters more than usual for a company that finances a vehicle fleet: debt is a working input to this business model, not a rounding difference.",
+      "note": "The €140m widely reported for this round is nearly €100m of equity plus more than €40m of debt, and only the equity is recorded here.",
       "source": "s3"
      },
      "dateLabel": "Jun 2026",
@@ -1949,7 +1942,7 @@
     "round": "Series G",
     "source": "s2",
     "disputed": {
-     "note": "A newer and larger figure is attached to Flix, and the register does not publish it as the headline. When EQT and Kühne Holding took 35% of the company in July 2024, Bloomberg reported that they were “investing around €1 billion ($1.2 billion) in Flix in a deal valuing the business at more than €3 billion, people with knowledge of the matter said.” Two things keep that out of the valuation field. It is attributed to people with knowledge of the matter, not disclosed: Flix’s own announcement and EQT’s, both opened and read, describe the structure and state no figure at all. And the transaction was part primary and part secondary — EQT’s release says that “[i]n addition to a primary investment in Flix, EQT Future and Kühne Holding will acquire shares from existing shareholders” — so it prices the company at a deal rather than being a post-money struck by a round. The published $3bn+ is Flix’s own stated valuation from June 2021; the July 2024 figure is higher, so nothing here understates the company.",
+     "note": "Bloomberg put the July 2024 EQT and Kühne deal at more than €3bn, attributed to people with knowledge of the matter rather than disclosed by anyone, so the published figure stays Flix's own from June 2021.",
      "source": "s5"
     }
    },
@@ -2028,10 +2021,6 @@
       "Silver Lake"
      ],
      "source": "s1",
-     "disputed": {
-      "note": "The $650m+ is not all equity. Flix’s own announcement calls it a “structured funding round, based on a mix of equity and debt”, and TechCrunch’s account of the same round quotes co-founder Jochen Engert describing it as a “balanced” mix of the two. Neither the company nor TechCrunch splits the figure, so the register records the round as its sources state it and flags here that the amount is not a pure equity raise. The $3bn+ post-money beside it is unaffected — that is a valuation, not a use of the money.",
-      "source": "s6"
-     },
      "dateLabel": "Jun 2021",
      "amountLabel": "~$650 m"
     },
@@ -3117,11 +3106,7 @@
     "approximate": false,
     "asOf": "2026-08",
     "round": "Series C",
-    "source": "s1",
-    "disputed": {
-     "note": "Gründerszene reports the same round in dollars — “mehr als eine Milliarde Dollar” — where Moss, Sifted and EU-Startups give €1bn.",
-     "source": "s3"
-    }
+    "source": "s1"
    },
    "becameUnicorn": {
     "date": "2026-08",
@@ -3169,10 +3154,6 @@
       "Cherry Ventures"
      ],
      "source": "s1",
-     "disputed": {
-      "note": "Sifted, EU-Startups and Gründerszene all report this round as €30m; the €35m here is Moss's own figure for its own round.",
-      "source": "s4"
-     },
      "dateLabel": "Aug 2026",
      "amountLabel": "€35 m"
     }
@@ -3566,7 +3547,7 @@
      ],
      "source": "s1",
      "disputed": {
-      "note": "The $5.2bn is set by a secondary, not by a priced primary round, and the register labels it as one rather than letting it read as new money. Tech.eu: “SAP’s investment in n8n comes courtesy of an n8n secondary share sale, which brings SAP to the n8n cap table for the first time.” SAP bought existing shares; no amount was disclosed, which is why this round carries no `amount`. The register does publish valuations struck by secondaries — Trade Republic’s €12.5bn is one — but says so, because a price at which existing holders sold is not the same measure as a post-money struck when new capital enters a company.",
+      "note": "This valuation was set by a secondary share sale rather than by new money entering the company.",
       "source": "s2"
      },
      "dateLabel": "May 2026",
@@ -3704,7 +3685,7 @@
     "round": "Series C",
     "source": "s3",
     "disputed": {
-     "note": "Neura itself has never stated a valuation. Its own announcement of this round gives a size and no price, and it declined to comment on the figure. The $7bn reaches an allowlisted page at second hand — Sifted attributes it to the Financial Times “citing people familiar with the deal” — and at third hand in Gründerszene, which prints it flatly as fact in its round-up of 2026's German unicorns: “Die Bewertung: sieben Milliarden Dollar und damit Einhorn-Status.” Two independent allowlisted publications carrying the same number is why it is published here rather than left undisclosed; that neither traces to the company is why it is flagged. A reader should treat the membership as solid and the figure as reported rather than confirmed.",
+     "note": "Neura has never stated a valuation, and the $7bn reaches the register at second hand through Sifted citing the Financial Times and through Gründerszene repeating it.",
      "source": "s5"
     }
    },
@@ -3767,10 +3748,6 @@
       "European Investment Bank"
      ],
      "source": "s2",
-     "disputed": {
-      "note": "Sifted reports the round flatly as “a $1.4bn Series C round”, which is the figure on file here. The company's own announcement, and Tech.eu reporting it, say “up to $1.4 billion” — a ceiling that unlocks in tranches rather than a sum already wired. The register records the number the allowlisted reporting states and shows the qualifier beside it rather than choosing between them.",
-      "source": "s4"
-     },
      "dateLabel": "Jun 2026",
      "amountLabel": "$1.4 bn"
     }
@@ -4490,11 +4467,7 @@
     "approximate": false,
     "asOf": "2026-07",
     "round": "Financing round",
-    "source": "s1",
-    "disputed": {
-     "note": "Two allowlisted publications put this round at different valuations on the same day. Proxima's own announcement and EU-Startups give €2.4bn; Sifted gives €2.5bn. The register publishes the company's own figure and records Sifted's beside it rather than picking one silently — nothing in either account explains the €100m gap.",
-     "source": "s2"
-    }
+    "source": "s1"
    },
    "becameUnicorn": {
     "date": "2026-07",
@@ -5099,10 +5072,6 @@
       "Vitruvian Partners"
      ],
      "source": "s6",
-     "disputed": {
-      "note": "Not new money into the company: existing holders — Thrive Capital and Christian Angermayer's Apeiron among them, and reportedly the founders in smaller amounts — sold stock to Tencent, Hedosophia and Vitruvian. The amount on file is the “mehr als 100 Millionen Euro” the reporting states and is therefore a floor rather than the sum, which is why it is flagged approximate. The valuation this transaction set is the one carried on the record above, in words rather than digits.",
-      "source": "s5"
-     },
      "dateLabel": "Dec 2024",
      "amountLabel": "~€100 m"
     }
@@ -5258,7 +5227,7 @@
     "round": "Series C",
     "source": "s2",
     "disputed": {
-     "note": "A larger figure is widely attached to Razor: TechCrunch’s headline on the March 2024 Perch merger calls $1.7bn a valuation. Its article body measures something else — “the combined business has an enterprise value of $1.7 billion … with about $400 million of debt on its books”. Enterprise value counts that debt; a post-money equity valuation does not, and the post-money is what this register records. The $1.2bn here is Razor’s last stated post-money, struck at the April 2023 Series C — and still standing a year later, when TechCrunch wrote at the merger that “Razor’s last valuation, when it raised money about a year ago, was $1.2 billion.”",
+     "note": "The $1.7bn often attached to Razor is the enterprise value of the Perch merger, which counts about $400m of debt that a post-money equity valuation does not.",
      "source": "s3"
     }
    },
@@ -5711,7 +5680,7 @@
     "round": "Series D, second close",
     "source": "s5",
     "disputed": {
-     "note": "A €2bn figure is attached to sennder in Tech.eu’s December 2022 headline, “German logistics player Sennder primes new fundraise at €2 billion valuation”. The article body is about a raise that was being prepared, not one that closed: it reports sennder “taking on funds” at around double its January 2021 value, on Handelsblatt’s account, citing unnamed sources and €60m clinched so far. No completed round at that price has been reported since, so the register keeps the last valuation actually struck.",
+     "note": "Tech.eu's €2bn describes a raise that was being prepared in December 2022, and no completed round at that price has been reported since.",
      "source": "s3"
     }
    },
@@ -6136,7 +6105,7 @@
      "investors": [],
      "source": "s3",
      "disputed": {
-      "note": "This is the round that crossed the threshold and it was never announced, so the register is publishing the least-disclosed figure in it. What supports the date and the numeral is Sifted, in June 2026, reporting its own earlier finding: the company “reached unicorn status in an unannounced January funding round valuing it at more than $1bn”. When Sifted first reported it in February, the size of the round was undisclosed, the source was Manager Magazin, and the valuation was confirmed only by “a person close to the company”, who put it in a different currency: “Stark is worth more than one billion.” Hence a round here with no amount and no investors — those were never published — and hence this note. A reader should weigh it accordingly: this is the crossing as an allowlisted publication states it, not as the company has ever confirmed it.",
+      "note": "This crossing round was never announced by the company, and Sifted reports it from its own earlier finding.",
       "source": "s6"
      },
      "dateLabel": "Jan 2026",
