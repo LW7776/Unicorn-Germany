@@ -43,7 +43,19 @@ No build step runs. The repository *is* the site, which is why `.nojekyll` is th
 
 Give it a minute, then check `https://lw7776.github.io/Unicorn-Germany/`.
 
-## 4. Add the Anthropic API key — only needed for the weekly funding block
+## 4. Let the workflows write
+
+The automated jobs commit and open pull requests on your behalf. GitHub blocks that by
+default, and the failure looks like a permissions error deep in a log, so set both of these
+before the first Monday.
+
+**Settings → Actions → General → Workflow permissions**
+
+- Select **Read and write permissions**. Without it `watch.yml` and `rebuild.yml` cannot push.
+- Tick **Allow GitHub Actions to create and approve pull requests**. Without it
+  `weekly-funding.yml` cannot open its pull request.
+
+## 5. Add the Anthropic API key — only needed for the weekly funding block
 
 **Settings → Secrets and variables → Actions → New repository secret**
 
@@ -51,6 +63,12 @@ Name it exactly `ANTHROPIC_API_KEY`.
 
 Until it exists, the weekly funding workflow fails on its first step with a message naming
 the secret, and publishes nothing. The three demo weeks stay on the site either way.
+
+## 6. Check it works without waiting a week
+
+Every scheduled job also has a manual trigger. **Actions → pick the workflow → Run workflow.**
+Run `weekly-funding` once by hand and confirm a pull request appears. That proves the key,
+the permissions and the job all work, rather than discovering it broken on a Monday.
 
 ---
 
@@ -64,6 +82,22 @@ the secret, and publishes nothing. The three demo weeks stay on the site either 
 | `rebuild.yml` | any hand edit to `data/companies/` | validates first, and only rebuilds if it passes |
 
 Nothing merges itself. Every automated change arrives as a pull request or an issue.
+
+## How an update reaches the live site
+
+```
+workflow runs  ->  opens a pull request  ->  you merge it
+   ->  main changes  ->  Pages redeploys  ->  live in about a minute
+```
+
+That merge is the only manual step, and it is deliberate. It is the point where a person
+sees what the automation wrote before the public does.
+
+If you would rather it were hands-off, turn on **Settings → General → Allow auto-merge** and
+enable auto-merge on the weekly funding pull request. It then merges itself once
+`validate.yml` passes. You gain a site that updates with no involvement, and you give up the
+review step. The register sweep should stay manual either way, since it proposes changes to
+published company figures.
 
 ## Editing by hand
 
