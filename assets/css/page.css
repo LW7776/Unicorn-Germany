@@ -1,15 +1,14 @@
-/* Layout for the static long-form pages: about.html, policy.html, impressum.html.
+/* Layout for the static long-form pages, about.html and impressum.html.
    Body text defaults to the mono face set on `body` in base.css. */
 .page {
   padding: calc(var(--space-8) + 3rem) var(--space-6) var(--space-8);
   max-width: 42rem; margin: 0 auto;
 }
 
-/* about.html and policy.html carry an argument, not a reference table — DESIGN.md's
-   reasoning for the serif face ("reads as reported, not generated") applies to their
-   running prose the same way it applies to the detail window's thesis blocks, so both
-   opt into this modifier. impressum.html is a legal notice, not an argument, and stays
-   on the plain `.page` mono body text.
+/* A page carrying an argument rather than a reference table — DESIGN.md's reasoning
+   for the serif face ("reads as reported, not generated") applies to its running prose
+   the same way it applies to the detail window's thesis blocks. impressum.html is a
+   legal notice, not an argument, and stays on the plain `.page` mono body text.
    Scope is paragraphs, list items and the lede — i.e. running text — not headings (stay
    on the display face) or `.label` (the eyebrow readout, kept mono like every other
    label/date/figure on the site; higher specificity than the plain `p`/`li` rules below
@@ -50,13 +49,36 @@
 .callout--warn { border-color: color-mix(in srgb, var(--amber) 50%, transparent); }
 .callout p:last-child { margin-bottom: 0; }
 
-/* Marks a value in the Impressum that must be replaced before the site can be
-   published — never rendered as if it were real data. */
-.placeholder {
-  color: var(--amber); font-family: var(--font-mono);
-  border: 1px dashed color-mix(in srgb, var(--amber) 55%, transparent);
-  border-radius: 4px; padding: 0 .35em; white-space: nowrap;
+/* about.html's question-and-answer rows.
+   Native <details>/<summary>, so the disclosure is keyboard operable, announced as
+   expandable, and readable with JavaScript off — no script and no ARIA of our own.
+   Hairline rules separate the rows and nothing else does: no fills, no cards. */
+.page--qa { max-width: 44rem; }
+.qa { margin-top: var(--space-7); border-top: 1px solid var(--stroke); }
+.qa__row { border-bottom: 1px solid var(--stroke); }
+/* `display: flex` on the summary suppresses Chrome's disclosure triangle;
+   `list-style: none` covers Firefox and the ::-webkit- rule covers Safari. All
+   three are needed, and the chevron replaces what they remove. */
+.qa__q {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--space-5); padding: var(--space-5) 0; min-height: 44px;
+  cursor: pointer; list-style: none; color: var(--ink);
+  font-family: var(--font-display); font-weight: 800; font-stretch: 112%;
+  font-size: var(--step-1); letter-spacing: -.01em; line-height: 1.2;
+  transition: color var(--dur-fast) var(--ease-out);
 }
+.qa__q::-webkit-details-marker { display: none; }
+.qa__q:hover { color: var(--beam-text); }
+.qa__chevron {
+  flex: none; color: var(--muted);
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+.qa__row[open] .qa__chevron { transform: rotate(180deg); }
+.qa__a { padding-bottom: var(--space-5); max-width: 34rem; }
+.qa__a p { font-family: var(--font-prose); margin: 0; line-height: 1.6; }
+/* Figures read off the data at runtime (the twelve-month count, the FX rate), in
+   the mono face every other number on the site uses. */
+.qa__figure { font-family: var(--font-mono); color: var(--ink); }
 
 .badge-note {
   display: inline-flex; align-items: center; gap: var(--space-2);

@@ -20,138 +20,183 @@
   </nav>
 </header>
 
-<main class="page page--prose" id="main">
+<main class="page page--qa" id="main">
   <p class="label">About</p>
-  <h1 class="page__title">A directory that shows its work.</h1>
-  <p class="page__lede">
-    German Unicorns is a public register of Germany's currently private companies valued at a
-    billion euros or more, built so that every figure on it can be checked against a public,
-    dated source rather than taken on trust.
-  </p>
+  <h1 class="page__title">Everything important, kept short.</h1>
 
-  <section aria-labelledby="what">
-    <h2 id="what">Why this exists</h2>
-    <p>
-      Germany is one of Europe's largest technology markets, and Europe's own venture and
-      scale-up capital has become a live policy question in its own right. That debate deserves a
-      factual, checkable baseline rather than a round number repeated without its source. This
-      site exists to provide that baseline for one country: every company listed is verified
-      against a public announcement, every valuation carries the date it was true, and every
-      claim is open to correction — open any company's entry to see its own figures next to the
-      sources behind them.
-    </p>
-  </section>
+  <!-- Native <details>/<summary>: the disclosure is keyboard operable and
+       announced as expandable without a line of script, and it degrades to
+       plain visible prose with JavaScript off. The chevron's rotation is the
+       only motion, and base.css already flattens every transition under
+       prefers-reduced-motion. -->
+  <div class="qa">
+    <details class="qa__row" id="why">
+      <summary class="qa__q">
+        Why do unicorns matter?
+        <svg class="qa__chevron" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+          <path d="M2 5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        </svg>
+      </summary>
+      <div class="qa__a">
+        <p>
+          They are the visible end of a capital pipeline. A country that cannot produce them
+          loses its best companies to whoever will fund them.
+        </p>
+      </div>
+    </details>
 
-  <section aria-labelledby="who">
-    <h2 id="who">What gets listed</h2>
-    <p>
-      Three tests, and a company has to pass all three: it was founded in Germany or is
-      headquartered here; it is still independent and still private — not listed, not
-      acquired, not insolvent; and it has been publicly reported to be worth at least a
-      billion dollars or a billion euros, in whichever currency the source used. Companies
-      that fail one of those are listed too, in the
-      <a href="https://github.com/LW7776/Unicorn-Germany/blob/main/docs/CANDIDATES.md" target="_blank" rel="noopener noreferrer">candidates file</a>,
-      with the reason and its source — an exclusion is a finding, not an omission.
-    </p>
-    <p>
-      Membership is the test; the exact figure is a nice-to-have. Some companies everybody
-      agrees are unicorns have never had a number published about them: the trade press
-      reports that they passed a billion and prints no figure, and the company says nothing.
-      Those entries show <strong>Undisclosed</strong> in place of a valuation, with a marker
-      showing they are over the threshold and the sentence that establishes it, linked to the
-      page it came from. That is deliberate. The alternative — inferring a figure nobody
-      published, or dropping a real unicorn over how a sentence happened to be phrased — would
-      make this register less true, not more precise. Those companies are also left out of the
-      "combined value" total on the front page rather than counted as zero, and that total says
-      how many of the register it covers.
-    </p>
-  </section>
+    <details class="qa__row" id="momentum">
+      <summary class="qa__q">
+        Is the momentum real?
+        <svg class="qa__chevron" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+          <path d="M2 5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        </svg>
+      </summary>
+      <div class="qa__a">
+        <p>
+          <span class="qa__figure" data-stat="new12">11</span> of these
+          <span class="qa__figure" data-stat="count">32</span> companies crossed a billion in the
+          last twelve months. That is not a backlog clearing. It is a pipeline running.
+        </p>
+      </div>
+    </details>
 
-  <section aria-labelledby="open">
-    <h2 id="open">Free and open</h2>
-    <p>
-      The site costs nothing to run and nothing to read. There is no paywall, no account, and no
-      advertising. The code and the entire dataset — one JSON file per company — are public on
-      GitHub at
-      <a href="https://github.com/LW7776/Unicorn-Germany" target="_blank" rel="noopener noreferrer">github.com/LW7776/Unicorn-Germany</a>,
-      where every past change is visible as a diff against the file it edited. Nothing here relies
-      on a paid API or a licensed data feed.
-    </p>
-  </section>
+    <details class="qa__row" id="help">
+      <summary class="qa__q">
+        What would help most?
+        <svg class="qa__chevron" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+          <path d="M2 5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        </svg>
+      </summary>
+      <div class="qa__a">
+        <p>
+          Growth capital at scale, and one European legal home instead of twenty-seven.
+          <a href="https://commission.europa.eu/topics/competitiveness/draghi-report_en" target="_blank" rel="noopener noreferrer">Mario Draghi's report on European competitiveness</a>
+          put a number on the first, and Germany's
+          <a href="https://www.bundesfinanzministerium.de/Content/DE/Pressemitteilungen/Finanzpolitik/2026/04/2026-04-28-win-initiative.html" target="_blank" rel="noopener noreferrer">WIN-Initiative</a>,
+          the
+          <a href="https://www.bundestag.de/dokumente/textarchiv/2023/kw46-de-zukunftsfinanzierungsgesetz-976556" target="_blank" rel="noopener noreferrer">Zukunftsfinanzierungsgesetz</a>
+          and the Commission's
+          <a href="https://finance.ec.europa.eu/publications/savings-and-investments-union-strategy-enhance-financial-opportunities-eu-citizens-and-businesses_en" target="_blank" rel="noopener noreferrer">Savings and Investments Union</a>
+          are the instruments now aimed at it. The second is what more than 26,000 founders and
+          investors asked for under the banner
+          <a href="https://www.eu-inc.org" target="_blank" rel="noopener noreferrer">EU Inc</a>
+          and what the Commission's
+          <a href="https://ec.europa.eu/commission/presscorner/detail/en/ip_26_614" target="_blank" rel="noopener noreferrer">proposed 28th company regime</a>,
+          a draft regulation rather than law, would deliver.
+        </p>
+      </div>
+    </details>
 
-  <section aria-labelledby="built">
-    <h2 id="built">How it's built</h2>
-    <p>
-      Each company is one JSON file, and nothing about it reaches the live site unless a
-      <a href="https://github.com/LW7776/Unicorn-Germany/blob/main/tools/validate.py" target="_blank" rel="noopener noreferrer">Python validator</a>
-      confirms every figure in it carries a dated, quoted source — the same check runs on every
-      proposed change, with no exception and no separate publish path. The site itself is static
-      HTML, CSS and JavaScript: no build step, no framework, no database, served at no cost by
-      GitHub Pages. Two standing automations read the allowlisted trade-press feeds: a weekly one
-      that drafts the funding round-up, and a full register sweep every eight weeks. Neither edits
-      the dataset itself; both produce something a person reviews before anything is published.
-    </p>
-    <p>
-      The <strong>weekly funding round-up</strong> below the register is a second dataset with a
-      second, deliberately lighter standard, and the page says so where you read it. Every round
-      in it carries a dated link to the reporting behind it, from the same allowlisted
-      publications — but those figures are <em>not</em> quote-checked the way the register's are.
-      It covers German companies generally, not only unicorns, so it is a record of what the
-      country's ecosystem raised rather than a register of what it is worth. The two are kept in
-      separate files, behind separate validators, so neither standard can quietly become the
-      other.
-    </p>
-  </section>
+    <details class="qa__row" id="data">
+      <summary class="qa__q">
+        Where does the data come from?
+        <svg class="qa__chevron" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+          <path d="M2 5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        </svg>
+      </summary>
+      <div class="qa__a">
+        <p>
+          Every figure traces to a dated, public page from an allowlisted set of publications, and
+          a validator refuses to publish a number unless the quote behind it states that number.
+          Company figures stay in the currency their source used, so nothing is converted twice.
+          The one exception is the combined value on the front page, which converts USD at
+          <span class="qa__figure" data-fx="rate">0.92</span>
+          (<span class="qa__figure" data-fx="asof">2026-08</span>) and covers only the companies
+          whose valuation a source has published.
+        </p>
+      </div>
+    </details>
 
-  <section aria-labelledby="updates">
-    <h2 id="updates">How updating works</h2>
-    <p>
-      Two scans run on different clocks, and they are looking for different things.
-    </p>
-    <p>
-      <strong>Every Monday</strong>, a job reads the allowlisted feeds for the week just ended,
-      drafts the funding round-up from the articles it finds, and opens a pull request. This is
-      now what catches a new unicorn: a company crosses a billion <em>by raising</em>, and that
-      round is announced, so it reaches the feeds within days. Where a round belongs to a company
-      already in the register, the pull request says so at the top — that entry's figure is now
-      out of date.
-    </p>
-    <p>
-      <strong>Every eight weeks</strong>, a fuller sweep runs over the same feeds and opens an
-      issue instead. It matches articles against tracked company names and trigger words —
-      <em>raises, Series, valuation, unicorn, IPO, insolvency</em> — and flags candidates. Its
-      real job is what a funding announcement never announces: a company that quietly IPOs, is
-      acquired, or becomes insolvent stops qualifying without any round to report, and a
-      valuation nobody has repriced in two years goes stale with no event at all. None of that
-      arrives on a funding wire, and none of it is urgent to the day. Neither scan checks
-      nationality — that is for the person reviewing to confirm, the same as everything else
-      they flag.
-    </p>
-    <p>
-      Nothing is published from that issue automatically. A person reads the flagged articles,
-      proposes the JSON edit with its source quote attached, and the site's validation checks run
-      against it before it can be merged. Every update — automated candidate or manual correction
-      — lands as a pull request and a reviewable diff, with a human as the approval gate.
-    </p>
-    <p>
-      Every record can also be changed by hand, three ways: GitHub's own web editor (linked from
-      the bottom of each company's detail window), a local <a href="admin.html">form editor</a>
-      that mirrors the same validation rules as you type, or editing the files directly. All
-      three end in the same place — a commit that is validated before it can publish, so a bad
-      hand edit can never break the live site. See
-      <a href="https://github.com/LW7776/Unicorn-Germany/blob/main/docs/UPDATING.md" target="_blank" rel="noopener noreferrer">docs/UPDATING.md</a>
-      for the exact steps.
-    </p>
-  </section>
+    <details class="qa__row" id="updates">
+      <summary class="qa__q">
+        How often does this update?
+        <svg class="qa__chevron" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+          <path d="M2 5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        </svg>
+      </summary>
+      <div class="qa__a">
+        <p>
+          Weekly for funding rounds, every eight weeks for the register. A Monday job reads the
+          allowlisted feeds for the week just ended and drafts the round-up, which is also what
+          catches a new unicorn, because a company crosses a billion by raising and that gets
+          announced. The eight-week sweep looks for what no funding wire ever reports, a company
+          that listed, was acquired, or has simply gone quiet.
+        </p>
+      </div>
+    </details>
 
-  <section aria-labelledby="corrections">
-    <h2 id="corrections">Corrections</h2>
-    <p>
-      If something here is wrong, out of date, or missing a source, open an issue on the
-      <a href="https://github.com/LW7776/Unicorn-Germany/issues/new" target="_blank" rel="noopener noreferrer">GitHub issue tracker</a>,
-      or use the "Report an error" link in the footer of any page.
-    </p>
-  </section>
+    <details class="qa__row" id="undisclosed">
+      <summary class="qa__q">
+        What does Undisclosed mean?
+        <svg class="qa__chevron" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+          <path d="M2 5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        </svg>
+      </summary>
+      <div class="qa__a">
+        <p>
+          Some companies everyone agrees are unicorns have never had a figure published about
+          them. Those entries print <strong>Undisclosed</strong> with a marker showing they are
+          over the threshold, plus the sentence that establishes it and a link to the page it came
+          from. They are left out of the combined value rather than counted as nothing.
+        </p>
+      </div>
+    </details>
+
+    <details class="qa__row" id="disputed">
+      <summary class="qa__q">
+        Why do some figures carry a disputed note?
+        <svg class="qa__chevron" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+          <path d="M2 5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        </svg>
+      </summary>
+      <div class="qa__a">
+        <p>
+          Sources sometimes measure the same round differently, and a widely repeated number can
+          be counting debt, acquisition currency or enterprise value. Where that gap would change
+          what a reader believes, the register publishes the figure it can stand behind and
+          records the other one beside it with its own link. It never picks one silently.
+        </p>
+      </div>
+    </details>
+
+    <details class="qa__row" id="built">
+      <summary class="qa__q">
+        How is this built?
+        <svg class="qa__chevron" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+          <path d="M2 5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        </svg>
+      </summary>
+      <div class="qa__a">
+        <p>
+          Automated research reads the allowlisted feeds and drafts the changes, a person reviews
+          every one of them, and a validator blocks anything whose source does not state the
+          figure. The code and the entire dataset are
+          <a href="https://github.com/LW7776/Unicorn-Germany" target="_blank" rel="noopener noreferrer">open on GitHub</a>,
+          where every past change is visible as a diff. The site is static, costs nothing to run
+          and nothing to read, and depends on no paid data feed.
+        </p>
+      </div>
+    </details>
+
+    <details class="qa__row" id="corrections">
+      <summary class="qa__q">
+        Who runs this and how do I report an error?
+        <svg class="qa__chevron" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+          <path d="M2 5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        </svg>
+      </summary>
+      <div class="qa__a">
+        <p>
+          Lan Lukas Welge, in Berlin. If something here is wrong, out of date or missing a source,
+          open an issue on the
+          <a href="https://github.com/LW7776/Unicorn-Germany/issues/new" target="_blank" rel="noopener noreferrer">GitHub issue tracker</a>
+          or use the "Report an error" link in the footer of any page. Corrections are the point,
+          not an inconvenience.
+        </p>
+      </div>
+    </details>
+  </div>
 </main>
 
 <footer class="footer" data-footer></footer>
