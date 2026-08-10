@@ -270,3 +270,81 @@ def test_the_combined_stat_caption_says_what_it_actually_sums(record):
 
     whole = compute_stats([derive_company(record, (2026, 8))], FX)
     assert whole["combinedValuationBasis"] == "Combined value"
+
+
+# --- the two shapes the Companies intro draws --------------------------------
+# Both are derived here rather than in the browser so the picture cannot drift
+# from the register. These tests pin the properties the drawings depend on: a
+# contiguous span of years, and a partition that sums to the register's size.
+
+
+def _crossing_in(record, date, slug):
+    return derive_company(
+        {**record, "slug": slug, "becameUnicorn": {**record["becameUnicorn"], "date": date}},
+        (2026, 8))
+
+
+def test_crossings_by_year_spans_every_year_including_the_quiet_ones(record):
+    stats = compute_stats([
+        _crossing_in(record, "2021-03", "a-gmbh"),
+        _crossing_in(record, "2021-09", "b-gmbh"),
+        _crossing_in(record, "2023-05", "c-gmbh"),
+    ], FX)
+    assert stats["crossingsByYear"] == [
+        {"year": 2021, "count": 2},
+        {"year": 2022, "count": 0},
+        {"year": 2023, "count": 1},
+    ]
+
+
+def test_crossings_by_year_totals_the_register(record):
+    """The strip is the register seen along a time axis, so nothing may fall out of it."""
+    stats = compute_stats([
+        _crossing_in(record, "2019-01", "a-gmbh"),
+        _crossing_in(record, "2026-07", "b-gmbh"),
+        _crossing_in(record, "2026-08", "c-gmbh"),
+    ], FX)
+    assert sum(entry["count"] for entry in stats["crossingsByYear"]) == stats["count"] == 3
+
+
+def test_an_empty_register_yields_no_strip_and_no_bar_rather_than_an_empty_axis():
+    stats = compute_stats([], FX)
+    assert stats["crossingsByYear"] == []
+    assert stats["sectorComposition"] == []
+
+
+def test_sector_composition_is_a_partition_ordered_largest_first(record):
+    def in_sectors(slug, sectors):
+        return derive_company({**record, "slug": slug, "sectors": sectors}, (2026, 8))
+
+    stats = compute_stats([
+        in_sectors("a-gmbh", ["Fintech"]),
+        in_sectors("b-gmbh", ["Fintech"]),
+        in_sectors("c-gmbh", ["Climate and Energy"]),
+    ], FX)
+    assert stats["sectorComposition"] == [
+        {"sector": "Fintech", "count": 2},
+        {"sector": "Climate and Energy", "count": 1},
+    ]
+    assert sum(entry["count"] for entry in stats["sectorComposition"]) == stats["count"]
+
+
+def test_a_company_in_several_sectors_is_placed_once_under_the_first(record):
+    """The chips match on every sector a company lists, but a composition bar has to
+    place each company exactly once or its widths stop summing to anything."""
+    multi = derive_company(
+        {**record, "slug": "multi-gmbh", "sectors": ["Fintech", "Artificial Intelligence"]},
+        (2026, 8))
+    stats = compute_stats([multi], FX)
+    assert stats["sectorComposition"] == [{"sector": "Fintech", "count": 1}]
+    assert sum(entry["count"] for entry in stats["sectorComposition"]) == stats["count"] == 1
+
+
+def test_sector_ties_break_on_name_so_the_bar_cannot_reshuffle_between_builds(record):
+    def in_sectors(slug, sector):
+        return derive_company({**record, "slug": slug, "sectors": [sector]}, (2026, 8))
+
+    ordered = compute_stats([in_sectors("a", "Zeta"), in_sectors("b", "Alpha")], FX)
+    reversed_ = compute_stats([in_sectors("b", "Alpha"), in_sectors("a", "Zeta")], FX)
+    assert ordered["sectorComposition"] == reversed_["sectorComposition"]
+    assert [entry["sector"] for entry in ordered["sectorComposition"]] == ["Alpha", "Zeta"]

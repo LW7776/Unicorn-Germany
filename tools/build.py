@@ -246,6 +246,59 @@ def derive_company(record, today, fx_rate=0.92):
     }
 
 
+def crossings_by_year(records):
+    """One entry per calendar year from the first crossing to the last, zeros included.
+
+    The site draws this as a strip of bars, and a strip that silently omits the
+    years in which nobody crossed a billion would draw a false shape: 2021's eight
+    and 2022's three would sit side by side as if the register had been busy
+    throughout, when 2020 and 2024 are the actual story of the gaps. So the span is
+    contiguous, and a quiet year is an explicit zero rather than a missing column.
+
+    The bounds come from the data (first crossing to last), not from a hard-coded
+    2015–2026 window: a window fixed in code goes stale the first January nobody
+    updates it, and leading empty years assert that the register looked for
+    crossings before its earliest record and found none, which it did not.
+
+    Empty input yields an empty list, which is the renderer's cue to fall back to
+    a plain figure list rather than draw an axis with nothing on it.
+    """
+    years = [parse_date(record["becameUnicorn"]["date"])[0] for record in records]
+    if not years:
+        return []
+    counts = {}
+    for year in years:
+        counts[year] = counts.get(year, 0) + 1
+    return [{"year": year, "count": counts.get(year, 0)}
+            for year in range(min(years), max(years) + 1)]
+
+
+def sector_composition(records):
+    """The register partitioned across the broad sectors, largest share first.
+
+    Counted on each company's *first* listed sector, so the parts sum to the
+    register's own size and the stacked bar the site draws from this is a whole
+    divided up rather than a set of overlapping tallies. `sectors` is a list
+    because a company can sit in more than one (validate.py allows it, and the
+    filter chips deliberately match on all of them), but a composition bar has to
+    place every company exactly once or its width stops meaning anything. The
+    first entry is the one the record leads with, and that is what this treats as
+    primary.
+
+    Ties break on the sector name so the order is stable across rebuilds — the
+    output is committed and CI diffs it, so dict insertion order (i.e. filename
+    order) must not be able to reshuffle the bar.
+    """
+    counts = {}
+    for record in records:
+        sectors = record.get("sectors") or []
+        if not sectors:
+            continue
+        counts[sectors[0]] = counts.get(sectors[0], 0) + 1
+    return [{"sector": sector, "count": count}
+            for sector, count in sorted(counts.items(), key=lambda item: (-item[1], item[0]))]
+
+
 def compute_stats(records, fx):
     rate = fx["USD_EUR"]
     # Companies whose valuation is undisclosed are *excluded* from the sum, not counted
@@ -311,6 +364,12 @@ def compute_stats(records, fx):
         # dataAsOf is a full publication date, and every other full date on the site
         # (the round-up's) prints as "7 Aug 2026" through _day_label.
         "dataAsOfLabel": _day_label(data_as_of) if data_as_of else None,
+        # The two shapes the Companies intro draws. Derived here for the same
+        # reason every label is: the browser must never be in a position to
+        # compute a figure the register cannot vouch for. assets/js/viz.js turns
+        # these into geometry and nothing else — it adds no numbers of its own.
+        "crossingsByYear": crossings_by_year(records),
+        "sectorComposition": sector_composition(records),
     }
 
 
