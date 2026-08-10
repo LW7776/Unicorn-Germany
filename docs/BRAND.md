@@ -62,6 +62,11 @@ Two documented exceptions, both quotations:
 
 Near-black, cinematic, institutional. Full detail in `DESIGN.md`.
 
+**Dark only, on purpose.** No light theme, no `prefers-color-scheme` branch, no toggle,
+and none to be added later. The single light surface is `--plate`, which exists so
+company logos sit on the white they were drawn for. If a light mode looks missing, it
+was declined rather than forgotten.
+
 | | |
 |---|---|
 | Page | `--void` `#07080B`, raised surfaces `--deep` |

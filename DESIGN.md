@@ -11,6 +11,13 @@ is the signature; everything else stays quiet.
 
 ## Colour
 
+**This site is dark only, and that is a decision, not an omission.** There is no light
+theme, no `prefers-color-scheme` branch and no theme toggle, and none should be added.
+The direction above is the reason: a constellation on a near-black field is the product,
+and it does not survive being inverted. `--plate` and `--plate-ink` are the one light
+surface, and they exist solely so company logos sit on the white they were drawn for.
+Anyone reading this file because a light mode "seems to be missing" has found the answer.
+
 | Token | Hex | Use |
 |---|---|---|
 | `--void` | `#07080B` | Page |

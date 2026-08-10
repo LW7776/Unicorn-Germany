@@ -413,16 +413,24 @@ def splice_before_footer(body: str, insertion: str) -> str:
     return body.replace(FOOTER_TAG, f"{insertion}\n\n{FOOTER_TAG}")
 
 
-FOOTER_JS_PATCH = (
-    re.compile(
-        r'<a href="about\.html">About</a> ·\n'
-        r'      <a href="impressum\.html">Impressum</a> ·',
-    ),
-    '<a href="#page/about">About</a> ·\n'
-    '      <a href="#page/impressum">Impressum</a> ·',
-)
+# footer.js keeps its hrefs in a GROUPS table rather than in markup, so the demo
+# rewrites the four same-origin destinations there. The two GitHub links are left
+# alone: they are external and work unchanged. "#register" and "#funding" are
+# already understood by DEMO_ROUTER_JS's hashRoute below.
+FOOTER_JS_PATCHES = [
+    (re.compile(re.escape('["All companies", "index.html"]')),
+     '["All companies", "#register"]'),
+    (re.compile(re.escape('["Weekly funding", "index.html#funding"]')),
+     '["Weekly funding", "#funding"]'),
+    (re.compile(re.escape('["About", "about.html"]')),
+     '["About", "#page/about"]'),
+    (re.compile(re.escape('["Impressum", "impressum.html"]')),
+     '["Impressum", "#page/impressum"]'),
+    (re.compile(re.escape('<a class="topbar__mark" href="index.html">')),
+     '<a class="topbar__mark" href="#register">'),
+]
 
-JS_PATCHES["footer.js"] = [FOOTER_JS_PATCH]
+JS_PATCHES["footer.js"] = FOOTER_JS_PATCHES
 
 
 DEMO_ROUTER_JS = """

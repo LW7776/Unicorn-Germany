@@ -76,15 +76,36 @@ img, svg { max-width: 100%; }
   .topbar__nav { flex-wrap: wrap; width: 100%; gap: var(--space-3); }
 }
 
-/* Shared by every page: one line on how to read the figures, plus the
-   About/Impressum/report-an-error links. */
+/* Shared by every page. A second navigation layer, not a row of links: the
+   wordmark and the figures note on the left, three labelled groups on the right,
+   so the bottom of a page shows structure rather than a sentence of separators. */
 .footer {
   max-width: 64rem; margin: 0 auto; padding: var(--space-7) var(--space-6) var(--space-8);
   border-top: 1px solid var(--stroke); color: var(--muted); font-size: var(--step--1);
-  display: grid; gap: var(--space-3);
+  display: grid; gap: var(--space-7);
+  grid-template-columns: minmax(14rem, 1fr) auto;
+  align-items: start;
 }
-.footer p { margin: 0; max-width: 46rem; }
-.footer nav { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-3); }
+.footer p { margin: var(--space-3) 0 0; max-width: 28rem; }
+.footer__nav {
+  display: grid; gap: var(--space-6) var(--space-7);
+  grid-template-columns: repeat(3, minmax(7rem, max-content));
+}
+.footer__group h2 { font-size: var(--step--1); margin-bottom: var(--space-3); }
+.footer__group ul {
+  list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2);
+}
+.footer__group a { text-decoration: none; }
+.footer__group a:hover { text-decoration: underline; }
+
+/* Below the two-column measure the groups sit under the brand block, and below
+   480px three columns of link labels no longer fit across the viewport. */
+@media (max-width: 720px) {
+  .footer { grid-template-columns: 1fr; gap: var(--space-6); }
+}
+@media (max-width: 480px) {
+  .footer__nav { grid-template-columns: repeat(2, minmax(7rem, 1fr)); }
+}
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
