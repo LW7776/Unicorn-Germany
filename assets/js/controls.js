@@ -180,9 +180,11 @@ export function mountControls({ container, companies, onChange }) {
     event.preventDefault();
     queryInput.focus();
   });
-  document.querySelector("[data-open-search]")?.addEventListener("click", () => {
-    queryInput.focus();
-  });
+  // The topbar's Search button used to send focus here too. It was a fourth
+  // nav item that only scrolled to a field already visible in the section
+  // below it, so it is gone and this is the only route left besides clicking
+  // the field itself. Nothing else changes: the field, its placeholder and the
+  // ⌘K/Ctrl+K binding above are untouched.
 
   emit();
   return { state, setCity: (city) => { state.city = city; container.querySelector("[data-city]").value = city; emit(); } };
