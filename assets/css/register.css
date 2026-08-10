@@ -25,7 +25,13 @@
 /* The section opener. Display type at the hero's own scale, one phrase carrying a
    soft gradient tint, and a lot of air around it — the register's summary numbers
    have to arrive after a statement, not on their own. */
-.intro { margin-bottom: var(--space-8); max-width: 60rem; }
+/* No max-width on any of the three. The opener is the widest thing on the page
+   by intent: the statement and the two pictures of the register run the full
+   content width the grid below them runs, so the section reads as one band
+   rather than as a column of text with empty space beside it. The measure is
+   held instead by the two-column split below, which is what keeps the lede off
+   a 1900px line. */
+.intro { margin-bottom: var(--space-8); }
 .intro__title { font-size: var(--step-5); line-height: .95; margin-bottom: var(--space-6); }
 /* background-clip: text needs a transparent fill to show the gradient through.
    -webkit- prefixes included because Safari still requires them here. */
@@ -34,19 +40,26 @@
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent; color: transparent;
 }
-.intro__lede { color: var(--muted); max-width: 44rem; margin: 0; }
+.intro__lede { color: var(--muted); margin: 0; }
+/* Full width without a 110-character line. Past this width the lede sets in two
+   columns, so the statement spans the band the way the visualisations under it
+   do while each line stays inside a readable measure. Below it there is only
+   room for one column and this never applies. */
+@media (min-width: 62rem) {
+  .intro__lede { columns: 2; column-gap: var(--space-8); orphans: 2; widows: 2; }
+}
 
 /* --- the two intro visualisations --------------------------------------------
-   Built by assets/js/viz.js from figures settled in tools/build.py. Side by side
-   where there is room, stacked below it. Neither is allowed to grow past a
-   readable width: a nine-column strip stretched across 60rem turns a shape into
-   a wallpaper pattern. */
+   Built by assets/js/viz.js from figures settled in tools/build.py. Two halves
+   of the band where there is room, stacked below it. They share the width
+   evenly rather than each taking a readable column and leaving the rest of the
+   row empty — a bar chart, unlike a paragraph, has no measure to blow past. */
 .intro__viz {
   display: grid; gap: var(--space-6) var(--space-7); margin-top: var(--space-7);
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   align-items: start;
 }
-.viz { margin: 0; display: grid; gap: var(--space-4); max-width: 34rem; }
+.viz { margin: 0; display: grid; gap: var(--space-4); }
 .viz__cap { display: grid; gap: var(--space-2); }
 .viz__note { color: var(--muted); font-size: var(--step--1); }
 

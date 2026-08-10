@@ -12,12 +12,19 @@
   position: absolute; inset: 0; z-index: 0; margin: 0;
   display: grid; align-content: center; justify-items: center;
   font-family: var(--font-display); font-weight: 800; font-stretch: 125%;
-  font-size: clamp(3.5rem, 19vw, 15rem); line-height: .82; letter-spacing: -.035em;
+  /* 12vw, not the 19vw this started at. The longest line is "GERMANY", which
+     measures 6.55em wide in Archivo at 800/125% — so the multiplier *is* the
+     layout: 19vw put it at 124% of the viewport and the wordmark ran off both
+     edges into the clip. 12vw lands it at 79%, leaving a tenth of the viewport
+     of air on each side at every width, because the ratio is the same whether
+     vw or the 15rem cap is in force (the cap only takes over past ~2000px, and
+     the 2.5rem floor is below where 12vw ever falls). */
+  font-size: clamp(2.5rem, 12vw, 15rem); line-height: .82; letter-spacing: -.035em;
   text-align: center;
   /* One long word per line, never wrapped: a broken wordmark is a typo, not a
-     texture. It overhangs the viewport on a narrow screen by design, and .hero's
-     own `overflow: hidden` above is what clips it — the same rule under both
-     .hero and .hero--lifted, so neither state can leak a horizontal scrollbar. */
+     texture. .hero's own `overflow: hidden` above stays as the backstop — the
+     same rule under both .hero and .hero--lifted, so neither state can leak a
+     horizontal scrollbar if a fallback font ever measures wider. */
   white-space: nowrap;
   color: var(--ghost-ink);
   pointer-events: none; user-select: none; -webkit-user-select: none;

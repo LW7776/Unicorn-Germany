@@ -138,7 +138,7 @@
      ],
      "source": "s2",
      "disputed": {
-      "note": "The €430m widely reported for this round is €215m of equity plus €215m of re-participation options the company may issue for later acquisitions, and only the equity is money raised.",
+      "note": "The €430m reported is €215m of equity plus €215m of optional acquisition currency.",
       "source": "s4"
      },
      "dateLabel": "Jun 2023",
@@ -1894,7 +1894,7 @@
      ],
      "source": "s2",
      "disputed": {
-      "note": "The €140m widely reported for this round is nearly €100m of equity plus more than €40m of debt, and only the equity is recorded here.",
+      "note": "The €140m reported is nearly €100m of equity plus more than €40m of debt.",
       "source": "s3"
      },
      "dateLabel": "Jun 2026",
@@ -2055,7 +2055,7 @@
     "round": "Series G",
     "source": "s2",
     "disputed": {
-     "note": "Bloomberg put the July 2024 EQT and Kühne deal at more than €3bn, attributed to people with knowledge of the matter rather than disclosed by anyone, so the published figure stays Flix's own from June 2021.",
+     "note": "Bloomberg's €3bn-plus for the 2024 EQT deal came from unnamed people, not from disclosure.",
      "source": "s5"
     }
    },
@@ -2331,7 +2331,7 @@
     "round": "Series A",
     "source": "s3",
     "undisclosed": {
-     "note": "No source states a figure, and this record spent two batches establishing that. The company's own release on the $240m Series A claims only that it “makes it the most valuable fusion company in Europe”, a superlative rather than a number, and TechCrunch's account of the same round, read in full, carries no valuation either. Secondary write-ups outside the allowlist put it “close to one billion dollars”, which if accurate would be below the threshold and would keep the company out, so this entry stayed excluded until an allowlisted publication said otherwise. Gründerszene now does, twice over, in its round-up of the seven German startups that became unicorns in the first half of 2026 and again in the sentence quoted here. Membership is sourced. The figure is not, and this register will not manufacture one from a superlative.",
+     "note": "No source has published a figure. Gründerszene states the status, not a number.",
      "source": "s3"
     }
    },
@@ -2992,7 +2992,7 @@
     "round": "Convertible bond",
     "source": "s4",
     "undisclosed": {
-     "note": "Nobody has published a figure for Isar Aerospace, and the register spent a batch establishing that rather than assuming it. Its own release on the €270m Series D was read end to end, round, investors, factory and headcount, with no valuation anywhere, and Sifted's account of the same round states none either. The €2bn widely attached to the company traces to a Bloomberg piece whose own URL slug is “isar-aerospace-in-talks-to-raise-250-million-ahead-of-launch”: talks, about a smaller round that was superseded, and all three Wayback captures of that URL are themselves HTTP 403 block pages. What is stated plainly, by an allowlisted publication, is the status and the month: TechCrunch, listing Europe's new unicorns of 2025. That sentence carries no numeral, which is exactly why this record exists in this shape.",
+     "note": "No source has published a figure. TechCrunch lists Isar among Europe's 2025 unicorns.",
      "source": "s4"
     }
    },
@@ -3699,7 +3699,7 @@
      ],
      "source": "s1",
      "disputed": {
-      "note": "This valuation was set by a secondary share sale rather than by new money entering the company.",
+      "note": "This valuation was set by a secondary share sale, not by new money.",
       "source": "s2"
      },
      "dateLabel": "May 2026",
@@ -3842,7 +3842,7 @@
     "round": "Series C",
     "source": "s3",
     "disputed": {
-     "note": "Neura has never stated a valuation, and the $7bn reaches the register at second hand through Sifted citing the Financial Times and through Gründerszene repeating it.",
+     "note": "Neura has never stated a valuation. The $7bn reaches the register at second hand.",
      "source": "s5"
     }
    },
@@ -5166,7 +5166,7 @@
     "round": "Secondary share sale",
     "source": "s5",
     "undisclosed": {
-     "note": "The figure everyone quotes for Raisin is “over two billion euros”, and it is over two billion euros in words rather than digits. Gründerszene spells it out, sourcing it to Finance Forward, and no allowlisted publication has printed it as a numeral. Handelsblatt separately calls the company “milliardenschwer” and nothing more precise. Two further things are worth a reader's attention. This valuation was set by a secondary sale in which existing holders sold shares, not by a priced primary round, so it is a price paid for stock changing hands rather than a post-money. The register publishes those (Trade Republic, n8n) and always labels them. And Raisin's unicorn status has not been continuous: investor Kinnevik marked it at €895m in 2022 and it lost the label, regaining it at the March 2023 upround this record dates the crossing to.",
+     "note": "No allowlisted source prints a numeral. Gründerszene reports over two billion euros, in words.",
      "source": "s5"
     }
    },
@@ -5419,7 +5419,7 @@
     "round": "Series C",
     "source": "s2",
     "disputed": {
-     "note": "The $1.7bn often attached to Razor is the enterprise value of the Perch merger, which counts about $400m of debt that a post-money equity valuation does not.",
+     "note": "The $1.7bn often quoted is enterprise value, counting about $400m of debt.",
      "source": "s3"
     }
    },
@@ -5882,7 +5882,7 @@
     "round": "Series D, second close",
     "source": "s5",
     "disputed": {
-     "note": "Tech.eu's €2bn describes a raise that was being prepared in December 2022, and no completed round at that price has been reported since.",
+     "note": "Tech.eu's €2bn describes a raise being prepared in 2022, never reported as completed.",
      "source": "s3"
     }
    },
@@ -6318,7 +6318,7 @@
      "investors": [],
      "source": "s3",
      "disputed": {
-      "note": "This crossing round was never announced by the company, and Sifted reports it from its own earlier finding.",
+      "note": "The company never announced this crossing round. Sifted reports it from its own finding.",
       "source": "s6"
      },
      "dateLabel": "Jan 2026",

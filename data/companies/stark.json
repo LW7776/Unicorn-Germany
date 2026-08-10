@@ -74,7 +74,7 @@
       "investors": [],
       "source": "s3",
       "disputed": {
-        "note": "This crossing round was never announced by the company, and Sifted reports it from its own earlier finding.",
+        "note": "The company never announced this crossing round. Sifted reports it from its own finding.",
         "source": "s6"
       }
     },

@@ -93,7 +93,7 @@
       ],
       "source": "s1",
       "disputed": {
-        "note": "This valuation was set by a secondary share sale rather than by new money entering the company.",
+        "note": "This valuation was set by a secondary share sale, not by new money.",
         "source": "s2"
       }
     }

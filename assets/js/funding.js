@@ -4,8 +4,7 @@
    Like register.js and detail.js, this renders precomputed labels — every
    figure, date, range and joined name list is settled in tools/build.py, so
    nothing here formats anything. What this file owns is escaping, the tab
-   semantics of the week cards, and the one sentence that keeps this block's
-   sourcing standard from being mistaken for the register's.
+   semantics of the week cards, and the block's opening paragraph.
 
    Every interpolated value comes from data/funding.json, which is written by
    hand and by the weekly workflow — untrusted like every other data file. It
@@ -13,15 +12,17 @@
    only rendered as a link when isSafeUrl() accepts its scheme. */
 import { escapeHtml, isSafeUrl } from "./html.js";
 
-/** The one line that has to keep two different promises apart. The register's
-    claim is that every figure was checked against a verbatim quote; this
-    block's is weaker on purpose, and a reader who assumes otherwise has been
-    misled by us rather than by a source. It is stated in the block, not
-    buried in About. */
+/** The block's opening line. Its predecessor spent three sentences on the
+    sourcing standard, which is a footnote wearing the clothes of an
+    introduction. That text now lives in About, under "How are the weekly
+    funding rounds sourced?", and what stays here is the one thing the standard
+    still has to say in the block itself: this is a selection, not a complete
+    list, so nobody reads an absence as a claim that nothing happened. */
 const STANDARD =
-  "Every round below carries a dated link to the reporting behind it, from the " +
-  "same allowlisted publications as the register. The standard is lighter than " +
-  "the register's: these figures are sourced and linked, not quote-checked.";
+  "Money is moving in Germany. Founders here are closing rounds that would have " +
+  "gone unfunded a decade ago, and this is where the best of them get read " +
+  "rather than counted. A selection rather than a complete list, with the " +
+  "reporting behind every figure one click away.";
 
 /** A source becomes a link only when its scheme is http(s); otherwise the
     title renders as plain text and the publication and date still show, so a
