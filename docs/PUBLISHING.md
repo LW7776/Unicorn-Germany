@@ -45,58 +45,45 @@ Give it a minute, then check `https://lw7776.github.io/Unicorn-Germany/`.
 
 ## 4. Let the workflows write
 
-The automated jobs commit and open pull requests on your behalf. GitHub blocks that by
-default, and the failure looks like a permissions error deep in a log, so set both of these
-before the first Monday.
+Two of the workflows act on your behalf, and GitHub blocks that by default. The failure looks
+like a permissions error deep in a log, so set this before the first Monday.
 
 **Settings → Actions → General → Workflow permissions**
 
-- Select **Read and write permissions**. Without it `watch.yml` and `rebuild.yml` cannot push.
-- Tick **Allow GitHub Actions to create and approve pull requests**. Without it
-  `weekly-funding.yml` cannot open its pull request.
+- Select **Read and write permissions**. Without it `rebuild.yml` cannot push the regenerated
+  `data/companies.json` after a hand edit.
+- `monday-reminder.yml` only needs to open issues, and it asks for exactly that in its own
+  `permissions:` block. It commits nothing and opens no pull request, so it needs neither the
+  pull-request tick nor write access to contents.
 
-## 5. The Anthropic API key — optional, and the schedule runs without it
+## 5. Turn on the email, which is the whole notification path
 
-No key is held, and the Monday schedule is **on** regardless. Those two facts used to be in
-conflict, which is why the schedule was previously switched off. They no longer are:
-`weekly-funding.yml` picks its mode from what the repository actually has.
+The Monday reminder opens an issue. GitHub emails that issue to everyone **watching** the
+repository, and that is the entire delivery mechanism: no mail server, no address in any config
+file, nothing to pay for.
 
-- **No `ANTHROPIC_API_KEY`** (the current state): the job makes no model call at all. It fetches
-  the week's German rounds from the same allowlisted feeds and opens a pull request publishing
-  them as a list, each round carrying company, amount, currency, source link and publication
-  date read out of the headline that states it. Nothing is invented and nothing is written in
-  prose. The page marks the week as listed rather than written up.
-- **With the key**: the same job additionally asks Claude to pick the lead round or two and write
-  them up in the site's voice, with every claim checked back against the fetched article text.
+On the repository page, open **Watch** and choose **All Activity**, or **Custom** with **Issues**
+ticked. On "Participating and @mentions" no mail arrives, and the reminder becomes something you
+have to remember to look for. Owning the repository does not subscribe you by itself.
 
-So the key buys prose, not coverage. Nothing breaks without it, no run turns red for want of it,
-and adding or removing it later needs no code change.
+## 5b. No API key, and nothing looks for one
 
-### If you do add one
+There is no `ANTHROPIC_API_KEY` in this repository and no workflow that would read one. CI does
+not write the site: it scans the feeds and, when there is something to report, opens an issue.
+The week is then written locally by a person with an assistant and pushed, which is what keeps
+every published week at the quality of the ones already there.
 
-**Settings → Secrets and variables → Actions → New repository secret**
+Adding a secret would therefore change nothing on its own. What it *would* make possible, if you
+ever wanted it, is written up in
+[docs/UPDATING.md](UPDATING.md#if-an-api-key-were-ever-added), along with why that trade was
+turned down.
 
-Name it exactly `ANTHROPIC_API_KEY`. Full steps and what each mode may and may not do are in
-[docs/UPDATING.md](UPDATING.md#the-weekly-round-up-in-two-modes).
+## 6. Check the reminder works without waiting for Monday
 
-## 5b. Optional: let the funding pull request merge itself
-
-**Settings → Secrets and variables → Actions → Variables → New repository variable**, named
-`FUNDING_AUTO_MERGE`, value `true`.
-
-Unset — the default — the weekly pull request waits for a person, which is what the site's About
-page promises. Set to `true`, the workflow enables auto-merge and the week lands on its own once
-`validate.yml` passes. That also needs **Settings → General → Allow auto-merge**; without it the
-pull request simply stays open, which is the safe failure. Note what you are trading: validation
-proves a week is well-formed, sourced, linked and dated, and cannot prove that a company name was
-read correctly out of a headline. The register sweep should stay manual either way, since it
-proposes changes to published company figures.
-
-## 6. Check the sweep works without waiting eight weeks
-
-Every scheduled job also has a manual trigger. **Actions → pick the workflow → Run workflow.**
-Run `watch` once by hand and confirm it opens an issue listing candidates. That needs no API
-key and proves the permissions are right, rather than discovering they are not in two months.
+Every scheduled job also has a manual trigger. **Actions → monday-reminder → Run workflow**, with
+**register sweep** ticked to see both sections at once. It opens an issue if the week has
+anything in it, which proves the permission and the email in one run rather than discovering they
+are wrong in two months. A run that reports nothing opens nothing, by design.
 
 ---
 
@@ -105,30 +92,24 @@ key and proves the permissions are right, rather than discovering they are not i
 | Workflow | When | What it does |
 |---|---|---|
 | `validate.yml` | every push and pull request | tests, contrast, validation, and refuses a stale `data/companies.json` |
-| `weekly-funding.yml` | every Monday 07:00 UTC, plus on request, by API, and by webhook | drafts or lists a funding week and opens a pull request |
-| `watch.yml` | every 8 weeks | re-checks the register and opens an issue listing candidates |
+| `monday-reminder.yml` | 20:00 Berlin time every Monday, plus on request | scans the feeds and opens **one issue** if there is anything to report. Every eighth week that issue also carries the register sweep. It publishes nothing |
 | `rebuild.yml` | any hand edit to `data/companies/` | validates first, and only rebuilds if it passes |
 
-Every automated change arrives as a pull request or an issue, and nothing merges itself unless
-`FUNDING_AUTO_MERGE` is set to `true` (section 5b). The weekly round-up can also be started from
-outside GitHub — an HTTP POST to the `workflow_dispatch` or `repository_dispatch` endpoint, with
-the `curl` and the token scope written out in
-[docs/UPDATING.md](UPDATING.md#starting-a-run-yourself-three-ways). Neither route publishes: both
-end at an open pull request.
+No workflow writes site content. Nothing merges itself. The reminder can also be started from
+outside GitHub with an HTTP POST to the `workflow_dispatch` endpoint, with the `curl` and the
+token scope written out in
+[docs/UPDATING.md](UPDATING.md#starting-a-run-yourself) — and that route publishes nothing either.
 
 ## How an update reaches the live site
 
 ```
-workflow runs  ->  opens a pull request  ->  you merge it
-   ->  main changes  ->  Pages redeploys  ->  live in about a minute
+Monday scan  ->  opens an issue  ->  you and an assistant write the week
+   ->  you push  ->  main changes  ->  Pages redeploys  ->  live in about a minute
 ```
 
-That merge is the only manual step, and it is deliberate. It is the point where a person
-sees what the automation wrote before the public does.
-
-If you would rather it were hands-off, section 5b turns that step over to the machine:
-`FUNDING_AUTO_MERGE=true` plus **Settings → General → Allow auto-merge**. You gain a site that
-updates with no involvement, and you give up the review step.
+Every step after the scan is a person. That is the design, not a gap in it: a scheduled job with
+no model behind it could only ever publish a list of parsed headlines, and a register that gets
+slightly worse every Monday is worse than one that waits for someone to write it.
 
 ## Editing by hand
 

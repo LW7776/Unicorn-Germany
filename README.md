@@ -27,11 +27,12 @@ file, and it is committed like any other — nothing is built at deploy time.
   not only unicorns. `tools/validate_funding.py` gates it on a deliberately lighter standard —
   every round linked, dated and allowlisted, but **not** quote-checked. The two standards live
   in separate files behind separate validators so neither can quietly become the other.
-- `tools/weekly_funding.py` drafts one week from the feeds via the Anthropic API, then checks
-  every company, founder and figure back against the article cited for it before writing
-  anything.
-- `tools/watch.py` scans a short allowlist of trade-press feeds and opens an issue listing
-  candidate changes — it never edits the dataset itself.
+- `tools/weekly_funding.py` gathers one week of German funding candidates from the feeds:
+  which articles fall inside the week, which headlines read as a closed round, and which of
+  them name a company the register already tracks. It is a library and a scan, not a drafter —
+  it writes no week file and calls no model.
+- `tools/watch.py` scans the same short allowlist of trade-press feeds for anything that would
+  change the register — it never edits the dataset itself.
 - `.github/workflows/rebuild.yml` regenerates `data/companies.json` after a push that edits
   `data/companies/**` directly on `main` (the GitHub-web-editor and files-and-terminal
   routes). It validates first and only then rebuilds, so a bad hand edit is never published —
@@ -59,6 +60,7 @@ python3 tools/validate.py        # check every company file against the schema a
 python3 tools/check_contrast.py  # confirm the colour palette clears the WCAG AA 4.5:1 floor
 python3 tools/validate_funding.py  # check the weekly funding files
 python3 tools/watch.py           # run the register candidate scan locally
+python3 tools/weekly_funding.py --last-complete-week   # last week's funding candidates
 ```
 
 ## Continuous integration
@@ -68,19 +70,19 @@ Every push and pull request runs the test suite, the contrast check and both val
 or `data/funding.json` is stale — that is, if it doesn't match what `tools/build.py` produces
 from the current source files — so a regenerated file can never be forgotten in review.
 
-Two scheduled workflows read the feeds. `.github/workflows/weekly-funding.yml` runs every
-Monday, compiles that week of the funding round-up and opens a **pull request** (writing the
-lead rounds up when an `ANTHROPIC_API_KEY` is available, and otherwise publishing the week as a
-plain list of sourced rounds with no model call at all);
-`.github/workflows/watch.yml` runs the full register sweep every eight weeks and opens a
-GitHub **issue**. The weekly scan is what catches a new unicorn, because a company crosses a
-billion by raising and that round gets announced; the eight-weekly sweep catches what funding
-news never announces — quiet IPOs, acquisitions, insolvencies and ageing valuations. The weekly
-routine can also be started by API or webhook. Nothing is published automatically unless the
-repository variable `FUNDING_AUTO_MERGE` is set to `true`, which hands the merge step to the
-machine and is off by default; see
-[`docs/UPDATING.md`](docs/UPDATING.md) for the routes from an open candidate to a merged,
-validated change.
+One scheduled workflow reads the feeds. `.github/workflows/monday-reminder.yml` runs at 20:00
+Berlin time every Monday, scans the allowlisted feeds for the week that just ended, and opens a
+single GitHub **issue** listing what it found — every eighth week with the full register sweep
+added as a second section of that same issue. A week with nothing to report opens nothing, so
+the mail that does arrive is always worth reading. GitHub emails the issue to anyone watching
+the repository, which is the whole notification path.
+
+**No workflow writes site content.** An earlier `weekly-funding.yml` drafted the round-up and
+opened a pull request; writing a week well is a model call, this repository holds no API key,
+and so that job could only ever publish a bare list of parsed headlines. Rather than let the
+site get slightly worse every Monday, the drafting job was deleted and CI now only says there
+is work to do. The week is written locally by a person with an assistant and pushed. See
+[`docs/UPDATING.md`](docs/UPDATING.md) for the route from an open issue to a validated commit.
 
 A third workflow (`.github/workflows/rebuild.yml`) handles edits made straight to `main`
 outside a pull request — the GitHub web editor and files-and-terminal routes in

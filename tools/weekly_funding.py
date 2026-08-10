@@ -1,46 +1,41 @@
-"""Drafts one week of the funding round-up from the allowlisted feeds.
+"""Gathers one week of German funding candidates from the allowlisted feeds.
 
-Run: python3 tools/weekly_funding.py --week 2026-W30 [--out data/funding]
+Run: python3 tools/weekly_funding.py --last-complete-week
+     python3 tools/weekly_funding.py --week 2026-W30 --report candidates.json
      python3 tools/weekly_funding.py --last-complete-week --today 2026-08-10
-     python3 tools/weekly_funding.py --last-complete-week --list-only
 
-It fetches the feeds tools/watch.py already knows how to fetch, keeps the items
-published inside the week, asks Claude to pick the lead round(s) and write them
-up, and then — before anything is written — checks the model's answer back
-against the fetched text. The result is a draft for a human to read in a pull
-request. Nothing here commits, and nothing here publishes.
+THIS FILE NO LONGER WRITES THE SITE
+-----------------------------------
+It used to draft a week of the round-up: fetch the feeds, ask Claude to pick and
+write the lead rounds, verify every claim back against the fetched text, write
+`data/funding/<week>.json` and open a pull request. That whole path is gone,
+along with the workflow that ran it.
 
-TWO MODES
----------
-Full mode is the above. `--list-only` is the same job with the model taken out
-of it: no API call is made, nothing is written in prose, and the week is
-published with an empty `lead` and the rounds in `more`. It exists because the
-routine has to run on a schedule whether or not the repository holds an
-ANTHROPIC_API_KEY, and a week published as a list of linked, dated rounds is a
-smaller thing than a written week but it is still true. What list-only mode
-must never do is guess: every field it emits is lifted out of the headline it
-cites, and an article it cannot read a company and a figure out of is dropped
-rather than half-parsed. See `read_headline` below.
+The reason is quality, not cost. Writing a week is a model call, and the
+operator holds no API key, so the scheduled job could only ever publish a bare
+list of parsed headlines — visibly thinner than the weeks a person wrote. A
+register that degrades a little every Monday is worse than one updated by hand,
+so CI stopped producing content: it now scans the feeds, and if there is
+anything to report it opens one issue saying so. A person and an assistant
+write the week and push it.
 
-THE THREE GUARDS
-----------------
-The prompt forbids inventing a company, a figure or a founder. A prompt is a
-request, so two checks in code make it a rule:
+What is left here is the gathering half, which is exactly what that person
+needs, and what .github/workflows/monday-reminder.yml runs to fill the issue:
 
-  1. Every round's source URL must be one the fetch actually returned. A model
-     cannot cite a page this run never saw, because the URL is looked up in the
-     corpus rather than trusted.
-  2. Every company name, founder name and amount must appear in *that article's*
-     text. A figure the article does not contain cannot be filed against it,
-     which is what stops a plausible number being attached to a real link.
-  3. tools/validate_funding.py runs afterwards on the written file, in CI, and
-     the workflow refuses to open a pull request if it fails.
+  last_complete_week  which ISO week a Monday is reporting on
+  collect             every allowlisted-feed article published inside a week
+                      that mentions Germany and a funding event, body text and
+                      all, so a human reader (or their assistant) can work from
+                      the reporting rather than from a headline
+  read_headline       a mechanical reading of one headline into a round, used to
+                      say "this looks like a closed round for X, EUR 12m" beside
+                      a link. It fails closed: an ambiguous headline yields
+                      None and the article is still listed, just unparsed.
+  candidates          the two together, plus the register cross-check, as the
+                      JSON the Monday issue is built from
 
-Guard 2 is the load-bearing one. It is deliberately a substring test over the
-article body rather than a judgement about meaning: it cannot tell whether the
-model understood the round, but it can tell — mechanically, with no model in the
-loop — that every proper noun and every number came from the page that is cited
-beside it.
+Nothing here decides anything. It produces a list for a person to act on, which
+is the same division of labour tools/watch.py has always had.
 """
 import argparse
 import datetime as dt
@@ -51,16 +46,14 @@ import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 
-from tools.schema import SOURCE_ALLOWLIST, quote_states_figure
-from tools.validate_funding import MAX_LEAD, MAX_MORE, validate_week, week_bounds
-from tools.watch import FEEDS, fetch, parse_feed
+from tools.schema import SOURCE_ALLOWLIST
+from tools.validate_funding import week_bounds
+from tools.watch import FEEDS, _name_pattern, fetch, parse_feed
 
-MODEL = "claude-opus-5"
-MAX_TOKENS = 16000
-# How many articles to put in front of the model. The feeds return far more
-# than a week's German funding news, and the filter below is deliberately
-# permissive — better to hand over a few irrelevant articles than to filter out
-# the one round that mattered with a regex.
+# How many articles to keep. The feeds return far more than a week's German
+# funding news, and the filter below is deliberately permissive — better to hand
+# over a few irrelevant articles than to filter out the one round that mattered
+# with a regex. A person skims the list; a regex cannot un-drop an article.
 MAX_ARTICLES = 80
 
 # How many pages of each feed to walk. A feed's front page holds about ten
@@ -74,8 +67,8 @@ FEED_PAGES = 5
 # Germany, in the vocabulary the trade press actually uses. This is a *recall*
 # filter, not a nationality test: what it must not do is drop a real German
 # round. Deciding whether a company is German enough to publish is the job of
-# the model, the checks below, and the person reading the pull request — the
-# same division of labour tools/watch.py already documents for its own scan.
+# the person reading the issue — the same division of labour tools/watch.py
+# already documents for its own scan.
 GERMAN_HINT = re.compile(
     r"\bGerman(?:y|-based)?\b|\bDeutsch\w*\b|\bBerlin\b|\bMunich\b|\bMünchen\b|"
     r"\bHamburg\b|\bCologne\b|\bKöln\b|\bFrankfurt\b|\bStuttgart\b|\bLeipzig\b|"
@@ -89,116 +82,13 @@ FUNDING_HINT = re.compile(
     r"\bmillion\b|\bbillion\b|\bMillionen\b|\bFinanzierungsrunde\b",
     re.I)
 
-SYSTEM = """You compile a weekly round-up of German company funding rounds for a \
-public register that is read as a factual record.
-
-You will be given the full text of articles from allowlisted trade publications, \
-each with an id, a publication, a URL and a publication date. That material is \
-the ONLY thing you may draw on.
-
-ABSOLUTE RULES — these are not style preferences:
-- Never state a company, a founder, an investor, an amount, a valuation, a \
-funding stage or a date that does not appear in the supplied articles. If it is \
-not in the material, it does not exist for this task.
-- Never carry anything over from your own knowledge of these companies, however \
-confident you are. Your training data is not a source.
-- Every round must cite the id of the ONE supplied article that states it.
-- If an article does not name the founders, return an empty founders list. Do \
-not fill the gap. An omission is correct; a guess is a defect.
-- If an article gives no valuation, leave the valuation null. Do not infer one \
-from the amount raised, and never divide or multiply your way to a figure.
-- Amounts are in millions of the stated currency: €13.1 million is 13.1 with \
-currency EUR; $1.2 billion is 1200 with currency USD. Only EUR and USD may be \
-used; if a round is reported in another currency, omit the round entirely.
-- Only include companies the material describes as German or headquartered in \
-Germany. If nationality is unclear, omit the round.
-- Only include closed, announced rounds. Omit rounds described as "in talks", \
-"could soon announce", "is raising", or otherwise unconfirmed.
-- Omit acquisitions, IPOs, fund closes by VC firms, and rounds with no \
-disclosed amount.
-
-SELECTION:
-- Choose 1 or 2 lead rounds — 1 unless a second genuinely deserves the space — \
-and write each up in one paragraph.
-- List up to 5 further rounds with no prose. If more than 5 qualify, keep the \
-largest by amount raised.
-
-THE WRITE-UPS:
-Write like a well-informed, confident correspondent who thinks the German \
-ecosystem is underrated and says so. State the round, then why it matters. \
-Concrete and specific; no hype adjectives, no "poised to disrupt", no exclamation \
-marks. Roughly 60-110 words each.
-The prose must age well. Never write a flat, down or bridge round as a triumph. \
-Never write a superlative you cannot support from the supplied material — "the \
-ninth in twelve months" is usable only if the material lets you count it. If you \
-are tempted to claim a company is the biggest, first or fastest at something, \
-either quote the article that says so and attribute it, or drop the claim."""
-
-SCHEMA = {
-    "type": "object",
-    "properties": {
-        "lead": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "company": {"type": "string"},
-                    "hq": {"type": ["string", "null"]},
-                    "stage": {"type": ["string", "null"]},
-                    "amount": {"type": "number"},
-                    "currency": {"type": "string", "enum": ["EUR", "USD"]},
-                    "approximate": {"type": "boolean"},
-                    "valuation": {"type": ["number", "null"]},
-                    "valuationCurrency": {"type": ["string", "null"],
-                                          "enum": ["EUR", "USD", None]},
-                    "founders": {"type": "array", "items": {"type": "string"}},
-                    "investors": {"type": "array", "items": {"type": "string"}},
-                    "text": {"type": "string"},
-                    "articleId": {"type": "string"},
-                },
-                "required": ["company", "hq", "stage", "amount", "currency",
-                             "approximate", "valuation", "valuationCurrency",
-                             "founders", "investors", "text", "articleId"],
-                "additionalProperties": False,
-            },
-        },
-        "more": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "company": {"type": "string"},
-                    "hq": {"type": ["string", "null"]},
-                    "stage": {"type": ["string", "null"]},
-                    "amount": {"type": "number"},
-                    "currency": {"type": "string", "enum": ["EUR", "USD"]},
-                    "approximate": {"type": "boolean"},
-                    "valuation": {"type": ["number", "null"]},
-                    "valuationCurrency": {"type": ["string", "null"],
-                                          "enum": ["EUR", "USD", None]},
-                    "founders": {"type": "array", "items": {"type": "string"}},
-                    "investors": {"type": "array", "items": {"type": "string"}},
-                    "articleId": {"type": "string"},
-                },
-                "required": ["company", "hq", "stage", "amount", "currency",
-                             "approximate", "valuation", "valuationCurrency",
-                             "founders", "investors", "articleId"],
-                "additionalProperties": False,
-            },
-        },
-    },
-    "required": ["lead", "more"],
-    "additionalProperties": False,
-}
-
 
 # --- collecting -------------------------------------------------------------
 
 def last_complete_week(today):
     """The ISO week that ended before `today`. Monday's run covers the week just
     finished, not the one it is standing in. `today` is passed in rather than
-    read from the clock so this is testable and so the workflow can be replayed
-    for a past week."""
+    read from the clock so this is testable and so a past week can be replayed."""
     monday = today - dt.timedelta(days=today.weekday())
     ended = monday - dt.timedelta(days=1)          # the Sunday just gone
     year, week, _ = ended.isocalendar()
@@ -255,22 +145,21 @@ def collect(week, feeds=None, fetcher=None):
                 "publishedOn": item["published"],
                 "text": item.get("summary", ""),
             })
-    # Longest first: an article with the full body is far more useful to both
-    # the model and the verifier than a headline-only stub, and the cap has to
-    # fall on the stubs rather than on whichever feed happened to be polled last.
+    # Longest first: an article with the full body is far more useful to a
+    # reader than a headline-only stub, and the cap has to fall on the stubs
+    # rather than on whichever feed happened to be polled last.
     articles.sort(key=lambda a: len(a["text"]), reverse=True)
     return articles[:MAX_ARTICLES], errors
 
 
-# --- list-only mode: reading the headline, with no model in the loop --------
+# --- reading a headline, with no model in the loop --------------------------
 #
 # Everything below is deliberately mechanical. It reads a company name, an
-# amount and a currency out of an article's own headline, and emits nothing it
-# could not point at in that headline. The bar it has to clear is not "extract
-# as many rounds as possible" — it is "never publish a company or a figure the
-# cited page does not say". So every step here fails closed: an ambiguous
-# headline yields None and the article is dropped. A quiet week is a real
-# outcome; a wrong company name attached to a real link is not.
+# amount and a currency out of an article's own headline so the Monday issue can
+# say what a link is probably about. It emits nothing it could not point at in
+# that headline, and every step fails closed: an ambiguous headline yields None.
+# Nothing here is published — an unparsed article is still listed in the issue
+# under its own headline, so a miss costs a line of annotation, not a round.
 
 # Amounts. Both orders occur in the trade press: "€12 million" (English) and
 # "50 Millionen Euro" (German). A scale word is *required* in both — a bare
@@ -357,7 +246,7 @@ NOT_A_NAME = {
 
 # Headlines that are not a closed German round, whatever else they contain.
 # A VC closing a fund, a rumour, an acquisition and a listing all match the
-# funding vocabulary and none of them belongs in a round-up of rounds.
+# funding vocabulary and none of them is a round.
 NOT_A_ROUND = re.compile(
     r"\bin talks\b|\bis raising\b|\bto raise\b|\bseeks?\b|\bseeking\b|"
     r"\bcould\b|\bmay\b|\bmight\b|\breportedly\b|\brumou?red\b|\bplans to\b|"
@@ -412,8 +301,8 @@ def read_company(headline):
     The company is whatever stands between the publication's own framing and
     the verb: "Berlin-based Beispiel raises …" leaves "Beispiel". The strip is
     conservative in the direction that matters — if what remains does not look
-    like a name, this returns None and the round is dropped, because a wrong
-    name beside a real link is worse than a round the round-up missed.
+    like a name, this returns None, because a wrong name printed beside a real
+    link would send the reader looking for a company that is not there.
     """
     verb = RAISE_VERB.search(headline)
     if not verb:
@@ -460,12 +349,12 @@ def read_company(headline):
 
 
 def read_headline(article):
-    """One round from one article, or None.
+    """One round from one article's headline, or None.
 
     Every field comes out of `article["title"]`, which is the headline of the
-    page whose URL is filed beside it. founders and investors are always empty:
-    a headline that names them is rare, and a list this job guessed at is the
-    one thing the lighter sourcing standard still forbids.
+    page whose URL is filed beside it. founders and investors are never read: a
+    headline that names them is rare, and this is an annotation on a link, not a
+    record. Whoever writes the week takes the figures off the page itself.
     """
     headline = article["title"]
     if NOT_A_ROUND.search(headline):
@@ -485,249 +374,105 @@ def read_headline(article):
         "amount": amount,
         "currency": currency,
         "approximate": bool(APPROXIMATE_HINT.search(headline)),
-        "valuation": None,
-        "valuationCurrency": None,
-        "founders": [],
-        "investors": [],
-        "source": {
-            "publication": article["publication"],
-            "title": article["title"],
-            "url": article["url"],
-            "publishedOn": article["publishedOn"],
-        },
     }
 
 
-def list_week(week, articles, cap=MAX_MORE):
-    """The whole week as a list, with no lead and no prose.
+# --- the register cross-check ------------------------------------------------
 
-    Deduplicated by company — two publications covering the same round is the
-    normal case, not a second round — and capped at the same `more` limit a
-    written week uses, keeping the largest, which is the same rule the model is
-    given in full mode.
+def known_companies(companies_dir="data/companies"):
+    """{display name: slug} for everything the register already tracks."""
+    directory = pathlib.Path(companies_dir)
+    if not directory.is_dir():
+        return {}
+    known = {}
+    for file in sorted(directory.glob("*.json")):
+        record = json.loads(file.read_text(encoding="utf-8"))
+        known[record["name"]] = record["slug"]
+    return known
+
+
+def tracked_in(text, known):
+    """The slug of the tracked company this text names, or None.
+
+    A word-boundary match, borrowed from tools/watch.py rather than rewritten,
+    because two copies of "does this headline name a tracked company?" is how
+    the two scans start disagreeing about the same headline.
     """
+    for name, slug in known.items():
+        if _name_pattern(name).search(text):
+            return slug
+    return None
+
+
+# --- the week, as the Monday issue needs it ---------------------------------
+
+def candidates(week, feeds=None, fetcher=None, companies_dir="data/companies"):
+    """Everything the Monday issue needs about one week, as plain JSON.
+
+    Two buckets, because they earn different attention:
+
+      rounds  the headline reads cleanly as a closed round. This is the list to
+              write up.
+      other   collected as German funding news, but the headline could not be
+              read into a round — a phrasing the parser does not know, a story
+              about a round rather than an announcement of one, a fund close.
+              Listed anyway: the parser's misses are a person's job to catch,
+              and a link costs a line.
+
+    A round for a company already in `data/companies/` carries its slug, because
+    that means the register entry is now out of date and the round-up must not
+    be the only place the new figure appears.
+    """
+    articles, errors = collect(week, feeds=feeds, fetcher=fetcher)
+    known = known_companies(companies_dir)
     start, end = week_bounds(week)
-    rounds, seen = [], set()
+
+    rounds, other, seen = [], [], set()
     for article in articles:
+        base = {
+            "headline": article["title"],
+            "publication": article["publication"],
+            "publishedOn": article["publishedOn"],
+            "url": article["url"],
+            "tracked": tracked_in(article["title"], known),
+        }
         entry = read_headline(article)
         if entry is None:
+            other.append(base)
             continue
+        # Two publications covering the same round is the normal case, not a
+        # second round. The duplicate is dropped from the list to write up, not
+        # from the scan: the second link is often the better-sourced one, so it
+        # keeps its place under `other`.
         key = entry["company"].casefold()
         if key in seen:
+            other.append(base)
             continue
         seen.add(key)
-        rounds.append(entry)
-    rounds.sort(key=lambda e: e["amount"], reverse=True)
-    rounds = rounds[:cap]
-    for index, entry in enumerate(rounds):
-        entry["id"] = f"m{index + 1}"
-    return {"week": week, "start": start, "end": end, "lead": [], "more": rounds}
+        rounds.append({**base, **entry,
+                       "tracked": base["tracked"] or tracked_in(entry["company"], known)})
 
-
-# --- the model call ---------------------------------------------------------
-
-def build_prompt(week, articles):
-    start, end = week_bounds(week)
-    lines = [
-        f"ISO week {week}: {start} to {end} inclusive.",
-        f"{len(articles)} articles follow. Draw only on these.",
-        "",
-    ]
-    for article in articles:
-        lines += [
-            f"<article id=\"{article['id']}\">",
-            f"publication: {article['publication']}",
-            f"published: {article['publishedOn']}",
-            f"url: {article['url']}",
-            f"headline: {article['title']}",
-            "",
-            article["text"] or "(no body text in the feed; use the headline only)",
-            "</article>",
-            "",
-        ]
-    lines.append(
-        f"Return the lead round(s) (at most {MAX_LEAD}) and up to {MAX_MORE} "
-        f"further rounds, each citing the id of the single article that states it.")
-    return "\n".join(lines)
-
-
-def draft(week, articles, client=None):
-    """Ask Claude to select and write the week. Returns the parsed JSON object."""
-    if client is None:
-        import anthropic
-        client = anthropic.Anthropic()          # reads ANTHROPIC_API_KEY
-
-    # Streaming, because the article corpus can run to tens of thousands of
-    # tokens and a non-streaming request at this max_tokens risks an HTTP
-    # timeout well before the model is finished.
-    with client.messages.stream(
-        model=MODEL,
-        max_tokens=MAX_TOKENS,
-        system=SYSTEM,
-        output_config={"format": {"type": "json_schema", "schema": SCHEMA}},
-        messages=[{"role": "user", "content": build_prompt(week, articles)}],
-    ) as stream:
-        message = stream.get_final_message()
-
-    if message.stop_reason == "refusal":
-        raise RuntimeError(
-            "the model declined this request; nothing was written "
-            f"({getattr(message, 'stop_details', None)})")
-    if message.stop_reason == "max_tokens":
-        raise RuntimeError(
-            "the model hit max_tokens, so the JSON is truncated; nothing was written")
-
-    text = next((b.text for b in message.content if b.type == "text"), "")
-    return json.loads(text)
-
-
-# --- verifying the draft against the fetched text ---------------------------
-
-def states_figure(text, amount, currency):
-    """Does this article state this figure, in this currency?
-
-    Delegates to tools/schema.py's matcher — the same one the register's quote
-    gate uses. Reusing it is not incidental: a hand-rolled substring test gets
-    this wrong in a way that is easy to miss. A €1bn valuation is stored as
-    1000, whose billions form is the bare string "1", and "1" is a substring of
-    "2021" and of "€12 million" — so a naive check waves through an invented
-    billion-euro valuation on any article that happens to mention a year.
-    quote_states_figure matches on digit boundaries and additionally requires a
-    scale word beside a billion-scale figure, which is exactly the distinction
-    that matters here.
-
-    This is emphatically *not* the register's quote gate. Nothing about the
-    round-up requires a verbatim quote in the data file, and none is stored.
-    This is an internal check on the model's output, and it is only ever run
-    against the article the model itself cited.
-    """
-    return quote_states_figure(text, amount, currency)
-
-
-def verify(rounds, articles):
-    """Every claim traced back to the article cited beside it.
-
-    Returns a list of problems. An empty list means every company, founder and
-    figure in the draft is a substring of the page it is filed against.
-    """
-    by_id = {article["id"]: article for article in articles}
-    problems = []
-    for entry in rounds:
-        label = entry.get("company") or "?"
-        article = by_id.get(entry.get("articleId"))
-        if article is None:
-            problems.append(
-                f"{label}: cites article {entry.get('articleId')!r}, which this "
-                f"run never fetched — the model may have invented the citation")
-            continue
-        body = f"{article['title']} {article['text']}"
-        haystack = body.lower()
-
-        if entry["company"].lower() not in haystack:
-            problems.append(
-                f"{label}: the company name does not appear in {article['url']}")
-        for founder in entry.get("founders") or []:
-            # Surname is enough: articles routinely introduce "Dr. Denis Kiefel"
-            # and then say "Kiefel", and a full-string test would reject a
-            # correctly-extracted name over a title or a middle initial.
-            surname = founder.split()[-1].lower()
-            if surname not in haystack:
-                problems.append(
-                    f"{label}: founder {founder!r} does not appear in {article['url']}")
-        if not states_figure(body, entry["amount"], entry["currency"]):
-            problems.append(
-                f"{label}: {article['url']} does not state the amount "
-                f"{entry['amount']} in {entry['currency']}")
-        valuation = entry.get("valuation")
-        if valuation is not None and not states_figure(
-                body, valuation, entry.get("valuationCurrency") or entry["currency"]):
-            problems.append(
-                f"{label}: {article['url']} does not state the valuation "
-                f"{valuation} in {entry.get('valuationCurrency') or entry['currency']}")
-    return problems
-
-
-# --- assembling the week file ----------------------------------------------
-
-def assemble(week, drafted, articles):
-    """Turn the model's answer into the on-disk shape, resolving article ids to
-    real source objects. The model never writes a URL or a publication name —
-    it names an article, and those fields are copied from what was fetched, so
-    a citation cannot drift from the page it came from."""
-    start, end = week_bounds(week)
-    by_id = {article["id"]: article for article in articles}
-
-    def convert(entry, index, prefix, with_text):
-        article = by_id[entry["articleId"]]
-        out = {
-            "id": f"{prefix}{index + 1}",
-            "company": entry["company"],
-            "hq": entry.get("hq") or None,
-            "stage": entry.get("stage") or None,
-            "amount": entry["amount"],
-            "currency": entry["currency"],
-            "approximate": bool(entry.get("approximate")),
-            "valuation": entry.get("valuation"),
-            "valuationCurrency": entry.get("valuationCurrency"),
-            "founders": entry.get("founders") or [],
-            "investors": entry.get("investors") or [],
-            "source": {
-                "publication": article["publication"],
-                "title": article["title"],
-                "url": article["url"],
-                "publishedOn": article["publishedOn"],
-            },
-        }
-        if with_text:
-            out["text"] = entry["text"]
-        return out
-
+    rounds.sort(key=lambda entry: entry["amount"], reverse=True)
     return {
         "week": week,
         "start": start,
         "end": end,
-        "lead": [convert(e, i, "l", True) for i, e in enumerate(drafted["lead"])],
-        "more": [convert(e, i, "m", False) for i, e in enumerate(drafted["more"])],
+        "scannedOn": dt.date.today().isoformat(),
+        "articles": len(articles),
+        "feedsTried": len(feeds or FEEDS),
+        "feedErrors": errors,
+        "rounds": rounds,
+        "other": other,
     }
 
 
-def tracked_companies(week_record, companies_dir="data/companies"):
-    """Companies in this week that the register already tracks.
-
-    Surfaced prominently in the pull request: a round for a company already in
-    the register means the register entry is now out of date, and the round-up
-    is not allowed to be the only place that new figure appears.
-    """
-    directory = pathlib.Path(companies_dir)
-    if not directory.is_dir():
-        return []
-    known = {}
-    for file in sorted(directory.glob("*.json")):
-        record = json.loads(file.read_text(encoding="utf-8"))
-        known[record["name"].lower()] = record["slug"]
-    hits = []
-    for entry in week_record["lead"] + week_record["more"]:
-        slug = known.get(entry["company"].lower())
-        if slug:
-            hits.append({"company": entry["company"], "slug": slug,
-                         "amount": entry["amount"], "currency": entry["currency"],
-                         "source": entry["source"]["url"]})
-    return hits
-
-
 def main(argv=None):
-    parser = argparse.ArgumentParser(description=__doc__)
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--week", help='ISO week id, e.g. "2026-W30"')
     parser.add_argument("--last-complete-week", action="store_true",
                         help="use the ISO week that ended before --today")
     parser.add_argument("--today", help="YYYY-MM-DD; defaults to the system date")
-    parser.add_argument("--out", default="data/funding")
-    parser.add_argument("--report", help="write a JSON run report here (for the PR body)")
-    parser.add_argument(
-        "--list-only", action="store_true",
-        help="publish the week as a list with no lead and no prose, making no "
-             "API call at all. This is what the weekly routine does when the "
-             "repository holds no ANTHROPIC_API_KEY.")
+    parser.add_argument("--report", help="write the candidates here as JSON")
     args = parser.parse_args(argv)
 
     today = dt.date.fromisoformat(args.today) if args.today else dt.date.today()
@@ -735,68 +480,25 @@ def main(argv=None):
     if not week:
         parser.error("pass --week or --last-complete-week")
 
-    articles, errors = collect(week)
-    for error in errors:
+    report = candidates(week)
+    for error in report["feedErrors"]:
         print(f"! feed: {error}", file=sys.stderr)
-    print(f"{len(articles)} candidate article(s) for {week}")
-    if not articles:
-        # A genuinely quiet week is a real outcome, not a failure — but there is
-        # nothing to publish and nothing to review, so stop before spending an
-        # API call and before opening an empty pull request.
-        print("nothing to draft; no file written")
-        return 2
-
-    if args.list_only:
-        # No model call, no prose, no lead. Every field below was read out of a
-        # headline this run fetched — see read_headline.
-        record = list_week(week, articles)
-        if not record["more"]:
-            print("no round could be read from this week's headlines; "
-                  "no file written")
-            return 2
-        print(f"list-only: {len(record['more'])} round(s) read from headlines")
-    else:
-        drafted = draft(week, articles)
-        problems = verify(drafted["lead"] + drafted["more"], articles)
-        if problems:
-            for problem in problems:
-                print(f"! unverified: {problem}", file=sys.stderr)
-            print("draft rejected: a claim could not be traced to the article "
-                  "cited for it; no file written", file=sys.stderr)
-            return 1
-        record = assemble(week, drafted, articles)
-
-    validation = validate_week(record)
-    if validation:
-        for error in validation:
-            print(f"! invalid: {error}", file=sys.stderr)
-        print("draft rejected: it does not satisfy tools/validate_funding.py; "
-              "no file written", file=sys.stderr)
-        return 1
-
-    out_path = pathlib.Path(args.out) / f"{week}.json"
-    out_path.parent.mkdir(parents=True, exist_ok=True)
-    out_path.write_text(json.dumps(record, ensure_ascii=False, indent=1) + "\n",
-                        encoding="utf-8")
-    print(f"wrote {out_path}: {len(record['lead'])} lead, {len(record['more'])} listed")
+    print(f"{week} ({report['start']} to {report['end']}): "
+          f"{report['articles']} article(s), {len(report['rounds'])} readable round(s)")
+    for entry in report["rounds"]:
+        mark = f" [tracked: {entry['tracked']}]" if entry["tracked"] else ""
+        print(f"- {entry['company']}: {entry['currency']} {entry['amount']}m "
+              f"[{entry['publication']}] {entry['url']}{mark}")
+    for entry in report["other"]:
+        mark = f" [tracked: {entry['tracked']}]" if entry["tracked"] else ""
+        print(f"? {entry['headline']} [{entry['publication']}] "
+              f"{entry['url']}{mark}")
 
     if args.report:
-        tracked = tracked_companies(record)
-        pathlib.Path(args.report).write_text(json.dumps({
-            "week": week,
-            "mode": "list-only" if args.list_only else "full",
-            "articles": len(articles),
-            "feedErrors": errors,
-            "lead": [{"company": e["company"], "amount": e["amount"],
-                      "currency": e["currency"], "url": e["source"]["url"],
-                      "publishedOn": e["source"]["publishedOn"]}
-                     for e in record["lead"]],
-            "more": [{"company": e["company"], "amount": e["amount"],
-                      "currency": e["currency"], "url": e["source"]["url"],
-                      "publishedOn": e["source"]["publishedOn"]}
-                     for e in record["more"]],
-            "tracked": tracked,
-        }, ensure_ascii=False, indent=1), encoding="utf-8")
+        pathlib.Path(args.report).write_text(
+            json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
+    # A quiet week is a real outcome, not a failure. The caller decides whether
+    # an empty scan is worth telling anybody about.
     return 0
 
 

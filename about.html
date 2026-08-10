@@ -124,15 +124,16 @@
       </summary>
       <div class="qa__a">
         <p>
-          The funding round-up runs every Monday morning, covering the week that just ended.
-          The register sweeps itself every eight weeks. Both work the same way, a job reads
-          the allowlisted feeds and proposes a change, then a person checks the links and
-          merges it, so nothing arrives here without passing a review. A week the round-up
-          has no key to write prose with is published as a plain list of sourced rounds
-          instead of being skipped, and the page says so in place of the write-up, because a
-          thinner week is honest and a missing one is not. The eight-week sweep additionally
-          looks for what no funding wire reports, a company that listed, was acquired, or has
-          simply gone quiet.
+          Nothing here updates itself. Every Monday evening a scan reads the allowlisted feeds
+          for the week that just ended, and if it found anything it says so. The round-up is
+          then written by hand, checked against the sources and published, usually within a
+          few days. Every eighth week the same scan sweeps the whole register for what no
+          funding wire reports, a company that listed, was acquired, or has simply gone quiet.
+          A week nobody raised in is a week with no entry, and a busy week can still wait for
+          the person writing it, so treat this as roughly weekly rather than punctually
+          weekly. What you will not find is a week nobody wrote, which is the trade being
+          made: no machine-generated list of rounds has ever been published here, and none
+          will be.
         </p>
       </div>
     </details>
@@ -180,8 +181,10 @@
       </summary>
       <div class="qa__a">
         <p>
-          Research and drafting are automated end to end by AI, a person reviews every change,
-          and a validator blocks anything whose source does not state the figure. The data is one
+          Research and drafting are done with AI, a person reviews every change before it is
+          published, and a validator blocks anything whose source does not state the figure.
+          The only thing that runs on a schedule is the scan that says there is work to do,
+          and it publishes nothing. The data is one
           JSON file per company in a
           <a href="https://github.com/LW7776/Unicorn-Germany" target="_blank" rel="noopener noreferrer">public Git repository</a>
           rather than a database, with the tooling around it written in Python. The site itself is

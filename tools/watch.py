@@ -3,8 +3,9 @@
 It never edits a company file. It produces a candidate list for a human to act on,
 which is what keeps an automated pipeline safe.
 
-Run: python3 tools/watch.py
+Run: python3 tools/watch.py [--out data/candidates.json]
 """
+import argparse
 import datetime as dt
 import email.utils
 import html
@@ -220,7 +221,14 @@ def scan(feeds=None, companies=None, out="data/candidates.json"):
 
 
 if __name__ == "__main__":
-    result = scan()
+    # `--out` so a run that is only reporting can keep its scratch file out of
+    # data/. The Monday reminder workflow uses it: it has no write access to the
+    # repository and nothing it produces is committed, so writing the sweep into
+    # a tracked path would only invite someone to commit it by accident.
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument("--out", default="data/candidates.json",
+                        help="where to write the candidate list")
+    result = scan(out=parser.parse_args().out)
     print(f"{len(result['candidates'])} candidate(s); {len(result['feedErrors'])} feed error(s)")
     for error in result["feedErrors"]:
         print(f"! {error}")

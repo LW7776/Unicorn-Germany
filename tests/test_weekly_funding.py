@@ -1,12 +1,15 @@
 # tests/test_weekly_funding.py
+#
+# What this module still does: it gathers a week of German funding candidates
+# for a person to write up. What it no longer does: call a model, assemble a
+# week file, or publish anything. The tests for those went with the code.
 import datetime as dt
 
 import pytest
 
-from tools.validate_funding import MAX_MORE, validate_week
 from tools.weekly_funding import (
-    assemble, collect, last_complete_week, list_week, read_amount, read_company,
-    read_headline, states_figure, tracked_companies, verify)
+    candidates, collect, known_companies, last_complete_week, read_amount,
+    read_company, read_headline, tracked_in)
 
 ITEM_TEMPLATE = """<?xml version="1.0" encoding="UTF-8"?>
 <rss xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel>{items}</channel></rss>"""
@@ -101,7 +104,10 @@ def test_an_article_with_no_funding_signal_is_not_collected():
     assert articles == []
 
 
-def test_the_body_text_is_carried_through_for_verification():
+def test_the_body_text_is_carried_through_for_the_person_writing_the_week():
+    """The issue links the article, but whoever drafts the week works from the
+    reporting. Carrying the body through is what makes that possible without a
+    second fetch."""
     articles, _ = collect("2026-W30", feeds={"Tech.eu": "https://tech.eu/feed/"},
                           fetcher=stub([feed(GERMAN_ROUND)]))
     assert "Ada Beispiel" in articles[0]["text"]
@@ -155,139 +161,11 @@ def test_a_feed_off_the_allowlist_is_skipped_loudly():
     assert any("not on the source allowlist" in e for e in errors)
 
 
-# --- the guard that makes the prompt a rule ---------------------------------
-
-@pytest.fixture
-def articles():
-    found, _ = collect("2026-W30", feeds={"Tech.eu": "https://tech.eu/feed/"},
-                       fetcher=stub([feed(GERMAN_ROUND)]))
-    return found
-
-
-def a_draft(**overrides):
-    entry = {
-        "company": "Beispiel", "hq": "Berlin", "stage": "Series A",
-        "amount": 12, "currency": "EUR", "approximate": False,
-        "valuation": None, "valuationCurrency": None,
-        "founders": ["Ada Beispiel", "Bruno Muster"], "investors": ["Some Fund"],
-        "text": "A write-up.", "articleId": "a1",
-    }
-    entry.update(overrides)
-    return entry
-
-
-def test_a_faithful_draft_verifies(articles):
-    assert verify([a_draft()], articles) == []
-
-
-def test_an_invented_company_is_caught(articles):
-    problems = verify([a_draft(company="Erfunden GmbH")], articles)
-    assert any("company name does not appear" in p for p in problems)
-
-
-def test_an_invented_founder_is_caught(articles):
-    problems = verify([a_draft(founders=["Ada Beispiel", "Carla Erfunden"])], articles)
-    assert any("Carla Erfunden" in p for p in problems)
-
-
-def test_an_invented_amount_is_caught(articles):
-    problems = verify([a_draft(amount=45)], articles)
-    assert any("does not state the amount 45" in p for p in problems)
-
-
-def test_an_invented_valuation_is_caught(articles):
-    """A €1bn valuation is stored as 1000, whose billions form is the bare "1".
-    A substring check would find that "1" inside "2021" or "€12 million" and
-    wave the invented figure through, which is why this delegates to
-    tools/schema.py's digit-boundary matcher instead."""
-    problems = verify([a_draft(valuation=1000, valuationCurrency="EUR")], articles)
-    assert any("does not state the valuation 1000" in p for p in problems)
-
-
-def test_a_stated_valuation_verifies():
-    found, _ = collect("2026-W30", feeds={"Tech.eu": "https://tech.eu/feed/"},
-                       fetcher=stub([feed(item(
-                           "Berlin-based Beispiel raises €12 million at a €1 billion valuation",
-                           "https://tech.eu/2026/07/22/beispiel/",
-                           "Tue, 22 Jul 2026 09:00:00 GMT",
-                           "<p>Beispiel raised €12 million in a Series A at a €1 billion "
-                           "valuation. Founded in 2021 by Ada Beispiel.</p>"))]))
-    draft = a_draft(founders=["Ada Beispiel"], valuation=1000, valuationCurrency="EUR")
-    assert verify([draft], found) == []
-
-
-def test_a_citation_to_an_article_this_run_never_fetched_is_caught(articles):
-    problems = verify([a_draft(articleId="a99")], articles)
-    assert any("never fetched" in p for p in problems)
-
-
-def test_a_founder_referred_to_by_surname_still_verifies(articles):
-    """Articles introduce "Dr. Denis Kiefel" and then say "Kiefel"; rejecting a
-    correctly-extracted name over a title would push the model toward dropping
-    real founders, which is the opposite of what the guard is for."""
-    assert verify([a_draft(founders=["Dr. Ada Beispiel"])], articles) == []
-
-
-def test_billion_scale_amounts_match_how_an_article_writes_them():
-    """The record stores 1200 for "$1.2 billion", so the check has to recognise
-    the billions form or every large round would look invented."""
-    assert states_figure("raised $1.2 billion in a Series D", 1200, "USD")
-    assert states_figure("sammelte 1,2 Milliarden Euro ein", 1200, "EUR")
-    assert states_figure("raised €13.1 million", 13.1, "EUR")
-
-
-def test_a_bare_digit_inside_an_unrelated_number_does_not_count_as_a_figure():
-    """The whole reason this delegates to tools/schema.py: "1" is a substring of
-    "2021", and a €1bn valuation stored as 1000 has "1" as its billions form."""
-    assert not states_figure("Founded in 2021, it raised €12 million", 1000, "EUR")
-
-
-def test_the_currency_has_to_match_too():
-    assert not states_figure("raised €12 million in a Series A", 12, "USD")
-
-
-# --- assembling -------------------------------------------------------------
-
-def test_assembled_weeks_pass_the_validator(articles):
-    record = assemble("2026-W30", {"lead": [a_draft()], "more": [a_draft()]}, articles)
-    assert validate_week(record) == []
-
-
-def test_the_source_is_copied_from_the_fetch_not_from_the_model(articles):
-    record = assemble("2026-W30", {"lead": [a_draft()], "more": []}, articles)
-    source = record["lead"][0]["source"]
-    assert source["url"] == "https://tech.eu/2026/07/22/beispiel/"
-    assert source["publication"] == "Tech.eu"
-    assert source["publishedOn"] == "2026-07-22"
-
-
-def test_only_lead_rounds_carry_prose(articles):
-    record = assemble("2026-W30", {"lead": [a_draft()], "more": [a_draft()]}, articles)
-    assert record["lead"][0]["text"] == "A write-up."
-    assert "text" not in record["more"][0]
-    assert record["lead"][0]["id"] == "l1" and record["more"][0]["id"] == "m1"
-
-
-# --- the register cross-link ------------------------------------------------
-
-def test_a_company_already_in_the_register_is_flagged(articles, tmp_path):
-    (tmp_path / "beispiel.json").write_text(
-        '{"slug": "beispiel", "name": "Beispiel"}', encoding="utf-8")
-    record = assemble("2026-W30", {"lead": [a_draft()], "more": []}, articles)
-    hits = tracked_companies(record, companies_dir=str(tmp_path))
-    assert [h["slug"] for h in hits] == ["beispiel"]
-
-
-def test_an_untracked_company_is_not_flagged(articles, tmp_path):
-    record = assemble("2026-W30", {"lead": [a_draft()], "more": []}, articles)
-    assert tracked_companies(record, companies_dir=str(tmp_path)) == []
-
-
-# --- list-only mode: no model, nothing invented -----------------------------
+# --- reading a headline -----------------------------------------------------
 #
-# The bar these tests hold the extractor to is not recall. It is that every
-# field it emits can be pointed at in the headline it cites, and that a
-# headline it cannot read cleanly produces nothing at all.
+# The bar these tests hold the reader to is not recall. It is that every field
+# it emits can be pointed at in the headline beside it, and that a headline it
+# cannot read cleanly is annotated with nothing rather than with a guess.
 
 def an_article(title, **overrides):
     entry = {
@@ -356,21 +234,16 @@ def test_a_headline_with_no_readable_company_is_dropped(headline):
     "Grosse AG acquires Beispiel for €12 million",
     "Beispiel raises €12 million ahead of its IPO",
 ])
-def test_what_is_not_a_closed_round_is_not_listed(headline):
+def test_what_is_not_a_closed_round_is_not_read_as_one(headline):
     assert read_headline(an_article(headline)) is None
 
 
-def test_a_read_round_carries_a_company_a_figure_a_link_and_a_date():
+def test_a_read_round_carries_a_company_a_figure_and_a_stage():
     entry = read_headline(an_article(
         "Berlin-based Beispiel raises €12 million in a Series A"))
     assert entry["company"] == "Beispiel"
     assert (entry["amount"], entry["currency"]) == (12.0, "EUR")
     assert entry["hq"] == "Berlin" and entry["stage"] == "Series A"
-    assert entry["source"]["url"] == "https://tech.eu/2026/07/22/x/"
-    assert entry["source"]["publishedOn"] == "2026-07-22"
-    # Never guessed, in either mode.
-    assert entry["founders"] == [] and entry["investors"] == []
-    assert entry["valuation"] is None
 
 
 def test_a_loose_figure_is_marked_approximate_rather_than_stated_flat():
@@ -379,40 +252,99 @@ def test_a_loose_figure_is_marked_approximate_rather_than_stated_flat():
     assert read_headline(an_article("Beispiel raises €10 million"))["approximate"] is False
 
 
-def test_a_listed_week_passes_the_validator_with_an_empty_lead():
-    record = list_week("2026-W30", [
-        an_article("Berlin-based Beispiel raises €12 million Series A"),
-        an_article("Munich's Zweitens secures $30 million",
-                   url="https://tech.eu/2026/07/23/zweitens/"),
-    ])
-    assert record["lead"] == []
-    assert [e["company"] for e in record["more"]] == ["Zweitens", "Beispiel"]
-    assert [e["id"] for e in record["more"]] == ["m1", "m2"]
-    assert validate_week(record) == []
+# --- the register cross-check ------------------------------------------------
+
+def test_a_company_already_in_the_register_is_recognised(tmp_path):
+    (tmp_path / "beispiel.json").write_text(
+        '{"slug": "beispiel", "name": "Beispiel"}', encoding="utf-8")
+    known = known_companies(str(tmp_path))
+    assert tracked_in("Berlin-based Beispiel raises €12 million", known) == "beispiel"
+    assert tracked_in("Anderswo raises €12 million", known) is None
 
 
-def test_two_publications_on_one_round_are_one_round():
-    record = list_week("2026-W30", [
-        an_article("Berlin-based Beispiel raises €12 million"),
-        an_article("Beispiel raises €12M in Series A", publication="Sifted",
-                   url="https://sifted.eu/2026/07/22/beispiel/"),
-    ])
-    assert len(record["more"]) == 1
+def test_a_short_tracked_name_does_not_match_inside_a_longer_word(tmp_path):
+    """The same word-boundary rule tools/watch.py applies, and for the same
+    reason: a tracked company called Flix must not be flagged by every FlixBus
+    headline, because noise is what makes a person stop reading the issue."""
+    (tmp_path / "flix.json").write_text(
+        '{"slug": "flix", "name": "Flix"}', encoding="utf-8")
+    known = known_companies(str(tmp_path))
+    assert tracked_in("FlixBus raises €12 million", known) is None
+    assert tracked_in("Flix raises €12 million", known) == "flix"
 
 
-def test_the_list_is_capped_the_same_way_a_written_week_is():
-    record = list_week("2026-W30", [
-        an_article(f"Firma{i} raises €{i}0 million",
-                   url=f"https://tech.eu/2026/07/22/f{i}/")
-        for i in range(1, 9)
-    ])
-    assert len(record["more"]) == MAX_MORE
-    # Kept the largest, which is the rule full mode gives the model.
-    assert record["more"][0]["amount"] == 80.0
+# --- the week, as the Monday issue needs it ---------------------------------
+
+def test_a_readable_round_is_separated_from_the_rest_of_the_week(tmp_path):
+    report = candidates(
+        "2026-W30", feeds={"Tech.eu": "https://tech.eu/feed/"},
+        fetcher=stub([feed(
+            GERMAN_ROUND,
+            item("German startups had a busy week of funding",
+                 "https://tech.eu/2026/07/23/roundup/",
+                 "Thu, 23 Jul 2026 09:00:00 GMT",
+                 "<p>A Berlin round, a Munich seed, and more funding besides.</p>"))]),
+        companies_dir=str(tmp_path))
+    assert [r["company"] for r in report["rounds"]] == ["Beispiel"]
+    assert [o["headline"] for o in report["other"]] == [
+        "German startups had a busy week of funding"]
+    assert report["week"] == "2026-W30"
+    assert (report["start"], report["end"]) == ("2026-07-20", "2026-07-26")
 
 
-def test_a_week_whose_headlines_cannot_be_read_lists_nothing():
-    """Better an empty result the workflow skips than a page of half-parsed
-    names. The caller turns this into "nothing to propose", not into a file."""
-    record = list_week("2026-W30", [an_article("A quiet week for German startups")])
-    assert record["more"] == []
+def test_the_biggest_round_is_listed_first(tmp_path):
+    report = candidates(
+        "2026-W30", feeds={"Tech.eu": "https://tech.eu/feed/"},
+        fetcher=stub([feed(
+            GERMAN_ROUND,
+            item("Munich's Zweitens secures $30 million",
+                 "https://tech.eu/2026/07/23/zweitens/",
+                 "Thu, 23 Jul 2026 09:00:00 GMT",
+                 "<p>Zweitens, a Munich company, raised $30 million.</p>"))]),
+        companies_dir=str(tmp_path))
+    assert [r["company"] for r in report["rounds"]] == ["Zweitens", "Beispiel"]
+
+
+def test_two_publications_on_one_round_leave_one_round_to_write_up(tmp_path):
+    """The duplicate is not thrown away — the second write-up is often the
+    better-sourced one — but it stops being a second thing to write."""
+    report = candidates(
+        "2026-W30",
+        feeds={"Sifted": "https://sifted.eu/feed", "Tech.eu": "https://tech.eu/feed/"},
+        fetcher=lambda url: feed(GERMAN_ROUND) if "tech.eu" in url else feed(item(
+            "Beispiel raises €12M in Series A",
+            "https://sifted.eu/2026/07/22/beispiel/",
+            "Tue, 22 Jul 2026 09:00:00 GMT",
+            "<p>Beispiel, of Berlin, raised €12 million.</p>")),
+        companies_dir=str(tmp_path))
+    assert len(report["rounds"]) == 1
+    assert len(report["other"]) == 1
+
+
+def test_a_round_for_a_tracked_company_is_flagged(tmp_path):
+    (tmp_path / "beispiel.json").write_text(
+        '{"slug": "beispiel", "name": "Beispiel"}', encoding="utf-8")
+    report = candidates("2026-W30", feeds={"Tech.eu": "https://tech.eu/feed/"},
+                        fetcher=stub([feed(GERMAN_ROUND)]),
+                        companies_dir=str(tmp_path))
+    assert report["rounds"][0]["tracked"] == "beispiel"
+
+
+def test_a_quiet_week_reports_nothing_rather_than_failing(tmp_path):
+    """The workflow turns an empty scan into "open no issue". Nothing here
+    raises, and nothing here is a failure: a week with no German rounds is a
+    real outcome."""
+    report = candidates("2026-W30", feeds={"Tech.eu": "https://tech.eu/feed/"},
+                        fetcher=stub([feed(NOT_FUNDING)]),
+                        companies_dir=str(tmp_path))
+    assert report["rounds"] == [] and report["other"] == []
+    assert report["feedErrors"] == []
+
+
+def test_a_dead_feed_is_reported_in_the_week(tmp_path):
+    def broken(url):
+        raise OSError("connection reset")
+    report = candidates("2026-W30", feeds={"Tech.eu": "https://tech.eu/feed/"},
+                        fetcher=broken, companies_dir=str(tmp_path))
+    assert report["feedsTried"] == 1
+    assert len(report["feedErrors"]) == 1

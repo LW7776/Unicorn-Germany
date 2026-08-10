@@ -1,0 +1,312 @@
+name: monday-reminder
+
+# The only scheduled job that looks at the feeds, and the only one that ever
+# talks to a person. It publishes nothing.
+#
+# WHY CI NO LONGER WRITES THE SITE
+# --------------------------------
+# There used to be a weekly-funding job that drafted a week of the round-up and
+# opened a pull request. Writing a week well is a model call, the operator holds
+# no API key, and so that job could only ever publish a bare list of rounds
+# parsed out of headlines: visibly thinner than the weeks a person wrote. A
+# register that gets a little worse every Monday is worse than one a person
+# updates, so the drafting job is gone.
+#
+# What is left is a reminder. Every Monday this scans the same allowlisted feeds
+# and, if there is anything to report, opens ONE issue saying what happened and
+# what to do about it. GitHub emails that issue to everyone watching the
+# repository, so there is no mail to configure. The week is then written locally,
+# by a person with an assistant, and pushed. Every published week stays at the
+# quality of the weeks already on the site.
+#
+# NOTHING HERE IS A PROPOSAL. It opens an issue and stops.
+on:
+  # 20:00 in Berlin every Monday, covering the week that just ended.
+  #
+  # GitHub cron is UTC and knows nothing about daylight saving, so a single
+  # fixed hour would drift by one for the seven months Germany is on CEST.
+  # Both candidate hours fire, and the gate below lets exactly one through by
+  # asking what time it actually is in Berlin. The other exits in seconds.
+  schedule:
+    - cron: "0 18 * * 1"   # 20:00 CEST, late March to late October
+    - cron: "0 19 * * 1"   # 20:00 CET, late October to late March
+
+  workflow_dispatch:
+    inputs:
+      week:
+        description: 'ISO week to scan, e.g. "2026-W30". Blank = the week that just ended.'
+        required: false
+        type: string
+      register_sweep:
+        description: "Include the register sweep, even if this is not an eighth week."
+        required: false
+        default: false
+        type: boolean
+
+# Reading the repository to check it out, and writing issues. That is the whole
+# list. It commits nothing, opens no pull request, and holds no secret, because
+# there is no longer any step that would use one.
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  # Two runs would open two issues about the same week. Queue rather than
+  # cancel: a duplicate issue is noise, and a cancelled run is a silent Monday.
+  group: monday-reminder
+  cancel-in-progress: false
+
+jobs:
+  # Two crons fire so that one of them is 20:00 in Berlin whichever side of
+  # daylight saving we are on. This gate asks the clock rather than the
+  # calendar, so it stays right even if the EU ever stops changing the clocks.
+  # It is a job rather than a first step so that everything downstream inherits
+  # the decision through `needs`, instead of every step carrying its own copy
+  # of the condition and one of them eventually being forgotten.
+  #
+  # Manual runs are never gated. An explicit request runs now.
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      due: ${{ steps.check.outputs.due }}
+    steps:
+      - name: Is it 20:00 in Berlin?
+        id: check
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" != "schedule" ]; then
+            echo "due=true" >> "$GITHUB_OUTPUT"
+            echo "Started by ${{ github.event_name }}, so it runs now."
+            exit 0
+          fi
+          HOUR=$(TZ=Europe/Berlin date +%H)
+          if [ "$HOUR" = "20" ]; then
+            echo "due=true" >> "$GITHUB_OUTPUT"
+            echo "Berlin local hour is ${HOUR}. Proceeding."
+          else
+            echo "due=false" >> "$GITHUB_OUTPUT"
+            echo "::notice title=Not the Berlin run::Berlin local hour is ${HOUR}, not 20. This is the daylight-saving twin of the real run, so it stops here."
+          fi
+
+  remind:
+    needs: gate
+    if: needs.gate.outputs.due == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+
+      # Which week, and whether this is one of the eight-weekly register sweeps.
+      # GitHub's cron has no "every eight weeks", so the ISO week number decides.
+      # Eight divides the year unevenly (a 52-week year gives six sweeps, a
+      # 53-week year seven), which is fine: the point is a steady cadence of
+      # roughly six a year, not an exact anniversary.
+      - name: Which week is this about?
+        id: week
+        env:
+          REQUESTED: ${{ inputs.week }}
+          FORCE_SWEEP: ${{ inputs.register_sweep }}
+        run: |
+          set -euo pipefail
+          REQUESTED="${REQUESTED:-}"
+          FORCE_SWEEP="${FORCE_SWEEP:-}"
+          if [ -n "$REQUESTED" ]; then
+            if ! printf '%s' "$REQUESTED" | grep -Eq '^[0-9]{4}-W[0-9]{2}$'; then
+              echo "::error title=Bad week id::Expected something like 2026-W30, got '${REQUESTED}'. Nothing was scanned."
+              exit 1
+            fi
+            WEEK="$REQUESTED"
+          else
+            WEEK=$(python -c 'import datetime; from tools.weekly_funding import last_complete_week; print(last_complete_week(datetime.date.today()))')
+          fi
+          echo "week=${WEEK}" >> "$GITHUB_OUTPUT"
+
+          NUMBER="${WEEK#*-W}"
+          if [ "$FORCE_SWEEP" = "true" ]; then
+            echo "sweep=true" >> "$GITHUB_OUTPUT"
+            echo "Register sweep requested by hand."
+          elif [ $((10#$NUMBER % 8)) -eq 0 ]; then
+            echo "sweep=true" >> "$GITHUB_OUTPUT"
+            echo "ISO week ${NUMBER} is one of the eight-weekly register sweeps."
+          else
+            echo "sweep=false" >> "$GITHUB_OUTPUT"
+            echo "ISO week ${NUMBER} is a funding-only week."
+          fi
+          echo "Scanning ${WEEK}."
+
+      # Both scans write a scratch file in the workspace. Neither is committed,
+      # and neither goes anywhere near data/: this job has no write access to
+      # the repository, and a generated file sitting in a tracked path is an
+      # invitation to commit it by accident.
+      - name: Scan the feeds for last week's German rounds
+        env:
+          WEEK: ${{ steps.week.outputs.week }}
+        run: python tools/weekly_funding.py --week "$WEEK" --report funding-candidates.json
+
+      - name: The eight-weekly register sweep
+        if: steps.week.outputs.sweep == 'true'
+        run: python tools/watch.py --out register-candidates.json
+
+      # One issue, whatever the week contains. A second issue on sweep weeks
+      # would be two things to read on the same Monday, and the one that arrives
+      # second is the one that gets closed unread.
+      #
+      # If there is nothing to report, NO ISSUE IS OPENED. A weekly mail that
+      # usually says "nothing happened" gets filtered, and then the one that
+      # matters is filtered with it.
+      - name: Open the Monday issue, if there is anything to say
+        uses: actions/github-script@v7
+        env:
+          WEEK: ${{ steps.week.outputs.week }}
+          SWEEP: ${{ steps.week.outputs.sweep }}
+        with:
+          script: |
+            const fs = require('fs');
+            const week = process.env.WEEK;
+            const funding = JSON.parse(fs.readFileSync('funding-candidates.json', 'utf8'));
+            const sweep = process.env.SWEEP === 'true' && fs.existsSync('register-candidates.json')
+              ? JSON.parse(fs.readFileSync('register-candidates.json', 'utf8'))
+              : null;
+
+            // Headlines and feed-error text are free text from external feeds,
+            // not from this repository. An unbalanced bracket or a stray
+            // backtick would otherwise break a link, or silently restyle text
+            // as code, in the one artefact this job exists to produce. A URL
+            // stays unescaped; if it could contain a ')' that would prematurely
+            // close the markdown link, angle brackets are the markdown-native
+            // way to allow it.
+            const md = (s) => String(s).replace(/[\[\]`*_<>|]/g, '\\$&');
+            const link = (url) => /[()]/.test(url) ? `<${url}>` : url;
+            const cite = (c) => `[${md(c.headline || c.title)}](${link(c.url || c.link)}) · `
+                              + `${md(c.publication || c.source)} · ${c.publishedOn || c.published}`;
+            const money = (r) => `${r.currency} ${r.approximate ? 'about ' : ''}${r.amount}m`
+                               + (r.stage ? `, ${md(r.stage)}` : '')
+                               + (r.hq ? `, ${md(r.hq)}` : '');
+            const registerWarning = (slug) =>
+              `\n  - ⚠️ Already in the register, as \`data/companies/${slug}.json\`. `
+              + `Update that entry too, or the register keeps a figure the round-up `
+              + `has just superseded.`;
+
+            const blind = funding.feedsTried > 0
+                       && funding.feedErrors.length === funding.feedsTried;
+            const sweepHits = sweep ? sweep.candidates.length : 0;
+            const nothing = !funding.rounds.length && !funding.other.length
+                         && !sweepHits && !blind;
+            if (nothing) {
+              core.notice(`Nothing to report for ${week}: no German rounds in the `
+                        + `feeds${sweep ? ' and no register candidates' : ''}. No issue opened, `
+                        + `which is the point. A quiet week is a real outcome.`);
+              return;
+            }
+
+            const body = [];
+            body.push(`Scanned ${funding.scannedOn}, covering ISO week **${week}** `
+                    + `(${funding.start} to ${funding.end}). `
+                    + `${funding.articles} article(s) matched across `
+                    + `${funding.feedsTried} allowlisted feed(s).`);
+            body.push('');
+            body.push('**Nothing has been changed, and nothing is proposed.** '
+                    + 'This issue is the week\'s work, written up by hand and pushed. '
+                    + 'That is deliberate: an automated draft could only list rounds, '
+                    + 'and every week on the site so far is written.');
+
+            if (blind) {
+              body.push('');
+              body.push('> ⚠️ **Every feed failed this run**, so this scan saw nothing at all. '
+                      + 'Do not read the empty list below as a quiet week. The errors are at '
+                      + 'the bottom.');
+            }
+
+            body.push('');
+            body.push(`## Funding, ${funding.start} to ${funding.end}`);
+            body.push('');
+            if (funding.rounds.length) {
+              body.push(`${funding.rounds.length} headline(s) read as a closed German round. `
+                      + 'The figure beside each was read out of the headline, not off the '
+                      + 'page, so open the link and check it before writing anything.');
+              body.push('');
+              for (const r of funding.rounds) {
+                body.push(`- [ ] **${md(r.company)}**, ${money(r)}: ${cite(r)}`
+                        + (r.tracked ? registerWarning(r.tracked) : ''));
+              }
+            } else {
+              body.push('No headline read cleanly as a closed German round this week.');
+            }
+
+            if (funding.other.length) {
+              body.push('');
+              body.push('### Also matched, but not read as a round');
+              body.push('');
+              body.push('German funding news the headline reader could not turn into a round: '
+                      + 'a story about a round rather than an announcement of one, a fund '
+                      + 'close, a second publication on a round already listed above, or a '
+                      + 'phrasing it does not know. Worth a glance, because the ones it '
+                      + 'misses are exactly the ones a person has to catch.');
+              body.push('');
+              for (const o of funding.other) {
+                body.push(`- [ ] ${cite(o)}`
+                        + (o.tracked ? registerWarning(o.tracked) : ''));
+              }
+            }
+
+            if (sweep) {
+              body.push('');
+              body.push('## Register sweep, this week only');
+              body.push('');
+              body.push('The eight-weekly full sweep, which runs on top of the funding scan. '
+                      + 'What it is looking for is everything a funding announcement never '
+                      + 'announces: a quiet IPO, an acquisition, an insolvency, or a valuation '
+                      + 'that has simply gone stale because nobody has repriced the company '
+                      + 'in two years. A company that lists, is acquired or becomes insolvent '
+                      + 'stops qualifying and its file should be deleted.');
+              body.push('');
+              if (sweepHits) {
+                for (const c of sweep.candidates) {
+                  body.push(`- [ ] **${c.company || 'NEW'}**: ${cite(c)}`);
+                }
+              } else {
+                body.push('No register candidates this sweep.');
+              }
+            }
+
+            const errors = funding.feedErrors.concat(sweep ? sweep.feedErrors : []);
+            if (errors.length) {
+              body.push('');
+              body.push('## Feed errors');
+              body.push('');
+              body.push('A publication having a bad afternoon costs that feed, not the run. '
+                      + 'The same feed failing several Mondays running is worth looking at.');
+              body.push('');
+              for (const e of errors) body.push(`- ${md(e)}`);
+            }
+
+            body.push('');
+            body.push('---');
+            body.push('');
+            body.push('Sourcing rules, the file shapes and the publish path are in '
+                    + '[docs/UPDATING.md](../blob/main/docs/UPDATING.md). '
+                    + 'Every figure has to come off the page it cites, and a gap is left '
+                    + 'empty rather than filled by inference.');
+            body.push('');
+            body.push(`**Ask your assistant for this:** "Write the funding round-up for `
+                    + `${week} from the candidates in this issue, following docs/UPDATING.md`
+                    + `${sweepHits ? ', and work through the register sweep candidates too' : ''}`
+                    + `, then run \`python3 tools/build.py && python3 tools/validate.py && `
+                    + `python3 tools/validate_funding.py && python3 -m pytest\` and push."`);
+
+            const counts = [];
+            if (funding.rounds.length) counts.push(`${funding.rounds.length} round(s)`);
+            if (sweepHits) counts.push(`${sweepHits} register candidate(s)`);
+            const title = `${week}: `
+                        + (counts.join(', ') || (blind ? 'every feed failed' : 'a week to look at'))
+                        + (sweep && !sweepHits ? ', register sweep clear' : '');
+
+            const issue = await github.rest.issues.create({
+              owner: context.repo.owner, repo: context.repo.repo,
+              title, body: body.join('\n'),
+            });
+            core.notice(`Opened issue #${issue.data.number}: ${title}`);

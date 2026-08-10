@@ -124,8 +124,10 @@ function moreItem(round, slugByName) {
 }
 
 /** A week can arrive written up or merely listed — tools/validate_funding.py
-    accepts both, and the weekly routine produces the listed shape when it has
-    no API key to write prose with. A lead-less week must therefore not render
+    accepts both. Nothing produces the listed shape automatically any more (no
+    scheduled job writes weeks at all), but it stays a legitimate hand-written
+    fallback for a week there was no time to write up. A lead-less week must
+    therefore not render
     an empty slot where a write-up would be: an empty container looks like a
     fault, and a reader who sees one concludes something failed rather than
     that nothing was written. So the panel says which kind of week this is, in
