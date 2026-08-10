@@ -23,8 +23,6 @@ export async function boot() {
   const data = await loadData();
   window.__data = data;
 
-  document.querySelector('[data-stat="count"]').textContent = data.stats.count;
-
   const canvas = document.querySelector("[data-constellation]");
   const sky = new Constellation(canvas, data.companies.length);
   sky.start();
@@ -33,7 +31,7 @@ export async function boot() {
   const grid = document.querySelector("[data-grid]");
   renderGrid(grid, data.companies);
   renderStats(document.querySelector("[data-stats]"), data.stats);
-  renderFooter(document.querySelector("[data-footer]"), data.stats);
+  renderFooter(document.querySelector("[data-footer]"));
 
   const controls = mountControls({
     container: document.querySelector("[data-controls]"),

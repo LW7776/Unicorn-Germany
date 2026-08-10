@@ -34,7 +34,30 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 from tools.schema import (
     CURRENCY_SYMBOL, MONTHS, date_sort_key, format_amount, format_date, parse_date)
 
-AGED_AFTER_MONTHS = 24
+# When a valuation earns the "aged" marker.
+#
+# The old rule was a single 24-month age test, and it fired on 15 of 32 records —
+# nearly half the register, which turns a warning into wallpaper. It also flagged
+# something the page already says out loud: every valuation prints "as of Aug 2022"
+# right beside itself, so plain age is disclosed whether or not a badge repeats it.
+#
+# The marker now means the narrower and more useful thing: the register has positive
+# reason to believe this figure has been overtaken.
+#
+#   AGED_BEHIND_ROUND_MONTHS  The company has raised money more than two years after
+#                             the last published valuation and nobody restated the
+#                             price. (validate.py already rejects the case where that
+#                             later round *did* disclose a post-money — then the newer
+#                             figure is the one on file.) Two years is well past the
+#                             point where a round leaves the headline behind.
+#   AGED_AFTER_MONTHS         A five-year backstop for a company that has been quiet
+#                             throughout. At that distance the figure cannot be relied
+#                             on however little has happened. Four years was tested and
+#                             still flagged 11 of 32, which is not a signal.
+#
+# Against the shipped dataset the pair flags 4 of 32.
+AGED_AFTER_MONTHS = 60
+AGED_BEHIND_ROUND_MONTHS = 24
 
 # What the grid card and the detail window print where a figure would go, for a company
 # whose unicorn status is sourced but whose valuation no allowlisted source has ever
@@ -145,6 +168,14 @@ def derive_company(record, today, fx_rate=0.92):
     valuation_undisclosed = valuation.get("amount") is None
     threshold_label, unicorn_flag_label = _unicorn_labels(record)
 
+    valuation_month = parse_date(valuation["asOf"])
+    months_old = _months_between(today, valuation_month)
+    months_behind_last_round = (
+        _months_between(parse_date(last_round["date"]), valuation_month)
+        if last_round else 0)
+    aged = (months_old > AGED_AFTER_MONTHS
+            or months_behind_last_round > AGED_BEHIND_ROUND_MONTHS)
+
     display = {
         "valuationLabel": UNDISCLOSED_VALUATION_LABEL if valuation_undisclosed
         else format_amount(
@@ -158,16 +189,15 @@ def derive_company(record, today, fx_rate=0.92):
         "valuationAsOf": format_date(valuation["asOf"]),
         "lastRoundLabel": format_date(last_round["date"]) if last_round else "—",
         "lastRoundStage": last_round["stage"] if last_round else "—",
-        "totalRaisedLabel": format_amount(
-            record["totalRaised"]["amount"], record["totalRaised"]["currency"],
-            record["totalRaised"].get("approximate", False))
-        if record["totalRaised"].get("amount") is not None else "—",
+        # No totalRaisedLabel. `totalRaised` is still carried in the data and still
+        # gated by validate.py's quote check — it is sourced, and it may come back —
+        # but nothing on the site renders it, so nothing derives a label for it.
         "yearsToUnicorn": unicorn_year - record["foundedYear"],
         "becameUnicornLabel": format_date(record["becameUnicorn"]["date"]),
         "unicornThresholdLabel": threshold_label,
         "unicornFlagLabel": unicorn_flag_label,
         "foundersLabel": ", ".join(f["name"] for f in founders) if founders else "—",
-        "aged": _months_between(today, parse_date(valuation["asOf"])) > AGED_AFTER_MONTHS,
+        "aged": aged,
     }
     derived_rounds = []
     for entry in rounds:

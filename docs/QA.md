@@ -105,7 +105,7 @@ all fixed:
 Checked programmatically (`document.documentElement.scrollWidth` vs `clientWidth`, and the
 smallest computed `font-size` among visible text nodes) at every width, on: the hero, the
 register grid, the map, an open detail window, and every static page (`about.html`,
-`policy.html`, `impressum.html`) plus `admin.html`. Screenshots taken at each width as a visual
+`impressum.html`) plus `admin.html`. Screenshots taken at each width as a visual
 cross-check.
 
 **Result: zero horizontal scroll and no text under 12px at any width, on any page or state —
@@ -133,7 +133,7 @@ focus), not inferred from a keypress that might not have landed.
 **Tab order** — confirmed twice: once via real `Tab` keypresses, once via a faithful DOM-order
 walk (this site uses no positive `tabindex` anywhere — confirmed by grep — so visible,
 non-negative-tabindex DOM order *is* the real order). Both agree exactly:
-skip link → topbar wordmark → Companies/Map toggles → Policy/About → Search → freshness link
+skip link → topbar wordmark → Companies/Map toggles → About → Search → freshness link
 → search input → sort select → city select → sector chips (**one** tab stop, "All sectors" —
 roving tabindex correctly removes the other ~28 chips from the tab sequence) → grid cells. The
 hidden topbar/register correctly contribute nothing to the tab order before "Enter the
@@ -224,7 +224,7 @@ composition alone:
 ### Requests
 
 Read the network log across every page and state exercised in this pass (hero, register, map,
-detail, deep link, about/policy/impressum/admin) — **every single request targets `localhost`**
+detail, deep link, about/impressum/admin) — **every single request targets `localhost`**
 (the dev server itself: HTML, CSS, JS, fonts, `data/companies.json`, `data/fx.json`,
 `data/geo/germany.json`, every logo). Zero third-party requests anywhere.
 
@@ -232,7 +232,7 @@ detail, deep link, about/policy/impressum/admin) — **every single request targ
 
 Clean — zero console messages — on every page tested: `index.html` (hero, register, map,
 detail open/closed), `index.html#/helsing` (deep link, dialog opens directly on load with no
-errors), `about.html`, `policy.html`, `impressum.html`, `admin.html`.
+errors), `about.html`, `impressum.html`, `admin.html`.
 
 **One behavioural observation, not a defect:** a deep link (`#/helsing`) opens the correct
 dialog immediately, but doesn't also reveal the register underneath — closing the dialog lands

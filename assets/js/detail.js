@@ -167,7 +167,6 @@ function markup(company) {
       // step down — still the largest thing in its own tile, and it fits.
       d.valuationUndisclosed ? "fig__value--undisclosed" : "")}
     ${figure("Last round", d.lastRoundStage, d.lastRoundLabel)}
-    ${figure("Total raised", d.totalRaisedLabel)}
     ${figure(`Years to ${text(d.unicornThresholdLabel)}`, d.yearsToUnicorn, `unicorn ${dash(d.becameUnicornLabel)}`)}
   </div>
   <section class="detail__thesis">

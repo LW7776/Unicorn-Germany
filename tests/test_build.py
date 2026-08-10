@@ -15,16 +15,47 @@ def test_display_labels_are_precomputed_for_the_grid(record):
     display = derive_company(record, today=(2026, 8))["display"]
     assert display["valuationLabel"] == "~€1.2 bn"
     assert display["lastRoundLabel"] == "Mar 2024"
-    assert display["totalRaisedLabel"] == "~€300 m"
+
+
+def test_total_raised_is_kept_in_the_data_but_no_longer_labelled(record):
+    """The field is still sourced and still quote-checked by validate.py — it just
+    stopped being rendered, so nothing derives a display label for it."""
+    derived = derive_company(record, today=(2026, 8))
+    assert "totalRaisedLabel" not in derived["display"]
+    assert derived["totalRaised"]["amount"] == 300
 
 
 def test_years_to_unicorn_is_derived_from_founding_year(record):
     assert derive_company(record, today=(2026, 8))["display"]["yearsToUnicorn"] == 9
 
 
-def test_a_valuation_older_than_24_months_is_flagged_aged(record):
+def test_a_valuation_the_company_has_since_raised_past_is_flagged_aged(record):
+    """The marker's primary meaning: money came in after the last published price
+    and nobody restated it. The fixture's valuation and its last round share a
+    month, so it takes a later round to trip this."""
+    record["rounds"].append({
+        "id": "r3", "date": "2026-06", "stage": "Series D", "amount": 120,
+        "currency": "EUR", "approximate": False, "postMoney": None,
+        "leadInvestors": ["Index Ventures"], "investors": ["Index Ventures"],
+        "source": "s1"})
     assert derive_company(record, today=(2026, 8))["display"]["aged"] is True
-    assert derive_company(record, today=(2025, 3))["display"]["aged"] is False
+
+
+def test_a_round_close_behind_the_valuation_is_not_flagged_aged(record):
+    """Raising within two years of the last published price is ordinary, not stale."""
+    record["rounds"].append({
+        "id": "r3", "date": "2025-06", "stage": "Series D", "amount": 120,
+        "currency": "EUR", "approximate": False, "postMoney": None,
+        "leadInvestors": ["Index Ventures"], "investors": ["Index Ventures"],
+        "source": "s1"})
+    assert derive_company(record, today=(2026, 8))["display"]["aged"] is False
+
+
+def test_a_quiet_company_is_flagged_aged_only_after_five_years(record):
+    """The backstop. Four years was tested against the real register and still
+    flagged a third of it, so the badge would have gone on meaning nothing."""
+    assert derive_company(record, today=(2028, 3))["display"]["aged"] is False
+    assert derive_company(record, today=(2029, 4))["display"]["aged"] is True
 
 
 def test_sort_keys_normalise_currency_for_ordering_only(record):
@@ -210,7 +241,7 @@ def test_an_undisclosed_valuation_still_ages(record):
     """asOf on an undisclosed valuation dates the evidence, and evidence goes stale
     exactly like a figure does."""
     undisclosed = _undisclosed(record)
-    assert derive_company(undisclosed, today=(2028, 8))["display"]["aged"] is True
+    assert derive_company(undisclosed, today=(2030, 10))["display"]["aged"] is True
     assert derive_company(undisclosed, today=(2026, 8))["display"]["aged"] is False
 
 

@@ -76,16 +76,14 @@ img, svg { max-width: 100%; }
   .topbar__nav { flex-wrap: wrap; width: 100%; gap: var(--space-3); }
 }
 
-/* Shared by every page: the FX disclosure required alongside the combined
-   headline figure, plus the Method/About/Impressum/report-an-error links. */
+/* Shared by every page: one line on how to read the figures, plus the
+   About/Impressum/report-an-error links. */
 .footer {
   max-width: 64rem; margin: 0 auto; padding: var(--space-7) var(--space-6) var(--space-8);
   border-top: 1px solid var(--stroke); color: var(--muted); font-size: var(--step--1);
   display: grid; gap: var(--space-3);
 }
 .footer p { margin: 0; max-width: 46rem; }
-/* Names the on-card marker the sentence is about, in the same amber the card uses. */
-.footer__mark { color: var(--amber); }
 .footer nav { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-3); }
 
 @media (prefers-reduced-motion: reduce) {

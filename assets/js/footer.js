@@ -1,27 +1,17 @@
-import { escapeHtml } from "./html.js";
+/** Renders the footer shared by every page: one line on how to read the figures,
+    and the About / Impressum / report-an-error links.
 
-/** Renders the footer shared by every page: the FX disclosure that backs the
-    combined headline figure, and the Policy / About / Impressum / report-an-error
-    links.
-
-    Takes only the two fields it needs, `fxRateDisclosed` and `fxAsOf`, so it works
-    identically whether the caller already has the full companies.json (index.html,
-    via main.js's boot()) or fetched the much smaller data/fx.json directly (the
-    static pages, which have no other reason to load the whole dataset). Both
-    sources describe the same fixed rate: build.py copies fx.json's `USD_EUR`/`asOf`
-    into companies.json's `stats.fxRateDisclosed`/`stats.fxAsOf` verbatim. */
-export function renderFooter(container, { fxRateDisclosed, fxAsOf } = {}) {
+    The FX disclosure that backs the combined headline figure used to live here.
+    It now sits in the About Q&A, next to the question a reader is actually asking
+    when they want it, rather than in a footer line nobody reads. The signature
+    still accepts the stats object every caller already passes, so a future footer
+    line that needs the rate can reach it without rewiring three call sites. */
+export function renderFooter(container) {
   if (!container) return;
-  const rate = escapeHtml(fxRateDisclosed);
-  const asOf = escapeHtml(fxAsOf);
   container.innerHTML = `
-    <p>Figures are indicative and carry the date they were reported.
-       Combined value converts USD at ${rate} (${asOf}) and covers only the companies
-       whose valuation a source has published — the ones marked
-       <span class="footer__mark">Undisclosed</span> are left out of it rather than
-       counted as nothing.</p>
+    <p>Figures are indicative and carry the date they were reported.</p>
     <nav aria-label="Footer">
-      <a href="policy.html">Policy</a> · <a href="about.html">About</a> ·
+      <a href="about.html">About</a> ·
       <a href="impressum.html">Impressum</a> ·
       <a href="https://github.com/LW7776/Unicorn-Germany/issues/new" target="_blank" rel="noopener noreferrer">Report an error</a>
     </nav>`;

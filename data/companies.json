@@ -210,7 +210,6 @@
     "valuationAsOf": "Jun 2023",
     "lastRoundLabel": "Jul 2025",
     "lastRoundStage": "Pre-IPO round extension",
-    "totalRaisedLabel": "~€400 m",
     "yearsToUnicorn": 2,
     "becameUnicornLabel": "Jun 2023",
     "unicornThresholdLabel": "$1bn",
@@ -402,7 +401,6 @@
     "valuationAsOf": "Dec 2025",
     "lastRoundLabel": "Dec 2025",
     "lastRoundStage": "Series B",
-    "totalRaisedLabel": "~$450 m",
     "yearsToUnicorn": 1,
     "becameUnicornLabel": "Dec 2025",
     "unicornThresholdLabel": "$1bn",
@@ -651,13 +649,12 @@
     "valuationAsOf": "Aug 2022",
     "lastRoundLabel": "Aug 2022",
     "lastRoundStage": "Series D extension",
-    "totalRaisedLabel": "—",
     "yearsToUnicorn": 7,
     "becameUnicornLabel": "Jun 2018",
     "unicornThresholdLabel": "$1bn",
     "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Alexander Rinke, Bastian Nominacher, Martin Klenk",
-    "aged": true
+    "aged": false
    },
    "sort": {
     "newest": [
@@ -843,13 +840,12 @@
     "valuationAsOf": "Apr 2022",
     "lastRoundLabel": "Apr 2022",
     "lastRoundStage": "Series B2",
-    "totalRaisedLabel": "$274.7 m",
     "yearsToUnicorn": 4,
     "becameUnicornLabel": "Apr 2022",
     "unicornThresholdLabel": "$1bn",
     "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Daniel Khachab, Julian Hammer, Grégoire Ambroselli",
-    "aged": true
+    "aged": false
    },
    "sort": {
     "newest": [
@@ -977,7 +973,6 @@
     "valuationAsOf": "Apr 2026",
     "lastRoundLabel": "Apr 2026",
     "lastRoundStage": "Series C, initial close",
-    "totalRaisedLabel": "—",
     "yearsToUnicorn": 12,
     "becameUnicornLabel": "Apr 2026",
     "unicornThresholdLabel": "€1bn",
@@ -1133,13 +1128,12 @@
     "valuationAsOf": "Sep 2021",
     "lastRoundLabel": "Sep 2021",
     "lastRoundStage": "Series C",
-    "totalRaisedLabel": "—",
     "yearsToUnicorn": 15,
     "becameUnicornLabel": "Sep 2021",
     "unicornThresholdLabel": "$1bn",
     "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Dirk Hoerig",
-    "aged": true
+    "aged": false
    },
    "sort": {
     "newest": [
@@ -1340,7 +1334,6 @@
     "valuationAsOf": "Mar 2026",
     "lastRoundLabel": "Mar 2026",
     "lastRoundStage": "Series B",
-    "totalRaisedLabel": "$155 m",
     "yearsToUnicorn": 3,
     "becameUnicornLabel": "Mar 2026",
     "unicornThresholdLabel": "$1bn",
@@ -1505,13 +1498,12 @@
     "valuationAsOf": "May 2024",
     "lastRoundLabel": "May 2024",
     "lastRoundStage": "Growth round",
-    "totalRaisedLabel": "—",
     "yearsToUnicorn": 6,
     "becameUnicornLabel": "Jan 2023",
     "unicornThresholdLabel": "€1bn",
     "unicornFlagLabel": "crossed €1bn",
     "foundersLabel": "Jaroslaw Kutylowski",
-    "aged": true
+    "aged": false
    },
    "sort": {
     "newest": [
@@ -1707,7 +1699,6 @@
     "valuationAsOf": "Jan 2023",
     "lastRoundLabel": "Apr 2025",
     "lastRoundStage": "Equity round",
-    "totalRaisedLabel": "—",
     "yearsToUnicorn": 4,
     "becameUnicornLabel": "Oct 2021",
     "unicornThresholdLabel": "$1bn",
@@ -1900,7 +1891,6 @@
     "valuationAsOf": "Jun 2026",
     "lastRoundLabel": "Jun 2026",
     "lastRoundStage": "Series D",
-    "totalRaisedLabel": "—",
     "yearsToUnicorn": 7,
     "becameUnicornLabel": "Jun 2026",
     "unicornThresholdLabel": "€1bn",
@@ -2167,7 +2157,6 @@
     "valuationAsOf": "Jun 2021",
     "lastRoundLabel": "Jul 2024",
     "lastRoundStage": "EQT and Kühne Holding minority investment",
-    "totalRaisedLabel": "—",
     "yearsToUnicorn": 8,
     "becameUnicornLabel": "Jul 2019",
     "unicornThresholdLabel": "$1bn",
@@ -2342,7 +2331,6 @@
     "valuationAsOf": "Jul 2026",
     "lastRoundLabel": "May 2026",
     "lastRoundStage": "Series A",
-    "totalRaisedLabel": "$300 m",
     "yearsToUnicorn": 5,
     "becameUnicornLabel": "May 2026",
     "unicornThresholdLabel": "unicorn",
@@ -2529,13 +2517,12 @@
     "valuationAsOf": "Mar 2022",
     "lastRoundLabel": "Mar 2022",
     "lastRoundStage": "Series D",
-    "totalRaisedLabel": "~$600 m",
     "yearsToUnicorn": 5,
     "becameUnicornLabel": "Jun 2021",
     "unicornThresholdLabel": "$1bn",
     "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Michael Wax, Erik Muttersbach, Ferry Heilemann, Fabian Heilemann",
-    "aged": true
+    "aged": false
    },
    "sort": {
     "newest": [
@@ -2812,7 +2799,6 @@
     "valuationAsOf": "Jul 2026",
     "lastRoundLabel": "Jul 2026",
     "lastRoundStage": "Series E",
-    "totalRaisedLabel": "—",
     "yearsToUnicorn": 2,
     "becameUnicornLabel": "Sep 2023",
     "unicornThresholdLabel": "€1bn",
@@ -3071,7 +3057,6 @@
     "valuationAsOf": "Sep 2025",
     "lastRoundLabel": "Jun 2026",
     "lastRoundStage": "Series D",
-    "totalRaisedLabel": "—",
     "yearsToUnicorn": 7,
     "becameUnicornLabel": "Jun 2025",
     "unicornThresholdLabel": "unicorn",
@@ -3260,7 +3245,6 @@
     "valuationAsOf": "Aug 2026",
     "lastRoundLabel": "Aug 2026",
     "lastRoundStage": "Series C",
-    "totalRaisedLabel": "~€200 m",
     "yearsToUnicorn": 7,
     "becameUnicornLabel": "Aug 2026",
     "unicornThresholdLabel": "€1bn",
@@ -3451,13 +3435,12 @@
     "valuationAsOf": "Oct 2021",
     "lastRoundLabel": "Oct 2021",
     "lastRoundStage": "Series E",
-    "totalRaisedLabel": "~$1.8 bn",
     "yearsToUnicorn": 6,
     "becameUnicornLabel": "Jan 2019",
     "unicornThresholdLabel": "$1bn",
     "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Valentin Stalf, Maximilian Tayenthal",
-    "aged": true
+    "aged": false
    },
    "sort": {
     "newest": [
@@ -3660,7 +3643,6 @@
     "valuationAsOf": "May 2026",
     "lastRoundLabel": "May 2026",
     "lastRoundStage": "Secondary",
-    "totalRaisedLabel": "$240 m",
     "yearsToUnicorn": 6,
     "becameUnicornLabel": "Oct 2025",
     "unicornThresholdLabel": "$1bn",
@@ -3875,7 +3857,6 @@
     "valuationAsOf": "Jun 2026",
     "lastRoundLabel": "Jun 2026",
     "lastRoundStage": "Series C",
-    "totalRaisedLabel": "—",
     "yearsToUnicorn": 7,
     "becameUnicornLabel": "Jun 2026",
     "unicornThresholdLabel": "$1bn",
@@ -4071,7 +4052,6 @@
     "valuationAsOf": "Jan 2026",
     "lastRoundLabel": "Jan 2026",
     "lastRoundStage": "Series C",
-    "totalRaisedLabel": "—",
     "yearsToUnicorn": 8,
     "becameUnicornLabel": "Jan 2026",
     "unicornThresholdLabel": "$1bn",
@@ -4256,7 +4236,6 @@
     "valuationAsOf": "Jan 2026",
     "lastRoundLabel": "Jan 2026",
     "lastRoundStage": "Series D",
-    "totalRaisedLabel": "—",
     "yearsToUnicorn": 7,
     "becameUnicornLabel": "May 2025",
     "unicornThresholdLabel": "$1bn",
@@ -4454,13 +4433,12 @@
     "valuationAsOf": "Jun 2022",
     "lastRoundLabel": "Jun 2022",
     "lastRoundStage": "Series E (second close)",
-    "totalRaisedLabel": "—",
     "yearsToUnicorn": 6,
     "becameUnicornLabel": "Jan 2021",
     "unicornThresholdLabel": "$1bn",
     "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Hanno Renner, Roman Schumacher, Arseniy Vershinin, Jonas Rieke",
-    "aged": true
+    "aged": false
    },
    "sort": {
     "newest": [
@@ -4696,7 +4674,6 @@
     "valuationAsOf": "Jul 2026",
     "lastRoundLabel": "Jul 2026",
     "lastRoundStage": "Financing round",
-    "totalRaisedLabel": "~€650 m",
     "yearsToUnicorn": 3,
     "becameUnicornLabel": "Jul 2026",
     "unicornThresholdLabel": "€1bn",
@@ -4965,7 +4942,6 @@
     "valuationAsOf": "Jul 2026",
     "lastRoundLabel": "Jul 2026",
     "lastRoundStage": "Series D",
-    "totalRaisedLabel": "—",
     "yearsToUnicorn": 10,
     "becameUnicornLabel": "May 2025",
     "unicornThresholdLabel": "unicorn",
@@ -5224,7 +5200,6 @@
     "valuationAsOf": "Dec 2024",
     "lastRoundLabel": "Dec 2024",
     "lastRoundStage": "Secondary share sale",
-    "totalRaisedLabel": "—",
     "yearsToUnicorn": 11,
     "becameUnicornLabel": "Mar 2023",
     "unicornThresholdLabel": "unicorn",
@@ -5448,13 +5423,12 @@
     "valuationAsOf": "Apr 2023",
     "lastRoundLabel": "Mar 2024",
     "lastRoundStage": "Perch merger financing",
-    "totalRaisedLabel": "—",
     "yearsToUnicorn": 1,
     "becameUnicornLabel": "Nov 2021",
     "unicornThresholdLabel": "$1bn",
     "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Tushar Ahluwalia, Shrestha Chowdhury, Oliver Dlugosch, Christoph Felix Gamon",
-    "aged": true
+    "aged": false
    },
    "sort": {
     "newest": [
@@ -5681,13 +5655,12 @@
     "valuationAsOf": "Dec 2023",
     "lastRoundLabel": "Jun 2025",
     "lastRoundStage": "Equity round",
-    "totalRaisedLabel": "~€470 m",
     "yearsToUnicorn": 7,
     "becameUnicornLabel": "Jun 2021",
     "unicornThresholdLabel": "$1bn",
     "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Erik Podzuweit, Florian Prucker, Adam French, Stefan Mittnik",
-    "aged": true
+    "aged": false
    },
    "sort": {
     "newest": [
@@ -5885,7 +5858,6 @@
     "valuationAsOf": "Jun 2021",
     "lastRoundLabel": "Jun 2021",
     "lastRoundStage": "Series D, second close",
-    "totalRaisedLabel": "~$350 m",
     "yearsToUnicorn": 6,
     "becameUnicornLabel": "Jan 2021",
     "unicornThresholdLabel": "$1bn",
@@ -6059,13 +6031,12 @@
     "valuationAsOf": "Mar 2022",
     "lastRoundLabel": "Mar 2022",
     "lastRoundStage": "Series E",
-    "totalRaisedLabel": "—",
     "yearsToUnicorn": 8,
     "becameUnicornLabel": "Mar 2022",
     "unicornThresholdLabel": "$1bn",
     "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Martin Böhringer, Lutz Gerlach, Frank Wolf",
-    "aged": true
+    "aged": false
    },
    "sort": {
     "newest": [
@@ -6281,7 +6252,6 @@
     "valuationAsOf": "Jun 2026",
     "lastRoundLabel": "Jun 2026",
     "lastRoundStage": "Funding round",
-    "totalRaisedLabel": "—",
     "yearsToUnicorn": 2,
     "becameUnicornLabel": "Jan 2026",
     "unicornThresholdLabel": "$1bn",
@@ -6447,13 +6417,12 @@
     "valuationAsOf": "Apr 2022",
     "lastRoundLabel": "Apr 2022",
     "lastRoundStage": "Series D",
-    "totalRaisedLabel": "~$330 m",
     "yearsToUnicorn": 6,
     "becameUnicornLabel": "Apr 2022",
     "unicornThresholdLabel": "$1bn",
     "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Mathis Büchi, Lino Teuteberg",
-    "aged": true
+    "aged": false
    },
    "sort": {
     "newest": [
@@ -6632,7 +6601,6 @@
     "valuationAsOf": "Dec 2025",
     "lastRoundLabel": "Dec 2025",
     "lastRoundStage": "Secondary",
-    "totalRaisedLabel": "~€1 bn",
     "yearsToUnicorn": 6,
     "becameUnicornLabel": "May 2021",
     "unicornThresholdLabel": "$1bn",

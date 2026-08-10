@@ -5,9 +5,9 @@ Writes dist/demo.html: a single fragment (no <!doctype>/<html>/<head>/<body> —
 it is injected into a page skeleton at publish time) containing:
 
   - every CSS file index.html links, concatenated into one <style>, in the
-    same order, plus page.css (needed only by the Policy/About/Impressum
-    content this script inlines as extra sections — index.html itself never
-    links it). @font-face url(...) references are rewritten to base64
+    same order, plus page.css (needed only by the About/Impressum content
+    this script inlines as extra sections — index.html itself never links
+    it). @font-face url(...) references are rewritten to base64
     data: URIs.
   - every ES module main.js transitively imports, resolved by parsing each
     file's own `import ... from "./x.js"` statements (not a hard-coded
@@ -18,9 +18,9 @@ it is injected into a page skeleton at publish time) containing:
     to a data: URI. The three runtime fetch() calls that would otherwise
     load those files are patched, in the emitted copy only, to read from
     window.__DEMO_DATA__ instead.
-  - policy.html, about.html and impressum.html's <main> content, inlined as
-    hidden <section>s. The nav links that used to navigate to those pages
-    are rewritten to a `#page/<name>` hash instead; a small router shows the
+  - about.html and impressum.html's <main> content, inlined as hidden
+    <section>s. The nav links that used to navigate to those pages are
+    rewritten to a `#page/<name>` hash instead; a small router shows the
     matching section. That hash namespace never collides with detail.js's
     `#/<slug>` or funding.js's `#funding/<week>` routers, so deep links into
     a company or a funding week keep working unchanged.
@@ -49,7 +49,7 @@ OUT = DIST / "demo.html"
 # The exact set index.html links, in the exact order it links them.
 CSS_FILES = ["tokens.css", "base.css", "hero.css", "register.css", "funding.css", "detail.css"]
 # Not linked by index.html — needed only because this script inlines the
-# Policy/About/Imprint content, which is normally styled by page.css on its
+# About/Imprint content, which is normally styled by page.css on its
 # own pages. Appended after the index.html set so their order is preserved
 # exactly as specified.
 EXTRA_CSS_FILES = ["page.css"]
@@ -324,7 +324,7 @@ def build_demo_data() -> str:
 
 
 # --------------------------------------------------------------------------
-# HTML: index.html's body, plus policy/about/impressum inlined as sections
+# HTML: index.html's body, plus about/impressum inlined as sections
 # --------------------------------------------------------------------------
 
 TITLE_RE = re.compile(r"<title>(.*?)</title>", re.DOTALL)
@@ -352,10 +352,10 @@ def extract_index_body() -> str:
         raise fail(f"expected {script_tag!r} in index.html's body")
     body = body.replace(script_tag, "")
 
-    # The two nav links that would otherwise navigate away to a second page;
-    # the demo's own router (in the appended bootstrap script) shows the
-    # matching inlined section on this same hash instead.
-    for label, target in (("Policy", "policy"), ("About", "about")):
+    # The nav link that would otherwise navigate away to a second page; the
+    # demo's own router (in the appended bootstrap script) shows the matching
+    # inlined section on this same hash instead.
+    for label, target in (("About", "about"),):
         old = f'<a href="{target}.html">{label}</a>'
         new = f'<a href="#page/{target}">{label}</a>'
         if old not in body:
@@ -367,9 +367,8 @@ def extract_index_body() -> str:
 
 def namespace_ids(fragment: str, prefix: str) -> str:
     """Prefixes every `id="x"` (and matching `aria-labelledby="x"`) in a page
-    fragment with `prefix`, so ids that collide across policy.html/about.html
-    (both have a `#corrections` section) don't collide once the three pages
-    share one document."""
+    fragment with `prefix`, so ids that collide across about.html and
+    impressum.html don't collide once the pages share one document."""
     ids = sorted(set(ID_RE.findall(fragment)))
     for old in ids:
         new = f"{prefix}-{old}"
@@ -403,7 +402,7 @@ def splice_before_footer(body: str, insertion: str) -> str:
     real site renders once, at the very end -- boot()'s renderFooter() call
     uses querySelector, so a second <footer data-footer> anywhere else would
     silently sit unpopulated while duplicating the first. Rather than append
-    a second footer after the inlined Policy/About/Impressum sections (which
+    a second footer after the inlined About/Impressum sections (which
     left the *populated* original footer sitting right after the dialog,
     ahead of that inlined content, since it was still the last element of
     index.html's own body), insert those sections into index.html's body
@@ -416,10 +415,10 @@ def splice_before_footer(body: str, insertion: str) -> str:
 
 FOOTER_JS_PATCH = (
     re.compile(
-        r'<a href="policy\.html">Policy</a> · <a href="about\.html">About</a> ·\n'
+        r'<a href="about\.html">About</a> ·\n'
         r'      <a href="impressum\.html">Impressum</a> ·',
     ),
-    '<a href="#page/policy">Policy</a> · <a href="#page/about">About</a> ·\n'
+    '<a href="#page/about">About</a> ·\n'
     '      <a href="#page/impressum">Impressum</a> ·',
 )
 
@@ -428,20 +427,19 @@ JS_PATCHES["footer.js"] = [FOOTER_JS_PATCH]
 
 DEMO_ROUTER_JS = """
 // --- demo bundle: page-section router (tools/bundle_demo.py) ---
-// Switches between the register and the inlined Policy/About/Impressum
-// sections on a `#page/<name>` (optionally `#page/<name>/<id>`) hash. This
+// Switches between the register and the inlined About/Impressum sections
+// on a `#page/<name>` (optionally `#page/<name>/<id>`) hash. This
 // namespace never matches detail.js's `#/<slug>` pattern or funding.js's
 // `#funding/<week>` pattern, so company and funding-week deep links keep
 // working unchanged alongside it.
 (function () {
   const sections = {
-    policy: document.getElementById("page-policy"),
     about: document.getElementById("page-about"),
     impressum: document.getElementById("page-impressum"),
   };
   const registerMain = document.querySelector("[data-register]");
   const roundup = document.querySelector("[data-roundup]");
-  const PAGE_HASH = /^#page\\/(policy|about|impressum)(?:\\/([\\w-]+))?$/;
+  const PAGE_HASH = /^#page\\/(about|impressum)(?:\\/([\\w-]+))?$/;
 
   function setCurrentNav(activeId) {
     document.querySelectorAll('a[href^="#page/"]').forEach((a) => {
@@ -525,7 +523,6 @@ def build() -> str:
 
     body = extract_index_body()
 
-    policy_section = build_page_section("policy.html", "page-policy", "policy", "Policy")
     about_section = build_page_section("about.html", "page-about", "about", "About")
     impressum_section = build_page_section("impressum.html", "page-impressum", "impressum", "Impressum")
 
@@ -534,7 +531,7 @@ def build() -> str:
     # is still exactly one footer, and it stays last in the document.
     body = splice_before_footer(
         body.strip(),
-        "\n\n".join([policy_section, about_section, impressum_section]),
+        "\n\n".join([about_section, impressum_section]),
     )
 
     js = build_js()

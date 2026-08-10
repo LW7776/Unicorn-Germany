@@ -13,11 +13,6 @@
 @media (min-width: 1200px) {
   .hero__title span { display: block; }
 }
-.hero__sub {
-  max-width: 44rem; margin: var(--space-6) auto 0; color: var(--muted);
-  font-family: var(--font-prose);
-}
-.hero__sub [data-stat] { color: var(--ink); font-family: var(--font-mono); }
 .hero__cta {
   margin-top: var(--space-7); display: inline-flex; gap: var(--space-3); align-items: center;
   padding: var(--space-4) var(--space-6); border-radius: 999px;

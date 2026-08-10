@@ -3,7 +3,7 @@ import { escapeHtml } from "./html.js";
 /* Renders precomputed labels. No formatting logic lives in the browser. */
 function cell(company, index) {
   const aged = company.display.aged
-    ? '<span class="cell__aged" title="This valuation is over two years old">aged</span>'
+    ? '<span class="cell__aged" title="The company has raised since this valuation was struck, or the figure is more than five years old">aged</span>'
     : "";
   // "Undisclosed" alone, in the slot where every other card prints a figure, would
   // read as "nothing is known" and — worse, next to "$8 bn" — as "worth nothing".
