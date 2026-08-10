@@ -44,7 +44,7 @@ function registerLink(company, slugByName) {
   const slug = slugByName.get(company.toLowerCase());
   return slug
     ? ` <a class="roundup__tracked" href="#/${escapeHtml(slug)}"
-           title="This company is in the register — open its entry">in the register</a>`
+           title="This company is in the register, open its entry">in the register</a>`
     : "";
 }
 

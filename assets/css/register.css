@@ -1,4 +1,18 @@
 .register { padding: calc(var(--space-8) + 3rem) var(--space-6) var(--space-8); }
+
+/* The section opener. Display type at the hero's own scale, one phrase carrying a
+   soft gradient tint, and a lot of air around it — the register's summary numbers
+   have to arrive after a statement, not on their own. */
+.intro { margin-bottom: var(--space-8); max-width: 60rem; }
+.intro__title { font-size: var(--step-5); line-height: .95; margin-bottom: var(--space-6); }
+/* background-clip: text needs a transparent fill to show the gradient through.
+   -webkit- prefixes included because Safari still requires them here. */
+.intro__accent {
+  background-image: linear-gradient(96deg, var(--beam-text), var(--violet));
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+}
+.intro__lede { color: var(--muted); max-width: 44rem; margin: 0; }
 .stats {
   display: grid; gap: var(--space-4); margin-bottom: var(--space-7);
   grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));

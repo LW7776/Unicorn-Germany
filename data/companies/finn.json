@@ -14,7 +14,7 @@
   ],
   "niche": "Car Subscription",
   "thesis": {
-    "problem": "Owning a car means a purchase or a three-year lease, plus insurance, registration, road tax, servicing and a resale problem at the end — a bundle of separate contracts that has to be assembled by the buyer and cannot be undone early. For anyone unsure how long they need a car, or whether they want an electric one, the commitment is the product's worst feature.",
+    "problem": "Owning a car means a purchase or a three-year lease, plus insurance, registration, road tax, servicing and a resale problem at the end, a bundle of separate contracts that has to be assembled by the buyer and cannot be undone early. For anyone unsure how long they need a car, or whether they want an electric one, the commitment is the product's worst feature.",
     "solution": "FINN sells the car as a subscription: one monthly price covering insurance, registration, tax, maintenance and servicing, ordered online in minutes from more than 25 manufacturers' ranges and delivered to the door. The company carries the fleet, the residual-value risk and the financing, which is why its scale shows up in debt facilities alongside equity, and why the operational question is utilisation rather than sales."
   },
   "valuation": {
@@ -86,7 +86,7 @@
     },
     {
       "name": "Max-Josef Meier",
-      "role": "Co-founder; CEO until April 2023",
+      "role": "Co-founder, CEO until April 2023",
       "current": false
     }
   ],

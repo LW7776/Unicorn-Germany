@@ -14,7 +14,7 @@
   ],
   "niche": "Sustainability & ESG",
   "thesis": {
-    "problem": "European law now makes a company answerable for things happening several tiers down its supply chain — forced labour at a subcontractor, deforestation behind a commodity, emissions it never measured. The evidence for those answers sits in purchasing systems, supplier questionnaires and site audits that were never built to be read together, so compliance becomes a rolling manual exercise repeated for every new regulation.",
+    "problem": "European law now makes a company answerable for things happening several tiers down its supply chain, for forced labour at a subcontractor, deforestation behind a commodity, or emissions it never measured. The evidence for those answers sits in purchasing systems, supplier questionnaires and site audits that were never built to be read together, so compliance becomes a rolling manual exercise repeated for every new regulation.",
     "solution": "osapiens runs one cloud platform on which each reporting duty is a separate module drawing on the same supplier and transaction data, so a company answers a new rule by switching on an application rather than starting a new project. The products are sold to large enterprises as compliance tooling, and the pitch is that the same data, once collected properly, also shows where a supply chain is slow or wasteful."
   },
   "valuation": {

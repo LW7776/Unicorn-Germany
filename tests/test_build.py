@@ -65,9 +65,11 @@ def test_sort_keys_normalise_currency_for_ordering_only(record):
     assert derived["display"]["valuationLabel"] == "~$1 bn"
 
 
-def test_missing_optional_data_becomes_an_em_dash(record):
+def test_missing_optional_data_becomes_a_dash(record):
+    """An en dash, not an em dash: em dashes are banned from every visible string
+    on the site (docs/BRAND.md), and this one is as visible as copy gets."""
     record["founders"] = []
-    assert derive_company(record, today=(2026, 8))["display"]["foundersLabel"] == "—"
+    assert derive_company(record, today=(2026, 8))["display"]["foundersLabel"] == "–"
 
 
 def test_round_labels_are_precomputed(record):

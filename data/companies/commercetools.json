@@ -14,7 +14,7 @@
   ],
   "niche": "E-commerce Infrastructure",
   "thesis": {
-    "problem": "A large retailer's online shop is usually one monolithic platform that owns the product catalogue, the checkout, the pricing rules and the storefront design together. Changing anything customer-facing means a release of the whole system, which is why adding a new sales channel — an app, a kiosk, a marketplace listing — takes quarters rather than weeks.",
+    "problem": "A large retailer's online shop is usually one monolithic platform that owns the product catalogue, the checkout, the pricing rules and the storefront design together. Changing anything customer-facing means a release of the whole system, which is why adding a new sales channel, whether an app, a kiosk or a marketplace listing, takes quarters rather than weeks.",
     "solution": "commercetools separates the commerce engine from the storefront and exposes it as APIs, so a retailer builds whatever front end it wants against the same catalogue, cart and order services. That is the 'headless' argument the company has made since before the term was common, and its customers are large enough that the flexibility is worth the integration work."
   },
   "valuation": {

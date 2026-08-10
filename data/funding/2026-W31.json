@@ -15,7 +15,7 @@
    "valuationCurrency": null,
    "founders": [],
    "investors": [],
-   "text": "metr secured €10.5m in a Series B — energy and heating management sold into German housing stock, which is the least fashionable corner of climate software and the one with the most tonnes of CO2 sitting in it. It was a thin week for Germany: six of the roughly fifty European rounds Tech.eu tracked were German, and none of them was larger than €12m. Late July is when the country goes on holiday, and the funding calendar goes with it. A quiet week is not a verdict on the pipeline; it is a verdict on the month.",
+   "text": "metr secured €10.5m in a Series B. Energy and heating management sold into German housing stock, the least fashionable corner of climate software and the one with the most carbon sitting in it. Six of the roughly fifty European rounds Tech.eu tracked that week were German, and none was larger than €12m. Late July is when the country goes on holiday and the funding calendar goes with it, so a quiet week is a verdict on the month rather than on the pipeline.",
    "source": {
     "publication": "Tech.eu",
     "title": "European tech weekly recap: €878M in weekly deals and key trends from H1 2026",
@@ -40,7 +40,7 @@
    "investors": [
     "Emerge Capital"
    ],
-   "text": "5U AI raised $3.2m in pre-seed funding led by London's Emerge Capital, a year after two Technical University of Munich graduates founded it. It builds digital workers for freight forwarding — quoting, bookings, shipment tracking, invoice reconciliation — and, unusually, records the reasoning behind each decision rather than only the outcome, so a freight team can audit why the machine did what it did. Munich keeps producing exactly this: industrial software sold to people who move physical things. It is the least hyped part of the German ecosystem and reliably one of the most durable.",
+   "text": "5U AI raised $3.2m in pre-seed funding, led by London's Emerge Capital. Founded a year ago by two Technical University of Munich graduates, Yagiz Abik and Fehmi Şener. Digital workers for freight forwarding, quoting, bookings, shipment tracking and invoice reconciliation, with the reasoning behind each decision recorded so a freight team can audit it. Industrial software sold to people who move physical things is Munich's most reliable export.",
    "source": {
     "publication": "Tech.eu",
     "title": "5U AI lands $3.2M pre-seed for AI freight workforce platform",

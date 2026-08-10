@@ -14,7 +14,7 @@
   ],
   "niche": "Fusion Energy",
   "thesis": {
-    "problem": "Fusion power has been a laboratory result for decades rather than a product, because the machines that confine a plasma hot enough to fuse are either unstable or impossible to run continuously. The tokamak, the design most money has gone into, needs a current driven through the plasma and tends to disrupt; the stellarator is inherently steadier but its twisted magnets were long considered too hard to design and build.",
+    "problem": "Fusion power has been a laboratory result for decades rather than a product, because the machines that confine a plasma hot enough to fuse are either unstable or impossible to run continuously. The tokamak, the design most money has gone into, needs a current driven through the plasma and tends to disrupt. The stellarator is inherently steadier, but its twisted magnets were long considered too hard to design and build.",
     "solution": "Proxima Fusion is the first spin-out from the Max Planck Institute for Plasma Physics, where the world's largest stellarator, Wendelstein 7-X, was built. It uses simulation and high-temperature superconducting magnets to make that design manufacturable, and is building Alpha, a net-energy demonstrator near Munich, as the step before a commercial plant."
   },
   "valuation": {

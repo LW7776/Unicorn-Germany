@@ -30,7 +30,7 @@
    "niche": "Climate Tech",
    "thesis": {
     "problem": "The companies that actually fit solar panels, batteries and heat pumps are small local electrical firms, thousands of them, each with a handful of technicians and no way to bid for a national customer or to make the finished system talk to the electricity market. The bottleneck in electrifying a house is not the hardware but the trade that installs it.",
-    "solution": "1KOMMA5° buys those installers and puts them on one platform, then connects everything they fit to Heartbeat AI — software that pools the batteries, heat pumps and cars it has installed into a virtual power plant and trades their flexibility. The installers give the company reach; the software is what it expects to be valued on."
+    "solution": "1KOMMA5° buys those installers and puts them on one platform, then connects everything they fit to Heartbeat AI, software that pools the batteries, heat pumps and cars it has installed into a virtual power plant and trades their flexibility. The installers give the company reach. The software is what it expects to be valued on."
    },
    "valuation": {
     "amount": 1000,
@@ -161,7 +161,8 @@
      "title": "1KOMMA5°: The Newest Unicorn in the CleanTech Industry",
      "url": "https://1komma5.com/en/press/press-releases/1komma5-unicorn-en/",
      "publishedOn": "2023-06-23",
-     "quote": "1KOMMA5° has become a unicorn! Only 23 months after our foundation, we have reached a valuation of 1 billion US-Dollar, a testament to the hard work and dedication of our team."
+     "quote": "1KOMMA5° has become a unicorn! Only 23 months after our foundation, we have reached a valuation of 1 billion US-Dollar, a testament to the hard work and dedication of our team.",
+     "publishedLabel": "23 Jun 2023"
     },
     {
      "id": "s2",
@@ -169,7 +170,8 @@
      "title": "1KOMMA5°: The Newest Unicorn in the CleanTech Industry",
      "url": "https://1komma5.com/en/press/press-releases/1komma5-unicorn-en/",
      "publishedOn": "2023-06-23",
-     "quote": "We are humbled and grateful to have raised 215 million Euro in equity for this mission, exceeding our target volume of 150 million Euro due to oversubscription."
+     "quote": "We are humbled and grateful to have raised 215 million Euro in equity for this mission, exceeding our target volume of 150 million Euro due to oversubscription.",
+     "publishedLabel": "23 Jun 2023"
     },
     {
      "id": "s3",
@@ -177,7 +179,8 @@
      "title": "1Komma5 raises €150m to pave way for IPO",
      "url": "https://sifted.eu/articles/1komma5-e150m-pre-ipo-news",
      "publishedOn": "2024-12-20",
-     "quote": "German solar startup 1Komma5 has raised €150m, paving its way to a public listing. The funding is led by the California State Teachers’ Retirement System (Calstrs), a state pension fund."
+     "quote": "German solar startup 1Komma5 has raised €150m, paving its way to a public listing. The funding is led by the California State Teachers’ Retirement System (Calstrs), a state pension fund.",
+     "publishedLabel": "20 Dec 2024"
     },
     {
      "id": "s4",
@@ -185,7 +188,8 @@
      "title": "Hamburg’s 1KOMMA5° has raised €430 million - and just became a unicorn at just 23 months old",
      "url": "https://tech.eu/2023/06/23/hamburg-s-1komma5-has-raised-430-million-and-just-become-a-unicorn-at-just-23-months-old/",
      "publishedOn": "2023-06-23",
-     "quote": "Hamburg’s 1KOMMA5° has raised a €430 million series B round, and has shot into the coveted a unicorn spot in just 23 months. The round was led by G2VP and Ben Kortlang will join the board as vice chairman."
+     "quote": "Hamburg’s 1KOMMA5° has raised a €430 million series B round, and has shot into the coveted a unicorn spot in just 23 months. The round was led by G2VP and Ben Kortlang will join the board as vice chairman.",
+     "publishedLabel": "23 Jun 2023"
     },
     {
      "id": "s5",
@@ -193,7 +197,8 @@
      "title": "1KOMMA5° extends pre-IPO round",
      "url": "https://1komma5.com/en/press/press-releases/1komma5-extends-pre-ipo-round/",
      "publishedOn": "2025-07-28",
-     "quote": "To date, 1KOMMA5° has raised almost €400 million in equity and remains debt-free."
+     "quote": "To date, 1KOMMA5° has raised almost €400 million in equity and remains debt-free.",
+     "publishedLabel": "28 Jul 2025"
     },
     {
      "id": "s6",
@@ -201,7 +206,8 @@
      "title": "1Komma5 raises €150m to pave way for IPO",
      "url": "https://sifted.eu/articles/1komma5-e150m-pre-ipo-news",
      "publishedOn": "2024-12-20",
-     "quote": "The round means a slight increase in valuation, Sifted understands, but the company — which achieved unicorn status last year — did not disclose an updated figure."
+     "quote": "The round means a slight increase in valuation, Sifted understands, but the company — which achieved unicorn status last year — did not disclose an updated figure.",
+     "publishedLabel": "20 Dec 2024"
     }
    ],
    "display": {
@@ -360,7 +366,8 @@
      "title": "Black Forest Labs secures $300M Series B at $3.25B valuation",
      "url": "https://tech.eu/2025/12/01/black-forest-labs-secures-300m-series-b-at-325b-valuation/",
      "publishedOn": "2025-12-01",
-     "quote": "Today Black Forest Labs has announced a $300 million Series B round at a $3.25 billion post-money valuation."
+     "quote": "Today Black Forest Labs has announced a $300 million Series B round at a $3.25 billion post-money valuation.",
+     "publishedLabel": "1 Dec 2025"
     },
     {
      "id": "s2",
@@ -368,7 +375,8 @@
      "title": "Laying the Foundations for Visual Intelligence—Our $300M Series B",
      "url": "https://bfl.ai/blog/our-300m-series-b",
      "publishedOn": "2025-12-01",
-     "quote": "That’s why today, we're excited to announce our Series B of $300M at a $3.25B post-money valuation."
+     "quote": "That’s why today, we're excited to announce our Series B of $300M at a $3.25B post-money valuation.",
+     "publishedLabel": "1 Dec 2025"
     },
     {
      "id": "s3",
@@ -376,7 +384,8 @@
      "title": "German AI startup Black Forest Labs raises $300m Series B",
      "url": "https://sifted.eu/articles/black-forest-labs-300m-series-b",
      "publishedOn": "2025-12-01",
-     "quote": "The Freiburg-based startup has quietly raised over $450m in just over a year, attracting big name backers like Andreessen Horowitz, General Catalyst and Creandum."
+     "quote": "The Freiburg-based startup has quietly raised over $450m in just over a year, attracting big name backers like Andreessen Horowitz, General Catalyst and Creandum.",
+     "publishedLabel": "1 Dec 2025"
     },
     {
      "id": "s4",
@@ -384,7 +393,8 @@
      "title": "Black Forest Labs raises $300M at $3.25B valuation",
      "url": "https://techcrunch.com/2025/12/01/black-forest-labs-raises-300m-at-3-25b-valuation/",
      "publishedOn": "2025-12-01",
-     "quote": "Black Forest Labs’ co-founders, Robin Rombach, Patrick Esser, and Andreas Blattmann, were formerly researchers who helped create Stability AI’s Stable Diffusion models."
+     "quote": "Black Forest Labs’ co-founders, Robin Rombach, Patrick Esser, and Andreas Blattmann, were formerly researchers who helped create Stability AI’s Stable Diffusion models.",
+     "publishedLabel": "1 Dec 2025"
     },
     {
      "id": "s5",
@@ -392,7 +402,8 @@
      "title": "Used by Adobe, Canva and Meta, Germany’s Black Forest Labs lands €258 million to scale its visual-AI platform",
      "url": "https://www.eu-startups.com/2025/12/used-by-adobe-canva-and-meta-germanys-black-forest-labs-lands-e258-million-to-scale-its-visual-ai-platform/",
      "publishedOn": "2025-12-01",
-     "quote": "The round follows a previously unannounced Series A led by Andreessen Horowitz, with participation from BroadLight Capital, Creandum, Earlybird VC, General Catalyst, Northzone, and Nvidia, bringing total funds raised to over €387 million ($450 million)."
+     "quote": "The round follows a previously unannounced Series A led by Andreessen Horowitz, with participation from BroadLight Capital, Creandum, Earlybird VC, General Catalyst, Northzone, and Nvidia, bringing total funds raised to over €387 million ($450 million).",
+     "publishedLabel": "1 Dec 2025"
     }
    ],
    "display": {
@@ -616,7 +627,8 @@
      "title": "Celonis Secures $1 Billion to Help Customers Fight Economic and Supply Chain Challenges with Process Improvements",
      "url": "https://www.celonis.com/news/press/celonis-secures-one-billion-to-help-customers-fight-economic-and-supply-change-challenges",
      "publishedOn": "2022-08-23",
-     "quote": "This $1 billion in liquidity is anchored by a $400 million equity raise at a post money valuation of nearly $13 billion."
+     "quote": "This $1 billion in liquidity is anchored by a $400 million equity raise at a post money valuation of nearly $13 billion.",
+     "publishedLabel": "23 Aug 2022"
     },
     {
      "id": "s2",
@@ -624,7 +636,8 @@
      "title": "Celonis, a leader in big data process mining for enterprises, nabs $290M on a $2.5B valuation",
      "url": "https://techcrunch.com/2019/11/21/celonis-a-leader-in-big-data-process-mining-for-enterprises-nabs-290m-on-a-2-5b-valuation/",
      "publishedOn": "2019-11-21",
-     "quote": "Celonis, a leader in the area of process mining — which tracks data produced by a company’s software, as well as how the software works, in order to provide guidance on what a company could and should do to improve it — has raised $290 million in a Series C round of funding, giving the startup a post-money valuation of $2.5 billion."
+     "quote": "Celonis, a leader in the area of process mining — which tracks data produced by a company’s software, as well as how the software works, in order to provide guidance on what a company could and should do to improve it — has raised $290 million in a Series C round of funding, giving the startup a post-money valuation of $2.5 billion.",
+     "publishedLabel": "21 Nov 2019"
     },
     {
      "id": "s3",
@@ -632,7 +645,8 @@
      "title": "Celonis Secures $1 Billion to Help Customers Fight Economic and Supply Chain Challenges with Process Improvements",
      "url": "https://www.celonis.com/news/press/celonis-secures-one-billion-to-help-customers-fight-economic-and-supply-change-challenges",
      "publishedOn": "2022-08-23",
-     "quote": "In June 2021, Celonis announced its $1 billion Series D round at a valuation of $11 billion. The Series D followed the Series C financing round of $290 million in November 2019, a Series B of $50 million in June 2018, and a Series A of $27.5 million in June 2016."
+     "quote": "In June 2021, Celonis announced its $1 billion Series D round at a valuation of $11 billion. The Series D followed the Series C financing round of $290 million in November 2019, a Series B of $50 million in June 2018, and a Series A of $27.5 million in June 2016.",
+     "publishedLabel": "23 Aug 2022"
     },
     {
      "id": "s4",
@@ -640,7 +654,8 @@
      "title": "Celonis scores $50M Series B on $1B valuation",
      "url": "https://techcrunch.com/2018/06/26/celonis-scores-50-million-series-b-on-1b-valuation",
      "publishedOn": "2018-06-26",
-     "quote": "Celonis, a New York City enterprise startup, created a sophisticated software solution to help solve this problem, and today it announced a $50 million Series B investment from Accel and 83North on a $1 billion valuation."
+     "quote": "Celonis, a New York City enterprise startup, created a sophisticated software solution to help solve this problem, and today it announced a $50 million Series B investment from Accel and 83North on a $1 billion valuation.",
+     "publishedLabel": "26 Jun 2018"
     }
    ],
    "display": {
@@ -807,7 +822,8 @@
      "title": "Choco chalks up $111 million, punches ticket at the unicorn club",
      "url": "https://tech.eu/2022/04/12/choco-chalks-up-111-million-punches-ticket-at-the-unicorn-club/",
      "publishedOn": "2022-04-12",
-     "quote": "Berlin-based food supply chain management platform Choco has raised $111 million in a Series B2 funding round at a valuation of $1.2 billion."
+     "quote": "Berlin-based food supply chain management platform Choco has raised $111 million in a Series B2 funding round at a valuation of $1.2 billion.",
+     "publishedLabel": "12 Apr 2022"
     },
     {
      "id": "s2",
@@ -815,7 +831,8 @@
      "title": "Choco bites into $100M Series B, at a $600M valuation, to build a more transparent, sustainable food supply chain",
      "url": "https://techcrunch.com/2021/07/19/choco-bites-into-100m-series-b-at-a-600m-valuation-to-build-a-more-transparent-sustainable-food-supply-chain/",
      "publishedOn": "2021-07-20",
-     "quote": "Berlin-based Choco, which has built ordering software for restaurants and their suppliers, is working to digitize the food supply chain and announced $100 million in Series B funding, led by Left Lane Capital, to give it a $600 million post-market valuation."
+     "quote": "Berlin-based Choco, which has built ordering software for restaurants and their suppliers, is working to digitize the food supply chain and announced $100 million in Series B funding, led by Left Lane Capital, to give it a $600 million post-market valuation.",
+     "publishedLabel": "20 Jul 2021"
     },
     {
      "id": "s3",
@@ -823,7 +840,8 @@
      "title": "Choco Achieves Unicorn Status in Quest to Drive Zero Food Waste in Supply Chains",
      "url": "https://choco.com/us/press/choco-achieves-unicorn-status",
      "publishedOn": "2022-04-12",
-     "quote": "Choco, the technology company building a better food system for restaurants and suppliers, announced today that it has raised $111 million in Series B2 funding with a valuation of $1.2 billion."
+     "quote": "Choco, the technology company building a better food system for restaurants and suppliers, announced today that it has raised $111 million in Series B2 funding with a valuation of $1.2 billion.",
+     "publishedLabel": "12 Apr 2022"
     },
     {
      "id": "s4",
@@ -831,7 +849,8 @@
      "title": "Choco chalks up $111 million, punches ticket at the unicorn club",
      "url": "https://tech.eu/2022/04/12/choco-chalks-up-111-million-punches-ticket-at-the-unicorn-club/",
      "publishedOn": "2022-04-12",
-     "quote": "Since 2018, Choco has now raised a total of $274.7 million."
+     "quote": "Since 2018, Choco has now raised a total of $274.7 million.",
+     "publishedLabel": "12 Apr 2022"
     }
    ],
    "display": {
@@ -890,7 +909,7 @@
    "niche": "Flow Battery Storage",
    "thesis": {
     "problem": "A grid running on wind and sun has too much power in the afternoon and none at three in the morning, and the batteries built to bridge that gap are lithium ones designed for cars: excellent for an hour or two of output, expensive and flammable across ten, and dependent on mined critical minerals from supply chains a European utility does not control.",
-    "solution": "CMBlu builds what it calls SolidFlow — a flow battery whose electrolyte is water-based and non-flammable and whose stored energy sits in proprietary solid materials made from abundant elements rather than critical minerals. Because a flow architecture separates how much power a system delivers from how much energy it holds, adding hours of duration means adding storage material rather than another whole battery, which is the economics that ten-hour discharge needs."
+    "solution": "CMBlu builds what it calls SolidFlow, a flow battery whose electrolyte is water-based and non-flammable and whose stored energy sits in proprietary solid materials made from abundant elements rather than critical minerals. Because a flow architecture separates how much power a system delivers from how much energy it holds, adding hours of duration means adding storage material rather than another whole battery, which is the economics that ten-hour discharge needs."
    },
    "valuation": {
     "amount": 1000,
@@ -944,7 +963,8 @@
      "title": "CMBlu Surpasses €1B+ Unicorn Threshold with €50M Initial Close of Series C, Defining Baseload Infrastructure for AI and Data Centers",
      "url": "https://www.cmblu.com/press-media/cmblu-surpasses-eu1b-unicorn-threshold-with-eu50m-initial-close-of-series-c-defining-baseload-infrastructure-for-ai-and-data-centers",
      "publishedOn": "2026-04-30",
-     "quote": "ALZENAU, GERMANY — APRIL 30, 2026 — CMBlu Energy has reached unicorn status, crossing the €1 billion valuation threshold following a €50 million initial close of its Series C financing with participation from Samsung Ventures."
+     "quote": "ALZENAU, GERMANY — APRIL 30, 2026 — CMBlu Energy has reached unicorn status, crossing the €1 billion valuation threshold following a €50 million initial close of its Series C financing with participation from Samsung Ventures.",
+     "publishedLabel": "30 Apr 2026"
     },
     {
      "id": "s2",
@@ -952,7 +972,8 @@
      "title": "CMBlu Surpasses €1B+ Unicorn Threshold with €50M Initial Close of Series C, Defining Baseload Infrastructure for AI and Data Centers",
      "url": "https://www.cmblu.com/press-media/cmblu-surpasses-eu1b-unicorn-threshold-with-eu50m-initial-close-of-series-c-defining-baseload-infrastructure-for-ai-and-data-centers",
      "publishedOn": "2026-04-30",
-     "quote": "The initial close of Series C will support manufacturing scale-up and accelerate early commercial deployments in Europe and the United States."
+     "quote": "The initial close of Series C will support manufacturing scale-up and accelerate early commercial deployments in Europe and the United States.",
+     "publishedLabel": "30 Apr 2026"
     },
     {
      "id": "s3",
@@ -960,7 +981,8 @@
      "title": "CMBlu Surpasses €1B+ Unicorn Threshold with €50M Initial Close of Series C, Defining Baseload Infrastructure for AI and Data Centers",
      "url": "https://www.cmblu.com/press-media/cmblu-surpasses-eu1b-unicorn-threshold-with-eu50m-initial-close-of-series-c-defining-baseload-infrastructure-for-ai-and-data-centers",
      "publishedOn": "2026-04-30",
-     "quote": "Founded in 2014, CMBlu evolved from one of Europe's largest lithium-free battery research laboratories into a rapidly scaling energy storage innovator."
+     "quote": "Founded in 2014, CMBlu evolved from one of Europe's largest lithium-free battery research laboratories into a rapidly scaling energy storage innovator.",
+     "publishedLabel": "30 Apr 2026"
     }
    ],
    "display": {
@@ -974,7 +996,7 @@
     "becameUnicornLabel": "Apr 2026",
     "unicornThresholdLabel": "€1bn",
     "unicornFlagLabel": "crossed €1bn",
-    "foundersLabel": "—",
+    "foundersLabel": "–",
     "aged": false
    },
    "sort": {
@@ -1010,7 +1032,7 @@
    ],
    "niche": "E-commerce Infrastructure",
    "thesis": {
-    "problem": "A large retailer's online shop is usually one monolithic platform that owns the product catalogue, the checkout, the pricing rules and the storefront design together. Changing anything customer-facing means a release of the whole system, which is why adding a new sales channel — an app, a kiosk, a marketplace listing — takes quarters rather than weeks.",
+    "problem": "A large retailer's online shop is usually one monolithic platform that owns the product catalogue, the checkout, the pricing rules and the storefront design together. Changing anything customer-facing means a release of the whole system, which is why adding a new sales channel, whether an app, a kiosk or a marketplace listing, takes quarters rather than weeks.",
     "solution": "commercetools separates the commerce engine from the storefront and exposes it as APIs, so a retailer builds whatever front end it wants against the same catalogue, cart and order services. That is the 'headless' argument the company has made since before the term was common, and its customers are large enough that the flexibility is worth the integration work."
    },
    "valuation": {
@@ -1091,7 +1113,8 @@
      "title": "Commercetools raises $140M at a $1.9B valuation as 'headless' commerce continues to boom",
      "url": "https://techcrunch.com/2021/09/13/commercetools-raises-140m-at-a-1-9b-valuation-as-headless-commerce-continues-to-boom/",
      "publishedOn": "2021-09-13",
-     "quote": "In the latest turn, Commercetools — a provider of e-commerce APIs that larger retailers can use to build customized payment, check-out, social commerce, marketplace and other services — has closed $140 million in funding, a Series C that CEO Dirk Hoerig has confirmed to me values the company at $1.9 billion."
+     "quote": "In the latest turn, Commercetools — a provider of e-commerce APIs that larger retailers can use to build customized payment, check-out, social commerce, marketplace and other services — has closed $140 million in funding, a Series C that CEO Dirk Hoerig has confirmed to me values the company at $1.9 billion.",
+     "publishedLabel": "13 Sep 2021"
     },
     {
      "id": "s2",
@@ -1099,7 +1122,8 @@
      "title": "Commercetools raises $145M from Insight for Shopify-style e-commerce APIs for large enterprises",
      "url": "https://techcrunch.com/2019/10/21/commercetools-raises-145m-from-insight-for-shopify-style-e-commerce-apis-for-large-enterprises/",
      "publishedOn": "2019-10-21",
-     "quote": "Commercetools, a German startup that provides a set of APIs that power e-commerce sales and related functions for large businesses, has raised $145 million (€130 million) in a growth round of funding led by Insight Partners, at a valuation that we understand from a close source is around $300 million."
+     "quote": "Commercetools, a German startup that provides a set of APIs that power e-commerce sales and related functions for large businesses, has raised $145 million (€130 million) in a growth round of funding led by Insight Partners, at a valuation that we understand from a close source is around $300 million.",
+     "publishedLabel": "21 Oct 2019"
     },
     {
      "id": "s3",
@@ -1107,7 +1131,8 @@
      "title": "Commercetools, a pioneer in ‘headless commerce’, lays off dozens of staff",
      "url": "https://techcrunch.com/2025/02/26/commercetools-a-pioneer-in-headless-commerce-lays-off-dozens-of-staff/",
      "publishedOn": "2025-02-27",
-     "quote": "Through all of this, Commercetools’ founder Dirk Hoerig led the company as CEO. He stepped away from the top position in July 2024, to be replaced by Burton. (Hoerig has retained a seat on the board and is the company’s chief innovation officer.)"
+     "quote": "Through all of this, Commercetools’ founder Dirk Hoerig led the company as CEO. He stepped away from the top position in July 2024, to be replaced by Burton. (Hoerig has retained a seat on the board and is the company’s chief innovation officer.)",
+     "publishedLabel": "27 Feb 2025"
     },
     {
      "id": "s4",
@@ -1115,7 +1140,8 @@
      "title": "Munich-based commercetools secures €119 million in Series C funding round to accelerate global growth",
      "url": "https://www.eu-startups.com/2021/09/munich-based-commercetools-secures-e119-million-series-c-funding-round-to-accelerate-global-growth/",
      "publishedOn": "2021-09-13",
-     "quote": "Founded in 2006, so not exactly a startup anymore but rather a fast-growing scale-up, commercetools provides a headless, API-first, multi-tenant SaaS commerce platform that is cloud-native and uses flexible microservices."
+     "quote": "Founded in 2006, so not exactly a startup anymore but rather a fast-growing scale-up, commercetools provides a headless, API-first, multi-tenant SaaS commerce platform that is cloud-native and uses flexible microservices.",
+     "publishedLabel": "13 Sep 2021"
     }
    ],
    "display": {
@@ -1166,7 +1192,7 @@
    ],
    "niche": "Observability",
    "thesis": {
-    "problem": "Observability — the tooling that tells an engineer why production broke — is sold by vendors whose pricing scales with how much data you send them and whose agents lock that data into proprietary formats. As systems grew and AI agents began writing and deploying code, the volume of alerts outgrew the number of humans available to read them, so the tools became, in Dash0's own words, expensive noise generators.",
+    "problem": "Observability, the tooling that tells an engineer why production broke, is sold by vendors whose pricing scales with how much data you send them and whose agents lock that data into proprietary formats. As systems grew and AI agents began writing and deploying code, the volume of alerts outgrew the number of humans available to read them, so the tools became, in Dash0's own words, expensive noise generators.",
     "solution": "Dash0 is built natively on OpenTelemetry, the open standard for emitting traces, metrics and logs, so it ingests signals from any stack without proprietary agents and the customer's data stays portable. On top of that it runs Agent0, which is meant to diagnose and resolve production incidents autonomously rather than paging a person to read a dashboard."
    },
    "valuation": {
@@ -1277,7 +1303,8 @@
      "title": "Dash0 Raises $110M Series B at $1B Valuation to Build the AI Nervous System for Production",
      "url": "https://www.dash0.com/blog/dash0-raises-usd110m-series-b",
      "publishedOn": "2026-03-23",
-     "quote": "The round values Dash0 at $1 billion, making it the latest unicorn in enterprise infrastructure, and brings total funding to $155 million."
+     "quote": "The round values Dash0 at $1 billion, making it the latest unicorn in enterprise infrastructure, and brings total funding to $155 million.",
+     "publishedLabel": "23 Mar 2026"
     },
     {
      "id": "s2",
@@ -1285,7 +1312,8 @@
      "title": "Dash0 Raises $110M Series B at $1B Valuation to Build the AI Nervous System for Production",
      "url": "https://www.dash0.com/blog/dash0-raises-usd110m-series-b",
      "publishedOn": "2026-03-23",
-     "quote": "NEW YORK, 23rd March — Dash0, the Agentic observability platform built natively on OpenTelemetry, today announced a $110 million Series B funding round led by Balderton Capital."
+     "quote": "NEW YORK, 23rd March — Dash0, the Agentic observability platform built natively on OpenTelemetry, today announced a $110 million Series B funding round led by Balderton Capital.",
+     "publishedLabel": "23 Mar 2026"
     },
     {
      "id": "s3",
@@ -1293,7 +1321,8 @@
      "title": "Dash0 targets $1bn valuation with Balderton-led funding round, reports say",
      "url": "https://sifted.eu/articles/dash0-targets-1bn-valuation-with-balderton-led-funding-round-reports-say",
      "publishedOn": "2026-02-27",
-     "quote": "The German-founded startup last raised a $35m Series A round in October"
+     "quote": "The German-founded startup last raised a $35m Series A round in October",
+     "publishedLabel": "27 Feb 2026"
     },
     {
      "id": "s4",
@@ -1301,7 +1330,8 @@
      "title": "Dash0 Raises $110M Series B at $1B Valuation to Build the AI Nervous System for Production",
      "url": "https://www.dash0.com/blog/dash0-raises-usd110m-series-b",
      "publishedOn": "2026-03-23",
-     "quote": "Founded in 2023 in Germany and headquartered in New York, Dash0 provides engineering teams with a single, open platform to ingest, correlate, and act on signals from any stack without vendor lock-in, proprietary agents, or unpredictable pricing."
+     "quote": "Founded in 2023 in Germany and headquartered in New York, Dash0 provides engineering teams with a single, open platform to ingest, correlate, and act on signals from any stack without vendor lock-in, proprietary agents, or unpredictable pricing.",
+     "publishedLabel": "23 Mar 2026"
     },
     {
      "id": "s5",
@@ -1309,7 +1339,8 @@
      "title": "Dash0 targets $1bn valuation with Balderton-led funding round, reports say",
      "url": "https://sifted.eu/articles/dash0-targets-1bn-valuation-with-balderton-led-funding-round-reports-say",
      "publishedOn": "2026-02-27",
-     "quote": "On Friday, Bloomberg reported the company was in talks with London-based Balderton Capital to lead a fresh round of funding, which would value Dash0 at $1bn, making it the latest European startup to achieve unicorn status."
+     "quote": "On Friday, Bloomberg reported the company was in talks with London-based Balderton Capital to lead a fresh round of funding, which would value Dash0 at $1bn, making it the latest European startup to achieve unicorn status.",
+     "publishedLabel": "27 Feb 2026"
     },
     {
      "id": "s6",
@@ -1317,7 +1348,8 @@
      "title": "Dash0 announces $9.5M seed financing, led by Accel, to simplify observability for developers everywhere",
      "url": "https://www.dash0.com/blog/dash0-seed-financing",
      "publishedOn": "2024-11-04",
-     "quote": "Mirko and his co-founders Ben Blackmore, Miel Donkers, Marcel Birkner, and Michele Mancioppi built Dash0 from the ground up on top of these standards to empower developers with an observability framework that is easier to install, integrate, and use than legacy alternatives."
+     "quote": "Mirko and his co-founders Ben Blackmore, Miel Donkers, Marcel Birkner, and Michele Mancioppi built Dash0 from the ground up on top of these standards to empower developers with an observability framework that is easier to install, integrate, and use than legacy alternatives.",
+     "publishedLabel": "4 Nov 2024"
     }
    ],
    "display": {
@@ -1372,7 +1404,7 @@
    ],
    "niche": "Language Technology",
    "thesis": {
-    "problem": "Free machine translation is tuned for gist, not for text a company would put its name to. Businesses working across European languages either paid human translators for every contract, support reply and manual, or accepted output that read as translated — and most general-purpose engines would not let regulated firms keep the text off a third party's training data.",
+    "problem": "Free machine translation is tuned for gist, not for text a company would put its name to. Businesses working across European languages either paid human translators for every contract, support reply and manual, or accepted output that read as translated. Most general-purpose engines would not let regulated firms keep the text off a third party's training data either.",
     "solution": "DeepL trains its own translation and writing models rather than fine-tuning someone else's, and sells them to businesses as an API and as apps that plug into the tools staff already use. Enterprise contracts cover data handling and glossaries so that terminology stays consistent, and the same model line has been extended into writing assistance and spoken translation."
    },
    "valuation": {
@@ -1465,7 +1497,8 @@
      "title": "AI language translation startup DeepL nabs $300M on a $2B valuation to focus on B2B growth",
      "url": "https://techcrunch.com/2024/05/22/deepl-the-ai-language-translation-startup-nabs-300m-on-a-2b-valuation-to-focus-on-b2b-growth/",
      "publishedOn": "2024-05-22",
-     "quote": "DeepL, which builds automated text translation and writing tools that compete against the likes of Google Translate and Grammarly, said on Wednesday that it has raised an additional $300 million. It is now valued at $2 billion, post-money."
+     "quote": "DeepL, which builds automated text translation and writing tools that compete against the likes of Google Translate and Grammarly, said on Wednesday that it has raised an additional $300 million. It is now valued at $2 billion, post-money.",
+     "publishedLabel": "22 May 2024"
     },
     {
      "id": "s2",
@@ -1473,7 +1506,8 @@
      "title": "DeepL, the AI-based language translator, raises over $100M at a $1B+ valuation",
      "url": "https://techcrunch.com/2023/01/11/deepl-the-ai-based-language-translator-raises-over-100m-at-a-1b-valuation/",
      "publishedOn": "2023-01-11",
-     "quote": "DeepL, a startup that provides instant translation-as-a-service both to businesses and to individuals — competing with Google, Bing and other online tools — has confirmed a fundraise at a €1 billion valuation (just over $1 billion at today’s rates)."
+     "quote": "DeepL, a startup that provides instant translation-as-a-service both to businesses and to individuals — competing with Google, Bing and other online tools — has confirmed a fundraise at a €1 billion valuation (just over $1 billion at today’s rates).",
+     "publishedLabel": "11 Jan 2023"
     },
     {
      "id": "s3",
@@ -1481,7 +1515,8 @@
      "title": "AI language startup DeepL could IPO in 2026, sources say",
      "url": "https://sifted.eu/articles/deepl-ipo-2026",
      "publishedOn": "2025-04-03",
-     "quote": "Founded in 2017, DeepL last year raised $300m in a round led by Index Ventures."
+     "quote": "Founded in 2017, DeepL last year raised $300m in a round led by Index Ventures.",
+     "publishedLabel": "3 Apr 2025"
     }
    ],
    "display": {
@@ -1538,8 +1573,8 @@
    ],
    "niche": "Climate Tech",
    "thesis": {
-    "problem": "A rooftop solar system costs a homeowner five figures up front, has to be specified, financed, installed, connected and maintained by four different trades, and pays for itself only over decades. That combination — a large cheque and a lot of coordination — is what keeps most roofs empty, not any doubt about the technology.",
-    "solution": "Enpal removes the cheque. It rents the whole system — panels, battery, wallbox, heat pump, and the software that schedules them — on a twenty-year subscription with no upfront cost, and trains its own installers rather than buying up existing ones. Financing that hardware is the actual business, which is why Enpal has raised far more in bank debt than in equity."
+    "problem": "A rooftop solar system costs a homeowner five figures up front, has to be specified, financed, installed, connected and maintained by four different trades, and pays for itself only over decades. That combination, a large cheque and a lot of coordination, is what keeps most roofs empty, not any doubt about the technology.",
+    "solution": "Enpal removes the cheque. It rents the whole system, panels, battery, wallbox, heat pump and the software that schedules them, on a twenty-year subscription with no upfront cost, and trains its own installers rather than buying up existing ones. Financing that hardware is the actual business, which is why Enpal has raised far more in bank debt than in equity."
    },
    "valuation": {
     "amount": 2200,
@@ -1658,7 +1693,8 @@
      "title": "Tesla backer bets on solar unicorn Enpal’s €215m Series D",
      "url": "https://sifted.eu/articles/enpal-215m-solar-panels-news",
      "publishedOn": "2023-01-09",
-     "quote": "Berlin-based solar startup Enpal is today announcing a €215m Series D, in a round led by US investor TPG Rise Climate with participation from early Tesla backer Westly Group. It values the six-year-old startup at €2.2bn."
+     "quote": "Berlin-based solar startup Enpal is today announcing a €215m Series D, in a round led by US investor TPG Rise Climate with participation from early Tesla backer Westly Group. It values the six-year-old startup at €2.2bn.",
+     "publishedLabel": "9 Jan 2023"
     },
     {
      "id": "s2",
@@ -1666,7 +1702,8 @@
      "title": "Enpal closes out Series C with $174M from SoftBank for tech to make it easier for homeowners to make the switch to solar energy",
      "url": "https://techcrunch.com/2021/10/17/enpal-closes-out-series-c-with-174m-from-softbank-for-tech-to-make-it-easier-for-homeowners-to-make-the-switch-to-solar-energy/",
      "publishedOn": "2021-10-17",
-     "quote": "The funding closes out its Series C at €250 million ($290 million), including €100 million that Enpal raised earlier this year from investors that included HV Capital and SolarCity co-founder Peter Rive. The investment values Enpal at €950 million ($1.1 billion) post-money, the company has confirmed."
+     "quote": "The funding closes out its Series C at €250 million ($290 million), including €100 million that Enpal raised earlier this year from investors that included HV Capital and SolarCity co-founder Peter Rive. The investment values Enpal at €950 million ($1.1 billion) post-money, the company has confirmed.",
+     "publishedLabel": "17 Oct 2021"
     },
     {
      "id": "s3",
@@ -1674,7 +1711,8 @@
      "title": "Enpal secures €110m round led by US PE firm TPG",
      "url": "https://sifted.eu/articles/enpal-e110m-tpg-equity",
      "publishedOn": "2025-04-07",
-     "quote": "German startup Enpal, which supplies green energy tech to consumers, has raised €110m, led by private equity firm TPG."
+     "quote": "German startup Enpal, which supplies green energy tech to consumers, has raised €110m, led by private equity firm TPG.",
+     "publishedLabel": "7 Apr 2025"
     },
     {
      "id": "s4",
@@ -1682,7 +1720,8 @@
      "title": "Enpal secures €110m round led by US PE firm TPG",
      "url": "https://sifted.eu/articles/enpal-e110m-tpg-equity",
      "publishedOn": "2025-04-07",
-     "quote": "Enpal declined to comment on the valuation the round gives the company."
+     "quote": "Enpal declined to comment on the valuation the round gives the company.",
+     "publishedLabel": "7 Apr 2025"
     }
    ],
    "display": {
@@ -1738,7 +1777,7 @@
    ],
    "niche": "Car Subscription",
    "thesis": {
-    "problem": "Owning a car means a purchase or a three-year lease, plus insurance, registration, road tax, servicing and a resale problem at the end — a bundle of separate contracts that has to be assembled by the buyer and cannot be undone early. For anyone unsure how long they need a car, or whether they want an electric one, the commitment is the product's worst feature.",
+    "problem": "Owning a car means a purchase or a three-year lease, plus insurance, registration, road tax, servicing and a resale problem at the end, a bundle of separate contracts that has to be assembled by the buyer and cannot be undone early. For anyone unsure how long they need a car, or whether they want an electric one, the commitment is the product's worst feature.",
     "solution": "FINN sells the car as a subscription: one monthly price covering insurance, registration, tax, maintenance and servicing, ordered online in minutes from more than 25 manufacturers' ranges and delivered to the door. The company carries the fleet, the residual-value risk and the financing, which is why its scale shows up in debt facilities alongside equity, and why the operational question is utilisation rather than sales."
    },
    "valuation": {
@@ -1812,7 +1851,7 @@
     },
     {
      "name": "Max-Josef Meier",
-     "role": "Co-founder; CEO until April 2023",
+     "role": "Co-founder, CEO until April 2023",
      "current": false
     }
    ],
@@ -1834,7 +1873,8 @@
      "title": "FINN Raises €140 Million and Achieves Unicorn Status",
      "url": "https://portageinvest.com/blog/finn-raises-e140-million-and-achieves-unicorn-status/",
      "publishedOn": "2026-06-24",
-     "quote": "Following the successful completion of the Series D round, FINN’s valuation has surpassed €1 billion, officially elevating the company to unicorn status."
+     "quote": "Following the successful completion of the Series D round, FINN’s valuation has surpassed €1 billion, officially elevating the company to unicorn status.",
+     "publishedLabel": "24 Jun 2026"
     },
     {
      "id": "s2",
@@ -1842,7 +1882,8 @@
      "title": "FINN Raises €140 Million and Achieves Unicorn Status",
      "url": "https://portageinvest.com/blog/finn-raises-e140-million-and-achieves-unicorn-status/",
      "publishedOn": "2026-06-24",
-     "quote": "Munich, June 24, 2026 – FINN, Germany’s leading car subscription platform, today announced the successful closing of its Series D funding round of nearly €100 million, marking another major milestone in the company’s growth journey."
+     "quote": "Munich, June 24, 2026 – FINN, Germany’s leading car subscription platform, today announced the successful closing of its Series D funding round of nearly €100 million, marking another major milestone in the company’s growth journey.",
+     "publishedLabel": "24 Jun 2026"
     },
     {
      "id": "s3",
@@ -1850,7 +1891,8 @@
      "title": "Car subscription company Finn becomes Germany’s newest unicorn",
      "url": "https://sifted.eu/articles/finn-germanys-newest-unicorn",
      "publishedOn": "2026-06-24",
-     "quote": "Munich-based car subscription company Finn has become Germany’s newest unicorn after announcing a €140m Series D funding round on Wednesday."
+     "quote": "Munich-based car subscription company Finn has become Germany’s newest unicorn after announcing a €140m Series D funding round on Wednesday.",
+     "publishedLabel": "24 Jun 2026"
     },
     {
      "id": "s4",
@@ -1858,7 +1900,8 @@
      "title": "FINN Raises €140 Million and Achieves Unicorn Status",
      "url": "https://portageinvest.com/blog/finn-raises-e140-million-and-achieves-unicorn-status/",
      "publishedOn": "2026-06-24",
-     "quote": "FINN is Germany’s leading car subscription platform. Founded in Munich in 2019, the company enables customers to subscribe to vehicles from more than 25 brands entirely online, with insurance, financing, registration, taxes, and maintenance all included in one monthly payment."
+     "quote": "FINN is Germany’s leading car subscription platform. Founded in Munich in 2019, the company enables customers to subscribe to vehicles from more than 25 brands entirely online, with insurance, financing, registration, taxes, and maintenance all included in one monthly payment.",
+     "publishedLabel": "24 Jun 2026"
     },
     {
      "id": "s5",
@@ -1866,7 +1909,8 @@
      "title": "FINN sammelt 140 Millionen Euro ein und erreicht Unicorn-Status",
      "url": "https://www.finn.com/de-DE/presse/series-d",
      "publishedOn": "2026-06-24",
-     "quote": "darunter Planet First Partners, Korelya Capital, White Star Capital, HV Capital, Picus Capital und Keen Venture Partners."
+     "quote": "darunter Planet First Partners, Korelya Capital, White Star Capital, HV Capital, Picus Capital und Keen Venture Partners.",
+     "publishedLabel": "24 Jun 2026"
     },
     {
      "id": "s6",
@@ -1874,7 +1918,8 @@
      "title": "CFO und Co-Founder Max Beyer verlässt FINN auf eigenen Wunsch",
      "url": "https://www.finn.com/de-DE/presse/max-beyer-ruecktritt",
      "publishedOn": "2024-12-20",
-     "quote": "Beyer verlässt das Unternehmen am 31.12.2024 auf eigenen Wunsch, um nun mehr seiner Zeit seinem kürzlich geborenen Nachwuchs zu widmen."
+     "quote": "Beyer verlässt das Unternehmen am 31.12.2024 auf eigenen Wunsch, um nun mehr seiner Zeit seinem kürzlich geborenen Nachwuchs zu widmen.",
+     "publishedLabel": "20 Dec 2024"
     }
    ],
    "display": {
@@ -1932,7 +1977,7 @@
    "niche": "Long-Distance Travel",
    "thesis": {
     "problem": "Long-distance coach travel was the cheapest way to cross a country and the least usable: hundreds of small regional operators, each with its own timetable, its own ticket office and no way for a passenger to find, compare or book a route that crossed two of them. Germany did not even permit intercity coach competition with the railway until 2013.",
-    "solution": "Flix owns almost no vehicles. It runs the network — planning routes, setting prices, selling tickets and carrying the brand — while independent bus and rail companies supply the drivers and the fleet and get a steady stream of passengers in return. The same platform has since been laid over trains as FlixTrain and over acquired operators abroad, including Türkiye's Kâmil Koç and the American intercity institution Greyhound."
+    "solution": "Flix owns almost no vehicles. It runs the network, planning routes, setting prices, selling tickets and carrying the brand, while independent bus and rail companies supply the drivers and the fleet and get a steady stream of passengers in return. The same platform has since been laid over trains as FlixTrain and over acquired operators abroad, including Türkiye's Kâmil Koç and the American intercity institution Greyhound."
    },
    "valuation": {
     "amount": 3000,
@@ -2055,7 +2100,7 @@
     },
     {
      "name": "Jochen Engert",
-     "role": "Co-founder; Deputy Chairman of the Supervisory Board",
+     "role": "Co-founder and Deputy Chairman of the Supervisory Board",
      "current": true
     }
    ],
@@ -2080,7 +2125,8 @@
      "title": "FlixMobility raises $650M+ at a $3B valuation to double down on buses and other transport in the US",
      "url": "https://techcrunch.com/2021/06/02/flixmobility-raises-650m-at-a-3b-valuation-to-double-down-on-buses-and-other-transport-in-the-us/",
      "publishedOn": "2021-06-02",
-     "quote": "FlixMobility, the parent company of the FlixBus coach network and the FlixTrain rail service, has closed more than $650 million in a Series G round of funding that values the Munich-based company at over $3 billion."
+     "quote": "FlixMobility, the parent company of the FlixBus coach network and the FlixTrain rail service, has closed more than $650 million in a Series G round of funding that values the Munich-based company at over $3 billion.",
+     "publishedLabel": "2 Jun 2021"
     },
     {
      "id": "s2",
@@ -2088,7 +2134,8 @@
      "title": "FlixMobility raises over $650M in Funding at $3B Valuation planning further global expansion",
      "url": "https://corporate.flix.com/press_releases/flixmobility-raises-over-650m-in-funding-at-3b-valuation-planning-further-global-expansion/",
      "publishedOn": "2021-06-02",
-     "quote": "The company’s new valuation of more than $3 billion is significantly higher than the valuation of the last financing round in 2019, underlining the strong investor support by its founders, existing investors include General Atlantic, Permira, TCV, HV Capital, Blackrock, Baillie Gifford and SilverLake for FlixMobility and the success of its unique business model."
+     "quote": "The company’s new valuation of more than $3 billion is significantly higher than the valuation of the last financing round in 2019, underlining the strong investor support by its founders, existing investors include General Atlantic, Permira, TCV, HV Capital, Blackrock, Baillie Gifford and SilverLake for FlixMobility and the success of its unique business model.",
+     "publishedLabel": "2 Jun 2021"
     },
     {
      "id": "s3",
@@ -2096,7 +2143,8 @@
      "title": "FlixMobility extends Series F at $2B+ valuation as it gears up to add cars to its bus and train network",
      "url": "https://techcrunch.com/2019/08/08/flixmobility-extends-series-f-at-2b-valuation-as-it-gears-up-to-add-cars-to-its-bus-and-train-network/",
      "publishedOn": "2019-08-08",
-     "quote": "Back in July it emerged that FlixMobility — the company behind the network of ubiquitous green FlixBus coaches that crisscross Europe and parts of the U.S. — had raised about €500 million in the largest-ever round of funding for a German tech company."
+     "quote": "Back in July it emerged that FlixMobility — the company behind the network of ubiquitous green FlixBus coaches that crisscross Europe and parts of the U.S. — had raised about €500 million in the largest-ever round of funding for a German tech company.",
+     "publishedLabel": "8 Aug 2019"
     },
     {
      "id": "s4",
@@ -2104,7 +2152,8 @@
      "title": "FlixMobility extends Series F at $2B+ valuation as it gears up to add cars to its bus and train network",
      "url": "https://techcrunch.com/2019/08/08/flixmobility-extends-series-f-at-2b-valuation-as-it-gears-up-to-add-cars-to-its-bus-and-train-network/",
      "publishedOn": "2019-08-08",
-     "quote": "Engert would not specify the exact size of the round, but he confirmed that it was at the same valuation as the first close of the Series F (which was just over $2 billion), and that the extra funding was “not double” the earlier amount, “but substantial.”"
+     "quote": "Engert would not specify the exact size of the round, but he confirmed that it was at the same valuation as the first close of the Series F (which was just over $2 billion), and that the extra funding was “not double” the earlier amount, “but substantial.”",
+     "publishedLabel": "8 Aug 2019"
     },
     {
      "id": "s5",
@@ -2112,7 +2161,8 @@
      "title": "EQT, German Tycoon Buy €1 Billion Stake in Greyhound Owner Flix",
      "url": "https://www.bloomberg.com/news/articles/2024-07-04/eqt-german-tycoon-buy-1-billion-stake-in-greyhound-owner-flix",
      "publishedOn": "2024-07-04",
-     "quote": "They are investing around €1 billion ($1.2 billion) in Flix in a deal valuing the business at more than €3 billion, people with knowledge of the matter said."
+     "quote": "They are investing around €1 billion ($1.2 billion) in Flix in a deal valuing the business at more than €3 billion, people with knowledge of the matter said.",
+     "publishedLabel": "4 Jul 2024"
     },
     {
      "id": "s6",
@@ -2120,7 +2170,8 @@
      "title": "FlixMobility raises over $650M in Funding at $3B Valuation planning further global expansion",
      "url": "https://corporate.flix.com/press_releases/flixmobility-raises-over-650m-in-funding-at-3b-valuation-planning-further-global-expansion/",
      "publishedOn": "2021-06-02",
-     "quote": "The structured funding round, based on a mix of equity and debt, totals more than $650 million."
+     "quote": "The structured funding round, based on a mix of equity and debt, totals more than $650 million.",
+     "publishedLabel": "2 Jun 2021"
     },
     {
      "id": "s7",
@@ -2128,7 +2179,8 @@
      "title": "Flix announces successful closing of investment from EQT and Kühne Holding – new Supervisory Board members appointed",
      "url": "https://corporate.flix.com/press_releases/flix-announces-successful-closing-of-investment-from-eqt-and-kuehne-holding/",
      "publishedOn": "2024-11-28",
-     "quote": "EQT, the global investment organization, together with Kühne Holding, representing one of the world’s leading logistics entrepreneurs and investors, acquired a 35% minority stake in Flix."
+     "quote": "EQT, the global investment organization, together with Kühne Holding, representing one of the world’s leading logistics entrepreneurs and investors, acquired a 35% minority stake in Flix.",
+     "publishedLabel": "28 Nov 2024"
     },
     {
      "id": "s8",
@@ -2136,7 +2188,8 @@
      "title": "EQT and Kühne Holding invest in Flix, the global travel company",
      "url": "https://eqtgroup.com/news/eqt-and-kuhne-holding-invest-in-flix-the-global-travel-company-2024-07-04",
      "publishedOn": "2024-07-04",
-     "quote": "In addition to a primary investment in Flix, EQT Future and Kühne Holding will acquire shares from existing shareholders to build a long-term anchor shareholding in Flix."
+     "quote": "In addition to a primary investment in Flix, EQT Future and Kühne Holding will acquire shares from existing shareholders to build a long-term anchor shareholding in Flix.",
+     "publishedLabel": "4 Jul 2024"
     }
    ],
    "display": {
@@ -2199,7 +2252,7 @@
    ],
    "niche": "Fusion Energy",
    "thesis": {
-    "problem": "A grid built on wind and solar needs something firm underneath it that is not gas, and the candidates are few. Fission carries a waste and siting problem Germany has already legislated its way out of; fusion has spent seventy years being thirty years away. What changed is that the US National Ignition Facility got more energy out of a laser-driven fusion target than went into it, which turned the question from whether the physics works into whether anyone can build a machine that does it several times a second, commercially.",
+    "problem": "A grid built on wind and solar needs something firm underneath it that is not gas, and the candidates are few. Fission carries a waste and siting problem Germany has already legislated its way out of, and fusion has spent seventy years being thirty years away. What changed is that the US National Ignition Facility got more energy out of a laser-driven fusion target than went into it, which turned the question from whether the physics works into whether anyone can build a machine that does it several times a second, commercially.",
     "solution": "Focused Energy pursues inertial confinement: banks of extremely powerful lasers compress a fuel pellet until it fuses, repeated at a rate that makes a power station rather than an experiment. It is a spinout of the Technical University of Darmstadt, it bought two of the world's most powerful existing lasers rather than waiting to build them, and it plans its first laser fusion plant on the site of the decommissioned Biblis nuclear station in Hesse by the mid-2030s."
    },
    "valuation": {
@@ -2210,7 +2263,7 @@
     "round": "Series A",
     "source": "s3",
     "undisclosed": {
-     "note": "No source states a figure, and this record spent two batches establishing that. The company's own release on the $240m Series A claims only that it “makes it the most valuable fusion company in Europe” — a superlative, not a number — and TechCrunch's account of the same round, read in full, carries no valuation either. Secondary write-ups outside the allowlist put it “close to one billion dollars”, which if accurate would be *below* the threshold and would keep the company out; that is why this entry stayed excluded until an allowlisted publication said otherwise. Gründerszene now does, twice over: in its round-up of the seven German startups that became unicorns in the first half of 2026, and again in the sentence quoted here. Membership is sourced; the figure is not, and this register will not manufacture one from a superlative.",
+     "note": "No source states a figure, and this record spent two batches establishing that. The company's own release on the $240m Series A claims only that it “makes it the most valuable fusion company in Europe”, a superlative rather than a number, and TechCrunch's account of the same round, read in full, carries no valuation either. Secondary write-ups outside the allowlist put it “close to one billion dollars”, which if accurate would be below the threshold and would keep the company out, so this entry stayed excluded until an allowlisted publication said otherwise. Gründerszene now does, twice over, in its round-up of the seven German startups that became unicorns in the first half of 2026 and again in the sentence quoted here. Membership is sourced. The figure is not, and this register will not manufacture one from a superlative.",
      "source": "s3"
     }
    },
@@ -2243,7 +2296,7 @@
      ],
      "source": "s1",
      "undisclosed": {
-      "note": "The crossing round, and no price was attached to it by anyone. Handelsblatt and TechCrunch both cover the round without a valuation; Gründerszene reports the same round as the moment the company passed a billion — “knackte die Milliarden-Bewertung” — without saying what the figure was. Note that the round is dated here to May, when the company announced it and the German press reported it, not to TechCrunch's June write-up.",
+      "note": "The crossing round, and no price was attached to it by anyone. Handelsblatt and TechCrunch both cover the round without a valuation, and Gründerszene reports the same round as the moment the company passed a billion, “knackte die Milliarden-Bewertung”, without saying what the figure was. The round is dated here to May, when the company announced it and the German press reported it, not to TechCrunch's June write-up.",
       "source": "s3"
      },
      "dateLabel": "May 2026",
@@ -2270,7 +2323,8 @@
      "title": "Focused Energy raises whopping $240M Series A for laser-powered fusion tech",
      "url": "https://techcrunch.com/2026/06/02/focused-energy-raises-whopping-240m-series-a-for-laser-powered-fusion-tech/",
      "publishedOn": "2026-06-02",
-     "quote": "Focused Energy recently raised an oversubscribed $240 million Series A round, one of the largest early-stage rounds for a fusion power startup."
+     "quote": "Focused Energy recently raised an oversubscribed $240 million Series A round, one of the largest early-stage rounds for a fusion power startup.",
+     "publishedLabel": "2 Jun 2026"
     },
     {
      "id": "s2",
@@ -2278,7 +2332,8 @@
      "title": "Focused Energy raises whopping $240M Series A for laser-powered fusion tech",
      "url": "https://techcrunch.com/2026/06/02/focused-energy-raises-whopping-240m-series-a-for-laser-powered-fusion-tech/",
      "publishedOn": "2026-06-02",
-     "quote": "The round also included participation from the German Federal Agency for Breakthrough Innovation (SPRIND), Prime Movers Lab, and the European Innovation Council Fund."
+     "quote": "The round also included participation from the German Federal Agency for Breakthrough Innovation (SPRIND), Prime Movers Lab, and the European Innovation Council Fund.",
+     "publishedLabel": "2 Jun 2026"
     },
     {
      "id": "s3",
@@ -2286,7 +2341,8 @@
      "title": "Sieben neue Unicorns: Diese deutschen Startups sind jetzt Milliarden wert",
      "url": "https://www.businessinsider.de/gruenderszene/sieben-neue-unicorns-diese-deutschen-startups-sind-jetzt-milliarden-wert/",
      "publishedOn": "2026-07-03",
-     "quote": "Im Mai schloss sich das deutsche Fusions-Startup Focused Energy an, sichert sich 240 Millionen US-Dollar und knackte die Milliarden-Bewertung."
+     "quote": "Im Mai schloss sich das deutsche Fusions-Startup Focused Energy an, sichert sich 240 Millionen US-Dollar und knackte die Milliarden-Bewertung.",
+     "publishedLabel": "3 Jul 2026"
     },
     {
      "id": "s4",
@@ -2294,7 +2350,8 @@
      "title": "Focused Energy raises whopping $240M Series A for laser-powered fusion tech",
      "url": "https://techcrunch.com/2026/06/02/focused-energy-raises-whopping-240m-series-a-for-laser-powered-fusion-tech/",
      "publishedOn": "2026-06-02",
-     "quote": "The new round, announced last week, brings the company's total private capital raised to $300 million, the company told TechCrunch."
+     "quote": "The new round, announced last week, brings the company's total private capital raised to $300 million, the company told TechCrunch.",
+     "publishedLabel": "2 Jun 2026"
     },
     {
      "id": "s5",
@@ -2302,7 +2359,8 @@
      "title": "Mapping Europe's nuclear fusion industry",
      "url": "https://sifted.eu/articles/mapping-europes-nuclear-fusion-industry",
      "publishedOn": "2023-07-27",
-     "quote": "Focused Energy is a spinout from Germany's Technical University of Darmstadt developing laser-based nuclear fusion."
+     "quote": "Focused Energy is a spinout from Germany's Technical University of Darmstadt developing laser-based nuclear fusion.",
+     "publishedLabel": "27 Jul 2023"
     },
     {
      "id": "s6",
@@ -2310,7 +2368,8 @@
      "title": "240 Millionen für deutsches Fusions-Startup: Europas neuer Energie-Gigant?",
      "url": "https://www.businessinsider.de/gruenderszene/240-millionen-fuer-deutsches-fusions-startup-europas-neuer-energie-gigant/",
      "publishedOn": "2026-05-28",
-     "quote": "Das Darmstädter Fusions-Startup Focused Energy"
+     "quote": "Das Darmstädter Fusions-Startup Focused Energy",
+     "publishedLabel": "28 May 2026"
     }
    ],
    "display": {
@@ -2472,7 +2531,8 @@
      "title": "Forto raises $240M in funding round led by SoftBank, taking its valuation to $1.2B",
      "url": "https://techcrunch.com/2021/06/23/forto-raises-240m-in-funding-round-led-by-softbank-taking-its-valuation-to-1-2bn/",
      "publishedOn": "2021-06-23",
-     "quote": "It’s now raised $240 million in a round led by SoftBank Vision Fund 2 to expand its trade shipments between China and Europe. Forto manages shipping containers from origin to destination. SoftBank is also hedging its bets after investing in China’s Full Truck Alliance (YMM.N), which plans a $20 billion IPO. That means Forto’s valuation is close to $1.2 billion, after it’s raised a total of $360 million."
+     "quote": "It’s now raised $240 million in a round led by SoftBank Vision Fund 2 to expand its trade shipments between China and Europe. Forto manages shipping containers from origin to destination. SoftBank is also hedging its bets after investing in China’s Full Truck Alliance (YMM.N), which plans a $20 billion IPO. That means Forto’s valuation is close to $1.2 billion, after it’s raised a total of $360 million.",
+     "publishedLabel": "23 Jun 2021"
     },
     {
      "id": "s2",
@@ -2480,7 +2540,8 @@
      "title": "Forto Announces New Investment of $250 Million to Accelerate International Expansion and Broadening of Product Offering",
      "url": "https://forto.com/en/press-releases/forto-announces-new-investment-of-250-million-to-accelerate-international-expansion-and-broadening-of-product-offering/",
      "publishedOn": "2022-03-07",
-     "quote": "Forto, a leading provider of digitized freight forwarding and supply chain solutions, today announced that it has raised $250 Million in a pre-emptive Series D investment round led by Disruptive. Also participating in the round are existing investors including Softbank Vision Fund 2, G Squared, Northzone, Unbound, and A.P. Moeller Holding. The current round places the company valuation at $2.1 billion."
+     "quote": "Forto, a leading provider of digitized freight forwarding and supply chain solutions, today announced that it has raised $250 Million in a pre-emptive Series D investment round led by Disruptive. Also participating in the round are existing investors including Softbank Vision Fund 2, G Squared, Northzone, Unbound, and A.P. Moeller Holding. The current round places the company valuation at $2.1 billion.",
+     "publishedLabel": "7 Mar 2022"
     },
     {
      "id": "s3",
@@ -2488,7 +2549,8 @@
      "title": "Forto Announces New Investment of $250 Million to Accelerate International Expansion and Broadening of Product Offering",
      "url": "https://forto.com/en/press-releases/forto-announces-new-investment-of-250-million-to-accelerate-international-expansion-and-broadening-of-product-offering/",
      "publishedOn": "2022-03-07",
-     "quote": "The new funding builds upon the company’s significant financial position, with the total investment raised over $600 million to date."
+     "quote": "The new funding builds upon the company’s significant financial position, with the total investment raised over $600 million to date.",
+     "publishedLabel": "7 Mar 2022"
     },
     {
      "id": "s4",
@@ -2496,7 +2558,8 @@
      "title": "Berlin’s Forto notches $250 million taking its valuation to $2.1 billion",
      "url": "https://tech.eu/2022/03/08/berlins-logistics-tech-startup-forto-notches-250-million-taking-its-valuation-to-21-billion/",
      "publishedOn": "2022-03-08",
-     "quote": "Founded in 2016 as FreightHub by Ferry Heilemann, Erik Muttersbach, Michael Wax and Fabian Heilemann, the platform is on a mission to build better logistics and supply chain experiences."
+     "quote": "Founded in 2016 as FreightHub by Ferry Heilemann, Erik Muttersbach, Michael Wax and Fabian Heilemann, the platform is on a mission to build better logistics and supply chain experiences.",
+     "publishedLabel": "8 Mar 2022"
     }
    ],
    "display": {
@@ -2730,7 +2793,8 @@
      "title": "Helsing raises US$1.8bn in Series E",
      "url": "https://helsing.ai/newsroom/helsing-raises-1-8bn-in-series-e",
      "publishedOn": "2026-07-13",
-     "quote": "Helsing, Europe’s leading defence AI company, today announces it has raised $1.8bn in a Series E, valuing the company at US$18bn."
+     "quote": "Helsing, Europe’s leading defence AI company, today announces it has raised $1.8bn in a Series E, valuing the company at US$18bn.",
+     "publishedLabel": "13 Jul 2026"
     },
     {
      "id": "s2",
@@ -2738,7 +2802,8 @@
      "title": "Helsing raises €209m Series B to bolster Defence AI Capabilities for Democracies",
      "url": "https://helsing.ai/newsroom/helsing-raises-euro209m-series-b-to-bolster-defence-ai-capabilities-for-democracies",
      "publishedOn": "2023-09-14",
-     "quote": "Munich, September, 14 2023 – Defence AI company Helsing today announced that it has raised €209m in a Series B funding round led by General Catalyst."
+     "quote": "Munich, September, 14 2023 – Defence AI company Helsing today announced that it has raised €209m in a Series B funding round led by General Catalyst.",
+     "publishedLabel": "14 Sep 2023"
     },
     {
      "id": "s3",
@@ -2746,7 +2811,8 @@
      "title": "Defense AI startup Helsing breaks the record for European AI, raising a $223M Series B",
      "url": "https://techcrunch.com/2023/09/14/defence-ai-startup-helsing-breaks-the-record-for-european-ai-raising-a-223m-series-b/",
      "publishedOn": "2023-09-14",
-     "quote": "Helsing, a “Defense AI” startup backed by Spotify founder Daniel Ek which had previously raised €102.5 million, has today pulled in another €209 million ($223 million) in a Series B funding round led by General Catalyst. Swedish heavy industry and defense group Saab is joining as a strategic investor, deepening what was previously an existing partnership. The investment could potentially make Helsing the largest European AI company and also the largest European defense tech unicorn. In June, France’s Mistral AI raised a $113 million seed round at a $260 million valuation. The pre-money valuation for Helsing was said to be €1.5 billion, but post-money would put that figure at over €1.7 billion."
+     "quote": "Helsing, a “Defense AI” startup backed by Spotify founder Daniel Ek which had previously raised €102.5 million, has today pulled in another €209 million ($223 million) in a Series B funding round led by General Catalyst. Swedish heavy industry and defense group Saab is joining as a strategic investor, deepening what was previously an existing partnership. The investment could potentially make Helsing the largest European AI company and also the largest European defense tech unicorn. In June, France’s Mistral AI raised a $113 million seed round at a $260 million valuation. The pre-money valuation for Helsing was said to be €1.5 billion, but post-money would put that figure at over €1.7 billion.",
+     "publishedLabel": "14 Sep 2023"
     },
     {
      "id": "s4",
@@ -2754,7 +2820,8 @@
      "title": "Helsing raises €600m to invest in European technological sovereignty",
      "url": "https://helsing.ai/newsroom/helsing-raises-eur600m-to-invest-in-european-technological-sovereignty",
      "publishedOn": "2025-06-17",
-     "quote": "Today’s announcement follows Helsing’s Series C funding of €450m in July 2024, involving General Catalyst, Elad Gil, Accel, Saab, Lightspeed Ventures, Plural and Greenoaks."
+     "quote": "Today’s announcement follows Helsing’s Series C funding of €450m in July 2024, involving General Catalyst, Elad Gil, Accel, Saab, Lightspeed Ventures, Plural and Greenoaks.",
+     "publishedLabel": "17 Jun 2025"
     },
     {
      "id": "s6",
@@ -2762,7 +2829,8 @@
      "title": "Helsing raises €209m Series B to bolster Defence AI Capabilities for Democracies",
      "url": "https://helsing.ai/newsroom/helsing-raises-euro209m-series-b-to-bolster-defence-ai-capabilities-for-democracies",
      "publishedOn": "2023-09-14",
-     "quote": "This funding round follows a previous Series A (€102.5m) led by Prima Materia, an investment company founded by Daniel Ek, co-founder and CEO of Spotify."
+     "quote": "This funding round follows a previous Series A (€102.5m) led by Prima Materia, an investment company founded by Daniel Ek, co-founder and CEO of Spotify.",
+     "publishedLabel": "14 Sep 2023"
     },
     {
      "id": "s7",
@@ -2770,7 +2838,8 @@
      "title": "German AI defence startup Helsing raises €450m as defence tech heats up with VCs",
      "url": "https://sifted.eu/articles/ai-defence-helsing-450-million-fundraise-news",
      "publishedOn": "2024-07-11",
-     "quote": "“European security is at a crossroads,” and “speed is of the essence. This new funding round allows us to further up the tempo and invest in large-scale R&D and capabilities across all domains,” Helsing’s three founders, Niklas Köhler, Torsten Reil and Gundbert Scherf, said in a statement."
+     "quote": "“European security is at a crossroads,” and “speed is of the essence. This new funding round allows us to further up the tempo and invest in large-scale R&D and capabilities across all domains,” Helsing’s three founders, Niklas Köhler, Torsten Reil and Gundbert Scherf, said in a statement.",
+     "publishedLabel": "11 Jul 2024"
     },
     {
      "id": "s5",
@@ -2778,7 +2847,8 @@
      "title": "Helsing raises €600M, more than doubling valuation to €12BN",
      "url": "https://tech.eu/2025/06/17/helsing-raises-600-million-elevating-valuation-to-eur12bn/",
      "publishedOn": "2025-06-17",
-     "quote": "Helsing, the German defence tech startup, has raised €600 million, more than doubling its valuation to €12bn, in a Series D funding round led by Spotify's Daniel Ek."
+     "quote": "Helsing, the German defence tech startup, has raised €600 million, more than doubling its valuation to €12bn, in a Series D funding round led by Spotify's Daniel Ek.",
+     "publishedLabel": "17 Jun 2025"
     }
    ],
    "display": {
@@ -2843,7 +2913,7 @@
    ],
    "niche": "Launch Vehicles",
    "thesis": {
-    "problem": "Europe can build satellites and cannot reliably launch them. Ariane 6 is sized for large payloads on a national cadence, Soyuz stopped being available in 2022, and the small and medium satellites that make up most of what Europe now wants in orbit — earth observation, connectivity, and increasingly sovereign defence capacity — have had to buy rides from American providers on American schedules and American terms.",
+    "problem": "Europe can build satellites and cannot reliably launch them. Ariane 6 is sized for large payloads on a national cadence, Soyuz stopped being available in 2022, and the small and medium satellites that make up most of what Europe now wants in orbit, earth observation, connectivity and increasingly sovereign defence capacity, have had to buy rides from American providers on American schedules and American terms.",
     "solution": "Isar Aerospace builds Spectrum, a two-stage rocket sized for the payloads Europe actually flies rather than the ones a national programme was designed around, and manufactures it itself: engines, tanks and avionics in-house, additive manufacturing rather than a supplier chain across a dozen countries, on the argument that vertical integration is what makes launch cheap and the cadence predictable. It is a spinout of the Technical University of Munich and launches from Andøya in northern Norway."
    },
    "valuation": {
@@ -2854,7 +2924,7 @@
     "round": "Convertible bond",
     "source": "s4",
     "undisclosed": {
-     "note": "Nobody has published a figure for Isar Aerospace, and the register spent a batch establishing that rather than assuming it. Its own release on the €270m Series D was opened and read end to end — round, investors, factory, headcount, no valuation anywhere — and Sifted's account of the same round states none either. The €2bn widely attached to the company traces to a Bloomberg piece whose own URL slug is “isar-aerospace-in-talks-to-raise-250-million-ahead-of-launch”: talks, about a smaller round that was superseded, and all three Wayback captures of that URL are themselves HTTP 403 block pages. What is stated plainly, by an allowlisted publication, is the status and the month: TechCrunch, listing Europe's new unicorns of 2025. That sentence carries no numeral, which is exactly why this record exists in this shape.",
+     "note": "Nobody has published a figure for Isar Aerospace, and the register spent a batch establishing that rather than assuming it. Its own release on the €270m Series D was read end to end, round, investors, factory and headcount, with no valuation anywhere, and Sifted's account of the same round states none either. The €2bn widely attached to the company traces to a Bloomberg piece whose own URL slug is “isar-aerospace-in-talks-to-raise-250-million-ahead-of-launch”: talks, about a smaller round that was superseded, and all three Wayback captures of that URL are themselves HTTP 403 block pages. What is stated plainly, by an allowlisted publication, is the status and the month: TechCrunch, listing Europe's new unicorns of 2025. That sentence carries no numeral, which is exactly why this record exists in this shape.",
      "source": "s4"
     }
    },
@@ -2930,7 +3000,7 @@
      ],
      "source": "s4",
      "undisclosed": {
-      "note": "The crossing, and an unusual one: the instrument that carried Isar Aerospace over the threshold was a convertible bond rather than a priced equity round, so there is no post-money to disclose and nobody has disclosed one. TechCrunch states the fact and the month in the same sentence as the instrument, which is what this record rests on. Note that the company's own university says the same thing — TUM's press release is titled “Isar Aerospace becomes a unicorn” — but a university announcing its spinout is not on the register's allowlist, so it is mentioned here and not cited.",
+      "note": "The crossing, and an unusual one: the instrument that carried Isar Aerospace over the threshold was a convertible bond rather than a priced equity round, so there is no post-money to disclose and nobody has disclosed one. TechCrunch states the fact and the month in the same sentence as the instrument, which is what this record rests on. The company's own university says the same thing, since TUM's press release is titled “Isar Aerospace becomes a unicorn”, but a university announcing its spinout is not on the register's allowlist, so it is mentioned here and not cited.",
       "source": "s4"
      },
      "dateLabel": "Jun 2025",
@@ -2996,7 +3066,8 @@
      "title": "Germany's Isar Aerospace raises $91M to get its satellite launch vehicle off the ground",
      "url": "https://techcrunch.com/2020/12/08/germanys-isar-aerospace-raises-91m-to-get-its-satellite-launch-vehicle-off-the-ground/",
      "publishedOn": "2020-12-08",
-     "quote": "Isar Aerospace, which is building a micro-satellite launcher significantly smaller and thus lower in price than bigger launchers on the market today, has picked up €75 million ($91 million) in funding."
+     "quote": "Isar Aerospace, which is building a micro-satellite launcher significantly smaller and thus lower in price than bigger launchers on the market today, has picked up €75 million ($91 million) in funding.",
+     "publishedLabel": "8 Dec 2020"
     },
     {
      "id": "s2",
@@ -3004,7 +3075,8 @@
      "title": "Isar Aerospace raises $165 million to bring more sovereign launch to Europe",
      "url": "https://techcrunch.com/2023/03/28/isar-aerospace-raises-165-million-to-bring-more-sovereign-launch-to-europe/",
      "publishedOn": "2023-03-28",
-     "quote": "German launch startup Isar Aerospace has scored $165 million (€155 million) in new funding as it races toward the inaugural flight of its Spectrum small rocket later this year."
+     "quote": "German launch startup Isar Aerospace has scored $165 million (€155 million) in new funding as it races toward the inaugural flight of its Spectrum small rocket later this year.",
+     "publishedLabel": "28 Mar 2023"
     },
     {
      "id": "s3",
@@ -3012,7 +3084,8 @@
      "title": "Isar Aerospace raises €270m to scale launch operations",
      "url": "https://sifted.eu/articles/isar-aerospace-raises-e270m-to-scale-launch-operations",
      "publishedOn": "2026-06-09",
-     "quote": "German rocket startup Isar Aerospace has raised €270m in fresh funding as Europe races to bolster its sovereign space capabilities amid growing geopolitical tensions."
+     "quote": "German rocket startup Isar Aerospace has raised €270m in fresh funding as Europe races to bolster its sovereign space capabilities amid growing geopolitical tensions.",
+     "publishedLabel": "9 Jun 2026"
     },
     {
      "id": "s4",
@@ -3020,7 +3093,8 @@
      "title": "More than 10 European startups became unicorns this year",
      "url": "https://techcrunch.com/2025/09/08/more-than-10-european-startups-became-unicorns-this-year/",
      "publishedOn": "2025-09-08",
-     "quote": "German space startup Isar Aerospace became a unicorn in June after reaching an agreement with Eldridge Industries for a convertible bond of €150 million (approximately $173 million)."
+     "quote": "German space startup Isar Aerospace became a unicorn in June after reaching an agreement with Eldridge Industries for a convertible bond of €150 million (approximately $173 million).",
+     "publishedLabel": "8 Sep 2025"
     },
     {
      "id": "s5",
@@ -3028,7 +3102,8 @@
      "title": "Germany's Isar Aerospace raises $91M to get its satellite launch vehicle off the ground",
      "url": "https://techcrunch.com/2020/12/08/germanys-isar-aerospace-raises-91m-to-get-its-satellite-launch-vehicle-off-the-ground/",
      "publishedOn": "2020-12-08",
-     "quote": "The startup is a spinout of TUM — the famous Munich Technical University — where co-founders Daniel Metzler, Josef Fleischmann and Markus Brandl all studied engineering."
+     "quote": "The startup is a spinout of TUM — the famous Munich Technical University — where co-founders Daniel Metzler, Josef Fleischmann and Markus Brandl all studied engineering.",
+     "publishedLabel": "8 Dec 2020"
     },
     {
      "id": "s6",
@@ -3036,7 +3111,8 @@
      "title": "Isar Aerospace raises €270m to scale launch operations",
      "url": "https://sifted.eu/articles/isar-aerospace-raises-e270m-to-scale-launch-operations",
      "publishedOn": "2026-06-09",
-     "quote": "On Tuesday, the Munich-based startup announced new investors Island Green Capital and Molten Ventures had backed its Series D raise, alongside HV Capital, Lakestar and UVC Partners."
+     "quote": "On Tuesday, the Munich-based startup announced new investors Island Green Capital and Molten Ventures had backed its Series D raise, alongside HV Capital, Lakestar and UVC Partners.",
+     "publishedLabel": "9 Jun 2026"
     }
    ],
    "display": {
@@ -3192,7 +3268,8 @@
      "title": "Moss hits a €1 billion valuation and bets on Finance AI shaped by finance teams",
      "url": "https://www.getmoss.com/magazine/moss-series-c",
      "publishedOn": "2026-08-05",
-     "quote": "The €35 million Series C round led by fintech specialist investor Portage, with participation from Cherry Ventures, values Moss at €1 billion and brings total funding to over €200 million."
+     "quote": "The €35 million Series C round led by fintech specialist investor Portage, with participation from Cherry Ventures, values Moss at €1 billion and brings total funding to over €200 million.",
+     "publishedLabel": "5 Aug 2026"
     },
     {
      "id": "s2",
@@ -3200,7 +3277,8 @@
      "title": "Berlin-based Moss hits unicorn status after closing €30 million Series C to expand its Finance AI suite",
      "url": "https://www.eu-startups.com/2026/08/berlin-based-moss-hits-unicorn-status-after-closing-e30-million-series-c-to-expand-its-finance-ai-suite/",
      "publishedOn": "2026-08-05",
-     "quote": "This funding round comes four years after the company announced the closing of its Series B funding round of €75 million at a valuation of over €500 million."
+     "quote": "This funding round comes four years after the company announced the closing of its Series B funding round of €75 million at a valuation of over €500 million.",
+     "publishedLabel": "5 Aug 2026"
     },
     {
      "id": "s3",
@@ -3208,7 +3286,8 @@
      "title": "Neues Unicorn: Berliner Fintech Moss knackt Milliarden-Bewertung",
      "url": "https://www.businessinsider.de/gruenderszene/berliner-unicorn-deutsches-fintech-moss-knackt-die-milliarden-bewertung/",
      "publishedOn": "2026-08-07",
-     "quote": "Das Berliner Finanz-Startup Moss ist nach einer Finanzierungsrunde mehr als eine Milliarde Dollar wert."
+     "quote": "Das Berliner Finanz-Startup Moss ist nach einer Finanzierungsrunde mehr als eine Milliarde Dollar wert.",
+     "publishedLabel": "7 Aug 2026"
     },
     {
      "id": "s4",
@@ -3216,7 +3295,8 @@
      "title": "Fintech startup Moss crowned Europe’s newest unicorn with €30m Series C",
      "url": "https://sifted.eu/articles/moss-unicorn-series-c/",
      "publishedOn": "2026-08-05",
-     "quote": "AI finance platform Moss has been crowned Europe’s latest unicorn, securing a €1bn valuation for its €30m Series C."
+     "quote": "AI finance platform Moss has been crowned Europe’s latest unicorn, securing a €1bn valuation for its €30m Series C.",
+     "publishedLabel": "5 Aug 2026"
     }
    ],
    "display": {
@@ -3382,7 +3462,8 @@
      "title": "N26 announces landmark Series E funding round of more than $900 Million",
      "url": "https://n26.com/en-eu/press/press-release/n26-announces-landmark-series-e-funding-round",
      "publishedOn": "2021-10-18",
-     "quote": "Berlin - The Mobile Bank N26 today announced its record-breaking $900+ million Series E funding round, the largest financing round to date for a digital bank in Europe. The recent funding increases the company’s valuation to more than $9 billion, making the Berlin-based pioneer the highest valued fintech in Germany, and ranking it amongst the top 20 fintechs in the world."
+     "quote": "Berlin - The Mobile Bank N26 today announced its record-breaking $900+ million Series E funding round, the largest financing round to date for a digital bank in Europe. The recent funding increases the company’s valuation to more than $9 billion, making the Berlin-based pioneer the highest valued fintech in Germany, and ranking it amongst the top 20 fintechs in the world.",
+     "publishedLabel": "18 Oct 2021"
     },
     {
      "id": "s2",
@@ -3390,7 +3471,8 @@
      "title": "Announcing $300 million in Series D funding round and reaching 2.3 million customers",
      "url": "https://n26.com/en-eu/blog/n26-series-d-funding-round-2019",
      "publishedOn": "2019-01-10",
-     "quote": "We have closed our Series D funding round with an incredible $300 million. This figure represents the largest private equity financing round for a fintech business in Europe in recent years. With a valuation of $2.7 billion, it also makes N26 one of the most valuable technology startups around the world."
+     "quote": "We have closed our Series D funding round with an incredible $300 million. This figure represents the largest private equity financing round for a fintech business in Europe in recent years. With a valuation of $2.7 billion, it also makes N26 one of the most valuable technology startups around the world.",
+     "publishedLabel": "10 Jan 2019"
     },
     {
      "id": "s3",
@@ -3398,7 +3480,8 @@
      "title": "Banking startup N26 raises another $170 million at $3.5 billion valuation",
      "url": "https://techcrunch.com/2019/07/17/banking-startup-n26-raises-another-170-million-at-3-5-billion-valuation/",
      "publishedOn": "2019-07-18",
-     "quote": "Fintech startup N26 is raising $170 million a few months after raising $300 million."
+     "quote": "Fintech startup N26 is raising $170 million a few months after raising $300 million.",
+     "publishedLabel": "18 Jul 2019"
     },
     {
      "id": "s4",
@@ -3406,7 +3489,8 @@
      "title": "N26 announces landmark Series E funding round of more than $900 Million",
      "url": "https://n26.com/en-eu/press/press-release/n26-announces-landmark-series-e-funding-round",
      "publishedOn": "2021-10-18",
-     "quote": "Founded by Valentin Stalf and Maximilian Tayenthal in 2013, N26 has raised close to US$ 1.8 billion from some of the world’s most renowned investors."
+     "quote": "Founded by Valentin Stalf and Maximilian Tayenthal in 2013, N26 has raised close to US$ 1.8 billion from some of the world’s most renowned investors.",
+     "publishedLabel": "18 Oct 2021"
     }
    ],
    "display": {
@@ -3464,7 +3548,7 @@
    ],
    "niche": "Workflow Automation",
    "thesis": {
-    "problem": "Automating work across a company's software means wiring together hundreds of separate tools, and the platforms that promise to do it are usually rigid: they own the logic, run only in their own cloud, and charge per task, so the bill grows with the very usage they encourage. Adding language models made it worse — organisations bought AI and then found nobody could connect it to the systems where the work actually happens.",
+    "problem": "Automating work across a company's software means wiring together hundreds of separate tools, and the platforms that promise to do it are usually rigid: they own the logic, run only in their own cloud, and charge per task, so the bill grows with the very usage they encourage. Adding language models made it worse. Organisations bought AI and then found nobody could connect it to the systems where the work actually happens.",
     "solution": "n8n is a workflow automation platform whose canvas is visual but whose steps can drop into code, with more than a thousand integrations and the option to run it on the company's own infrastructure. Its bet is that the scarce thing in enterprise AI is not the model but the orchestration around it, so it sells the layer that lets an AI agent act on the systems a business already runs."
    },
    "valuation": {
@@ -3582,7 +3666,8 @@
      "title": "N8n's valuation doubles to $5.2BN following SAP strategic investment",
      "url": "https://tech.eu/2026/05/12/n8n-s-valuation-doubles-to-5-2bn-following-sap-strategic-investment/",
      "publishedOn": "2026-05-12",
-     "quote": "N8n, the Berlin-based startup which helps businesses automate tasks, has more than doubled its valuation to $5.2bn in less than a year following a strategic investment from German software giant SAP, it said today."
+     "quote": "N8n, the Berlin-based startup which helps businesses automate tasks, has more than doubled its valuation to $5.2bn in less than a year following a strategic investment from German software giant SAP, it said today.",
+     "publishedLabel": "12 May 2026"
     },
     {
      "id": "s2",
@@ -3590,7 +3675,8 @@
      "title": "N8n's valuation doubles to $5.2BN following SAP strategic investment",
      "url": "https://tech.eu/2026/05/12/n8n-s-valuation-doubles-to-5-2bn-following-sap-strategic-investment/",
      "publishedOn": "2026-05-12",
-     "quote": "SAP’s investment in n8n comes courtesy of an n8n secondary share sale, which brings SAP to the n8n cap table for the first time."
+     "quote": "SAP’s investment in n8n comes courtesy of an n8n secondary share sale, which brings SAP to the n8n cap table for the first time.",
+     "publishedLabel": "12 May 2026"
     },
     {
      "id": "s3",
@@ -3598,7 +3684,8 @@
      "title": "Hyped AI business automation startup n8n raises $180M, valuing it at $2.5BN",
      "url": "https://tech.eu/2025/10/09/hyped-ai-business-automation-startup-n8n-raises-180m-valuing-it-at-2bn/",
      "publishedOn": "2025-10-09",
-     "quote": "N8n, the Berlin-based hyped AI startup which helps businesses automate tasks, has confirmed that it has raised $180m, valuing it at $2.5bn."
+     "quote": "N8n, the Berlin-based hyped AI startup which helps businesses automate tasks, has confirmed that it has raised $180m, valuing it at $2.5bn.",
+     "publishedLabel": "9 Oct 2025"
     },
     {
      "id": "s4",
@@ -3606,7 +3693,8 @@
      "title": "Hyped AI business automation startup n8n raises $180M, valuing it at $2.5BN",
      "url": "https://tech.eu/2025/10/09/hyped-ai-business-automation-startup-n8n-raises-180m-valuing-it-at-2bn/",
      "publishedOn": "2025-10-09",
-     "quote": "N8n has now raised $240m in total since it was founded in 2019, having raised $60m in March this year."
+     "quote": "N8n has now raised $240m in total since it was founded in 2019, having raised $60m in March this year.",
+     "publishedLabel": "9 Oct 2025"
     },
     {
      "id": "s5",
@@ -3614,7 +3702,8 @@
      "title": "N8n's valuation doubles to $5.2BN following SAP strategic investment",
      "url": "https://tech.eu/2026/05/12/n8n-s-valuation-doubles-to-5-2bn-following-sap-strategic-investment/",
      "publishedOn": "2026-05-12",
-     "quote": "Jan Oberhauser, founder & CEO, n8n, said: \"For n8n, securing SAP as a strategic investor marks a pivotal moment."
+     "quote": "Jan Oberhauser, founder & CEO, n8n, said: \"For n8n, securing SAP as a strategic investor marks a pivotal moment.",
+     "publishedLabel": "12 May 2026"
     }
    ],
    "display": {
@@ -3674,8 +3763,8 @@
    ],
    "niche": "Robotics",
    "thesis": {
-    "problem": "Industrial robots are precise and blind. They repeat a taught path inside a safety cage because they cannot perceive what is around them, which means every new task is a re-installation and every task involving a person is a fence. That is workable for a car plant running one model for six years and useless for the labour shortage everyone actually has — the jobs nobody can staff are varied, unstructured and next to people.",
-    "solution": "Neura Robotics builds what it calls cognitive robots: arms and humanoids with sensing built into the machine rather than bolted around it, so they can work without a cage and be taught by demonstration instead of programmed. The company designs its own sensors, drives and software stack rather than integrating other people's, and is betting that the same platform serves an industrial arm, a service robot and a humanoid — which is why a robotics company is raising at the scale of an AI one."
+    "problem": "Industrial robots are precise and blind. They repeat a taught path inside a safety cage because they cannot perceive what is around them, which means every new task is a re-installation and every task involving a person is a fence. That is workable for a car plant running one model for six years and useless for the labour shortage everyone actually has, where the jobs nobody can staff are varied, unstructured and next to people.",
+    "solution": "Neura Robotics builds what it calls cognitive robots: arms and humanoids with sensing built into the machine rather than bolted around it, so they can work without a cage and be taught by demonstration instead of programmed. The company designs its own sensors, drives and software stack rather than integrating other people's, and is betting that the same platform serves an industrial arm, a service robot and a humanoid, which is why a robotics company is raising at the scale of an AI one."
    },
    "valuation": {
     "amount": 7000,
@@ -3784,7 +3873,8 @@
      "title": "German robotics startup Neura Robotics raises €120m Series B",
      "url": "https://sifted.eu/articles/neura-robotics-raises-120m-news",
      "publishedOn": "2025-01-15",
-     "quote": "German robotics company Neura Robotics has raised €120m in Series B financing to develop \"cognitive\" robots capable of \"seeing\", walking and manipulating objects."
+     "quote": "German robotics company Neura Robotics has raised €120m in Series B financing to develop \"cognitive\" robots capable of \"seeing\", walking and manipulating objects.",
+     "publishedLabel": "15 Jan 2025"
     },
     {
      "id": "s2",
@@ -3792,7 +3882,8 @@
      "title": "Neura Robotics raises $1.4bn backed by Amazon, Nvidia and Qualcomm",
      "url": "https://sifted.eu/articles/neura-robotics-1-4bn-series-c",
      "publishedOn": "2026-06-10",
-     "quote": "German startup Neura Robotics has raised a $1.4bn Series C round from investors including crypto group Tether, Qualcomm, Amazon and Nvidia."
+     "quote": "German startup Neura Robotics has raised a $1.4bn Series C round from investors including crypto group Tether, Qualcomm, Amazon and Nvidia.",
+     "publishedLabel": "10 Jun 2026"
     },
     {
      "id": "s3",
@@ -3800,7 +3891,8 @@
      "title": "Neura Robotics raises $1.4bn backed by Amazon, Nvidia and Qualcomm",
      "url": "https://sifted.eu/articles/neura-robotics-1-4bn-series-c",
      "publishedOn": "2026-06-10",
-     "quote": "The new funding brings Neura's valuation to $7bn, the Financial Times reported, citing people familiar with the deal."
+     "quote": "The new funding brings Neura's valuation to $7bn, the Financial Times reported, citing people familiar with the deal.",
+     "publishedLabel": "10 Jun 2026"
     },
     {
      "id": "s4",
@@ -3808,7 +3900,8 @@
      "title": "NEURA Robotics secures up to $1.4B Series C to scale physical AI and cognitive robotics platform",
      "url": "https://tech.eu/2026/06/10/neura-robotics-secures-up-to-14b-series-c-to-scale-physical-ai-and-cognitive-robotics-platform/",
      "publishedOn": "2026-06-10",
-     "quote": "NEURA Robotics has announced up to $1.4 billion in Series C funding to accelerate the development of its physical AI platform."
+     "quote": "NEURA Robotics has announced up to $1.4 billion in Series C funding to accelerate the development of its physical AI platform.",
+     "publishedLabel": "10 Jun 2026"
     },
     {
      "id": "s5",
@@ -3816,7 +3909,8 @@
      "title": "Sieben neue Unicorns: Diese deutschen Startups sind jetzt Milliarden wert",
      "url": "https://www.businessinsider.de/gruenderszene/sieben-neue-unicorns-diese-deutschen-startups-sind-jetzt-milliarden-wert/",
      "publishedOn": "2026-07-03",
-     "quote": "Die Bewertung: sieben Milliarden Dollar und damit Einhorn-Status."
+     "quote": "Die Bewertung: sieben Milliarden Dollar und damit Einhorn-Status.",
+     "publishedLabel": "3 Jul 2026"
     },
     {
      "id": "s6",
@@ -3824,7 +3918,8 @@
      "title": "German robotics startup Neura Robotics raises €120m Series B",
      "url": "https://sifted.eu/articles/neura-robotics-raises-120m-news",
      "publishedOn": "2025-01-15",
-     "quote": "Neura Robotics' round was led by Lingotto Investment Management; Blue Crest Capital Management, Volvo Cars Tech Fund, InterAlpen Partners, Vsquared Ventures, HV Capital, Delta Electronics, C4 Ventures, L-Bank and the company's founder and CEO David Reger also participated."
+     "quote": "Neura Robotics' round was led by Lingotto Investment Management; Blue Crest Capital Management, Volvo Cars Tech Fund, InterAlpen Partners, Vsquared Ventures, HV Capital, Delta Electronics, C4 Ventures, L-Bank and the company's founder and CEO David Reger also participated.",
+     "publishedLabel": "15 Jan 2025"
     }
    ],
    "display": {
@@ -3888,7 +3983,7 @@
    ],
    "niche": "Sustainability & ESG",
    "thesis": {
-    "problem": "European law now makes a company answerable for things happening several tiers down its supply chain — forced labour at a subcontractor, deforestation behind a commodity, emissions it never measured. The evidence for those answers sits in purchasing systems, supplier questionnaires and site audits that were never built to be read together, so compliance becomes a rolling manual exercise repeated for every new regulation.",
+    "problem": "European law now makes a company answerable for things happening several tiers down its supply chain, for forced labour at a subcontractor, deforestation behind a commodity, or emissions it never measured. The evidence for those answers sits in purchasing systems, supplier questionnaires and site audits that were never built to be read together, so compliance becomes a rolling manual exercise repeated for every new regulation.",
     "solution": "osapiens runs one cloud platform on which each reporting duty is a separate module drawing on the same supplier and transaction data, so a company answers a new rule by switching on an application rather than starting a new project. The products are sold to large enterprises as compliance tooling, and the pitch is that the same data, once collected properly, also shows where a supply chain is slow or wasteful."
    },
    "valuation": {
@@ -3995,7 +4090,8 @@
      "title": "German sustainability software outfit osapiens becomes unicorn, following $100M raise",
      "url": "https://tech.eu/2026/01/14/german-startup-osapiens-becomes-unicorn-following-100m-funding-round/",
      "publishedOn": "2026-01-14",
-     "quote": "German startup osapiens, which provides software-as-a-service (SaaS) services to help companies meet ESG targets, says it has become a unicorn after raising $100m. The Series C round was funded solely by Decarbonization Partners, the joint venture between BlackRock and Temasek focused on late-stage VC investing in decarbonising tech. The company is now valued at over $1.1bn, following this round, it said."
+     "quote": "German startup osapiens, which provides software-as-a-service (SaaS) services to help companies meet ESG targets, says it has become a unicorn after raising $100m. The Series C round was funded solely by Decarbonization Partners, the joint venture between BlackRock and Temasek focused on late-stage VC investing in decarbonising tech. The company is now valued at over $1.1bn, following this round, it said.",
+     "publishedLabel": "14 Jan 2026"
     },
     {
      "id": "s2",
@@ -4003,7 +4099,8 @@
      "title": "osapiens secures US$ 100 million financing and becomes a Unicorn with investment from Decarbonization Partners",
      "url": "https://osapiens.com/company-news/osapiens-series-c-funding-unicorn-decarbonization-partners/",
      "publishedOn": "2026-01-14",
-     "quote": "Decarbonization Partners will join existing investors Goldman Sachs Alternatives, which led the US$ 120 million Series B in 2024, and Armira Growth, which led the US$ 27 million Series A investment in 2023."
+     "quote": "Decarbonization Partners will join existing investors Goldman Sachs Alternatives, which led the US$ 120 million Series B in 2024, and Armira Growth, which led the US$ 27 million Series A investment in 2023.",
+     "publishedLabel": "14 Jan 2026"
     },
     {
      "id": "s3",
@@ -4011,7 +4108,8 @@
      "title": "New German unicorn! Mannheim’s osapiens secures €85.8 milllion led by BlackRock–Temasek JV",
      "url": "https://www.eu-startups.com/2026/01/new-german-unicorn-mannheims-osapiens-secures-e85-8m-led-by-blackrock-temasek-jv/",
      "publishedOn": "2026-01-14",
-     "quote": "Mannheim-based osapiens, provider of enterprise software for sustainable growth, today announced that it has entered into an agreement for Decarbonization Partners to lead a €85.8 million ($100 million) Series C fundraising round. With this round, osapiens has hit unicorn status."
+     "quote": "Mannheim-based osapiens, provider of enterprise software for sustainable growth, today announced that it has entered into an agreement for Decarbonization Partners to lead a €85.8 million ($100 million) Series C fundraising round. With this round, osapiens has hit unicorn status.",
+     "publishedLabel": "14 Jan 2026"
     },
     {
      "id": "s4",
@@ -4019,7 +4117,8 @@
      "title": "New German unicorn! Mannheim’s osapiens secures €85.8 milllion led by BlackRock–Temasek JV",
      "url": "https://www.eu-startups.com/2026/01/new-german-unicorn-mannheims-osapiens-secures-e85-8m-led-by-blackrock-temasek-jv/",
      "publishedOn": "2026-01-14",
-     "quote": "Founded in 2018 by Alberto Zamora, Stefan Wawrzinek, and Matthias Jungblut, osapiens is an ESG platform and provider of enterprise software that enables companies to manage regulatory compliance, sustainability, and operational efficiency."
+     "quote": "Founded in 2018 by Alberto Zamora, Stefan Wawrzinek, and Matthias Jungblut, osapiens is an ESG platform and provider of enterprise software that enables companies to manage regulatory compliance, sustainability, and operational efficiency.",
+     "publishedLabel": "14 Jan 2026"
     }
    ],
    "display": {
@@ -4074,7 +4173,7 @@
    "niche": "Customer Experience",
    "thesis": {
     "problem": "Enterprise contact centres are expensive to staff and slow to scale, and the automation sold to them was built on rigid decision trees that break the moment a caller phrases something unexpectedly. Large brands that wanted to hand routine calls to software found it either failed the customer or could not be trusted to act on their systems.",
-    "solution": "Parloa sells a platform for building, testing and supervising AI agents that hold spoken and written conversations and then carry out the resulting task in the company's own systems. The emphasis is on the management layer — simulation before deployment, guardrails and human sign-off — so that a large enterprise can run many agents across languages and channels under one set of controls."
+    "solution": "Parloa sells a platform for building, testing and supervising AI agents that hold spoken and written conversations and then carry out the resulting task in the company's own systems. The emphasis is on the management layer, simulation before deployment, guardrails and human sign-off, so that a large enterprise can run many agents across languages and channels under one set of controls."
    },
    "valuation": {
     "amount": 3000,
@@ -4187,7 +4286,8 @@
      "title": "Parloa raises $120M Series C to reinvent customer service with agentic AI",
      "url": "https://www.parloa.com/parloa-in-the-press/parloa-raises-120m-series-c-to-reinvent-customer-service-with-agentic-ai/",
      "publishedOn": "2025-05-06",
-     "quote": "Berlin and New York—May 6, 2025—Parloa, an innovator in Agentic AI for customer experience, today announced it has secured $120 million in Series C funding, bringing the company’s valuation to $1 billion."
+     "quote": "Berlin and New York—May 6, 2025—Parloa, an innovator in Agentic AI for customer experience, today announced it has secured $120 million in Series C funding, bringing the company’s valuation to $1 billion.",
+     "publishedLabel": "6 May 2025"
     },
     {
      "id": "s2",
@@ -4195,7 +4295,8 @@
      "title": "Parloa raises $120M Series C to reinvent customer service with agentic AI",
      "url": "https://www.parloa.com/parloa-in-the-press/parloa-raises-120m-series-c-to-reinvent-customer-service-with-agentic-ai/",
      "publishedOn": "2025-05-06",
-     "quote": "Since raising $66M in its Series B round just 12 months ago, Parloa released its groundbreaking AI Agent Management Platform, AMP, the industry’s first Agentic AI platform purpose-built for enterprise contact centers, and quadrupled its revenue."
+     "quote": "Since raising $66M in its Series B round just 12 months ago, Parloa released its groundbreaking AI Agent Management Platform, AMP, the industry’s first Agentic AI platform purpose-built for enterprise contact centers, and quadrupled its revenue.",
+     "publishedLabel": "6 May 2025"
     },
     {
      "id": "s3",
@@ -4203,7 +4304,8 @@
      "title": "Parloa triples its valuation in 8 months to $3B with $350M raise",
      "url": "https://techcrunch.com/2026/01/15/parloa-triples-its-valuation-in-8-months-to-3b-with-350m-raise/",
      "publishedOn": "2026-01-15",
-     "quote": "Berlin-based Parloa has raised $350 million in Series D funding from existing investors, valuing the six-year-old customer service AI startup at $3 billion. The round comes just eight months after the company raised $120 million at a $1 billion valuation."
+     "quote": "Berlin-based Parloa has raised $350 million in Series D funding from existing investors, valuing the six-year-old customer service AI startup at $3 billion. The round comes just eight months after the company raised $120 million at a $1 billion valuation.",
+     "publishedLabel": "15 Jan 2026"
     }
    ],
    "display": {
@@ -4259,7 +4361,7 @@
    "niche": "HR Tech",
    "thesis": {
     "problem": "Enterprise HR suites are priced and configured for companies with thousands of staff and an HR department to run them. The small and mid-sized firms that employ most of Europe were left running recruitment, contracts, absence and payroll preparation across spreadsheets, email threads and paper files.",
-    "solution": "Personio packages the whole employee lifecycle — applicant tracking, onboarding, digital personnel files, absence, performance and payroll preparation — into one subscription that a company without a dedicated HR systems team can configure itself. It is sold per employee per month and localised for each European country's payroll and employment rules."
+    "solution": "Personio packages the whole employee lifecycle, from applicant tracking and onboarding to digital personnel files, absence, performance and payroll preparation, into one subscription that a company without a dedicated HR systems team can configure itself. It is sold per employee per month and localised for each European country's payroll and employment rules."
    },
    "valuation": {
     "amount": 8500,
@@ -4384,7 +4486,8 @@
      "title": "Personio nabs $200M at a $8.5B valuation as its HR for small businesses hits the big time",
      "url": "https://techcrunch.com/2022/06/21/personio-nabs-200m-at-a-8-5b-valuation-as-its-hr-for-small-businesses-hits-the-big-time/",
      "publishedOn": "2022-06-21",
-     "quote": "The company has picked up another $200 million at a new valuation of $8.5 billion, making it one of the most valuable startups in Europe at the moment."
+     "quote": "The company has picked up another $200 million at a new valuation of $8.5 billion, making it one of the most valuable startups in Europe at the moment.",
+     "publishedLabel": "21 Jun 2022"
     },
     {
      "id": "s2",
@@ -4392,7 +4495,8 @@
      "title": "Personio raises $125M on a $1.7B valuation for an HR platform targeting SMEs",
      "url": "https://techcrunch.com/2021/01/17/personio-raises-125m-on-a-1-7b-valuation-for-an-hr-platform-targeting-smes/",
      "publishedOn": "2021-01-18",
-     "quote": "Personio — the German startup that targets small- and medium-sized businesses (10-2,000 employees) with an all-in-one HR platform covering recruiting and onboarding, payroll, absence tracking and other major HR functions — has picked up $125 million in funding at a $1.7 billion post-money valuation."
+     "quote": "Personio — the German startup that targets small- and medium-sized businesses (10-2,000 employees) with an all-in-one HR platform covering recruiting and onboarding, payroll, absence tracking and other major HR functions — has picked up $125 million in funding at a $1.7 billion post-money valuation.",
+     "publishedLabel": "18 Jan 2021"
     },
     {
      "id": "s3",
@@ -4400,7 +4504,8 @@
      "title": "Personio nabs $200M at a $8.5B valuation as its HR for small businesses hits the big time",
      "url": "https://techcrunch.com/2022/06/21/personio-nabs-200m-at-a-8-5b-valuation-as-its-hr-for-small-businesses-hits-the-big-time/",
      "publishedOn": "2022-06-21",
-     "quote": "The funding is technically a second closing of its Series E, coming on the heels of the first tranche of $270 million that closed in October."
+     "quote": "The funding is technically a second closing of its Series E, coming on the heels of the first tranche of $270 million that closed in October.",
+     "publishedLabel": "21 Jun 2022"
     }
    ],
    "display": {
@@ -4458,7 +4563,7 @@
    ],
    "niche": "Fusion Energy",
    "thesis": {
-    "problem": "Fusion power has been a laboratory result for decades rather than a product, because the machines that confine a plasma hot enough to fuse are either unstable or impossible to run continuously. The tokamak, the design most money has gone into, needs a current driven through the plasma and tends to disrupt; the stellarator is inherently steadier but its twisted magnets were long considered too hard to design and build.",
+    "problem": "Fusion power has been a laboratory result for decades rather than a product, because the machines that confine a plasma hot enough to fuse are either unstable or impossible to run continuously. The tokamak, the design most money has gone into, needs a current driven through the plasma and tends to disrupt. The stellarator is inherently steadier, but its twisted magnets were long considered too hard to design and build.",
     "solution": "Proxima Fusion is the first spin-out from the Max Planck Institute for Plasma Physics, where the world's largest stellarator, Wendelstein 7-X, was built. It uses simulation and high-temperature superconducting magnets to make that design manufacturable, and is building Alpha, a net-energy demonstrator near Munich, as the step before a commercial plant."
    },
    "valuation": {
@@ -4613,7 +4718,8 @@
      "title": "Proxima Fusion Raises €411 Million to Build Europe’s Commercial Fusion Champion",
      "url": "https://www.proximafusion.com/press-news/proxima-fusion-raises-eu411-million-to-build-europes-commercial-fusion-champion",
      "publishedOn": "2026-07-07",
-     "quote": "Munich, Oxford, Zurich (Europe), July 7, 2026 – Proxima Fusion today announced a €411 million ($468 million) financing round, bringing the company’s valuation to €2.4 billion ($2.7 billion) and establishing Proxima as the best-funded fusion company in Europe."
+     "quote": "Munich, Oxford, Zurich (Europe), July 7, 2026 – Proxima Fusion today announced a €411 million ($468 million) financing round, bringing the company’s valuation to €2.4 billion ($2.7 billion) and establishing Proxima as the best-funded fusion company in Europe.",
+     "publishedLabel": "7 Jul 2026"
     },
     {
      "id": "s2",
@@ -4621,7 +4727,8 @@
      "title": "Google backs Proxima Fusion in €411m raise",
      "url": "https://sifted.eu/articles/google-proxima-fusion-411m-raise",
      "publishedOn": "2026-07-07",
-     "quote": "Munich-headquartered Proxima Fusion has raised €411m at a €2.5bn valuation in a round led by XTX Ventures and East X Ventures."
+     "quote": "Munich-headquartered Proxima Fusion has raised €411m at a €2.5bn valuation in a round led by XTX Ventures and East X Ventures.",
+     "publishedLabel": "7 Jul 2026"
     },
     {
      "id": "s3",
@@ -4629,7 +4736,8 @@
      "title": "Proxima Fusion joins the club of well-funded nuclear contenders with €130M Series A",
      "url": "https://techcrunch.com/2025/06/10/proxima-fusion-joins-the-club-of-well-funded-nuclear-contenders-with-e130m-series-a/",
      "publishedOn": "2025-06-10",
-     "quote": "Most fusion companies that have raised over $100 million are based in the United States. Not Proxima Fusion, a German startup that has just secured a €130 million Series A round of funding (approximately $148 million) led by Balderton Capital and Cherry Ventures."
+     "quote": "Most fusion companies that have raised over $100 million are based in the United States. Not Proxima Fusion, a German startup that has just secured a €130 million Series A round of funding (approximately $148 million) led by Balderton Capital and Cherry Ventures.",
+     "publishedLabel": "10 Jun 2025"
     },
     {
      "id": "s4",
@@ -4637,7 +4745,8 @@
      "title": "Proxima Fusion Raises €411 Million to Build Europe’s Commercial Fusion Champion",
      "url": "https://www.proximafusion.com/press-news/proxima-fusion-raises-eu411-million-to-build-europes-commercial-fusion-champion",
      "publishedOn": "2026-07-07",
-     "quote": "In less than three years, Proxima has secured more than €650 million ($740 million), including €95 million in public grants."
+     "quote": "In less than three years, Proxima has secured more than €650 million ($740 million), including €95 million in public grants.",
+     "publishedLabel": "7 Jul 2026"
     }
    ],
    "display": {
@@ -4710,8 +4819,8 @@
    ],
    "niche": "Reconnaissance Drones",
    "thesis": {
-    "problem": "A reconnaissance drone is only useful if the picture it brings back is current, and European armies spent two decades buying small numbers of expensive airframes on procurement cycles measured in years. Ukraine changed the arithmetic: what a unit needs is a system a soldier can carry, launch without a runway, fly beyond line of sight and replace when it is lost — and a manufacturer close enough to the front to change the software every few weeks as jamming evolves.",
-    "solution": "Quantum Systems builds vertical-take-off fixed-wing drones — they lift like a helicopter and cruise like an aeroplane, so they need no launcher and still hold an area for hours — and sells the autonomy stack alongside the airframe. The dual-use framing is deliberate and commercial: the same aircraft surveys pipelines, mines and farmland, which keeps a civilian revenue line under a defence business whose orders arrive in bursts. Its systems flew over 19,000 missions in Ukraine in 2025."
+    "problem": "A reconnaissance drone is only useful if the picture it brings back is current, and European armies spent two decades buying small numbers of expensive airframes on procurement cycles measured in years. Ukraine changed the arithmetic: what a unit needs is a system a soldier can carry, launch without a runway, fly beyond line of sight and replace when it is lost, plus a manufacturer close enough to the front to change the software every few weeks as jamming evolves.",
+    "solution": "Quantum Systems builds vertical-take-off fixed-wing drones that lift like a helicopter and cruise like an aeroplane, so they need no launcher and still hold an area for hours, and it sells the autonomy stack alongside the airframe. The dual-use framing is deliberate and commercial: the same aircraft surveys pipelines, mines and farmland, which keeps a civilian revenue line under a defence business whose orders arrive in bursts. Its systems flew over 19,000 missions in Ukraine in 2025."
    },
    "valuation": {
     "amount": 8000,
@@ -4761,7 +4870,7 @@
      ],
      "source": "s1",
      "undisclosed": {
-      "note": "This is the round that crossed, and no source has ever printed the number it crossed at. Sifted, Tech.eu, EU-Startups and lead investor Balderton all covered it; the company's own release — recovered from the Wayback Machine, because quantum-systems.com blocks this crawler — gives the round, the investors and the total raised, and states no valuation at all. What is stated, and stated flatly rather than as an estimate, is the threshold: Handelsblatt, the same week, “Mit der neuen Finanzierung wird das Start-up mit mehr als einer Milliarde Dollar bewertet.” Under the register's previous rule, that sentence could not be recorded because it contains no numeral to check a figure against, and one of Germany's best-known unicorns was left out on that technicality. The November extension that “tripled its valuation” to above €3 billion is the next figure anyone published; dividing that by three would be arithmetic, not a source.",
+      "note": "This is the round that crossed, and no source has ever printed the number it crossed at. Sifted, Tech.eu, EU-Startups and lead investor Balderton all covered it, and the company's own release, recovered from the Wayback Machine because quantum-systems.com blocks this crawler, gives the round, the investors and the total raised while stating no valuation at all. What is stated flatly rather than as an estimate is the threshold, by Handelsblatt in the same week: “Mit der neuen Finanzierung wird das Start-up mit mehr als einer Milliarde Dollar bewertet.” Under the register's previous rule that sentence could not be recorded, because it contains no numeral to check a figure against, and one of Germany's best-known unicorns was left out on that technicality. The November extension that “tripled its valuation” to above €3 billion is the next figure anyone published, and dividing that by three would be arithmetic rather than a source.",
       "source": "s2"
      },
      "dateLabel": "May 2025",
@@ -4849,7 +4958,8 @@
      "title": "Drones startup Quantum Systems hits unicorn status with €160m Series C",
      "url": "https://sifted.eu/articles/quantum-systems-160m-unicorn",
      "publishedOn": "2025-05-06",
-     "quote": "Autonomous drones startup Quantum Systems has raised €160m in Series C funding led by British VC Balderton Capital, making it one of only a few unicorns in the European defence tech field."
+     "quote": "Autonomous drones startup Quantum Systems has raised €160m in Series C funding led by British VC Balderton Capital, making it one of only a few unicorns in the European defence tech field.",
+     "publishedLabel": "6 May 2025"
     },
     {
      "id": "s2",
@@ -4857,7 +4967,8 @@
      "title": "Quantum Systems: Das erste deutsche Einhorn 2025 ist ein Drohnen-Start-up",
      "url": "https://www.handelsblatt.com/technik/it-internet/quantum-systems-das-erste-deutsche-einhorn-2025-ist-ein-drohnen-start-up/100126365.html",
      "publishedOn": "2025-05-07",
-     "quote": "Mit der neuen Finanzierung wird das Start-up mit mehr als einer Milliarde Dollar bewertet."
+     "quote": "Mit der neuen Finanzierung wird das Start-up mit mehr als einer Milliarde Dollar bewertet.",
+     "publishedLabel": "7 May 2025"
     },
     {
      "id": "s3",
@@ -4865,7 +4976,8 @@
      "title": "More than 10 European startups became unicorns this year",
      "url": "https://techcrunch.com/2025/09/08/more-than-10-european-startups-became-unicorns-this-year/",
      "publishedOn": "2025-09-08",
-     "quote": "German dual-use startup Quantum Systems became a unicorn in May 2025, according to PitchBook, upon raising a €160 million Series C (approximately $172 million) to accelerate its global expansion, scale production, and advance its autonomous drone systems, software, and AI."
+     "quote": "German dual-use startup Quantum Systems became a unicorn in May 2025, according to PitchBook, upon raising a €160 million Series C (approximately $172 million) to accelerate its global expansion, scale production, and advance its autonomous drone systems, software, and AI.",
+     "publishedLabel": "8 Sep 2025"
     },
     {
      "id": "s4",
@@ -4873,7 +4985,8 @@
      "title": "Quantum Systems' €180M Series C extension lifts company to €3B+",
      "url": "https://tech.eu/2025/11/28/quantum-systems-180m-series-c-extension-lifts-company-to-3b/",
      "publishedOn": "2025-11-28",
-     "quote": "Europe's first dual-use unicorn, Quantum Systems, has tripled its valuation and raised €180 million in a Series C Extension led by Balderton Capital."
+     "quote": "Europe's first dual-use unicorn, Quantum Systems, has tripled its valuation and raised €180 million in a Series C Extension led by Balderton Capital.",
+     "publishedLabel": "28 Nov 2025"
     },
     {
      "id": "s5",
@@ -4881,7 +4994,8 @@
      "title": "Quantum Systems' €180M Series C extension lifts company to €3B+",
      "url": "https://tech.eu/2025/11/28/quantum-systems-180m-series-c-extension-lifts-company-to-3b/",
      "publishedOn": "2025-11-28",
-     "quote": "The company's valuation is now above €3 billion."
+     "quote": "The company's valuation is now above €3 billion.",
+     "publishedLabel": "28 Nov 2025"
     },
     {
      "id": "s6",
@@ -4889,7 +5003,8 @@
      "title": "Quantum Systems raises $1.2BN at $8BN valuation",
      "url": "https://tech.eu/2026/07/02/quantum-systems-raises-12bn-at-8bn-valuation/",
      "publishedOn": "2026-07-02",
-     "quote": "German drone manufacturer Quantum Systems has raised $1.2bn in fresh funding, in a round which more than doubles its valuation to $8bn, it said today."
+     "quote": "German drone manufacturer Quantum Systems has raised $1.2bn in fresh funding, in a round which more than doubles its valuation to $8bn, it said today.",
+     "publishedLabel": "2 Jul 2026"
     },
     {
      "id": "s7",
@@ -4897,7 +5012,8 @@
      "title": "Quantum Systems: Das erste deutsche Einhorn 2025 ist ein Drohnen-Start-up",
      "url": "https://www.handelsblatt.com/technik/it-internet/quantum-systems-das-erste-deutsche-einhorn-2025-ist-ein-drohnen-start-up/100126365.html",
      "publishedOn": "2025-05-07",
-     "quote": "Quantum Systems aus Gilching bei München gilt als führender Hersteller von kompakten Drohnen"
+     "quote": "Quantum Systems aus Gilching bei München gilt als führender Hersteller von kompakten Drohnen",
+     "publishedLabel": "7 May 2025"
     },
     {
      "id": "s8",
@@ -4905,7 +5021,8 @@
      "title": "Quantum Systems CEO Florian Seibel: 'The big challenge is to not become like one of the primes'",
      "url": "https://sifted.eu/articles/quantum-systems-ceo-prime",
      "publishedOn": "2025-09-01",
-     "quote": "CEO and cofounder Florian Seibel told the Sifted Podcast recently"
+     "quote": "CEO and cofounder Florian Seibel told the Sifted Podcast recently",
+     "publishedLabel": "1 Sep 2025"
     }
    ],
    "display": {
@@ -4970,8 +5087,8 @@
    ],
    "niche": "Savings Marketplace",
    "thesis": {
-    "problem": "Deposit rates inside the single market differ by percentage points, and almost nobody can reach them. A saver in Germany is offered whatever their own bank pays; opening an account with a bank in Portugal or Lithuania means a foreign onboarding process, a foreign language and a foreign deposit-guarantee scheme they have no way to assess. The rates exist, the guarantees exist, and the friction between them is what keeps hundreds of billions sitting still.",
-    "solution": "Raisin is a marketplace with one onboarding: the saver signs up once and can then place money with any partner bank on the platform across Europe, each covered by its own national deposit guarantee up to the EU-harmonised €100,000. The other half of the business is the mirror image — deposits-as-a-service sold to banks that want funding and to distributors that want a savings product without building one. It brokers tens of billions of euros and has been profitable since 2023."
+    "problem": "Deposit rates inside the single market differ by percentage points, and almost nobody can reach them. A saver in Germany is offered whatever their own bank pays, and opening an account with a bank in Portugal or Lithuania means a foreign onboarding process, a foreign language and a foreign deposit-guarantee scheme they have no way to assess. The rates exist, the guarantees exist, and the friction between them is what keeps hundreds of billions sitting still.",
+    "solution": "Raisin is a marketplace with one onboarding: the saver signs up once and can then place money with any partner bank on the platform across Europe, each covered by its own national deposit guarantee up to the EU-harmonised €100,000. The other half of the business is the mirror image, deposits-as-a-service sold to banks that want funding and to distributors that want a savings product without building one. It brokers tens of billions of euros and has been profitable since 2023."
    },
    "valuation": {
     "amount": null,
@@ -4981,7 +5098,7 @@
     "round": "Secondary share sale",
     "source": "s5",
     "undisclosed": {
-     "note": "The figure everyone quotes for Raisin is “over two billion euros”, and it is over two billion euros in words rather than digits — Gründerszene spells it out, sourcing it to Finance Forward, and no allowlisted publication has printed it as a numeral. Handelsblatt separately calls the company “milliardenschwer” and nothing more precise. Two further things are worth a reader's attention. This valuation was set by a secondary sale in which existing holders sold shares, not by a priced primary round, so it is a price paid for stock changing hands rather than a post-money — the register publishes those (Trade Republic, n8n) and always labels them. And Raisin's unicorn status has not been continuous: investor Kinnevik marked it at €895m in 2022 and it lost the label, regaining it at the March 2023 upround this record dates the crossing to.",
+     "note": "The figure everyone quotes for Raisin is “over two billion euros”, and it is over two billion euros in words rather than digits. Gründerszene spells it out, sourcing it to Finance Forward, and no allowlisted publication has printed it as a numeral. Handelsblatt separately calls the company “milliardenschwer” and nothing more precise. Two further things are worth a reader's attention. This valuation was set by a secondary sale in which existing holders sold shares, not by a priced primary round, so it is a price paid for stock changing hands rather than a post-money. The register publishes those (Trade Republic, n8n) and always labels them. And Raisin's unicorn status has not been continuous: investor Kinnevik marked it at €895m in 2022 and it lost the label, regaining it at the March 2023 upround this record dates the crossing to.",
      "source": "s5"
     }
    },
@@ -5051,7 +5168,7 @@
      ],
      "source": "s3",
      "undisclosed": {
-      "note": "The crossing, and the company is the one that states it. Raisin had been a unicorn once before — Kinnevik marked the merged Raisin DS at €1.3bn in July 2021 — and then was not, after the same investor wrote it down to €895m in 2022. This €60m Series E restored the status, and co-founder Frank Freund says so in the round's own coverage: “Unser Unicorn-Status wurde mit der jetzigen Upround bestätigt.” No figure accompanies it, from the company or from anyone else, which is why the crossing is recorded qualitatively rather than with a post-money.",
+      "note": "The crossing, and the company is the one that states it. Raisin had been a unicorn once before, when Kinnevik marked the merged Raisin DS at €1.3bn in July 2021, and then was not, after the same investor wrote it down to €895m in 2022. This €60m Series E restored the status, and co-founder Frank Freund says so in the round's own coverage: “Unser Unicorn-Status wurde mit der jetzigen Upround bestätigt.” No figure accompanies it, from the company or from anyone else, which is why the crossing is recorded qualitatively rather than with a post-money.",
       "source": "s4"
      },
      "dateLabel": "Mar 2023",
@@ -5111,7 +5228,8 @@
      "title": "Raisin picks up $28M backing from Goldman Sachs for its savings and investment marketplace",
      "url": "https://techcrunch.com/2019/07/16/goldman-sachs-backs-raisin/",
      "publishedOn": "2019-07-16",
-     "quote": "Founded in 2012 by Dr. Tamaz Georgadze (CEO), Dr. Frank Freund (CFO) and Michael Stephan (COO)"
+     "quote": "Founded in 2012 by Dr. Tamaz Georgadze (CEO), Dr. Frank Freund (CFO) and Michael Stephan (COO)",
+     "publishedLabel": "16 Jul 2019"
     },
     {
      "id": "s2",
@@ -5119,7 +5237,8 @@
      "title": "Raisin picks up $28M backing from Goldman Sachs for its savings and investment marketplace",
      "url": "https://techcrunch.com/2019/07/16/goldman-sachs-backs-raisin/",
      "publishedOn": "2019-07-16",
-     "quote": "Goldman Sachs has invested $28 million (€25 million), following the company's $114 million in Series D in February."
+     "quote": "Goldman Sachs has invested $28 million (€25 million), following the company's $114 million in Series D in February.",
+     "publishedLabel": "16 Jul 2019"
     },
     {
      "id": "s3",
@@ -5127,7 +5246,8 @@
      "title": "Goldman keeps on keepin' on with Raisin in fresh €60 million round",
      "url": "https://tech.eu/2023/03/24/goldman-keeps-on-keepin-on-with-raisin-in-fresh-eur60-million-round/",
      "publishedOn": "2023-03-24",
-     "quote": "Berlin-based fintech Raisin has closed a €60 million Series E funding round, surpassed 1 million customers, and been profitable for the past six months."
+     "quote": "Berlin-based fintech Raisin has closed a €60 million Series E funding round, surpassed 1 million customers, and been profitable for the past six months.",
+     "publishedLabel": "24 Mar 2023"
     },
     {
      "id": "s4",
@@ -5135,7 +5255,8 @@
      "title": "Neue Finanzspritze: Tagesgeld-Fintech Raisin wieder Einhorn",
      "url": "https://www.businessinsider.de/gruenderszene/fintech/raisin-zinsen-fintech-einhorn-investment/",
      "publishedOn": "2023-03-23",
-     "quote": "Mit ein wenig Stolz im derzeitigen Marktumfeld können wir so viel verraten: Unser Unicorn-Status wurde mit der jetzigen Upround bestätigt"
+     "quote": "Mit ein wenig Stolz im derzeitigen Marktumfeld können wir so viel verraten: Unser Unicorn-Status wurde mit der jetzigen Upround bestätigt",
+     "publishedLabel": "23 Mar 2023"
     },
     {
      "id": "s5",
@@ -5143,7 +5264,8 @@
      "title": "Kurz vor IPO: Bewertung von Raisin steigt auf über zwei Milliarden Euro",
      "url": "https://www.businessinsider.de/gruenderszene/business/kurz-vor-ipo-bewertung-von-raisin-steigt-auf-ueber-zwei-milliarden-euro/",
      "publishedOn": "2024-12-03",
-     "quote": "Raisin liegt nun bei einer Bewertung von über zwei Milliarden Euro"
+     "quote": "Raisin liegt nun bei einer Bewertung von über zwei Milliarden Euro",
+     "publishedLabel": "3 Dec 2024"
     },
     {
      "id": "s6",
@@ -5151,7 +5273,8 @@
      "title": "Kurz vor IPO: Bewertung von Raisin steigt auf über zwei Milliarden Euro",
      "url": "https://www.businessinsider.de/gruenderszene/business/kurz-vor-ipo-bewertung-von-raisin-steigt-auf-ueber-zwei-milliarden-euro/",
      "publishedOn": "2024-12-03",
-     "quote": "Nun haben bestehende Investoren des Geldanlage-Startups Anteile in Höhe von mehr als 100 Millionen Euro verkauft."
+     "quote": "Nun haben bestehende Investoren des Geldanlage-Startups Anteile in Höhe von mehr als 100 Millionen Euro verkauft.",
+     "publishedLabel": "3 Dec 2024"
     },
     {
      "id": "s7",
@@ -5159,7 +5282,8 @@
      "title": "Start-ups: Raisin macht erneut Gewinn – was das für das Fintech bedeutet",
      "url": "https://www.handelsblatt.com/finanzen/banken-versicherungen/start-ups-raisin-macht-erneut-gewinn-was-das-fuer-das-fintech-bedeutet/100181890.html",
      "publishedOn": "2025-12-08",
-     "quote": "Wir wollen das Unternehmen – ob gelistet oder nicht – so führen, als ob es börsennotiert wäre"
+     "quote": "Wir wollen das Unternehmen – ob gelistet oder nicht – so führen, als ob es börsennotiert wäre",
+     "publishedLabel": "8 Dec 2025"
     }
    ],
    "display": {
@@ -5216,8 +5340,8 @@
    ],
    "niche": "Consumer Brands",
    "thesis": {
-    "problem": "A great many small businesses sell one good product on Amazon and stall there, because the owner is also the buyer, the marketer and the logistics department. Individually they are too small to negotiate with factories or to fund the next product line; sold individually, they fetch a small-business price.",
-    "solution": "Razor Group buys those sellers outright and runs them on shared systems for sourcing, pricing, advertising and supply chain, so the combined group has the volume to bargain with manufacturers and the data to decide what to make next. Growth has come as much from absorbing rival aggregators — Stryze, then the American company Perch — as from buying merchants."
+    "problem": "A great many small businesses sell one good product on Amazon and stall there, because the owner is also the buyer, the marketer and the logistics department. Individually they are too small to negotiate with factories or to fund the next product line, and sold individually they fetch a small-business price.",
+    "solution": "Razor Group buys those sellers outright and runs them on shared systems for sourcing, pricing, advertising and supply chain, so the combined group has the volume to bargain with manufacturers and the data to decide what to make next. Growth has come as much from absorbing rival aggregators, Stryze and then the American company Perch, as from buying merchants."
    },
    "valuation": {
     "amount": 1200,
@@ -5350,7 +5474,8 @@
      "title": "Berlin’s Razor Group raises $125M at a $1B+ valuation for a platform to buy and scale third-party Amazon merchants",
      "url": "https://techcrunch.com/2021/11/08/berlins-razor-group-raises-125m-at-a-1b-valuation-for-a-platform-to-buy-and-scale-third-party-amazon-merchants/",
      "publishedOn": "2021-11-08",
-     "quote": "In the latest development, Berlin’s Razor Group — one of the more ambitious of the aggregators out of Europe — has now raised $125 million of equity funding in a Series B round that CEO and co-founder Tushar Ahluwalia said pushes the company past a $1 billion valuation."
+     "quote": "In the latest development, Berlin’s Razor Group — one of the more ambitious of the aggregators out of Europe — has now raised $125 million of equity funding in a Series B round that CEO and co-founder Tushar Ahluwalia said pushes the company past a $1 billion valuation.",
+     "publishedLabel": "8 Nov 2021"
     },
     {
      "id": "s2",
@@ -5358,7 +5483,8 @@
      "title": "Razor Group, an e-commerce aggregator, closes Series C at $88M at $1.2B valuation, acquires Stryze to consolidate",
      "url": "https://techcrunch.com/2023/04/17/razor-group-aggregator-stryze/",
      "publishedOn": "2023-04-17",
-     "quote": "Upper90’s investment closes out Razor’s last funding round, which it’s calling its Series C, at €80 million ($88.4 million) — with other investors in the most recent round including L Catterton, Presight Capital, Blackrock, GFC, LatinLeap, Redalpine and 468 Capital. It also bumps Razor’s valuation up to $1.2 billion, sources at the company tell me."
+     "quote": "Upper90’s investment closes out Razor’s last funding round, which it’s calling its Series C, at €80 million ($88.4 million) — with other investors in the most recent round including L Catterton, Presight Capital, Blackrock, GFC, LatinLeap, Redalpine and 468 Capital. It also bumps Razor’s valuation up to $1.2 billion, sources at the company tell me.",
+     "publishedLabel": "17 Apr 2023"
     },
     {
      "id": "s3",
@@ -5366,7 +5492,8 @@
      "title": "Razor and Perch merge, raise $100M on a $1.7B valuation as more roll-ups consolidate",
      "url": "https://techcrunch.com/2024/03/04/razor-and-perch-merge-raise-100m-on-a-1-7b-valuation-as-more-roll-ups-consolidate/",
      "publishedOn": "2024-03-04",
-     "quote": "Berlin’s Razor Group has acquired U.S.-based Perch, and on top of this it has raised just over $100 million led by Presight Capital with other undisclosed investors participating. The combined business has an enterprise value of $1.7 billion, the company said, with about $400 million of debt on its books that is not due to come up for payback for at least another four years, from what we understand."
+     "quote": "Berlin’s Razor Group has acquired U.S.-based Perch, and on top of this it has raised just over $100 million led by Presight Capital with other undisclosed investors participating. The combined business has an enterprise value of $1.7 billion, the company said, with about $400 million of debt on its books that is not due to come up for payback for at least another four years, from what we understand.",
+     "publishedLabel": "4 Mar 2024"
     },
     {
      "id": "s4",
@@ -5374,7 +5501,8 @@
      "title": "Berlin’s Razor Group raises $400M to buy and scale Amazon Marketplace merchants",
      "url": "https://techcrunch.com/2021/05/04/berlins-razor-group-raises-400m-to-buy-and-scale-amazon-marketplace-merchants/",
      "publishedOn": "2021-05-04",
-     "quote": "Razor Group itself is not even a year old but has been building out its business at a fast pace. Founded in August 2020, in the last eight months, CEO Tushar Ahluwalia said the startup has grown to 107 employees across four offices and is currently on track to cross $120 million (€100 million) in sales from the 30 brands it has already amassed in its stable in categories like personal wellness, sports and home and living."
+     "quote": "Razor Group itself is not even a year old but has been building out its business at a fast pace. Founded in August 2020, in the last eight months, CEO Tushar Ahluwalia said the startup has grown to 107 employees across four offices and is currently on track to cross $120 million (€100 million) in sales from the 30 brands it has already amassed in its stable in categories like personal wellness, sports and home and living.",
+     "publishedLabel": "4 May 2021"
     },
     {
      "id": "s5",
@@ -5382,7 +5510,8 @@
      "title": "Razor and Perch merge, raise $100M on a $1.7B valuation as more roll-ups consolidate",
      "url": "https://techcrunch.com/2024/03/04/razor-and-perch-merge-raise-100m-on-a-1-7b-valuation-as-more-roll-ups-consolidate/",
      "publishedOn": "2024-03-04",
-     "quote": "Razor’s last valuation, when it raised money about a year ago, was $1.2 billion."
+     "quote": "Razor’s last valuation, when it raised money about a year ago, was $1.2 billion.",
+     "publishedLabel": "4 Mar 2024"
     }
    ],
    "display": {
@@ -5582,7 +5711,8 @@
      "title": "European neobroker Scalable Capital raises $65M on a flat $1.4B valuation",
      "url": "https://techcrunch.com/2023/12/06/european-neobroker-scalable-capital-raises-65m-on-a-flat-1-4b-valuation/",
      "publishedOn": "2023-12-06",
-     "quote": "The company has raised €60 million in equity ($65 million at today’s rates)."
+     "quote": "The company has raised €60 million in equity ($65 million at today’s rates).",
+     "publishedLabel": "6 Dec 2023"
     },
     {
      "id": "s2",
@@ -5590,7 +5720,8 @@
      "title": "European neobroker Scalable Capital raises $65M on a flat $1.4B valuation",
      "url": "https://techcrunch.com/2023/12/06/european-neobroker-scalable-capital-raises-65m-on-a-flat-1-4b-valuation/",
      "publishedOn": "2023-12-06",
-     "quote": "Contrary to the startup’s name, this round is coming in at a flat valuation of $1.4 billion. This was the same valuation Scalable Capital had the last time it raised money — $180 million in 2021, a round led by Tencent, with BlackRock, HV and Tengelmann participating."
+     "quote": "Contrary to the startup’s name, this round is coming in at a flat valuation of $1.4 billion. This was the same valuation Scalable Capital had the last time it raised money — $180 million in 2021, a round led by Tencent, with BlackRock, HV and Tengelmann participating.",
+     "publishedLabel": "6 Dec 2023"
     },
     {
      "id": "s3",
@@ -5598,7 +5729,8 @@
      "title": "European neobroker Scalable Capital raises $180M+ at a $1.4B valuation",
      "url": "https://techcrunch.com/2021/06/08/european-neobroker-scalable-capital-raises-180m-at-a-1-4b-valuation/",
      "publishedOn": "2021-06-08",
-     "quote": "Scalable Capital, a Munich/Berlin startup that provides tools to monitor and manage portfolios for those investing in shares, manage trades and exchange traded funds for a flat fee of €2.99 per month, has raised more than $180 million (around €150 million) to expand its business. The company confirmed to us that the investment, a Series E being led by China’s Tencent, is being done at a $1.4 billion valuation."
+     "quote": "Scalable Capital, a Munich/Berlin startup that provides tools to monitor and manage portfolios for those investing in shares, manage trades and exchange traded funds for a flat fee of €2.99 per month, has raised more than $180 million (around €150 million) to expand its business. The company confirmed to us that the investment, a Series E being led by China’s Tencent, is being done at a $1.4 billion valuation.",
+     "publishedLabel": "8 Jun 2021"
     },
     {
      "id": "s4",
@@ -5606,7 +5738,8 @@
      "title": "European neobroker Scalable Capital raises $180M+ at a $1.4B valuation",
      "url": "https://techcrunch.com/2021/06/08/european-neobroker-scalable-capital-raises-180m-at-a-1-4b-valuation/",
      "publishedOn": "2021-06-08",
-     "quote": "It was only in July 2020, less than a year ago, that the startup raised a Series D of $58 million at a $460 million valuation."
+     "quote": "It was only in July 2020, less than a year ago, that the startup raised a Series D of $58 million at a $460 million valuation.",
+     "publishedLabel": "8 Jun 2021"
     },
     {
      "id": "s5",
@@ -5614,7 +5747,8 @@
      "title": "Scalable Capital receives €155 million and continues to expand its digital investment platform – Sofina and Noteus Partners lead funding round",
      "url": "https://de.scalable.capital/en/newsroom/en-funding-round-2025",
      "publishedOn": "2025-06-03",
-     "quote": "Munich, June 3, 2025: Scalable Capital has successfully completed a funding round, raising €155 million ($175 million). This is the company’s largest funding round to date and is led by Sofina and Noteus Partners. Existing investors Balderton Capital, Tencent, and HV Capital also participated, underlining their continued confidence in the company. Sofina is a global investment company, listed on Euronext Brussels. Noteus Partners is a pan-European technology investor specializing in growth equity. Investors have now invested over €470 million (over $535 million) in Scalable Capital."
+     "quote": "Munich, June 3, 2025: Scalable Capital has successfully completed a funding round, raising €155 million ($175 million). This is the company’s largest funding round to date and is led by Sofina and Noteus Partners. Existing investors Balderton Capital, Tencent, and HV Capital also participated, underlining their continued confidence in the company. Sofina is a global investment company, listed on Euronext Brussels. Noteus Partners is a pan-European technology investor specializing in growth equity. Investors have now invested over €470 million (over $535 million) in Scalable Capital.",
+     "publishedLabel": "3 Jun 2025"
     }
    ],
    "display": {
@@ -5670,7 +5804,7 @@
    "niche": "Freight Forwarding",
    "thesis": {
     "problem": "European road freight is a market of very large shippers and very small hauliers: a manufacturer with thousands of loads a week on one side, and on the other tens of thousands of carriers running a handful of trucks each. Matching them has historically been done by phone and fax through forwarders, and roughly a fifth of trucks run empty because nobody can see the whole board at once.",
-    "solution": "sennder is a digital forwarder: it contracts directly with the large shippers and dispatches the work across a connected fleet of third-party carriers through its own platform, so pricing, tracking and settlement are software rather than phone calls. It has grown as much by absorbing rivals — Everoad, Uber Freight’s European arm, C.H. Robinson’s European surface transport business — as organically."
+    "solution": "sennder is a digital forwarder: it contracts directly with the large shippers and dispatches the work across a connected fleet of third-party carriers through its own platform, so pricing, tracking and settlement are software rather than phone calls. It has grown as much by absorbing rivals, Everoad, Uber Freight’s European arm and C.H. Robinson’s European surface transport business, as organically."
    },
    "valuation": {
     "amount": 1000,
@@ -5769,7 +5903,8 @@
      "title": "Berlin-based digital freight forwarder Sennder bags $160 million at a $1 billion+ valuation",
      "url": "https://tech.eu/2021/01/14/berlin-based-digital-freight-forwarder-sennder-bags-160-million-at-a-1-billion-valuation/",
      "publishedOn": "2021-01-14",
-     "quote": "Berlin-based digital freight forwarder sennder has secured $160 million at a $1 billion+ valuation in growth funding to \"accelerate digitalization of European trucking\" and boost its expansion plans."
+     "quote": "Berlin-based digital freight forwarder sennder has secured $160 million at a $1 billion+ valuation in growth funding to \"accelerate digitalization of European trucking\" and boost its expansion plans.",
+     "publishedLabel": "14 Jan 2021"
     },
     {
      "id": "s2",
@@ -5777,7 +5912,8 @@
      "title": "Digital road freight forwarder Sennder raises $160M Series, plans European expansion",
      "url": "https://techcrunch.com/2021/01/13/digital-road-freight-forwarder-sennder-raises-160m-series-plans-european-expansion/",
      "publishedOn": "2021-01-13",
-     "quote": "Sennder, a large digital road freight forwarder based out of Germany, has raised $160 million in Series D financing. The round was led by an unnamed party, but round participants included Accel, Lakestar, HV Capital, Project A and Scania."
+     "quote": "Sennder, a large digital road freight forwarder based out of Germany, has raised $160 million in Series D financing. The round was led by an unnamed party, but round participants included Accel, Lakestar, HV Capital, Project A and Scania.",
+     "publishedLabel": "13 Jan 2021"
     },
     {
      "id": "s3",
@@ -5785,7 +5921,8 @@
      "title": "German logistics player Sennder primes new fundraise at €2 billion valuation",
      "url": "https://tech.eu/2022/12/14/sennder/",
      "publishedOn": "2022-12-14",
-     "quote": "Sennder's existing investors include Accel, Lakestare, HV Capital, Project A and Scania. Its most recent funding haul was the second series D close in June 2021 which added $80 million to the $160 million in fund raised that January."
+     "quote": "Sennder's existing investors include Accel, Lakestare, HV Capital, Project A and Scania. Its most recent funding haul was the second series D close in June 2021 which added $80 million to the $160 million in fund raised that January.",
+     "publishedLabel": "14 Dec 2022"
     },
     {
      "id": "s4",
@@ -5793,7 +5930,8 @@
      "title": "German logistics player Sennder primes new fundraise at €2 billion valuation",
      "url": "https://tech.eu/2022/12/14/sennder/",
      "publishedOn": "2022-12-14",
-     "quote": "Berlin-based logistics services startup Sennder is taking on funds at around double the $1 billion or so value it received for equity issued January 2021, when it took $160 million to ramp up its digitised freight trucking strategy."
+     "quote": "Berlin-based logistics services startup Sennder is taking on funds at around double the $1 billion or so value it received for equity issued January 2021, when it took $160 million to ramp up its digitised freight trucking strategy.",
+     "publishedLabel": "14 Dec 2022"
     },
     {
      "id": "s5",
@@ -5801,7 +5939,8 @@
      "title": "Freight forwarder sennder raises $80M at a $1B+ valuation",
      "url": "https://techcrunch.com/2021/06/01/freight-forwarder-sennder-raises-80m-at-a-1b-valuation/",
      "publishedOn": "2021-06-01",
-     "quote": "Sennder, a digital freight forwarder that focuses on moving cargo around Europe (and specifically focusing on trucks and “full truck load”, FTL, freight forwarding), has raised $80 million in funding, at a valuation the company confirms is now over $1 billion."
+     "quote": "Sennder, a digital freight forwarder that focuses on moving cargo around Europe (and specifically focusing on trucks and “full truck load”, FTL, freight forwarding), has raised $80 million in funding, at a valuation the company confirms is now over $1 billion.",
+     "publishedLabel": "1 Jun 2021"
     },
     {
      "id": "s6",
@@ -5809,7 +5948,8 @@
      "title": "Freight forwarder sennder raises $80M at a $1B+ valuation",
      "url": "https://techcrunch.com/2021/06/01/freight-forwarder-sennder-raises-80m-at-a-1b-valuation/",
      "publishedOn": "2021-06-01",
-     "quote": "The Berlin-based startup has been on something of a funding tear this year. In January, it announced a $160 million round, and this $80 million is closing out its Series D. Baillie Gifford led this latest Series D extension, with Hedosophia, Accel, Lakestar, HV Capital, Project A and Scania all participating in the previous part of the Series D."
+     "quote": "The Berlin-based startup has been on something of a funding tear this year. In January, it announced a $160 million round, and this $80 million is closing out its Series D. Baillie Gifford led this latest Series D extension, with Hedosophia, Accel, Lakestar, HV Capital, Project A and Scania all participating in the previous part of the Series D.",
+     "publishedLabel": "1 Jun 2021"
     },
     {
      "id": "s7",
@@ -5817,7 +5957,8 @@
      "title": "Freight forwarder sennder raises $80M at a $1B+ valuation",
      "url": "https://techcrunch.com/2021/06/01/freight-forwarder-sennder-raises-80m-at-a-1b-valuation/",
      "publishedOn": "2021-06-01",
-     "quote": "The funding makes sennder, which has now raised some $350 million, one of the most well-funded of the freight forwarders, but it’s a hot area at the moment."
+     "quote": "The funding makes sennder, which has now raised some $350 million, one of the most well-funded of the freight forwarders, but it’s a hot area at the moment.",
+     "publishedLabel": "1 Jun 2021"
     }
    ],
    "display": {
@@ -5872,7 +6013,7 @@
    ],
    "niche": "Employee Communications",
    "thesis": {
-    "problem": "Most of the people a large employer needs to reach — on a production line, in a warehouse, driving a van — have no desk, no company laptop and often no company email address. Internal communication built around the intranet and the all-staff email therefore misses exactly the workforce it most needs during a safety notice or a shift change.",
+    "problem": "Most of the people a large employer needs to reach, on a production line, in a warehouse or driving a van, have no desk, no company laptop and often no company email address. Internal communication built around the intranet and the all-staff email therefore misses exactly the workforce it most needs during a safety notice or a shift change.",
     "solution": "Staffbase gives the internal communications team one place to write a message and send it to a branded employee app, an email newsletter and an intranet at once, then reports who actually opened it. The customer is specifically the communications department rather than IT or HR, which is what separates it from the collaboration tools already installed alongside it."
    },
    "valuation": {
@@ -5966,7 +6107,8 @@
      "title": "Staffbase raises $115M at a $1.1B valuation to help internal comms teams get their message across",
      "url": "https://techcrunch.com/2022/03/15/staffbase-raises-115m-at-a-1-1b-valuation-to-help-internal-comms-teams-get-their-message-across/",
      "publishedOn": "2022-03-15",
-     "quote": "Staffbase, which helps internal teams craft, send out and measure the impact of their communications with their organizations, has raised $115 million in funding, a Series E that catapults the company’s valuation to $1.1 billion."
+     "quote": "Staffbase, which helps internal teams craft, send out and measure the impact of their communications with their organizations, has raised $115 million in funding, a Series E that catapults the company’s valuation to $1.1 billion.",
+     "publishedLabel": "15 Mar 2022"
     },
     {
      "id": "s2",
@@ -5974,7 +6116,8 @@
      "title": "General Atlantic leads $145 million financing round in Staffbase",
      "url": "https://staffbase.com/press/releases/series-d-financing-round",
      "publishedOn": "2021-03-29",
-     "quote": "General Atlantic is leading a $145 million (€122 million) financing round in the Chemnitz, Germany-based start-up to help the company grow internationally and strengthen its global leadership in the employee engagement space."
+     "quote": "General Atlantic is leading a $145 million (€122 million) financing round in the Chemnitz, Germany-based start-up to help the company grow internationally and strengthen its global leadership in the employee engagement space.",
+     "publishedLabel": "29 Mar 2021"
     },
     {
      "id": "s3",
@@ -5982,7 +6125,8 @@
      "title": "General Atlantic leads $145 million financing round in Staffbase",
      "url": "https://staffbase.com/press/releases/series-d-financing-round",
      "publishedOn": "2021-03-29",
-     "quote": "Staffbase founders (from left to right): Frank Wolf, Dr. Lutz Gerlach and Dr. Martin Böhringer"
+     "quote": "Staffbase founders (from left to right): Frank Wolf, Dr. Lutz Gerlach and Dr. Martin Böhringer",
+     "publishedLabel": "29 Mar 2021"
     },
     {
      "id": "s4",
@@ -5990,7 +6134,8 @@
      "title": "Staffbase Raises $115M at $1.1B Valuation to Achieve Global Leadership in Employee Communications Management",
      "url": "https://staffbase.com/press/releases/staffbase-raises-115m-at-1-1b-valuation",
      "publishedOn": "2022-03-15",
-     "quote": "Staffbase’s Series E funding round follows the company’s $145 million (€122 million) Series D led by General Atlantic in March 2021."
+     "quote": "Staffbase’s Series E funding round follows the company’s $145 million (€122 million) Series D led by General Atlantic in March 2021.",
+     "publishedLabel": "15 Mar 2022"
     }
    ],
    "display": {
@@ -6044,7 +6189,7 @@
    "niche": "Loitering Munitions",
    "thesis": {
     "problem": "European defence procurement was built to buy small numbers of expensive platforms over decades. The war in Ukraine showed that attritable strike drones are consumed in thousands per month, and that the bottleneck is not designing one but manufacturing, iterating and fielding them faster than an adversary can adapt their countermeasures.",
-    "solution": "Stark builds loitering munitions — drones that hold over an area, find a target and destroy it on impact — and treats production rate as the product. Its stated use of the 2026 round is new electronic-warfare research facilities and scaling output to thousands of systems a month, which is the number that matters in a war of attrition rather than a unit-cost comparison against a missile."
+    "solution": "Stark builds loitering munitions, drones that hold over an area, find a target and destroy it on impact, and treats production rate as the product. Its stated use of the 2026 round is new electronic-warfare research facilities and scaling output to thousands of systems a month, which is the number that matters in a war of attrition rather than a unit-cost comparison against a missile."
    },
    "valuation": {
     "amount": 3500,
@@ -6163,7 +6308,8 @@
      "title": "Stark bags €500M in new funding",
      "url": "https://tech.eu/2026/06/23/stark-bags-eur500-million-in-new-funding/",
      "publishedOn": "2026-06-23",
-     "quote": "Stark, the German defence tech startup which makes weaponised drones, has today confirmed it has raised €500 million in new funding."
+     "quote": "Stark, the German defence tech startup which makes weaponised drones, has today confirmed it has raised €500 million in new funding.",
+     "publishedLabel": "23 Jun 2026"
     },
     {
      "id": "s2",
@@ -6171,7 +6317,8 @@
      "title": "Stark bags €500M in new funding",
      "url": "https://tech.eu/2026/06/23/stark-bags-eur500-million-in-new-funding/",
      "publishedOn": "2026-06-23",
-     "quote": "The funding round values Stark at €3.5bn."
+     "quote": "The funding round values Stark at €3.5bn.",
+     "publishedLabel": "23 Jun 2026"
     },
     {
      "id": "s3",
@@ -6179,7 +6326,8 @@
      "title": "Drones startup Stark confirms €500m raise backed by Sequoia and Founders Fund",
      "url": "https://sifted.eu/articles/stark-defence-drones-funding-round-confirms",
      "publishedOn": "2026-06-23",
-     "quote": "Sifted previously reported that the company reached unicorn status in an unannounced January funding round valuing it at more than $1bn, after raising $62m last August in a Sequoia-led round."
+     "quote": "Sifted previously reported that the company reached unicorn status in an unannounced January funding round valuing it at more than $1bn, after raising $62m last August in a Sequoia-led round.",
+     "publishedLabel": "23 Jun 2026"
     },
     {
      "id": "s4",
@@ -6187,7 +6335,8 @@
      "title": "Drone startup Stark ‘reaches unicorn valuation’ following German armed forces deal",
      "url": "https://sifted.eu/articles/stark-unicorn-valuation-following-german-armed-forces-deal",
      "publishedOn": "2026-02-13",
-     "quote": "Prior to this latest unannounced raise, Stark had raised a $62m round in August last year, led by Sequoia Capital, with participation from Thiel Capital, the NATO Innovation Fund, In-Q-Tel, Project A and Döpfner Capital."
+     "quote": "Prior to this latest unannounced raise, Stark had raised a $62m round in August last year, led by Sequoia Capital, with participation from Thiel Capital, the NATO Innovation Fund, In-Q-Tel, Project A and Döpfner Capital.",
+     "publishedLabel": "13 Feb 2026"
     },
     {
      "id": "s5",
@@ -6195,7 +6344,8 @@
      "title": "Drone startup Stark ‘reaches unicorn valuation’ following German armed forces deal",
      "url": "https://sifted.eu/articles/stark-unicorn-valuation-following-german-armed-forces-deal",
      "publishedOn": "2026-02-13",
-     "quote": "That round valued the company at roughly $500m and brought its total disclosed funding to about $100m since its founding."
+     "quote": "That round valued the company at roughly $500m and brought its total disclosed funding to about $100m since its founding.",
+     "publishedLabel": "13 Feb 2026"
     },
     {
      "id": "s6",
@@ -6203,7 +6353,8 @@
      "title": "Drone startup Stark ‘reaches unicorn valuation’ following German armed forces deal",
      "url": "https://sifted.eu/articles/stark-unicorn-valuation-following-german-armed-forces-deal",
      "publishedOn": "2026-02-13",
-     "quote": "German armed drone startup Stark has secured a fresh round of undisclosed funding that reportedly boosts its valuation above €1bn, Manager Magazin reports."
+     "quote": "German armed drone startup Stark has secured a fresh round of undisclosed funding that reportedly boosts its valuation above €1bn, Manager Magazin reports.",
+     "publishedLabel": "13 Feb 2026"
     },
     {
      "id": "s7",
@@ -6211,7 +6362,8 @@
      "title": "Drones startup Stark confirms €500m raise backed by Sequoia and Founders Fund",
      "url": "https://sifted.eu/articles/stark-defence-drones-funding-round-confirms",
      "publishedOn": "2026-06-23",
-     "quote": "Stark was founded by Quantum Systems founder Florian Seibel, who has since stepped back from day-to-day operations and remains a founding investor."
+     "quote": "Stark was founded by Quantum Systems founder Florian Seibel, who has since stepped back from day-to-day operations and remains a founding investor.",
+     "publishedLabel": "23 Jun 2026"
     }
    ],
    "display": {
@@ -6270,7 +6422,7 @@
    "niche": "Consumer Tax",
    "thesis": {
     "problem": "Millions of employees in Germany, Italy and Spain are owed a tax refund and never claim it, because the return assumes vocabulary and paperwork most people do not have. The alternatives are a tax adviser whose fee can exceed the refund, or desktop software that still expects the user to know which boxes apply to them.",
-    "solution": "Taxfix replaces the form with a guided set of plain-language questions, selecting only the ones that fit the answers already given, and files the return for a flat fee once the refund is shown. The company is deliberately aimed at simple tax situations — salaried people with a payslip — rather than at the complex cases advisers are built for."
+    "solution": "Taxfix replaces the form with a guided set of plain-language questions, selecting only the ones that fit the answers already given, and files the return for a flat fee once the refund is shown. The company is deliberately aimed at simple tax situations, salaried people with a payslip, rather than at the complex cases advisers are built for."
    },
    "valuation": {
     "amount": 1000,
@@ -6360,7 +6512,8 @@
      "title": "Taxfix, the Berlin-based mobile tax filing app, raises $220M at a $1B+ valuation",
      "url": "https://techcrunch.com/2022/04/27/taxfix-the-berlin-based-mobile-tax-filing-app-raises-220m-at-a-1b-valuation/",
      "publishedOn": "2022-04-28",
-     "quote": "It has closed a Series D of $220 million at a valuation of over $1 billion, money that the startup will be using both to build in more products to extend its touch points with customers beyond annual use around tax time; and to expand to new markets beyond its current footprint of Germany, Spain and Italy."
+     "quote": "It has closed a Series D of $220 million at a valuation of over $1 billion, money that the startup will be using both to build in more products to extend its touch points with customers beyond annual use around tax time; and to expand to new markets beyond its current footprint of Germany, Spain and Italy.",
+     "publishedLabel": "28 Apr 2022"
     },
     {
      "id": "s2",
@@ -6368,7 +6521,8 @@
      "title": "Taxfix, the Berlin-based mobile tax filing app, raises $220M at a $1B+ valuation",
      "url": "https://techcrunch.com/2022/04/27/taxfix-the-berlin-based-mobile-tax-filing-app-raises-220m-at-a-1b-valuation/",
      "publishedOn": "2022-04-28",
-     "quote": "This is a major round for the startup: Taxfix has raised around $330 million since being founded in 2016."
+     "quote": "This is a major round for the startup: Taxfix has raised around $330 million since being founded in 2016.",
+     "publishedLabel": "28 Apr 2022"
     },
     {
      "id": "s3",
@@ -6376,7 +6530,8 @@
      "title": "Berlin's Taxfix lands $65 million Series C led by Index Ventures to grow automated tax return app",
      "url": "https://tech.eu/brief/taxfix-series-c/",
      "publishedOn": "2020-04-16",
-     "quote": "Taxfix, a Berlin-based automated tax software, has raised a $65 million Series C led by Index Ventures, with support from existing investors Valar Ventures, Creandum and Redalpine."
+     "quote": "Taxfix, a Berlin-based automated tax software, has raised a $65 million Series C led by Index Ventures, with support from existing investors Valar Ventures, Creandum and Redalpine.",
+     "publishedLabel": "16 Apr 2020"
     }
    ],
    "display": {
@@ -6544,7 +6699,8 @@
      "title": "Trade Republic strengthens its shareholder base in a €1.2 billion secondary round led by Founders Fund and other existing investors at €12.5 billion valuation.",
      "url": "https://assets.traderepublic.com/assets/files/251217_Secondary_PressRelease_BL_EN2.pdf",
      "publishedOn": "2025-12-17",
-     "quote": "Now, investors conducted a €1.2bn secondary transaction valuing the company at €12.5bn."
+     "quote": "Now, investors conducted a €1.2bn secondary transaction valuing the company at €12.5bn.",
+     "publishedLabel": "17 Dec 2025"
     },
     {
      "id": "s2",
@@ -6552,7 +6708,8 @@
      "title": "Berlin’s Trade Republic nabs $900M led by Sequoia at a $5B+ valuation to take its neobroker app across Europe",
      "url": "https://techcrunch.com/2021/05/20/berlins-trade-republic-nabs-900m-led-by-sequoia-at-a-5b-valuation-to-take-its-neo-broker-app-across-europe/",
      "publishedOn": "2021-05-20",
-     "quote": "Trade Republic, which lets people buy and sell shares, exchange-traded funds (ETFs), derivatives and (most recently) cryptocurrency by way of a mobile app that does not charge commissions (but does have a fee structure for various services), has raised $900 million in a Series C round of funding that values the Berlin startup at $5.3 billion, the startup confirmed."
+     "quote": "Trade Republic, which lets people buy and sell shares, exchange-traded funds (ETFs), derivatives and (most recently) cryptocurrency by way of a mobile app that does not charge commissions (but does have a fee structure for various services), has raised $900 million in a Series C round of funding that values the Berlin startup at $5.3 billion, the startup confirmed.",
+     "publishedLabel": "20 May 2021"
     },
     {
      "id": "s3",
@@ -6560,7 +6717,8 @@
      "title": "Trade Republic strengthens its shareholder base in a €1.2 billion secondary round led by Founders Fund and other existing investors at €12.5 billion valuation.",
      "url": "https://assets.traderepublic.com/assets/files/251217_Secondary_PressRelease_BL_EN2.pdf",
      "publishedOn": "2025-12-17",
-     "quote": "Trade Republic raised more than 1 billion euro in primary capital across its funding rounds and received a full banking license from the ECB in 2023."
+     "quote": "Trade Republic raised more than 1 billion euro in primary capital across its funding rounds and received a full banking license from the ECB in 2023.",
+     "publishedLabel": "17 Dec 2025"
     }
    ],
    "display": {

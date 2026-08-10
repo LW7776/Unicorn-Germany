@@ -51,7 +51,7 @@ function afterClose() {
   closeListeners.forEach((listener) => listener());
 }
 
-const dash = (value) => (value === null || value === undefined || value === "" ? "—" : value);
+const dash = (value) => (value === null || value === undefined || value === "" ? "–" : value);
 /** Escape after applying the "—" fallback — safe for any scalar, including
     numbers and strings already containing HTML-significant characters. */
 const text = (value) => escapeHtml(dash(value));
@@ -86,7 +86,7 @@ function disputedBadge(disputed, sources) {
   const link = source ? sourceLink(source) : text(disputed.source);
   return `<span class="fig__disputed">
     <span class="fig__disputed-badge">disputed</span>
-    <span class="fig__disputed-note">${text(disputed.note)}</span> — ${link}
+    <span class="fig__disputed-note">${text(disputed.note)}</span> · ${link}
   </span>`;
 }
 
@@ -101,7 +101,7 @@ function undisclosedBadge(undisclosed, sources, label = "valuation undisclosed")
   const link = source ? sourceLink(source) : text(undisclosed.source);
   return `<span class="fig__disputed fig__undisclosed">
     <span class="fig__disputed-badge">${text(label)}</span>
-    <span class="fig__disputed-note">${text(undisclosed.note)}</span> — ${link}
+    <span class="fig__disputed-note">${text(undisclosed.note)}</span> · ${link}
   </span>`;
 }
 
@@ -143,7 +143,7 @@ function sourceLink(source) {
 function sources(company) {
   return `<ol class="sources">${company.sources.map((source) => `
     <li>${sourceLink(source)}
-      <span class="sources__meta">${text(source.publication)} · ${text(source.publishedOn)}</span></li>`).join("")}</ol>`;
+      <span class="sources__meta">${text(source.publication)} · ${text(source.publishedLabel)}</span></li>`).join("")}</ol>`;
 }
 
 function markup(company) {
@@ -204,8 +204,8 @@ function markup(company) {
     ${figure(`Years to ${text(d.unicornThresholdLabel)}`, d.yearsToUnicorn, `unicorn ${dash(d.becameUnicornLabel)}`)}
   </div>
   <section class="detail__thesis">
-    <div><h3 class="label">The problem</h3><p class="prose">${text(company.thesis.problem)}</p></div>
-    <div><h3 class="label">Technology &amp; business model</h3><p class="prose">${text(company.thesis.solution)}</p></div>
+    <div><h3 class="label">Problem</h3><p class="prose">${text(company.thesis.problem)}</p></div>
+    <div><h3 class="label">Technology and business model</h3><p class="prose">${text(company.thesis.solution)}</p></div>
   </section>
   <section><h3 class="label">Funding rounds</h3>${timeline(company)}</section>
   <section><h3 class="label">Investors</h3>
@@ -213,7 +213,7 @@ function markup(company) {
   <section><h3 class="label">Founders</h3>
     <p>${company.founders.length
       ? company.founders.map((f) => `${text(f.name)} <span class="detail__role">${text(f.role)}</span>`).join(" · ")
-      : "—"}</p></section>
+      : "–"}</p></section>
   <section><h3 class="label">Sources</h3>${sources(company)}</section>
   <footer class="detail__foot">
     <a href="https://github.com/LW7776/Unicorn-Germany/edit/main/data/companies/${slug}.json"

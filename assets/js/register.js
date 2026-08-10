@@ -12,7 +12,7 @@ function cell(company, index) {
   // though its valuation is not. Same amber signal as `aged` and `disputed`: a
   // qualification on a figure, never an error.
   const undisclosed = company.display.valuationUndisclosed
-    ? `<span class="cell__undisclosed" title="No source has published a figure — this company's unicorn status is itself sourced. Open the entry to read it.">${escapeHtml(company.display.valuationUndisclosedBadge)}</span>`
+    ? `<span class="cell__undisclosed" title="No source has published a figure. This company's unicorn status is itself sourced, so open the entry to read it.">${escapeHtml(company.display.valuationUndisclosedBadge)}</span>`
     : "";
   const name = escapeHtml(company.name);
   const slug = escapeHtml(company.slug);
@@ -54,7 +54,7 @@ export function renderStats(container, stats) {
   // stats.dataAsOfLabel is settled in tools/build.py, like every other label on
   // this page, and is null when the dataset is empty (see build.py's
   // _data_as_of) — never a wall-clock value, and never assumed present.
-  const freshness = escapeHtml(stats.dataAsOfLabel || "—");
+  const freshness = escapeHtml(stats.dataAsOfLabel || "–");
   const items = [
     ["Unicorns", stats.count],
     // Not a fixed string: companies whose valuation no source has published are left

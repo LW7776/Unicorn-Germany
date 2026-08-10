@@ -18,7 +18,7 @@
   "niche": "Customer Experience",
   "thesis": {
     "problem": "Enterprise contact centres are expensive to staff and slow to scale, and the automation sold to them was built on rigid decision trees that break the moment a caller phrases something unexpectedly. Large brands that wanted to hand routine calls to software found it either failed the customer or could not be trusted to act on their systems.",
-    "solution": "Parloa sells a platform for building, testing and supervising AI agents that hold spoken and written conversations and then carry out the resulting task in the company's own systems. The emphasis is on the management layer — simulation before deployment, guardrails and human sign-off — so that a large enterprise can run many agents across languages and channels under one set of controls."
+    "solution": "Parloa sells a platform for building, testing and supervising AI agents that hold spoken and written conversations and then carry out the resulting task in the company's own systems. The emphasis is on the management layer, simulation before deployment, guardrails and human sign-off, so that a large enterprise can run many agents across languages and channels under one set of controls."
   },
   "valuation": {
     "amount": 3000,

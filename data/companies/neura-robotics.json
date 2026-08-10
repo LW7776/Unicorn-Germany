@@ -14,8 +14,8 @@
   ],
   "niche": "Robotics",
   "thesis": {
-    "problem": "Industrial robots are precise and blind. They repeat a taught path inside a safety cage because they cannot perceive what is around them, which means every new task is a re-installation and every task involving a person is a fence. That is workable for a car plant running one model for six years and useless for the labour shortage everyone actually has — the jobs nobody can staff are varied, unstructured and next to people.",
-    "solution": "Neura Robotics builds what it calls cognitive robots: arms and humanoids with sensing built into the machine rather than bolted around it, so they can work without a cage and be taught by demonstration instead of programmed. The company designs its own sensors, drives and software stack rather than integrating other people's, and is betting that the same platform serves an industrial arm, a service robot and a humanoid — which is why a robotics company is raising at the scale of an AI one."
+    "problem": "Industrial robots are precise and blind. They repeat a taught path inside a safety cage because they cannot perceive what is around them, which means every new task is a re-installation and every task involving a person is a fence. That is workable for a car plant running one model for six years and useless for the labour shortage everyone actually has, where the jobs nobody can staff are varied, unstructured and next to people.",
+    "solution": "Neura Robotics builds what it calls cognitive robots: arms and humanoids with sensing built into the machine rather than bolted around it, so they can work without a cage and be taught by demonstration instead of programmed. The company designs its own sensors, drives and software stack rather than integrating other people's, and is betting that the same platform serves an industrial arm, a service robot and a humanoid, which is why a robotics company is raising at the scale of an AI one."
   },
   "valuation": {
     "amount": 7000,

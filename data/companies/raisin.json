@@ -14,8 +14,8 @@
   ],
   "niche": "Savings Marketplace",
   "thesis": {
-    "problem": "Deposit rates inside the single market differ by percentage points, and almost nobody can reach them. A saver in Germany is offered whatever their own bank pays; opening an account with a bank in Portugal or Lithuania means a foreign onboarding process, a foreign language and a foreign deposit-guarantee scheme they have no way to assess. The rates exist, the guarantees exist, and the friction between them is what keeps hundreds of billions sitting still.",
-    "solution": "Raisin is a marketplace with one onboarding: the saver signs up once and can then place money with any partner bank on the platform across Europe, each covered by its own national deposit guarantee up to the EU-harmonised €100,000. The other half of the business is the mirror image — deposits-as-a-service sold to banks that want funding and to distributors that want a savings product without building one. It brokers tens of billions of euros and has been profitable since 2023."
+    "problem": "Deposit rates inside the single market differ by percentage points, and almost nobody can reach them. A saver in Germany is offered whatever their own bank pays, and opening an account with a bank in Portugal or Lithuania means a foreign onboarding process, a foreign language and a foreign deposit-guarantee scheme they have no way to assess. The rates exist, the guarantees exist, and the friction between them is what keeps hundreds of billions sitting still.",
+    "solution": "Raisin is a marketplace with one onboarding: the saver signs up once and can then place money with any partner bank on the platform across Europe, each covered by its own national deposit guarantee up to the EU-harmonised €100,000. The other half of the business is the mirror image, deposits-as-a-service sold to banks that want funding and to distributors that want a savings product without building one. It brokers tens of billions of euros and has been profitable since 2023."
   },
   "valuation": {
     "amount": null,
@@ -25,7 +25,7 @@
     "round": "Secondary share sale",
     "source": "s5",
     "undisclosed": {
-      "note": "The figure everyone quotes for Raisin is “over two billion euros”, and it is over two billion euros in words rather than digits — Gründerszene spells it out, sourcing it to Finance Forward, and no allowlisted publication has printed it as a numeral. Handelsblatt separately calls the company “milliardenschwer” and nothing more precise. Two further things are worth a reader's attention. This valuation was set by a secondary sale in which existing holders sold shares, not by a priced primary round, so it is a price paid for stock changing hands rather than a post-money — the register publishes those (Trade Republic, n8n) and always labels them. And Raisin's unicorn status has not been continuous: investor Kinnevik marked it at €895m in 2022 and it lost the label, regaining it at the March 2023 upround this record dates the crossing to.",
+      "note": "The figure everyone quotes for Raisin is “over two billion euros”, and it is over two billion euros in words rather than digits. Gründerszene spells it out, sourcing it to Finance Forward, and no allowlisted publication has printed it as a numeral. Handelsblatt separately calls the company “milliardenschwer” and nothing more precise. Two further things are worth a reader's attention. This valuation was set by a secondary sale in which existing holders sold shares, not by a priced primary round, so it is a price paid for stock changing hands rather than a post-money. The register publishes those (Trade Republic, n8n) and always labels them. And Raisin's unicorn status has not been continuous: investor Kinnevik marked it at €895m in 2022 and it lost the label, regaining it at the March 2023 upround this record dates the crossing to.",
       "source": "s5"
     }
   },
@@ -91,7 +91,7 @@
       ],
       "source": "s3",
       "undisclosed": {
-        "note": "The crossing, and the company is the one that states it. Raisin had been a unicorn once before — Kinnevik marked the merged Raisin DS at €1.3bn in July 2021 — and then was not, after the same investor wrote it down to €895m in 2022. This €60m Series E restored the status, and co-founder Frank Freund says so in the round's own coverage: “Unser Unicorn-Status wurde mit der jetzigen Upround bestätigt.” No figure accompanies it, from the company or from anyone else, which is why the crossing is recorded qualitatively rather than with a post-money.",
+        "note": "The crossing, and the company is the one that states it. Raisin had been a unicorn once before, when Kinnevik marked the merged Raisin DS at €1.3bn in July 2021, and then was not, after the same investor wrote it down to €895m in 2022. This €60m Series E restored the status, and co-founder Frank Freund says so in the round's own coverage: “Unser Unicorn-Status wurde mit der jetzigen Upround bestätigt.” No figure accompanies it, from the company or from anyone else, which is why the crossing is recorded qualitatively rather than with a post-money.",
         "source": "s4"
       }
     },

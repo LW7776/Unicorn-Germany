@@ -72,7 +72,7 @@ AGED_BEHIND_ROUND_MONTHS = 24
 #                  Milliarden-Bewertung" without committing to one. Printing "$" here
 #                  would be the register asserting a currency nobody used.
 #
-# Rejected: a bare "—", which is what every other unknown field renders as and would
+# Rejected: a bare "–", which is what every other unknown field renders as and would
 # read as "worth nothing" beside "$8 bn"; and "€0", which it must never look like.
 UNDISCLOSED_VALUATION_LABEL = "Undisclosed"
 UNDISCLOSED_VALUATION_BADGE = ">1bn"
@@ -187,8 +187,8 @@ def derive_company(record, today, fx_rate=0.92):
         # figure was struck, because there is no figure. Same field, same staleness
         # rule: evidence ages exactly like a number does.
         "valuationAsOf": format_date(valuation["asOf"]),
-        "lastRoundLabel": format_date(last_round["date"]) if last_round else "—",
-        "lastRoundStage": last_round["stage"] if last_round else "—",
+        "lastRoundLabel": format_date(last_round["date"]) if last_round else "–",
+        "lastRoundStage": last_round["stage"] if last_round else "–",
         # No totalRaisedLabel. `totalRaised` is still carried in the data and still
         # gated by validate.py's quote check — it is sourced, and it may come back —
         # but nothing on the site renders it, so nothing derives a label for it.
@@ -196,7 +196,7 @@ def derive_company(record, today, fx_rate=0.92):
         "becameUnicornLabel": format_date(record["becameUnicorn"]["date"]),
         "unicornThresholdLabel": threshold_label,
         "unicornFlagLabel": unicorn_flag_label,
-        "foundersLabel": ", ".join(f["name"] for f in founders) if founders else "—",
+        "foundersLabel": ", ".join(f["name"] for f in founders) if founders else "–",
         "aged": aged,
     }
     derived_rounds = []
@@ -234,6 +234,12 @@ def derive_company(record, today, fx_rate=0.92):
     return {
         **record,
         "rounds": derived_rounds,
+        # A source's publishedOn is a full date and used to reach the page as the
+        # raw "2025-12-01" under every citation, which is the only date on the site
+        # that was not rendered. Same _day_label the round-up's citations already
+        # use, so both lists read "1 Dec 2025".
+        "sources": [{**source, "publishedLabel": _day_label(source["publishedOn"])}
+                    for source in record.get("sources", [])],
         "display": display,
         "sort": sort,
         "investorsOrdered": _investors_leads_first(record),
@@ -346,8 +352,8 @@ def build(src="data/companies", out="data/companies.json", fx_path="data/fx.json
 # ---------------------------------------------------------------------------
 
 # Rendered where a founder list would go when the source never printed one.
-# Not "—": the sentence reads "Company X, from founders Y, secured Z", and an
-# em dash in the middle of it asserts that the founders are unknown to anyone.
+# Not a dash: the sentence reads "Company X, from founders Y, secured Z", and a
+# dash in the middle of it asserts that the founders are unknown to anyone.
 # What is actually true is that this source did not name them, so the clause is
 # dropped entirely and the sentence closes up around the gap.
 NO_FOUNDERS_LABEL = None
@@ -394,7 +400,7 @@ def format_names(names):
 def derive_round(entry):
     """Every label the browser prints, settled here.
 
-    `valuationLabel` is None rather than "—" when no valuation was reported:
+    `valuationLabel` is None rather than a dash when no valuation was reported:
     the owner's format puts it in parentheses, and "(at a — valuation)" is
     worse than no parenthetical at all. The renderer omits the clause.
     """

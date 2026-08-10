@@ -14,7 +14,7 @@
   ],
   "niche": "Launch Vehicles",
   "thesis": {
-    "problem": "Europe can build satellites and cannot reliably launch them. Ariane 6 is sized for large payloads on a national cadence, Soyuz stopped being available in 2022, and the small and medium satellites that make up most of what Europe now wants in orbit — earth observation, connectivity, and increasingly sovereign defence capacity — have had to buy rides from American providers on American schedules and American terms.",
+    "problem": "Europe can build satellites and cannot reliably launch them. Ariane 6 is sized for large payloads on a national cadence, Soyuz stopped being available in 2022, and the small and medium satellites that make up most of what Europe now wants in orbit, earth observation, connectivity and increasingly sovereign defence capacity, have had to buy rides from American providers on American schedules and American terms.",
     "solution": "Isar Aerospace builds Spectrum, a two-stage rocket sized for the payloads Europe actually flies rather than the ones a national programme was designed around, and manufactures it itself: engines, tanks and avionics in-house, additive manufacturing rather than a supplier chain across a dozen countries, on the argument that vertical integration is what makes launch cheap and the cadence predictable. It is a spinout of the Technical University of Munich and launches from Andøya in northern Norway."
   },
   "valuation": {
@@ -25,7 +25,7 @@
     "round": "Convertible bond",
     "source": "s4",
     "undisclosed": {
-      "note": "Nobody has published a figure for Isar Aerospace, and the register spent a batch establishing that rather than assuming it. Its own release on the €270m Series D was opened and read end to end — round, investors, factory, headcount, no valuation anywhere — and Sifted's account of the same round states none either. The €2bn widely attached to the company traces to a Bloomberg piece whose own URL slug is “isar-aerospace-in-talks-to-raise-250-million-ahead-of-launch”: talks, about a smaller round that was superseded, and all three Wayback captures of that URL are themselves HTTP 403 block pages. What is stated plainly, by an allowlisted publication, is the status and the month: TechCrunch, listing Europe's new unicorns of 2025. That sentence carries no numeral, which is exactly why this record exists in this shape.",
+      "note": "Nobody has published a figure for Isar Aerospace, and the register spent a batch establishing that rather than assuming it. Its own release on the €270m Series D was read end to end, round, investors, factory and headcount, with no valuation anywhere, and Sifted's account of the same round states none either. The €2bn widely attached to the company traces to a Bloomberg piece whose own URL slug is “isar-aerospace-in-talks-to-raise-250-million-ahead-of-launch”: talks, about a smaller round that was superseded, and all three Wayback captures of that URL are themselves HTTP 403 block pages. What is stated plainly, by an allowlisted publication, is the status and the month: TechCrunch, listing Europe's new unicorns of 2025. That sentence carries no numeral, which is exactly why this record exists in this shape.",
       "source": "s4"
     }
   },
@@ -97,7 +97,7 @@
       ],
       "source": "s4",
       "undisclosed": {
-        "note": "The crossing, and an unusual one: the instrument that carried Isar Aerospace over the threshold was a convertible bond rather than a priced equity round, so there is no post-money to disclose and nobody has disclosed one. TechCrunch states the fact and the month in the same sentence as the instrument, which is what this record rests on. Note that the company's own university says the same thing — TUM's press release is titled “Isar Aerospace becomes a unicorn” — but a university announcing its spinout is not on the register's allowlist, so it is mentioned here and not cited.",
+        "note": "The crossing, and an unusual one: the instrument that carried Isar Aerospace over the threshold was a convertible bond rather than a priced equity round, so there is no post-money to disclose and nobody has disclosed one. TechCrunch states the fact and the month in the same sentence as the instrument, which is what this record rests on. The company's own university says the same thing, since TUM's press release is titled “Isar Aerospace becomes a unicorn”, but a university announcing its spinout is not on the register's allowlist, so it is mentioned here and not cited.",
         "source": "s4"
       }
     },
