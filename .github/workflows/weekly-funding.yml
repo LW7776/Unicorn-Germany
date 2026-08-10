@@ -23,10 +23,17 @@ name: weekly-funding
 # Both modes end the same way: write the week file, rebuild, validate, open a
 # pull request. If validation fails, nothing is published and the run fails.
 on:
-  # The whole point of the routine. 07:00 UTC every Monday, covering the week
-  # that just ended. Live, not commented out: with list-only mode there is no
-  # longer a configuration in which the schedule can only produce red runs.
-  schedule: [{ cron: "0 7 * * 1" }]
+  # 20:00 in Berlin every Monday, covering the week that just ended. Live, not
+  # commented out: with list-only mode there is no longer a configuration in
+  # which the schedule can only produce red runs.
+  #
+  # GitHub cron is UTC and knows nothing about daylight saving, so a single
+  # fixed hour would drift by one for the seven months Germany is on CEST.
+  # Both candidate hours fire, and the gate below lets exactly one through by
+  # asking what time it actually is in Berlin. The other exits in seconds.
+  schedule:
+    - cron: "0 18 * * 1"   # 20:00 CEST, late March to late October
+    - cron: "0 19 * * 1"   # 20:00 CET, late October to late March
 
   workflow_dispatch:
     inputs:
@@ -57,7 +64,40 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Two crons fire so that one of them is 20:00 in Berlin whichever side of
+  # daylight saving we are on. This gate asks the clock rather than the
+  # calendar, so it stays right even if the EU ever stops changing the clocks.
+  # It is a job rather than a first step so that everything downstream inherits
+  # the decision through `needs`, instead of every step carrying its own copy
+  # of the condition and one of them eventually being forgotten.
+  #
+  # Manual, API and webhook runs are never gated. An explicit request runs now.
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      due: ${{ steps.check.outputs.due }}
+    steps:
+      - name: Is it 20:00 in Berlin?
+        id: check
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" != "schedule" ]; then
+            echo "due=true" >> "$GITHUB_OUTPUT"
+            echo "Started by ${{ github.event_name }}, so it runs now."
+            exit 0
+          fi
+          HOUR=$(TZ=Europe/Berlin date +%H)
+          if [ "$HOUR" = "20" ]; then
+            echo "due=true" >> "$GITHUB_OUTPUT"
+            echo "Berlin local hour is ${HOUR}. Proceeding."
+          else
+            echo "due=false" >> "$GITHUB_OUTPUT"
+            echo "::notice title=Not the Berlin run::Berlin local hour is ${HOUR}, not 20. This is the daylight-saving twin of the real run, so it stops here."
+          fi
+
   draft:
+    needs: gate
+    if: needs.gate.outputs.due == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repository
