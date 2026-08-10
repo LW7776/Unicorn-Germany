@@ -1,6 +1,6 @@
 # Publishing checklist
 
-The site is finished and verified locally. Four steps put it online. Do them in order.
+The site is live at the URL below. This records how it got there and what to do next.
 Step 1 is a legal requirement, not a formality.
 
 Repository: `https://github.com/LW7776/Unicorn-Germany`
@@ -55,7 +55,15 @@ before the first Monday.
 - Tick **Allow GitHub Actions to create and approve pull requests**. Without it
   `weekly-funding.yml` cannot open its pull request.
 
-## 5. Add the Anthropic API key — only needed for the weekly funding block
+## 5. The Anthropic API key — not being used
+
+The operator chose to draft the funding round-up on request rather than on a timer, so no
+key is held and `weekly-funding.yml`'s Monday schedule is commented out. The job still works
+on demand from the Actions tab, it simply needs the secret to exist first.
+
+Everything below applies only if that changes later.
+
+### If you do add one
 
 **Settings → Secrets and variables → Actions → New repository secret**
 
@@ -64,11 +72,11 @@ Name it exactly `ANTHROPIC_API_KEY`.
 Until it exists, the weekly funding workflow fails on its first step with a message naming
 the secret, and publishes nothing. The three demo weeks stay on the site either way.
 
-## 6. Check it works without waiting a week
+## 6. Check the sweep works without waiting eight weeks
 
 Every scheduled job also has a manual trigger. **Actions → pick the workflow → Run workflow.**
-Run `weekly-funding` once by hand and confirm a pull request appears. That proves the key,
-the permissions and the job all work, rather than discovering it broken on a Monday.
+Run `watch` once by hand and confirm it opens an issue listing candidates. That needs no API
+key and proves the permissions are right, rather than discovering they are not in two months.
 
 ---
 
@@ -77,7 +85,7 @@ the permissions and the job all work, rather than discovering it broken on a Mon
 | Workflow | When | What it does |
 |---|---|---|
 | `validate.yml` | every push and pull request | tests, contrast, validation, and refuses a stale `data/companies.json` |
-| `weekly-funding.yml` | Mondays | writes the week's funding block and opens a pull request |
+| `weekly-funding.yml` | on request only, schedule off | drafts a funding week and opens a pull request |
 | `watch.yml` | every 8 weeks | re-checks the register and opens an issue listing candidates |
 | `rebuild.yml` | any hand edit to `data/companies/` | validates first, and only rebuilds if it passes |
 

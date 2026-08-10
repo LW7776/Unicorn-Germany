@@ -78,7 +78,7 @@ Neither publishes anything by itself.
 
 | | `weekly-funding` | `watch` |
 |---|---|---|
-| Runs | Every Monday, 07:00 UTC | Every 8 weeks, Monday 06:00 UTC |
+| Runs | On request, from the Actions tab. Schedule off | Every 8 weeks, Monday 06:00 UTC |
 | Looks for | German funding rounds — any company, not only unicorns | Anything that changes the register |
 | Produces | A pull request with one week of the round-up | An issue listing candidate changes |
 | Touches the dataset | No — a pull request you review | No — an issue you read |

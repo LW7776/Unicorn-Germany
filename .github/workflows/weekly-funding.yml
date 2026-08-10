@@ -3,8 +3,13 @@ name: weekly-funding
 # Drafts one week of the funding round-up and opens a pull request. It never
 # commits to main and never publishes: a person reads the diff, checks the
 # links, and merges. Everything this job produces is a proposal.
+# The Monday schedule is deliberately switched off. Drafting the round-up needs
+# an ANTHROPIC_API_KEY, and the operator chose not to hold one, so a weekly cron
+# would only fail every Monday and mail out a red run that means nothing.
+# The job stays fully working on demand. Re-enable the schedule by uncommenting
+# the line below once the secret exists.
 on:
-  schedule: [{ cron: "0 7 * * 1" }]      # 07:00 UTC every Monday
+  # schedule: [{ cron: "0 7 * * 1" }]    # 07:00 UTC every Monday
   workflow_dispatch:
     inputs:
       week:
