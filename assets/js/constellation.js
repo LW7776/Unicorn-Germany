@@ -1,5 +1,6 @@
-/* The particle field IS the dataset: one point of light per company.
-   Points keep stable indices so transition.js can fly each one to its own grid cell.
+/* The particle field IS the dataset: one point of light per company. The count
+   is the only thing it takes from the register, and placement is seeded, so the
+   same dataset always draws the same sky.
 
    Behind the points, two very slow pools of light drift across the field. They
    are on this canvas rather than a second one underneath it because a second
@@ -110,20 +111,6 @@ export class Constellation {
       vy: (random() - 0.5) * 0.08,
       phase: random() * Math.PI * 2,
     }));
-  }
-
-  pointAt(index) {
-    const box = this.canvas.getBoundingClientRect();
-    // No companies yet (empty dataset) means no points to index into — fall back
-    // to the canvas centre so callers (Task 6's FLIP) never dereference undefined.
-    if (!this.points.length) {
-      return { x: box.left + this.w / 2, y: box.top + this.h / 2 };
-    }
-    const length = this.points.length;
-    // % is remainder, not modulo, in JS — negative index needs an explicit
-    // wrap so this never indexes past the array and returns undefined.
-    const point = this.points[((index % length) + length) % length];
-    return { x: box.left + point.x, y: box.top + point.y };
   }
 
   start() {

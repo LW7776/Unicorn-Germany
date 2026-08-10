@@ -65,7 +65,16 @@
 .hero__error { margin-top: var(--space-6); color: var(--amber); }
 .hero[hidden] { display: none; }
 
-/* Applied for the duration of the register transition only (transition.js) —
-   lifts hero out of document flow so the register (and every flight target)
-   isn't pushed below the fold, while hero still overlays it as it fades. */
+/* Both applied for the duration of the register transition only (transition.js),
+   and both removed unconditionally when it ends.
+
+   .hero--lifted takes the hero out of document flow, so the register sits at the
+   top of the document from the first frame — which is where it has to finish —
+   while the hero still covers it completely on its way out.
+
+   .is-entering holds the scrollbar still. The register spends the move
+   translated a full screen down from its own position, which would otherwise
+   grow the document by that screen, jump the scrollbar into existence, and let a
+   scroll wheel fight the animation. */
 .hero--lifted { position: fixed; inset: 0; }
+.is-entering, .is-entering body { overflow: hidden; }

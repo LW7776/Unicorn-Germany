@@ -114,8 +114,8 @@ export async function boot() {
   // A shared #funding link — the topbar's own entry, or #funding/2026-W30 for
   // one particular week — would otherwise land on a section still hidden
   // behind the hero. Enter the register straight away in that one case,
-  // without the flight: the visitor asked for a specific place on the page,
-  // not for the transition that leads to it.
+  // without the transition: the visitor asked for a specific place on the page,
+  // not for the move that leads to it.
   if (location.hash === "#funding" || weekFromHash(location.hash)) {
     document.querySelector("[data-hero]").hidden = true;
     document.querySelector("[data-register]").hidden = false;
@@ -130,7 +130,7 @@ export async function boot() {
     enterRegister({
       hero: document.querySelector("[data-hero]"),
       register: document.querySelector("[data-register]"),
-      sky, grid,
+      sky,
     }).catch((error) => {
       // The transition is decoration; the register is the product. If the
       // animation throws partway through, the viewer must still reach the

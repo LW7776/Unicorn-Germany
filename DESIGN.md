@@ -79,7 +79,8 @@ German courts, and this site carries an Impressum.
 ## Motion
 
 Hand-rolled: Web Animations API and `requestAnimationFrame`. No GSAP, no dependency.
-Micro-interactions 150–250ms `--ease-out`; the hero→grid FLIP ~1200ms. Under
+Micro-interactions 150–250ms `--ease-out`; the hero→register move 820ms, hero and register
+locked to one distance and one curve so it reads as the page travelling up by a screen. Under
 `prefers-reduced-motion` the particle field stops painting and every transition becomes an
 opacity fade. The CSS `prefers-reduced-motion` block cannot stop a JavaScript animation loop,
 so the canvas particle field must check `matchMedia("(prefers-reduced-motion: reduce)")` itself

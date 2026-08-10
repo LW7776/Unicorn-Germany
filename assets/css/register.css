@@ -296,11 +296,6 @@ a.stat:hover {
 .map__note { color: var(--muted); font-size: var(--step--1); text-align: center; max-width: 40rem; }
 .map__note--hint { margin-top: calc(-1 * var(--space-3)); font-style: italic; }
 
-.spark {
-  position: fixed; z-index: 30; width: 6px; height: 6px; border-radius: 50%;
-  background: var(--beam-text); box-shadow: 0 0 12px 4px color-mix(in srgb, var(--beam) 60%, transparent);
-  pointer-events: none;
-}
 @media (max-width: 480px) {
   .grid { grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr)); }
   .register { padding-inline: var(--space-4); }

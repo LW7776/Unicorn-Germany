@@ -183,7 +183,7 @@ canvas loop applies equally to testing it: JS state, needs a JS-level override).
 | Constellation `.running` after `start()` | — | **false** |
 | Transition `Element.animate` calls | — | **0** |
 | Transition: hero hidden, register shown | — | **yes, no animation** |
-| Transition: leftover `.spark` nodes | — | **0** (never created) |
+| Transition: `.is-entering` scroll lock removed afterwards | **yes** | **yes** |
 | Detail dialog `Element.animate` calls | 1 | **0** |
 | Detail dialog still opens (`showModal`) | — | **yes** |
 
