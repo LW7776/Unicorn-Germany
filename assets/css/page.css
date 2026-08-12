@@ -1,9 +1,22 @@
 /* Layout for the static long-form pages, about.html and impressum.html.
    Body text defaults to the mono face set on `body` in base.css. */
+/* The static pages sit in the same column as the register and the round-up, so
+   the page keeps one left edge all the way down. The reading measure is held
+   inside it, on the text blocks themselves, rather than by giving this page a
+   narrower container than every other block on the site. */
 .page {
   padding: calc(var(--space-8) + 3rem) var(--space-6) var(--space-8);
-  max-width: 42rem; margin: 0 auto;
+  max-width: var(--content); margin: 0 auto;
 }
+/* The measure, applied to the blocks rather than to the page. Left-aligned, not
+   centred: a column that lines up with the grid above it reads as the same site,
+   and a centred one reads as a different page that happens to share a header. */
+.page > * { max-width: 44rem; }
+/* The one exception, and the same one the Companies opener takes: a section
+   opener is allowed past the measure, because a headline is not read a line at a
+   time. Written as a child selector so it outranks `.page--prose > *` below
+   regardless of which order the two end up in. */
+.page > .page__opener { max-width: none; }
 
 /* A page carrying an argument rather than a reference table — DESIGN.md's reasoning
    for the serif face ("reads as reported, not generated") applies to its running prose
@@ -16,7 +29,7 @@
    The narrower measure exists because proportional serif at the base `.page` column width
    (42rem) reads as too long a line — mono's fixed-width glyphs are wider on average, so
    the same column holds noticeably more serif characters per line. */
-.page--prose {
+.page--prose > * {
   max-width: 38rem;
 }
 .page--prose p,
@@ -53,7 +66,7 @@
    Native <details>/<summary>, so the disclosure is keyboard operable, announced as
    expandable, and readable with JavaScript off — no script and no ARIA of our own.
    Hairline rules separate the rows and nothing else does: no fills, no cards. */
-.page--qa { max-width: 44rem; }
+/* The Q&A rows already sit at the measure through `.page > *`. */
 .qa { margin-top: var(--space-7); border-top: 1px solid var(--stroke); }
 .qa__row { border-bottom: 1px solid var(--stroke); }
 /* `display: flex` on the summary suppresses Chrome's disclosure triangle;

@@ -45,7 +45,15 @@ img, svg { max-width: 100%; }
 .topbar {
   position: fixed; inset: 0 0 auto; z-index: 20; display: flex; gap: var(--space-5);
   align-items: center; justify-content: space-between;
-  padding: var(--space-4) var(--space-6);
+  padding-block: var(--space-4);
+  /* Aligned to the content column rather than to the viewport, so the wordmark
+     sits over the first grid card and the nav over the last one at every width
+     past --content. Below that the max() falls back to the plain gutter. */
+  /* --content is a border-box width, so a block's own gutter sits inside it and
+     its text starts one gutter further in. The topbar has no such block, so it
+     adds that gutter itself and the wordmark lands on the same edge as the first
+     grid card. Below --content the max() falls back to the plain gutter. */
+  padding-inline: max(var(--space-6), calc((100% - var(--content)) / 2 + var(--space-6)));
   background: color-mix(in srgb, var(--void) 82%, transparent);
   backdrop-filter: blur(14px); border-bottom: 1px solid var(--stroke);
 }
@@ -73,6 +81,7 @@ img, svg { max-width: 100%; }
    the nav onto its own row instead of shrinking text or truncating items. */
 @media (max-width: 480px) {
   .topbar { flex-wrap: wrap; row-gap: var(--space-2); padding: var(--space-3) var(--space-4); }
+  .topbar { padding-inline: var(--space-4); }
   .topbar__nav { flex-wrap: wrap; width: 100%; gap: var(--space-3); }
 }
 
@@ -80,7 +89,7 @@ img, svg { max-width: 100%; }
    wordmark and the figures note on the left, three labelled groups on the right,
    so the bottom of a page shows structure rather than a sentence of separators. */
 .footer {
-  max-width: 64rem; margin: 0 auto; padding: var(--space-7) var(--space-6) var(--space-8);
+  max-width: var(--content); margin: 0 auto; padding: var(--space-7) var(--space-6) var(--space-8);
   border-top: 1px solid var(--stroke); color: var(--muted); font-size: var(--step--1);
   display: grid; gap: var(--space-7);
   grid-template-columns: minmax(14rem, 1fr) auto;

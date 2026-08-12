@@ -5,9 +5,33 @@ defaults (light background, pink accent, Orbitron) contradict the approved brief
 
 ## Direction: Constellation
 
-Near-black, cinematic, institutional. The constellation is the dataset — each point of
-light is one company — and it becomes the grid in one continuous motion. That transition
-is the signature; everything else stays quiet.
+Near-black, cinematic, institutional. The constellation is the dataset: each point of
+light is one company.
+
+## The signature: the sourced figure
+
+No number on this site exists without the date it was true and the page that proves it.
+That is the product, and it is the visual unit as well as the rule:
+
+```
+$18 bn            ← the figure, mono, the largest thing in its box
+──────────────    ← a hairline in --rule
+Jul 2026 · ↗      ← the date it was true, then the source
+```
+
+One object at three sizes, used everywhere a number appears and nowhere else: the two
+headline figures in the summary row, every grid card, the valuation in a company window,
+every round in the weekly ledger. A reader who learns it once reads every number on the
+site.
+
+Two rules keep it honest. **The link under a figure is the evidence for that figure**,
+except on a grid card, where it goes to the company instead and the evidence lives one
+click away in the window. And **the hairline stays a hairline** — a rigid repeated unit
+executed loosely stops being a signature and becomes a table.
+
+The signature used to be the constellation flying into the grid, one spark per company.
+That transition was replaced by the page-up move in `assets/js/transition.js`, which is
+better navigation and no kind of signature: every well-made site could use it.
 
 ## Colour
 

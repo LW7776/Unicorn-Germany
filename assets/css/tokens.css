@@ -64,4 +64,11 @@
   --dur-med: 240ms;
   --dur-slow: 1200ms;
   --radius: 14px;
+  /* One content width for the whole site. Before this, the register ran the full
+     viewport, the round-up stopped at 72rem, the footer at 64rem and the static
+     pages at 42rem, so the page changed its mind about how wide it was four
+     times on the way down. Every block is held to this now and the reading
+     measure is kept inside it, by columns and by caps on the text blocks
+     themselves, rather than by giving each section a narrower container. */
+  --content: 84rem;
 }

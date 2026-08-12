@@ -1,4 +1,5 @@
 .register {
+  max-width: var(--content); margin-inline: auto;
   padding: calc(var(--space-8) + 3rem) var(--space-6) var(--space-8);
   /* Both for the ambient field below: `relative` gives it something to be
      positioned against, and `isolation` makes .register its own stacking
