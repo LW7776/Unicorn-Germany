@@ -38,7 +38,11 @@ export async function boot() {
   window.__sky = sky;
 
   const grid = document.querySelector("[data-grid]");
-  renderGrid(grid, data.companies);
+  // The threshold tick is a property of the whole register, not of a filtered
+  // view of it: narrowing to Fintech must not move the billion. Read once here
+  // and passed into every re-render.
+  const thresholdPct = data.stats?.thresholdBarPct ?? null;
+  renderGrid(grid, data.companies, thresholdPct);
   renderStats(document.querySelector("[data-stats]"), data.stats);
   renderIntroVisualisations(document.querySelector("[data-viz]"), data.stats);
   renderFooter(document.querySelector("[data-footer]"));
@@ -46,7 +50,7 @@ export async function boot() {
   const controls = mountControls({
     container: document.querySelector("[data-controls]"),
     companies: data.companies,
-    onChange: (visible) => renderGrid(grid, visible),
+    onChange: (visible) => renderGrid(grid, visible, thresholdPct),
   });
   window.__controls = controls;
 

@@ -281,9 +281,14 @@ export function wireDetail(companies) {
   });
 
   document.querySelector("[data-grid]").addEventListener("click", (event) => {
-    const cell = event.target.closest(".cell");
-    if (!cell) return;
-    const company = all.find((c) => c.slug === cell.dataset.slug);
+    // .cell__open, not .cell. The card now contains a link to the company's own
+    // site, and keying on the card would open this window on top of the tab that
+    // link just launched. Matching the button excludes the anchor by
+    // construction rather than by a guard that has to be maintained alongside
+    // however many links a card grows later.
+    const open = event.target.closest(".cell__open");
+    if (!open) return;
+    const company = all.find((c) => c.slug === open.dataset.slug);
     if (company) openDetail(company);
   });
 

@@ -150,7 +150,14 @@ a.stat:hover {
    unnoticed until Task 9 wired up the first thing that actually hides the
    grid at runtime. */
 .grid[hidden] { display: none; }
+/* The card is a container, not a control. It used to be one large <button>, which
+   is the simplest thing that works right up until the card needs a link inside it
+   — and an <a> inside a <button> is invalid markup that browsers repair by
+   discarding one of the two. So the content sits in the grid and `.cell__open`
+   below is a transparent button stretched across the whole card. The site link is
+   the one thing raised above it. */
 .cell {
+  position: relative;
   display: grid; gap: var(--space-3); padding: var(--space-4); text-align: left;
   background: var(--panel); border: 1px solid var(--stroke); border-radius: var(--radius);
   color: var(--ink);
@@ -162,6 +169,26 @@ a.stat:hover {
   transform: translateY(-3px); border-color: color-mix(in srgb, var(--beam) 55%, transparent);
   box-shadow: 0 12px 40px -12px color-mix(in srgb, var(--beam) 45%, transparent);
 }
+/* Covers the card and carries its accessible name. Last in the DOM so it stacks
+   over the content without needing a z-index, which leaves z-index available to
+   raise the one element that has to sit above it. The focus ring is the card's
+   own outline, since the button is exactly the card's size. */
+.cell__open {
+  position: absolute; inset: 0; width: 100%;
+  background: none; border: 0; border-radius: var(--radius); padding: 0;
+}
+.cell__open:focus-visible { outline: 2px solid var(--beam); outline-offset: 2px; }
+/* The only thing that beats the stretched button. Padding rather than a larger
+   font: the link has to be a comfortable target without growing into a second
+   figure beside the valuation. It lands around 36px tall, short of the 44px this
+   site holds its controls to and deliberately so — the whole card is the primary
+   target and this is the secondary one, with 24px the floor that applies to it. */
+.cell__site {
+  position: relative; z-index: 1;
+  color: var(--beam-text); text-decoration: none; white-space: nowrap;
+  padding: var(--space-2) 0;
+}
+.cell__site:hover { text-decoration: underline; }
 /* The white plate is the one light surface on the site, and left flat it reads
    as a sticker laid on top of the card. A hairline ring and a shallow shadow
    under its top edge seat it into the surface instead, as though the plate were
@@ -190,8 +217,49 @@ a.stat:hover {
 .cell__figure {
   font-size: var(--step-1);
   display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2);
+  /* Digits line up down a column of cards rather than drifting by a few pixels
+     per glyph, which is the whole reason a register sets figures in mono. */
+  font-variant-numeric: tabular-nums;
 }
-.cell__meta { font-size: var(--step--1); color: var(--muted); }
+/* The hairline under every figure on the site. It is what makes the figure, its
+   date and its link read as one object rather than three stacked lines, and it
+   is the same rule at the same weight in the detail window and the round-up. */
+.cell__rule { height: 1px; background: var(--rule); }
+.cell__meta {
+  font-size: var(--step--1); color: var(--muted);
+  display: flex; justify-content: space-between; align-items: baseline;
+  gap: var(--space-2); flex-wrap: wrap;
+}
+
+/* The threshold bar. Track is zero to the largest valuation on the register, the
+   tick is the qualifying billion, and the fill is this company between them. Both
+   percentages come from tools/build.py — nothing here works out what a bar means.
+   Three pixels tall and aria-hidden: it is a second reading of the figure printed
+   directly above it, so it owes a screen reader nothing and must not read as a
+   chart. */
+.cell__bar { position: relative; height: 3px; background: var(--track); border-radius: 2px; }
+.cell__fill {
+  position: absolute; inset: 0 auto 0 0; width: var(--fill); border-radius: 2px;
+  background: linear-gradient(90deg, var(--beam), var(--violet));
+}
+.cell__tick {
+  position: absolute; top: -3px; bottom: -3px; left: var(--at); width: 1px;
+  background: var(--ink); opacity: .55;
+}
+/* No figure to draw, so no bar to fill. Dashes in the same amber the ">1bn"
+   marker uses, starting at the tick and fading out to the right: over the line,
+   ending nowhere in particular, which is exactly what is known. */
+.cell__bar--unknown {
+  background: repeating-linear-gradient(90deg,
+    color-mix(in srgb, var(--amber) 45%, transparent) 0 4px, transparent 4px 9px);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 55%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 55%, transparent 100%);
+}
+.cell__foot {
+  display: flex; justify-content: space-between; align-items: baseline;
+  gap: var(--space-2); font-size: var(--step--1); color: var(--muted);
+}
+.cell__year { font-variant-numeric: tabular-nums; }
 .cell__aged, .cell__undisclosed {
   padding: 0 var(--space-2); border-radius: 4px;
   font-size: var(--step--1); color: var(--amber);

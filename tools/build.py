@@ -59,6 +59,14 @@ from tools.schema import (
 AGED_AFTER_MONTHS = 60
 AGED_BEHIND_ROUND_MONTHS = 24
 
+# Where the tick sits on the grid card's threshold bar. The same 1000 that
+# validate.py enforces as THRESHOLD_MILLIONS, named separately here because this
+# one is measured in euro: the inclusion rule is "$1B or €1B, as reported" and
+# admits either, while a bar drawn across the whole register needs one unit. The
+# tick is therefore the euro billion, and a company that qualified on the dollar
+# one sits a little to its left. That is a truthful picture of the rule.
+UNICORN_THRESHOLD_EUR_MILLIONS = 1000
+
 # What the grid card and the detail window print where a figure would go, for a company
 # whose unicorn status is sourced but whose valuation no allowlisted source has ever
 # published. Two words, because one is not enough and a sentence is too many:
@@ -76,6 +84,19 @@ AGED_BEHIND_ROUND_MONTHS = 24
 # read as "worth nothing" beside "$8 bn"; and "€0", which it must never look like.
 UNDISCLOSED_VALUATION_LABEL = "Undisclosed"
 UNDISCLOSED_VALUATION_BADGE = ">1bn"
+
+
+def _website_label(url):
+    """"helsing.ai" out of "https://helsing.ai/".
+
+    The grid card links each company to its own site and prints where the link
+    goes rather than the URL, which at card width would wrap onto three lines.
+    validate.py already guarantees the https scheme, so this only has to strip
+    what a reader gains nothing from reading."""
+    label = str(url)
+    for prefix in ("https://", "http://", "www."):
+        label = label.removeprefix(prefix)
+    return label.rstrip("/")
 
 
 def _months_between(later, earlier):
@@ -198,6 +219,12 @@ def derive_company(record, today, fx_rate=0.92):
         "unicornFlagLabel": unicorn_flag_label,
         "foundersLabel": ", ".join(f["name"] for f in founders) if founders else "–",
         "aged": aged,
+        "websiteLabel": _website_label(record["website"]),
+        # Filled by add_valuation_bars() once every company is derived, because the
+        # bar is this company against the largest on the register and no single
+        # record can know that. Declared here so the shape of `display` is one
+        # thing in one place rather than a key that appears later out of nowhere.
+        "valuationBarPct": None,
     }
     derived_rounds = []
     for entry in rounds:
@@ -244,6 +271,35 @@ def derive_company(record, today, fx_rate=0.92):
         "sort": sort,
         "investorsOrdered": _investors_leads_first(record),
     }
+
+
+def add_valuation_bars(records):
+    """The grid card's threshold bar, settled here rather than in the browser.
+
+    The track runs from zero to the largest disclosed valuation on the register, so
+    every bar is that company measured against the biggest one, and the returned
+    tick is the billion all of them had to clear to be here at all. Both are plain
+    percentages of the track, which is the whole of what register.js needs.
+
+    Comparing across a register that mixes dollars and euros needs a common unit, so
+    the bar is drawn off sort.valuationEur — the same converted figure the
+    highest-valuation sort already orders by, and the same one that never reaches
+    the page as a number. The printed figure stays in the currency its source used.
+
+    An undisclosed valuation gets None, never 0. A bar of zero length says the
+    company is worth nothing, which is the precise misreading `Undisclosed` exists
+    to prevent, so register.js draws those as an open-ended marker instead.
+
+    Returns the tick position, or None for a register with no priced company in it.
+    """
+    largest = max(
+        (r["sort"]["valuationEur"] for r in records
+         if r["sort"]["valuationEur"] is not None), default=0)
+    for record in records:
+        value = record["sort"]["valuationEur"]
+        record["display"]["valuationBarPct"] = (
+            None if value is None or not largest else round(value / largest * 100, 1))
+    return round(UNICORN_THRESHOLD_EUR_MILLIONS / largest * 100, 1) if largest else None
 
 
 def crossings_by_year(records):
@@ -392,7 +448,12 @@ def build(src="data/companies", out="data/companies.json", fx_path="data/fx.json
             today = _year_month(data_as_of)
 
     records = [derive_company(record, today, fx["USD_EUR"]) for record in raw_records]
-    payload = {"stats": compute_stats(records, fx), "companies": records}
+    # Second pass: the card's threshold bar is relative to the whole register, so it
+    # cannot be settled while a single company is being derived.
+    threshold_bar_pct = add_valuation_bars(records)
+    stats = compute_stats(records, fx)
+    stats["thresholdBarPct"] = threshold_bar_pct
+    payload = {"stats": stats, "companies": records}
     out_path = pathlib.Path(out)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(json.dumps(payload, ensure_ascii=False, indent=1), encoding="utf-8")

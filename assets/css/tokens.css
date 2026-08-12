@@ -24,6 +24,13 @@
      stopped doing its job and started competing with the content in front of it.
      tools/check_contrast.py carries the surfaces they produce, so text over them
      is held to the same 4.5:1 floor as text over --void. */
+  /* The hairline under every figure on the site, and the empty track a threshold
+     bar is drawn on. Both are --ink at a low strength, so they are distances
+     rather than colours like every other entry in this block. --rule is stronger
+     than --stroke on purpose: --stroke bounds a surface and should recede, while
+     --rule joins a figure to its date and has to be seen to do that. */
+  --rule: color-mix(in srgb, var(--ink) 16%, transparent);
+  --track: color-mix(in srgb, var(--ink) 7%, transparent);
   --ghost-ink: color-mix(in srgb, var(--ink) 5%, transparent);
   --ambient-beam: color-mix(in srgb, var(--beam) 8%, transparent);
   --ambient-violet: color-mix(in srgb, var(--violet) 6%, transparent);

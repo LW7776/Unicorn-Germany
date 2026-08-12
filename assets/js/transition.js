@@ -81,7 +81,8 @@ export async function enterRegister({ hero, register, sky }) {
     // travelling with the page.
     topbar.hidden = false;
     topbar.animate({ opacity: [0, 1] }, { duration: 240, easing: "cubic-bezier(.22,1,.36,1)" });
-    register.querySelector(".cell")?.focus({ preventScroll: true });
+    // .cell__open is the focusable thing now that the card itself is a <div>.
+    register.querySelector(".cell__open")?.focus({ preventScroll: true });
   } finally {
     // Runs on every exit — success, the reduced-motion early return, or a throw
     // partway through the move — so a mid-transition failure can never strand

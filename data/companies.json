@@ -78,7 +78,8 @@
     "sector": "E-commerce and Retail",
     "count": 2
    }
-  ]
+  ],
+  "thresholdBarPct": 6.0
  },
  "companies": [
   {
@@ -290,7 +291,9 @@
     "unicornThresholdLabel": "$1bn",
     "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Philipp Schröder, Micha Grüber, Jannik Schall, Philip Liesenfeld",
-    "aged": true
+    "aged": true,
+    "websiteLabel": "1komma5.com",
+    "valuationBarPct": 5.6
    },
    "sort": {
     "newest": [
@@ -486,7 +489,9 @@
     "unicornThresholdLabel": "$1bn",
     "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Robin Rombach, Patrick Esser, Andreas Blattmann",
-    "aged": false
+    "aged": false,
+    "websiteLabel": "bfl.ai",
+    "valuationBarPct": 18.1
    },
    "sort": {
     "newest": [
@@ -738,7 +743,9 @@
     "unicornThresholdLabel": "$1bn",
     "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Alexander Rinke, Bastian Nominacher, Martin Klenk",
-    "aged": false
+    "aged": false,
+    "websiteLabel": "celonis.com",
+    "valuationBarPct": 72.2
    },
    "sort": {
     "newest": [
@@ -933,7 +940,9 @@
     "unicornThresholdLabel": "$1bn",
     "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Daniel Khachab, Julian Hammer, Grégoire Ambroselli",
-    "aged": false
+    "aged": false,
+    "websiteLabel": "choco.com",
+    "valuationBarPct": 6.7
    },
    "sort": {
     "newest": [
@@ -1065,7 +1074,9 @@
     "unicornThresholdLabel": "€1bn",
     "unicornFlagLabel": "crossed €1bn",
     "foundersLabel": "–",
-    "aged": false
+    "aged": false,
+    "websiteLabel": "cmblu.com",
+    "valuationBarPct": 6.0
    },
    "sort": {
     "newest": [
@@ -1224,7 +1235,9 @@
     "unicornThresholdLabel": "$1bn",
     "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Dirk Hoerig",
-    "aged": false
+    "aged": false,
+    "websiteLabel": "commercetools.com",
+    "valuationBarPct": 10.6
    },
    "sort": {
     "newest": [
@@ -1432,7 +1445,9 @@
     "unicornThresholdLabel": "$1bn",
     "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Mirko Novakovic, Ben Blackmore, Miel Donkers, Marcel Birkner, Michele Mancioppi",
-    "aged": false
+    "aged": false,
+    "websiteLabel": "dash0.com",
+    "valuationBarPct": 5.6
    },
    "sort": {
     "newest": [
@@ -1599,7 +1614,9 @@
     "unicornThresholdLabel": "€1bn",
     "unicornFlagLabel": "crossed €1bn",
     "foundersLabel": "Jaroslaw Kutylowski",
-    "aged": false
+    "aged": false,
+    "websiteLabel": "deepl.com",
+    "valuationBarPct": 11.1
    },
    "sort": {
     "newest": [
@@ -1804,7 +1821,9 @@
     "unicornThresholdLabel": "$1bn",
     "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Mario Kohle, Viktor Wingert, Jochen Ziervogel",
-    "aged": true
+    "aged": true,
+    "websiteLabel": "enpal.de",
+    "valuationBarPct": 13.3
    },
    "sort": {
     "newest": [
@@ -2002,7 +2021,9 @@
     "unicornThresholdLabel": "€1bn",
     "unicornFlagLabel": "crossed €1bn",
     "foundersLabel": "Maximilian Wühr, Nikolai Schröder, Max Beyer, Max-Josef Meier",
-    "aged": false
+    "aged": false,
+    "websiteLabel": "finn.com",
+    "valuationBarPct": 6.0
    },
    "sort": {
     "newest": [
@@ -2272,7 +2293,9 @@
     "unicornThresholdLabel": "$1bn",
     "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "André Schwämmlein, Daniel Krauss, Jochen Engert",
-    "aged": true
+    "aged": true,
+    "websiteLabel": "corporate.flix.com",
+    "valuationBarPct": 16.7
    },
    "sort": {
     "newest": [
@@ -2452,7 +2475,9 @@
     "unicornThresholdLabel": "unicorn",
     "unicornFlagLabel": "reached unicorn status",
     "foundersLabel": "Thomas Forner",
-    "aged": false
+    "aged": false,
+    "websiteLabel": "focused-energy.co",
+    "valuationBarPct": null
    },
    "sort": {
     "newest": [
@@ -2642,7 +2667,9 @@
     "unicornThresholdLabel": "$1bn",
     "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Michael Wax, Erik Muttersbach, Ferry Heilemann, Fabian Heilemann",
-    "aged": false
+    "aged": false,
+    "websiteLabel": "forto.com",
+    "valuationBarPct": 11.7
    },
    "sort": {
     "newest": [
@@ -2931,7 +2958,9 @@
     "unicornThresholdLabel": "€1bn",
     "unicornFlagLabel": "crossed €1bn",
     "foundersLabel": "Torsten Reil, Gundbert Scherf, Niklas Köhler",
-    "aged": false
+    "aged": false,
+    "websiteLabel": "helsing.ai",
+    "valuationBarPct": 100.0
    },
    "sort": {
     "newest": [
@@ -3195,7 +3224,9 @@
     "unicornThresholdLabel": "unicorn",
     "unicornFlagLabel": "reached unicorn status",
     "foundersLabel": "Daniel Metzler, Josef Fleischmann, Markus Brandl",
-    "aged": false
+    "aged": false,
+    "websiteLabel": "isaraerospace.com",
+    "valuationBarPct": null
    },
    "sort": {
     "newest": [
@@ -3379,7 +3410,9 @@
     "unicornThresholdLabel": "€1bn",
     "unicornFlagLabel": "crossed €1bn",
     "foundersLabel": "Ante Spittler, Anton Rummel, Ferdinand Meyer, Stephan Haslebacher",
-    "aged": false
+    "aged": false,
+    "websiteLabel": "getmoss.com",
+    "valuationBarPct": 6.0
    },
    "sort": {
     "newest": [
@@ -3573,7 +3606,9 @@
     "unicornThresholdLabel": "$1bn",
     "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Valentin Stalf, Maximilian Tayenthal",
-    "aged": false
+    "aged": false,
+    "websiteLabel": "n26.com",
+    "valuationBarPct": 50.0
    },
    "sort": {
     "newest": [
@@ -3786,7 +3821,9 @@
     "unicornThresholdLabel": "$1bn",
     "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Jan Oberhauser",
-    "aged": false
+    "aged": false,
+    "websiteLabel": "n8n.io",
+    "valuationBarPct": 28.9
    },
    "sort": {
     "newest": [
@@ -4002,7 +4039,9 @@
     "unicornThresholdLabel": "$1bn",
     "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "David Reger",
-    "aged": false
+    "aged": false,
+    "websiteLabel": "neura-robotics.com",
+    "valuationBarPct": 38.9
    },
    "sort": {
     "newest": [
@@ -4201,7 +4240,9 @@
     "unicornThresholdLabel": "$1bn",
     "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Alberto Zamora, Matthias Jungblut, Stefan Wawrzinek",
-    "aged": false
+    "aged": false,
+    "websiteLabel": "osapiens.com",
+    "valuationBarPct": 6.1
    },
    "sort": {
     "newest": [
@@ -4388,7 +4429,9 @@
     "unicornThresholdLabel": "$1bn",
     "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Malte Kosub, Stefan Ostwald",
-    "aged": false
+    "aged": false,
+    "websiteLabel": "parloa.com",
+    "valuationBarPct": 16.7
    },
    "sort": {
     "newest": [
@@ -4588,7 +4631,9 @@
     "unicornThresholdLabel": "$1bn",
     "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Hanno Renner, Roman Schumacher, Arseniy Vershinin, Jonas Rieke",
-    "aged": false
+    "aged": false,
+    "websiteLabel": "personio.com",
+    "valuationBarPct": 47.2
    },
    "sort": {
     "newest": [
@@ -4829,7 +4874,9 @@
     "unicornThresholdLabel": "€1bn",
     "unicornFlagLabel": "crossed €1bn",
     "foundersLabel": "Francesco Sciortino, Lucio Milanese, Jorrit Lion, Martin Kubie, Jonathan Schilling",
-    "aged": false
+    "aged": false,
+    "websiteLabel": "proximafusion.com",
+    "valuationBarPct": 14.5
    },
    "sort": {
     "newest": [
@@ -5105,7 +5152,9 @@
     "unicornThresholdLabel": "unicorn",
     "unicornFlagLabel": "reached unicorn status",
     "foundersLabel": "Florian Seibel",
-    "aged": false
+    "aged": false,
+    "websiteLabel": "quantum-systems.com",
+    "valuationBarPct": 44.4
    },
    "sort": {
     "newest": [
@@ -5366,7 +5415,9 @@
     "unicornThresholdLabel": "unicorn",
     "unicornFlagLabel": "reached unicorn status",
     "foundersLabel": "Tamaz Georgadze, Frank Freund, Michael Stephan",
-    "aged": false
+    "aged": false,
+    "websiteLabel": "raisin.com",
+    "valuationBarPct": null
    },
    "sort": {
     "newest": [
@@ -5594,7 +5645,9 @@
     "unicornThresholdLabel": "$1bn",
     "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Tushar Ahluwalia, Shrestha Chowdhury, Oliver Dlugosch, Christoph Felix Gamon",
-    "aged": false
+    "aged": false,
+    "websiteLabel": "razor-group.com",
+    "valuationBarPct": 6.7
    },
    "sort": {
     "newest": [
@@ -5831,7 +5884,9 @@
     "unicornThresholdLabel": "$1bn",
     "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Erik Podzuweit, Florian Prucker, Adam French, Stefan Mittnik",
-    "aged": false
+    "aged": false,
+    "websiteLabel": "de.scalable.capital",
+    "valuationBarPct": 7.8
    },
    "sort": {
     "newest": [
@@ -6041,7 +6096,9 @@
     "unicornThresholdLabel": "$1bn",
     "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "David Nothacker, Julius Köhler, Nicolaus Schefenacker",
-    "aged": true
+    "aged": true,
+    "websiteLabel": "sennder.com",
+    "valuationBarPct": 5.6
    },
    "sort": {
     "newest": [
@@ -6218,7 +6275,9 @@
     "unicornThresholdLabel": "$1bn",
     "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Martin Böhringer, Lutz Gerlach, Frank Wolf",
-    "aged": false
+    "aged": false,
+    "websiteLabel": "staffbase.com",
+    "valuationBarPct": 6.1
    },
    "sort": {
     "newest": [
@@ -6446,7 +6505,9 @@
     "unicornThresholdLabel": "$1bn",
     "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Florian Seibel",
-    "aged": false
+    "aged": false,
+    "websiteLabel": "stark-defence.com",
+    "valuationBarPct": 21.1
    },
    "sort": {
     "newest": [
@@ -6614,7 +6675,9 @@
     "unicornThresholdLabel": "$1bn",
     "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Mathis Büchi, Lino Teuteberg",
-    "aged": false
+    "aged": false,
+    "websiteLabel": "taxfix.de",
+    "valuationBarPct": 5.6
    },
    "sort": {
     "newest": [
@@ -6801,7 +6864,9 @@
     "unicornThresholdLabel": "$1bn",
     "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Christian Hecker, Thomas Pischke, Marco Cancellieri",
-    "aged": false
+    "aged": false,
+    "websiteLabel": "traderepublic.com",
+    "valuationBarPct": 75.5
    },
    "sort": {
     "newest": [
