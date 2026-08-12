@@ -37,6 +37,20 @@ function sourceCite(source) {
       <span class="roundup__date">${escapeHtml(source.publishedLabel)}</span></span>`;
 }
 
+/** The same citation at ledger width: the publication and the date as the link,
+    with the headline on the element's title so it is still one hover away and
+    still exact. The lead write-ups above keep the full headline as their link
+    text — this is the compact list, where a right-hand column of forty-word
+    headlines would bury the column of figures it sits beside, which is the
+    whole point of the row. The link still lands on the same page. */
+function sourceCiteCompact(source) {
+  const label = `${escapeHtml(source.publication)} · ${escapeHtml(source.publishedLabel)}`;
+  return isSafeUrl(source.url)
+    ? `<a href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer"
+          title="${escapeHtml(source.title)}">${label} ↗</a>`
+    : `<span title="${escapeHtml(source.title)}">${label}</span>`;
+}
+
 /** A round whose company is already in the register links to its entry. The
     match is on the exact name, case-insensitively — a substring match would
     tie every "Flix…" headline to Flix, which is the same noise tools/watch.py
@@ -106,20 +120,33 @@ function leadCard(round, slugByName) {
     </article>`;
 }
 
-/** The owner's format, exactly: "Company XXX, from Founders YYY, secured €ZZm
-    (at a €AAm valuation)" — with the founders clause dropped, and the sentence
-    closed up around it, when no source named them. Inventing a name to fill
-    the template is the one thing the lighter standard still forbids. */
+/** A ledger row rather than a sentence.
+
+    These used to read "Company XXX, from Founders YYY, secured €ZZm", which is
+    correct English and the wrong shape for the job: five rounds in five
+    sentences cannot be compared without reading all five, because the figure
+    sits in a different place in every line. Money belongs in a column. The row
+    is the company against its amount, with the qualifying detail and the source
+    on a second line under each, and the figures right-aligned and tabular so the
+    eye can run down them and stop where it wants.
+
+    Nothing is dropped in the change. Stage, city and founders move into the
+    meta line and are still omitted individually when no source gave them, since
+    inventing a name to fill a template is the one thing the lighter standard
+    still forbids. A valuation goes there too, as "at a €1 bn valuation", because
+    it qualifies the amount rather than being a second amount. */
 function moreItem(round, slugByName) {
-  const company = `<span class="roundup__company">${escapeHtml(round.company)}</span>`;
-  const from = round.foundersLabel
-    ? `, from ${escapeHtml(round.foundersLabel)},`
-    : "";
+  const detail = [round.stage, round.hq, round.foundersLabel]
+    .filter(Boolean).map(escapeHtml);
+  if (round.valuationLabel) {
+    detail.push(`at a <span class="roundup__figure">${escapeHtml(round.valuationLabel)}</span> valuation`);
+  }
   return `
     <li class="roundup__item">
-      <span class="roundup__line">${company}${from} secured
-        <span class="roundup__figure">${escapeHtml(round.amountLabel)}</span>${valuationClause(round)}${registerLink(round.company, slugByName)}</span>
-      <span class="roundup__meta">${sourceCite(round.source)}</span>
+      <span class="roundup__co">${escapeHtml(round.company)}${registerLink(round.company, slugByName)}</span>
+      <span class="roundup__amt">${escapeHtml(round.amountLabel)}</span>
+      <span class="roundup__sub">${detail.join(" · ")}</span>
+      <span class="roundup__src">${sourceCiteCompact(round.source)}</span>
       ${noteBadge(round.note)}
     </li>`;
 }

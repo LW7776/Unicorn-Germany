@@ -91,22 +91,34 @@
   padding-top: var(--space-3); border-top: 1px solid var(--stroke);
 }
 
-/* --- the compact list ---------------------------------------------------- */
+/* --- the ledger ----------------------------------------------------------
+   Four cells in two rows: the company against its amount, and under each of
+   those the qualifying detail and the source. The right-hand column is the
+   point — a week's rounds are money, and money is read down a column, which
+   five sentences with the figure in a different place each time cannot be. */
 .roundup__more { display: grid; gap: var(--space-3); }
 .roundup__list { list-style: none; margin: 0; padding: 0; display: grid; }
 .roundup__item {
-  display: grid; gap: var(--space-2);
+  display: grid; grid-template-columns: 1fr auto; align-items: baseline;
+  gap: var(--space-1) var(--space-5);
   padding: var(--space-4) 0; border-top: 1px solid var(--stroke);
 }
 .roundup__list > :last-child { border-bottom: 1px solid var(--stroke); }
-.roundup__line { color: var(--ink); }
-.roundup__company { color: var(--ink); }
+.roundup__co { color: var(--ink); }
+.roundup__amt {
+  text-align: right; white-space: nowrap; color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.roundup__sub { grid-column: 1; color: var(--muted); font-size: var(--step--1); }
+.roundup__src {
+  grid-column: 2; text-align: right; font-size: var(--step--1); color: var(--muted);
+  white-space: nowrap;
+}
 /* Figures are mono and full-strength ink; the prose around them recedes. The
    whole block already inherits the mono body face, so this exists to keep a
    figure legible if the surrounding sentence ever changes family. */
 .roundup__figure { font-family: var(--font-mono); color: var(--ink); }
-.roundup__valuation, .roundup__meta { color: var(--muted); }
-.roundup__meta { font-size: var(--step--1); display: block; }
+.roundup__valuation { color: var(--muted); }
 .roundup__cite { color: var(--muted); }
 .roundup__date { font-family: var(--font-mono); white-space: nowrap; }
 .roundup__empty { margin: 0; color: var(--muted); font-size: var(--step--1); }
@@ -115,6 +127,9 @@
    amber for aged and disputed signals and the register's own `disputed` marker
    already uses it — a reader who has met one has met the other. */
 .roundup__note {
+  /* Spans both ledger columns. Inside a lead card it is a plain block and the
+     grid-column has nothing to apply to, so one rule serves both places. */
+  grid-column: 1 / -1;
   display: block; font-size: var(--step--1); color: var(--muted);
   padding: var(--space-2) var(--space-3);
   border-left: 2px solid color-mix(in srgb, var(--amber) 55%, transparent);
@@ -133,6 +148,15 @@
   color: var(--beam-text); white-space: nowrap;
 }
 
+@media (max-width: 560px) {
+  /* One column. Two is what makes the ledger readable and it is also what needs
+     room: a publication and a date pinned to the right of a company name have
+     nowhere to go at this width, and the two would collide rather than wrap. The
+     amount stays directly under its company, which keeps the pairing even
+     without the column. */
+  .roundup__item { grid-template-columns: 1fr; }
+  .roundup__amt, .roundup__src { text-align: left; grid-column: 1; white-space: normal; }
+}
 @media (max-width: 480px) {
   .roundup { padding: var(--space-7) var(--space-4); }
   /* Below ~480px the cards no longer fit two to a row without truncating the
