@@ -96,33 +96,56 @@ export function renderGrid(container, companies, thresholdPct = null) {
   container.innerHTML = companies.map((company, index) => cell(company, index, thresholdPct)).join("");
 }
 
+/** A headline figure: display face, the hairline, then the label. Two of these,
+    and they are the only figures on the page set in the display type. */
+function headlineStat(value, label) {
+  return `
+    <div class="headstat">
+      <span class="headstat__value">${escapeHtml(value)}</span>
+      <span class="headstat__rule" aria-hidden="true"></span>
+      <span class="label">${escapeHtml(label)}</span>
+    </div>`;
+}
+
 export function renderStats(container, stats) {
   // stats.dataAsOfLabel is settled in tools/build.py, like every other label on
   // this page, and is null when the dataset is empty (see build.py's
   // _data_as_of) — never a wall-clock value, and never assumed present.
   const freshness = escapeHtml(stats.dataAsOfLabel || "–");
-  const items = [
-    ["Unicorns", stats.count],
+  // Two ranks, because these five numbers were never equal and five identical
+  // tiles said they were. The register's size and what it is collectively worth
+  // are what a visitor came for; how fresh the data is qualifies them.
+  //
+  // It also fixes a smaller lie. Four of the five tiles were not clickable and
+  // one was, with nothing in the design saying which. Now the only row that goes
+  // anywhere is the only one that carries a mark.
+  const lead = headlineStat(stats.count, "German unicorns")
     // Not a fixed string: companies whose valuation no source has published are left
     // out of the sum rather than counted as zero, and when any are, the caption says
     // how many of the register the figure covers (tools/build.py: combinedValuationBasis).
-    [stats.combinedValuationBasis || "Combined value", stats.combinedValuationLabel],
-    ["New in 12 months", stats.newInLast12Months],
+    + headlineStat(stats.combinedValuationLabel,
+      stats.combinedValuationBasis || "Combined value");
+  const rows = [
+    ["New in the last twelve months", stats.newInLast12Months],
     // Not "to €1bn": this median runs across a register where most companies
     // crossed the dollar threshold, not the euro one (the rule is "$1B **or**
     // €1B, as reported"). Naming one currency for an aggregate spanning both
     // states a fact about the set that is not true of most of its members —
-    // the same defect the per-round flag had. Each detail page still names the
-    // threshold its own crossing round actually cleared.
-    ["Median years to unicorn", stats.medianYearsToUnicorn],
-  ];
-  container.innerHTML = items.map(([label, value]) => `
-    <div class="stat">
-      <span class="stat__value">${escapeHtml(value)}</span>
-      <span class="label">${label}</span>
-    </div>`).join("") + `
-    <a class="stat stat--freshness" href="about.html#data">
-      <span class="stat__value">${freshness}</span>
-      <span class="label">Data as of</span>
-    </a>`;
+    // the same defect the per-round flag had. "A billion" names neither. Each
+    // detail page still names the threshold its own crossing round cleared.
+    ["Median years to a billion", stats.medianYearsToUnicorn],
+  ].map(([label, value]) => `
+    <div class="rankrow">
+      <span class="rankrow__label">${escapeHtml(label)}</span>
+      <span class="rankrow__value">${escapeHtml(value)}</span>
+    </div>`).join("");
+  container.innerHTML = `
+    <div class="stats__lead">${lead}</div>
+    <div class="stats__rank">
+      ${rows}
+      <a class="rankrow rankrow--link" href="about.html#data">
+        <span class="rankrow__label">Data checked ↗</span>
+        <span class="rankrow__value">${freshness}</span>
+      </a>
+    </div>`;
 }

@@ -52,7 +52,8 @@ in the table above.
 | `--ghost-ink` | `--ink` at 5% | The enormous `MADE IN GERMANY` set behind the hero |
 | `--ambient-beam` | `--beam` at 8% | Pool one of the field behind the register |
 | `--ambient-violet` | `--violet` at 6% | Pool two |
-| `--glass-highlight` | `--ink` at 16% | The hairline catching the top edge of a stat card |
+| `--rule` | `--ink` at 16% | The hairline under every figure, joining it to its date |
+| `--track` | `--ink` at 7% | The empty part of a grid card's threshold bar |
 | `--plate-inset` / `--plate-inset-ring` | `--plate-ink` at 20% / 9% | Seats a logo plate into its card |
 
 Two rules govern all of it. **A depth cue is never legible as a colour** — the moment one

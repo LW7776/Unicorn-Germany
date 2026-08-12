@@ -28,13 +28,14 @@
      bar is drawn on. Both are --ink at a low strength, so they are distances
      rather than colours like every other entry in this block. --rule is stronger
      than --stroke on purpose: --stroke bounds a surface and should recede, while
-     --rule joins a figure to its date and has to be seen to do that. */
+     --rule joins a figure to its date and has to be seen to do that. It inherits
+     the 16% that used to belong to --glass-highlight, which lit the top edge of
+     the stat tiles the summary row no longer has. */
   --rule: color-mix(in srgb, var(--ink) 16%, transparent);
   --track: color-mix(in srgb, var(--ink) 7%, transparent);
   --ghost-ink: color-mix(in srgb, var(--ink) 5%, transparent);
   --ambient-beam: color-mix(in srgb, var(--beam) 8%, transparent);
   --ambient-violet: color-mix(in srgb, var(--violet) 6%, transparent);
-  --glass-highlight: color-mix(in srgb, var(--ink) 16%, transparent);
   --plate-inset: color-mix(in srgb, var(--plate-ink) 20%, transparent);
   --plate-inset-ring: color-mix(in srgb, var(--plate-ink) 9%, transparent);
 
@@ -63,5 +64,4 @@
   --dur-med: 240ms;
   --dur-slow: 1200ms;
   --radius: 14px;
-  --blur-glass: 16px;
 }
