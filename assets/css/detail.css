@@ -52,50 +52,90 @@
 .detail__plate { min-height: 4.5rem; width: 8rem; }
 .detail__head h2 { font-size: var(--step-3); }
 .detail__meta { color: var(--muted); margin: var(--space-2) 0; }
-/* Three tiles, always three columns, always the same size.
-   `repeat(auto-fit, minmax(11rem, 1fr))` let the content decide: a company whose
-   last round is "Series D extension" got a different row from one showing "Seed",
-   and the tiles drifted between companies as the reader arrowed through them. A
-   fixed track count plus a min-height sized for the longest case fixes the row so
-   the only thing that changes between companies is the figures in it.
-   The rows inside each tile are fixed too (label, value, note): `1fr` on the value
-   means a two-line stage sits in the same band a one-word figure does, so the
-   labels line up across the row and so do the dates under them. */
-.detail__figures {
-  display: grid; gap: var(--space-4); margin: var(--space-6) 0;
-  grid-template-columns: repeat(3, 1fr);
+/* Narrative left, evidence right.
+   The window used to be one column of seven stacked sections, with the funding
+   timeline in the middle pushing the investors and the sources below the fold —
+   which is exactly where a reader goes to decide whether to believe any of it.
+   The split the site already believes in is now spatial: serif prose at a
+   readable measure on one side, and one continuous rail carrying the valuation,
+   the rounds, the investors and the sources on the other. */
+.detail__cols { display: grid; gap: var(--space-7); margin: var(--space-6) 0; }
+.detail__story { display: grid; gap: var(--space-6); align-content: start; }
+.detail__facts, .detail__evidence {
+  display: grid; gap: var(--space-6); align-content: start;
+  font-size: var(--step--1);
 }
-.fig {
-  display: grid; grid-template-rows: auto 1fr auto; gap: var(--space-1);
-  padding: var(--space-4); min-height: 10.5rem;
-  border: 1px solid var(--stroke); border-radius: 10px; background: var(--panel);
+.detail__evidence section { margin-top: 0; }
+
+@media (min-width: 52rem) {
+  /* Two columns, three blocks. The story spans both rows on the left; the
+     figures and the evidence stack into one right-hand column. Row gap is zero
+     and the spacing lives inside .detail__facts instead, so the hairline runs
+     unbroken down the seam between the two readings rather than stopping in the
+     gap between the two blocks that draw it. */
+  .detail__cols {
+    grid-template-columns: minmax(0, 1fr) 19rem;
+    grid-template-areas: "story facts" "story evidence";
+    column-gap: var(--space-8); row-gap: 0;
+    align-items: start;
+  }
+  .detail__story { grid-area: story; }
+  .detail__facts { grid-area: facts; padding-bottom: var(--space-6); }
+  .detail__evidence { grid-area: evidence; }
+  .detail__facts, .detail__evidence {
+    padding-left: var(--space-6); border-left: 1px solid var(--stroke);
+  }
 }
-.fig__value {
-  font-size: var(--step-2); line-height: 1.1; align-self: center;
-  overflow-wrap: anywhere;
+/* Below the split the three read in source order, except that the figures come
+   first — which is where they have always been. The valuation is the headline
+   fact about the company and stacking it under two paragraphs of thesis would
+   bury it on the one screen size with the least room to scroll. The rounds and
+   the sources stay after the story, which is the order they were in before. */
+@media (max-width: 51.99rem) {
+  .detail__facts { order: -1; }
 }
-/* A word, not a figure. At --step-2 "Undisclosed" is wider than the 11rem column
-   the figures grid is built from and overruns the tile next to it; one step down
-   fits, and it is still the largest thing in its own tile. */
+
+/* The sourced figure at window scale. No tile, no border: the hairline under the
+   value is what holds it together, the same way it does on a grid card. */
+.fig { display: grid; gap: var(--space-2); }
+.fig__value { font-size: var(--step-3); line-height: 1; overflow-wrap: anywhere; }
+/* A word, not a figure. At --step-3 "Undisclosed" runs past the rail; two steps
+   down fits and is still the largest thing in it. */
 .fig__value--undisclosed { font-size: var(--step-1); color: var(--muted); }
-.fig__note { color: var(--muted); font-size: var(--step--1); align-self: end; }
+.fig__rule { height: 1px; background: var(--rule); }
+.fig__note { color: var(--muted); font-size: var(--step--1); }
+
+/* The two supporting facts, in the register's own rank shape one step quieter. */
+.railrows { display: grid; }
+.railrow {
+  display: flex; justify-content: space-between; align-items: baseline;
+  gap: var(--space-4); padding: var(--space-3) 0; border-top: 1px solid var(--stroke);
+}
+.railrows > :last-child { border-bottom: 1px solid var(--stroke); }
+.railrow__label { color: var(--muted); }
+.railrow__value { color: var(--ink); text-align: right; }
 .fig__disputed { display: block; margin-top: var(--space-2); font-size: var(--step--1); color: var(--amber); }
 .fig__disputed-badge {
   display: inline-block; margin-right: var(--space-2); padding: 0 var(--space-2);
   border: 1px solid color-mix(in srgb, var(--amber) 45%, transparent); border-radius: 4px;
 }
-.detail__thesis {
-  display: grid; gap: var(--space-6); margin: var(--space-6) 0;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-}
 .detail section { margin-top: var(--space-6); }
 
-.timeline { list-style: none; margin: var(--space-5) 0 0; padding: 0; display: grid; gap: var(--space-4); }
+.timeline { list-style: none; margin: var(--space-4) 0 0; padding: 0; display: grid; gap: var(--space-4); }
+/* Two columns inside the rail: the date against its amount, then the stage and
+   the lead investors under both. One line shorter per round than the stack it
+   replaced, which is what lets five rounds sit in a rail beside the prose
+   instead of running past it. Same pairing the round-up's ledger uses. */
 .timeline__node {
-  display: grid; gap: var(--space-1); padding-left: var(--space-6); position: relative;
+  display: grid; grid-template-columns: 1fr auto; gap: var(--space-1) var(--space-3);
+  padding-left: var(--space-5); position: relative;
   border-left: 1px solid var(--stroke);
   animation: node-in 420ms var(--ease-out) both; animation-delay: calc(var(--i) * 70ms);
 }
+.timeline__date { grid-column: 1; }
+.timeline__amount { grid-column: 2; grid-row: 1; text-align: right; white-space: nowrap; }
+.timeline__stage, .timeline__lead, .timeline__flag { grid-column: 1 / -1; }
+.timeline .fig__disputed, .timeline .fig__undisclosed { grid-column: 1 / -1; }
 .timeline__dot {
   position: absolute; left: -5px; top: .45rem; width: 9px; height: 9px; border-radius: 50%;
   background: var(--muted);
@@ -104,7 +144,7 @@
   background: var(--violet); box-shadow: 0 0 0 4px color-mix(in srgb, var(--violet) 25%, transparent);
 }
 .timeline__date { font-size: var(--step--1); color: var(--muted); }
-.timeline__amount { font-size: var(--step-1); }
+.timeline__amount { font-size: var(--step-0); color: var(--ink); font-variant-numeric: tabular-nums; }
 .timeline__lead, .timeline__flag { font-size: var(--step--1); color: var(--muted); }
 .timeline__flag { color: var(--violet); }
 @keyframes node-in { from { opacity: 0; transform: translateX(-8px); } to { opacity: 1; transform: none; } }
@@ -119,9 +159,4 @@
 }
 @media (max-width: 600px) {
   .detail { padding: var(--space-5); width: 96vw; }
-  /* Three fixed columns inside a 96vw dialog leaves ~100px a tile, which is
-     narrower than "Series D extension" can break to without breaking mid-word.
-     Stack them instead — one column is still a consistent shape. */
-  .detail__figures { grid-template-columns: 1fr; }
-  .fig { min-height: 0; }
 }
