@@ -53,15 +53,21 @@
   {
    "id": "m1",
    "company": "PadelCity",
-   "hq": null,
+   "hq": "Munich",
    "stage": "Investment",
    "amount": 12,
    "currency": "EUR",
    "approximate": false,
    "valuation": null,
    "valuationCurrency": null,
-   "founders": [],
-   "investors": [],
+   "founders": [
+    "Jonathan Sierck",
+    "Sebastian Weil",
+    "Markus Englert"
+   ],
+   "investors": [
+    "Compagnie des Alpes"
+   ],
    "source": {
     "publication": "Tech.eu",
     "title": "European tech weekly recap: €878M in weekly deals and key trends from H1 2026",
@@ -72,15 +78,21 @@
   {
    "id": "m2",
    "company": "EVERSION",
-   "hq": null,
+   "hq": "Konstanz",
    "stage": "Seed",
    "amount": 2.3,
    "currency": "EUR",
    "approximate": false,
    "valuation": null,
    "valuationCurrency": null,
-   "founders": [],
-   "investors": [],
+   "founders": [
+    "Julia Zimmermann",
+    "Wolfgang Triebstein"
+   ],
+   "investors": [
+    "Kammerer Holding",
+    "Kreissparkasse Biberach"
+   ],
    "source": {
     "publication": "Tech.eu",
     "title": "European tech weekly recap: €878M in weekly deals and key trends from H1 2026",
@@ -91,7 +103,7 @@
   {
    "id": "m3",
    "company": "Celsio",
-   "hq": null,
+   "hq": "Munich",
    "stage": "Investment",
    "amount": 1.2,
    "currency": "EUR",

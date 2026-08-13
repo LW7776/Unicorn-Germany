@@ -36,7 +36,7 @@
   {
    "id": "m1",
    "company": "kausable",
-   "hq": null,
+   "hq": "Heidelberg",
    "stage": "Seed",
    "amount": 12,
    "currency": "EUR",
@@ -98,7 +98,11 @@
    "approximate": true,
    "valuation": null,
    "valuationCurrency": null,
-   "founders": [],
+   "founders": [
+    "Sebastian Schmidt",
+    "Niclas Kern",
+    "Adam Khenissi"
+   ],
    "investors": [
     "Simon Capital",
     "VERBUND X Ventures",
