@@ -12,17 +12,23 @@
    only rendered as a link when isSafeUrl() accepts its scheme. */
 import { escapeHtml, isSafeUrl } from "./html.js";
 
-/** The block's opening line. Its predecessor spent three sentences on the
-    sourcing standard, which is a footnote wearing the clothes of an
-    introduction. That text now lives in About, under "How are the weekly
-    funding rounds sourced?", and what stays here is the one thing the standard
-    still has to say in the block itself: this is a selection, not a complete
-    list, so nobody reads an absence as a claim that nothing happened. */
+/** The block's opening paragraph. It says what this is and what is in it, which
+    is the job: the version before it opened on "rounds that would have gone
+    unfunded a decade ago", a claim about a counterfactual decade that nothing on
+    the page supports and that no source was ever going to.
+
+    Two things it still has to carry. That the week is a selection rather than a
+    complete list, so nobody reads an absence as a claim that nothing happened.
+    And that every figure links out, which is the promise the block is keeping.
+    The full sourcing standard lives in About, under "How are the weekly funding
+    rounds sourced?" */
 const STANDARD =
-  "Money is moving in Germany. Founders here are closing rounds that would have " +
-  "gone unfunded a decade ago, and this is where the best of them get read " +
-  "rather than counted. A selection rather than a complete list, with the " +
-  "reporting behind every figure one click away.";
+  "German startups raise money every week, and most of it is reported once and " +
+  "then lost. This block keeps the record. One or two rounds a week are written " +
+  "up in full, with the founders, the investors and what the company actually " +
+  "builds, and the rest are listed with the amount, the stage and the city. A " +
+  "selection rather than a complete list, and every figure links to the " +
+  "reporting it came from.";
 
 /** A source becomes a link only when its scheme is http(s); otherwise the
     title renders as plain text and the publication and date still show, so a

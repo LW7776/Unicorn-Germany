@@ -206,7 +206,7 @@ above).
 `--violet` on `--panel-hover`, 5.40:1). Spot-checked the pairs the token matrix can't see by
 composition alone:
 
-- **Muted metadata on a glass cell** (`.cell__meta`, "Last round · …") — legible in every
+- **Muted metadata on a glass cell** (`.cell__asof`, `.cell__foot`) — legible in every
   screenshot at every width; token pair is `--muted` on `--panel` (composited over `--void`),
   which the checker's `--panel`-over-`--deep` case already covers conservatively (`--deep` is
   the *lighter* of the two base surfaces, so if text passes against it, it passes by a wider

@@ -49,11 +49,16 @@ function cell(company, index, thresholdPct) {
   // reader who wants to check something is going anyway; the card is an index,
   // and the most useful onward link from an index is the company itself.
   // Same scheme gate as every other link built from this data.
+  // A rejected scheme still renders the row, as plain text: every card has to
+  // have the same number of lines in it or the grid stops being a grid, and one
+  // card silently one line shorter than its neighbours is a worse failure than
+  // one unclickable domain.
+  const siteLabel = escapeHtml(company.display.websiteLabel);
   const site = isSafeUrl(company.website)
     ? `<a class="cell__site" href="${escapeHtml(company.website)}"
           target="_blank" rel="noopener noreferrer"
-          aria-label="${name} website, opens in a new tab">${escapeHtml(company.display.websiteLabel)} ↗</a>`
-    : "";
+          aria-label="${name} website, opens in a new tab">${siteLabel} ↗</a>`
+    : `<span class="cell__site cell__site--plain">${siteLabel}</span>`;
   // The crossing, still, and not the last funding round: the grid's default sort
   // is "Newest unicorn" (sort.newest, itself becameUnicorn.date — see
   // tools/build.py), so the date the card carries has to be the one the ordering
@@ -76,11 +81,16 @@ function cell(company, index, thresholdPct) {
       <span class="cell__plate">
         <img src="${logo}" alt="${name} logo" loading="lazy" decoding="async">
       </span>
-      <span class="cell__figure${company.display.valuationUndisclosed ? " cell__figure--undisclosed" : ""}">${valuationLabel}${undisclosed}${aged}</span>
-      <span class="cell__rule" aria-hidden="true"></span>
-      <span class="cell__meta">
-        <span>${escapeHtml(company.display.valuationAsOf)}</span>${site}
+      ${/* The value is its own element so it can be the thing that truncates when
+            a card is narrow, leaving the markers beside it at full size. Every
+            row below is exactly one line tall, which is what makes one card the
+            same height as every other card. */""}
+      <span class="cell__figure${company.display.valuationUndisclosed ? " cell__figure--undisclosed" : ""}">
+        <span class="cell__value">${valuationLabel}</span>${undisclosed}${aged}
       </span>
+      <span class="cell__rule" aria-hidden="true"></span>
+      <span class="cell__asof">${escapeHtml(company.display.valuationAsOf)}</span>
+      ${site}
       ${thresholdBar(company, thresholdPct)}
       <span class="cell__foot">
         <span class="cell__sector">${sectors}</span>

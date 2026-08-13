@@ -164,6 +164,12 @@
 .cell {
   position: relative;
   display: grid; gap: var(--space-3); padding: var(--space-4); text-align: left;
+  /* Rows keep their own heights instead of sharing out whatever slack the grid
+     hands the card. A grid container defaults to `align-content: stretch`, so a
+     card stretched to match a taller neighbour was quietly adding a fraction of
+     a pixel to every row inside it, and its bar and its foot ended up a pixel or
+     two off the card beside it. */
+  align-content: start;
   background: var(--panel); border: 1px solid var(--stroke); border-radius: var(--radius);
   color: var(--ink);
   transition: transform var(--dur-fast) var(--ease-out),
@@ -183,16 +189,25 @@
   background: none; border: 0; border-radius: var(--radius); padding: 0;
 }
 .cell__open:focus-visible { outline: 2px solid var(--beam); outline-offset: 2px; }
-/* The only thing that beats the stretched button. Padding rather than a larger
-   font: the link has to be a comfortable target without growing into a second
-   figure beside the valuation. It lands around 36px tall, short of the 44px this
-   site holds its controls to and deliberately so — the whole card is the primary
-   target and this is the secondary one, with 24px the floor that applies to it. */
+/* The only thing that beats the stretched button, and a row of its own rather
+   than a second thing sharing the line with the date. Sharing was what broke the
+   grid: "traderepublic.com" fitted beside "Dec 2025" and "personio.com" did not,
+   so one card wrapped, grew a line, and stopped lining up with its neighbour.
+   On its own line the longest domain in the register fits at every column width.
+   Padding rather than a larger font, so the target is comfortable without the
+   link growing into a second figure. It lands around 36px tall, short of the
+   44px this site holds its controls to and deliberately so — the whole card is
+   the primary target and this is the secondary one, with 24px the floor that
+   applies to it. */
 .cell__site {
-  position: relative; z-index: 1;
-  color: var(--beam-text); text-decoration: none; white-space: nowrap;
+  position: relative; z-index: 1; justify-self: start; max-width: 100%;
+  color: var(--beam-text); text-decoration: none;
   padding: var(--space-2) 0;
 }
+/* An https URL is guaranteed by validate.py, so this is unreachable today. It
+   exists so that a record which somehow carried a bad one still renders the row
+   and keeps the card the same height as every other card. */
+.cell__site--plain { color: var(--muted); }
 .cell__site:hover { text-decoration: underline; }
 /* The white plate is the one light surface on the site, and left flat it reads
    as a sticker laid on top of the card. A hairline ring and a shallow shadow
@@ -204,10 +219,16 @@
 .cell__plate {
   display: grid; place-items: center; background: var(--plate); color: var(--plate-ink);
   border-radius: 10px; padding: var(--space-4); min-height: 5.5rem;
+  /* An exact height inside the grid, not a floor. Three of the logos have no
+     intrinsic aspect ratio for the browser to work from and resolved a fraction
+     of a pixel taller than the floor, which was enough to put those three cards
+     out of step with the rest. The detail and city plates keep the floor: they
+     are one to a window and have nothing to line up with. */
   box-shadow: inset 0 1px 3px var(--plate-inset),
               inset 0 0 0 1px var(--plate-inset-ring);
 }
-.cell__plate img { max-height: 3rem; width: auto; object-fit: contain; }
+.cell > .cell__plate { height: 5.5rem; }
+.cell__plate img { max-height: 3rem; max-width: 100%; width: auto; object-fit: contain; }
 /* Flex-wrap, not a plain inline run, and the reason is a real overflow rather
    than tidiness. register.js writes the figure and its markers as adjacent
    elements with no whitespace between them — `${valuationLabel}${undisclosed}`
@@ -219,22 +240,38 @@
    onto its own line drops min-content to the longest single token and the
    overflow goes with it. The gap replaces the markers' old margin-left, so
    spacing is unchanged when everything does fit on one line. */
+/* Every row in a card is exactly one line tall, and that is the whole of what
+   makes one card the same height as every other card. Text that will not fit is
+   cut with an ellipsis rather than wrapping, because a card that wraps is a card
+   that is taller than the one beside it, and the register stops reading as a
+   grid the moment two neighbours disagree about where their bars sit.
+   The plate is already a fixed 5.5rem, the rule is 1px and the bar is 3px, so
+   the four text rows below are the only ones that could ever move. */
+.cell__figure, .cell__asof, .cell__site, .cell__foot { min-width: 0; }
+.cell__value, .cell__asof, .cell__site, .cell__sector, .cell__year {
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
 .cell__figure {
   font-size: var(--step-1);
-  display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2);
+  /* The row is the height of a --step-1 line whatever is in it, so the one card
+     setting "Undisclosed" a step smaller does not pull its bar and its foot up
+     from the cards either side of it. 1.55 is the body line-height from
+     base.css, which is what a full-size figure in this row measures. */
+  line-height: 1.55; min-height: calc(1.55 * var(--step-1));
+  display: flex; flex-wrap: nowrap; align-items: center; gap: var(--space-2);
   /* Digits line up down a column of cards rather than drifting by a few pixels
      per glyph, which is the whole reason a register sets figures in mono. */
   font-variant-numeric: tabular-nums;
 }
+/* The value yields first. A marker is two or three characters and losing half of
+   one destroys it, while a truncated figure still reads as a figure. */
+.cell__value { min-width: 0; }
+.cell__aged, .cell__undisclosed { flex: none; }
+.cell__asof { font-size: var(--step--1); color: var(--muted); }
 /* The hairline under every figure on the site. It is what makes the figure, its
    date and its link read as one object rather than three stacked lines, and it
    is the same rule at the same weight in the detail window and the round-up. */
 .cell__rule { height: 1px; background: var(--rule); }
-.cell__meta {
-  font-size: var(--step--1); color: var(--muted);
-  display: flex; justify-content: space-between; align-items: baseline;
-  gap: var(--space-2); flex-wrap: wrap;
-}
 
 /* The threshold bar. Track is zero to the largest valuation on the register, the
    tick is the qualifying billion, and the fill is this company between them. Both
@@ -260,8 +297,11 @@
   -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 55%, transparent 100%);
   mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 55%, transparent 100%);
 }
+/* Two columns rather than a flex row with space-between: the year gets exactly
+   the width it needs and the sector takes the rest, so a long sector name
+   truncates instead of pushing the year onto a second line. */
 .cell__foot {
-  display: flex; justify-content: space-between; align-items: baseline;
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline;
   gap: var(--space-2); font-size: var(--step--1); color: var(--muted);
 }
 .cell__year { font-variant-numeric: tabular-nums; }
@@ -272,8 +312,12 @@
 }
 /* "Undisclosed" is a qualification, not a figure — set it in the muted ink so it does
    not compete with the real numbers on neighbouring cards, while the amber ">1bn"
-   marker beside it stays at full strength. */
+   marker beside it stays at full strength. One step down as well: it is eleven
+   characters where every other card holds four or five, and at --step-1 the word
+   and its marker together are wider than the narrowest column, which is a
+   truncated word rather than a truncated number. */
 .cell__figure--undisclosed { color: var(--muted); }
+.cell__figure--undisclosed .cell__value { font-size: var(--step-0); }
 
 .controls { display: grid; gap: var(--space-4); margin-bottom: var(--space-6); }
 .controls__row { display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: end; }
@@ -370,6 +414,12 @@
 .map__note--hint { margin-top: calc(-1 * var(--space-3)); font-style: italic; }
 
 @media (max-width: 480px) {
-  .grid { grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr)); }
+  /* One column, not two. Two cards across a phone leaves about 124px of usable
+     width inside each, which is narrower than most of the domains, every
+     two-word sector and the word "Undisclosed" — so twenty-six of the
+     thirty-two cards were cutting text off with an ellipsis to stay the same
+     height as each other. A single column is 343px wide at 375px and nothing
+     truncates at all. */
+  .grid { grid-template-columns: 1fr; }
   .register { padding-inline: var(--space-4); }
 }
