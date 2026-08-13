@@ -19,15 +19,20 @@ $18 bn            ← the figure, mono, the largest thing in its box
 Jul 2026 · ↗      ← the date it was true, then the source
 ```
 
-One object at three sizes, used everywhere a number appears and nowhere else: the two
-headline figures in the summary row, every grid card, the valuation in a company window,
+One object at three sizes: the two headline figures in the summary row, every grid card,
 every round in the weekly ledger. A reader who learns it once reads every number on the
 site.
 
-Two rules keep it honest. **The link under a figure is the evidence for that figure**,
-except on a grid card, where it goes to the company instead and the evidence lives one
-click away in the window. And **the hairline stays a hairline** — a rigid repeated unit
-executed loosely stops being a signature and becomes a table.
+The company window is the one place it does not appear, and that is a decision rather than
+an omission. Its figures stay in the three fixed tiles, because the window is the only
+screen where a figure is read beside two others of the same rank and a fixed row is what
+keeps them from drifting as a reader arrows through companies. The evidence is not lost:
+every source is listed in full at the foot of the window.
+
+Two rules keep the unit honest. **The link under a figure goes to the company**, not to
+the page that proves the figure, so a card is an index and the window is where the
+evidence lives. And **the hairline stays a hairline** — a rigid repeated unit executed
+loosely stops being a signature and becomes a table.
 
 The signature used to be the constellation flying into the grid, one spark per company.
 That transition was replaced by the page-up move in `assets/js/transition.js`, which is

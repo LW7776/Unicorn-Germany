@@ -56,32 +56,19 @@ const dash = (value) => (value === null || value === undefined || value === "" ?
     numbers and strings already containing HTML-significant characters. */
 const text = (value) => escapeHtml(dash(value));
 
-/** The sourced figure, at the size the window gives it: the value, the hairline,
-    then the date it was true and the page that says so. Same unit as the grid
-    card and the round-up, and the one place on the site where the link under a
-    figure is the evidence for that figure rather than a way onward.
-
-    `extra` is pre-built HTML (the disputed and undisclosed badges) that already
-    escaped everything it interpolated, so it is dropped in unescaped — treat it
-    the way note and label are treated if a future call site ever wants to pass
-    raw data through it. */
-function sourcedFigure(label, value, note, source, extra = "", valueClass = "") {
-  const cite = source ? ` · ${sourceLink(source)}` : "";
+/** label and note are always literals at today's call sites, but escaping
+    them here (rather than trusting every future caller to remember) means a
+    call site that ever passes through data can't turn this into a footgun.
+    `extra` is different: it is pre-built HTML (currently only disputedBadge's
+    output) that already escaped everything it interpolated, so it is dropped
+    in unescaped — treat it the same as note/label if a future call site ever
+    wants to pass raw data through it. */
+function figure(label, value, note, extra = "", valueClass = "") {
   return `<div class="fig">
     <span class="label">${text(label)}</span>
     <span class="fig__value${valueClass ? " " + valueClass : ""}">${text(value)}</span>
-    <span class="fig__rule" aria-hidden="true"></span>
-    <span class="fig__note">${text(note)}${cite}</span>
+    ${note ? `<span class="fig__note">${text(note)}</span>` : ""}
     ${extra}
-  </div>`;
-}
-
-/** A supporting fact in the rail: label left, value right, hairline between
-    rows. The same shape as the register's summary rank, one step quieter. */
-function railRow(label, value) {
-  return `<div class="railrow">
-    <span class="railrow__label">${text(label)}</span>
-    <span class="railrow__value">${text(value)}</span>
   </div>`;
 }
 
@@ -198,59 +185,36 @@ function markup(company) {
       ${site}
     </div>
   </header>
-  <div class="detail__cols">
-    <div class="detail__story">
-      <section><h3 class="label">Problem</h3><p class="prose">${text(company.thesis.problem)}</p></section>
-      <section><h3 class="label">Technology and business model</h3><p class="prose">${text(company.thesis.solution)}</p></section>
-    </div>
-    ${/* Everything a sceptical reader came to check, beside the story rather
-          than queued below it. Two blocks rather than one, and the reason is the
-          narrow screen: there the three read in source order, and the figures
-          have to lead (they always have) while the rounds, investors and sources
-          belong after the thesis rather than in front of it. Side by side,
-          detail.css puts both back in one right-hand column with a continuous
-          rule down it. */""}
-    <div class="detail__facts">
-      ${sourcedFigure("Valuation", d.valuationLabel,
-        d.valuationUndisclosed
-          // "as of" a date, on a value that is not a figure, would read as though a
-          // figure had been struck then. What that date marks is when the evidence was
-          // published — say so, and keep the staleness flag it still drives.
-          ? `${dash(d.valuationUndisclosedBadge)} · reported ${dash(d.valuationAsOf)}${d.aged ? " · aged" : ""}`
-          : `as of ${dash(d.valuationAsOf)}${d.aged ? " · aged" : ""}`,
-        // No citation on the note when the valuation is undisclosed: the badge
-        // directly below already carries the evidence and its link, and for
-        // these records they are usually the same page. Printing it twice makes
-        // one source look like two.
-        d.valuationUndisclosed
-          ? null
-          : (company.sources || []).find((s) => s.id === company.valuation.source),
-        undisclosedBadge(company.valuation.undisclosed, company.sources)
-        + disputedBadge(company.valuation.disputed, company.sources),
-        // "Undisclosed" is a word, not a figure: eleven characters where the
-        // rail's other values hold four or five ("$8 bn"). One step down fits
-        // the rail and is still the largest thing in it.
-        d.valuationUndisclosed ? "fig__value--undisclosed" : "")}
-      <div class="railrows">
-        ${railRow("Last round", `${dash(d.lastRoundStage)} · ${dash(d.lastRoundLabel)}`)}
-        ${/* dash(), not text(): railRow escapes its own label, and escaping here
-              as well would double-encode the first threshold label to contain an
-              ampersand. */""}
-        ${railRow(`Years to ${dash(d.unicornThresholdLabel)}`,
-          `${dash(d.yearsToUnicorn)} · ${dash(d.becameUnicornLabel)}`)}
-      </div>
-    </div>
-    <aside class="detail__evidence">
-      <section><h3 class="label">Funding rounds</h3>${timeline(company)}</section>
-      <section><h3 class="label">Investors</h3>
-        <p class="detail__investors">${text((company.investorsOrdered || company.investors || []).join(" · "))}</p></section>
-      <section><h3 class="label">Founders</h3>
-        <p class="detail__people">${company.founders.length
-          ? company.founders.map((f) => `${text(f.name)} <span class="detail__role">${text(f.role)}</span>`).join(" · ")
-          : "–"}</p></section>
-      <section><h3 class="label">Sources</h3>${sources(company)}</section>
-    </aside>
+  <div class="detail__figures">
+    ${figure("Valuation", d.valuationLabel,
+      d.valuationUndisclosed
+        // "as of" a date, on a value that is not a figure, would read as though a
+        // figure had been struck then. What that date marks is when the evidence was
+        // published — say so, and keep the staleness flag it still drives.
+        ? `${dash(d.valuationUndisclosedBadge)} · reported ${dash(d.valuationAsOf)}${d.aged ? " · aged" : ""}`
+        : `as of ${dash(d.valuationAsOf)}${d.aged ? " · aged" : ""}`,
+      undisclosedBadge(company.valuation.undisclosed, company.sources)
+      + disputedBadge(company.valuation.disputed, company.sources),
+      // "Undisclosed" is a word, not a figure: eleven characters where the other
+      // tiles hold four or five ("$8 bn"). At the figure size it overruns a
+      // 11rem grid column and spills into the tile beside it, so it is set one
+      // step down — still the largest thing in its own tile, and it fits.
+      d.valuationUndisclosed ? "fig__value--undisclosed" : "")}
+    ${figure("Last round", d.lastRoundStage, d.lastRoundLabel)}
+    ${figure(`Years to ${text(d.unicornThresholdLabel)}`, d.yearsToUnicorn, `unicorn ${dash(d.becameUnicornLabel)}`)}
   </div>
+  <section class="detail__thesis">
+    <div><h3 class="label">Problem</h3><p class="prose">${text(company.thesis.problem)}</p></div>
+    <div><h3 class="label">Technology and business model</h3><p class="prose">${text(company.thesis.solution)}</p></div>
+  </section>
+  <section><h3 class="label">Funding rounds</h3>${timeline(company)}</section>
+  <section><h3 class="label">Investors</h3>
+    <p class="detail__investors">${text((company.investorsOrdered || company.investors || []).join(" · "))}</p></section>
+  <section><h3 class="label">Founders</h3>
+    <p>${company.founders.length
+      ? company.founders.map((f) => `${text(f.name)} <span class="detail__role">${text(f.role)}</span>`).join(" · ")
+      : "–"}</p></section>
+  <section><h3 class="label">Sources</h3>${sources(company)}</section>
   <footer class="detail__foot">
     <a href="https://github.com/LW7776/Unicorn-Germany/edit/main/data/companies/${slug}.json"
        target="_blank" rel="noopener noreferrer">Edit this entry ↗</a>
