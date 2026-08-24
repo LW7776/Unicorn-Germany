@@ -565,6 +565,12 @@ def derive_week(record):
         "shortLabel": f"W{record['week'].split('-W')[1]}",
         "yearLabel": record["week"].split("-W")[0],
         "roundCount": len(lead) + len(more),
+        # The card prints this rather than counting for itself. A week with one
+        # round in it read "1 rounds" until W33 turned out to have exactly one,
+        # which is the kind of thing a plural-by-default never shows you until
+        # the data finally produces the singular case.
+        "roundCountLabel": f"{len(lead) + len(more)} round"
+                           + ("" if len(lead) + len(more) == 1 else "s"),
         "moreCount": len(more),
     }
 

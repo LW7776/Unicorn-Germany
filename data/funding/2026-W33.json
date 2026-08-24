@@ -1,0 +1,27 @@
+{
+ "week": "2026-W33",
+ "start": "2026-08-10",
+ "end": "2026-08-16",
+ "lead": [],
+ "more": [
+  {
+   "id": "m1",
+   "company": "Wasteside",
+   "hq": null,
+   "stage": null,
+   "amount": 0.7,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [],
+   "investors": [],
+   "source": {
+    "publication": "Tech.eu",
+    "title": "European tech weekly recap: Over €763M invested across 35+ deals",
+    "url": "https://tech.eu/2026/08/17/european-tech-weekly-recap-over-eur763m-invested-across-35-deals/",
+    "publishedOn": "2026-08-17"
+   }
+  }
+ ]
+}

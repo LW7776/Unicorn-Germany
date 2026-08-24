@@ -1,0 +1,74 @@
+/* The only file containing raw colour values. Everything else uses these tokens. */
+:root {
+  --void: #07080B;
+  --deep: #0C0E14;
+  --panel: rgba(255, 255, 255, .045);
+  --panel-hover: rgba(255, 255, 255, .075);
+  --stroke: rgba(255, 255, 255, .10);
+  --ink: #ECEEF3;
+  --muted: #9AA1B1;
+  --beam: #4C7DFF;
+  --beam-text: #8FB0FF;
+  --violet: #A97BFF;
+  --amber: #E0A24B;
+  --plate: #F7F8FA;
+  --plate-ink: #14161A;   /* the only token for text on --plate; every other ink is for dark surfaces */
+
+  /* --- Depth ---------------------------------------------------------------
+     The ghosted hero wordmark, the ambient pools the register floats over, the
+     glass highlight on a stat card and the inner shadow that seats a logo plate
+     into its surface. Every one of these is a new *strength* of a colour already
+     in the table above, never a new hue: blue and violet remain the only accents
+     and amber keeps every caveat to itself. The percentages are low on purpose —
+     these are depth cues, and the moment one is legible as a colour it has
+     stopped doing its job and started competing with the content in front of it.
+     tools/check_contrast.py carries the surfaces they produce, so text over them
+     is held to the same 4.5:1 floor as text over --void. */
+  /* The hairline under every figure on the site, and the empty track a threshold
+     bar is drawn on. Both are --ink at a low strength, so they are distances
+     rather than colours like every other entry in this block. --rule is stronger
+     than --stroke on purpose: --stroke bounds a surface and should recede, while
+     --rule joins a figure to its date and has to be seen to do that. It inherits
+     the 16% that used to belong to --glass-highlight, which lit the top edge of
+     the stat tiles the summary row no longer has. */
+  --rule: color-mix(in srgb, var(--ink) 16%, transparent);
+  --track: color-mix(in srgb, var(--ink) 7%, transparent);
+  --ghost-ink: color-mix(in srgb, var(--ink) 5%, transparent);
+  --ambient-beam: color-mix(in srgb, var(--beam) 8%, transparent);
+  --ambient-violet: color-mix(in srgb, var(--violet) 6%, transparent);
+  --plate-inset: color-mix(in srgb, var(--plate-ink) 20%, transparent);
+  --plate-inset-ring: color-mix(in srgb, var(--plate-ink) 9%, transparent);
+
+  --font-display: "Archivo", system-ui, sans-serif;
+  --font-prose: "Source Serif 4", Georgia, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --step--1: clamp(.75rem, .72rem + .15vw, .8125rem);
+  --step-0: clamp(.9375rem, .9rem + .2vw, 1rem);
+  --step-1: clamp(1.125rem, 1rem + .4vw, 1.375rem);
+  --step-2: clamp(1.5rem, 1.25rem + .9vw, 2rem);
+  --step-3: clamp(2rem, 1.5rem + 2vw, 3rem);
+  --step-4: clamp(2.75rem, 1.8rem + 4vw, 5rem);
+  /* The register's section opener: below the hero, above every page title. */
+  --step-5: clamp(2.5rem, 1.5rem + 4.6vw, 5.5rem);
+  --step-6: clamp(2.5rem, .5rem + 6.5vw, 5.75rem);
+
+  --space-1: .25rem; --space-2: .5rem; --space-3: .75rem; --space-4: 1rem;
+  --space-5: 1.5rem; --space-6: 2rem; --space-7: 3rem; --space-8: 5rem;
+
+  --ease-out: cubic-bezier(.22, 1, .36, 1);
+  --dur-fast: 180ms;
+  /* The top of DESIGN.md's 150–250ms micro-interaction band. Used where a
+     hover has further to travel than a colour change — a card lifting, a map
+     halo swelling — so the movement reads as considered rather than twitchy. */
+  --dur-med: 240ms;
+  --dur-slow: 1200ms;
+  --radius: 14px;
+  /* One content width for the whole site. Before this, the register ran the full
+     viewport, the round-up stopped at 72rem, the footer at 64rem and the static
+     pages at 42rem, so the page changed its mind about how wide it was four
+     times on the way down. Every block is held to this now and the reading
+     measure is kept inside it, by columns and by caps on the text blocks
+     themselves, rather than by giving each section a narrower container. */
+  --content: 84rem;
+}

@@ -1,0 +1,120 @@
+{
+ "week": "2026-W34",
+ "start": "2026-08-17",
+ "end": "2026-08-23",
+ "lead": [
+  {
+   "id": "l1",
+   "company": "Flip",
+   "hq": "Stuttgart",
+   "stage": null,
+   "amount": 22,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "Benedikt Brand"
+   ],
+   "investors": [
+    "Notion Capital",
+    "HV Capital",
+    "L-Bank"
+   ],
+   "text": "Flip has raised €22m to get AI onto the factory floor. Founded in Stuttgart in 2018, Flip builds the app for the eighty percent of employees who do not work at a desk, in production, retail, logistics, care and hospitality, and it now carries digital identity and AI agents alongside the shift plan. Notion Capital and HV Capital both doubled down, with L-Bank, the development bank of Baden-Württemberg, joining as a new investor. Bosch, REWE, SIXT and FORVIA HELLA are already running it. Benedikt Brand puts the gap plainly, that AI has long been part of everyday life in the office and has barely arrived on the assembly line.",
+   "source": {
+    "publication": "EU-Startups",
+    "title": "A year after their last raise, Germany's Flip raises €22 million to scale its frontline AI platform",
+    "url": "https://www.eu-startups.com/2026/08/a-year-after-their-last-raise-germanys-flip-raises-e22-million-to-scale-its-frontline-ai-platform/",
+    "publishedOn": "2026-08-19"
+   }
+  },
+  {
+   "id": "l2",
+   "company": "Oceanloop",
+   "hq": "Munich",
+   "stage": null,
+   "amount": 38.5,
+   "currency": "EUR",
+   "approximate": true,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "Fabian Riedel"
+   ],
+   "investors": [
+    "Hatch Blue",
+    "Stolt Ventures",
+    "European Investment Bank"
+   ],
+   "text": "Oceanloop has secured up to €38.5m to farm fish on land. Formed in 2023 out of the merger of Crusta Nova, one of Europe's first commercial shrimp producers, with the marine systems expertise of Sander, the Munich company builds recirculating aquaculture systems, which are closed tanks run on water treatment and software rather than open sea cages. It is the first company to farm Giant Grouper in Europe, and sales from the farm at Strande near Kiel started in April. Hatch Blue and Stolt Ventures put in the equity and the European Investment Bank the venture debt. Next comes a 250 ton farm in Kiel by the end of the year, then 2,000 tons on Gran Canaria.",
+   "note": {
+    "text": "€32m of the €38.5m is a European Investment Bank venture-debt facility rather than equity.",
+    "source": {
+     "publication": "EU-Startups",
+     "title": "Munich-based Oceanloop nets up to €38.5 million to scale its land-based aquaculture technology",
+     "url": "https://www.eu-startups.com/2026/08/munich-based-oceanloop-nets-up-to-e38-5-million-to-scale-its-land-based-aquaculture-technology/",
+     "publishedOn": "2026-08-18"
+    }
+   },
+   "source": {
+    "publication": "EU-Startups",
+    "title": "Munich-based Oceanloop nets up to €38.5 million to scale its land-based aquaculture technology",
+    "url": "https://www.eu-startups.com/2026/08/munich-based-oceanloop-nets-up-to-e38-5-million-to-scale-its-land-based-aquaculture-technology/",
+    "publishedOn": "2026-08-18"
+   }
+  }
+ ],
+ "more": [
+  {
+   "id": "m1",
+   "company": "amber",
+   "hq": "Aachen",
+   "stage": "Series A",
+   "amount": 7,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "Bastian Maiworm",
+    "Philipp Reißel",
+    "Igli Manaj"
+   ],
+   "investors": [
+    "Ventech",
+    "NRW.Venture"
+   ],
+   "source": {
+    "publication": "EU-Startups",
+    "title": "Aachen-based amber raises €7 million Series A to build the infrastructure for autonomous business AI",
+    "url": "https://www.eu-startups.com/2026/08/aachen-based-amber-raises-e7-million-series-a-to-build-the-infrastructure-for-autonomous-business-ai/",
+    "publishedOn": "2026-08-17"
+   }
+  },
+  {
+   "id": "m2",
+   "company": "Computomics",
+   "hq": "Tübingen",
+   "stage": "Series B",
+   "amount": 6.3,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [],
+   "investors": [
+    "Convent Capital Agri Food Fund",
+    "High-Tech Gründerfonds",
+    "MBG Baden-Württemberg",
+    "Amathaon Capital"
+   ],
+   "source": {
+    "publication": "EU-Startups",
+    "title": "Germany's Computomics secures €6.3 million to help crop breeders stay ahead of heat and drought",
+    "url": "https://www.eu-startups.com/2026/08/germanys-computomics-secures-e6-3-million-to-help-crop-breeders-stay-ahead-of-heat-and-drought/",
+    "publishedOn": "2026-08-18"
+   }
+  }
+ ]
+}

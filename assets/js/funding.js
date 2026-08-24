@@ -203,7 +203,7 @@ function weekCard(week, selected) {
             data-week="${escapeHtml(week.week)}">
       <span class="weekcard__id">${escapeHtml(week.shortLabel)}</span>
       <span class="weekcard__range">${escapeHtml(week.rangeLabel)}</span>
-      <span class="weekcard__count">${escapeHtml(week.roundCount)} rounds</span>
+      <span class="weekcard__count">${escapeHtml(week.roundCountLabel)}</span>
     </button>`;
 }
 
