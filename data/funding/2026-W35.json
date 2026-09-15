@@ -1,0 +1,109 @@
+{
+ "week": "2026-W35",
+ "start": "2026-08-24",
+ "end": "2026-08-30",
+ "lead": [
+  {
+   "id": "l1",
+   "company": "Revier Therapeutics",
+   "hq": "Heidelberg",
+   "stage": "Seed",
+   "amount": 6,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "Eva van Rooij",
+    "Johannes Backs"
+   ],
+   "investors": [
+    "KHAN Technology Transfer Fund II",
+    "High-Tech Gründerfonds",
+    "VORNvc",
+    "Revier Invest Heidelberg"
+   ],
+   "text": "Revier Therapeutics has launched with €6m to go after the biology behind heart disease. Founded in Heidelberg by Prof. Eva van Rooij and Prof. Johannes Backs, Revier is the first company to selectively target class IIa HDACs, enzymes that drive cardiometabolic disease, with small molecules taken by mouth that block the damaging activity and leave healthy function alone. First up are two conditions with few targeted treatments, heart failure with preserved ejection fraction and atherosclerotic cardiovascular disease. Round led by the KHAN Technology Transfer Fund II, with High-Tech Gründerfonds, VORNvc and private investors through Revier Invest Heidelberg following on. It came out of stealth and closed the round in the same announcement.",
+   "source": {
+    "publication": "EU-Startups",
+    "title": "Heidelberg-based Revier Therapeutics launches with €6 million to develop cardiometabolic therapies",
+    "url": "https://www.eu-startups.com/2026/08/heidelberg-based-revier-therapeutics-launches-with-e6-million-to-develop-cardiometabolic-therapies/",
+    "publishedOn": "2026-08-28"
+   }
+  },
+  {
+   "id": "l2",
+   "company": "Kazimi",
+   "hq": "Berlin",
+   "stage": "Pre-seed",
+   "amount": 2.2,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "August Joseph",
+    "Chase Gummer",
+    "Ville Mikkola",
+    "Andreas Naumann"
+   ],
+   "investors": [
+    "Market One Capital",
+    "IBB Ventures"
+   ],
+   "text": "Kazimi has raised €2.2m to tell mobile apps which of their users are real. Founded in Berlin in 2024 by August Joseph, Chase Gummer, Ville Mikkola and Andreas Naumann, Kazimi secures the signals an app sends home, so a developer can verify its first-party data and separate genuine users from bots, using cryptography and zero-knowledge proofs. The oversubscribed pre-seed was led by Market One Capital with IBB Ventures following on, alongside former Rovio CTO Petri Hyökyranta, former Supercell data scientist Janne Peltola and Erik Massmann, once CFO of the Birkenstock Group. Mobile gaming studios are already customers. Cloudflare reported this year that bot activity overtook human activity online for the first time, which is the whole market in one sentence.",
+   "source": {
+    "publication": "EU-Startups",
+    "title": "Berlin-based Kazimi secures €2.2 million to help app developers protect and verify first-party data",
+    "url": "https://www.eu-startups.com/2026/08/berlin-based-kazimi-secures-e2-2-million-to-help-app-developers-protect-and-verify-first-party-data/",
+    "publishedOn": "2026-08-24"
+   }
+  }
+ ],
+ "more": [
+  {
+   "id": "m1",
+   "company": "Nanolope",
+   "hq": "Berlin",
+   "stage": "Pre-seed",
+   "amount": 0.8,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "Felix Marske",
+    "Eric Matthes",
+    "Dominik L. Schreiber"
+   ],
+   "investors": [
+    "IBB Ventures"
+   ],
+   "source": {
+    "publication": "EU-Startups",
+    "title": "Berlin-based Nanolope secures €800k to turn building surfaces into thermal energy storage systems",
+    "url": "https://www.eu-startups.com/2026/08/berlin-based-nanolope-secures-e800k-to-turn-building-surfaces-into-thermal-energy-storage-systems/",
+    "publishedOn": "2026-08-28"
+   }
+  },
+  {
+   "id": "m2",
+   "company": "ToysReloved",
+   "hq": null,
+   "stage": null,
+   "amount": 0.425,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [],
+   "investors": [],
+   "source": {
+    "publication": "Tech.eu",
+    "title": "European tech weekly recap: Over €475M invested across 35+ deals",
+    "url": "https://tech.eu/2026/08/31/european-tech-weekly-recap-over-eur475m-invested-across-35-deals/",
+    "publishedOn": "2026-08-31"
+   }
+  }
+ ]
+}

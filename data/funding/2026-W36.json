@@ -1,0 +1,157 @@
+{
+ "week": "2026-W36",
+ "start": "2026-08-31",
+ "end": "2026-09-06",
+ "lead": [
+  {
+   "id": "l1",
+   "company": "HyImpulse",
+   "hq": "Neuenstadt am Kocher",
+   "stage": "Series A extension",
+   "amount": 50,
+   "currency": "EUR",
+   "approximate": true,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "Christian Schmierer",
+    "Mario Kobald",
+    "Konstantin Tomilin",
+    "Ulrich Fischer"
+   ],
+   "investors": [
+    "JOIN Capital",
+    "Ace Capital Partners",
+    "North Ventures",
+    "BW-Capital",
+    "Bayern Kapital",
+    "German Aerospace Centre",
+    "Campus Founders Ventures"
+   ],
+   "text": "HyImpulse has raised more than €50m in equity to take its own rockets to orbit. Spun out of the German Aerospace Centre in 2018 by Christian Schmierer, Mario Kobald, Konstantin Tomilin and Ulrich Fischer, the company from Neuenstadt am Kocher builds hybrid rockets that burn paraffin with liquid oxygen, a non-explosive combination it says is safer and cheaper than kerosene, and it already operates a commercial suborbital platform. JOIN Capital and Ace Capital Partners co-led the Series A extension, with North Ventures, BW-Capital, Bayern Kapital and the German Aerospace Centre itself joining and Campus Founders Ventures following on. That takes its equity and public funding past €125m. A European launcher, built in a small town in Baden-Württemberg.",
+   "source": {
+    "publication": "EU-Startups",
+    "title": "German SpaceTech HyImpulse secures over €50 million to accelerate Europe's sovereign launch capabilities",
+    "url": "https://www.eu-startups.com/2026/09/german-spacetech-hyimpulse-secures-over-e50-million-to-accelerate-europes-sovereign-launch-capabilities/",
+    "publishedOn": "2026-09-02"
+   }
+  },
+  {
+   "id": "l2",
+   "company": "INLEAP Photonics",
+   "hq": "Hanover",
+   "stage": "Seed",
+   "amount": 20,
+   "currency": "EUR",
+   "approximate": true,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "Marius Lammers"
+   ],
+   "investors": [
+    "UVC Partners",
+    "High-Tech Gründerfonds",
+    "Balnord",
+    "Sentris",
+    "Scale Capital"
+   ],
+   "text": "INLEAP Photonics has raised around €20m to stop drones with light. Founded in Hanover by Marius Lammers, INLEAP builds ultra-fast, high-precision laser beam steering, the part of a counter-drone system that puts a laser on a small, fast target and keeps it there, for the military and for critical infrastructure. UVC Partners led the seed round, with High-Tech Gründerfonds, Poland's Balnord, Estonia's Sentris and Denmark's Scale Capital following on. Investors from four countries in a single seed round, for a capability Europe has decided it needs at home.",
+   "source": {
+    "publication": "Tech.eu",
+    "title": "INLEAP Photonics raises €20M to expand laser counter-drone systems",
+    "url": "https://tech.eu/2026/09/01/inleap-photonics-raises-eur20m-to-expand-laser-counter-drone-systems/",
+    "publishedOn": "2026-09-01"
+   }
+  }
+ ],
+ "more": [
+  {
+   "id": "m1",
+   "company": "Atira",
+   "hq": "Munich",
+   "stage": "Seed",
+   "amount": 15,
+   "currency": "USD",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "Florian Diegruber",
+    "August DuMont Schütte"
+   ],
+   "investors": [
+    "Accel",
+    "UVC Partners",
+    "Fortino",
+    "Booom"
+   ],
+   "note": {
+    "text": "The $17.5m headline adds a previously unannounced $2.5m pre-seed to this $15m seed.",
+    "source": {
+     "publication": "Tech.eu",
+     "title": "Atira raises $17.5M to bring AI orchestration to industrial sales",
+     "url": "https://tech.eu/2026/09/03/atira-raises-175m-to-bring-ai-orchestration-to-industrial-sales/",
+     "publishedOn": "2026-09-03"
+    }
+   },
+   "source": {
+    "publication": "Tech.eu",
+    "title": "Atira raises $17.5M to bring AI orchestration to industrial sales",
+    "url": "https://tech.eu/2026/09/03/atira-raises-175m-to-bring-ai-orchestration-to-industrial-sales/",
+    "publishedOn": "2026-09-03"
+   }
+  },
+  {
+   "id": "m2",
+   "company": "Zeit AI",
+   "hq": "Munich",
+   "stage": null,
+   "amount": 5,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "Leopold von Waldthausen",
+    "Marvin Bornstein"
+   ],
+   "investors": [
+    "Y Combinator",
+    "University of Oxford Seed Fund",
+    "Sequoia Capital Scout Fund",
+    "ACE Ventures",
+    "Hasso Plattner Ventures"
+   ],
+   "source": {
+    "publication": "Tech.eu",
+    "title": "Zeit AI raises €5M to give Europe's mid-market its own data engineer",
+    "url": "https://tech.eu/2026/09/03/zeit-ai-raises-eur5m-to-give-europes-mid-market-its-own-data-engineer/",
+    "publishedOn": "2026-09-03"
+   }
+  },
+  {
+   "id": "m3",
+   "company": "Cloover",
+   "hq": "Berlin",
+   "stage": "Debt facility",
+   "amount": 100,
+   "currency": "USD",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "Jodok Betschart",
+    "Peder Broms",
+    "Valentin Gönczy"
+   ],
+   "investors": [],
+   "source": {
+    "publication": "Tech.eu",
+    "title": "Cloover turns profitable at $350M revenue run rate and secures $100M financing facility",
+    "url": "https://tech.eu/2026/09/01/cloover-turns-profitable-at-350m-revenue-run-rate-and-secures-100m-financing-facility/",
+    "publishedOn": "2026-09-01"
+   }
+  }
+ ]
+}

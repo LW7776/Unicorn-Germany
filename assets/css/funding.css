@@ -24,7 +24,22 @@
 }
 
 /* --- the week cards ------------------------------------------------------ */
-.roundup__weeks { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+/* One row that scrolls sideways, newest on the left, rather than a row that
+   wraps. Wrapping was fine for three weeks and wrong by eight: the rail broke
+   onto a second line with W30 stranded on its own, and it could only grow a
+   line taller every week from here. A scroll row takes the fiftieth week the
+   same way it takes the eighth. Arrow keys still move the selection (the
+   tablist contract in funding.js), and focus() brings an off-screen card into
+   view by itself. */
+.roundup__weeks {
+  display: flex; flex-wrap: nowrap; gap: var(--space-3);
+  overflow-x: auto; overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  /* A scroll container clips on both axes, so the 2px hover lift needs room
+     above the cards and the hover shadow needs a little below them. */
+  padding-block: var(--space-1) var(--space-2);
+}
+.roundup__weeks .weekcard { flex: none; scroll-snap-align: start; }
 .weekcard {
   display: grid; gap: var(--space-1); text-align: left;
   padding: var(--space-3) var(--space-4); min-height: 44px;
@@ -123,9 +138,10 @@
 .roundup__date { font-family: var(--font-mono); white-space: nowrap; }
 .roundup__empty { margin: 0; color: var(--muted); font-size: var(--step--1); }
 
-/* A conflicting figure for the same round. Amber, because DESIGN.md reserves
-   amber for aged and disputed signals and the register's own `disputed` marker
-   already uses it — a reader who has met one has met the other. */
+/* A qualification on the round's headline figure: equity summed with debt, or
+   two rounds under one number. Amber, because DESIGN.md reserves amber for every
+   caveat on the site, and the badge reads "note" rather than "disputed" because
+   nobody is disputing these figures (see noteBadge in funding.js). */
 .roundup__note {
   /* Spans both ledger columns. Inside a lead card it is a plain block and the
      grid-column has nothing to apply to, so one rule serves both places. */
@@ -159,8 +175,5 @@
 }
 @media (max-width: 480px) {
   .roundup { padding: var(--space-7) var(--space-4); }
-  /* Below ~480px the cards no longer fit two to a row without truncating the
-     date range, so they become a vertical stack rather than shrinking type. */
-  .roundup__weeks { display: grid; grid-template-columns: 1fr; }
   .lead { padding: var(--space-4); }
 }

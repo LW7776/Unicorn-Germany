@@ -79,20 +79,22 @@ function valuationClause(round) {
     : "";
 }
 
-/** A conflicting figure for the same round, shown rather than reconciled.
+/** A qualification on a round's headline figure, shown beside it rather than
+    folded into it.
 
-    Sources disagree about round sizes more often than is comfortable — a
-    company announces one number and the trade press reports another. The
-    register's answer is `disputed`: publish the company's own figure for its
-    own round and put the disagreement next to it, in amber, with its own link.
-    This is the same answer in the same colour, because a reader who sees €35m
-    here and €35m on the company card, with both noting the €30m press figure,
-    learns something true; a reader who sees €35m in one place and €30m in the
-    other just concludes the site is broken. */
+    The note was built for a second, conflicting figure, and the register's word
+    for that is `disputed`. But in practice every note this block has carried is
+    something else: a headline that sums equity with a bank facility, or two
+    rounds with a single number. Nobody disputes Limetax's €36m. It is simply not
+    €36m of equity. Calling that "disputed" tells a reader two sources disagree
+    when they do not, so the badge says "note", which is true of every case, and
+    keeps the amber so it still reads as a caveat on the figure. The register's
+    own `disputed` marker in the detail window is unaffected and still means what
+    it says. */
 function noteBadge(note) {
   if (!note) return "";
   return `<span class="roundup__note">
-    <span class="roundup__note-badge">disputed</span>
+    <span class="roundup__note-badge">note</span>
     <span class="roundup__note-text">${escapeHtml(note.text)}</span>
     ${sourceCite(note.source)}
   </span>`;
@@ -260,6 +262,21 @@ export function renderFunding(container, funding, companies = []) {
 
   const panel = container.querySelector("[data-panel]");
   const cards = () => [...container.querySelectorAll("[data-week]")];
+  const rail = container.querySelector("[data-weeks]");
+
+  // The rail is one scrolling row, so the selected week can sit off its edge:
+  // press End and W30 is selected somewhere the reader cannot see. Focus alone
+  // does not reliably bring it back. This scrolls the rail and only the rail.
+  // scrollIntoView() would do the same job and also scroll the page, which on
+  // the first render would drag a reader past the register to a block they
+  // have not reached yet. Rects are zero while the block is hidden, so this is
+  // a no-op until it is on screen.
+  const keepInView = (card) => {
+    const railBox = rail.getBoundingClientRect();
+    const box = card.getBoundingClientRect();
+    if (box.left < railBox.left) rail.scrollLeft -= railBox.left - box.left;
+    else if (box.right > railBox.right) rail.scrollLeft += box.right - railBox.right;
+  };
 
   const show = (weekId, { focus = false, route = false } = {}) => {
     const week = weeks.find((entry) => entry.week === weekId);
@@ -281,6 +298,7 @@ export function renderFunding(container, funding, companies = []) {
       // sector chips follow for their radiogroup.
       card.tabIndex = isCurrent ? 0 : -1;
       if (isCurrent && focus) card.focus();
+      if (isCurrent) keepInView(card);
     });
   };
 

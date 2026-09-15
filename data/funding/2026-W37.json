@@ -1,0 +1,176 @@
+{
+ "week": "2026-W37",
+ "start": "2026-09-07",
+ "end": "2026-09-13",
+ "lead": [
+  {
+   "id": "l1",
+   "company": "The Exploration Company",
+   "hq": "Munich",
+   "stage": "Series C",
+   "amount": 450,
+   "currency": "USD",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "Hélène Huby"
+   ],
+   "investors": [
+    "Bessemer Venture Partners",
+    "Atomico",
+    "Scaleup Europe Fund",
+    "Balderton",
+    "Plural",
+    "Cherry",
+    "Red River West"
+   ],
+   "text": "The Exploration Company has raised a huge $450m Series C, which it calls the largest ever raised by a European space company. Founded by Hélène Huby and based in Munich and Bordeaux, TEC builds Nyx, a reusable capsule designed to dock with the International Space Station and come back to Earth, and it is now accelerating Storm, a high-thrust reusable rocket engine. Bessemer Venture Partners, Atomico and the Scaleup Europe Fund managed by EQT co-led, with Balderton, Plural, Cherry and Red River West following on. That takes total funding to about $680m. No valuation was disclosed, so it does not enter the register yet. Three days later it won ESA's ALADDIN cargo capsule contract, worth €760m.",
+   "source": {
+    "publication": "TechCrunch",
+    "title": "The Exploration Company nabs $450 million to challenge SpaceX",
+    "url": "https://techcrunch.com/2026/09/08/the-exploration-company-nabs-450-million-to-challenge-spacex/",
+    "publishedOn": "2026-09-08"
+   }
+  },
+  {
+   "id": "l2",
+   "company": "Limetax",
+   "hq": "Berlin",
+   "stage": "Pre-seed",
+   "amount": 36,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "Christoph Gamon",
+    "Maximilian Meyer",
+    "Christoph Dansard"
+   ],
+   "investors": [
+    "Motive Partners",
+    "Activant",
+    "Heliad"
+   ],
+   "text": "Limetax has raised €36m to bring German tax firms together and run them on AI. Founded in Berlin by Christoph Gamon, Maximilian Meyer and Christoph Dansard, who between them came through Razor Group, N26 and Augustus, Limetax brings established tax and accounting firms into one group and makes its own agentic platform the backbone of their daily work. Motive Partners led the €6m pre-seed equity with Activant and Heliad, alongside former finance minister Christian Lindner and the Moss founders Anton Rummel and Ante Spittler, and a consortium of German banks put up a €30m credit facility. Germany has nearly 54,000 of these firms and not enough qualified people to staff them. Limetax only launched in January.",
+   "note": {
+    "text": "€30m of the €36m is a credit facility from a consortium of German banks, and €6m is pre-seed equity.",
+    "source": {
+     "publication": "EU-Startups",
+     "title": "Limetax lands €36 million to build an AI-powered group of German tax and accounting firms",
+     "url": "https://www.eu-startups.com/2026/09/limetax-lands-e36-million-to-build-an-ai-powered-group-of-german-tax-and-accounting-firms/",
+     "publishedOn": "2026-09-09"
+    }
+   },
+   "source": {
+    "publication": "EU-Startups",
+    "title": "Limetax lands €36 million to build an AI-powered group of German tax and accounting firms",
+    "url": "https://www.eu-startups.com/2026/09/limetax-lands-e36-million-to-build-an-ai-powered-group-of-german-tax-and-accounting-firms/",
+    "publishedOn": "2026-09-09"
+   }
+  }
+ ],
+ "more": [
+  {
+   "id": "m1",
+   "company": "Ethris",
+   "hq": "Munich",
+   "stage": "Venture debt",
+   "amount": 30,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [],
+   "investors": [
+    "European Investment Bank"
+   ],
+   "source": {
+    "publication": "Company press release",
+    "title": "Ethris and EIB sign €30M financing under HERA Invest to advance further clinical development of broad-spectrum nasal antiviral",
+    "url": "https://www.globenewswire.com/news-release/2026/09/10/3359287/0/en/ethris-and-eib-sign-30m-financing-under-hera-invest-to-advance-further-clinical-development-of-broad-spectrum-nasal-antiviral.html",
+    "publishedOn": "2026-09-10"
+   }
+  },
+  {
+   "id": "m2",
+   "company": "FRYTE Mobility",
+   "hq": "Munich",
+   "stage": "Seed",
+   "amount": 3.5,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "Sebastian Wolff"
+   ],
+   "investors": [
+    "4impact capital",
+    "Rethink Ventures",
+    "Revent",
+    "F-LOG",
+    "accilium ventures"
+   ],
+   "source": {
+    "publication": "Tech.eu",
+    "title": "FRYTE Mobility lands €3.5M to build the coordination layer for eTruck charging",
+    "url": "https://tech.eu/2026/09/09/fryte-mobility-lands-eur35m-to-build-the-coordination-layer-for-etruck-charging/",
+    "publishedOn": "2026-09-09"
+   }
+  },
+  {
+   "id": "m3",
+   "company": "Furo",
+   "hq": "Munich",
+   "stage": null,
+   "amount": 3.44,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "Lena Sophia Voß",
+    "Leonie Wagner",
+    "Simon Wittner"
+   ],
+   "investors": [
+    "TQ Ventures",
+    "Sandberg Bernthal Venture Partners",
+    "Neo",
+    "CDTM Venture Capital"
+   ],
+   "source": {
+    "publication": "EU-Startups",
+    "title": "Munich-based Furo raises €3.44 million to make industrial battery storage economically viable",
+    "url": "https://www.eu-startups.com/2026/09/munich-based-furo-raises-e3-44-million-to-make-industrial-battery-storage-economically-viable/",
+    "publishedOn": "2026-09-11"
+   }
+  },
+  {
+   "id": "m4",
+   "company": "Grubel",
+   "hq": "Munich",
+   "stage": "Pre-seed",
+   "amount": 3,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "Moritz Hardt",
+    "Reinhard Heckel"
+   ],
+   "investors": [
+    "Point Nine"
+   ],
+   "source": {
+    "publication": "EU-Startups",
+    "title": "New German AI research lab Grubel raises €3 million to build systems that adapt to individual legal cases",
+    "url": "https://www.eu-startups.com/2026/09/new-german-ai-research-lab-grubel-raises-e3-million-to-build-systems-that-adapt-to-individual-legal-cases/",
+    "publishedOn": "2026-09-10"
+   }
+  }
+ ]
+}

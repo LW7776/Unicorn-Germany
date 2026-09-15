@@ -1,6 +1,543 @@
 {
  "weeks": [
   {
+   "week": "2026-W37",
+   "start": "2026-09-07",
+   "end": "2026-09-13",
+   "lead": [
+    {
+     "id": "l1",
+     "company": "The Exploration Company",
+     "hq": "Munich",
+     "stage": "Series C",
+     "amount": 450,
+     "currency": "USD",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Hélène Huby"
+     ],
+     "investors": [
+      "Bessemer Venture Partners",
+      "Atomico",
+      "Scaleup Europe Fund",
+      "Balderton",
+      "Plural",
+      "Cherry",
+      "Red River West"
+     ],
+     "text": "The Exploration Company has raised a huge $450m Series C, which it calls the largest ever raised by a European space company. Founded by Hélène Huby and based in Munich and Bordeaux, TEC builds Nyx, a reusable capsule designed to dock with the International Space Station and come back to Earth, and it is now accelerating Storm, a high-thrust reusable rocket engine. Bessemer Venture Partners, Atomico and the Scaleup Europe Fund managed by EQT co-led, with Balderton, Plural, Cherry and Red River West following on. That takes total funding to about $680m. No valuation was disclosed, so it does not enter the register yet. Three days later it won ESA's ALADDIN cargo capsule contract, worth €760m.",
+     "source": {
+      "publication": "TechCrunch",
+      "title": "The Exploration Company nabs $450 million to challenge SpaceX",
+      "url": "https://techcrunch.com/2026/09/08/the-exploration-company-nabs-450-million-to-challenge-spacex/",
+      "publishedOn": "2026-09-08",
+      "publishedLabel": "8 Sep 2026"
+     },
+     "amountLabel": "$450 m",
+     "valuationLabel": null,
+     "foundersLabel": "Hélène Huby",
+     "investorsLabel": "Bessemer Venture Partners, Atomico, Scaleup Europe Fund, Balderton, Plural, Cherry and Red River West"
+    },
+    {
+     "id": "l2",
+     "company": "Limetax",
+     "hq": "Berlin",
+     "stage": "Pre-seed",
+     "amount": 36,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Christoph Gamon",
+      "Maximilian Meyer",
+      "Christoph Dansard"
+     ],
+     "investors": [
+      "Motive Partners",
+      "Activant",
+      "Heliad"
+     ],
+     "text": "Limetax has raised €36m to bring German tax firms together and run them on AI. Founded in Berlin by Christoph Gamon, Maximilian Meyer and Christoph Dansard, who between them came through Razor Group, N26 and Augustus, Limetax brings established tax and accounting firms into one group and makes its own agentic platform the backbone of their daily work. Motive Partners led the €6m pre-seed equity with Activant and Heliad, alongside former finance minister Christian Lindner and the Moss founders Anton Rummel and Ante Spittler, and a consortium of German banks put up a €30m credit facility. Germany has nearly 54,000 of these firms and not enough qualified people to staff them. Limetax only launched in January.",
+     "note": {
+      "text": "€30m of the €36m is a credit facility from a consortium of German banks, and €6m is pre-seed equity.",
+      "source": {
+       "publication": "EU-Startups",
+       "title": "Limetax lands €36 million to build an AI-powered group of German tax and accounting firms",
+       "url": "https://www.eu-startups.com/2026/09/limetax-lands-e36-million-to-build-an-ai-powered-group-of-german-tax-and-accounting-firms/",
+       "publishedOn": "2026-09-09",
+       "publishedLabel": "9 Sep 2026"
+      }
+     },
+     "source": {
+      "publication": "EU-Startups",
+      "title": "Limetax lands €36 million to build an AI-powered group of German tax and accounting firms",
+      "url": "https://www.eu-startups.com/2026/09/limetax-lands-e36-million-to-build-an-ai-powered-group-of-german-tax-and-accounting-firms/",
+      "publishedOn": "2026-09-09",
+      "publishedLabel": "9 Sep 2026"
+     },
+     "amountLabel": "€36 m",
+     "valuationLabel": null,
+     "foundersLabel": "Christoph Gamon, Maximilian Meyer and Christoph Dansard",
+     "investorsLabel": "Motive Partners, Activant and Heliad"
+    }
+   ],
+   "more": [
+    {
+     "id": "m1",
+     "company": "Ethris",
+     "hq": "Munich",
+     "stage": "Venture debt",
+     "amount": 30,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [],
+     "investors": [
+      "European Investment Bank"
+     ],
+     "source": {
+      "publication": "Company press release",
+      "title": "Ethris and EIB sign €30M financing under HERA Invest to advance further clinical development of broad-spectrum nasal antiviral",
+      "url": "https://www.globenewswire.com/news-release/2026/09/10/3359287/0/en/ethris-and-eib-sign-30m-financing-under-hera-invest-to-advance-further-clinical-development-of-broad-spectrum-nasal-antiviral.html",
+      "publishedOn": "2026-09-10",
+      "publishedLabel": "10 Sep 2026"
+     },
+     "amountLabel": "€30 m",
+     "valuationLabel": null,
+     "foundersLabel": null,
+     "investorsLabel": "European Investment Bank"
+    },
+    {
+     "id": "m2",
+     "company": "FRYTE Mobility",
+     "hq": "Munich",
+     "stage": "Seed",
+     "amount": 3.5,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Sebastian Wolff"
+     ],
+     "investors": [
+      "4impact capital",
+      "Rethink Ventures",
+      "Revent",
+      "F-LOG",
+      "accilium ventures"
+     ],
+     "source": {
+      "publication": "Tech.eu",
+      "title": "FRYTE Mobility lands €3.5M to build the coordination layer for eTruck charging",
+      "url": "https://tech.eu/2026/09/09/fryte-mobility-lands-eur35m-to-build-the-coordination-layer-for-etruck-charging/",
+      "publishedOn": "2026-09-09",
+      "publishedLabel": "9 Sep 2026"
+     },
+     "amountLabel": "€3.5 m",
+     "valuationLabel": null,
+     "foundersLabel": "Sebastian Wolff",
+     "investorsLabel": "4impact capital, Rethink Ventures, Revent, F-LOG and accilium ventures"
+    },
+    {
+     "id": "m3",
+     "company": "Furo",
+     "hq": "Munich",
+     "stage": null,
+     "amount": 3.44,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Lena Sophia Voß",
+      "Leonie Wagner",
+      "Simon Wittner"
+     ],
+     "investors": [
+      "TQ Ventures",
+      "Sandberg Bernthal Venture Partners",
+      "Neo",
+      "CDTM Venture Capital"
+     ],
+     "source": {
+      "publication": "EU-Startups",
+      "title": "Munich-based Furo raises €3.44 million to make industrial battery storage economically viable",
+      "url": "https://www.eu-startups.com/2026/09/munich-based-furo-raises-e3-44-million-to-make-industrial-battery-storage-economically-viable/",
+      "publishedOn": "2026-09-11",
+      "publishedLabel": "11 Sep 2026"
+     },
+     "amountLabel": "€3.44 m",
+     "valuationLabel": null,
+     "foundersLabel": "Lena Sophia Voß, Leonie Wagner and Simon Wittner",
+     "investorsLabel": "TQ Ventures, Sandberg Bernthal Venture Partners, Neo and CDTM Venture Capital"
+    },
+    {
+     "id": "m4",
+     "company": "Grubel",
+     "hq": "Munich",
+     "stage": "Pre-seed",
+     "amount": 3,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Moritz Hardt",
+      "Reinhard Heckel"
+     ],
+     "investors": [
+      "Point Nine"
+     ],
+     "source": {
+      "publication": "EU-Startups",
+      "title": "New German AI research lab Grubel raises €3 million to build systems that adapt to individual legal cases",
+      "url": "https://www.eu-startups.com/2026/09/new-german-ai-research-lab-grubel-raises-e3-million-to-build-systems-that-adapt-to-individual-legal-cases/",
+      "publishedOn": "2026-09-10",
+      "publishedLabel": "10 Sep 2026"
+     },
+     "amountLabel": "€3 m",
+     "valuationLabel": null,
+     "foundersLabel": "Moritz Hardt and Reinhard Heckel",
+     "investorsLabel": "Point Nine"
+    }
+   ],
+   "rangeLabel": "7–13 Sep 2026",
+   "shortLabel": "W37",
+   "yearLabel": "2026",
+   "roundCount": 6,
+   "roundCountLabel": "6 rounds",
+   "moreCount": 4
+  },
+  {
+   "week": "2026-W36",
+   "start": "2026-08-31",
+   "end": "2026-09-06",
+   "lead": [
+    {
+     "id": "l1",
+     "company": "HyImpulse",
+     "hq": "Neuenstadt am Kocher",
+     "stage": "Series A extension",
+     "amount": 50,
+     "currency": "EUR",
+     "approximate": true,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Christian Schmierer",
+      "Mario Kobald",
+      "Konstantin Tomilin",
+      "Ulrich Fischer"
+     ],
+     "investors": [
+      "JOIN Capital",
+      "Ace Capital Partners",
+      "North Ventures",
+      "BW-Capital",
+      "Bayern Kapital",
+      "German Aerospace Centre",
+      "Campus Founders Ventures"
+     ],
+     "text": "HyImpulse has raised more than €50m in equity to take its own rockets to orbit. Spun out of the German Aerospace Centre in 2018 by Christian Schmierer, Mario Kobald, Konstantin Tomilin and Ulrich Fischer, the company from Neuenstadt am Kocher builds hybrid rockets that burn paraffin with liquid oxygen, a non-explosive combination it says is safer and cheaper than kerosene, and it already operates a commercial suborbital platform. JOIN Capital and Ace Capital Partners co-led the Series A extension, with North Ventures, BW-Capital, Bayern Kapital and the German Aerospace Centre itself joining and Campus Founders Ventures following on. That takes its equity and public funding past €125m. A European launcher, built in a small town in Baden-Württemberg.",
+     "source": {
+      "publication": "EU-Startups",
+      "title": "German SpaceTech HyImpulse secures over €50 million to accelerate Europe's sovereign launch capabilities",
+      "url": "https://www.eu-startups.com/2026/09/german-spacetech-hyimpulse-secures-over-e50-million-to-accelerate-europes-sovereign-launch-capabilities/",
+      "publishedOn": "2026-09-02",
+      "publishedLabel": "2 Sep 2026"
+     },
+     "amountLabel": "~€50 m",
+     "valuationLabel": null,
+     "foundersLabel": "Christian Schmierer, Mario Kobald, Konstantin Tomilin and Ulrich Fischer",
+     "investorsLabel": "JOIN Capital, Ace Capital Partners, North Ventures, BW-Capital, Bayern Kapital, German Aerospace Centre and Campus Founders Ventures"
+    },
+    {
+     "id": "l2",
+     "company": "INLEAP Photonics",
+     "hq": "Hanover",
+     "stage": "Seed",
+     "amount": 20,
+     "currency": "EUR",
+     "approximate": true,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Marius Lammers"
+     ],
+     "investors": [
+      "UVC Partners",
+      "High-Tech Gründerfonds",
+      "Balnord",
+      "Sentris",
+      "Scale Capital"
+     ],
+     "text": "INLEAP Photonics has raised around €20m to stop drones with light. Founded in Hanover by Marius Lammers, INLEAP builds ultra-fast, high-precision laser beam steering, the part of a counter-drone system that puts a laser on a small, fast target and keeps it there, for the military and for critical infrastructure. UVC Partners led the seed round, with High-Tech Gründerfonds, Poland's Balnord, Estonia's Sentris and Denmark's Scale Capital following on. Investors from four countries in a single seed round, for a capability Europe has decided it needs at home.",
+     "source": {
+      "publication": "Tech.eu",
+      "title": "INLEAP Photonics raises €20M to expand laser counter-drone systems",
+      "url": "https://tech.eu/2026/09/01/inleap-photonics-raises-eur20m-to-expand-laser-counter-drone-systems/",
+      "publishedOn": "2026-09-01",
+      "publishedLabel": "1 Sep 2026"
+     },
+     "amountLabel": "~€20 m",
+     "valuationLabel": null,
+     "foundersLabel": "Marius Lammers",
+     "investorsLabel": "UVC Partners, High-Tech Gründerfonds, Balnord, Sentris and Scale Capital"
+    }
+   ],
+   "more": [
+    {
+     "id": "m1",
+     "company": "Atira",
+     "hq": "Munich",
+     "stage": "Seed",
+     "amount": 15,
+     "currency": "USD",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Florian Diegruber",
+      "August DuMont Schütte"
+     ],
+     "investors": [
+      "Accel",
+      "UVC Partners",
+      "Fortino",
+      "Booom"
+     ],
+     "note": {
+      "text": "The $17.5m headline adds a previously unannounced $2.5m pre-seed to this $15m seed.",
+      "source": {
+       "publication": "Tech.eu",
+       "title": "Atira raises $17.5M to bring AI orchestration to industrial sales",
+       "url": "https://tech.eu/2026/09/03/atira-raises-175m-to-bring-ai-orchestration-to-industrial-sales/",
+       "publishedOn": "2026-09-03",
+       "publishedLabel": "3 Sep 2026"
+      }
+     },
+     "source": {
+      "publication": "Tech.eu",
+      "title": "Atira raises $17.5M to bring AI orchestration to industrial sales",
+      "url": "https://tech.eu/2026/09/03/atira-raises-175m-to-bring-ai-orchestration-to-industrial-sales/",
+      "publishedOn": "2026-09-03",
+      "publishedLabel": "3 Sep 2026"
+     },
+     "amountLabel": "$15 m",
+     "valuationLabel": null,
+     "foundersLabel": "Florian Diegruber and August DuMont Schütte",
+     "investorsLabel": "Accel, UVC Partners, Fortino and Booom"
+    },
+    {
+     "id": "m2",
+     "company": "Zeit AI",
+     "hq": "Munich",
+     "stage": null,
+     "amount": 5,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Leopold von Waldthausen",
+      "Marvin Bornstein"
+     ],
+     "investors": [
+      "Y Combinator",
+      "University of Oxford Seed Fund",
+      "Sequoia Capital Scout Fund",
+      "ACE Ventures",
+      "Hasso Plattner Ventures"
+     ],
+     "source": {
+      "publication": "Tech.eu",
+      "title": "Zeit AI raises €5M to give Europe's mid-market its own data engineer",
+      "url": "https://tech.eu/2026/09/03/zeit-ai-raises-eur5m-to-give-europes-mid-market-its-own-data-engineer/",
+      "publishedOn": "2026-09-03",
+      "publishedLabel": "3 Sep 2026"
+     },
+     "amountLabel": "€5 m",
+     "valuationLabel": null,
+     "foundersLabel": "Leopold von Waldthausen and Marvin Bornstein",
+     "investorsLabel": "Y Combinator, University of Oxford Seed Fund, Sequoia Capital Scout Fund, ACE Ventures and Hasso Plattner Ventures"
+    },
+    {
+     "id": "m3",
+     "company": "Cloover",
+     "hq": "Berlin",
+     "stage": "Debt facility",
+     "amount": 100,
+     "currency": "USD",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Jodok Betschart",
+      "Peder Broms",
+      "Valentin Gönczy"
+     ],
+     "investors": [],
+     "source": {
+      "publication": "Tech.eu",
+      "title": "Cloover turns profitable at $350M revenue run rate and secures $100M financing facility",
+      "url": "https://tech.eu/2026/09/01/cloover-turns-profitable-at-350m-revenue-run-rate-and-secures-100m-financing-facility/",
+      "publishedOn": "2026-09-01",
+      "publishedLabel": "1 Sep 2026"
+     },
+     "amountLabel": "$100 m",
+     "valuationLabel": null,
+     "foundersLabel": "Jodok Betschart, Peder Broms and Valentin Gönczy",
+     "investorsLabel": null
+    }
+   ],
+   "rangeLabel": "31 Aug – 6 Sep 2026",
+   "shortLabel": "W36",
+   "yearLabel": "2026",
+   "roundCount": 5,
+   "roundCountLabel": "5 rounds",
+   "moreCount": 3
+  },
+  {
+   "week": "2026-W35",
+   "start": "2026-08-24",
+   "end": "2026-08-30",
+   "lead": [
+    {
+     "id": "l1",
+     "company": "Revier Therapeutics",
+     "hq": "Heidelberg",
+     "stage": "Seed",
+     "amount": 6,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Eva van Rooij",
+      "Johannes Backs"
+     ],
+     "investors": [
+      "KHAN Technology Transfer Fund II",
+      "High-Tech Gründerfonds",
+      "VORNvc",
+      "Revier Invest Heidelberg"
+     ],
+     "text": "Revier Therapeutics has launched with €6m to go after the biology behind heart disease. Founded in Heidelberg by Prof. Eva van Rooij and Prof. Johannes Backs, Revier is the first company to selectively target class IIa HDACs, enzymes that drive cardiometabolic disease, with small molecules taken by mouth that block the damaging activity and leave healthy function alone. First up are two conditions with few targeted treatments, heart failure with preserved ejection fraction and atherosclerotic cardiovascular disease. Round led by the KHAN Technology Transfer Fund II, with High-Tech Gründerfonds, VORNvc and private investors through Revier Invest Heidelberg following on. It came out of stealth and closed the round in the same announcement.",
+     "source": {
+      "publication": "EU-Startups",
+      "title": "Heidelberg-based Revier Therapeutics launches with €6 million to develop cardiometabolic therapies",
+      "url": "https://www.eu-startups.com/2026/08/heidelberg-based-revier-therapeutics-launches-with-e6-million-to-develop-cardiometabolic-therapies/",
+      "publishedOn": "2026-08-28",
+      "publishedLabel": "28 Aug 2026"
+     },
+     "amountLabel": "€6 m",
+     "valuationLabel": null,
+     "foundersLabel": "Eva van Rooij and Johannes Backs",
+     "investorsLabel": "KHAN Technology Transfer Fund II, High-Tech Gründerfonds, VORNvc and Revier Invest Heidelberg"
+    },
+    {
+     "id": "l2",
+     "company": "Kazimi",
+     "hq": "Berlin",
+     "stage": "Pre-seed",
+     "amount": 2.2,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "August Joseph",
+      "Chase Gummer",
+      "Ville Mikkola",
+      "Andreas Naumann"
+     ],
+     "investors": [
+      "Market One Capital",
+      "IBB Ventures"
+     ],
+     "text": "Kazimi has raised €2.2m to tell mobile apps which of their users are real. Founded in Berlin in 2024 by August Joseph, Chase Gummer, Ville Mikkola and Andreas Naumann, Kazimi secures the signals an app sends home, so a developer can verify its first-party data and separate genuine users from bots, using cryptography and zero-knowledge proofs. The oversubscribed pre-seed was led by Market One Capital with IBB Ventures following on, alongside former Rovio CTO Petri Hyökyranta, former Supercell data scientist Janne Peltola and Erik Massmann, once CFO of the Birkenstock Group. Mobile gaming studios are already customers. Cloudflare reported this year that bot activity overtook human activity online for the first time, which is the whole market in one sentence.",
+     "source": {
+      "publication": "EU-Startups",
+      "title": "Berlin-based Kazimi secures €2.2 million to help app developers protect and verify first-party data",
+      "url": "https://www.eu-startups.com/2026/08/berlin-based-kazimi-secures-e2-2-million-to-help-app-developers-protect-and-verify-first-party-data/",
+      "publishedOn": "2026-08-24",
+      "publishedLabel": "24 Aug 2026"
+     },
+     "amountLabel": "€2.2 m",
+     "valuationLabel": null,
+     "foundersLabel": "August Joseph, Chase Gummer, Ville Mikkola and Andreas Naumann",
+     "investorsLabel": "Market One Capital and IBB Ventures"
+    }
+   ],
+   "more": [
+    {
+     "id": "m1",
+     "company": "Nanolope",
+     "hq": "Berlin",
+     "stage": "Pre-seed",
+     "amount": 0.8,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Felix Marske",
+      "Eric Matthes",
+      "Dominik L. Schreiber"
+     ],
+     "investors": [
+      "IBB Ventures"
+     ],
+     "source": {
+      "publication": "EU-Startups",
+      "title": "Berlin-based Nanolope secures €800k to turn building surfaces into thermal energy storage systems",
+      "url": "https://www.eu-startups.com/2026/08/berlin-based-nanolope-secures-e800k-to-turn-building-surfaces-into-thermal-energy-storage-systems/",
+      "publishedOn": "2026-08-28",
+      "publishedLabel": "28 Aug 2026"
+     },
+     "amountLabel": "€0.8 m",
+     "valuationLabel": null,
+     "foundersLabel": "Felix Marske, Eric Matthes and Dominik L. Schreiber",
+     "investorsLabel": "IBB Ventures"
+    },
+    {
+     "id": "m2",
+     "company": "ToysReloved",
+     "hq": null,
+     "stage": null,
+     "amount": 0.425,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [],
+     "investors": [],
+     "source": {
+      "publication": "Tech.eu",
+      "title": "European tech weekly recap: Over €475M invested across 35+ deals",
+      "url": "https://tech.eu/2026/08/31/european-tech-weekly-recap-over-eur475m-invested-across-35-deals/",
+      "publishedOn": "2026-08-31",
+      "publishedLabel": "31 Aug 2026"
+     },
+     "amountLabel": "€0.425 m",
+     "valuationLabel": null,
+     "foundersLabel": null,
+     "investorsLabel": null
+    }
+   ],
+   "rangeLabel": "24–30 Aug 2026",
+   "shortLabel": "W35",
+   "yearLabel": "2026",
+   "roundCount": 4,
+   "roundCountLabel": "4 rounds",
+   "moreCount": 2
+  },
+  {
    "week": "2026-W34",
    "start": "2026-08-17",
    "end": "2026-08-23",
@@ -666,8 +1203,8 @@
   }
  ],
  "stats": {
-  "weekCount": 5,
-  "roundCount": 19,
-  "latestWeek": "2026-W34"
+  "weekCount": 8,
+  "roundCount": 34,
+  "latestWeek": "2026-W37"
  }
 }
