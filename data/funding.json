@@ -1,6 +1,465 @@
 {
  "weeks": [
   {
+   "week": "2026-W40",
+   "start": "2026-09-28",
+   "end": "2026-10-04",
+   "lead": [
+    {
+     "id": "l1",
+     "company": "Reverion",
+     "hq": "Eresing",
+     "stage": "Series B",
+     "amount": 154.2,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Stephan Herrmann"
+     ],
+     "investors": [
+      "Kembara",
+      "Allianz",
+      "KfW Capital",
+      "Aurum Impact",
+      "Carbon Equity",
+      "Extantia",
+      "Energy Impact Partners",
+      "UVC Partners",
+      "European Innovation Council Fund",
+      "Possible Ventures"
+     ],
+     "text": "Reverion has raised a huge €154.2m to mass-produce the most efficient thermal power plant anyone has measured. The idea started in 2015 in Stephan Herrmann's doctorate at TU Munich and became a company in 2022, in Eresing in rural Bavaria. It builds solid oxide fuel cell plants that turn natural gas, biogas or hydrogen straight into electricity at 74.2% electrical efficiency, run backwards to store energy, and can be carbon negative when fed biogas. Kembara, the €1bn deeptech and climate fund at Mundi Ventures, led, with Allianz, KfW Capital, Aurum Impact and Carbon Equity new alongside Extantia, Energy Impact Partners, UVC Partners and the EIC Fund. The money goes into a second German factory, 250 megawatts a year and up to 800 jobs. Clean power on tap, as the founder puts it, rather than clean power when the weather allows.",
+     "source": {
+      "publication": "EU-Startups",
+      "title": "Germany's Reverion raises €154.2 million to scale production of power plants that generate electricity from gas",
+      "url": "https://www.eu-startups.com/2026/09/germanys-reverion-raises-e154-2-million-to-scale-production-of-power-plants-that-generate-electricity-from-gas/",
+      "publishedOn": "2026-09-29",
+      "publishedLabel": "29 Sep 2026"
+     },
+     "amountLabel": "€154.2 m",
+     "valuationLabel": null,
+     "foundersLabel": "Stephan Herrmann",
+     "investorsLabel": "Kembara, Allianz, KfW Capital, Aurum Impact, Carbon Equity, Extantia, Energy Impact Partners, UVC Partners, European Innovation Council Fund and Possible Ventures"
+    },
+    {
+     "id": "l2",
+     "company": "Kuro",
+     "hq": "Berlin",
+     "stage": null,
+     "amount": 10,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Lea Scherer",
+      "Jonas Minkler"
+     ],
+     "investors": [
+      "UVC Partners",
+      "Foundamental",
+      "Realyze Ventures",
+      "helloworld"
+     ],
+     "text": "Kuro has raised €10m to take the paperwork off general contractors. Founded in November 2024 by Lea Scherer and Jonas Minkler, who came out of alcemy and Capmo, the Berlin company sits where every construction project is actually decided, in estimating, procurement, accounting and compliance, and is starting with estimating before working outwards. UVC Partners led, with Foundamental, Realyze Ventures and helloworld following on. Sixteen people, a growing list of large contractors, and two years old next month.",
+     "source": {
+      "publication": "EU-Startups",
+      "title": "Berlin-based Kuro raises €10 million to build the AI foundation for general contractors",
+      "url": "https://www.eu-startups.com/2026/10/berlin-based-kuro-raises-e10-million-to-build-the-ai-foundation-for-general-contractors/",
+      "publishedOn": "2026-10-02",
+      "publishedLabel": "2 Oct 2026"
+     },
+     "amountLabel": "€10 m",
+     "valuationLabel": null,
+     "foundersLabel": "Lea Scherer and Jonas Minkler",
+     "investorsLabel": "UVC Partners, Foundamental, Realyze Ventures and helloworld"
+    }
+   ],
+   "more": [
+    {
+     "id": "m1",
+     "company": "Everphone",
+     "hq": "Berlin",
+     "stage": "Refinancing",
+     "amount": 15,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [],
+     "investors": [
+      "Commerzbank",
+      "KfW"
+     ],
+     "source": {
+      "publication": "EU-Startups",
+      "title": "Everphone secures €15 million to finance new devices for corporate customers",
+      "url": "https://www.eu-startups.com/2026/09/everphone-secures-e15-million-to-finance-new-devices-for-corporate-customers/",
+      "publishedOn": "2026-09-30",
+      "publishedLabel": "30 Sep 2026"
+     },
+     "amountLabel": "€15 m",
+     "valuationLabel": null,
+     "foundersLabel": null,
+     "investorsLabel": "Commerzbank and KfW"
+    }
+   ],
+   "rangeLabel": "28 Sep – 4 Oct 2026",
+   "shortLabel": "W40",
+   "yearLabel": "2026",
+   "roundCount": 3,
+   "roundCountLabel": "3 rounds",
+   "moreCount": 1
+  },
+  {
+   "week": "2026-W39",
+   "start": "2026-09-21",
+   "end": "2026-09-27",
+   "lead": [
+    {
+     "id": "l1",
+     "company": "Noxtua",
+     "hq": "Berlin",
+     "stage": "Series C",
+     "amount": 100,
+     "currency": "EUR",
+     "approximate": true,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Leif-Nissen Lundbæk"
+     ],
+     "investors": [
+      "C.H.BECK",
+      "MANZ"
+     ],
+     "text": "Noxtua has raised more than €100m, and in the same breath sold control. C.H.BECK, the legal publisher German lawyers have been reading for two centuries, becomes majority shareholder, with MANZ joining as a new investor and Global Brain, the KDDI Open Innovation Fund, CMS and Dentons on the way out. Noxtua builds sovereign legal AI, trained and hosted in Europe for firms that cannot send a client file to an American model. For a legaltech company, being bought into by the publisher whose commentaries are the ground truth is either the best distribution deal available or the end of being a startup, and possibly both.",
+     "note": {
+      "text": "C.H.BECK becomes the majority shareholder with this round, so Noxtua is no longer independently owned.",
+      "source": {
+       "publication": "Tech.eu",
+       "title": "Noxtua raises more than €100M as C.H.BECK takes majority stake in legaltech",
+       "url": "https://tech.eu/2026/09/23/noxtua-raises-more-than-eur100m-as-chbeck-takes-majority-stake-german-legaltech/",
+       "publishedOn": "2026-09-23",
+       "publishedLabel": "23 Sep 2026"
+      }
+     },
+     "source": {
+      "publication": "Tech.eu",
+      "title": "Noxtua raises more than €100M as C.H.BECK takes majority stake in legaltech",
+      "url": "https://tech.eu/2026/09/23/noxtua-raises-more-than-eur100m-as-chbeck-takes-majority-stake-german-legaltech/",
+      "publishedOn": "2026-09-23",
+      "publishedLabel": "23 Sep 2026"
+     },
+     "amountLabel": "~€100 m",
+     "valuationLabel": null,
+     "foundersLabel": "Leif-Nissen Lundbæk",
+     "investorsLabel": "C.H.BECK and MANZ"
+    },
+    {
+     "id": "l2",
+     "company": "Metycle",
+     "hq": "Cologne",
+     "stage": "Credit facility",
+     "amount": 131.7,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Rafael Suchan",
+      "Sebastian Brenner"
+     ],
+     "investors": [
+      "Rivonia Road Capital"
+     ],
+     "text": "Metycle has secured a €131.7m credit facility to buy more scrap metal. Founded in 2022 by Rafael Suchan and Sebastian Brenner, the Cologne company buys, upgrades and supplies recycled copper and aluminium to industrial customers, in a market that runs on trust, paper and long-standing relationships. The facility comes from Rivonia Road Capital, a Californian asset-backed lender, and it is working capital rather than equity, which is what a company that has to own metal before it can sell it actually needs. Its last equity round was €14m in February 2025.",
+     "source": {
+      "publication": "EU-Startups",
+      "title": "Cologne-based Metycle secures €131.7 million credit facility to scale secondary copper and aluminium supply",
+      "url": "https://www.eu-startups.com/2026/09/cologne-based-metycle-secures-e131-7-million-credit-facility-to-scale-secondary-copper-and-aluminium-supply/",
+      "publishedOn": "2026-09-24",
+      "publishedLabel": "24 Sep 2026"
+     },
+     "amountLabel": "€131.7 m",
+     "valuationLabel": null,
+     "foundersLabel": "Rafael Suchan and Sebastian Brenner",
+     "investorsLabel": "Rivonia Road Capital"
+    }
+   ],
+   "more": [
+    {
+     "id": "m1",
+     "company": "mika",
+     "hq": "Berlin",
+     "stage": "Seed",
+     "amount": 6,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Agnieszka Walorska"
+     ],
+     "investors": [
+      "Smedvig Ventures",
+      "Wecken & Cie.",
+      "Keen Venture Partners",
+      "Dutch Founders Fund"
+     ],
+     "source": {
+      "publication": "Tech.eu",
+      "title": "German AI startup mika raises €6M to simplify accounting and tax for SMEs",
+      "url": "https://tech.eu/2026/09/23/german-ai-startup-mika-raises-eur6m-to-simplify-accounting-and-tax-for-smes/",
+      "publishedOn": "2026-09-23",
+      "publishedLabel": "23 Sep 2026"
+     },
+     "amountLabel": "€6 m",
+     "valuationLabel": null,
+     "foundersLabel": "Agnieszka Walorska",
+     "investorsLabel": "Smedvig Ventures, Wecken & Cie., Keen Venture Partners and Dutch Founders Fund"
+    },
+    {
+     "id": "m2",
+     "company": "F13",
+     "hq": null,
+     "stage": "Pre-seed",
+     "amount": 5,
+     "currency": "USD",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Gregory Janik",
+      "Ingimar Tomasson"
+     ],
+     "investors": [
+      "Credo Ventures",
+      "Point Nine Capital"
+     ],
+     "source": {
+      "publication": "Tech.eu",
+      "title": "F13 emerges from stealth with $5M for vector graphics AI",
+      "url": "https://tech.eu/2026/09/23/f13-emerges-from-stealth-with-5m-for-vector-graphics-ai/",
+      "publishedOn": "2026-09-23",
+      "publishedLabel": "23 Sep 2026"
+     },
+     "amountLabel": "$5 m",
+     "valuationLabel": null,
+     "foundersLabel": "Gregory Janik and Ingimar Tomasson",
+     "investorsLabel": "Credo Ventures and Point Nine Capital"
+    },
+    {
+     "id": "m3",
+     "company": "Kontext",
+     "hq": null,
+     "stage": null,
+     "amount": 4,
+     "currency": "USD",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Jens Ernstberger",
+      "Michel Osswald"
+     ],
+     "investors": [
+      "42CAP",
+      "a16z CSX",
+      "High-Tech Gründerfonds"
+     ],
+     "source": {
+      "publication": "Tech.eu",
+      "title": "Kontext raises $4M for runtime security platform for AI agents",
+      "url": "https://tech.eu/2026/09/24/kontext-raises-4m-for-runtime-security-platform-for-ai-agents/",
+      "publishedOn": "2026-09-24",
+      "publishedLabel": "24 Sep 2026"
+     },
+     "amountLabel": "$4 m",
+     "valuationLabel": null,
+     "foundersLabel": "Jens Ernstberger and Michel Osswald",
+     "investorsLabel": "42CAP, a16z CSX and High-Tech Gründerfonds"
+    }
+   ],
+   "rangeLabel": "21–27 Sep 2026",
+   "shortLabel": "W39",
+   "yearLabel": "2026",
+   "roundCount": 5,
+   "roundCountLabel": "5 rounds",
+   "moreCount": 3
+  },
+  {
+   "week": "2026-W38",
+   "start": "2026-09-14",
+   "end": "2026-09-20",
+   "lead": [
+    {
+     "id": "l1",
+     "company": "Integral",
+     "hq": "Berlin",
+     "stage": "Series A",
+     "amount": 18,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Lukas Zörner",
+      "Anil Can Baykal"
+     ],
+     "investors": [
+      "Mosaic Ventures",
+      "Reid Hoffman",
+      "Cherry Ventures",
+      "General Catalyst",
+      "Puzzle Ventures"
+     ],
+     "text": "Integral has raised €18m to put AI agents and licensed accountants on the same team. Founded in Berlin by Lukas Zörner and Anil Can Baykal, Integral does the accounting, tax and payroll for small and mid-sized companies itself rather than selling them software to do it, with agents taking the repetitive half of the job, the invoice reconciliation and the filings, and qualified professionals signing off the rest. Mosaic Ventures and Reid Hoffman co-led, with Cherry Ventures, General Catalyst and Puzzle Ventures following on. That makes two German rounds in a month aimed squarely at the tax profession, after Limetax in September.",
+     "source": {
+      "publication": "Tech.eu",
+      "title": "Integral lands €18M Series A for AI-native accounting and tax services",
+      "url": "https://tech.eu/2026/09/16/integral-lands-eur18m-series-a-for-ai-native-accounting-and-tax-services/",
+      "publishedOn": "2026-09-16",
+      "publishedLabel": "16 Sep 2026"
+     },
+     "amountLabel": "€18 m",
+     "valuationLabel": null,
+     "foundersLabel": "Lukas Zörner and Anil Can Baykal",
+     "investorsLabel": "Mosaic Ventures, Reid Hoffman, Cherry Ventures, General Catalyst and Puzzle Ventures"
+    },
+    {
+     "id": "l2",
+     "company": "Arcos",
+     "hq": "Munich",
+     "stage": "Seed",
+     "amount": 5.5,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Louis Wübben",
+      "Moritz Steigerwald"
+     ],
+     "investors": [
+      "High-Tech Gründerfonds",
+      "Bayern Kapital",
+      "Pact",
+      "Haufe",
+      "Robin Capital"
+     ],
+     "text": "Arcos has raised €5.5m to watch over the buildings nobody is watching. Founded by Louis Wübben and Moritz Steigerwald, the Munich company puts sensors and an incident system on one platform, so a single control room can cover housing, commercial sites and critical infrastructure instead of each running its own. High-Tech Gründerfonds led the seed round, with Bayern Kapital, Pact, Haufe and Robin Capital following on. Civil safety is quietly becoming a category in Germany, and this is the week's second round in it.",
+     "source": {
+      "publication": "EU-Startups",
+      "title": "Munich-based Arcos raises €5.5 million to build and operate civil safety infrastructure across Europe",
+      "url": "https://www.eu-startups.com/2026/09/munich-based-arcos-raises-e5-5-million-to-build-and-operate-civil-safety-infrastructure-across-europe/",
+      "publishedOn": "2026-09-18",
+      "publishedLabel": "18 Sep 2026"
+     },
+     "amountLabel": "€5.5 m",
+     "valuationLabel": null,
+     "foundersLabel": "Louis Wübben and Moritz Steigerwald",
+     "investorsLabel": "High-Tech Gründerfonds, Bayern Kapital, Pact, Haufe and Robin Capital"
+    }
+   ],
+   "more": [
+    {
+     "id": "m1",
+     "company": "Nomos",
+     "hq": null,
+     "stage": null,
+     "amount": 20,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [],
+     "investors": [],
+     "source": {
+      "publication": "Tech.eu",
+      "title": "European tech weekly recap: Over €1.7B invested across 70+ deals",
+      "url": "https://tech.eu/2026/09/21/european-tech-weekly-recap-over-eur17b-invested-across-70-deals",
+      "publishedOn": "2026-09-21",
+      "publishedLabel": "21 Sep 2026"
+     },
+     "amountLabel": "€20 m",
+     "valuationLabel": null,
+     "foundersLabel": null,
+     "investorsLabel": null
+    },
+    {
+     "id": "m2",
+     "company": "syte",
+     "hq": "Münster",
+     "stage": "Series A",
+     "amount": 9,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [],
+     "investors": [
+      "amberra",
+      "NRW.BANK",
+      "Schwarz Group",
+      "High-Tech Gründerfonds",
+      "vent.io",
+      "Vantage Value"
+     ],
+     "source": {
+      "publication": "EU-Startups",
+      "title": "Münster-based syte raises €9 million to expand its AI-powered real estate analytics platform",
+      "url": "https://www.eu-startups.com/2026/09/munster-based-syte-raises-e9-million-to-expand-its-ai-powered-real-estate-analytics-platform/",
+      "publishedOn": "2026-09-17",
+      "publishedLabel": "17 Sep 2026"
+     },
+     "amountLabel": "€9 m",
+     "valuationLabel": null,
+     "foundersLabel": null,
+     "investorsLabel": "amberra, NRW.BANK, Schwarz Group, High-Tech Gründerfonds, vent.io and Vantage Value"
+    },
+    {
+     "id": "m3",
+     "company": "Depotcharge",
+     "hq": "Munich",
+     "stage": "Pre-seed",
+     "amount": 2.7,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Joscha Specks"
+     ],
+     "investors": [
+      "High-Tech Gründerfonds",
+      "xdeck Ventures",
+      "Kopa Ventures",
+      "Prequel Ventures"
+     ],
+     "source": {
+      "publication": "Tech.eu",
+      "title": "Depotcharge lands €2.7M and BGL partnership to scale electric truck charging",
+      "url": "https://tech.eu/2026/09/15/depotcharge-lands-eur27m-and-bgl-partnership-to-scale-electric-truck-charging/",
+      "publishedOn": "2026-09-15",
+      "publishedLabel": "15 Sep 2026"
+     },
+     "amountLabel": "€2.7 m",
+     "valuationLabel": null,
+     "foundersLabel": "Joscha Specks",
+     "investorsLabel": "High-Tech Gründerfonds, xdeck Ventures, Kopa Ventures and Prequel Ventures"
+    }
+   ],
+   "rangeLabel": "14–20 Sep 2026",
+   "shortLabel": "W38",
+   "yearLabel": "2026",
+   "roundCount": 5,
+   "roundCountLabel": "5 rounds",
+   "moreCount": 3
+  },
+  {
    "week": "2026-W37",
    "start": "2026-09-07",
    "end": "2026-09-13",
@@ -1203,8 +1662,8 @@
   }
  ],
  "stats": {
-  "weekCount": 8,
-  "roundCount": 34,
-  "latestWeek": "2026-W37"
+  "weekCount": 11,
+  "roundCount": 47,
+  "latestWeek": "2026-W40"
  }
 }

@@ -1,0 +1,138 @@
+{
+ "week": "2026-W38",
+ "start": "2026-09-14",
+ "end": "2026-09-20",
+ "lead": [
+  {
+   "id": "l1",
+   "company": "Integral",
+   "hq": "Berlin",
+   "stage": "Series A",
+   "amount": 18,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "Lukas Zörner",
+    "Anil Can Baykal"
+   ],
+   "investors": [
+    "Mosaic Ventures",
+    "Reid Hoffman",
+    "Cherry Ventures",
+    "General Catalyst",
+    "Puzzle Ventures"
+   ],
+   "text": "Integral has raised €18m to put AI agents and licensed accountants on the same team. Founded in Berlin by Lukas Zörner and Anil Can Baykal, Integral does the accounting, tax and payroll for small and mid-sized companies itself rather than selling them software to do it, with agents taking the repetitive half of the job, the invoice reconciliation and the filings, and qualified professionals signing off the rest. Mosaic Ventures and Reid Hoffman co-led, with Cherry Ventures, General Catalyst and Puzzle Ventures following on. That makes two German rounds in a month aimed squarely at the tax profession, after Limetax in September.",
+   "source": {
+    "publication": "Tech.eu",
+    "title": "Integral lands €18M Series A for AI-native accounting and tax services",
+    "url": "https://tech.eu/2026/09/16/integral-lands-eur18m-series-a-for-ai-native-accounting-and-tax-services/",
+    "publishedOn": "2026-09-16"
+   }
+  },
+  {
+   "id": "l2",
+   "company": "Arcos",
+   "hq": "Munich",
+   "stage": "Seed",
+   "amount": 5.5,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "Louis Wübben",
+    "Moritz Steigerwald"
+   ],
+   "investors": [
+    "High-Tech Gründerfonds",
+    "Bayern Kapital",
+    "Pact",
+    "Haufe",
+    "Robin Capital"
+   ],
+   "text": "Arcos has raised €5.5m to watch over the buildings nobody is watching. Founded by Louis Wübben and Moritz Steigerwald, the Munich company puts sensors and an incident system on one platform, so a single control room can cover housing, commercial sites and critical infrastructure instead of each running its own. High-Tech Gründerfonds led the seed round, with Bayern Kapital, Pact, Haufe and Robin Capital following on. Civil safety is quietly becoming a category in Germany, and this is the week's second round in it.",
+   "source": {
+    "publication": "EU-Startups",
+    "title": "Munich-based Arcos raises €5.5 million to build and operate civil safety infrastructure across Europe",
+    "url": "https://www.eu-startups.com/2026/09/munich-based-arcos-raises-e5-5-million-to-build-and-operate-civil-safety-infrastructure-across-europe/",
+    "publishedOn": "2026-09-18"
+   }
+  }
+ ],
+ "more": [
+  {
+   "id": "m1",
+   "company": "Nomos",
+   "hq": null,
+   "stage": null,
+   "amount": 20,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [],
+   "investors": [],
+   "source": {
+    "publication": "Tech.eu",
+    "title": "European tech weekly recap: Over €1.7B invested across 70+ deals",
+    "url": "https://tech.eu/2026/09/21/european-tech-weekly-recap-over-eur17b-invested-across-70-deals",
+    "publishedOn": "2026-09-21"
+   }
+  },
+  {
+   "id": "m2",
+   "company": "syte",
+   "hq": "Münster",
+   "stage": "Series A",
+   "amount": 9,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [],
+   "investors": [
+    "amberra",
+    "NRW.BANK",
+    "Schwarz Group",
+    "High-Tech Gründerfonds",
+    "vent.io",
+    "Vantage Value"
+   ],
+   "source": {
+    "publication": "EU-Startups",
+    "title": "Münster-based syte raises €9 million to expand its AI-powered real estate analytics platform",
+    "url": "https://www.eu-startups.com/2026/09/munster-based-syte-raises-e9-million-to-expand-its-ai-powered-real-estate-analytics-platform/",
+    "publishedOn": "2026-09-17"
+   }
+  },
+  {
+   "id": "m3",
+   "company": "Depotcharge",
+   "hq": "Munich",
+   "stage": "Pre-seed",
+   "amount": 2.7,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "Joscha Specks"
+   ],
+   "investors": [
+    "High-Tech Gründerfonds",
+    "xdeck Ventures",
+    "Kopa Ventures",
+    "Prequel Ventures"
+   ],
+   "source": {
+    "publication": "Tech.eu",
+    "title": "Depotcharge lands €2.7M and BGL partnership to scale electric truck charging",
+    "url": "https://tech.eu/2026/09/15/depotcharge-lands-eur27m-and-bgl-partnership-to-scale-electric-truck-charging/",
+    "publishedOn": "2026-09-15"
+   }
+  }
+ ]
+}

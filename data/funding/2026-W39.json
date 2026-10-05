@@ -1,0 +1,145 @@
+{
+ "week": "2026-W39",
+ "start": "2026-09-21",
+ "end": "2026-09-27",
+ "lead": [
+  {
+   "id": "l1",
+   "company": "Noxtua",
+   "hq": "Berlin",
+   "stage": "Series C",
+   "amount": 100,
+   "currency": "EUR",
+   "approximate": true,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "Leif-Nissen Lundbæk"
+   ],
+   "investors": [
+    "C.H.BECK",
+    "MANZ"
+   ],
+   "text": "Noxtua has raised more than €100m, and in the same breath sold control. C.H.BECK, the legal publisher German lawyers have been reading for two centuries, becomes majority shareholder, with MANZ joining as a new investor and Global Brain, the KDDI Open Innovation Fund, CMS and Dentons on the way out. Noxtua builds sovereign legal AI, trained and hosted in Europe for firms that cannot send a client file to an American model. For a legaltech company, being bought into by the publisher whose commentaries are the ground truth is either the best distribution deal available or the end of being a startup, and possibly both.",
+   "note": {
+    "text": "C.H.BECK becomes the majority shareholder with this round, so Noxtua is no longer independently owned.",
+    "source": {
+     "publication": "Tech.eu",
+     "title": "Noxtua raises more than €100M as C.H.BECK takes majority stake in legaltech",
+     "url": "https://tech.eu/2026/09/23/noxtua-raises-more-than-eur100m-as-chbeck-takes-majority-stake-german-legaltech/",
+     "publishedOn": "2026-09-23"
+    }
+   },
+   "source": {
+    "publication": "Tech.eu",
+    "title": "Noxtua raises more than €100M as C.H.BECK takes majority stake in legaltech",
+    "url": "https://tech.eu/2026/09/23/noxtua-raises-more-than-eur100m-as-chbeck-takes-majority-stake-german-legaltech/",
+    "publishedOn": "2026-09-23"
+   }
+  },
+  {
+   "id": "l2",
+   "company": "Metycle",
+   "hq": "Cologne",
+   "stage": "Credit facility",
+   "amount": 131.7,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "Rafael Suchan",
+    "Sebastian Brenner"
+   ],
+   "investors": [
+    "Rivonia Road Capital"
+   ],
+   "text": "Metycle has secured a €131.7m credit facility to buy more scrap metal. Founded in 2022 by Rafael Suchan and Sebastian Brenner, the Cologne company buys, upgrades and supplies recycled copper and aluminium to industrial customers, in a market that runs on trust, paper and long-standing relationships. The facility comes from Rivonia Road Capital, a Californian asset-backed lender, and it is working capital rather than equity, which is what a company that has to own metal before it can sell it actually needs. Its last equity round was €14m in February 2025.",
+   "source": {
+    "publication": "EU-Startups",
+    "title": "Cologne-based Metycle secures €131.7 million credit facility to scale secondary copper and aluminium supply",
+    "url": "https://www.eu-startups.com/2026/09/cologne-based-metycle-secures-e131-7-million-credit-facility-to-scale-secondary-copper-and-aluminium-supply/",
+    "publishedOn": "2026-09-24"
+   }
+  }
+ ],
+ "more": [
+  {
+   "id": "m1",
+   "company": "mika",
+   "hq": "Berlin",
+   "stage": "Seed",
+   "amount": 6,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "Agnieszka Walorska"
+   ],
+   "investors": [
+    "Smedvig Ventures",
+    "Wecken & Cie.",
+    "Keen Venture Partners",
+    "Dutch Founders Fund"
+   ],
+   "source": {
+    "publication": "Tech.eu",
+    "title": "German AI startup mika raises €6M to simplify accounting and tax for SMEs",
+    "url": "https://tech.eu/2026/09/23/german-ai-startup-mika-raises-eur6m-to-simplify-accounting-and-tax-for-smes/",
+    "publishedOn": "2026-09-23"
+   }
+  },
+  {
+   "id": "m2",
+   "company": "F13",
+   "hq": null,
+   "stage": "Pre-seed",
+   "amount": 5,
+   "currency": "USD",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "Gregory Janik",
+    "Ingimar Tomasson"
+   ],
+   "investors": [
+    "Credo Ventures",
+    "Point Nine Capital"
+   ],
+   "source": {
+    "publication": "Tech.eu",
+    "title": "F13 emerges from stealth with $5M for vector graphics AI",
+    "url": "https://tech.eu/2026/09/23/f13-emerges-from-stealth-with-5m-for-vector-graphics-ai/",
+    "publishedOn": "2026-09-23"
+   }
+  },
+  {
+   "id": "m3",
+   "company": "Kontext",
+   "hq": null,
+   "stage": null,
+   "amount": 4,
+   "currency": "USD",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "Jens Ernstberger",
+    "Michel Osswald"
+   ],
+   "investors": [
+    "42CAP",
+    "a16z CSX",
+    "High-Tech Gründerfonds"
+   ],
+   "source": {
+    "publication": "Tech.eu",
+    "title": "Kontext raises $4M for runtime security platform for AI agents",
+    "url": "https://tech.eu/2026/09/24/kontext-raises-4m-for-runtime-security-platform-for-ai-agents/",
+    "publishedOn": "2026-09-24"
+   }
+  }
+ ]
+}

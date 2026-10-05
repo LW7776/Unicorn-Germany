@@ -1,0 +1,92 @@
+{
+ "week": "2026-W40",
+ "start": "2026-09-28",
+ "end": "2026-10-04",
+ "lead": [
+  {
+   "id": "l1",
+   "company": "Reverion",
+   "hq": "Eresing",
+   "stage": "Series B",
+   "amount": 154.2,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "Stephan Herrmann"
+   ],
+   "investors": [
+    "Kembara",
+    "Allianz",
+    "KfW Capital",
+    "Aurum Impact",
+    "Carbon Equity",
+    "Extantia",
+    "Energy Impact Partners",
+    "UVC Partners",
+    "European Innovation Council Fund",
+    "Possible Ventures"
+   ],
+   "text": "Reverion has raised a huge €154.2m to mass-produce the most efficient thermal power plant anyone has measured. The idea started in 2015 in Stephan Herrmann's doctorate at TU Munich and became a company in 2022, in Eresing in rural Bavaria. It builds solid oxide fuel cell plants that turn natural gas, biogas or hydrogen straight into electricity at 74.2% electrical efficiency, run backwards to store energy, and can be carbon negative when fed biogas. Kembara, the €1bn deeptech and climate fund at Mundi Ventures, led, with Allianz, KfW Capital, Aurum Impact and Carbon Equity new alongside Extantia, Energy Impact Partners, UVC Partners and the EIC Fund. The money goes into a second German factory, 250 megawatts a year and up to 800 jobs. Clean power on tap, as the founder puts it, rather than clean power when the weather allows.",
+   "source": {
+    "publication": "EU-Startups",
+    "title": "Germany's Reverion raises €154.2 million to scale production of power plants that generate electricity from gas",
+    "url": "https://www.eu-startups.com/2026/09/germanys-reverion-raises-e154-2-million-to-scale-production-of-power-plants-that-generate-electricity-from-gas/",
+    "publishedOn": "2026-09-29"
+   }
+  },
+  {
+   "id": "l2",
+   "company": "Kuro",
+   "hq": "Berlin",
+   "stage": null,
+   "amount": 10,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "Lea Scherer",
+    "Jonas Minkler"
+   ],
+   "investors": [
+    "UVC Partners",
+    "Foundamental",
+    "Realyze Ventures",
+    "helloworld"
+   ],
+   "text": "Kuro has raised €10m to take the paperwork off general contractors. Founded in November 2024 by Lea Scherer and Jonas Minkler, who came out of alcemy and Capmo, the Berlin company sits where every construction project is actually decided, in estimating, procurement, accounting and compliance, and is starting with estimating before working outwards. UVC Partners led, with Foundamental, Realyze Ventures and helloworld following on. Sixteen people, a growing list of large contractors, and two years old next month.",
+   "source": {
+    "publication": "EU-Startups",
+    "title": "Berlin-based Kuro raises €10 million to build the AI foundation for general contractors",
+    "url": "https://www.eu-startups.com/2026/10/berlin-based-kuro-raises-e10-million-to-build-the-ai-foundation-for-general-contractors/",
+    "publishedOn": "2026-10-02"
+   }
+  }
+ ],
+ "more": [
+  {
+   "id": "m1",
+   "company": "Everphone",
+   "hq": "Berlin",
+   "stage": "Refinancing",
+   "amount": 15,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [],
+   "investors": [
+    "Commerzbank",
+    "KfW"
+   ],
+   "source": {
+    "publication": "EU-Startups",
+    "title": "Everphone secures €15 million to finance new devices for corporate customers",
+    "url": "https://www.eu-startups.com/2026/09/everphone-secures-e15-million-to-finance-new-devices-for-corporate-customers/",
+    "publishedOn": "2026-09-30"
+   }
+  }
+ ]
+}
