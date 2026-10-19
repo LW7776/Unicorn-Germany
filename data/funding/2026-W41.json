@@ -1,0 +1,138 @@
+{
+ "week": "2026-W41",
+ "start": "2026-10-05",
+ "end": "2026-10-11",
+ "lead": [
+  {
+   "id": "l1",
+   "company": "Procuros",
+   "hq": "Hamburg",
+   "stage": "Series A",
+   "amount": 20,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "Patrick Thelen"
+   ],
+   "investors": [
+    "XAnge",
+    "Point Nine",
+    "Creandum",
+    "b2venture"
+   ],
+   "text": "Procuros has raised €20m to let a business connect once and trade with everyone. The Hamburg company replaces the point-to-point integrations that wire each supplier separately to each retailer with a single connection, and it validates the documents crossing it, which is also what makes those documents usable by an AI agent rather than only by a person who already knows what the fields mean. XAnge led the Series A, with Point Nine, Creandum and b2venture following on. Patrick Thelen is building the unglamorous plumbing of B2B trade, which is where most of the money in an economy actually moves.",
+   "source": {
+    "publication": "Tech.eu",
+    "title": "Autonomous B2B trade gets a boost as Procuros raises €20M",
+    "url": "https://tech.eu/2026/10/06/autonomous-b2b-trade-gets-a-boost-as-procuros-raises-eur20m/",
+    "publishedOn": "2026-10-06"
+   }
+  },
+  {
+   "id": "l2",
+   "company": "Finmid",
+   "hq": "Berlin",
+   "stage": "Series A extension",
+   "amount": 17,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "Alex Talkanista",
+    "Max Schertel"
+   ],
+   "investors": [
+    "Big Pi Ventures",
+    "Mainset",
+    "Earlybird",
+    "Blossom Capital"
+   ],
+   "text": "Finmid has raised €17m and signed Bolt on the same day. Founded in Berlin in 2021 by two former N26 executives, Alex Talkanista and Max Schertel, Finmid is an embedded lender, which means the credit shows up inside somebody else's product under their name instead of as a bank you have to go and find. The Bolt deal puts that to work at the scale it was built for, with fleet operators able to draw up to €400,000 over four years to finance vehicles. Big Pi Ventures in Athens and Mainset in London led the extension with Earlybird following on, and N26 co-founder Max Tayenthal is among the backers, which makes him their former boss twice over. Total raised is now €52m.",
+   "source": {
+    "publication": "Tech.eu",
+    "title": "N26 founder-backed Finmid raises €17M Series A extension, strikes Bolt deal",
+    "url": "https://tech.eu/2026/10/06/n26-founder-backed-finmid-raises-eur17m-series-a-extension-strikes-bolt-deal/",
+    "publishedOn": "2026-10-06"
+   }
+  }
+ ],
+ "more": [
+  {
+   "id": "m1",
+   "company": "OllyGarden",
+   "hq": null,
+   "stage": null,
+   "amount": 4,
+   "currency": "USD",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "Juraci Paixão Kröhling"
+   ],
+   "investors": [
+    "Next Frontier Capital",
+    "Grand Ventures",
+    "ACTAI Ventures",
+    "DIG Ventures",
+    "Datadog",
+    "Grafana Labs",
+    "Dash0"
+   ],
+   "source": {
+    "publication": "Tech.eu",
+    "title": "OllyGarden bags $4M to improve telemetry quality",
+    "url": "https://tech.eu/2026/10/09/ollygarden-bags-4m-to-improve-telemetry-quality/",
+    "publishedOn": "2026-10-09"
+   }
+  },
+  {
+   "id": "m2",
+   "company": "Finches",
+   "hq": null,
+   "stage": "Pre-seed",
+   "amount": 2,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "Catharina van Delden"
+   ],
+   "investors": [
+    "High-Tech Gründerfonds",
+    "Vanagon Ventures",
+    "Bayern Kapital",
+    "UnternehmerTUM Funding for Innovators"
+   ],
+   "source": {
+    "publication": "Tech.eu",
+    "title": "Finches lands €2M to help food producers spot supply risks earlier",
+    "url": "https://tech.eu/2026/10/06/finches-lands-eur2m-to-help-food-producers-spot-supply-risks-earlier/",
+    "publishedOn": "2026-10-06"
+   }
+  },
+  {
+   "id": "m3",
+   "company": "Calliora",
+   "hq": null,
+   "stage": null,
+   "amount": 6,
+   "currency": "USD",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [],
+   "investors": [],
+   "source": {
+    "publication": "Tech.eu",
+    "title": "European tech weekly recap: €818M in deals and September's highlights",
+    "url": "https://tech.eu/2026/10/12/european-tech-weekly-recap-eur818m-in-deals-and-septembers-highlights/",
+    "publishedOn": "2026-10-12"
+   }
+  }
+ ]
+}

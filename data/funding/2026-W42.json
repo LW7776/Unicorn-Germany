@@ -1,0 +1,124 @@
+{
+ "week": "2026-W42",
+ "start": "2026-10-12",
+ "end": "2026-10-18",
+ "lead": [
+  {
+   "id": "l1",
+   "company": "Rabot Energy",
+   "hq": "Hamburg",
+   "stage": "Series B",
+   "amount": 50,
+   "currency": "USD",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [],
+   "investors": [
+    "Endeit",
+    "DeepTech & Climate Fonds",
+    "HV Capital",
+    "High-Tech Gründerfonds",
+    "Bosch Ventures",
+    "CNI",
+    "Acurio Ventures",
+    "vent.io"
+   ],
+   "text": "Rabot Energy has raised $50m to turn a few hundred thousand German homes into one power station. The Hamburg company sells dynamic electricity tariffs, the kind that move a household's consumption into the cheaper and greener hours of the day, and it is now pooling the batteries sitting behind those meters into a virtual power plant that can be dispatched as a single unit. Endeit led the Series B with the DeepTech & Climate Fonds, and HV Capital, High-Tech Gründerfonds, Bosch Ventures, CNI, Acurio Ventures and vent.io all followed on. Chief executive Jan Rabe is assembling a power station out of appliances people bought for their own reasons.",
+   "source": {
+    "publication": "Tech.eu",
+    "title": "Rabot Energy secures $50M to transform homes into a virtual power plant",
+    "url": "https://tech.eu/2026/10/15/rabot-energy-secures-50m-to-transform-homes-into-a-virtual-power-plant/",
+    "publishedOn": "2026-10-15"
+   }
+  },
+  {
+   "id": "l2",
+   "company": "Ubitium",
+   "hq": null,
+   "stage": "Seed",
+   "amount": 14,
+   "currency": "USD",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [
+    "Hyun Shin Cho"
+   ],
+   "investors": [
+    "Ibex Investors",
+    "OpenOcean",
+    "KBC Focus Fund",
+    "Runa Capital",
+    "Inflection",
+    "Florian Seibel"
+   ],
+   "text": "Ubitium has raised $14m for a chip that does all of it. A robot or a drone today carries a DSP for the sensors, an NPU for the model and a CPU for the control loop, and Ubitium builds one reconfigurable processor meant to do the three jobs on a single architecture. Ibex Investors led the seed round, with OpenOcean, the KBC Focus Fund, Runa Capital and Inflection following on. Florian Seibel, co-founder of Quantum Systems, put money in personally, which makes this a German chip company part-funded by the founder of a German drone company. That is roughly what rebuilding an industrial base looks like from the inside.",
+   "source": {
+    "publication": "Tech.eu",
+    "title": "Ubitium raises $14M to bring universal computing to physical AI",
+    "url": "https://tech.eu/2026/10/13/ubitium-lands-14m-to-bring-universal-computing-to-physical-ai/",
+    "publishedOn": "2026-10-13"
+   }
+  }
+ ],
+ "more": [
+  {
+   "id": "m1",
+   "company": "Turn2X",
+   "hq": null,
+   "stage": "Series A",
+   "amount": 20,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [],
+   "investors": [],
+   "source": {
+    "publication": "Tech.eu",
+    "title": "European tech weekly recap: More than 65 tech funding deals worth over €1.8B",
+    "url": "https://tech.eu/2026/10/19/european-tech-weekly-recap-more-than-65-tech-funding-deals-worth-over-eur18b",
+    "publishedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "m2",
+   "company": "Seragy",
+   "hq": null,
+   "stage": null,
+   "amount": 12,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [],
+   "investors": [],
+   "source": {
+    "publication": "Tech.eu",
+    "title": "European tech weekly recap: More than 65 tech funding deals worth over €1.8B",
+    "url": "https://tech.eu/2026/10/19/european-tech-weekly-recap-more-than-65-tech-funding-deals-worth-over-eur18b",
+    "publishedOn": "2026-10-19"
+   }
+  },
+  {
+   "id": "m3",
+   "company": "Elevatry",
+   "hq": null,
+   "stage": "Pre-seed",
+   "amount": 3,
+   "currency": "EUR",
+   "approximate": false,
+   "valuation": null,
+   "valuationCurrency": null,
+   "founders": [],
+   "investors": [],
+   "source": {
+    "publication": "Tech.eu",
+    "title": "European tech weekly recap: More than 65 tech funding deals worth over €1.8B",
+    "url": "https://tech.eu/2026/10/19/european-tech-weekly-recap-more-than-65-tech-funding-deals-worth-over-eur18b",
+    "publishedOn": "2026-10-19"
+   }
+  }
+ ]
+}

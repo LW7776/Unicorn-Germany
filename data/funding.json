@@ -1,6 +1,330 @@
 {
  "weeks": [
   {
+   "week": "2026-W42",
+   "start": "2026-10-12",
+   "end": "2026-10-18",
+   "lead": [
+    {
+     "id": "l1",
+     "company": "Rabot Energy",
+     "hq": "Hamburg",
+     "stage": "Series B",
+     "amount": 50,
+     "currency": "USD",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [],
+     "investors": [
+      "Endeit",
+      "DeepTech & Climate Fonds",
+      "HV Capital",
+      "High-Tech Gründerfonds",
+      "Bosch Ventures",
+      "CNI",
+      "Acurio Ventures",
+      "vent.io"
+     ],
+     "text": "Rabot Energy has raised $50m to turn a few hundred thousand German homes into one power station. The Hamburg company sells dynamic electricity tariffs, the kind that move a household's consumption into the cheaper and greener hours of the day, and it is now pooling the batteries sitting behind those meters into a virtual power plant that can be dispatched as a single unit. Endeit led the Series B with the DeepTech & Climate Fonds, and HV Capital, High-Tech Gründerfonds, Bosch Ventures, CNI, Acurio Ventures and vent.io all followed on. Chief executive Jan Rabe is assembling a power station out of appliances people bought for their own reasons.",
+     "source": {
+      "publication": "Tech.eu",
+      "title": "Rabot Energy secures $50M to transform homes into a virtual power plant",
+      "url": "https://tech.eu/2026/10/15/rabot-energy-secures-50m-to-transform-homes-into-a-virtual-power-plant/",
+      "publishedOn": "2026-10-15",
+      "publishedLabel": "15 Oct 2026"
+     },
+     "amountLabel": "$50 m",
+     "valuationLabel": null,
+     "foundersLabel": null,
+     "investorsLabel": "Endeit, DeepTech & Climate Fonds, HV Capital, High-Tech Gründerfonds, Bosch Ventures, CNI, Acurio Ventures and vent.io"
+    },
+    {
+     "id": "l2",
+     "company": "Ubitium",
+     "hq": null,
+     "stage": "Seed",
+     "amount": 14,
+     "currency": "USD",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Hyun Shin Cho"
+     ],
+     "investors": [
+      "Ibex Investors",
+      "OpenOcean",
+      "KBC Focus Fund",
+      "Runa Capital",
+      "Inflection",
+      "Florian Seibel"
+     ],
+     "text": "Ubitium has raised $14m for a chip that does all of it. A robot or a drone today carries a DSP for the sensors, an NPU for the model and a CPU for the control loop, and Ubitium builds one reconfigurable processor meant to do the three jobs on a single architecture. Ibex Investors led the seed round, with OpenOcean, the KBC Focus Fund, Runa Capital and Inflection following on. Florian Seibel, co-founder of Quantum Systems, put money in personally, which makes this a German chip company part-funded by the founder of a German drone company. That is roughly what rebuilding an industrial base looks like from the inside.",
+     "source": {
+      "publication": "Tech.eu",
+      "title": "Ubitium raises $14M to bring universal computing to physical AI",
+      "url": "https://tech.eu/2026/10/13/ubitium-lands-14m-to-bring-universal-computing-to-physical-ai/",
+      "publishedOn": "2026-10-13",
+      "publishedLabel": "13 Oct 2026"
+     },
+     "amountLabel": "$14 m",
+     "valuationLabel": null,
+     "foundersLabel": "Hyun Shin Cho",
+     "investorsLabel": "Ibex Investors, OpenOcean, KBC Focus Fund, Runa Capital, Inflection and Florian Seibel"
+    }
+   ],
+   "more": [
+    {
+     "id": "m1",
+     "company": "Turn2X",
+     "hq": null,
+     "stage": "Series A",
+     "amount": 20,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [],
+     "investors": [],
+     "source": {
+      "publication": "Tech.eu",
+      "title": "European tech weekly recap: More than 65 tech funding deals worth over €1.8B",
+      "url": "https://tech.eu/2026/10/19/european-tech-weekly-recap-more-than-65-tech-funding-deals-worth-over-eur18b",
+      "publishedOn": "2026-10-19",
+      "publishedLabel": "19 Oct 2026"
+     },
+     "amountLabel": "€20 m",
+     "valuationLabel": null,
+     "foundersLabel": null,
+     "investorsLabel": null
+    },
+    {
+     "id": "m2",
+     "company": "Seragy",
+     "hq": null,
+     "stage": null,
+     "amount": 12,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [],
+     "investors": [],
+     "source": {
+      "publication": "Tech.eu",
+      "title": "European tech weekly recap: More than 65 tech funding deals worth over €1.8B",
+      "url": "https://tech.eu/2026/10/19/european-tech-weekly-recap-more-than-65-tech-funding-deals-worth-over-eur18b",
+      "publishedOn": "2026-10-19",
+      "publishedLabel": "19 Oct 2026"
+     },
+     "amountLabel": "€12 m",
+     "valuationLabel": null,
+     "foundersLabel": null,
+     "investorsLabel": null
+    },
+    {
+     "id": "m3",
+     "company": "Elevatry",
+     "hq": null,
+     "stage": "Pre-seed",
+     "amount": 3,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [],
+     "investors": [],
+     "source": {
+      "publication": "Tech.eu",
+      "title": "European tech weekly recap: More than 65 tech funding deals worth over €1.8B",
+      "url": "https://tech.eu/2026/10/19/european-tech-weekly-recap-more-than-65-tech-funding-deals-worth-over-eur18b",
+      "publishedOn": "2026-10-19",
+      "publishedLabel": "19 Oct 2026"
+     },
+     "amountLabel": "€3 m",
+     "valuationLabel": null,
+     "foundersLabel": null,
+     "investorsLabel": null
+    }
+   ],
+   "rangeLabel": "12–18 Oct 2026",
+   "shortLabel": "W42",
+   "yearLabel": "2026",
+   "roundCount": 5,
+   "roundCountLabel": "5 rounds",
+   "moreCount": 3
+  },
+  {
+   "week": "2026-W41",
+   "start": "2026-10-05",
+   "end": "2026-10-11",
+   "lead": [
+    {
+     "id": "l1",
+     "company": "Procuros",
+     "hq": "Hamburg",
+     "stage": "Series A",
+     "amount": 20,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Patrick Thelen"
+     ],
+     "investors": [
+      "XAnge",
+      "Point Nine",
+      "Creandum",
+      "b2venture"
+     ],
+     "text": "Procuros has raised €20m to let a business connect once and trade with everyone. The Hamburg company replaces the point-to-point integrations that wire each supplier separately to each retailer with a single connection, and it validates the documents crossing it, which is also what makes those documents usable by an AI agent rather than only by a person who already knows what the fields mean. XAnge led the Series A, with Point Nine, Creandum and b2venture following on. Patrick Thelen is building the unglamorous plumbing of B2B trade, which is where most of the money in an economy actually moves.",
+     "source": {
+      "publication": "Tech.eu",
+      "title": "Autonomous B2B trade gets a boost as Procuros raises €20M",
+      "url": "https://tech.eu/2026/10/06/autonomous-b2b-trade-gets-a-boost-as-procuros-raises-eur20m/",
+      "publishedOn": "2026-10-06",
+      "publishedLabel": "6 Oct 2026"
+     },
+     "amountLabel": "€20 m",
+     "valuationLabel": null,
+     "foundersLabel": "Patrick Thelen",
+     "investorsLabel": "XAnge, Point Nine, Creandum and b2venture"
+    },
+    {
+     "id": "l2",
+     "company": "Finmid",
+     "hq": "Berlin",
+     "stage": "Series A extension",
+     "amount": 17,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Alex Talkanista",
+      "Max Schertel"
+     ],
+     "investors": [
+      "Big Pi Ventures",
+      "Mainset",
+      "Earlybird",
+      "Blossom Capital"
+     ],
+     "text": "Finmid has raised €17m and signed Bolt on the same day. Founded in Berlin in 2021 by two former N26 executives, Alex Talkanista and Max Schertel, Finmid is an embedded lender, which means the credit shows up inside somebody else's product under their name instead of as a bank you have to go and find. The Bolt deal puts that to work at the scale it was built for, with fleet operators able to draw up to €400,000 over four years to finance vehicles. Big Pi Ventures in Athens and Mainset in London led the extension with Earlybird following on, and N26 co-founder Max Tayenthal is among the backers, which makes him their former boss twice over. Total raised is now €52m.",
+     "source": {
+      "publication": "Tech.eu",
+      "title": "N26 founder-backed Finmid raises €17M Series A extension, strikes Bolt deal",
+      "url": "https://tech.eu/2026/10/06/n26-founder-backed-finmid-raises-eur17m-series-a-extension-strikes-bolt-deal/",
+      "publishedOn": "2026-10-06",
+      "publishedLabel": "6 Oct 2026"
+     },
+     "amountLabel": "€17 m",
+     "valuationLabel": null,
+     "foundersLabel": "Alex Talkanista and Max Schertel",
+     "investorsLabel": "Big Pi Ventures, Mainset, Earlybird and Blossom Capital"
+    }
+   ],
+   "more": [
+    {
+     "id": "m1",
+     "company": "OllyGarden",
+     "hq": null,
+     "stage": null,
+     "amount": 4,
+     "currency": "USD",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Juraci Paixão Kröhling"
+     ],
+     "investors": [
+      "Next Frontier Capital",
+      "Grand Ventures",
+      "ACTAI Ventures",
+      "DIG Ventures",
+      "Datadog",
+      "Grafana Labs",
+      "Dash0"
+     ],
+     "source": {
+      "publication": "Tech.eu",
+      "title": "OllyGarden bags $4M to improve telemetry quality",
+      "url": "https://tech.eu/2026/10/09/ollygarden-bags-4m-to-improve-telemetry-quality/",
+      "publishedOn": "2026-10-09",
+      "publishedLabel": "9 Oct 2026"
+     },
+     "amountLabel": "$4 m",
+     "valuationLabel": null,
+     "foundersLabel": "Juraci Paixão Kröhling",
+     "investorsLabel": "Next Frontier Capital, Grand Ventures, ACTAI Ventures, DIG Ventures, Datadog, Grafana Labs and Dash0"
+    },
+    {
+     "id": "m2",
+     "company": "Finches",
+     "hq": null,
+     "stage": "Pre-seed",
+     "amount": 2,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Catharina van Delden"
+     ],
+     "investors": [
+      "High-Tech Gründerfonds",
+      "Vanagon Ventures",
+      "Bayern Kapital",
+      "UnternehmerTUM Funding for Innovators"
+     ],
+     "source": {
+      "publication": "Tech.eu",
+      "title": "Finches lands €2M to help food producers spot supply risks earlier",
+      "url": "https://tech.eu/2026/10/06/finches-lands-eur2m-to-help-food-producers-spot-supply-risks-earlier/",
+      "publishedOn": "2026-10-06",
+      "publishedLabel": "6 Oct 2026"
+     },
+     "amountLabel": "€2 m",
+     "valuationLabel": null,
+     "foundersLabel": "Catharina van Delden",
+     "investorsLabel": "High-Tech Gründerfonds, Vanagon Ventures, Bayern Kapital and UnternehmerTUM Funding for Innovators"
+    },
+    {
+     "id": "m3",
+     "company": "Calliora",
+     "hq": null,
+     "stage": null,
+     "amount": 6,
+     "currency": "USD",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [],
+     "investors": [],
+     "source": {
+      "publication": "Tech.eu",
+      "title": "European tech weekly recap: €818M in deals and September's highlights",
+      "url": "https://tech.eu/2026/10/12/european-tech-weekly-recap-eur818m-in-deals-and-septembers-highlights/",
+      "publishedOn": "2026-10-12",
+      "publishedLabel": "12 Oct 2026"
+     },
+     "amountLabel": "$6 m",
+     "valuationLabel": null,
+     "foundersLabel": null,
+     "investorsLabel": null
+    }
+   ],
+   "rangeLabel": "5–11 Oct 2026",
+   "shortLabel": "W41",
+   "yearLabel": "2026",
+   "roundCount": 5,
+   "roundCountLabel": "5 rounds",
+   "moreCount": 3
+  },
+  {
    "week": "2026-W40",
    "start": "2026-09-28",
    "end": "2026-10-04",
@@ -1662,8 +1986,8 @@
   }
  ],
  "stats": {
-  "weekCount": 11,
-  "roundCount": 47,
-  "latestWeek": "2026-W40"
+  "weekCount": 13,
+  "roundCount": 57,
+  "latestWeek": "2026-W42"
  }
 }
