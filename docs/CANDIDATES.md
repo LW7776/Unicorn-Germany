@@ -358,6 +358,15 @@ Notes carried into the records:
   recognise. Re-running the script left the outline byte-identical — no pixel in that file is
   placed by hand.
 
+## Include — written (batch 7)
+
+One company, found by the weekly funding scan rather than by auditing anybody's list, which is
+the only entry on this page to have arrived that way.
+
+| Company | Evidence | Status |
+|---|---|---|
+| **RobCo** | Munich, founded 2020, industrial robotics. EU-Startups, opened and read: "RobCo, a Munich-based robotics startup focused on industrial automation, today announced that it has surpassed an €892.4 million ($1 billion) valuation" ([2026-10-05](https://www.eu-startups.com/2026/10/munich-based-robco-becomes-a-robotics-unicorn-as-valuation-doubles-in-nine-months/)). The transaction mixes new investment with a secondary, and the card says so | **include** |
+
 ## The 39-name audit (October 2026)
 
 A published list of 39 German unicorns was checked name by name against this file and against
@@ -374,6 +383,38 @@ company is a snapshot nobody re-checked, which is the argument for keeping this 
 | **Chrono24** | EU-Startups: the Series C was "worth €100 million and solidifying the watch market's unicorn status with a valuation today exceeding $1 billion" ([2023-07-12](https://www.eu-startups.com/2023/07/star-funding-cristiano-ronaldo-invests-in-the-germany-based-luxury-watch-marketplace-chrono24/)). Karlsruhe, founded 2003 | **include** |
 | **OneFootball** | Tech.eu: "OneFootball, a Germany-based football media company, has raised €150 million at a unicorn valuation" ([2022-04-22](https://tech.eu/2022/04/22/this-week-in-european-tech-22-april-2022/)). Status stated, no figure, and nothing since. Raised at the peak of the Web3 enthusiasm that funded part of the business, so a 2022 status claim is not a statement about today | **reported** |
 | **Qontigo** | Not a startup and not independent. It was assembled by Deutsche Börse out of Axioma and STOXX and has since been folded into ISS STOXX, so rule 2 fails on ownership rather than on any question about its size. **If this is ever revisited:** the citation is still to be found, and the row rests on the ownership being uncontested rather than on a page that was opened | **exclude** |
+
+## The Bitkom / KfW / Failory audit (October 2026)
+
+A second published list was checked name by name, a week after the 39-name audit above: the
+Bitkom count of German unicorns, a set of 2026 additions, and thirteen further names carried by
+Failory. **Eight names had never been looked at.** Seven of the eight fail a rule, most of them
+on rule 2 rather than on size, and the eighth is now in the register.
+
+The pattern is worth recording, because it is the same one the 39-name audit found. These lists
+go stale from the bottom: a company reaches a billion, the list adds it, and nothing removes it
+when the company is auctioned by its creditors, folded into a parent, or bought out of
+administration for a euro. Four of the seven exclusions below are of exactly that kind.
+
+| Company | Finding | Status |
+|---|---|---|
+| **AUTODOC** | Berlin, founded 2008, and the only name on the list that qualifies. Handelsblatt on Apollo's 2024 entry: "damals zu einer Bewertung des Unternehmens von 2,3 Milliarden Euro" ([2026-08-19](https://www.handelsblatt.com/unternehmen/industrie/auto-autodoc-gehoert-wieder-ganz-den-gruendern-apollo-steigt-aus/100248397.html)). It is more private now than when it crossed: the Frankfurt listing was pulled in June 2025 after a range of up to €2.4bn ([Handelsblatt, 2025-06-17](https://www.handelsblatt.com/finanzen/maerkte/aktien/onlinehaendler-autodoc-bei-boersengang-mit-bis-zu-24-milliarden-euro-bewertet/100135601.html)), and in 2026 the three founders bought Apollo's 15.2% back and own the company outright. **The €4bn everyone cites is not the published figure, and the reason is worth stating:** the same Handelsblatt piece reports it as "Laut „Börsen-Zeitung“ … mit rund vier Milliarden Euro bewertet", which is an allowlisted paper attributing a number to an unallowlisted one, in words rather than digits. It is recorded as a disputed note beside the figure instead | **include** |
+| **IQM** | Fails rules 1 and 2 independently, which is unusual enough to note. It is Finnish, not German: EU-Startups and Sifted both call it Espoo-based. And it has been public since July 2026, listed on Nasdaq and Helsinki by SPAC merger ([TechCrunch, 2026-07-02](https://techcrunch.com/2026/07/02/iqm-europes-first-public-quantum-company-admits-the-future-of-the-tech-is-uncertain/)). The $1.8bn deal valuation is real and irrelevant | **exclude** |
+| **Infarm** | The Berlin vertical farm was Europe's first in its sector to pass a billion, on a $200m Series D led by the Qatar Investment Authority ([Tech.eu, 2021-12-16](https://tech.eu/2021/12/16/vertical-farming-platform-infarm-raises-200-million-now-at-1-billion-valuation/)). That company no longer exists. It cut up to half its staff in 2022, closed every European site, and in December 2023 a new entity bought the old one's assets, the plant-growing IP among them, for €1 ([Sifted](https://sifted.eu/articles/new-infarm-court-case)). The unicorn price belongs to the entity that was wound down, not to the successor | **exclude** |
+| **SellerX** | Fails rule 2. TechCrunch did report it "valued at more than $1 billion" in May 2023, so rule 3 is arguably met in words. Rule 2 is not: the company was put up for auction at a Berlin hotel by BlackRock and Victory Park Capital, two of its debt investors, under the German procedure that lets creditors seize and sell a company, its cofounders stepped aside, and two consultants were installed as managing directors ([Sifted](https://sifted.eu/articles/sellerx-auction-blackrock)). A company its creditors are selling is not independent | **exclude** |
+| **NuCom Group** | Fails rule 2 on ownership, the Qontigo case again. It is ProSiebenSat.1's e-commerce arm rather than a standalone company, holding Verivox, Parship, flaconi and others ([Tech.eu](https://tech.eu/brief/nucom-buys-control-in-aroundhome-for-e140-million)). No valuation of NuCom itself was found, and none would change the verdict | **exclude** |
+| **Omio** | Fails rule 3, and the reason is structural rather than a gap in the reporting. The Berlin travel booking platform has been called a unicorn since its 2018 Series D, but the figures reported around that round were $900m–$1bn, at or below the threshold, and the $100m that followed in August 2020 was deliberately a convertible note: Sifted's account is that the structure was chosen "[t]o avoid taking a huge valuation cut — and stay part of Europe's unicorn herd" ([Sifted](https://sifted.eu/articles/omio-raises-100m)). A note is precisely an instrument that does not set a price. The $80m Series E of June 2022 carried no valuation either. **Settled by:** any allowlisted page stating a post-2018 valuation, or saying in words that Omio is over the threshold today | **exclude** |
+| **Camunda** | Fails rule 3 by roughly a factor of two to three. The Berlin process-orchestration company's last reported valuation follows its €82m Series B of March 2021, which Sifted's own soonicorn work puts at $361–541m. Nothing since | **exclude** |
+| **Augustus** (formerly Ivy) | Fails rule 3 by an order of magnitude. The Berlin instant-bank-payments company raised a $20m Series A led by Valar in August 2023 at a reported $80–90m ([TechCrunch, 2023-08-31](https://techcrunch.com/2023/08/31/ivy-raises-20m-to-take-open-banking-payments-international/)), and no later round appears in the allowlisted press. Note for anyone re-checking this: the one place the name "Augustus" surfaced alongside the word unicorn was a job listing, which is not a source | **exclude** |
+
+**One thing the audit turned up that is not about inclusion.** Berlin Brands Group no longer
+runs a corporate website. `berlinbrandsgroup.com` answers nothing, and `berlin-brands-group.com`
+now redirects to Klarstein, its largest consumer brand. Its register entry's `website` has been
+repointed to the latter, which is at least the company's own domain. No allowlisted source
+reports an acquisition, a restructuring or an insolvency, so this is read as brand consolidation
+and the entry stands. **If this is ever revisited:** a German-language search for an insolvency
+or a sale is the thing to run, because a corporate site going dark is a weak signal on its own
+and a strong one in combination.
 
 ## Include — reported (batch 6)
 
@@ -476,9 +517,12 @@ figure but a company that was never looked at.
    and its [deep-tech spinout survey](https://techcrunch.com/2025/12/30/76-european-deep-tech-university-spinouts-reached-unicorn-or-centaur-status/)
    were both read in full and produced no German name not already on this page.
 
-Everything those sweeps produced now appears somewhere above with a verdict: 32 rows carry
-**include**, matching the register's own count company for company, 19 carry **exclude**, and
-8 carry **cannot be established** — every row settled, none left as a placeholder.
+Everything those sweeps produced now appears somewhere above with a verdict, and so does
+everything the two October audits turned up: 37 rows carry **include**, 3 carry **reported**,
+23 carry **exclude** and 6 carry **cannot be established** — every row settled, none left as a
+placeholder. The first two of those add up to the 40 companies in `data/companies/`, and that
+is the check worth running when this file is next edited: a register entry with no row here is
+a company nobody wrote down the reasoning for.
 
 One row above carries no headquarters city, and deliberately: Marvel Fusion, instagrid and
 Black Semiconductor are excluded from the register on rule 3, so no page stating their

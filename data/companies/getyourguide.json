@@ -2,7 +2,7 @@
   "slug": "getyourguide",
   "name": "GetYourGuide",
   "website": "https://www.getyourguide.com",
-  "logo": null,
+  "logo": "assets/logos/getyourguide.svg",
   "hq": {
     "city": "Berlin",
     "country": "Germany"

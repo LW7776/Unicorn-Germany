@@ -44,6 +44,11 @@ are not covered by this repository's licence.
 | `raisin.svg` | https://eu-images.contentstack.com/v3/assets/blt4a5ee0113ab335fb/blt6edc2e97ec97de8a/67e275e889873789f8f90165/Raisin_brand_evolution_Logo.svg | 2026-08-09 | Downloaded unchanged; see note |
 | `isar-aerospace.png` | https://isaraerospace.com/static/favicon/apple-touch-icon.png | 2026-08-09 | Downloaded unchanged; see note |
 | `focused-energy.svg` | https://cdn.prod.website-files.com/672b679d563c65aa8b967c48/6a2c81d9a257a161bc164b96_FE_Logo-black.svg | 2026-08-09 | Downloaded unchanged |
+| `getyourguide.svg` | https://cdn.getyourguide.com/tf/assets/static/logos/gyg-logo.svg | 2026-10-20 | Downloaded unchanged |
+| `chrono24.svg` | https://s.c24.media/images/default/logos/chrono24-logo.svg | 2026-10-20 | Downloaded unchanged; see note |
+| `onefootball.svg` | https://onefootball.com/en/home (header wordmark, inline SVG) | 2026-10-20 | Copied verbatim; `xmlns` added |
+| `berlin-brands-group.svg` | https://www.berlin-brands-group.com/favicon/safari-pinned-tab.svg | 2026-10-20 | Downloaded unchanged; see note |
+| `autodoc.svg` | https://scdn.autodoc.de/static/logo/logo-dark.svg | 2026-10-20 | Downloaded unchanged; see note |
 
 ## Notes
 
@@ -138,3 +143,27 @@ are not covered by this repository's licence.
   header. The `<svg>` element was copied verbatim, including its native `xmlns` (no attribute
   needed adding, unlike the sprite- and fragment-served marks above). Nothing was recoloured
   or redrawn.
+
+- **Chrono24** serves two wordmarks side by side from its own CDN: `chrono24-logo-inverted.svg`
+  is white for the site's dark header, and `chrono24-logo.svg` carries the company's navy
+  `#1a253c`. The navy one is stored, unedited, because the inverted file would be invisible on
+  the register's plate. This is the Quantum Systems case again, and the same rule applies: where
+  a company publishes both variants, take its own dark one rather than editing the light one.
+- **AUTODOC** likewise publishes both. Its header loads `logo-light.svg`, whose wordmark is
+  `#fff` for the dark navbar, and `logo-dark.svg` sets the same wordmark in `#132530` with the
+  orange `#F47D2F` mark intact. The dark-text file is stored, unaltered. The company's own HTML
+  pages return 403 to this crawler, so the asset URL above was read out of the live page in a
+  real browser rather than by fetching the file list.
+- **Berlin Brands Group** no longer runs a corporate website: `berlinbrandsgroup.com` answers
+  nothing at all, and `berlin-brands-group.com` now redirects to Klarstein, its largest consumer
+  brand. The company's own logo files survive only in the archived version of that site, and both
+  the header mark and the footer wordmark are white (`rgb(100%,100%,100%)` and `#fefefe`), drawn
+  for a dark page and invisible on the register's plate. The asset paths under that domain are
+  still served even though its pages are not, so the stored file is the company's own
+  `safari-pinned-tab.svg`: its "B" mark, in black, unaltered. This is the CMBlu and osapiens case
+  (use a smaller official mark rather than edit a logo), with the company's continued existence
+  confirmed separately — the redirect is brand consolidation, not an acquisition or an insolvency.
+- **OneFootball** serves its wordmark inline in the site header. Its single path carries
+  `fill="currentColor"` while the root `<svg>` carries `fill="none"`, so the path's own fill wins
+  and a standalone file renders black, exactly as the `currentColor` marks above do. The element
+  was copied verbatim and only `xmlns` was added.

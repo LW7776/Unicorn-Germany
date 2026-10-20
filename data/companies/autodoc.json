@@ -1,0 +1,99 @@
+{
+  "slug": "autodoc",
+  "name": "AUTODOC",
+  "website": "https://www.autodoc.de",
+  "logo": "assets/logos/autodoc.svg",
+  "hq": {
+    "city": "Berlin",
+    "country": "DE"
+  },
+  "foundedCountry": "DE",
+  "foundedYear": 2008,
+  "sectors": [
+    "E-commerce and Retail"
+  ],
+  "niche": "Car parts",
+  "thesis": {
+    "problem": "A car owner replacing a part buys it through a chain of garages, dealers and regional wholesalers, each of which adds a margin, and what is actually available depends on whichever catalogue the counter happens to carry. Fitment is the harder half of the problem, because a component that suits one build year of a model will not suit the next.",
+    "solution": "AUTODOC sells car spare parts online across most of Europe from a catalogue indexed to a vehicle's exact model and build rather than to its name, and ships from its own warehouses instead of through a dealer network. It reached that scale without the venture financing most German companies of its size were built on, and after an attempted listing was pulled in 2025 its founders bought back the one outside stake and took the company fully private again."
+  },
+  "valuation": {
+    "amount": 2300,
+    "currency": "EUR",
+    "approximate": false,
+    "asOf": "2024",
+    "round": "Apollo minority investment",
+    "source": "s1",
+    "disputed": {
+      "note": "Handelsblatt cites Börsen-Zeitung valuing the 2026 founder buyback at about 4 billion euros.",
+      "source": "s2"
+    }
+  },
+  "becameUnicorn": {
+    "date": "2024",
+    "roundId": "r1",
+    "source": "s1"
+  },
+  "totalRaised": {
+    "amount": null,
+    "currency": "EUR",
+    "approximate": false,
+    "source": "s1"
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "date": "2024",
+      "stage": "Apollo minority investment",
+      "amount": null,
+      "currency": "EUR",
+      "approximate": false,
+      "postMoney": 2300,
+      "leadInvestors": [
+        "Apollo"
+      ],
+      "investors": [
+        "Apollo"
+      ],
+      "source": "s1"
+    }
+  ],
+  "founders": [
+    {
+      "name": "Alexej Erdle",
+      "role": "Co-founder",
+      "current": true
+    },
+    {
+      "name": "Max Wegner",
+      "role": "Co-founder",
+      "current": true
+    },
+    {
+      "name": "Vitalij Kungel",
+      "role": "Co-founder",
+      "current": true
+    }
+  ],
+  "investors": [
+    "Apollo"
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "publication": "Handelsblatt",
+      "title": "Autodoc gehört wieder ganz den Gründern, Apollo steigt aus",
+      "url": "https://www.handelsblatt.com/unternehmen/industrie/auto-autodoc-gehoert-wieder-ganz-den-gruendern-apollo-steigt-aus/100248397.html",
+      "publishedOn": "2026-08-19",
+      "quote": "damals zu einer Bewertung des Unternehmens von 2,3 Milliarden Euro"
+    },
+    {
+      "id": "s2",
+      "publication": "Handelsblatt",
+      "title": "Autodoc gehört wieder ganz den Gründern, Apollo steigt aus",
+      "url": "https://www.handelsblatt.com/unternehmen/industrie/auto-autodoc-gehoert-wieder-ganz-den-gruendern-apollo-steigt-aus/100248397.html",
+      "publishedOn": "2026-08-19",
+      "quote": "Laut „Börsen-Zeitung“ wurde Autodoc beim Rückkauf der Anteile mit rund vier Milliarden Euro bewertet."
+    }
+  ]
+}

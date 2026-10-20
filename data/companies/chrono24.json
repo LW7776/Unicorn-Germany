@@ -2,7 +2,7 @@
   "slug": "chrono24",
   "name": "Chrono24",
   "website": "https://www.chrono24.com",
-  "logo": null,
+  "logo": "assets/logos/chrono24.svg",
   "hq": {
     "city": "Karlsruhe",
     "country": "Germany"

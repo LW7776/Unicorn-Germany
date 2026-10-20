@@ -1,8 +1,8 @@
 {
   "slug": "berlin-brands-group",
   "name": "Berlin Brands Group",
-  "website": "https://www.berlinbrandsgroup.com",
-  "logo": null,
+  "website": "https://www.berlin-brands-group.com",
+  "logo": "assets/logos/berlin-brands-group.svg",
   "hq": {
     "city": "Berlin",
     "country": "Germany"

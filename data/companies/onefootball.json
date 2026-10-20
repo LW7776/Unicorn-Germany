@@ -2,7 +2,7 @@
   "slug": "onefootball",
   "name": "OneFootball",
   "website": "https://www.onefootball.com",
-  "logo": null,
+  "logo": "assets/logos/onefootball.svg",
   "verification": "reported",
   "hq": {
     "city": "Berlin",

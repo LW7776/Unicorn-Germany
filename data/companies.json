@@ -1,13 +1,13 @@
 {
  "stats": {
-  "count": 39,
-  "verifiedCount": 36,
+  "count": 40,
+  "verifiedCount": 37,
   "reportedCount": 3,
-  "countBasis": "German unicorns · 36 verified, 3 reported",
-  "combinedValuationEurMillions": 114956.0,
-  "combinedValuationLabel": "~€115 bn",
-  "combinedValuationCount": 33,
-  "combinedValuationBasis": "Combined value · 33 of 39 disclosed",
+  "countBasis": "German unicorns · 37 verified, 3 reported",
+  "combinedValuationEurMillions": 117256.0,
+  "combinedValuationLabel": "~€117.3 bn",
+  "combinedValuationCount": 34,
+  "combinedValuationBasis": "Combined value · 34 of 40 disclosed",
   "newInLast12Months": 13,
   "medianYearsToUnicorn": 7,
   "fxRateDisclosed": 0.92,
@@ -41,7 +41,7 @@
    },
    {
     "year": 2024,
-    "count": 0
+    "count": 1
    },
    {
     "year": 2025,
@@ -54,15 +54,15 @@
   ],
   "sectorComposition": [
    {
+    "sector": "E-commerce and Retail",
+    "count": 7
+   },
+   {
     "sector": "Enterprise Software",
     "count": 7
    },
    {
     "sector": "Artificial Intelligence",
-    "count": 6
-   },
-   {
-    "sector": "E-commerce and Retail",
     "count": 6
    },
    {
@@ -480,10 +480,146 @@
    ]
   },
   {
+   "slug": "autodoc",
+   "name": "AUTODOC",
+   "website": "https://www.autodoc.de",
+   "logo": "assets/logos/autodoc.svg",
+   "hq": {
+    "city": "Berlin",
+    "country": "DE"
+   },
+   "foundedCountry": "DE",
+   "foundedYear": 2008,
+   "sectors": [
+    "E-commerce and Retail"
+   ],
+   "niche": "Car parts",
+   "thesis": {
+    "problem": "A car owner replacing a part buys it through a chain of garages, dealers and regional wholesalers, each of which adds a margin, and what is actually available depends on whichever catalogue the counter happens to carry. Fitment is the harder half of the problem, because a component that suits one build year of a model will not suit the next.",
+    "solution": "AUTODOC sells car spare parts online across most of Europe from a catalogue indexed to a vehicle's exact model and build rather than to its name, and ships from its own warehouses instead of through a dealer network. It reached that scale without the venture financing most German companies of its size were built on, and after an attempted listing was pulled in 2025 its founders bought back the one outside stake and took the company fully private again."
+   },
+   "valuation": {
+    "amount": 2300,
+    "currency": "EUR",
+    "approximate": false,
+    "asOf": "2024",
+    "round": "Apollo minority investment",
+    "source": "s1",
+    "disputed": {
+     "note": "Handelsblatt cites Börsen-Zeitung valuing the 2026 founder buyback at about 4 billion euros.",
+     "source": "s2"
+    }
+   },
+   "becameUnicorn": {
+    "date": "2024",
+    "roundId": "r1",
+    "source": "s1"
+   },
+   "totalRaised": {
+    "amount": null,
+    "currency": "EUR",
+    "approximate": false,
+    "source": "s1"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2024",
+     "stage": "Apollo minority investment",
+     "amount": null,
+     "currency": "EUR",
+     "approximate": false,
+     "postMoney": 2300,
+     "leadInvestors": [
+      "Apollo"
+     ],
+     "investors": [
+      "Apollo"
+     ],
+     "source": "s1",
+     "dateLabel": "2024",
+     "amountLabel": null
+    }
+   ],
+   "founders": [
+    {
+     "name": "Alexej Erdle",
+     "role": "Co-founder",
+     "current": true
+    },
+    {
+     "name": "Max Wegner",
+     "role": "Co-founder",
+     "current": true
+    },
+    {
+     "name": "Vitalij Kungel",
+     "role": "Co-founder",
+     "current": true
+    }
+   ],
+   "investors": [
+    "Apollo"
+   ],
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "Handelsblatt",
+     "title": "Autodoc gehört wieder ganz den Gründern, Apollo steigt aus",
+     "url": "https://www.handelsblatt.com/unternehmen/industrie/auto-autodoc-gehoert-wieder-ganz-den-gruendern-apollo-steigt-aus/100248397.html",
+     "publishedOn": "2026-08-19",
+     "quote": "damals zu einer Bewertung des Unternehmens von 2,3 Milliarden Euro",
+     "publishedLabel": "19 Aug 2026"
+    },
+    {
+     "id": "s2",
+     "publication": "Handelsblatt",
+     "title": "Autodoc gehört wieder ganz den Gründern, Apollo steigt aus",
+     "url": "https://www.handelsblatt.com/unternehmen/industrie/auto-autodoc-gehoert-wieder-ganz-den-gruendern-apollo-steigt-aus/100248397.html",
+     "publishedOn": "2026-08-19",
+     "quote": "Laut „Börsen-Zeitung“ wurde Autodoc beim Rückkauf der Anteile mit rund vier Milliarden Euro bewertet.",
+     "publishedLabel": "19 Aug 2026"
+    }
+   ],
+   "display": {
+    "valuationLabel": "€2.3 bn",
+    "valuationUndisclosed": false,
+    "valuationUndisclosedBadge": null,
+    "valuationAsOf": "2024",
+    "lastRoundLabel": "2024",
+    "lastRoundStage": "Apollo minority investment",
+    "yearsToUnicorn": 16,
+    "becameUnicornLabel": "2024",
+    "unicornThresholdLabel": "€1bn",
+    "unicornFlagLabel": "crossed €1bn",
+    "foundersLabel": "Alexej Erdle, Max Wegner, Vitalij Kungel",
+    "aged": false,
+    "websiteLabel": "autodoc.de",
+    "verification": "verified",
+    "reported": false,
+    "valuationBarPct": 13.9
+   },
+   "sort": {
+    "newest": [
+     2024,
+     0
+    ],
+    "valuationEur": 2300,
+    "latestRound": [
+     2024,
+     0
+    ],
+    "name": "autodoc"
+   },
+   "investorsOrdered": [
+    "Apollo"
+   ]
+  },
+  {
    "slug": "berlin-brands-group",
    "name": "Berlin Brands Group",
-   "website": "https://www.berlinbrandsgroup.com",
-   "logo": null,
+   "website": "https://www.berlin-brands-group.com",
+   "logo": "assets/logos/berlin-brands-group.svg",
    "hq": {
     "city": "Berlin",
     "country": "Germany"
@@ -589,7 +725,7 @@
     "unicornFlagLabel": "reached unicorn status",
     "foundersLabel": "Peter Chaljawski",
     "aged": true,
-    "websiteLabel": "berlinbrandsgroup.com",
+    "websiteLabel": "berlin-brands-group.com",
     "verification": "verified",
     "reported": false,
     "valuationBarPct": 5.6
@@ -1268,7 +1404,7 @@
    "slug": "chrono24",
    "name": "Chrono24",
    "website": "https://www.chrono24.com",
-   "logo": null,
+   "logo": "assets/logos/chrono24.svg",
    "hq": {
     "city": "Karlsruhe",
     "country": "Germany"
@@ -3147,7 +3283,7 @@
    "slug": "getyourguide",
    "name": "GetYourGuide",
    "website": "https://www.getyourguide.com",
-   "logo": null,
+   "logo": "assets/logos/getyourguide.svg",
    "hq": {
     "city": "Berlin",
     "country": "Germany"
@@ -4796,7 +4932,7 @@
    "slug": "onefootball",
    "name": "OneFootball",
    "website": "https://www.onefootball.com",
-   "logo": null,
+   "logo": "assets/logos/onefootball.svg",
    "verification": "reported",
    "hq": {
     "city": "Berlin",
