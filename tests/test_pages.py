@@ -45,7 +45,7 @@ def test_the_answers_are_disclosure_widgets_and_not_hand_rolled():
     the announced expandable role and the no-JavaScript reading, all at once."""
     html = ABOUT.read_text(encoding="utf-8")
     rows = html.count('<details class="qa__row"')
-    assert rows == html.count('<summary class="qa__q">') == 9
+    assert rows == html.count('<summary class="qa__q">') == 10
     assert 'aria-expanded' not in html
 
 

@@ -1,0 +1,99 @@
+{
+  "slug": "agile-robots",
+  "name": "Agile Robots",
+  "website": "https://www.agile-robots.com",
+  "logo": null,
+  "verification": "reported",
+  "hq": {
+    "city": "Munich",
+    "country": "Germany"
+  },
+  "foundedCountry": "Germany",
+  "foundedYear": 2018,
+  "sectors": [
+    "Artificial Intelligence"
+  ],
+  "niche": "Industrial Robotics",
+  "thesis": {
+    "problem": "Industrial robots are precise but blind and rigid, and the robots that can see and adapt are usually research machines that no factory would run. Bridging the two has needed force-sensitive control and computer vision in one system, which is hard enough that most manufacturers keep doing the awkward assembly jobs by hand.",
+    "solution": "Agile Robots combines force-torque sensing with computer vision so its arms can handle delicate, variable assembly rather than repeating one fixed motion, a line that grew out of the German Aerospace Centre's robotics institute and a Munich spin-out around it. It sells into electronics, automotive and laboratory automation, and in 2026 announced a partnership with Google DeepMind on bringing foundation models to its machines."
+  },
+  "founders": [
+    {
+      "name": "Zhaopeng Chen",
+      "role": "Co-founder and CEO"
+    },
+    {
+      "name": "Peter Meusel",
+      "role": "Co-founder"
+    }
+  ],
+  "investors": [
+    "SoftBank Vision Fund",
+    "Sequoia China",
+    "Linear Venture",
+    "Foxconn"
+  ],
+  "totalRaised": {
+    "amount": 270,
+    "currency": "USD",
+    "approximate": true,
+    "source": "s1"
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "date": "2026-06",
+      "stage": "Round reported in talks",
+      "amount": null,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": null,
+      "postMoneyCurrency": null,
+      "leadInvestors": [],
+      "investors": [
+        "SoftBank Vision Fund"
+      ],
+      "source": "s2",
+      "undisclosed": {
+        "note": "Reported as being in talks at $800m. No round and no post-money has been confirmed.",
+        "source": "s2"
+      }
+    }
+  ],
+  "becameUnicorn": {
+    "date": "2026-06",
+    "roundId": "r1",
+    "source": "s2"
+  },
+  "valuation": {
+    "amount": null,
+    "currency": null,
+    "approximate": false,
+    "asOf": "2026-06",
+    "round": "Round reported in talks",
+    "source": "s2",
+    "undisclosed": {
+      "note": "Widely counted as a German robotics unicorn. No allowlisted page states a valuation, and the most recent reporting is of a round in talks.",
+      "source": "s2"
+    }
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "publication": "TechCrunch",
+      "title": "Agile Robots partners with Google DeepMind",
+      "url": "https://techcrunch.com/2026/03/12/agile-robots-google-deepmind/",
+      "publishedOn": "2026-03-12",
+      "quote": "Munich, Germany-based Agile Robots has raised more than $270 million in venture capital funding."
+    },
+    {
+      "id": "s2",
+      "publication": "Sifted",
+      "title": "SoftBank in talks to back Agile Robots' $800m round, reports say",
+      "url": "https://sifted.eu/articles/softbank-in-talks-to-back-agile-robotics-in-800m-round-reports-say",
+      "publishedOn": "2026-06-02",
+      "quote": "SoftBank in talks to back Agile Robots' $800m round, reports say"
+    }
+  ]
+}

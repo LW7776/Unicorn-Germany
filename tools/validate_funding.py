@@ -65,6 +65,9 @@ ROUND_KEYS = {"id", "company", "hq", "stage", "amount", "currency", "approximate
               "note"}
 LEAD_KEYS = ROUND_KEYS | {"text"}
 SOURCE_KEYS = {"publication", "title", "url", "publishedOn"}
+# Optional, and only meaningful for a source a publisher can edit or delete in
+# place — a company's own LinkedIn post above all. Allowed, never required.
+SOURCE_OPTIONAL_KEYS = {"archiveUrl"}
 WEEK_KEYS = {"week", "start", "end", "lead", "more"}
 
 
@@ -126,8 +129,13 @@ def _validate_source(errors, label, source, start):
         return
     for key in sorted(SOURCE_KEYS - set(source)):
         errors.append(f"{label}.source is missing {key}")
-    for key in sorted(set(source) - SOURCE_KEYS):
+    for key in sorted(set(source) - SOURCE_KEYS - SOURCE_OPTIONAL_KEYS):
         errors.append(f"{label}.source: unknown field {key!r}")
+    archive = source.get("archiveUrl")
+    if archive is not None and not is_resolvable_url(archive):
+        errors.append(
+            f"{label}.source.archiveUrl must be an absolute http(s) URL a reader can "
+            f"open: {archive!r}")
 
     publication = source.get("publication")
     if publication not in SOURCE_ALLOWLIST:

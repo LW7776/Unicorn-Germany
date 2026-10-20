@@ -1,0 +1,117 @@
+{
+  "slug": "robco",
+  "name": "RobCo",
+  "website": "https://www.rob.co",
+  "logo": null,
+  "hq": {
+    "city": "Munich",
+    "country": "Germany"
+  },
+  "foundedCountry": "Germany",
+  "foundedYear": 2020,
+  "sectors": [
+    "Artificial Intelligence"
+  ],
+  "niche": "Industrial Robotics",
+  "thesis": {
+    "problem": "Most factory work that is still done by hand is high-mix, unstructured and safety-critical, which is exactly the work conventional industrial automation has never been able to take on. A traditional robot cell is programmed for one task on one line, costs six figures before it moves, and stops earning the day the product changes, so the mid-sized manufacturers who make up most of German industry have largely stayed out.",
+    "solution": "RobCo builds modular robots and the software that makes them autonomous, combining perception, motion planning and self-learning so a system can handle machine tending, palletising, dispensing and welding without being reprogrammed for every variant. It is sold as robotics-as-a-service with no upfront investment, which moves the cost from capital expenditure to a monthly line, and its Alfie robot is built for the whole autonomous industrial lifecycle rather than a single station."
+  },
+  "founders": [
+    {
+      "name": "Roman Hölzl",
+      "role": "Co-founder and CEO"
+    }
+  ],
+  "investors": [
+    "Sequoia",
+    "Lightspeed",
+    "Lingotto",
+    "Greenfield",
+    "Kindred",
+    "Promus Ventures",
+    "Cherry Ventures",
+    "European Tech Collective"
+  ],
+  "totalRaised": {
+    "amount": null,
+    "currency": "EUR",
+    "approximate": false,
+    "source": "s2"
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "date": "2026-01",
+      "stage": "Series C",
+      "amount": 89.2,
+      "currency": "EUR",
+      "approximate": false,
+      "postMoney": null,
+      "postMoneyCurrency": null,
+      "leadInvestors": [
+        "Lightspeed Venture Partners",
+        "Lingotto Innovation"
+      ],
+      "investors": [
+        "Lightspeed Venture Partners",
+        "Lingotto Innovation"
+      ],
+      "source": "s2"
+    },
+    {
+      "id": "r2",
+      "date": "2026-10",
+      "stage": "Secondary and new investment",
+      "amount": null,
+      "currency": "EUR",
+      "approximate": false,
+      "postMoney": 1000,
+      "postMoneyCurrency": "USD",
+      "postMoneySource": "s1",
+      "leadInvestors": [],
+      "investors": [
+        "Sequoia",
+        "Lightspeed",
+        "Greenfield",
+        "Kindred",
+        "Lingotto",
+        "Promus Ventures",
+        "Cherry Ventures",
+        "European Tech Collective"
+      ],
+      "source": "s1"
+    }
+  ],
+  "becameUnicorn": {
+    "date": "2026-10",
+    "roundId": "r2",
+    "source": "s1"
+  },
+  "valuation": {
+    "amount": 1000,
+    "currency": "USD",
+    "approximate": false,
+    "asOf": "2026-10",
+    "round": "Secondary and new investment",
+    "source": "s1"
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "publication": "EU-Startups",
+      "title": "Munich-based RobCo becomes a robotics unicorn as valuation doubles in nine months",
+      "url": "https://www.eu-startups.com/2026/10/munich-based-robco-becomes-a-robotics-unicorn-as-valuation-doubles-in-nine-months/",
+      "publishedOn": "2026-10-05",
+      "quote": "RobCo, a Munich-based robotics startup focused on industrial automation, today announced that it has surpassed an €892.4 million ($1 billion) valuation in a transaction that combines new investment and an employee secondary share sale."
+    },
+    {
+      "id": "s2",
+      "publication": "EU-Startups",
+      "title": "Munich-based RobCo becomes a robotics unicorn as valuation doubles in nine months",
+      "url": "https://www.eu-startups.com/2026/10/munich-based-robco-becomes-a-robotics-unicorn-as-valuation-doubles-in-nine-months/",
+      "publishedOn": "2026-10-05",
+      "quote": "Earlier this year, in January, the company raised €89.2 million ($100 million) in a Series C round co-led by Lightspeed Venture Partners and Lingotto Innovation."
+    }
+  ]
+}

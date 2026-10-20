@@ -18,12 +18,12 @@
     "solution": "1KOMMA5° buys those installers and puts them on one platform, then connects everything they fit to Heartbeat AI, software that pools the batteries, heat pumps and cars it has installed into a virtual power plant and trades their flexibility. The installers give the company reach. The software is what it expects to be valued on."
   },
   "valuation": {
-    "amount": 1000,
+    "amount": 1350,
     "currency": "USD",
     "approximate": false,
-    "asOf": "2023-06",
-    "round": "Series B",
-    "source": "s1"
+    "asOf": "2026-10",
+    "round": "Latest financing round",
+    "source": "s7"
   },
   "becameUnicorn": {
     "date": "2023-06",
@@ -181,6 +181,14 @@
       "url": "https://sifted.eu/articles/1komma5-e150m-pre-ipo-news",
       "publishedOn": "2024-12-20",
       "quote": "The round means a slight increase in valuation, Sifted understands, but the company — which achieved unicorn status last year — did not disclose an updated figure."
+    },
+    {
+      "id": "s7",
+      "publication": "Tech.eu",
+      "title": "1KOMMA5° reaches $1.35B valuation, plans €100M investment in energy AI",
+      "url": "https://tech.eu/2026/10/12/1komma5-reaches-1-35b-valuation-plans-100m-investment-in-energy-ai/",
+      "publishedOn": "2026-10-12",
+      "quote": "German energytech unicorn 1KOMMA5° has reached a valuation of $1.35 billion in its latest financing round"
     }
   ]
 }

@@ -31,17 +31,32 @@ function cell(company, index, thresholdPct) {
   // have: this company is over the threshold, and its unicorn status is sourced even
   // though its valuation is not. Same amber signal as `aged` and `disputed`: a
   // qualification on a figure, never an error.
-  const undisclosed = company.display.valuationUndisclosed
+  // A reported company takes the `reported` marker in place of `>1bn`, and that
+  // substitution is the point rather than a saving of space: `>1bn` asserts the one
+  // thing a reported record has not established. Printing both would say the
+  // valuation is over a billion and also that nobody has confirmed it.
+  const undisclosed = company.display.reported
+    ? `<span class="cell__undisclosed cell__reported" title="Reported as a unicorn by others. This register could not verify a valuation over the threshold, so the entry says what is and is not established.">reported</span>`
+    : company.display.valuationUndisclosed
     ? `<span class="cell__undisclosed" title="No source has published a figure. This company's unicorn status is itself sourced, so open the entry to read it.">${escapeHtml(company.display.valuationUndisclosedBadge)}</span>`
     : "";
   const name = escapeHtml(company.name);
   const slug = escapeHtml(company.slug);
-  const logo = escapeHtml(company.logo);
+  // No file, no mark. A company whose logo this register does not hold gets its
+  // name set on the plate instead of an approximation of a logo it has no right to
+  // draw, which is the same rule as "logos are never altered" arrived at from the
+  // other end.
+  const plate = company.logo
+    ? `<img src="${escapeHtml(company.logo)}" alt="${escapeHtml(company.name)} logo"
+             loading="lazy" decoding="async">`
+    : `<span class="cell__wordmark">${escapeHtml(company.name)}</span>`;
   const valuationLabel = escapeHtml(company.display.valuationLabel);
   // The accessible name has to carry the qualification too — a screen reader reading
   // "Isar Aerospace, Undisclosed" off the card would be told strictly less than a
   // sighted reader, who can see the ">1bn" beside it.
-  const spoken = company.display.valuationUndisclosed
+  const spoken = company.display.reported
+    ? `valuation undisclosed, reported as a unicorn and not verified`
+    : company.display.valuationUndisclosed
     ? `valuation undisclosed, over 1 bn`
     : valuationLabel;
   // The card's own site, not the page that proves the figure. The evidence for
@@ -78,9 +93,7 @@ function cell(company, index, thresholdPct) {
   // somebody has to remember.
   return `
     <div class="cell" role="listitem">
-      <span class="cell__plate">
-        <img src="${logo}" alt="${name} logo" loading="lazy" decoding="async">
-      </span>
+      <span class="cell__plate">${plate}</span>
       ${/* The value is its own element so it can be the thing that truncates when
             a card is narrow, leaving the markers beside it at full size. Every
             row below is exactly one line tall, which is what makes one card the
@@ -129,7 +142,7 @@ export function renderStats(container, stats) {
   // It also fixes a smaller lie. Four of the five tiles were not clickable and
   // one was, with nothing in the design saying which. Now the only row that goes
   // anywhere is the only one that carries a mark.
-  const lead = headlineStat(stats.count, "German unicorns")
+  const lead = headlineStat(stats.count, stats.countBasis || "German unicorns")
     // Not a fixed string: companies whose valuation no source has published are left
     // out of the sum rather than counted as zero, and when any are, the caption says
     // how many of the register the figure covers (tools/build.py: combinedValuationBasis).

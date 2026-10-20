@@ -6,6 +6,22 @@ All dates are "YYYY" or "YYYY-MM" — never padded to a day the source did not g
 import re
 from decimal import Decimal, ROUND_HALF_UP
 
+# Who may be cited, and in what order of preference.
+#
+# **A company's own announcement outranks a report of it.** A press release, an
+# investor's release or a company's own post states the figure first-hand, and the
+# trade press is usually paraphrasing exactly that. Where both exist and disagree,
+# the company's own number is the one published and the other is recorded beside it
+# as a note. Where only the trade press has it, the trade press is cited.
+#
+# "Company press release" covers a company announcing itself anywhere it controls:
+# its newsroom, its blog, and its own LinkedIn post. The platform is not the test,
+# authorship is. LinkedIn is **not** allowlisted as a publication, because anybody
+# can post there, and a third party's post is not a source whatever it claims.
+#
+# A post can also be edited or deleted without trace, which would break the one
+# promise this register makes, so a source hosted somewhere a publisher can silently
+# change it should carry an `archiveUrl` alongside its `url`.
 SOURCE_ALLOWLIST = {
     "Company press release", "Investor press release", "Handelsregister", "Bundesanzeiger",
     "Gründerszene", "Sifted", "EU-Startups", "Tech.eu", "TechCrunch",

@@ -220,6 +220,10 @@ def derive_company(record, today, fx_rate=0.92):
         "foundersLabel": ", ".join(f["name"] for f in founders) if founders else "–",
         "aged": aged,
         "websiteLabel": _website_label(record["website"]),
+        # The publication tier, resolved once here so nothing downstream has to
+        # remember that an absent field means verified.
+        "verification": record.get("verification", "verified"),
+        "reported": record.get("verification", "verified") == "reported",
         # Filled by add_valuation_bars() once every company is derived, because the
         # bar is this company against the largest on the register and no single
         # record can know that. Declared here so the shape of `display` is one
@@ -399,8 +403,21 @@ def compute_stats(records, fx):
     # how that defect got in.
     combined_label_value = int(
         (Decimal(str(combined)) / 100).quantize(Decimal("1"), rounding=ROUND_HALF_UP)) * 100
+    # The register publishes at two tiers and the headline has to say so. Counting
+    # them together and staying silent would claim verification for six companies
+    # that do not have it; counting only the verified ones would hide them again,
+    # which is the thing the tier was introduced to stop.
+    reported = [r for r in records if r["display"]["reported"]]
+    verified = len(records) - len(reported)
     return {
         "count": len(records),
+        "verifiedCount": verified,
+        "reportedCount": len(reported),
+        # The headline stat's own caption, settled here with every other label. It
+        # stays "German unicorns" while every record is verified, so the split only
+        # appears once there is a split to describe.
+        "countBasis": "German unicorns" if not reported
+        else f"German unicorns · {verified} verified, {len(reported)} reported",
         "combinedValuationEurMillions": combined,
         "combinedValuationLabel": format_amount(combined_label_value, "EUR", True),
         "combinedValuationCount": len(priced),

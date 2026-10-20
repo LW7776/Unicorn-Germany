@@ -1,16 +1,19 @@
 {
  "stats": {
-  "count": 32,
-  "combinedValuationEurMillions": 110034.0,
-  "combinedValuationLabel": "~€110 bn",
-  "combinedValuationCount": 29,
-  "combinedValuationBasis": "Combined value · 29 of 32 disclosed",
-  "newInLast12Months": 11,
+  "count": 35,
+  "verifiedCount": 33,
+  "reportedCount": 2,
+  "countBasis": "German unicorns · 33 verified, 2 reported",
+  "combinedValuationEurMillions": 111276.0,
+  "combinedValuationLabel": "~€111.3 bn",
+  "combinedValuationCount": 30,
+  "combinedValuationBasis": "Combined value · 30 of 35 disclosed",
+  "newInLast12Months": 13,
   "medianYearsToUnicorn": 6,
   "fxRateDisclosed": 0.92,
   "fxAsOf": "2026-08",
-  "dataAsOf": "2026-08-07",
-  "dataAsOfLabel": "7 Aug 2026",
+  "dataAsOf": "2026-10-12",
+  "dataAsOfLabel": "12 Oct 2026",
   "crossingsByYear": [
    {
     "year": 2018,
@@ -30,7 +33,7 @@
    },
    {
     "year": 2022,
-    "count": 3
+    "count": 4
    },
    {
     "year": 2023,
@@ -46,7 +49,7 @@
    },
    {
     "year": 2026,
-    "count": 9
+    "count": 11
    }
   ],
   "sectorComposition": [
@@ -55,16 +58,16 @@
     "count": 7
    },
    {
+    "sector": "Artificial Intelligence",
+    "count": 6
+   },
+   {
     "sector": "Fintech",
     "count": 6
    },
    {
     "sector": "Climate and Energy",
     "count": 5
-   },
-   {
-    "sector": "Artificial Intelligence",
-    "count": 4
    },
    {
     "sector": "Defence and Aerospace",
@@ -76,7 +79,7 @@
    },
    {
     "sector": "E-commerce and Retail",
-    "count": 2
+    "count": 3
    }
   ],
   "thresholdBarPct": 6.0
@@ -102,12 +105,12 @@
     "solution": "1KOMMA5° buys those installers and puts them on one platform, then connects everything they fit to Heartbeat AI, software that pools the batteries, heat pumps and cars it has installed into a virtual power plant and trades their flexibility. The installers give the company reach. The software is what it expects to be valued on."
    },
    "valuation": {
-    "amount": 1000,
+    "amount": 1350,
     "currency": "USD",
     "approximate": false,
-    "asOf": "2023-06",
-    "round": "Series B",
-    "source": "s1"
+    "asOf": "2026-10",
+    "round": "Latest financing round",
+    "source": "s7"
    },
    "becameUnicorn": {
     "date": "2023-06",
@@ -277,13 +280,22 @@
      "publishedOn": "2024-12-20",
      "quote": "The round means a slight increase in valuation, Sifted understands, but the company — which achieved unicorn status last year — did not disclose an updated figure.",
      "publishedLabel": "20 Dec 2024"
+    },
+    {
+     "id": "s7",
+     "publication": "Tech.eu",
+     "title": "1KOMMA5° reaches $1.35B valuation, plans €100M investment in energy AI",
+     "url": "https://tech.eu/2026/10/12/1komma5-reaches-1-35b-valuation-plans-100m-investment-in-energy-ai/",
+     "publishedOn": "2026-10-12",
+     "quote": "German energytech unicorn 1KOMMA5° has reached a valuation of $1.35 billion in its latest financing round",
+     "publishedLabel": "12 Oct 2026"
     }
    ],
    "display": {
-    "valuationLabel": "$1 bn",
+    "valuationLabel": "$1.35 bn",
     "valuationUndisclosed": false,
     "valuationUndisclosedBadge": null,
-    "valuationAsOf": "Jun 2023",
+    "valuationAsOf": "Oct 2026",
     "lastRoundLabel": "Jul 2025",
     "lastRoundStage": "Pre-IPO round extension",
     "yearsToUnicorn": 2,
@@ -291,16 +303,18 @@
     "unicornThresholdLabel": "$1bn",
     "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Philipp Schröder, Micha Grüber, Jannik Schall, Philip Liesenfeld",
-    "aged": true,
+    "aged": false,
     "websiteLabel": "1komma5.com",
-    "valuationBarPct": 5.6
+    "verification": "verified",
+    "reported": false,
+    "valuationBarPct": 7.5
    },
    "sort": {
     "newest": [
      2023,
      6
     ],
-    "valuationEur": 920.0,
+    "valuationEur": 1242.0,
     "latestRound": [
      2025,
      7
@@ -320,6 +334,145 @@
     "Porsche Ventures",
     "Blue Elephant Ventures",
     "Sabanci Climate Ventures"
+   ]
+  },
+  {
+   "slug": "agile-robots",
+   "name": "Agile Robots",
+   "website": "https://www.agile-robots.com",
+   "logo": null,
+   "verification": "reported",
+   "hq": {
+    "city": "Munich",
+    "country": "Germany"
+   },
+   "foundedCountry": "Germany",
+   "foundedYear": 2018,
+   "sectors": [
+    "Artificial Intelligence"
+   ],
+   "niche": "Industrial Robotics",
+   "thesis": {
+    "problem": "Industrial robots are precise but blind and rigid, and the robots that can see and adapt are usually research machines that no factory would run. Bridging the two has needed force-sensitive control and computer vision in one system, which is hard enough that most manufacturers keep doing the awkward assembly jobs by hand.",
+    "solution": "Agile Robots combines force-torque sensing with computer vision so its arms can handle delicate, variable assembly rather than repeating one fixed motion, a line that grew out of the German Aerospace Centre's robotics institute and a Munich spin-out around it. It sells into electronics, automotive and laboratory automation, and in 2026 announced a partnership with Google DeepMind on bringing foundation models to its machines."
+   },
+   "founders": [
+    {
+     "name": "Zhaopeng Chen",
+     "role": "Co-founder and CEO"
+    },
+    {
+     "name": "Peter Meusel",
+     "role": "Co-founder"
+    }
+   ],
+   "investors": [
+    "SoftBank Vision Fund",
+    "Sequoia China",
+    "Linear Venture",
+    "Foxconn"
+   ],
+   "totalRaised": {
+    "amount": 270,
+    "currency": "USD",
+    "approximate": true,
+    "source": "s1"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2026-06",
+     "stage": "Round reported in talks",
+     "amount": null,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": null,
+     "postMoneyCurrency": null,
+     "leadInvestors": [],
+     "investors": [
+      "SoftBank Vision Fund"
+     ],
+     "source": "s2",
+     "undisclosed": {
+      "note": "Reported as being in talks at $800m. No round and no post-money has been confirmed.",
+      "source": "s2"
+     },
+     "dateLabel": "Jun 2026",
+     "amountLabel": null
+    }
+   ],
+   "becameUnicorn": {
+    "date": "2026-06",
+    "roundId": "r1",
+    "source": "s2"
+   },
+   "valuation": {
+    "amount": null,
+    "currency": null,
+    "approximate": false,
+    "asOf": "2026-06",
+    "round": "Round reported in talks",
+    "source": "s2",
+    "undisclosed": {
+     "note": "Widely counted as a German robotics unicorn. No allowlisted page states a valuation, and the most recent reporting is of a round in talks.",
+     "source": "s2"
+    }
+   },
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "TechCrunch",
+     "title": "Agile Robots partners with Google DeepMind",
+     "url": "https://techcrunch.com/2026/03/12/agile-robots-google-deepmind/",
+     "publishedOn": "2026-03-12",
+     "quote": "Munich, Germany-based Agile Robots has raised more than $270 million in venture capital funding.",
+     "publishedLabel": "12 Mar 2026"
+    },
+    {
+     "id": "s2",
+     "publication": "Sifted",
+     "title": "SoftBank in talks to back Agile Robots' $800m round, reports say",
+     "url": "https://sifted.eu/articles/softbank-in-talks-to-back-agile-robotics-in-800m-round-reports-say",
+     "publishedOn": "2026-06-02",
+     "quote": "SoftBank in talks to back Agile Robots' $800m round, reports say",
+     "publishedLabel": "2 Jun 2026"
+    }
+   ],
+   "display": {
+    "valuationLabel": "Undisclosed",
+    "valuationUndisclosed": true,
+    "valuationUndisclosedBadge": ">1bn",
+    "valuationAsOf": "Jun 2026",
+    "lastRoundLabel": "Jun 2026",
+    "lastRoundStage": "Round reported in talks",
+    "yearsToUnicorn": 8,
+    "becameUnicornLabel": "Jun 2026",
+    "unicornThresholdLabel": "unicorn",
+    "unicornFlagLabel": "reached unicorn status",
+    "foundersLabel": "Zhaopeng Chen, Peter Meusel",
+    "aged": false,
+    "websiteLabel": "agile-robots.com",
+    "verification": "reported",
+    "reported": true,
+    "valuationBarPct": null
+   },
+   "sort": {
+    "newest": [
+     2026,
+     6
+    ],
+    "valuationEur": null,
+    "latestRound": [
+     2026,
+     6
+    ],
+    "name": "agile robots"
+   },
+   "investorsOrdered": [
+    "SoftBank Vision Fund",
+    "Sequoia China",
+    "Linear Venture",
+    "Foxconn"
    ]
   },
   {
@@ -491,6 +644,8 @@
     "foundersLabel": "Robin Rombach, Patrick Esser, Andreas Blattmann",
     "aged": false,
     "websiteLabel": "bfl.ai",
+    "verification": "verified",
+    "reported": false,
     "valuationBarPct": 18.1
    },
    "sort": {
@@ -745,6 +900,8 @@
     "foundersLabel": "Alexander Rinke, Bastian Nominacher, Martin Klenk",
     "aged": false,
     "websiteLabel": "celonis.com",
+    "verification": "verified",
+    "reported": false,
     "valuationBarPct": 72.2
    },
    "sort": {
@@ -942,6 +1099,8 @@
     "foundersLabel": "Daniel Khachab, Julian Hammer, Grégoire Ambroselli",
     "aged": false,
     "websiteLabel": "choco.com",
+    "verification": "verified",
+    "reported": false,
     "valuationBarPct": 6.7
    },
    "sort": {
@@ -1076,6 +1235,8 @@
     "foundersLabel": "–",
     "aged": false,
     "websiteLabel": "cmblu.com",
+    "verification": "verified",
+    "reported": false,
     "valuationBarPct": 6.0
    },
    "sort": {
@@ -1235,8 +1396,10 @@
     "unicornThresholdLabel": "$1bn",
     "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Dirk Hoerig",
-    "aged": false,
+    "aged": true,
     "websiteLabel": "commercetools.com",
+    "verification": "verified",
+    "reported": false,
     "valuationBarPct": 10.6
    },
    "sort": {
@@ -1447,6 +1610,8 @@
     "foundersLabel": "Mirko Novakovic, Ben Blackmore, Miel Donkers, Marcel Birkner, Michele Mancioppi",
     "aged": false,
     "websiteLabel": "dash0.com",
+    "verification": "verified",
+    "reported": false,
     "valuationBarPct": 5.6
    },
    "sort": {
@@ -1616,6 +1781,8 @@
     "foundersLabel": "Jaroslaw Kutylowski",
     "aged": false,
     "websiteLabel": "deepl.com",
+    "verification": "verified",
+    "reported": false,
     "valuationBarPct": 11.1
    },
    "sort": {
@@ -1823,6 +1990,8 @@
     "foundersLabel": "Mario Kohle, Viktor Wingert, Jochen Ziervogel",
     "aged": true,
     "websiteLabel": "enpal.de",
+    "verification": "verified",
+    "reported": false,
     "valuationBarPct": 13.3
    },
    "sort": {
@@ -2023,6 +2192,8 @@
     "foundersLabel": "Maximilian Wühr, Nikolai Schröder, Max Beyer, Max-Josef Meier",
     "aged": false,
     "websiteLabel": "finn.com",
+    "verification": "verified",
+    "reported": false,
     "valuationBarPct": 6.0
    },
    "sort": {
@@ -2295,6 +2466,8 @@
     "foundersLabel": "André Schwämmlein, Daniel Krauss, Jochen Engert",
     "aged": true,
     "websiteLabel": "corporate.flix.com",
+    "verification": "verified",
+    "reported": false,
     "valuationBarPct": 16.7
    },
    "sort": {
@@ -2477,6 +2650,8 @@
     "foundersLabel": "Thomas Forner",
     "aged": false,
     "websiteLabel": "focused-energy.co",
+    "verification": "verified",
+    "reported": false,
     "valuationBarPct": null
    },
    "sort": {
@@ -2669,6 +2844,8 @@
     "foundersLabel": "Michael Wax, Erik Muttersbach, Ferry Heilemann, Fabian Heilemann",
     "aged": false,
     "websiteLabel": "forto.com",
+    "verification": "verified",
+    "reported": false,
     "valuationBarPct": 11.7
    },
    "sort": {
@@ -2695,6 +2872,131 @@
     "Inven Capital",
     "Iris Capital",
     "Global Founders Capital"
+   ]
+  },
+  {
+   "slug": "grover",
+   "name": "Grover",
+   "website": "https://www.grover.com",
+   "logo": null,
+   "verification": "reported",
+   "hq": {
+    "city": "Berlin",
+    "country": "Germany"
+   },
+   "foundedCountry": "Germany",
+   "foundedYear": 2015,
+   "sectors": [
+    "E-commerce and Retail"
+   ],
+   "niche": "Consumer Electronics Rental",
+   "thesis": {
+    "problem": "Consumer electronics are bought outright, used for a fraction of their life and then kept in a drawer, which is expensive for the buyer and wasteful for everyone. Renting is the obvious alternative and has mostly failed, because somebody has to finance the hardware, underwrite the customer and handle the device when it comes back.",
+    "solution": "Grover rents phones, laptops and other consumer electronics by the month, taking the financing, the credit risk and the refurbishment onto its own balance sheet so the customer sees a subscription. That makes it as much a financing business as a retailer, and most of the money it has raised is debt to buy the devices rather than equity in the company."
+   },
+   "founders": [
+    {
+     "name": "Michael Cassau",
+     "role": "Founder and CEO"
+    }
+   ],
+   "investors": [
+    "Energy Impact Partners",
+    "Korelya Capital",
+    "Viola Credit"
+   ],
+   "totalRaised": {
+    "amount": 2000,
+    "currency": "USD",
+    "approximate": true,
+    "source": "s1"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2022-04",
+     "stage": "Series C",
+     "amount": null,
+     "currency": "USD",
+     "approximate": true,
+     "postMoney": null,
+     "postMoneyCurrency": null,
+     "leadInvestors": [],
+     "investors": [
+      "Energy Impact Partners",
+      "Korelya Capital"
+     ],
+     "source": "s1",
+     "undisclosed": {
+      "note": "Tech.eu reports unicorn status without printing a post-money.",
+      "source": "s1"
+     },
+     "dateLabel": "Apr 2022",
+     "amountLabel": null
+    }
+   ],
+   "becameUnicorn": {
+    "date": "2022-04",
+    "roundId": "r1",
+    "source": "s1"
+   },
+   "valuation": {
+    "amount": null,
+    "currency": null,
+    "approximate": false,
+    "asOf": "2022-04",
+    "round": "Series C",
+    "source": "s1",
+    "undisclosed": {
+     "note": "Tech.eu called it a unicorn in 2022 and printed no figure, and most of the money behind the label was debt. Nothing since restates the valuation.",
+     "source": "s1"
+    }
+   },
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "Tech.eu",
+     "title": "Berlin's Grover hits super Grover status with unicorn valuation, but...",
+     "url": "https://tech.eu/2022/04/07/berlins-grover-hits-super-grover-status-with-unicorn-valuation-but/",
+     "publishedOn": "2022-04-07",
+     "quote": "As tech rental platform Grover achieves unicorn status, it's also raised over $2 billion in funding, the vast majority of which is debt",
+     "publishedLabel": "7 Apr 2022"
+    }
+   ],
+   "display": {
+    "valuationLabel": "Undisclosed",
+    "valuationUndisclosed": true,
+    "valuationUndisclosedBadge": ">1bn",
+    "valuationAsOf": "Apr 2022",
+    "lastRoundLabel": "Apr 2022",
+    "lastRoundStage": "Series C",
+    "yearsToUnicorn": 7,
+    "becameUnicornLabel": "Apr 2022",
+    "unicornThresholdLabel": "unicorn",
+    "unicornFlagLabel": "reached unicorn status",
+    "foundersLabel": "Michael Cassau",
+    "aged": false,
+    "websiteLabel": "grover.com",
+    "verification": "reported",
+    "reported": true,
+    "valuationBarPct": null
+   },
+   "sort": {
+    "newest": [
+     2022,
+     4
+    ],
+    "valuationEur": null,
+    "latestRound": [
+     2022,
+     4
+    ],
+    "name": "grover"
+   },
+   "investorsOrdered": [
+    "Energy Impact Partners",
+    "Korelya Capital",
+    "Viola Credit"
    ]
   },
   {
@@ -2960,6 +3262,8 @@
     "foundersLabel": "Torsten Reil, Gundbert Scherf, Niklas Köhler",
     "aged": false,
     "websiteLabel": "helsing.ai",
+    "verification": "verified",
+    "reported": false,
     "valuationBarPct": 100.0
    },
    "sort": {
@@ -3226,6 +3530,8 @@
     "foundersLabel": "Daniel Metzler, Josef Fleischmann, Markus Brandl",
     "aged": false,
     "websiteLabel": "isaraerospace.com",
+    "verification": "verified",
+    "reported": false,
     "valuationBarPct": null
    },
    "sort": {
@@ -3412,6 +3718,8 @@
     "foundersLabel": "Ante Spittler, Anton Rummel, Ferdinand Meyer, Stephan Haslebacher",
     "aged": false,
     "websiteLabel": "getmoss.com",
+    "verification": "verified",
+    "reported": false,
     "valuationBarPct": 6.0
    },
    "sort": {
@@ -3608,6 +3916,8 @@
     "foundersLabel": "Valentin Stalf, Maximilian Tayenthal",
     "aged": false,
     "websiteLabel": "n26.com",
+    "verification": "verified",
+    "reported": false,
     "valuationBarPct": 50.0
    },
    "sort": {
@@ -3823,6 +4133,8 @@
     "foundersLabel": "Jan Oberhauser",
     "aged": false,
     "websiteLabel": "n8n.io",
+    "verification": "verified",
+    "reported": false,
     "valuationBarPct": 28.9
    },
    "sort": {
@@ -4041,6 +4353,8 @@
     "foundersLabel": "David Reger",
     "aged": false,
     "websiteLabel": "neura-robotics.com",
+    "verification": "verified",
+    "reported": false,
     "valuationBarPct": 38.9
    },
    "sort": {
@@ -4242,6 +4556,8 @@
     "foundersLabel": "Alberto Zamora, Matthias Jungblut, Stefan Wawrzinek",
     "aged": false,
     "websiteLabel": "osapiens.com",
+    "verification": "verified",
+    "reported": false,
     "valuationBarPct": 6.1
    },
    "sort": {
@@ -4431,6 +4747,8 @@
     "foundersLabel": "Malte Kosub, Stefan Ostwald",
     "aged": false,
     "websiteLabel": "parloa.com",
+    "verification": "verified",
+    "reported": false,
     "valuationBarPct": 16.7
    },
    "sort": {
@@ -4633,6 +4951,8 @@
     "foundersLabel": "Hanno Renner, Roman Schumacher, Arseniy Vershinin, Jonas Rieke",
     "aged": false,
     "websiteLabel": "personio.com",
+    "verification": "verified",
+    "reported": false,
     "valuationBarPct": 47.2
    },
    "sort": {
@@ -4876,6 +5196,8 @@
     "foundersLabel": "Francesco Sciortino, Lucio Milanese, Jorrit Lion, Martin Kubie, Jonathan Schilling",
     "aged": false,
     "websiteLabel": "proximafusion.com",
+    "verification": "verified",
+    "reported": false,
     "valuationBarPct": 14.5
    },
    "sort": {
@@ -5154,6 +5476,8 @@
     "foundersLabel": "Florian Seibel",
     "aged": false,
     "websiteLabel": "quantum-systems.com",
+    "verification": "verified",
+    "reported": false,
     "valuationBarPct": 44.4
    },
    "sort": {
@@ -5417,6 +5741,8 @@
     "foundersLabel": "Tamaz Georgadze, Frank Freund, Michael Stephan",
     "aged": false,
     "websiteLabel": "raisin.com",
+    "verification": "verified",
+    "reported": false,
     "valuationBarPct": null
    },
    "sort": {
@@ -5647,6 +5973,8 @@
     "foundersLabel": "Tushar Ahluwalia, Shrestha Chowdhury, Oliver Dlugosch, Christoph Felix Gamon",
     "aged": false,
     "websiteLabel": "razor-group.com",
+    "verification": "verified",
+    "reported": false,
     "valuationBarPct": 6.7
    },
    "sort": {
@@ -5673,6 +6001,169 @@
     "Upper90",
     "Jebsen Capital",
     "LatinLeap"
+   ]
+  },
+  {
+   "slug": "robco",
+   "name": "RobCo",
+   "website": "https://www.rob.co",
+   "logo": null,
+   "hq": {
+    "city": "Munich",
+    "country": "Germany"
+   },
+   "foundedCountry": "Germany",
+   "foundedYear": 2020,
+   "sectors": [
+    "Artificial Intelligence"
+   ],
+   "niche": "Industrial Robotics",
+   "thesis": {
+    "problem": "Most factory work that is still done by hand is high-mix, unstructured and safety-critical, which is exactly the work conventional industrial automation has never been able to take on. A traditional robot cell is programmed for one task on one line, costs six figures before it moves, and stops earning the day the product changes, so the mid-sized manufacturers who make up most of German industry have largely stayed out.",
+    "solution": "RobCo builds modular robots and the software that makes them autonomous, combining perception, motion planning and self-learning so a system can handle machine tending, palletising, dispensing and welding without being reprogrammed for every variant. It is sold as robotics-as-a-service with no upfront investment, which moves the cost from capital expenditure to a monthly line, and its Alfie robot is built for the whole autonomous industrial lifecycle rather than a single station."
+   },
+   "founders": [
+    {
+     "name": "Roman Hölzl",
+     "role": "Co-founder and CEO"
+    }
+   ],
+   "investors": [
+    "Sequoia",
+    "Lightspeed",
+    "Lingotto",
+    "Greenfield",
+    "Kindred",
+    "Promus Ventures",
+    "Cherry Ventures",
+    "European Tech Collective"
+   ],
+   "totalRaised": {
+    "amount": null,
+    "currency": "EUR",
+    "approximate": false,
+    "source": "s2"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2026-01",
+     "stage": "Series C",
+     "amount": 89.2,
+     "currency": "EUR",
+     "approximate": false,
+     "postMoney": null,
+     "postMoneyCurrency": null,
+     "leadInvestors": [
+      "Lightspeed Venture Partners",
+      "Lingotto Innovation"
+     ],
+     "investors": [
+      "Lightspeed Venture Partners",
+      "Lingotto Innovation"
+     ],
+     "source": "s2",
+     "dateLabel": "Jan 2026",
+     "amountLabel": "€89.2 m"
+    },
+    {
+     "id": "r2",
+     "date": "2026-10",
+     "stage": "Secondary and new investment",
+     "amount": null,
+     "currency": "EUR",
+     "approximate": false,
+     "postMoney": 1000,
+     "postMoneyCurrency": "USD",
+     "postMoneySource": "s1",
+     "leadInvestors": [],
+     "investors": [
+      "Sequoia",
+      "Lightspeed",
+      "Greenfield",
+      "Kindred",
+      "Lingotto",
+      "Promus Ventures",
+      "Cherry Ventures",
+      "European Tech Collective"
+     ],
+     "source": "s1",
+     "dateLabel": "Oct 2026",
+     "amountLabel": null
+    }
+   ],
+   "becameUnicorn": {
+    "date": "2026-10",
+    "roundId": "r2",
+    "source": "s1"
+   },
+   "valuation": {
+    "amount": 1000,
+    "currency": "USD",
+    "approximate": false,
+    "asOf": "2026-10",
+    "round": "Secondary and new investment",
+    "source": "s1"
+   },
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "EU-Startups",
+     "title": "Munich-based RobCo becomes a robotics unicorn as valuation doubles in nine months",
+     "url": "https://www.eu-startups.com/2026/10/munich-based-robco-becomes-a-robotics-unicorn-as-valuation-doubles-in-nine-months/",
+     "publishedOn": "2026-10-05",
+     "quote": "RobCo, a Munich-based robotics startup focused on industrial automation, today announced that it has surpassed an €892.4 million ($1 billion) valuation in a transaction that combines new investment and an employee secondary share sale.",
+     "publishedLabel": "5 Oct 2026"
+    },
+    {
+     "id": "s2",
+     "publication": "EU-Startups",
+     "title": "Munich-based RobCo becomes a robotics unicorn as valuation doubles in nine months",
+     "url": "https://www.eu-startups.com/2026/10/munich-based-robco-becomes-a-robotics-unicorn-as-valuation-doubles-in-nine-months/",
+     "publishedOn": "2026-10-05",
+     "quote": "Earlier this year, in January, the company raised €89.2 million ($100 million) in a Series C round co-led by Lightspeed Venture Partners and Lingotto Innovation.",
+     "publishedLabel": "5 Oct 2026"
+    }
+   ],
+   "display": {
+    "valuationLabel": "$1 bn",
+    "valuationUndisclosed": false,
+    "valuationUndisclosedBadge": null,
+    "valuationAsOf": "Oct 2026",
+    "lastRoundLabel": "Oct 2026",
+    "lastRoundStage": "Secondary and new investment",
+    "yearsToUnicorn": 6,
+    "becameUnicornLabel": "Oct 2026",
+    "unicornThresholdLabel": "$1bn",
+    "unicornFlagLabel": "crossed $1bn",
+    "foundersLabel": "Roman Hölzl",
+    "aged": false,
+    "websiteLabel": "rob.co",
+    "verification": "verified",
+    "reported": false,
+    "valuationBarPct": 5.6
+   },
+   "sort": {
+    "newest": [
+     2026,
+     10
+    ],
+    "valuationEur": 920.0,
+    "latestRound": [
+     2026,
+     10
+    ],
+    "name": "robco"
+   },
+   "investorsOrdered": [
+    "Sequoia",
+    "Lightspeed",
+    "Lingotto",
+    "Greenfield",
+    "Kindred",
+    "Promus Ventures",
+    "Cherry Ventures",
+    "European Tech Collective"
    ]
   },
   {
@@ -5886,6 +6377,8 @@
     "foundersLabel": "Erik Podzuweit, Florian Prucker, Adam French, Stefan Mittnik",
     "aged": false,
     "websiteLabel": "de.scalable.capital",
+    "verification": "verified",
+    "reported": false,
     "valuationBarPct": 7.8
    },
    "sort": {
@@ -6098,6 +6591,8 @@
     "foundersLabel": "David Nothacker, Julius Köhler, Nicolaus Schefenacker",
     "aged": true,
     "websiteLabel": "sennder.com",
+    "verification": "verified",
+    "reported": false,
     "valuationBarPct": 5.6
    },
    "sort": {
@@ -6277,6 +6772,8 @@
     "foundersLabel": "Martin Böhringer, Lutz Gerlach, Frank Wolf",
     "aged": false,
     "websiteLabel": "staffbase.com",
+    "verification": "verified",
+    "reported": false,
     "valuationBarPct": 6.1
    },
    "sort": {
@@ -6507,6 +7004,8 @@
     "foundersLabel": "Florian Seibel",
     "aged": false,
     "websiteLabel": "stark-defence.com",
+    "verification": "verified",
+    "reported": false,
     "valuationBarPct": 21.1
    },
    "sort": {
@@ -6677,6 +7176,8 @@
     "foundersLabel": "Mathis Büchi, Lino Teuteberg",
     "aged": false,
     "websiteLabel": "taxfix.de",
+    "verification": "verified",
+    "reported": false,
     "valuationBarPct": 5.6
    },
    "sort": {
@@ -6866,6 +7367,8 @@
     "foundersLabel": "Christian Hecker, Thomas Pischke, Marco Cancellieri",
     "aged": false,
     "websiteLabel": "traderepublic.com",
+    "verification": "verified",
+    "reported": false,
     "valuationBarPct": 75.5
    },
    "sort": {

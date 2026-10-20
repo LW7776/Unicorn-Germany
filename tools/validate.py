@@ -30,6 +30,23 @@ from tools.schema import (
 REQUIRED = ["slug", "name", "website", "logo", "hq", "foundedCountry", "foundedYear",
             "sectors", "niche", "thesis", "valuation", "becameUnicorn", "totalRaised",
             "rounds", "founders", "investors", "sources"]
+
+# The two tiers a record can be published at.
+#
+#   verified   An allowlisted page, opened and read, says this company is over the
+#              threshold — in digits or in words. Every record carried this status
+#              implicitly until October 2026, when it became something a record says.
+#   reported   Somebody credible counts this company as a unicorn and this register
+#              could not verify it to the standard above. The company is published,
+#              marked, and left out of every figure that claims verification.
+#
+# The second tier exists because the alternative was worse. Six companies sat in
+# docs/CANDIDATES.md under "cannot be established" — not disproved, merely unproven —
+# and a register that silently omits them tells a reader less than one that shows them
+# and says why. What it must never do is let them pass as verified, so `reported`
+# carries its own marker on the card, its own line in the window, and its own number
+# in the summary row.
+VERIFICATION_TIERS = {"verified", "reported"}
 THRESHOLD_MILLIONS = 1000          # $1B or €1B, as reported. No FX conversion.
 SLUG = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 
@@ -49,6 +66,51 @@ def _require_string(errors, label, value):
         errors.append(f"{label} must be a non-empty string")
 
 
+def _validate_logo(record):
+    """A logo is a company's own mark and this register does not draw substitutes.
+
+    `logo` may therefore be null, and the card then sets the company's name on the
+    plate instead. That is honest in a way an approximated wordmark is not, and it
+    keeps DESIGN.md's rule that logos are never altered true by the simplest route:
+    where there is no file, there is no mark, only a name.
+    """
+    logo = record.get("logo")
+    if logo is None:
+        return []
+    if not isinstance(logo, str) or not logo.strip():
+        return ["logo must be a non-empty string or null"]
+    return []
+
+
+def _validate_verification(record):
+    """`verification` is optional and defaults to verified, so every record written
+    before this field existed stays valid and stays verified.
+
+    A reported record may not carry a figure. The whole content of the tier is that
+    no post-money could be established, and a record that prints one has either been
+    verified (in which case say so) or invented one (in which case it does not ship).
+    """
+    errors = []
+    tier = record.get("verification", "verified")
+    if tier not in VERIFICATION_TIERS:
+        errors.append(
+            f"verification must be one of {', '.join(sorted(VERIFICATION_TIERS))}, "
+            f"got {tier!r}")
+        return errors
+    if tier == "reported":
+        if (record.get("valuation") or {}).get("amount") is not None:
+            errors.append(
+                "a reported record cannot carry a valuation amount — the tier means no "
+                "post-money was established, so either verify it and say `verified`, or "
+                "record the valuation as undisclosed")
+        if (record.get("valuation") or {}).get("undisclosed") is None:
+            errors.append(
+                "a reported record needs valuation.undisclosed: the note is where it says "
+                "who reports this company as a unicorn and what this register could not "
+                "confirm")
+    return errors
+
+
 def _validate_types(record):
     """Presence (REQUIRED, above) only proves a key exists — a record can pass
     that check with `"sectors": null` or `"foundedYear": "2015"` and still
@@ -56,8 +118,10 @@ def _validate_types(record):
     figure checks, tools/build.py's derive_company). This is the real gate:
     it fails fast, before any code assumes a field has the shape it needs."""
     errors = []
+    # `logo` is checked separately below: it may be null, which is how a record
+    # ships without putting a mark on the plate it has no right to draw.
     for label, key in (("name", "name"), ("website", "website"),
-                        ("logo", "logo"), ("slug", "slug")):
+                        ("slug", "slug")):
         _require_string(errors, label, record.get(key))
 
     # `sectors` is the broad-industry filter vocabulary (a handful of chips shared
@@ -120,6 +184,10 @@ def validate_company(record):
     if errors:
         return errors
 
+    errors = _validate_verification(record) + _validate_logo(record)
+    if errors:
+        return errors
+
     if not SLUG.match(record["slug"]):
         errors.append(f"slug must be lowercase and hyphenated: {record['slug']!r}")
     if not str(record["website"]).startswith("https://"):
@@ -130,6 +198,14 @@ def validate_company(record):
         for field in ("id", "publication", "title", "url", "publishedOn", "quote"):
             if not source.get(field):
                 errors.append(f"source {source.get('id', '?')} is missing {field}")
+        # Optional, and required by convention rather than by code for anything a
+        # publisher can take down or edit in place — a company's own LinkedIn post
+        # most of all. The register's promise is that a quote can be re-opened and
+        # re-checked, and a post that can vanish silently does not keep it.
+        archive = source.get("archiveUrl")
+        if archive is not None and not str(archive).startswith("https://"):
+            errors.append(
+                f"source {source.get('id', '?')}: archiveUrl must be an https URL")
         if source.get("publication") not in SOURCE_ALLOWLIST:
             errors.append(f"source publication not on the allowlist: {source.get('publication')!r}")
         if not is_full_date(source.get("publishedOn", "")):

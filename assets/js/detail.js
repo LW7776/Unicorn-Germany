@@ -168,7 +168,9 @@ function markup(company) {
     </svg>
   </button>
   <header class="detail__head">
-    <span class="cell__plate detail__plate"><img src="${logo}" alt="${name} logo"></span>
+    <span class="cell__plate detail__plate">${company.logo
+      ? `<img src="${escapeHtml(company.logo)}" alt="${name} logo">`
+      : `<span class="cell__wordmark">${name}</span>`}</span>
     <div>
       <h2>${name}</h2>
       <p class="detail__meta">
@@ -193,7 +195,8 @@ function markup(company) {
         // published — say so, and keep the staleness flag it still drives.
         ? `${dash(d.valuationUndisclosedBadge)} · reported ${dash(d.valuationAsOf)}${d.aged ? " · aged" : ""}`
         : `as of ${dash(d.valuationAsOf)}${d.aged ? " · aged" : ""}`,
-      undisclosedBadge(company.valuation.undisclosed, company.sources)
+      undisclosedBadge(company.valuation.undisclosed, company.sources,
+        d.reported ? "reported, not verified" : undefined)
       + disputedBadge(company.valuation.disputed, company.sources),
       // "Undisclosed" is a word, not a figure: eleven characters where the other
       // tiles hold four or five ("$8 bn"). At the figure size it overruns a

@@ -11,6 +11,49 @@ commit. There are three ways to change the content, and all three end in the sam
 | **B. `admin.html` form** | A browser | Adding a whole company, or editing many fields at once |
 | **C. Files and terminal** | Python | Bulk edits, or when you are already in the repository |
 
+## Which source to cite
+
+**Prefer the company's own announcement to a report of it.** A press release, a lead
+investor's release or a company's own post states the figure first-hand, and most trade
+coverage is paraphrasing that same sentence. The order of preference is:
+
+1. The company's own announcement — newsroom, blog, or its own LinkedIn post.
+2. A lead investor's announcement of the same round.
+3. An allowlisted publication reporting it.
+
+Record it as `Company press release` wherever the company is the author. **The platform is
+not the test, authorship is**, so a company's own LinkedIn post qualifies and LinkedIn
+itself is not on the allowlist — anybody can post there, and a third party's post about a
+company is not that company announcing anything.
+
+**Where both exist and disagree, publish the company's figure and record the other beside
+it** as a `disputed` note with its own citation. That is the same answer the register
+already gives when two publications disagree.
+
+**Anything a publisher can edit or delete in place should carry an `archiveUrl`** next to
+its `url`. A LinkedIn post most of all. The register's promise is that a quote can be
+re-opened and re-checked, and a citation that can vanish silently does not keep it.
+
+## Publication tiers
+
+A record carries `"verification": "verified"` or `"reported"`, and the field may be
+omitted, which means verified.
+
+**verified** — an allowlisted page, opened and read, states the company is over the
+threshold, in digits or in words. Every record written before October 2026 is this.
+
+**reported** — a credible outside count treats the company as a unicorn and that standard
+could not be met here. The record is published, marked `reported` on its card, excluded
+from the combined value, and counted separately in the summary row. It may not carry a
+valuation figure: the entire content of the tier is that no post-money was established, so
+`valuation.undisclosed` is required and its note says what is and is not known.
+
+The tier exists because the alternative was worse. Companies nobody disputes are unicorns
+were sitting in `CANDIDATES.md` under "cannot be established", invisible to a reader of the
+register, and a list that silently omits them says less than one that shows them and
+explains. What the tier must never do is let a reported company pass as verified, which is
+why it is marked in three places rather than one.
+
 ## Inclusion rules
 
 A company qualifies only if all three hold:

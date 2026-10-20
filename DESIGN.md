@@ -59,7 +59,7 @@ Anyone reading this file because a light mode "seems to be missing" has found th
 | `--beam` | `#4C7DFF` | Graphics, particles, focus ring |
 | `--beam-text` | `#8FB0FF` | Link and accent **text** only (4.5:1 on `--void`) |
 | `--violet` | `#A97BFF` | Gradient partner; the €1bn marker |
-| `--amber` | `#E0A24B` | Aged and disputed signals |
+| `--amber` | `#E0A24B` | Every caveat: aged, disputed, undisclosed, `>1bn`, reported |
 | `--plate` | `#F7F8FA` | The white plate logos sit on |
 | `--plate-ink` | `#14161A` | Text on the white logo plate — the only token for light surfaces |
 
@@ -67,7 +67,7 @@ Two accents exist because `--beam` is a graphics colour and fails 4.5:1 as text.
 type in `--beam`.
 
 **Blue and violet are the only accents, and amber is not a third one.** Amber carries every
-caveat on the site — `aged`, `disputed`, `Undisclosed`, `>1bn` — and a second warm colour
+caveat on the site — `aged`, `disputed`, `Undisclosed`, `>1bn`, `reported` — and a second warm colour
 used decoratively would make a reader work out which warm thing is a warning. If something
 needs emphasis, reach for weight, size or space first.
 

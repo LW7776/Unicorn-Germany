@@ -229,6 +229,15 @@
 }
 .cell > .cell__plate { height: 5.5rem; }
 .cell__plate img { max-height: 3rem; max-width: 100%; width: auto; object-fit: contain; }
+/* The plate for a company whose mark the register does not hold. Display face on
+   the light surface, because a name set in the product's own type is a name, while
+   a traced or recoloured logo would be a claim about someone else's mark. */
+.cell__wordmark {
+  font-family: var(--font-display); font-weight: 800; font-stretch: 112%;
+  letter-spacing: -.02em; line-height: 1; text-align: center;
+  color: var(--plate-ink); font-size: var(--step-1);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 100%;
+}
 /* Flex-wrap, not a plain inline run, and the reason is a real overflow rather
    than tidiness. register.js writes the figure and its markers as adjacent
    elements with no whitespace between them — `${valuationLabel}${undisclosed}`
@@ -266,6 +275,10 @@
 /* The value yields first. A marker is two or three characters and losing half of
    one destroys it, while a truncated figure still reads as a figure. */
 .cell__value { min-width: 0; }
+/* The reported marker is the same amber object as every other caveat, because it
+   is one. It is deliberately not a new colour: DESIGN.md gives amber every
+   qualification on the site, and a second warning hue would make a reader work out
+   which warning is which. */
 .cell__aged, .cell__undisclosed { flex: none; }
 .cell__asof { font-size: var(--step--1); color: var(--muted); }
 /* The hairline under every figure on the site. It is what makes the figure, its

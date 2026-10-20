@@ -1,0 +1,87 @@
+{
+  "slug": "grover",
+  "name": "Grover",
+  "website": "https://www.grover.com",
+  "logo": null,
+  "verification": "reported",
+  "hq": {
+    "city": "Berlin",
+    "country": "Germany"
+  },
+  "foundedCountry": "Germany",
+  "foundedYear": 2015,
+  "sectors": [
+    "E-commerce and Retail"
+  ],
+  "niche": "Consumer Electronics Rental",
+  "thesis": {
+    "problem": "Consumer electronics are bought outright, used for a fraction of their life and then kept in a drawer, which is expensive for the buyer and wasteful for everyone. Renting is the obvious alternative and has mostly failed, because somebody has to finance the hardware, underwrite the customer and handle the device when it comes back.",
+    "solution": "Grover rents phones, laptops and other consumer electronics by the month, taking the financing, the credit risk and the refurbishment onto its own balance sheet so the customer sees a subscription. That makes it as much a financing business as a retailer, and most of the money it has raised is debt to buy the devices rather than equity in the company."
+  },
+  "founders": [
+    {
+      "name": "Michael Cassau",
+      "role": "Founder and CEO"
+    }
+  ],
+  "investors": [
+    "Energy Impact Partners",
+    "Korelya Capital",
+    "Viola Credit"
+  ],
+  "totalRaised": {
+    "amount": 2000,
+    "currency": "USD",
+    "approximate": true,
+    "source": "s1"
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "date": "2022-04",
+      "stage": "Series C",
+      "amount": null,
+      "currency": "USD",
+      "approximate": true,
+      "postMoney": null,
+      "postMoneyCurrency": null,
+      "leadInvestors": [],
+      "investors": [
+        "Energy Impact Partners",
+        "Korelya Capital"
+      ],
+      "source": "s1",
+      "undisclosed": {
+        "note": "Tech.eu reports unicorn status without printing a post-money.",
+        "source": "s1"
+      }
+    }
+  ],
+  "becameUnicorn": {
+    "date": "2022-04",
+    "roundId": "r1",
+    "source": "s1"
+  },
+  "valuation": {
+    "amount": null,
+    "currency": null,
+    "approximate": false,
+    "asOf": "2022-04",
+    "round": "Series C",
+    "source": "s1",
+    "undisclosed": {
+      "note": "Tech.eu called it a unicorn in 2022 and printed no figure, and most of the money behind the label was debt. Nothing since restates the valuation.",
+      "source": "s1"
+    }
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "publication": "Tech.eu",
+      "title": "Berlin's Grover hits super Grover status with unicorn valuation, but...",
+      "url": "https://tech.eu/2022/04/07/berlins-grover-hits-super-grover-status-with-unicorn-valuation-but/",
+      "publishedOn": "2022-04-07",
+      "quote": "As tech rental platform Grover achieves unicorn status, it's also raised over $2 billion in funding, the vast majority of which is debt"
+    }
+  ]
+}
