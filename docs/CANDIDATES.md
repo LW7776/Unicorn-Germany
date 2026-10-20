@@ -358,6 +358,23 @@ Notes carried into the records:
   recognise. Re-running the script left the outline byte-identical — no pixel in that file is
   placed by hand.
 
+## The 39-name audit (October 2026)
+
+A published list of 39 German unicorns was checked name by name against this file and against
+`data/companies/`. **Five names had never been looked at.** Four are now in the register and
+one is excluded. The exercise also says something about the lists: it carries Volocopter
+(insolvent), TIER (merged into Dott), wefox, Contentful, EGYM and Qontigo, all of which this
+file had already settled as failing a rule. A list of unicorns that still contains a wound-up
+company is a snapshot nobody re-checked, which is the argument for keeping this file.
+
+| Company | Finding | Status |
+|---|---|---|
+| **GetYourGuide** | TechCrunch, opened and read: "The round values GetYourGuide at $2 billion" ([2023-05-31](https://techcrunch.com/2023/05/31/getyourguide-books-194m-at-a-2b-valuation-with-travel-experiences-back-in-business/)). Berlin, private, independent. A straightforward miss, and the largest of the four | **include** |
+| **Berlin Brands Group** | TechCrunch: "BBG confirmed that the investment ... boosts its valuation to over $1 billion" ([2021-09-01](https://techcrunch.com/2021/09/01/berlin-brands-group-now-valued-at-1b-raises-700m-to-buy-and-scale-merchants-that-sell-on-marketplaces-like-amazon/)). Founder keeps the majority. The figure is five years old and the card carries the aged marker, which is the point of the marker | **include** |
+| **Chrono24** | EU-Startups: the Series C was "worth €100 million and solidifying the watch market's unicorn status with a valuation today exceeding $1 billion" ([2023-07-12](https://www.eu-startups.com/2023/07/star-funding-cristiano-ronaldo-invests-in-the-germany-based-luxury-watch-marketplace-chrono24/)). Karlsruhe, founded 2003 | **include** |
+| **OneFootball** | Tech.eu: "OneFootball, a Germany-based football media company, has raised €150 million at a unicorn valuation" ([2022-04-22](https://tech.eu/2022/04/22/this-week-in-european-tech-22-april-2022/)). Status stated, no figure, and nothing since. Raised at the peak of the Web3 enthusiasm that funded part of the business, so a 2022 status claim is not a statement about today | **reported** |
+| **Qontigo** | Not a startup and not independent. It was assembled by Deutsche Börse out of Axioma and STOXX and has since been folded into ISS STOXX, so rule 2 fails on ownership rather than on any question about its size. **If this is ever revisited:** the citation is still to be found, and the row rests on the ownership being uncontested rather than on a page that was opened | **exclude** |
+
 ## Include — reported (batch 6)
 
 **A third publication tier, added in October 2026.** Two companies moved here out of "cannot

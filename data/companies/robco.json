@@ -2,7 +2,7 @@
   "slug": "robco",
   "name": "RobCo",
   "website": "https://www.rob.co",
-  "logo": null,
+  "logo": "assets/logos/robco.svg",
   "hq": {
     "city": "Munich",
     "country": "Germany"

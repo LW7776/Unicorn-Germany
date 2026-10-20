@@ -2,7 +2,7 @@
   "slug": "grover",
   "name": "Grover",
   "website": "https://www.grover.com",
-  "logo": null,
+  "logo": "assets/logos/grover.png",
   "verification": "reported",
   "hq": {
     "city": "Berlin",

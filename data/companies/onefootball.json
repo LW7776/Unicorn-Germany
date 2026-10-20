@@ -1,0 +1,91 @@
+{
+  "slug": "onefootball",
+  "name": "OneFootball",
+  "website": "https://www.onefootball.com",
+  "logo": null,
+  "verification": "reported",
+  "hq": {
+    "city": "Berlin",
+    "country": "Germany"
+  },
+  "foundedCountry": "Germany",
+  "foundedYear": 2008,
+  "sectors": [
+    "Media"
+  ],
+  "niche": "Sports Media",
+  "thesis": {
+    "problem": "Football has the largest audience of any sport and the most fragmented rights map of any media business. A fan following one club across competitions deals with a different broadcaster, app and paywall for each, and nobody owns the relationship with the fan between matches.",
+    "solution": "OneFootball is the app that aggregates scores, news and video across competitions in dozens of languages, and has pushed from media into streaming and into club merchandise and digital collectibles. The 2022 round was raised at the height of the Web3 enthusiasm that funded the last of those, which is part of why its valuation has not been restated since."
+  },
+  "founders": [
+    {
+      "name": "Lucas von Cranach",
+      "role": "Founder and CEO"
+    }
+  ],
+  "investors": [
+    "Liberty City Ventures",
+    "Animoca Brands",
+    "Dapper Labs",
+    "Earlybird"
+  ],
+  "totalRaised": {
+    "amount": null,
+    "currency": "EUR",
+    "approximate": false,
+    "source": "s1"
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "date": "2022-04",
+      "stage": "Series D",
+      "amount": 150,
+      "currency": "EUR",
+      "approximate": false,
+      "postMoney": null,
+      "postMoneyCurrency": null,
+      "leadInvestors": [
+        "Liberty City Ventures"
+      ],
+      "investors": [
+        "Liberty City Ventures",
+        "Animoca Brands",
+        "Dapper Labs"
+      ],
+      "source": "s1",
+      "undisclosed": {
+        "note": "Tech.eu reports the round was raised at a unicorn valuation and prints no figure.",
+        "source": "s1"
+      }
+    }
+  ],
+  "becameUnicorn": {
+    "date": "2022-04",
+    "roundId": "r1",
+    "source": "s1"
+  },
+  "valuation": {
+    "amount": null,
+    "currency": null,
+    "approximate": false,
+    "asOf": "2022-04",
+    "round": "Series D",
+    "source": "s1",
+    "undisclosed": {
+      "note": "Reported at a unicorn valuation in April 2022, with no figure published and nothing since.",
+      "source": "s1"
+    }
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "publication": "Tech.eu",
+      "title": "This Week in European Tech: 3 new unicorns (in Sweden, the UK and Germany)",
+      "url": "https://tech.eu/2022/04/22/this-week-in-european-tech-22-april-2022/",
+      "publishedOn": "2022-04-22",
+      "quote": "OneFootball, a Germany-based football media company, has raised €150 million at a unicorn valuation."
+    }
+  ]
+}

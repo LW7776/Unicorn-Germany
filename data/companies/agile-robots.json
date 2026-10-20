@@ -2,7 +2,7 @@
   "slug": "agile-robots",
   "name": "Agile Robots",
   "website": "https://www.agile-robots.com",
-  "logo": null,
+  "logo": "assets/logos/agile-robots.webp",
   "verification": "reported",
   "hq": {
     "city": "Munich",

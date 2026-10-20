@@ -1,0 +1,95 @@
+{
+  "slug": "getyourguide",
+  "name": "GetYourGuide",
+  "website": "https://www.getyourguide.com",
+  "logo": null,
+  "hq": {
+    "city": "Berlin",
+    "country": "Germany"
+  },
+  "foundedCountry": "Germany",
+  "foundedYear": 2009,
+  "sectors": [
+    "E-commerce and Retail"
+  ],
+  "niche": "Travel Experiences",
+  "thesis": {
+    "problem": "Flights and hotels were booked online two decades ago. What people actually do when they arrive, the tours, the tickets and the day trips, stayed a cash business run by local operators with no inventory system and a desk in a hotel lobby, which is why it is hard to find the good ones and impossible to book them in advance.",
+    "solution": "GetYourGuide is a marketplace for those experiences, bringing operators onto a booking system and selling their capacity worldwide, with the supplier-side software being the part that is genuinely hard. It has moved from reselling whatever exists toward originating its own branded experiences, which is where the margin and the differentiation sit."
+  },
+  "founders": [
+    {
+      "name": "Johannes Reck",
+      "role": "Co-founder and CEO"
+    }
+  ],
+  "investors": [
+    "SoftBank Vision Fund",
+    "Blue Pool Capital",
+    "KKR",
+    "Temasek"
+  ],
+  "totalRaised": {
+    "amount": null,
+    "currency": "USD",
+    "approximate": false,
+    "source": "s1"
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "date": "2023-05",
+      "stage": "Series F",
+      "amount": 194,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": 2000,
+      "postMoneyCurrency": "USD",
+      "postMoneySource": "s1",
+      "leadInvestors": [
+        "Blue Pool Capital"
+      ],
+      "investors": [
+        "Blue Pool Capital",
+        "KKR",
+        "Temasek"
+      ],
+      "source": "s2",
+      "disputed": {
+        "note": "Of the $194m, $109m is a revolving credit facility rather than equity.",
+        "source": "s2"
+      }
+    }
+  ],
+  "becameUnicorn": {
+    "date": "2023-05",
+    "roundId": "r1",
+    "source": "s1"
+  },
+  "valuation": {
+    "amount": 2000,
+    "currency": "USD",
+    "approximate": false,
+    "asOf": "2023-05",
+    "round": "Series F",
+    "source": "s1"
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "publication": "TechCrunch",
+      "title": "GetYourGuide books $194M at a $2B valuation with travel experiences back in business",
+      "url": "https://techcrunch.com/2023/05/31/getyourguide-books-194m-at-a-2b-valuation-with-travel-experiences-back-in-business/",
+      "publishedOn": "2023-05-31",
+      "quote": "The round values GetYourGuide at $2 billion"
+    },
+    {
+      "id": "s2",
+      "publication": "TechCrunch",
+      "title": "GetYourGuide books $194M at a $2B valuation with travel experiences back in business",
+      "url": "https://techcrunch.com/2023/05/31/getyourguide-books-194m-at-a-2b-valuation-with-travel-experiences-back-in-business/",
+      "publishedOn": "2023-05-31",
+      "quote": "is announcing that it has raised $194 million."
+    }
+  ]
+}

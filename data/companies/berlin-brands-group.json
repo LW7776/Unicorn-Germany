@@ -1,0 +1,94 @@
+{
+  "slug": "berlin-brands-group",
+  "name": "Berlin Brands Group",
+  "website": "https://www.berlinbrandsgroup.com",
+  "logo": null,
+  "hq": {
+    "city": "Berlin",
+    "country": "Germany"
+  },
+  "foundedCountry": "Germany",
+  "foundedYear": 2005,
+  "sectors": [
+    "E-commerce and Retail"
+  ],
+  "niche": "Consumer Brands",
+  "thesis": {
+    "problem": "Thousands of small brands sell well on Amazon and nowhere else, run by founders who are good at products and short of the supply chain, capital and marketing machinery that would make them bigger. Individually they stay small, and most never get bought because no buyer wants to integrate them one at a time.",
+    "solution": "Berlin Brands Group builds and buys consumer brands and runs them on shared infrastructure, doing its own manufacturing and logistics rather than only aggregating third-party sellers, which is the distinction it draws against the roll-ups it is usually grouped with. Its own labels came first and the acquisitions were bolted onto a business that already knew how to make things."
+  },
+  "founders": [
+    {
+      "name": "Peter Chaljawski",
+      "role": "Founder and CEO"
+    }
+  ],
+  "investors": [
+    "Bain Capital",
+    "Ardian"
+  ],
+  "totalRaised": {
+    "amount": null,
+    "currency": "USD",
+    "approximate": false,
+    "source": "s2"
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "date": "2021-09",
+      "stage": "Growth round",
+      "amount": 700,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": null,
+      "postMoneyCurrency": null,
+      "leadInvestors": [
+        "Bain Capital"
+      ],
+      "investors": [
+        "Bain Capital"
+      ],
+      "source": "s2",
+      "undisclosed": {
+        "note": "TechCrunch reports the valuation as over $1 billion without printing a post-money.",
+        "source": "s1"
+      },
+      "disputed": {
+        "note": "The $700m combines equity and debt, and the split is undisclosed.",
+        "source": "s2"
+      }
+    }
+  ],
+  "becameUnicorn": {
+    "date": "2021-09",
+    "roundId": "r1",
+    "source": "s1"
+  },
+  "valuation": {
+    "amount": 1000,
+    "currency": "USD",
+    "approximate": true,
+    "asOf": "2021-09",
+    "round": "Growth round",
+    "source": "s1"
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "publication": "TechCrunch",
+      "title": "Berlin Brands Group, now valued at $1B+, raises $700M to buy and scale merchants that sell on marketplaces like Amazon",
+      "url": "https://techcrunch.com/2021/09/01/berlin-brands-group-now-valued-at-1b-raises-700m-to-buy-and-scale-merchants-that-sell-on-marketplaces-like-amazon/",
+      "publishedOn": "2021-09-01",
+      "quote": "BBG confirmed that the investment — one of the biggest to date in the space — boosts its valuation to over $1 billion."
+    },
+    {
+      "id": "s2",
+      "publication": "TechCrunch",
+      "title": "Berlin Brands Group, now valued at $1B+, raises $700M to buy and scale merchants that sell on marketplaces like Amazon",
+      "url": "https://techcrunch.com/2021/09/01/berlin-brands-group-now-valued-at-1b-raises-700m-to-buy-and-scale-merchants-that-sell-on-marketplaces-like-amazon/",
+      "publishedOn": "2021-09-01",
+      "quote": "The startup has closed a round of $700 million, comprising both equity and debt,"
+    }
+  ]
+}

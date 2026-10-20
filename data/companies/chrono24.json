@@ -1,0 +1,94 @@
+{
+  "slug": "chrono24",
+  "name": "Chrono24",
+  "website": "https://www.chrono24.com",
+  "logo": null,
+  "hq": {
+    "city": "Karlsruhe",
+    "country": "Germany"
+  },
+  "foundedCountry": "Germany",
+  "foundedYear": 2003,
+  "sectors": [
+    "E-commerce and Retail"
+  ],
+  "niche": "Luxury Marketplace",
+  "thesis": {
+    "problem": "A used luxury watch is worth five figures, is trivial to fake, and has historically been traded between strangers who had no way to trust each other. The dealers who do it properly are scattered across a hundred countries, and the buyer has no way to compare them or to know the money is safe until the watch arrives.",
+    "solution": "Chrono24 is the marketplace that sits in the middle, listing new, pre-owned and vintage watches from thousands of professional dealers and private sellers, and holding the money in escrow until the buyer has the watch. Twenty years of listings also make it the de facto price index for the category, which is the asset a newcomer cannot buy."
+  },
+  "founders": [
+    {
+      "name": "Tim Stracke",
+      "role": "Co-chief executive"
+    },
+    {
+      "name": "Holger Felgner",
+      "role": "Chief executive"
+    }
+  ],
+  "investors": [
+    "General Atlantic",
+    "Insight Partners",
+    "Sprints Capital",
+    "Aglae Ventures"
+  ],
+  "totalRaised": {
+    "amount": null,
+    "currency": "EUR",
+    "approximate": false,
+    "source": "s1"
+  },
+  "rounds": [
+    {
+      "id": "r1",
+      "date": "2021-08",
+      "stage": "Series C",
+      "amount": 100,
+      "currency": "EUR",
+      "approximate": false,
+      "postMoney": null,
+      "postMoneyCurrency": null,
+      "leadInvestors": [
+        "Aglae Ventures",
+        "General Atlantic",
+        "Insight Partners",
+        "Sprints Capital"
+      ],
+      "investors": [
+        "Aglae Ventures",
+        "General Atlantic",
+        "Insight Partners",
+        "Sprints Capital"
+      ],
+      "source": "s1",
+      "undisclosed": {
+        "note": "EU-Startups reports a valuation exceeding $1 billion without a post-money.",
+        "source": "s1"
+      }
+    }
+  ],
+  "becameUnicorn": {
+    "date": "2021-08",
+    "roundId": "r1",
+    "source": "s1"
+  },
+  "valuation": {
+    "amount": 1000,
+    "currency": "USD",
+    "approximate": true,
+    "asOf": "2023-07",
+    "round": "Series C",
+    "source": "s1"
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "publication": "EU-Startups",
+      "title": "Star Funding: Cristiano Ronaldo invests in the Germany-based luxury watch marketplace Chrono24",
+      "url": "https://www.eu-startups.com/2023/07/star-funding-cristiano-ronaldo-invests-in-the-germany-based-luxury-watch-marketplace-chrono24/",
+      "publishedOn": "2023-07-12",
+      "quote": "Chrono24 was founded in 2003 and is headquartered in Karlsruhe, Germany. Cristiano Ronaldo joins the likes of previous Chrono24 investors including Bernard Arnault’s family investment company, Aglae Ventures, General Atlantic, Insight Partners and Sprints Capital – who together led Chrono24’s Series C round in August 2021, worth €100 million and solidifying the watch market’s unicorn status with a valuation today exceeding $1 billion."
+    }
+  ]
+}

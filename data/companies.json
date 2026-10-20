@@ -1,15 +1,15 @@
 {
  "stats": {
-  "count": 35,
-  "verifiedCount": 33,
-  "reportedCount": 2,
-  "countBasis": "German unicorns · 33 verified, 2 reported",
-  "combinedValuationEurMillions": 111276.0,
-  "combinedValuationLabel": "~€111.3 bn",
-  "combinedValuationCount": 30,
-  "combinedValuationBasis": "Combined value · 30 of 35 disclosed",
+  "count": 39,
+  "verifiedCount": 36,
+  "reportedCount": 3,
+  "countBasis": "German unicorns · 36 verified, 3 reported",
+  "combinedValuationEurMillions": 114956.0,
+  "combinedValuationLabel": "~€115 bn",
+  "combinedValuationCount": 33,
+  "combinedValuationBasis": "Combined value · 33 of 39 disclosed",
   "newInLast12Months": 13,
-  "medianYearsToUnicorn": 6,
+  "medianYearsToUnicorn": 7,
   "fxRateDisclosed": 0.92,
   "fxAsOf": "2026-08",
   "dataAsOf": "2026-10-12",
@@ -29,15 +29,15 @@
    },
    {
     "year": 2021,
-    "count": 8
+    "count": 10
    },
    {
     "year": 2022,
-    "count": 4
+    "count": 5
    },
    {
     "year": 2023,
-    "count": 4
+    "count": 5
    },
    {
     "year": 2024,
@@ -62,6 +62,10 @@
     "count": 6
    },
    {
+    "sector": "E-commerce and Retail",
+    "count": 6
+   },
+   {
     "sector": "Fintech",
     "count": 6
    },
@@ -78,8 +82,8 @@
     "count": 4
    },
    {
-    "sector": "E-commerce and Retail",
-    "count": 3
+    "sector": "Media",
+    "count": 1
    }
   ],
   "thresholdBarPct": 6.0
@@ -340,7 +344,7 @@
    "slug": "agile-robots",
    "name": "Agile Robots",
    "website": "https://www.agile-robots.com",
-   "logo": null,
+   "logo": "assets/logos/agile-robots.webp",
    "verification": "reported",
    "hq": {
     "city": "Munich",
@@ -473,6 +477,138 @@
     "Sequoia China",
     "Linear Venture",
     "Foxconn"
+   ]
+  },
+  {
+   "slug": "berlin-brands-group",
+   "name": "Berlin Brands Group",
+   "website": "https://www.berlinbrandsgroup.com",
+   "logo": null,
+   "hq": {
+    "city": "Berlin",
+    "country": "Germany"
+   },
+   "foundedCountry": "Germany",
+   "foundedYear": 2005,
+   "sectors": [
+    "E-commerce and Retail"
+   ],
+   "niche": "Consumer Brands",
+   "thesis": {
+    "problem": "Thousands of small brands sell well on Amazon and nowhere else, run by founders who are good at products and short of the supply chain, capital and marketing machinery that would make them bigger. Individually they stay small, and most never get bought because no buyer wants to integrate them one at a time.",
+    "solution": "Berlin Brands Group builds and buys consumer brands and runs them on shared infrastructure, doing its own manufacturing and logistics rather than only aggregating third-party sellers, which is the distinction it draws against the roll-ups it is usually grouped with. Its own labels came first and the acquisitions were bolted onto a business that already knew how to make things."
+   },
+   "founders": [
+    {
+     "name": "Peter Chaljawski",
+     "role": "Founder and CEO"
+    }
+   ],
+   "investors": [
+    "Bain Capital",
+    "Ardian"
+   ],
+   "totalRaised": {
+    "amount": null,
+    "currency": "USD",
+    "approximate": false,
+    "source": "s2"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2021-09",
+     "stage": "Growth round",
+     "amount": 700,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": null,
+     "postMoneyCurrency": null,
+     "leadInvestors": [
+      "Bain Capital"
+     ],
+     "investors": [
+      "Bain Capital"
+     ],
+     "source": "s2",
+     "undisclosed": {
+      "note": "TechCrunch reports the valuation as over $1 billion without printing a post-money.",
+      "source": "s1"
+     },
+     "disputed": {
+      "note": "The $700m combines equity and debt, and the split is undisclosed.",
+      "source": "s2"
+     },
+     "dateLabel": "Sep 2021",
+     "amountLabel": "$700 m"
+    }
+   ],
+   "becameUnicorn": {
+    "date": "2021-09",
+    "roundId": "r1",
+    "source": "s1"
+   },
+   "valuation": {
+    "amount": 1000,
+    "currency": "USD",
+    "approximate": true,
+    "asOf": "2021-09",
+    "round": "Growth round",
+    "source": "s1"
+   },
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "TechCrunch",
+     "title": "Berlin Brands Group, now valued at $1B+, raises $700M to buy and scale merchants that sell on marketplaces like Amazon",
+     "url": "https://techcrunch.com/2021/09/01/berlin-brands-group-now-valued-at-1b-raises-700m-to-buy-and-scale-merchants-that-sell-on-marketplaces-like-amazon/",
+     "publishedOn": "2021-09-01",
+     "quote": "BBG confirmed that the investment — one of the biggest to date in the space — boosts its valuation to over $1 billion.",
+     "publishedLabel": "1 Sep 2021"
+    },
+    {
+     "id": "s2",
+     "publication": "TechCrunch",
+     "title": "Berlin Brands Group, now valued at $1B+, raises $700M to buy and scale merchants that sell on marketplaces like Amazon",
+     "url": "https://techcrunch.com/2021/09/01/berlin-brands-group-now-valued-at-1b-raises-700m-to-buy-and-scale-merchants-that-sell-on-marketplaces-like-amazon/",
+     "publishedOn": "2021-09-01",
+     "quote": "The startup has closed a round of $700 million, comprising both equity and debt,",
+     "publishedLabel": "1 Sep 2021"
+    }
+   ],
+   "display": {
+    "valuationLabel": "~$1 bn",
+    "valuationUndisclosed": false,
+    "valuationUndisclosedBadge": null,
+    "valuationAsOf": "Sep 2021",
+    "lastRoundLabel": "Sep 2021",
+    "lastRoundStage": "Growth round",
+    "yearsToUnicorn": 16,
+    "becameUnicornLabel": "Sep 2021",
+    "unicornThresholdLabel": "unicorn",
+    "unicornFlagLabel": "reached unicorn status",
+    "foundersLabel": "Peter Chaljawski",
+    "aged": true,
+    "websiteLabel": "berlinbrandsgroup.com",
+    "verification": "verified",
+    "reported": false,
+    "valuationBarPct": 5.6
+   },
+   "sort": {
+    "newest": [
+     2021,
+     9
+    ],
+    "valuationEur": 920.0,
+    "latestRound": [
+     2021,
+     9
+    ],
+    "name": "berlin brands group"
+   },
+   "investorsOrdered": [
+    "Bain Capital",
+    "Ardian"
    ]
   },
   {
@@ -1126,6 +1262,139 @@
     "Greyhound Capital",
     "Visionaries Club",
     "Discovery Ventures"
+   ]
+  },
+  {
+   "slug": "chrono24",
+   "name": "Chrono24",
+   "website": "https://www.chrono24.com",
+   "logo": null,
+   "hq": {
+    "city": "Karlsruhe",
+    "country": "Germany"
+   },
+   "foundedCountry": "Germany",
+   "foundedYear": 2003,
+   "sectors": [
+    "E-commerce and Retail"
+   ],
+   "niche": "Luxury Marketplace",
+   "thesis": {
+    "problem": "A used luxury watch is worth five figures, is trivial to fake, and has historically been traded between strangers who had no way to trust each other. The dealers who do it properly are scattered across a hundred countries, and the buyer has no way to compare them or to know the money is safe until the watch arrives.",
+    "solution": "Chrono24 is the marketplace that sits in the middle, listing new, pre-owned and vintage watches from thousands of professional dealers and private sellers, and holding the money in escrow until the buyer has the watch. Twenty years of listings also make it the de facto price index for the category, which is the asset a newcomer cannot buy."
+   },
+   "founders": [
+    {
+     "name": "Tim Stracke",
+     "role": "Co-chief executive"
+    },
+    {
+     "name": "Holger Felgner",
+     "role": "Chief executive"
+    }
+   ],
+   "investors": [
+    "General Atlantic",
+    "Insight Partners",
+    "Sprints Capital",
+    "Aglae Ventures"
+   ],
+   "totalRaised": {
+    "amount": null,
+    "currency": "EUR",
+    "approximate": false,
+    "source": "s1"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2021-08",
+     "stage": "Series C",
+     "amount": 100,
+     "currency": "EUR",
+     "approximate": false,
+     "postMoney": null,
+     "postMoneyCurrency": null,
+     "leadInvestors": [
+      "Aglae Ventures",
+      "General Atlantic",
+      "Insight Partners",
+      "Sprints Capital"
+     ],
+     "investors": [
+      "Aglae Ventures",
+      "General Atlantic",
+      "Insight Partners",
+      "Sprints Capital"
+     ],
+     "source": "s1",
+     "undisclosed": {
+      "note": "EU-Startups reports a valuation exceeding $1 billion without a post-money.",
+      "source": "s1"
+     },
+     "dateLabel": "Aug 2021",
+     "amountLabel": "€100 m"
+    }
+   ],
+   "becameUnicorn": {
+    "date": "2021-08",
+    "roundId": "r1",
+    "source": "s1"
+   },
+   "valuation": {
+    "amount": 1000,
+    "currency": "USD",
+    "approximate": true,
+    "asOf": "2023-07",
+    "round": "Series C",
+    "source": "s1"
+   },
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "EU-Startups",
+     "title": "Star Funding: Cristiano Ronaldo invests in the Germany-based luxury watch marketplace Chrono24",
+     "url": "https://www.eu-startups.com/2023/07/star-funding-cristiano-ronaldo-invests-in-the-germany-based-luxury-watch-marketplace-chrono24/",
+     "publishedOn": "2023-07-12",
+     "quote": "Chrono24 was founded in 2003 and is headquartered in Karlsruhe, Germany. Cristiano Ronaldo joins the likes of previous Chrono24 investors including Bernard Arnault’s family investment company, Aglae Ventures, General Atlantic, Insight Partners and Sprints Capital – who together led Chrono24’s Series C round in August 2021, worth €100 million and solidifying the watch market’s unicorn status with a valuation today exceeding $1 billion.",
+     "publishedLabel": "12 Jul 2023"
+    }
+   ],
+   "display": {
+    "valuationLabel": "~$1 bn",
+    "valuationUndisclosed": false,
+    "valuationUndisclosedBadge": null,
+    "valuationAsOf": "Jul 2023",
+    "lastRoundLabel": "Aug 2021",
+    "lastRoundStage": "Series C",
+    "yearsToUnicorn": 18,
+    "becameUnicornLabel": "Aug 2021",
+    "unicornThresholdLabel": "unicorn",
+    "unicornFlagLabel": "reached unicorn status",
+    "foundersLabel": "Tim Stracke, Holger Felgner",
+    "aged": false,
+    "websiteLabel": "chrono24.com",
+    "verification": "verified",
+    "reported": false,
+    "valuationBarPct": 5.6
+   },
+   "sort": {
+    "newest": [
+     2021,
+     8
+    ],
+    "valuationEur": 920.0,
+    "latestRound": [
+     2021,
+     8
+    ],
+    "name": "chrono24"
+   },
+   "investorsOrdered": [
+    "General Atlantic",
+    "Insight Partners",
+    "Sprints Capital",
+    "Aglae Ventures"
    ]
   },
   {
@@ -2875,10 +3144,145 @@
    ]
   },
   {
+   "slug": "getyourguide",
+   "name": "GetYourGuide",
+   "website": "https://www.getyourguide.com",
+   "logo": null,
+   "hq": {
+    "city": "Berlin",
+    "country": "Germany"
+   },
+   "foundedCountry": "Germany",
+   "foundedYear": 2009,
+   "sectors": [
+    "E-commerce and Retail"
+   ],
+   "niche": "Travel Experiences",
+   "thesis": {
+    "problem": "Flights and hotels were booked online two decades ago. What people actually do when they arrive, the tours, the tickets and the day trips, stayed a cash business run by local operators with no inventory system and a desk in a hotel lobby, which is why it is hard to find the good ones and impossible to book them in advance.",
+    "solution": "GetYourGuide is a marketplace for those experiences, bringing operators onto a booking system and selling their capacity worldwide, with the supplier-side software being the part that is genuinely hard. It has moved from reselling whatever exists toward originating its own branded experiences, which is where the margin and the differentiation sit."
+   },
+   "founders": [
+    {
+     "name": "Johannes Reck",
+     "role": "Co-founder and CEO"
+    }
+   ],
+   "investors": [
+    "SoftBank Vision Fund",
+    "Blue Pool Capital",
+    "KKR",
+    "Temasek"
+   ],
+   "totalRaised": {
+    "amount": null,
+    "currency": "USD",
+    "approximate": false,
+    "source": "s1"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2023-05",
+     "stage": "Series F",
+     "amount": 194,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": 2000,
+     "postMoneyCurrency": "USD",
+     "postMoneySource": "s1",
+     "leadInvestors": [
+      "Blue Pool Capital"
+     ],
+     "investors": [
+      "Blue Pool Capital",
+      "KKR",
+      "Temasek"
+     ],
+     "source": "s2",
+     "disputed": {
+      "note": "Of the $194m, $109m is a revolving credit facility rather than equity.",
+      "source": "s2"
+     },
+     "dateLabel": "May 2023",
+     "amountLabel": "$194 m"
+    }
+   ],
+   "becameUnicorn": {
+    "date": "2023-05",
+    "roundId": "r1",
+    "source": "s1"
+   },
+   "valuation": {
+    "amount": 2000,
+    "currency": "USD",
+    "approximate": false,
+    "asOf": "2023-05",
+    "round": "Series F",
+    "source": "s1"
+   },
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "TechCrunch",
+     "title": "GetYourGuide books $194M at a $2B valuation with travel experiences back in business",
+     "url": "https://techcrunch.com/2023/05/31/getyourguide-books-194m-at-a-2b-valuation-with-travel-experiences-back-in-business/",
+     "publishedOn": "2023-05-31",
+     "quote": "The round values GetYourGuide at $2 billion",
+     "publishedLabel": "31 May 2023"
+    },
+    {
+     "id": "s2",
+     "publication": "TechCrunch",
+     "title": "GetYourGuide books $194M at a $2B valuation with travel experiences back in business",
+     "url": "https://techcrunch.com/2023/05/31/getyourguide-books-194m-at-a-2b-valuation-with-travel-experiences-back-in-business/",
+     "publishedOn": "2023-05-31",
+     "quote": "is announcing that it has raised $194 million.",
+     "publishedLabel": "31 May 2023"
+    }
+   ],
+   "display": {
+    "valuationLabel": "$2 bn",
+    "valuationUndisclosed": false,
+    "valuationUndisclosedBadge": null,
+    "valuationAsOf": "May 2023",
+    "lastRoundLabel": "May 2023",
+    "lastRoundStage": "Series F",
+    "yearsToUnicorn": 14,
+    "becameUnicornLabel": "May 2023",
+    "unicornThresholdLabel": "$1bn",
+    "unicornFlagLabel": "crossed $1bn",
+    "foundersLabel": "Johannes Reck",
+    "aged": false,
+    "websiteLabel": "getyourguide.com",
+    "verification": "verified",
+    "reported": false,
+    "valuationBarPct": 11.1
+   },
+   "sort": {
+    "newest": [
+     2023,
+     5
+    ],
+    "valuationEur": 1840.0,
+    "latestRound": [
+     2023,
+     5
+    ],
+    "name": "getyourguide"
+   },
+   "investorsOrdered": [
+    "Blue Pool Capital",
+    "SoftBank Vision Fund",
+    "KKR",
+    "Temasek"
+   ]
+  },
+  {
    "slug": "grover",
    "name": "Grover",
    "website": "https://www.grover.com",
-   "logo": null,
+   "logo": "assets/logos/grover.png",
    "verification": "reported",
    "hq": {
     "city": "Berlin",
@@ -4386,6 +4790,136 @@
     "Delta Electronics",
     "C4 Ventures",
     "L-Bank"
+   ]
+  },
+  {
+   "slug": "onefootball",
+   "name": "OneFootball",
+   "website": "https://www.onefootball.com",
+   "logo": null,
+   "verification": "reported",
+   "hq": {
+    "city": "Berlin",
+    "country": "Germany"
+   },
+   "foundedCountry": "Germany",
+   "foundedYear": 2008,
+   "sectors": [
+    "Media"
+   ],
+   "niche": "Sports Media",
+   "thesis": {
+    "problem": "Football has the largest audience of any sport and the most fragmented rights map of any media business. A fan following one club across competitions deals with a different broadcaster, app and paywall for each, and nobody owns the relationship with the fan between matches.",
+    "solution": "OneFootball is the app that aggregates scores, news and video across competitions in dozens of languages, and has pushed from media into streaming and into club merchandise and digital collectibles. The 2022 round was raised at the height of the Web3 enthusiasm that funded the last of those, which is part of why its valuation has not been restated since."
+   },
+   "founders": [
+    {
+     "name": "Lucas von Cranach",
+     "role": "Founder and CEO"
+    }
+   ],
+   "investors": [
+    "Liberty City Ventures",
+    "Animoca Brands",
+    "Dapper Labs",
+    "Earlybird"
+   ],
+   "totalRaised": {
+    "amount": null,
+    "currency": "EUR",
+    "approximate": false,
+    "source": "s1"
+   },
+   "rounds": [
+    {
+     "id": "r1",
+     "date": "2022-04",
+     "stage": "Series D",
+     "amount": 150,
+     "currency": "EUR",
+     "approximate": false,
+     "postMoney": null,
+     "postMoneyCurrency": null,
+     "leadInvestors": [
+      "Liberty City Ventures"
+     ],
+     "investors": [
+      "Liberty City Ventures",
+      "Animoca Brands",
+      "Dapper Labs"
+     ],
+     "source": "s1",
+     "undisclosed": {
+      "note": "Tech.eu reports the round was raised at a unicorn valuation and prints no figure.",
+      "source": "s1"
+     },
+     "dateLabel": "Apr 2022",
+     "amountLabel": "€150 m"
+    }
+   ],
+   "becameUnicorn": {
+    "date": "2022-04",
+    "roundId": "r1",
+    "source": "s1"
+   },
+   "valuation": {
+    "amount": null,
+    "currency": null,
+    "approximate": false,
+    "asOf": "2022-04",
+    "round": "Series D",
+    "source": "s1",
+    "undisclosed": {
+     "note": "Reported at a unicorn valuation in April 2022, with no figure published and nothing since.",
+     "source": "s1"
+    }
+   },
+   "sources": [
+    {
+     "id": "s1",
+     "publication": "Tech.eu",
+     "title": "This Week in European Tech: 3 new unicorns (in Sweden, the UK and Germany)",
+     "url": "https://tech.eu/2022/04/22/this-week-in-european-tech-22-april-2022/",
+     "publishedOn": "2022-04-22",
+     "quote": "OneFootball, a Germany-based football media company, has raised €150 million at a unicorn valuation.",
+     "publishedLabel": "22 Apr 2022"
+    }
+   ],
+   "display": {
+    "valuationLabel": "Undisclosed",
+    "valuationUndisclosed": true,
+    "valuationUndisclosedBadge": ">1bn",
+    "valuationAsOf": "Apr 2022",
+    "lastRoundLabel": "Apr 2022",
+    "lastRoundStage": "Series D",
+    "yearsToUnicorn": 14,
+    "becameUnicornLabel": "Apr 2022",
+    "unicornThresholdLabel": "unicorn",
+    "unicornFlagLabel": "reached unicorn status",
+    "foundersLabel": "Lucas von Cranach",
+    "aged": false,
+    "websiteLabel": "onefootball.com",
+    "verification": "reported",
+    "reported": true,
+    "valuationBarPct": null
+   },
+   "sort": {
+    "newest": [
+     2022,
+     4
+    ],
+    "valuationEur": null,
+    "latestRound": [
+     2022,
+     4
+    ],
+    "name": "onefootball"
+   },
+   "investorsOrdered": [
+    "Liberty City Ventures",
+    "Animoca Brands",
+    "Dapper Labs",
+    "Earlybird"
    ]
   },
   {
@@ -6007,7 +6541,7 @@
    "slug": "robco",
    "name": "RobCo",
    "website": "https://www.rob.co",
-   "logo": null,
+   "logo": "assets/logos/robco.svg",
    "hq": {
     "city": "Munich",
     "country": "Germany"
