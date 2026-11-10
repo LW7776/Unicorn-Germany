@@ -1,0 +1,116 @@
+{
+  "week": "2026-W43",
+  "start": "2026-10-19",
+  "end": "2026-10-25",
+  "lead": [
+    {
+      "id": "l1",
+      "company": "YGO",
+      "hq": null,
+      "stage": "Series A",
+      "amount": 8,
+      "currency": "EUR",
+      "approximate": false,
+      "valuation": null,
+      "valuationCurrency": null,
+      "founders": [
+        "Julian Kögel",
+        "Willi Ibbeken",
+        "Sebastian Kreutzberger"
+      ],
+      "investors": [
+        "Ventech",
+        "Sake Bosch",
+        "Caesar Capital"
+      ],
+      "source": {
+        "publication": "Tech.eu",
+        "title": "YGO secures €8M to scale its AI-powered travel infrastructure",
+        "url": "https://tech.eu/2026/10/21/ygo-secures-eur8m-to-scale-its-ai-powered-travel-infrastructure/",
+        "publishedOn": "2026-10-21"
+      },
+      "text": "YGO has raised €8m to make the travel industry's own inventory legible to software. Hotel and tour data sits in dozens of incompatible systems, which is why booking an unusual trip still means a dozen tabs, and YGO builds the layer that structures it so it can be searched by meaning rather than by exact match, recommended, and booked automatically across flights, rooms and activities. Condor, Bentour and the GetAway Group are named as customers. Ventech led the Series A, with Sake Bosch, Caesar Capital and angels behind it, and Julian Kögel is taking the company past the DACH region on the back of it."
+    },
+    {
+      "id": "l2",
+      "company": "RhymeQ",
+      "hq": null,
+      "stage": "Pre-seed",
+      "amount": 2.2,
+      "currency": "USD",
+      "approximate": false,
+      "valuation": null,
+      "valuationCurrency": null,
+      "founders": [
+        "Daniel Volz",
+        "Tamás Varga",
+        "Christina Wu"
+      ],
+      "investors": [
+        "Ground State Ventures",
+        "Vanagon Ventures",
+        "Plug and Play",
+        "Freiraum Ventures"
+      ],
+      "source": {
+        "publication": "Tech.eu",
+        "title": "RhymeQ emerges from stealth with $2.2M to simplify quantum programming",
+        "url": "https://tech.eu/2026/10/22/rhymeq-emerges-from-stealth-with-22m-to-simplify-quantum-programming/",
+        "publishedOn": "2026-10-22"
+      },
+      "text": "RhymeQ has come out of stealth with $2.2m and a plain premise, that quantum computers stay a specialist's instrument for as long as programming one means being a physicist. Its platform, Rhyme, lets a developer with ordinary Python write and debug for quantum hardware, with compilers underneath translating down to whichever processor is on the other end. Ground State Ventures led the pre-seed, with Vanagon Ventures, Plug and Play and Freiraum Ventures following. Daniel Volz, Tamás Varga and Christina Wu founded the company this year, which makes this its first round."
+    }
+  ],
+  "more": [
+    {
+      "id": "m1",
+      "company": "Cellbox",
+      "hq": null,
+      "stage": "Seed",
+      "amount": 5,
+      "currency": "EUR",
+      "approximate": false,
+      "valuation": null,
+      "valuationCurrency": null,
+      "founders": [],
+      "investors": [],
+      "source": {
+        "publication": "Tech.eu",
+        "title": "European tech weekly recap: €1.5B in funding and Q3 2026 highlights",
+        "url": "https://tech.eu/2026/10/26/european-tech-weekly-recap-eur15b-in-deals-and-q3-2026-highlights",
+        "publishedOn": "2026-10-26"
+      },
+      "note": {
+        "text": "The recap calls this a seed round while the article it links to is titled Series A.",
+        "source": {
+          "publication": "Tech.eu",
+          "title": "European tech weekly recap: €1.5B in funding and Q3 2026 highlights",
+          "url": "https://tech.eu/2026/10/26/european-tech-weekly-recap-eur15b-in-deals-and-q3-2026-highlights",
+          "publishedOn": "2026-10-26"
+        }
+      }
+    },
+    {
+      "id": "m2",
+      "company": "Cygrid",
+      "hq": null,
+      "stage": "Pre-seed",
+      "amount": 2.66,
+      "currency": "EUR",
+      "approximate": false,
+      "valuation": null,
+      "valuationCurrency": null,
+      "founders": [],
+      "investors": [
+        "Atlantic",
+        "D11Z.Ventures"
+      ],
+      "source": {
+        "publication": "Tech.eu",
+        "title": "European tech weekly recap: €1.5B in funding and Q3 2026 highlights",
+        "url": "https://tech.eu/2026/10/26/european-tech-weekly-recap-eur15b-in-deals-and-q3-2026-highlights",
+        "publishedOn": "2026-10-26"
+      }
+    }
+  ]
+}

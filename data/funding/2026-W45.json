@@ -1,0 +1,179 @@
+{
+  "week": "2026-W45",
+  "start": "2026-11-02",
+  "end": "2026-11-08",
+  "lead": [
+    {
+      "id": "l1",
+      "company": "Hypersonica",
+      "hq": "Munich",
+      "stage": "Series B",
+      "amount": 100,
+      "currency": "EUR",
+      "approximate": false,
+      "valuation": null,
+      "valuationCurrency": null,
+      "founders": [
+        "Philipp Kerth",
+        "Marc Ewenz"
+      ],
+      "investors": [
+        "Lightspeed",
+        "General Catalyst",
+        "Plural",
+        "201 Ventures"
+      ],
+      "source": {
+        "publication": "Tech.eu",
+        "title": "British-German defence startup Hypersonica raises €100M",
+        "url": "https://tech.eu/2026/11/02/british-german-defence-startup-hypersonica-raises-eur100m/",
+        "publishedOn": "2026-11-02"
+      },
+      "text": "Hypersonica has raised €100m to build hypersonic deep-strike missiles, nine months after a €23.2m Series A. It is headquartered in Munich with a subsidiary in London, which is the point rather than an accident of incorporation, because the capability it is aiming at by 2029 sits inside the long-range weapons agreement the two governments signed. Lightspeed and General Catalyst co-led, with Plural and 201 Ventures following on from the Series A. Philipp Kerth and Marc Ewenz founded the company in 2023 and say the money goes to testing and to hundreds of engineering and manufacturing jobs in both countries.",
+      "note": {
+        "text": "Headquartered in Munich with a subsidiary in London, and described by the source as British-German.",
+        "source": {
+          "publication": "Tech.eu",
+          "title": "British-German defence startup Hypersonica raises €100M",
+          "url": "https://tech.eu/2026/11/02/british-german-defence-startup-hypersonica-raises-eur100m/",
+          "publishedOn": "2026-11-02"
+        }
+      }
+    },
+    {
+      "id": "l2",
+      "company": "VÆRIDION",
+      "hq": "Munich",
+      "stage": "Series A2",
+      "amount": 30,
+      "currency": "EUR",
+      "approximate": false,
+      "valuation": null,
+      "valuationCurrency": null,
+      "founders": [
+        "Ivor van Dartel",
+        "Sebastian Seemann"
+      ],
+      "investors": [
+        "SHIFT Invest",
+        "Invest-NL",
+        "World Fund",
+        "Project A",
+        "Vsquared Ventures"
+      ],
+      "source": {
+        "publication": "Tech.eu",
+        "title": "German aerospace startup VÆRIDION raises €30M for zero-emission regional flights",
+        "url": "https://tech.eu/2026/11/05/german-aerospace-startup-v-ridion-raises-30m-for-zero-emission-regional-fights/",
+        "publishedOn": "2026-11-05"
+      },
+      "text": "VÆRIDION has raised €30m for the Microliner, a battery-electric nine-seater built for routes of up to 400km. The bet is that the hard part of regional aviation is not the aircraft but the airfields, and that something quiet and electric can use the small ones a jet cannot. SHIFT Invest and Invest-NL co-led the Series A2 from the Netherlands, with World Fund, Project A and Vsquared Ventures following. Ivor van Dartel and Sebastian Seemann left Airbus to start the company in 2021 and are targeting commercial service in 2030, testing at Oberpfaffenhofen in the meantime.",
+      "note": {
+        "text": "The EU separately selected the company for a €94.5m Innovation Fund grant, which is not equity and is not counted in this round.",
+        "source": {
+          "publication": "Tech.eu",
+          "title": "German aerospace startup VÆRIDION raises €30M for zero-emission regional flights",
+          "url": "https://tech.eu/2026/11/05/german-aerospace-startup-v-ridion-raises-30m-for-zero-emission-regional-fights/",
+          "publishedOn": "2026-11-05"
+        }
+      }
+    }
+  ],
+  "more": [
+    {
+      "id": "m1",
+      "company": "Pliant",
+      "hq": "Berlin",
+      "stage": "Series C",
+      "amount": 80,
+      "currency": "USD",
+      "approximate": false,
+      "valuation": null,
+      "valuationCurrency": null,
+      "founders": [],
+      "investors": [],
+      "source": {
+        "publication": "Tech.eu",
+        "title": "European tech weekly recap: Over €2.7B invested across 55+ deals",
+        "url": "https://tech.eu/2026/11/09/european-tech-weekly-recap-over-eur27b-invested-across-55-deals",
+        "publishedOn": "2026-11-09"
+      }
+    },
+    {
+      "id": "m2",
+      "company": "Quint Computing",
+      "hq": null,
+      "stage": "Funding round",
+      "amount": 9.1,
+      "currency": "EUR",
+      "approximate": false,
+      "valuation": null,
+      "valuationCurrency": null,
+      "founders": [],
+      "investors": [],
+      "source": {
+        "publication": "Tech.eu",
+        "title": "European tech weekly recap: Over €2.7B invested across 55+ deals",
+        "url": "https://tech.eu/2026/11/09/european-tech-weekly-recap-over-eur27b-invested-across-55-deals",
+        "publishedOn": "2026-11-09"
+      }
+    },
+    {
+      "id": "m3",
+      "company": "Conlio",
+      "hq": null,
+      "stage": "Funding round",
+      "amount": 6.4,
+      "currency": "EUR",
+      "approximate": false,
+      "valuation": null,
+      "valuationCurrency": null,
+      "founders": [],
+      "investors": [],
+      "source": {
+        "publication": "Tech.eu",
+        "title": "European tech weekly recap: Over €2.7B invested across 55+ deals",
+        "url": "https://tech.eu/2026/11/09/european-tech-weekly-recap-over-eur27b-invested-across-55-deals",
+        "publishedOn": "2026-11-09"
+      }
+    },
+    {
+      "id": "m4",
+      "company": "Marble",
+      "hq": "Munich",
+      "stage": "Funding round",
+      "amount": 3.75,
+      "currency": "USD",
+      "approximate": false,
+      "valuation": null,
+      "valuationCurrency": null,
+      "founders": [],
+      "investors": [],
+      "source": {
+        "publication": "Tech.eu",
+        "title": "European tech weekly recap: Over €2.7B invested across 55+ deals",
+        "url": "https://tech.eu/2026/11/09/european-tech-weekly-recap-over-eur27b-invested-across-55-deals",
+        "publishedOn": "2026-11-09"
+      }
+    },
+    {
+      "id": "m5",
+      "company": "Smycles",
+      "hq": null,
+      "stage": "Funding round",
+      "amount": 1.5,
+      "currency": "EUR",
+      "approximate": false,
+      "valuation": null,
+      "valuationCurrency": null,
+      "founders": [],
+      "investors": [],
+      "source": {
+        "publication": "Tech.eu",
+        "title": "European tech weekly recap: Over €2.7B invested across 55+ deals",
+        "url": "https://tech.eu/2026/11/09/european-tech-weekly-recap-over-eur27b-invested-across-55-deals",
+        "publishedOn": "2026-11-09"
+      }
+    }
+  ]
+}

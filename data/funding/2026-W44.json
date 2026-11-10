@@ -1,0 +1,144 @@
+{
+  "week": "2026-W44",
+  "start": "2026-10-26",
+  "end": "2026-11-01",
+  "lead": [
+    {
+      "id": "l1",
+      "company": "MuRay",
+      "hq": "Hamburg",
+      "stage": "Private round and public funding",
+      "amount": 7.1,
+      "currency": "EUR",
+      "approximate": false,
+      "valuation": null,
+      "valuationCurrency": null,
+      "founders": [
+        "Andi Hektor",
+        "Kristjan Põder"
+      ],
+      "investors": [
+        "First Momentum Ventures",
+        "Caelora",
+        "Superangel",
+        "Mätch VC",
+        "Arcas VC",
+        "Tiny VC",
+        "Nordic Science Investments"
+      ],
+      "source": {
+        "publication": "Tech.eu",
+        "title": "MuRay raises €7.1M to inspect rocket engines and turbines beyond X-ray limits",
+        "url": "https://tech.eu/2026/10/29/muray-raises-eur71m-to-inspect-rocket-engines-and-turbines-beyond-x-ray-limits/",
+        "publishedOn": "2026-10-29"
+      },
+      "text": "MuRay has raised €7.1m to look inside metal that X-rays cannot see through. The Hamburg company fires controlled muon beams at dense parts and reconstructs them in three dimensions, which matters most for the components nobody can afford to have fail, a 3D-printed rocket engine or a gas turbine blade, and which it says takes minutes rather than hours at a lower radiation dose. First Momentum Ventures led the private half of the round and Caelora, a subsidiary of Marvel Fusion, co-led it. Andi Hektor and Kristjan Põder plan a first commercial inspection service in 2027, run off DESY's electron beam in their own city.",
+      "note": {
+        "text": "€3.5m of this is a private round and €3.6m is non-dilutive public funding, including a Horizon Europe grant.",
+        "source": {
+          "publication": "Tech.eu",
+          "title": "MuRay raises €7.1M to inspect rocket engines and turbines beyond X-ray limits",
+          "url": "https://tech.eu/2026/10/29/muray-raises-eur71m-to-inspect-rocket-engines-and-turbines-beyond-x-ray-limits/",
+          "publishedOn": "2026-10-29"
+        }
+      }
+    }
+  ],
+  "more": [
+    {
+      "id": "m1",
+      "company": "Strollme",
+      "hq": null,
+      "stage": "Funding round",
+      "amount": 22,
+      "currency": "EUR",
+      "approximate": false,
+      "valuation": null,
+      "valuationCurrency": null,
+      "founders": [],
+      "investors": [],
+      "source": {
+        "publication": "Tech.eu",
+        "title": "European tech weekly recap: Over €1.3B invested across 60+ deals",
+        "url": "https://tech.eu/2026/11/02/european-tech-weekly-recap-over-eur13b-invested-across-60-deals/",
+        "publishedOn": "2026-11-02"
+      }
+    },
+    {
+      "id": "m2",
+      "company": "Tendos",
+      "hq": null,
+      "stage": "Seed",
+      "amount": 12,
+      "currency": "EUR",
+      "approximate": false,
+      "valuation": null,
+      "valuationCurrency": null,
+      "founders": [],
+      "investors": [],
+      "source": {
+        "publication": "Tech.eu",
+        "title": "European tech weekly recap: Over €1.3B invested across 60+ deals",
+        "url": "https://tech.eu/2026/11/02/european-tech-weekly-recap-over-eur13b-invested-across-60-deals/",
+        "publishedOn": "2026-11-02"
+      }
+    },
+    {
+      "id": "m3",
+      "company": "Hansetherm",
+      "hq": null,
+      "stage": "Seed",
+      "amount": 10,
+      "currency": "EUR",
+      "approximate": false,
+      "valuation": null,
+      "valuationCurrency": null,
+      "founders": [],
+      "investors": [],
+      "source": {
+        "publication": "Tech.eu",
+        "title": "European tech weekly recap: Over €1.3B invested across 60+ deals",
+        "url": "https://tech.eu/2026/11/02/european-tech-weekly-recap-over-eur13b-invested-across-60-deals/",
+        "publishedOn": "2026-11-02"
+      }
+    },
+    {
+      "id": "m4",
+      "company": "Evasive Robotics",
+      "hq": null,
+      "stage": "Funding round",
+      "amount": 2.1,
+      "currency": "EUR",
+      "approximate": false,
+      "valuation": null,
+      "valuationCurrency": null,
+      "founders": [],
+      "investors": [],
+      "source": {
+        "publication": "Tech.eu",
+        "title": "European tech weekly recap: Over €1.3B invested across 60+ deals",
+        "url": "https://tech.eu/2026/11/02/european-tech-weekly-recap-over-eur13b-invested-across-60-deals/",
+        "publishedOn": "2026-11-02"
+      }
+    },
+    {
+      "id": "m5",
+      "company": "Vuse XR",
+      "hq": null,
+      "stage": "Funding round",
+      "amount": 1.2,
+      "currency": "EUR",
+      "approximate": false,
+      "valuation": null,
+      "valuationCurrency": null,
+      "founders": [],
+      "investors": [],
+      "source": {
+        "publication": "Tech.eu",
+        "title": "European tech weekly recap: Over €1.3B invested across 60+ deals",
+        "url": "https://tech.eu/2026/11/02/european-tech-weekly-recap-over-eur13b-invested-across-60-deals/",
+        "publishedOn": "2026-11-02"
+      }
+    }
+  ]
+}

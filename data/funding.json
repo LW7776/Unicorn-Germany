@@ -1,6 +1,552 @@
 {
  "weeks": [
   {
+   "week": "2026-W45",
+   "start": "2026-11-02",
+   "end": "2026-11-08",
+   "lead": [
+    {
+     "id": "l1",
+     "company": "Hypersonica",
+     "hq": "Munich",
+     "stage": "Series B",
+     "amount": 100,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Philipp Kerth",
+      "Marc Ewenz"
+     ],
+     "investors": [
+      "Lightspeed",
+      "General Catalyst",
+      "Plural",
+      "201 Ventures"
+     ],
+     "source": {
+      "publication": "Tech.eu",
+      "title": "British-German defence startup Hypersonica raises €100M",
+      "url": "https://tech.eu/2026/11/02/british-german-defence-startup-hypersonica-raises-eur100m/",
+      "publishedOn": "2026-11-02",
+      "publishedLabel": "2 Nov 2026"
+     },
+     "text": "Hypersonica has raised €100m to build hypersonic deep-strike missiles, nine months after a €23.2m Series A. It is headquartered in Munich with a subsidiary in London, which is the point rather than an accident of incorporation, because the capability it is aiming at by 2029 sits inside the long-range weapons agreement the two governments signed. Lightspeed and General Catalyst co-led, with Plural and 201 Ventures following on from the Series A. Philipp Kerth and Marc Ewenz founded the company in 2023 and say the money goes to testing and to hundreds of engineering and manufacturing jobs in both countries.",
+     "note": {
+      "text": "Headquartered in Munich with a subsidiary in London, and described by the source as British-German.",
+      "source": {
+       "publication": "Tech.eu",
+       "title": "British-German defence startup Hypersonica raises €100M",
+       "url": "https://tech.eu/2026/11/02/british-german-defence-startup-hypersonica-raises-eur100m/",
+       "publishedOn": "2026-11-02",
+       "publishedLabel": "2 Nov 2026"
+      }
+     },
+     "amountLabel": "€100 m",
+     "valuationLabel": null,
+     "foundersLabel": "Philipp Kerth and Marc Ewenz",
+     "investorsLabel": "Lightspeed, General Catalyst, Plural and 201 Ventures"
+    },
+    {
+     "id": "l2",
+     "company": "VÆRIDION",
+     "hq": "Munich",
+     "stage": "Series A2",
+     "amount": 30,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Ivor van Dartel",
+      "Sebastian Seemann"
+     ],
+     "investors": [
+      "SHIFT Invest",
+      "Invest-NL",
+      "World Fund",
+      "Project A",
+      "Vsquared Ventures"
+     ],
+     "source": {
+      "publication": "Tech.eu",
+      "title": "German aerospace startup VÆRIDION raises €30M for zero-emission regional flights",
+      "url": "https://tech.eu/2026/11/05/german-aerospace-startup-v-ridion-raises-30m-for-zero-emission-regional-fights/",
+      "publishedOn": "2026-11-05",
+      "publishedLabel": "5 Nov 2026"
+     },
+     "text": "VÆRIDION has raised €30m for the Microliner, a battery-electric nine-seater built for routes of up to 400km. The bet is that the hard part of regional aviation is not the aircraft but the airfields, and that something quiet and electric can use the small ones a jet cannot. SHIFT Invest and Invest-NL co-led the Series A2 from the Netherlands, with World Fund, Project A and Vsquared Ventures following. Ivor van Dartel and Sebastian Seemann left Airbus to start the company in 2021 and are targeting commercial service in 2030, testing at Oberpfaffenhofen in the meantime.",
+     "note": {
+      "text": "The EU separately selected the company for a €94.5m Innovation Fund grant, which is not equity and is not counted in this round.",
+      "source": {
+       "publication": "Tech.eu",
+       "title": "German aerospace startup VÆRIDION raises €30M for zero-emission regional flights",
+       "url": "https://tech.eu/2026/11/05/german-aerospace-startup-v-ridion-raises-30m-for-zero-emission-regional-fights/",
+       "publishedOn": "2026-11-05",
+       "publishedLabel": "5 Nov 2026"
+      }
+     },
+     "amountLabel": "€30 m",
+     "valuationLabel": null,
+     "foundersLabel": "Ivor van Dartel and Sebastian Seemann",
+     "investorsLabel": "SHIFT Invest, Invest-NL, World Fund, Project A and Vsquared Ventures"
+    }
+   ],
+   "more": [
+    {
+     "id": "m1",
+     "company": "Pliant",
+     "hq": "Berlin",
+     "stage": "Series C",
+     "amount": 80,
+     "currency": "USD",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [],
+     "investors": [],
+     "source": {
+      "publication": "Tech.eu",
+      "title": "European tech weekly recap: Over €2.7B invested across 55+ deals",
+      "url": "https://tech.eu/2026/11/09/european-tech-weekly-recap-over-eur27b-invested-across-55-deals",
+      "publishedOn": "2026-11-09",
+      "publishedLabel": "9 Nov 2026"
+     },
+     "amountLabel": "$80 m",
+     "valuationLabel": null,
+     "foundersLabel": null,
+     "investorsLabel": null
+    },
+    {
+     "id": "m2",
+     "company": "Quint Computing",
+     "hq": null,
+     "stage": "Funding round",
+     "amount": 9.1,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [],
+     "investors": [],
+     "source": {
+      "publication": "Tech.eu",
+      "title": "European tech weekly recap: Over €2.7B invested across 55+ deals",
+      "url": "https://tech.eu/2026/11/09/european-tech-weekly-recap-over-eur27b-invested-across-55-deals",
+      "publishedOn": "2026-11-09",
+      "publishedLabel": "9 Nov 2026"
+     },
+     "amountLabel": "€9.1 m",
+     "valuationLabel": null,
+     "foundersLabel": null,
+     "investorsLabel": null
+    },
+    {
+     "id": "m3",
+     "company": "Conlio",
+     "hq": null,
+     "stage": "Funding round",
+     "amount": 6.4,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [],
+     "investors": [],
+     "source": {
+      "publication": "Tech.eu",
+      "title": "European tech weekly recap: Over €2.7B invested across 55+ deals",
+      "url": "https://tech.eu/2026/11/09/european-tech-weekly-recap-over-eur27b-invested-across-55-deals",
+      "publishedOn": "2026-11-09",
+      "publishedLabel": "9 Nov 2026"
+     },
+     "amountLabel": "€6.4 m",
+     "valuationLabel": null,
+     "foundersLabel": null,
+     "investorsLabel": null
+    },
+    {
+     "id": "m4",
+     "company": "Marble",
+     "hq": "Munich",
+     "stage": "Funding round",
+     "amount": 3.75,
+     "currency": "USD",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [],
+     "investors": [],
+     "source": {
+      "publication": "Tech.eu",
+      "title": "European tech weekly recap: Over €2.7B invested across 55+ deals",
+      "url": "https://tech.eu/2026/11/09/european-tech-weekly-recap-over-eur27b-invested-across-55-deals",
+      "publishedOn": "2026-11-09",
+      "publishedLabel": "9 Nov 2026"
+     },
+     "amountLabel": "$3.75 m",
+     "valuationLabel": null,
+     "foundersLabel": null,
+     "investorsLabel": null
+    },
+    {
+     "id": "m5",
+     "company": "Smycles",
+     "hq": null,
+     "stage": "Funding round",
+     "amount": 1.5,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [],
+     "investors": [],
+     "source": {
+      "publication": "Tech.eu",
+      "title": "European tech weekly recap: Over €2.7B invested across 55+ deals",
+      "url": "https://tech.eu/2026/11/09/european-tech-weekly-recap-over-eur27b-invested-across-55-deals",
+      "publishedOn": "2026-11-09",
+      "publishedLabel": "9 Nov 2026"
+     },
+     "amountLabel": "€1.5 m",
+     "valuationLabel": null,
+     "foundersLabel": null,
+     "investorsLabel": null
+    }
+   ],
+   "rangeLabel": "2–8 Nov 2026",
+   "shortLabel": "W45",
+   "yearLabel": "2026",
+   "roundCount": 7,
+   "roundCountLabel": "7 rounds",
+   "moreCount": 5
+  },
+  {
+   "week": "2026-W44",
+   "start": "2026-10-26",
+   "end": "2026-11-01",
+   "lead": [
+    {
+     "id": "l1",
+     "company": "MuRay",
+     "hq": "Hamburg",
+     "stage": "Private round and public funding",
+     "amount": 7.1,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Andi Hektor",
+      "Kristjan Põder"
+     ],
+     "investors": [
+      "First Momentum Ventures",
+      "Caelora",
+      "Superangel",
+      "Mätch VC",
+      "Arcas VC",
+      "Tiny VC",
+      "Nordic Science Investments"
+     ],
+     "source": {
+      "publication": "Tech.eu",
+      "title": "MuRay raises €7.1M to inspect rocket engines and turbines beyond X-ray limits",
+      "url": "https://tech.eu/2026/10/29/muray-raises-eur71m-to-inspect-rocket-engines-and-turbines-beyond-x-ray-limits/",
+      "publishedOn": "2026-10-29",
+      "publishedLabel": "29 Oct 2026"
+     },
+     "text": "MuRay has raised €7.1m to look inside metal that X-rays cannot see through. The Hamburg company fires controlled muon beams at dense parts and reconstructs them in three dimensions, which matters most for the components nobody can afford to have fail, a 3D-printed rocket engine or a gas turbine blade, and which it says takes minutes rather than hours at a lower radiation dose. First Momentum Ventures led the private half of the round and Caelora, a subsidiary of Marvel Fusion, co-led it. Andi Hektor and Kristjan Põder plan a first commercial inspection service in 2027, run off DESY's electron beam in their own city.",
+     "note": {
+      "text": "€3.5m of this is a private round and €3.6m is non-dilutive public funding, including a Horizon Europe grant.",
+      "source": {
+       "publication": "Tech.eu",
+       "title": "MuRay raises €7.1M to inspect rocket engines and turbines beyond X-ray limits",
+       "url": "https://tech.eu/2026/10/29/muray-raises-eur71m-to-inspect-rocket-engines-and-turbines-beyond-x-ray-limits/",
+       "publishedOn": "2026-10-29",
+       "publishedLabel": "29 Oct 2026"
+      }
+     },
+     "amountLabel": "€7.1 m",
+     "valuationLabel": null,
+     "foundersLabel": "Andi Hektor and Kristjan Põder",
+     "investorsLabel": "First Momentum Ventures, Caelora, Superangel, Mätch VC, Arcas VC, Tiny VC and Nordic Science Investments"
+    }
+   ],
+   "more": [
+    {
+     "id": "m1",
+     "company": "Strollme",
+     "hq": null,
+     "stage": "Funding round",
+     "amount": 22,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [],
+     "investors": [],
+     "source": {
+      "publication": "Tech.eu",
+      "title": "European tech weekly recap: Over €1.3B invested across 60+ deals",
+      "url": "https://tech.eu/2026/11/02/european-tech-weekly-recap-over-eur13b-invested-across-60-deals/",
+      "publishedOn": "2026-11-02",
+      "publishedLabel": "2 Nov 2026"
+     },
+     "amountLabel": "€22 m",
+     "valuationLabel": null,
+     "foundersLabel": null,
+     "investorsLabel": null
+    },
+    {
+     "id": "m2",
+     "company": "Tendos",
+     "hq": null,
+     "stage": "Seed",
+     "amount": 12,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [],
+     "investors": [],
+     "source": {
+      "publication": "Tech.eu",
+      "title": "European tech weekly recap: Over €1.3B invested across 60+ deals",
+      "url": "https://tech.eu/2026/11/02/european-tech-weekly-recap-over-eur13b-invested-across-60-deals/",
+      "publishedOn": "2026-11-02",
+      "publishedLabel": "2 Nov 2026"
+     },
+     "amountLabel": "€12 m",
+     "valuationLabel": null,
+     "foundersLabel": null,
+     "investorsLabel": null
+    },
+    {
+     "id": "m3",
+     "company": "Hansetherm",
+     "hq": null,
+     "stage": "Seed",
+     "amount": 10,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [],
+     "investors": [],
+     "source": {
+      "publication": "Tech.eu",
+      "title": "European tech weekly recap: Over €1.3B invested across 60+ deals",
+      "url": "https://tech.eu/2026/11/02/european-tech-weekly-recap-over-eur13b-invested-across-60-deals/",
+      "publishedOn": "2026-11-02",
+      "publishedLabel": "2 Nov 2026"
+     },
+     "amountLabel": "€10 m",
+     "valuationLabel": null,
+     "foundersLabel": null,
+     "investorsLabel": null
+    },
+    {
+     "id": "m4",
+     "company": "Evasive Robotics",
+     "hq": null,
+     "stage": "Funding round",
+     "amount": 2.1,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [],
+     "investors": [],
+     "source": {
+      "publication": "Tech.eu",
+      "title": "European tech weekly recap: Over €1.3B invested across 60+ deals",
+      "url": "https://tech.eu/2026/11/02/european-tech-weekly-recap-over-eur13b-invested-across-60-deals/",
+      "publishedOn": "2026-11-02",
+      "publishedLabel": "2 Nov 2026"
+     },
+     "amountLabel": "€2.1 m",
+     "valuationLabel": null,
+     "foundersLabel": null,
+     "investorsLabel": null
+    },
+    {
+     "id": "m5",
+     "company": "Vuse XR",
+     "hq": null,
+     "stage": "Funding round",
+     "amount": 1.2,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [],
+     "investors": [],
+     "source": {
+      "publication": "Tech.eu",
+      "title": "European tech weekly recap: Over €1.3B invested across 60+ deals",
+      "url": "https://tech.eu/2026/11/02/european-tech-weekly-recap-over-eur13b-invested-across-60-deals/",
+      "publishedOn": "2026-11-02",
+      "publishedLabel": "2 Nov 2026"
+     },
+     "amountLabel": "€1.2 m",
+     "valuationLabel": null,
+     "foundersLabel": null,
+     "investorsLabel": null
+    }
+   ],
+   "rangeLabel": "26 Oct – 1 Nov 2026",
+   "shortLabel": "W44",
+   "yearLabel": "2026",
+   "roundCount": 6,
+   "roundCountLabel": "6 rounds",
+   "moreCount": 5
+  },
+  {
+   "week": "2026-W43",
+   "start": "2026-10-19",
+   "end": "2026-10-25",
+   "lead": [
+    {
+     "id": "l1",
+     "company": "YGO",
+     "hq": null,
+     "stage": "Series A",
+     "amount": 8,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Julian Kögel",
+      "Willi Ibbeken",
+      "Sebastian Kreutzberger"
+     ],
+     "investors": [
+      "Ventech",
+      "Sake Bosch",
+      "Caesar Capital"
+     ],
+     "source": {
+      "publication": "Tech.eu",
+      "title": "YGO secures €8M to scale its AI-powered travel infrastructure",
+      "url": "https://tech.eu/2026/10/21/ygo-secures-eur8m-to-scale-its-ai-powered-travel-infrastructure/",
+      "publishedOn": "2026-10-21",
+      "publishedLabel": "21 Oct 2026"
+     },
+     "text": "YGO has raised €8m to make the travel industry's own inventory legible to software. Hotel and tour data sits in dozens of incompatible systems, which is why booking an unusual trip still means a dozen tabs, and YGO builds the layer that structures it so it can be searched by meaning rather than by exact match, recommended, and booked automatically across flights, rooms and activities. Condor, Bentour and the GetAway Group are named as customers. Ventech led the Series A, with Sake Bosch, Caesar Capital and angels behind it, and Julian Kögel is taking the company past the DACH region on the back of it.",
+     "amountLabel": "€8 m",
+     "valuationLabel": null,
+     "foundersLabel": "Julian Kögel, Willi Ibbeken and Sebastian Kreutzberger",
+     "investorsLabel": "Ventech, Sake Bosch and Caesar Capital"
+    },
+    {
+     "id": "l2",
+     "company": "RhymeQ",
+     "hq": null,
+     "stage": "Pre-seed",
+     "amount": 2.2,
+     "currency": "USD",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [
+      "Daniel Volz",
+      "Tamás Varga",
+      "Christina Wu"
+     ],
+     "investors": [
+      "Ground State Ventures",
+      "Vanagon Ventures",
+      "Plug and Play",
+      "Freiraum Ventures"
+     ],
+     "source": {
+      "publication": "Tech.eu",
+      "title": "RhymeQ emerges from stealth with $2.2M to simplify quantum programming",
+      "url": "https://tech.eu/2026/10/22/rhymeq-emerges-from-stealth-with-22m-to-simplify-quantum-programming/",
+      "publishedOn": "2026-10-22",
+      "publishedLabel": "22 Oct 2026"
+     },
+     "text": "RhymeQ has come out of stealth with $2.2m and a plain premise, that quantum computers stay a specialist's instrument for as long as programming one means being a physicist. Its platform, Rhyme, lets a developer with ordinary Python write and debug for quantum hardware, with compilers underneath translating down to whichever processor is on the other end. Ground State Ventures led the pre-seed, with Vanagon Ventures, Plug and Play and Freiraum Ventures following. Daniel Volz, Tamás Varga and Christina Wu founded the company this year, which makes this its first round.",
+     "amountLabel": "$2.2 m",
+     "valuationLabel": null,
+     "foundersLabel": "Daniel Volz, Tamás Varga and Christina Wu",
+     "investorsLabel": "Ground State Ventures, Vanagon Ventures, Plug and Play and Freiraum Ventures"
+    }
+   ],
+   "more": [
+    {
+     "id": "m1",
+     "company": "Cellbox",
+     "hq": null,
+     "stage": "Seed",
+     "amount": 5,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [],
+     "investors": [],
+     "source": {
+      "publication": "Tech.eu",
+      "title": "European tech weekly recap: €1.5B in funding and Q3 2026 highlights",
+      "url": "https://tech.eu/2026/10/26/european-tech-weekly-recap-eur15b-in-deals-and-q3-2026-highlights",
+      "publishedOn": "2026-10-26",
+      "publishedLabel": "26 Oct 2026"
+     },
+     "note": {
+      "text": "The recap calls this a seed round while the article it links to is titled Series A.",
+      "source": {
+       "publication": "Tech.eu",
+       "title": "European tech weekly recap: €1.5B in funding and Q3 2026 highlights",
+       "url": "https://tech.eu/2026/10/26/european-tech-weekly-recap-eur15b-in-deals-and-q3-2026-highlights",
+       "publishedOn": "2026-10-26",
+       "publishedLabel": "26 Oct 2026"
+      }
+     },
+     "amountLabel": "€5 m",
+     "valuationLabel": null,
+     "foundersLabel": null,
+     "investorsLabel": null
+    },
+    {
+     "id": "m2",
+     "company": "Cygrid",
+     "hq": null,
+     "stage": "Pre-seed",
+     "amount": 2.66,
+     "currency": "EUR",
+     "approximate": false,
+     "valuation": null,
+     "valuationCurrency": null,
+     "founders": [],
+     "investors": [
+      "Atlantic",
+      "D11Z.Ventures"
+     ],
+     "source": {
+      "publication": "Tech.eu",
+      "title": "European tech weekly recap: €1.5B in funding and Q3 2026 highlights",
+      "url": "https://tech.eu/2026/10/26/european-tech-weekly-recap-eur15b-in-deals-and-q3-2026-highlights",
+      "publishedOn": "2026-10-26",
+      "publishedLabel": "26 Oct 2026"
+     },
+     "amountLabel": "€2.66 m",
+     "valuationLabel": null,
+     "foundersLabel": null,
+     "investorsLabel": "Atlantic and D11Z.Ventures"
+    }
+   ],
+   "rangeLabel": "19–25 Oct 2026",
+   "shortLabel": "W43",
+   "yearLabel": "2026",
+   "roundCount": 4,
+   "roundCountLabel": "4 rounds",
+   "moreCount": 2
+  },
+  {
    "week": "2026-W42",
    "start": "2026-10-12",
    "end": "2026-10-18",
@@ -1986,8 +2532,8 @@
   }
  ],
  "stats": {
-  "weekCount": 13,
-  "roundCount": 57,
-  "latestWeek": "2026-W42"
+  "weekCount": 16,
+  "roundCount": 74,
+  "latestWeek": "2026-W45"
  }
 }
