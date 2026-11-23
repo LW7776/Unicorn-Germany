@@ -1,0 +1,157 @@
+{
+  "week": "2026-W47",
+  "start": "2026-11-16",
+  "end": "2026-11-22",
+  "lead": [
+    {
+      "id": "l1",
+      "company": "Dcubed",
+      "hq": null,
+      "stage": "Series A+",
+      "amount": 27.2,
+      "currency": "EUR",
+      "approximate": false,
+      "valuation": null,
+      "valuationCurrency": null,
+      "founders": [
+        "Thomas Sinn"
+      ],
+      "investors": [
+        "Warsaw Equity Group",
+        "European Innovation Council Fund",
+        "HTGF Opportunity Fund",
+        "BayBG",
+        "Expansion"
+      ],
+      "source": {
+        "publication": "Tech.eu",
+        "title": "Dcubed raises €27.2M Series A+ to scale space deployment and power systems",
+        "url": "https://tech.eu/2026/11/18/dcubed-raises-eur272m-series-a-to-scale-space-deployment-and-power-systems/",
+        "publishedOn": "2026-11-18"
+      },
+      "text": "Dcubed has raised €27.2m to build the parts that unfold once a satellite is already in orbit. The company sells release actuators and deployable hardware off the shelf, which is unusual in a trade that mostly builds to order, and its next line is ARAQYS, a family of solar arrays whose first architecture folds like origami from ordinary silicon cells. Warsaw Equity Group led, with the European Innovation Council Fund and the HTGF Opportunity Fund behind it. Thomas Sinn is quadrupling manufacturing across Germany and the United States, ahead of a 2027 SpaceX rideshare that will deploy a ten-metre boom built in space."
+    },
+    {
+      "id": "l2",
+      "company": "Daisytuner",
+      "hq": null,
+      "stage": "Seed",
+      "amount": 6,
+      "currency": "EUR",
+      "approximate": false,
+      "valuation": null,
+      "valuationCurrency": null,
+      "founders": [],
+      "investors": [
+        "Elaia",
+        "LEA Ventures",
+        "Amadeus APEX Technology Fund",
+        "Seedcamp"
+      ],
+      "source": {
+        "publication": "Tech.eu",
+        "title": "AI inference startup Daisytuner raises €6M seed",
+        "url": "https://tech.eu/2026/11/16/ai-inference-startup-daisyturner-raises-eur6m-seed/",
+        "publishedOn": "2026-11-16"
+      },
+      "text": "Daisytuner has raised €6m for a compiler that retunes an AI model for whatever chip it lands on. The pitch is that inference is where the money goes once a model is in production, and that a company should be able to run it in its own data centre rather than renting someone's AI cloud. Elaia and LEA Ventures co-led, with the Amadeus APEX Technology Fund and Seedcamp following. The team is drawn from ETH Zurich, TU Munich, RWTH Aachen, TU Darmstadt and Lawrence Livermore, which is a compiler-research roster rather than a product one."
+    }
+  ],
+  "more": [
+    {
+      "id": "m1",
+      "company": "Nomadic",
+      "hq": null,
+      "stage": "Funding round",
+      "amount": 6,
+      "currency": "USD",
+      "approximate": false,
+      "valuation": null,
+      "valuationCurrency": null,
+      "founders": [],
+      "investors": [],
+      "source": {
+        "publication": "Tech.eu",
+        "title": "European tech weekly recap: More than 65 tech funding deals worth over €6B",
+        "url": "https://tech.eu/2026/11/23/european-tech-weekly-recap-more-than-65-tech-funding-deals-worth-over-eur18b",
+        "publishedOn": "2026-11-23"
+      }
+    },
+    {
+      "id": "m2",
+      "company": "Vetaion",
+      "hq": null,
+      "stage": "Funding round",
+      "amount": 5.7,
+      "currency": "EUR",
+      "approximate": false,
+      "valuation": null,
+      "valuationCurrency": null,
+      "founders": [],
+      "investors": [],
+      "source": {
+        "publication": "Tech.eu",
+        "title": "European tech weekly recap: More than 65 tech funding deals worth over €6B",
+        "url": "https://tech.eu/2026/11/23/european-tech-weekly-recap-more-than-65-tech-funding-deals-worth-over-eur18b",
+        "publishedOn": "2026-11-23"
+      }
+    },
+    {
+      "id": "m3",
+      "company": "NeuralSat",
+      "hq": null,
+      "stage": "Pre-seed",
+      "amount": 2.9,
+      "currency": "EUR",
+      "approximate": false,
+      "valuation": null,
+      "valuationCurrency": null,
+      "founders": [],
+      "investors": [],
+      "source": {
+        "publication": "Tech.eu",
+        "title": "European tech weekly recap: More than 65 tech funding deals worth over €6B",
+        "url": "https://tech.eu/2026/11/23/european-tech-weekly-recap-more-than-65-tech-funding-deals-worth-over-eur18b",
+        "publishedOn": "2026-11-23"
+      }
+    },
+    {
+      "id": "m4",
+      "company": "RHISE AI",
+      "hq": null,
+      "stage": "Funding round",
+      "amount": 2.66,
+      "currency": "EUR",
+      "approximate": false,
+      "valuation": null,
+      "valuationCurrency": null,
+      "founders": [],
+      "investors": [],
+      "source": {
+        "publication": "Tech.eu",
+        "title": "European tech weekly recap: More than 65 tech funding deals worth over €6B",
+        "url": "https://tech.eu/2026/11/23/european-tech-weekly-recap-more-than-65-tech-funding-deals-worth-over-eur18b",
+        "publishedOn": "2026-11-23"
+      }
+    },
+    {
+      "id": "m5",
+      "company": "MediPulse",
+      "hq": null,
+      "stage": "Pre-seed",
+      "amount": 2.6,
+      "currency": "EUR",
+      "approximate": false,
+      "valuation": null,
+      "valuationCurrency": null,
+      "founders": [],
+      "investors": [],
+      "source": {
+        "publication": "Tech.eu",
+        "title": "European tech weekly recap: More than 65 tech funding deals worth over €6B",
+        "url": "https://tech.eu/2026/11/23/european-tech-weekly-recap-more-than-65-tech-funding-deals-worth-over-eur18b",
+        "publishedOn": "2026-11-23"
+      }
+    }
+  ]
+}

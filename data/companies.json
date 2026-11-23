@@ -1,19 +1,19 @@
 {
  "stats": {
   "count": 40,
-  "verifiedCount": 37,
-  "reportedCount": 3,
-  "countBasis": "German unicorns · 37 verified, 3 reported",
-  "combinedValuationEurMillions": 117256.0,
-  "combinedValuationLabel": "~€117.3 bn",
-  "combinedValuationCount": 34,
-  "combinedValuationBasis": "Combined value · 34 of 40 disclosed",
-  "newInLast12Months": 13,
+  "verifiedCount": 38,
+  "reportedCount": 2,
+  "countBasis": "German unicorns · 38 verified, 2 reported",
+  "combinedValuationEurMillions": 125076.0,
+  "combinedValuationLabel": "~€125.1 bn",
+  "combinedValuationCount": 35,
+  "combinedValuationBasis": "Combined value · 35 of 40 disclosed",
+  "newInLast12Months": 12,
   "medianYearsToUnicorn": 7,
   "fxRateDisclosed": 0.92,
   "fxAsOf": "2026-08",
-  "dataAsOf": "2026-10-12",
-  "dataAsOfLabel": "12 Oct 2026",
+  "dataAsOf": "2026-11-12",
+  "dataAsOfLabel": "12 Nov 2026",
   "crossingsByYear": [
    {
     "year": 2018,
@@ -345,7 +345,7 @@
    "name": "Agile Robots",
    "website": "https://www.agile-robots.com",
    "logo": "assets/logos/agile-robots.webp",
-   "verification": "reported",
+   "verification": "verified",
    "hq": {
     "city": "Munich",
     "country": "Germany"
@@ -374,13 +374,17 @@
     "SoftBank Vision Fund",
     "Sequoia China",
     "Linear Venture",
-    "Foxconn"
+    "Foxconn",
+    "SoftBank",
+    "Nvidia",
+    "Hitachi",
+    "T Capital"
    ],
    "totalRaised": {
-    "amount": 270,
+    "amount": 2000,
     "currency": "USD",
     "approximate": true,
-    "source": "s1"
+    "source": "s5"
    },
    "rounds": [
     {
@@ -403,6 +407,27 @@
      },
      "dateLabel": "Jun 2026",
      "amountLabel": null
+    },
+    {
+     "id": "r2",
+     "date": "2026-11",
+     "stage": "Series F",
+     "amount": 500,
+     "currency": "USD",
+     "approximate": false,
+     "postMoney": null,
+     "leadInvestors": [
+      "SoftBank"
+     ],
+     "investors": [
+      "SoftBank",
+      "Nvidia",
+      "Hitachi",
+      "T Capital"
+     ],
+     "source": "s4",
+     "dateLabel": "Nov 2026",
+     "amountLabel": "$500 m"
     }
    ],
    "becameUnicorn": {
@@ -411,16 +436,12 @@
     "source": "s2"
    },
    "valuation": {
-    "amount": null,
-    "currency": null,
+    "amount": 8500,
+    "currency": "USD",
     "approximate": false,
-    "asOf": "2026-06",
-    "round": "Round reported in talks",
-    "source": "s2",
-    "undisclosed": {
-     "note": "Widely counted as a German robotics unicorn. No allowlisted page states a valuation, and the most recent reporting is of a round in talks.",
-     "source": "s2"
-    }
+    "asOf": "2026-11",
+    "round": "Series F",
+    "source": "s3"
    },
    "sources": [
     {
@@ -440,15 +461,42 @@
      "publishedOn": "2026-06-02",
      "quote": "SoftBank in talks to back Agile Robots' $800m round, reports say",
      "publishedLabel": "2 Jun 2026"
+    },
+    {
+     "id": "s3",
+     "publication": "Tech.eu",
+     "title": "SoftBank leads $500M funding round in Agile Robots",
+     "url": "https://tech.eu/2026/11/12/softbank-leads-500m-funding-round-in-agile-robots/",
+     "publishedOn": "2026-11-12",
+     "quote": "The Japanese multinational led the Series F funding round, which also features Nvidia, Hitachi, and T Capital and valued Agile at $8.5bn.",
+     "publishedLabel": "12 Nov 2026"
+    },
+    {
+     "id": "s4",
+     "publication": "Tech.eu",
+     "title": "SoftBank leads $500M funding round in Agile Robots",
+     "url": "https://tech.eu/2026/11/12/softbank-leads-500m-funding-round-in-agile-robots/",
+     "publishedOn": "2026-11-12",
+     "quote": "SoftBank has led a $500m funding round in German humanoid robotics startup Agile Robots that automates industrial work.",
+     "publishedLabel": "12 Nov 2026"
+    },
+    {
+     "id": "s5",
+     "publication": "Tech.eu",
+     "title": "SoftBank leads $500M funding round in Agile Robots",
+     "url": "https://tech.eu/2026/11/12/softbank-leads-500m-funding-round-in-agile-robots/",
+     "publishedOn": "2026-11-12",
+     "quote": "has raised around $2bn in total",
+     "publishedLabel": "12 Nov 2026"
     }
    ],
    "display": {
-    "valuationLabel": "Undisclosed",
-    "valuationUndisclosed": true,
-    "valuationUndisclosedBadge": ">1bn",
-    "valuationAsOf": "Jun 2026",
-    "lastRoundLabel": "Jun 2026",
-    "lastRoundStage": "Round reported in talks",
+    "valuationLabel": "$8.5 bn",
+    "valuationUndisclosed": false,
+    "valuationUndisclosedBadge": null,
+    "valuationAsOf": "Nov 2026",
+    "lastRoundLabel": "Nov 2026",
+    "lastRoundStage": "Series F",
     "yearsToUnicorn": 8,
     "becameUnicornLabel": "Jun 2026",
     "unicornThresholdLabel": "unicorn",
@@ -456,27 +504,31 @@
     "foundersLabel": "Zhaopeng Chen, Peter Meusel",
     "aged": false,
     "websiteLabel": "agile-robots.com",
-    "verification": "reported",
-    "reported": true,
-    "valuationBarPct": null
+    "verification": "verified",
+    "reported": false,
+    "valuationBarPct": 47.2
    },
    "sort": {
     "newest": [
      2026,
      6
     ],
-    "valuationEur": null,
+    "valuationEur": 7820.0,
     "latestRound": [
      2026,
-     6
+     11
     ],
     "name": "agile robots"
    },
    "investorsOrdered": [
+    "SoftBank",
     "SoftBank Vision Fund",
     "Sequoia China",
     "Linear Venture",
-    "Foxconn"
+    "Foxconn",
+    "Nvidia",
+    "Hitachi",
+    "T Capital"
    ]
   },
   {
@@ -4454,7 +4506,7 @@
     "unicornThresholdLabel": "$1bn",
     "unicornFlagLabel": "crossed $1bn",
     "foundersLabel": "Valentin Stalf, Maximilian Tayenthal",
-    "aged": false,
+    "aged": true,
     "websiteLabel": "n26.com",
     "verification": "verified",
     "reported": false,
@@ -7154,6 +7206,29 @@
      "source": "s5",
      "dateLabel": "Jun 2021",
      "amountLabel": "$80 m"
+    },
+    {
+     "id": "r3",
+     "date": "2026-11",
+     "stage": "Equity and debt",
+     "amount": 228,
+     "currency": "EUR",
+     "approximate": false,
+     "postMoney": null,
+     "leadInvestors": [
+      "Scanai",
+      "Poste Italiane"
+     ],
+     "investors": [
+      "Scanai",
+      "Poste Italiane",
+      "Coface",
+      "European Investment Bank",
+      "Deutsche Bank"
+     ],
+     "source": "s8",
+     "dateLabel": "Nov 2026",
+     "amountLabel": "€228 m"
     }
    ],
    "founders": [
@@ -7180,7 +7255,12 @@
     "HV Capital",
     "Project A",
     "Scania",
-    "Hedosophia"
+    "Hedosophia",
+    "Scanai",
+    "Poste Italiane",
+    "Coface",
+    "European Investment Bank",
+    "Deutsche Bank"
    ],
    "sources": [
     {
@@ -7245,6 +7325,15 @@
      "publishedOn": "2021-06-01",
      "quote": "The funding makes sennder, which has now raised some $350 million, one of the most well-funded of the freight forwarders, but it’s a hot area at the moment.",
      "publishedLabel": "1 Jun 2021"
+    },
+    {
+     "id": "s8",
+     "publication": "Tech.eu",
+     "title": "Berlin freight unicorn sennder raises €228M in debt and equity",
+     "url": "https://tech.eu/2026/11/11/berlin-freight-unicorn-sennder-raises-228m-in-debt-and-equity/",
+     "publishedOn": "2026-11-11",
+     "quote": "A German unicorn looking to digitise the traditional freight industry today said it had raised €228m in equity and debt, as it looks to expand its network and bolster its technology.",
+     "publishedLabel": "11 Nov 2026"
     }
    ],
    "display": {
@@ -7252,8 +7341,8 @@
     "valuationUndisclosed": false,
     "valuationUndisclosedBadge": null,
     "valuationAsOf": "Jun 2021",
-    "lastRoundLabel": "Jun 2021",
-    "lastRoundStage": "Series D, second close",
+    "lastRoundLabel": "Nov 2026",
+    "lastRoundStage": "Equity and debt",
     "yearsToUnicorn": 6,
     "becameUnicornLabel": "Jan 2021",
     "unicornThresholdLabel": "$1bn",
@@ -7272,19 +7361,24 @@
     ],
     "valuationEur": 920.0,
     "latestRound": [
-     2021,
-     6
+     2026,
+     11
     ],
     "name": "sennder"
    },
    "investorsOrdered": [
     "Baillie Gifford",
+    "Scanai",
+    "Poste Italiane",
     "Accel",
     "Lakestar",
     "HV Capital",
     "Project A",
     "Scania",
-    "Hedosophia"
+    "Hedosophia",
+    "Coface",
+    "European Investment Bank",
+    "Deutsche Bank"
    ]
   },
   {

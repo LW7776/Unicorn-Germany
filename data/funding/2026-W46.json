@@ -1,0 +1,170 @@
+{
+  "week": "2026-W46",
+  "start": "2026-11-09",
+  "end": "2026-11-15",
+  "lead": [
+    {
+      "id": "l1",
+      "company": "Agile Robots",
+      "hq": "Munich",
+      "stage": "Series F",
+      "amount": 500,
+      "currency": "USD",
+      "approximate": false,
+      "valuation": 8500,
+      "valuationCurrency": "USD",
+      "founders": [
+        "Zhaopeng Chen"
+      ],
+      "investors": [
+        "SoftBank",
+        "Nvidia",
+        "Hitachi",
+        "T Capital"
+      ],
+      "source": {
+        "publication": "Tech.eu",
+        "title": "SoftBank leads $500M funding round in Agile Robots",
+        "url": "https://tech.eu/2026/11/12/softbank-leads-500m-funding-round-in-agile-robots/",
+        "publishedOn": "2026-11-12"
+      },
+      "text": "Agile Robots has raised $500m at $8.5bn, and the figure matters beyond the round, because this is the week the company stopped being one the register could not verify. It had sat here marked as reported, counted by others and carrying no published valuation of its own. SoftBank led the Series F with Nvidia, Hitachi and T Capital, and a number was finally printed. The Munich company span out of the German Aerospace Centre in 2018 and builds robot arms, hands and humanoids along with the models that run them. Zhaopeng Chen has opened a plant near Munich rated for 10,000 legged and wheeled machines a year."
+    },
+    {
+      "id": "l2",
+      "company": "sennder",
+      "hq": "Berlin",
+      "stage": "Equity and debt",
+      "amount": 228,
+      "currency": "EUR",
+      "approximate": false,
+      "valuation": null,
+      "valuationCurrency": null,
+      "founders": [
+        "David Nothacker"
+      ],
+      "investors": [
+        "Scanai",
+        "Poste Italiane",
+        "Coface",
+        "European Investment Bank",
+        "Deutsche Bank"
+      ],
+      "source": {
+        "publication": "Tech.eu",
+        "title": "Berlin freight unicorn sennder raises €228M in debt and equity",
+        "url": "https://tech.eu/2026/11/11/berlin-freight-unicorn-sennder-raises-228m-in-debt-and-equity/",
+        "publishedOn": "2026-11-11"
+      },
+      "text": "sennder has raised €228m, and only €73m of it is equity. The rest is credit, €100m from Coface, €40m from the European Investment Bank and €15m from Deutsche Bank, which is what financing a freight network rather than a software product looks like. Scanai and Poste Italiane led the equity among existing backers. David Nothacker founded the Berlin company in 2015 and it now moves more than 150,000 shipments a month, still digesting the European road freight arm it bought from CH Robinson in 2024. No valuation was given for the raise.",
+      "note": {
+        "text": "€73m of this is equity and €155m is debt. The source says it is unclear what valuation the raise was made at, so the register's figure is unchanged and now carries the aged marker.",
+        "source": {
+          "publication": "Tech.eu",
+          "title": "Berlin freight unicorn sennder raises €228M in debt and equity",
+          "url": "https://tech.eu/2026/11/11/berlin-freight-unicorn-sennder-raises-228m-in-debt-and-equity/",
+          "publishedOn": "2026-11-11"
+        }
+      }
+    }
+  ],
+  "more": [
+    {
+      "id": "m1",
+      "company": "SRTD Biotech",
+      "hq": null,
+      "stage": "Seed",
+      "amount": 31.5,
+      "currency": "EUR",
+      "approximate": false,
+      "valuation": null,
+      "valuationCurrency": null,
+      "founders": [],
+      "investors": [],
+      "source": {
+        "publication": "Tech.eu",
+        "title": "European tech weekly recap: €2.3B in deals and October's highlights",
+        "url": "https://tech.eu/2026/11/16/european-tech-weekly-recap-eur23b-in-deals-and-octobers-highlights",
+        "publishedOn": "2026-11-16"
+      }
+    },
+    {
+      "id": "m2",
+      "company": "SE3",
+      "hq": "Munich",
+      "stage": "Series A",
+      "amount": 30,
+      "currency": "USD",
+      "approximate": false,
+      "valuation": null,
+      "valuationCurrency": null,
+      "founders": [],
+      "investors": [
+        "Accel"
+      ],
+      "source": {
+        "publication": "Tech.eu",
+        "title": "European tech weekly recap: €2.3B in deals and October's highlights",
+        "url": "https://tech.eu/2026/11/16/european-tech-weekly-recap-eur23b-in-deals-and-octobers-highlights",
+        "publishedOn": "2026-11-16"
+      }
+    },
+    {
+      "id": "m3",
+      "company": "Sparetech",
+      "hq": null,
+      "stage": "Series B",
+      "amount": 20,
+      "currency": "USD",
+      "approximate": false,
+      "valuation": null,
+      "valuationCurrency": null,
+      "founders": [],
+      "investors": [],
+      "source": {
+        "publication": "Tech.eu",
+        "title": "European tech weekly recap: €2.3B in deals and October's highlights",
+        "url": "https://tech.eu/2026/11/16/european-tech-weekly-recap-eur23b-in-deals-and-octobers-highlights",
+        "publishedOn": "2026-11-16"
+      }
+    },
+    {
+      "id": "m4",
+      "company": "Marble Imaging",
+      "hq": null,
+      "stage": "Funding round",
+      "amount": 6,
+      "currency": "EUR",
+      "approximate": false,
+      "valuation": null,
+      "valuationCurrency": null,
+      "founders": [],
+      "investors": [],
+      "source": {
+        "publication": "Tech.eu",
+        "title": "European tech weekly recap: €2.3B in deals and October's highlights",
+        "url": "https://tech.eu/2026/11/16/european-tech-weekly-recap-eur23b-in-deals-and-octobers-highlights",
+        "publishedOn": "2026-11-16"
+      }
+    },
+    {
+      "id": "m5",
+      "company": "feld.energy",
+      "hq": null,
+      "stage": "Funding round",
+      "amount": 6,
+      "currency": "EUR",
+      "approximate": false,
+      "valuation": null,
+      "valuationCurrency": null,
+      "founders": [],
+      "investors": [],
+      "source": {
+        "publication": "Tech.eu",
+        "title": "European tech weekly recap: €2.3B in deals and October's highlights",
+        "url": "https://tech.eu/2026/11/16/european-tech-weekly-recap-eur23b-in-deals-and-octobers-highlights",
+        "publishedOn": "2026-11-16"
+      }
+    }
+  ]
+}

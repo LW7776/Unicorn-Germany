@@ -13,7 +13,7 @@ are not covered by this repository's licence.
 | File | Source URL | Retrieved | How |
 |---|---|---|---|
 | `black-forest-labs.svg` | https://bfl.ai/ (navbar wordmark, inline SVG) | 2026-08-08 | Copied verbatim from the page |
-| `celonis.svg` | https://www.celonis.com/src/assets/icons/logo.svg | 2026-08-08 | Downloaded unchanged |
+| `celonis.svg` | https://www.celonis.com/src/assets/icons/logo.svg | 2026-11-23 | Downloaded unchanged; see note |
 | `choco.svg` | https://choco.com/us/press (header wordmark, inline SVG) | 2026-08-08 | Copied verbatim; see note |
 | `commercetools.svg` | https://cdn.prod.website-files.com/6989ba4b19f7ea51fb4fc517/698c995a04b388752a6f3f2a_commercetools-logo-2024-B4HERo5H.svg | 2026-08-08 | Downloaded unchanged |
 | `forto.svg` | https://forto.com/wp-content/themes/forto-website/assets/images/logo.svg | 2026-08-08 | Downloaded unchanged |
@@ -167,3 +167,10 @@ are not covered by this repository's licence.
   `fill="currentColor"` while the root `<svg>` carries `fill="none"`, so the path's own fill wins
   and a standalone file renders black, exactly as the `currentColor` marks above do. The element
   was copied verbatim and only `xmlns` was added.
+- **Celonis** was stored broken for three months and nobody noticed, because an `<img>` renders a
+  mislabelled raster anyway: the file at `celonis.svg` was a PNG, not an SVG, and a later edit left
+  a JPEG there instead. The cause is that celonis.com serves this asset gzipped, and a fetch that
+  does not ask for decompression saves the compressed bytes. Re-fetched with `--compressed`, the
+  URL returns the real 5,260-byte SVG, 8 paths on `fill="currentColor"`, which is the file now
+  stored. It surfaced because the layout checker reported `visual-empty` on it: an SVG element that
+  parses to nothing draws nothing, where a mislabelled raster had been quietly rendering.

@@ -3,7 +3,7 @@
   "name": "Agile Robots",
   "website": "https://www.agile-robots.com",
   "logo": "assets/logos/agile-robots.webp",
-  "verification": "reported",
+  "verification": "verified",
   "hq": {
     "city": "Munich",
     "country": "Germany"
@@ -32,13 +32,17 @@
     "SoftBank Vision Fund",
     "Sequoia China",
     "Linear Venture",
-    "Foxconn"
+    "Foxconn",
+    "SoftBank",
+    "Nvidia",
+    "Hitachi",
+    "T Capital"
   ],
   "totalRaised": {
-    "amount": 270,
+    "amount": 2000,
     "currency": "USD",
     "approximate": true,
-    "source": "s1"
+    "source": "s5"
   },
   "rounds": [
     {
@@ -59,6 +63,25 @@
         "note": "Reported as being in talks at $800m. No round and no post-money has been confirmed.",
         "source": "s2"
       }
+    },
+    {
+      "id": "r2",
+      "date": "2026-11",
+      "stage": "Series F",
+      "amount": 500,
+      "currency": "USD",
+      "approximate": false,
+      "postMoney": null,
+      "leadInvestors": [
+        "SoftBank"
+      ],
+      "investors": [
+        "SoftBank",
+        "Nvidia",
+        "Hitachi",
+        "T Capital"
+      ],
+      "source": "s4"
     }
   ],
   "becameUnicorn": {
@@ -67,16 +90,12 @@
     "source": "s2"
   },
   "valuation": {
-    "amount": null,
-    "currency": null,
+    "amount": 8500,
+    "currency": "USD",
     "approximate": false,
-    "asOf": "2026-06",
-    "round": "Round reported in talks",
-    "source": "s2",
-    "undisclosed": {
-      "note": "Widely counted as a German robotics unicorn. No allowlisted page states a valuation, and the most recent reporting is of a round in talks.",
-      "source": "s2"
-    }
+    "asOf": "2026-11",
+    "round": "Series F",
+    "source": "s3"
   },
   "sources": [
     {
@@ -94,6 +113,30 @@
       "url": "https://sifted.eu/articles/softbank-in-talks-to-back-agile-robotics-in-800m-round-reports-say",
       "publishedOn": "2026-06-02",
       "quote": "SoftBank in talks to back Agile Robots' $800m round, reports say"
+    },
+    {
+      "id": "s3",
+      "publication": "Tech.eu",
+      "title": "SoftBank leads $500M funding round in Agile Robots",
+      "url": "https://tech.eu/2026/11/12/softbank-leads-500m-funding-round-in-agile-robots/",
+      "publishedOn": "2026-11-12",
+      "quote": "The Japanese multinational led the Series F funding round, which also features Nvidia, Hitachi, and T Capital and valued Agile at $8.5bn."
+    },
+    {
+      "id": "s4",
+      "publication": "Tech.eu",
+      "title": "SoftBank leads $500M funding round in Agile Robots",
+      "url": "https://tech.eu/2026/11/12/softbank-leads-500m-funding-round-in-agile-robots/",
+      "publishedOn": "2026-11-12",
+      "quote": "SoftBank has led a $500m funding round in German humanoid robotics startup Agile Robots that automates industrial work."
+    },
+    {
+      "id": "s5",
+      "publication": "Tech.eu",
+      "title": "SoftBank leads $500M funding round in Agile Robots",
+      "url": "https://tech.eu/2026/11/12/softbank-leads-500m-funding-round-in-agile-robots/",
+      "publishedOn": "2026-11-12",
+      "quote": "has raised around $2bn in total"
     }
   ]
 }
