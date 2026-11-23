@@ -2,78 +2,100 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Impressum · German Unicorns</title>
-<meta name="description" content="Legal notice and privacy information for German Unicorns.">
-<link rel="stylesheet" href="assets/css/tokens.css">
-<link rel="stylesheet" href="assets/css/base.css">
-<link rel="stylesheet" href="assets/css/page.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Imprint: the operator and privacy notice for German Unicorns</title>
+<meta name="description" content="Legal notice under German law, who operates this site, where it is hosted, and what it does and does not collect.">
+<meta name="theme-color" content="#FAF8F4">
+<link rel="preload" href="assets/fonts/mona-sans-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/spline-sans-mono-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/aurora.css">
+<link rel="stylesheet" href="assets/css/register.css">
 </head>
 <body>
-<a class="visually-hidden" href="#main">Skip to the content</a>
+<a class="skip-link" href="#main">Skip to the content</a>
 
-<header class="topbar">
-  <a class="topbar__mark" href="index.html">GERMAN&nbsp;UNICORNS</a>
-  <nav class="topbar__nav" aria-label="Main">
-    <a href="index.html">Companies</a>
-    <a href="about.html">About</a>
-  </nav>
+<header class="nav">
+  <div class="wrap">
+    <a class="nav__mark" href="index.html">German Unicorns</a>
+    <nav class="nav__links" aria-label="Main">
+      <a href="index.html#register">Register</a>
+      <a href="index.html#shape">Growth</a>
+      <a href="index.html#week">Week</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
 </header>
 
 <main class="page" id="main">
-  <p class="label">Impressum</p>
-  <h1 class="page__title">Legal notice</h1>
+  <div class="wrap">
+    <div class="page__head">
+      <h1>Legal notice</h1>
+      <p class="lede">Impressum</p>
+    </div>
 
-  <section aria-labelledby="ddg">
-    <h2 id="ddg">Information pursuant to §5 DDG</h2>
-    <p>
-      Operator<br>
-      Lan Lukas Welge
-    </p>
-    <p>
-      Address<br>
-      Berlin, Germany
-    </p>
-    <p>
-      Contact<br>
-      Email: <a href="mailto:lanlukas.welge@gmail.com">lanlukas.welge@gmail.com</a>
-    </p>
-  </section>
+    <div class="legal">
+      <section aria-labelledby="ddg">
+        <h2 id="ddg">Information pursuant to &sect;5 DDG</h2>
+        <dl class="record">
+          <dt>Operator</dt>
+          <dd>Lan Lukas Welge</dd>
+          <dt>Address</dt>
+          <dd>Berlin, Germany</dd>
+          <dt>Contact</dt>
+          <dd><a href="mailto:lanlukas.welge@gmail.com">lanlukas.welge@gmail.com</a></dd>
+        </dl>
+      </section>
 
-  <section aria-labelledby="responsible">
-    <h2 id="responsible">Responsible for content (§18 Abs. 2 MStV)</h2>
-    <p>
-      Lan Lukas Welge, address as above.
-    </p>
-  </section>
+      <section aria-labelledby="responsible">
+        <h2 id="responsible">Responsible for content (&sect;18 Abs. 2 MStV)</h2>
+        <p>
+          Lan Lukas Welge, address as above.
+        </p>
+      </section>
 
-  <section aria-labelledby="hosting">
-    <h2 id="hosting">Hosting</h2>
-    <p>
-      This site is hosted on GitHub Pages, a service of GitHub, Inc. GitHub processes visitor
-      requests to serve the site's pages, which necessarily includes each visitor's IP address,
-      standard behaviour for any web server and disclosed here because this site otherwise makes
-      no third-party requests of its own.
-    </p>
-  </section>
+      <section aria-labelledby="hosting">
+        <h2 id="hosting">Hosting</h2>
+        <p>
+          This site is hosted on GitHub Pages, a service of GitHub, Inc. GitHub processes visitor
+          requests to serve the site's pages, which necessarily includes each visitor's IP address,
+          standard behaviour for any web server and disclosed here because this site otherwise makes
+          no third-party requests of its own.
+        </p>
+      </section>
 
-  <section aria-labelledby="privacy">
-    <h2 id="privacy">Privacy</h2>
-    <ul>
-      <li>No analytics and no tracking scripts of any kind.</li>
-      <li>No cookies are set by this site.</li>
-      <li>No third-party requests are made by the page itself. Fonts are self-hosted rather than
-        loaded from a font CDN, and no other external resource is fetched.</li>
-      <li>The only requests the site itself makes are to its own JSON data files, on the same
-        origin.</li>
-      <li>As noted above, GitHub Pages, as the host, processes visitor IP addresses in order to
-        serve requests. This site has no control over and does not access those server logs.</li>
-    </ul>
-  </section>
+      <section aria-labelledby="privacy">
+        <h2 id="privacy">Privacy</h2>
+        <ul>
+          <li>No analytics and no tracking scripts of any kind.</li>
+          <li>No cookies are set by this site.</li>
+          <li>No third-party requests are made by the page itself. Fonts are self-hosted rather than
+            loaded from a font CDN, and no other external resource is fetched.</li>
+          <li>The only requests the site itself makes are to its own JSON data files, on the same
+            origin.</li>
+          <li>As noted above, GitHub Pages, as the host, processes visitor IP addresses in order to
+            serve requests. This site has no control over and does not access those server logs.</li>
+        </ul>
+      </section>
+    </div>
+  </div>
 </main>
 
-<footer class="footer" data-footer></footer>
-
-<script type="module" src="assets/js/static-page.js"></script>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <p class="foot__mark">German Unicorns</p>
+        <p class="foot__lede">A public register of Germany's private companies valued at a billion or more.</p>
+      </div>
+      <nav aria-label="Footer">
+        <a href="index.html#register">Register</a>
+        <a href="index.html#week">Week</a>
+        <a href="about.html">About</a>
+        <a href="impressum.html">Imprint</a>
+      </nav>
+    </div>
+    <p class="foot__legal note">&copy; 2026 German Unicorns. Product names and logos are trademarks of their owners.</p>
+  </div>
+</footer>
 </body>
 </html>

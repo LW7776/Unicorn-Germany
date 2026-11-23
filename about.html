@@ -2,235 +2,113 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>About · German Unicorns</title>
-<meta name="description" content="What this register is, why it exists, and how it is kept up to date.">
-<link rel="stylesheet" href="assets/css/tokens.css">
-<link rel="stylesheet" href="assets/css/base.css">
-<link rel="stylesheet" href="assets/css/page.css">
-<!-- assets/js/reveal.js brings each block up as it reaches the viewport, and
-     base.css starts them at zero opacity so none is ever painted and then
-     snatched back. With no JavaScript there is nothing to bring them up, so
-     the hidden state has to be undone here. -->
-<noscript><style>[data-reveal]{opacity:1;transform:none}</style></noscript>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>About: how the German Unicorns register is sourced and kept</title>
+<meta name="description" content="What this register is, where every figure comes from, what the four markers mean, and who to tell when something is wrong.">
+<meta name="theme-color" content="#FAF8F4">
+<link rel="preload" href="assets/fonts/mona-sans-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/spline-sans-mono-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/aurora.css">
+<link rel="stylesheet" href="assets/css/register.css">
 </head>
 <body>
-<a class="visually-hidden" href="#main">Skip to the content</a>
+<a class="skip-link" href="#main">Skip to the content</a>
+<div class="progress" aria-hidden="true"><i data-progress></i></div>
 
-<header class="topbar">
-  <a class="topbar__mark" href="index.html">GERMAN&nbsp;UNICORNS</a>
-  <nav class="topbar__nav" aria-label="Main">
-    <a href="index.html">Companies</a>
-    <a href="about.html" aria-current="page">About</a>
-  </nav>
+<header class="nav">
+  <div class="wrap">
+    <a class="nav__mark" href="index.html">German Unicorns</a>
+    <nav class="nav__links" aria-label="Main">
+      <a href="index.html#register">Register</a>
+      <a href="index.html#shape">Growth</a>
+      <a href="index.html#week">Week</a>
+      <a href="about.html" aria-current="page">About</a>
+    </nav>
+  </div>
 </header>
 
-<main class="page page--qa" id="main">
-  <div class="page__opener" data-reveal>
-    <p class="label">About</p>
-    <h1 class="page__title">Everything important, kept short.</h1>
-  </div>
+<main class="page" id="main">
+  <div class="wrap">
+    <div class="page__head" data-reveal>
+      <h1>Everything important, kept short.</h1>
+      <p class="lede">What this register is, where every figure comes from, and what to do when one of them is wrong.</p>
+    </div>
 
-  <!-- Native <details>/<summary>: the disclosure is keyboard operable and
-       announced as expandable without a line of script, and it degrades to
-       plain visible prose with JavaScript off. The chevron's rotation is the
-       only motion, and base.css already flattens every transition under
-       prefers-reduced-motion. -->
-  <div class="qa">
-    <details class="qa__row" data-reveal id="why">
-      <summary class="qa__q">
-        Why does this website exist?
-        <svg class="qa__chevron" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
-          <path d="M2 5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        </svg>
-      </summary>
-      <div class="qa__a">
-        <p>
-          Germany's billion-euro companies sit behind paywalled databases and scattered press
-          releases, and no public list carries the evidence with them. This is that list,
-          <span class="qa__figure" data-stat="count">40</span> companies past a billion and
-          <span class="qa__figure" data-stat="new12">12</span> of them in the last twelve months,
-          alongside the funding rounds German founders close week by week.
-        </p>
-      </div>
-    </details>
+    <div class="qa">
+      <article class="qa__item" data-reveal>
+        <h2>Why does this website exist?</h2>
+        <p>Germany's billion-euro companies sit behind paywalled databases and scattered press releases, and no public list carries the evidence with them. This is that list, <span class="qa__figure" data-stat="count">40</span> companies past a billion and <span class="qa__figure" data-stat="new12">12</span> of them in the last twelve months, alongside the funding rounds German founders close week by week.</p>
+      </article>
 
-    <details class="qa__row" data-reveal id="data">
-      <summary class="qa__q">
-        Where does the data come from?
-        <svg class="qa__chevron" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
-          <path d="M2 5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        </svg>
-      </summary>
-      <div class="qa__a">
-        <p>
-          Every figure traces to a dated, public page from an allowlisted set of publications, and
-          a validator refuses to publish a number unless the quote behind it states that number.
-          Company figures stay in the currency their source used, so nothing is converted twice.
-          The one exception is the combined value on the front page, which converts USD at
-          <span class="qa__figure" data-fx="rate">0.92</span>
-          (<span class="qa__figure" data-fx="asof">2026-08</span>) and covers only the companies
-          whose valuation a source has published.
-        </p>
-      </div>
-    </details>
+      <article class="qa__item" data-reveal>
+        <h2>Where does the data come from?</h2>
+        <p>Every figure traces to a dated, public page from an allowlisted set of publications, and a validator refuses to publish a number unless the quote behind it states that number. A company announcing its own figure outranks a report of it. Company figures stay in the currency their source used, so nothing is converted twice.</p>
+        <p>The one exception is the combined value on the front page, which converts USD at <span class="qa__figure" data-fx="rate">0.92</span> (<span class="qa__figure" data-fx="asof">2026-08</span>) and covers only the companies whose valuation a source has published.</p>
+      </article>
 
-    <details class="qa__row" data-reveal id="rounds">
-      <summary class="qa__q">
-        How are the weekly funding rounds sourced?
-        <svg class="qa__chevron" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
-          <path d="M2 5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        </svg>
-      </summary>
-      <div class="qa__a">
-        <p>
-          Every round carries a dated link to the reporting behind it, from the same allowlisted
-          publications as the register. The standard is lighter than the register's, in that the
-          amount is sourced and linked rather than quote-checked, and where a weekly recap named
-          no founders or city those come from elsewhere while the link stays on the round. The
-          week is a selection of German rounds and not a complete list of them.
-        </p>
-      </div>
-    </details>
+      <article class="qa__item" data-reveal>
+        <h2>How are the weekly funding rounds sourced?</h2>
+        <p>Every round carries a dated link to the reporting behind it, from the same allowlisted publications as the register. The standard is lighter than the register's, in that the amount is sourced and linked rather than quote-checked, and where a weekly recap named no founders or city those come from elsewhere while the link stays on the round. The week is a selection of German rounds and not a complete list of them.</p>
+      </article>
 
-    <details class="qa__row" data-reveal id="updates">
-      <summary class="qa__q">
-        How often does this update?
-        <svg class="qa__chevron" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
-          <path d="M2 5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        </svg>
-      </summary>
-      <div class="qa__a">
-        <p>
-          Every Monday evening a scan reads the allowlisted feeds
-          for the week that just ended, and reports whatever it found. The round-up is then
-          written up, checked against the sources and published, usually within a few days.
-          Every eighth week the same scan sweeps the whole register for what no funding wire
-          reports, a company that listed, was acquired, or has simply gone quiet. A week
-          nobody raised in is a week with no entry, and a busy week can still wait to be
-          written, so treat this as roughly weekly rather than punctually weekly. What you
-          will not find here is an entry nobody wrote, which is the trade being made. No
-          machine-generated list of rounds has ever been published on this site, and none
-          will be.
-        </p>
-      </div>
-    </details>
+      <article class="qa__item" data-reveal>
+        <h2>How often does this update?</h2>
+        <p>Every Monday evening a scan reads the allowlisted feeds for the week that just ended, and reports whatever it found. The round-up is then written up, checked against the sources and published, usually within a few days. Every eighth week the same scan sweeps the whole register for what no funding wire reports, a company that listed, was acquired, or has simply gone quiet.</p>
+        <p>A week nobody raised in is a week with no entry, and a busy week can still wait to be written, so treat this as roughly weekly rather than punctually weekly. What you will not find here is an entry nobody wrote, which is the trade being made.</p>
+      </article>
 
-    <details class="qa__row" data-reveal id="undisclosed">
-      <summary class="qa__q">
-        What does Undisclosed mean?
-        <svg class="qa__chevron" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
-          <path d="M2 5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        </svg>
-      </summary>
-      <div class="qa__a">
-        <p>
-          Some companies everyone agrees are unicorns have never had a figure published about
-          them. Those entries print <strong>Undisclosed</strong> with a marker showing they are
-          over the threshold, plus the sentence that establishes it and a link to the page it came
-          from. They are left out of the combined value rather than counted as nothing.
-        </p>
-      </div>
-    </details>
+      <article class="qa__item" data-reveal>
+        <h2>What does Undisclosed mean?</h2>
+        <p>Some companies everyone agrees are unicorns have never had a figure published about them. Those entries print <strong>Undisclosed</strong> with a marker showing they are over the threshold, plus the sentence that establishes it and a link to the page it came from. They are left out of the combined value rather than counted as nothing.</p>
+      </article>
 
-    <details class="qa__row" data-reveal id="disputed">
-      <summary class="qa__q">
-        What does Disputed mean?
-        <svg class="qa__chevron" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
-          <path d="M2 5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        </svg>
-      </summary>
-      <div class="qa__a">
-        <p>
-          Sources sometimes measure the same round differently, and a widely repeated number can
-          be counting debt, acquisition currency or enterprise value. Where that gap would change
-          what a reader believes, the register publishes the figure it can stand behind and
-          records the other one beside it with its own link. It never picks one silently.
-        </p>
-      </div>
-    </details>
+      <article class="qa__item" data-reveal>
+        <h2>What does Disputed mean?</h2>
+        <p>Sources sometimes measure the same round differently, and a widely repeated number can be counting debt, acquisition currency or enterprise value. Where that gap would change what a reader believes, the register publishes the figure it can stand behind and records the other one beside it with its own link. It never picks one silently.</p>
+      </article>
 
-    <details class="qa__row" data-reveal id="reported">
-      <summary class="qa__q">
-        What does Reported mean?
-        <svg class="qa__chevron" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
-          <path d="M2 5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        </svg>
-      </summary>
-      <div class="qa__a">
-        <p>
-          Other trackers count more German unicorns than this register publishes, because most
-          of them estimate valuations and this one only prints figures somebody published. A
-          company carries <strong>Reported</strong> when a credible outside count treats it as
-          a unicorn and that standard could not be met here, and the entry says in each case
-          what is established and what is not. Reported companies are shown, marked, left out
-          of the combined value, and counted separately in the summary row, so the number at
-          the top of the page never claims more than the evidence does.
-        </p>
-      </div>
-    </details>
+      <article class="qa__item" data-reveal>
+        <h2>What does Reported mean?</h2>
+        <p>Other trackers count more German unicorns than this register publishes, because most of them estimate valuations and this one only prints figures somebody published. A company carries <strong>Reported</strong> when a credible outside count treats it as a unicorn and that standard could not be met here, and the entry says in each case what is established and what is not. Reported companies are shown, marked, left out of the combined value, and counted separately in the summary, so the number at the top of the page never claims more than the evidence does.</p>
+      </article>
 
-    <details class="qa__row" data-reveal id="aged">
-      <summary class="qa__q">
-        What does the aged marker mean?
-        <svg class="qa__chevron" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
-          <path d="M2 5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        </svg>
-      </summary>
-      <div class="qa__a">
-        <p>
-          A valuation earns it when there is positive reason to think it has been overtaken,
-          either because the company raised again more than two years after the figure was
-          struck and nobody restated the price, or because the figure is more than five years
-          old. It marks a number that is correctly sourced and probably behind the times, and
-          it is deliberately rare, because a badge on half the register would be wallpaper.
-        </p>
-      </div>
-    </details>
+      <article class="qa__item" data-reveal>
+        <h2>What does the aged marker mean?</h2>
+        <p>A valuation earns it when there is positive reason to think it has been overtaken, either because the company raised again more than two years after the figure was struck and nobody restated the price, or because the figure is more than five years old. It marks a number that is correctly sourced and probably behind the times, and it is deliberately rare, because a badge on half the register would be wallpaper.</p>
+      </article>
 
-    <details class="qa__row" data-reveal id="built">
-      <summary class="qa__q">
-        How is this built?
-        <svg class="qa__chevron" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
-          <path d="M2 5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        </svg>
-      </summary>
-      <div class="qa__a">
-        <p>
-          Research and drafting are done with AI, the operator of this page reviews every
-          change before it is published, and a validator blocks anything whose source does not
-          state the figure. The only thing that runs on a schedule is the scan that reports
-          there is work to do, and it publishes nothing. The data is one
-          JSON file per company in a
-          <a href="https://github.com/LW7776/Unicorn-Germany" target="_blank" rel="noopener noreferrer">public Git repository</a>
-          rather than a database, with the tooling around it written in Python. The site itself is
-          plain HTML, CSS and JavaScript, no framework and no build step, served as static files,
-          so it costs nothing to run and every change is a readable diff.
-        </p>
-      </div>
-    </details>
+      <article class="qa__item" data-reveal>
+        <h2>How is this built?</h2>
+        <p>Research and drafting are done with AI, the operator of this page reviews every change before it is published, and a validator blocks anything whose source does not state the figure. The only thing that runs on a schedule is the scan that reports there is work to do, and it publishes nothing.</p>
+        <p>The data is one JSON file per company in a <a href="https://github.com/LW7776/Unicorn-Germany" target="_blank" rel="noopener noreferrer">public Git repository</a> rather than a database, with the tooling around it written in Python. The site itself is plain HTML, CSS and JavaScript, no framework and no build step, served as static files, so it costs nothing to run and every change is a readable diff. The two typefaces are self-hosted rather than loaded from a font CDN.</p>
+      </article>
 
-    <details class="qa__row" data-reveal id="corrections">
-      <summary class="qa__q">
-        Who runs this and how do I report an error?
-        <svg class="qa__chevron" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
-          <path d="M2 5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6"/>
-        </svg>
-      </summary>
-      <div class="qa__a">
-        <p>
-          Lan Lukas Welge, in Berlin. If something here is wrong, out of date or missing a source,
-          open an issue on the
-          <a href="https://github.com/LW7776/Unicorn-Germany/issues/new" target="_blank" rel="noopener noreferrer">GitHub issue tracker</a>
-          or use the "Report an error" link in the footer of any page. Corrections are the point,
-          not an inconvenience.
-        </p>
-      </div>
-    </details>
+      <article class="qa__item" data-reveal>
+        <h2>Who runs this and how do I report an error?</h2>
+        <p>Lan Lukas Welge, in Berlin. If something here is wrong, out of date or missing a source, open an issue on the <a href="https://github.com/LW7776/Unicorn-Germany/issues/new" target="_blank" rel="noopener noreferrer">GitHub issue tracker</a>. Corrections are the point, not an inconvenience.</p>
+      </article>
+    </div>
   </div>
 </main>
 
-<footer class="footer" data-footer></footer>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <p class="foot__mark">German Unicorns</p>
+        <p class="foot__lede">A public register of Germany's private companies valued at a billion or more.</p>
+      </div>
+      <nav aria-label="Footer">
+        <a href="index.html#register">Register</a>
+        <a href="index.html#week">Week</a>
+        <a href="about.html">About</a>
+        <a href="impressum.html">Imprint</a>
+        <a href="https://github.com/LW7776/Unicorn-Germany/issues/new" target="_blank" rel="noopener noreferrer">Report an error</a>
+      </nav>
+    </div>
+    <p class="foot__legal note">&copy; 2026 German Unicorns. Product names and logos are trademarks of their owners.</p>
+  </div>
+</footer>
 
 <script type="module" src="assets/js/static-page.js"></script>
 </body>

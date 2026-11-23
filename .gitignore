@@ -10,3 +10,13 @@ dist/
 .Rhistory
 
 .Rhistory
+
+# Design-tool working state. The records worth keeping are committed by name below
+# (.impeccable/config.json, the surface briefs and design.json); the rest is cache,
+# screenshots taken for a review, and scratch from the browser driver.
+.impeccable/*
+!.impeccable/config.json
+!.impeccable/surfaces/
+!.impeccable/design.json
+.taste-skill/
+.playwright-cli/

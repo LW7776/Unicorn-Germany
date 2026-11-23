@@ -39,35 +39,40 @@ def test_every_authored_figure_matches_the_data_it_describes():
     }
 
 
-def test_the_answers_are_disclosure_widgets_and_not_hand_rolled():
-    """Native <details>/<summary> is the whole accessibility story here. A future
-    edit that swaps in a div-and-aria-expanded pattern loses keyboard operation,
-    the announced expandable role and the no-JavaScript reading, all at once."""
+def test_every_answer_on_the_about_page_is_readable_without_script():
+    """The old About hid each answer behind <details>, and this test guarded that pattern.
+
+    Aurora prints every answer open, which is what the copy rules ask for and which is strictly
+    better for the thing the old test was protecting: an answer that is always in the document
+    needs no keyboard handling, no announced expandable role and no JavaScript to read. So the
+    assertion moved from "the accordion is native" to "there is no accordion", and the ten
+    questions are still all there.
+    """
     html = ABOUT.read_text(encoding="utf-8")
-    rows = html.count('<details class="qa__row"')
-    assert rows == html.count('<summary class="qa__q">') == 10
-    assert 'aria-expanded' not in html
+    assert html.count('<article class="qa__item"') == 10
+    assert "<details" not in html and "<summary" not in html
+    assert "aria-expanded" not in html
+    # Nothing on the page may be hidden from a reader who has script turned off. This looks for
+    # the `hidden` attribute itself rather than the substring, which would also match the
+    # visually-hidden class that exists to expose things to screen readers, not to hide them.
+    assert re.search(r"\shidden(?=[\s>])", html) is None
 
 
-def test_exactly_one_phrase_on_the_site_carries_the_gradient():
-    """docs/BRAND.md gives the gradient to one phrase at a time, and DESIGN.md's
-    "one bold element per screen" is the reason. It is a signature while it is
-    rare and a habit the moment it is not, and nothing about the CSS itself stops
-    a second one being added, so this is the thing that does.
+def test_no_text_on_the_site_carries_a_gradient():
+    """The old world gave a gradient tint to exactly one phrase and this test counted it.
 
-    The phrase is `Built by startups.` in the Companies intro (.intro__accent).
-    A gradient set in type is `background-clip: text`, prefixed or not, so
-    counting the unprefixed property counts the rules regardless of prefixing."""
+    Aurora has none. Colour lives in the light field and in the landing object, never in type, and
+    gradient text is one of the clearest tells of generated work, so the rule inverted from "at
+    most one" to "none at all". That is stricter than the rule it replaces, which is the only
+    reason it is allowed to replace it.
+
+    A gradient set in type is `background-clip: text`, prefixed or not, so counting the unprefixed
+    property counts the rules regardless of prefixing.
+    """
     css = "\n".join(
         path.read_text(encoding="utf-8")
         for path in sorted((ROOT / "assets" / "css").glob("*.css")))
-    # Comments out first: this file's own rule is explained in a comment that
-    # names the property, and a test that counts its own documentation passes
-    # for the wrong reason.
+    # Comments out first: a test that counts its own documentation passes for the wrong reason.
     declarations = re.sub(r"/\*.*?\*/", "", css, flags=re.DOTALL)
-    # The lookbehind is what keeps the -webkit- prefix from being counted as a
-    # second phrase: a prefixed and unprefixed pair is one declaration written
-    # twice for Safari, not two tinted phrases.
     tinted = re.findall(r"(?<!-)\bbackground-clip\s*:\s*text", declarations)
-    assert len(tinted) == 1, f"expected one gradient-tinted phrase, found {len(tinted)}"
-    assert ".intro__accent" in declarations
+    assert tinted == [], f"gradient text is banned in this world, found {len(tinted)}"

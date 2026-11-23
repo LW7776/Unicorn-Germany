@@ -1,0 +1,252 @@
+/* Aurora: the register as a lit room.
+   One warm field of light carries the page, a single object stands in it, and every company is a
+   soft card you can pick up. Colour lives in the light field and never in type. */
+
+/* ---- The two faces, self-hosted. Never the Google Fonts CDN: embedding it has been ruled a GDPR
+   breach in German courts and this site carries an Impressum. ---- */
+@font-face {
+  font-family: "Mona Sans";
+  src: url("../fonts/mona-sans-variable.woff2") format("woff2-variations");
+  font-weight: 200 900; font-stretch: 75% 125%; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Spline Sans Mono";
+  src: url("../fonts/spline-sans-mono-variable.woff2") format("woff2-variations");
+  font-weight: 300 700; font-style: normal; font-display: swap;
+}
+
+:root {
+  /* ground and ink */
+  --bone: #FAF8F4;
+  --bone-2: #F3EFE8;
+  --card: #FFFFFF;
+  --ink: #15130F;
+  --muted: #544F46;          /* 7.66:1 on bone, 7.09:1 on bone-2: clears the 7:1 bar for text people read */
+  --faint: #726C62;          /* 4.90:1 on bone, 4.54:1 on bone-2: labels, dates and meta only */
+  --line: rgba(21, 19, 15, .10);
+  --line-2: rgba(21, 19, 15, .16);
+
+  /* the light field. These three live in the aurora and in the object, never in type. */
+  --indigo: #3D4EF5;
+  --rose: #F2567E;
+  --amber: #F2A33C;
+
+  /* the one accent that is allowed to be type: indigo darkened until it clears 4.5:1 on bone */
+  --action: #2D3BC9;
+  --action-ink: #FFFFFF;
+
+  /* the four caveat marks are drawn, not coloured, so no caveat depends on hue to be read */
+  --mark: #544F46;
+
+  --ease-out: cubic-bezier(.23, 1, .32, 1);
+  --ease-io: cubic-bezier(.77, 0, .175, 1);
+  --ease-drawer: cubic-bezier(.32, .72, 0, 1);
+
+  --r-card: 20px;
+  --r-md: 14px;
+  --r-pill: 999px;
+
+  --s1: 8px; --s2: 16px; --s3: 24px; --s4: 40px; --s5: 64px; --s6: 96px; --s7: 128px;
+
+  --font: "Mona Sans", ui-sans-serif, system-ui, sans-serif;
+  --mono: "Spline Sans Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+  --nav-h: 68px;
+
+  /* The measure, as a width rather than in ch.
+     `ch` is the advance of the zero glyph, and in Mona Sans at the width this site sets it, zero
+     is about 40 percent wider than the average character. Every measure written in ch was
+     therefore letting roughly 40 percent more text onto the line than it looked like it was:
+     68ch rendered 94 characters, 64ch rendered 91, against a 65 to 75 bar. Measured in the
+     browser across the three pages rather than assumed.
+     --measure is the normal column for anything anyone reads. --measure-wide is for a lede, which
+     carries fewer lines and can run a little longer before it stops tracking. */
+  --measure: 52ch;
+  --measure-wide: 56ch;
+
+  color-scheme: light;
+  accent-color: var(--action);
+  caret-color: var(--action);
+}
+
+* { box-sizing: border-box; }
+/* `hidden` is an attribute, so it sets display:none at the weakest specificity there is, and any
+   rule that gives an element a display value silently beats it. Two things had already broken that
+   way here, the landing and the grid-to-map toggle, which is enough to make it a reset line rather
+   than a fix repeated per element. */
+[hidden] { display: none !important; }
+html, body { margin: 0; }
+html { scroll-behavior: auto; }
+body {
+  background: var(--bone);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+::selection { background: var(--action); color: var(--action-ink); }
+
+.wrap { width: min(100% - 2 * var(--gut, 48px), 1280px); margin-inline: auto; }
+@media (max-width: 720px) { :root { --gut: 20px; --s6: 64px; --s7: 88px; } }
+
+/* every figure on this site is a measured quantity, so every figure is lined and tabular */
+.fig, .cell__fig, .row__fig, .sheet__fig {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums lining-nums;
+  font-feature-settings: "tnum" 1, "lnum" 1;
+}
+
+h1, h2, h3 { font-weight: 600; font-stretch: 112%; letter-spacing: -.035em; line-height: 1.04; margin: 0; }
+h1 { font-size: clamp(42px, 6.6vw, 92px); }
+h2 { font-size: clamp(28px, 3.2vw, 46px); }
+h3 { font-size: 20px; letter-spacing: -.02em; font-stretch: 104%; }
+p { margin: 0; }
+a { color: inherit; }
+
+.lede { color: var(--muted); font-size: 18px; line-height: 1.6; max-width: var(--measure-wide); }
+/* .label is for genuinely short labels: a count, a key, two or three words. The wide tracking
+   that suits those actively slows a sentence down, so running text in the same quiet mono voice
+   takes .note instead and keeps normal tracking. */
+.label { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; color: var(--faint); }
+.note { font-family: var(--mono); font-size: 12px; letter-spacing: normal; color: var(--faint); }
+
+/* ---------- buttons ---------- */
+.btn {
+  appearance: none; border: 0; cursor: pointer; font: inherit; font-weight: 500; font-size: 16px;
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 26px; border-radius: var(--r-pill); min-height: 48px;
+  background: var(--ink); color: var(--bone); text-decoration: none;
+  transition: transform 160ms var(--ease-out), background 200ms ease;
+}
+.btn:active { transform: scale(.97); }
+.btn--accent { background: var(--action); color: var(--action-ink); }
+.btn--ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1px var(--line-2); }
+.btn--ghost:hover { background: var(--bone-2); }
+.btn:focus-visible, .seg button:focus-visible, .cell:focus-visible, a:focus-visible {
+  outline: 2px solid var(--action); outline-offset: 3px;
+}
+@media (hover: hover) and (pointer: fine) { .btn:hover { background: #241f19; } .btn--accent:hover { background: #2432b4; } }
+
+/* ---------- the landing ---------- */
+.landing {
+  position: fixed; inset: 0; z-index: 60;
+  display: grid; align-items: center; overflow: hidden; background: var(--bone);
+  transition: transform 760ms var(--ease-out), opacity 520ms var(--ease-out);
+}
+.landing.is-gone { transform: translateY(-14%); opacity: 0; pointer-events: none; }
+.aurora {
+  position: absolute; inset: -18% -8% -4%; filter: blur(68px); opacity: .95; pointer-events: none;
+  background:
+    radial-gradient(44% 42% at 20% 74%, var(--indigo) 0%, transparent 62%),
+    radial-gradient(40% 38% at 72% 80%, var(--rose) 0%, transparent 60%),
+    radial-gradient(34% 34% at 50% 98%, var(--amber) 0%, transparent 60%);
+  animation: drift 44s ease-in-out infinite alternate;
+}
+@keyframes drift {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(-3%, -4%, 0) scale(1.08); }
+  100% { transform: translate3d(3%, 2%, 0) scale(1.03); }
+}
+/* The words sit on a lit surface, not inside the light.
+   Measured on the rendered page, the stat labels were 1.66:1 against the indigo in the field and
+   the figures 5.93:1, both failing a site that holds body copy to 7:1. The palette gate never
+   caught it because it compares tokens against bone and cannot see what is actually behind the
+   text. This veil lays bone back over the left of the field, leaving the right of it, where the
+   object stands, untouched. */
+.landing::before {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(97deg,
+    var(--bone) 0%, rgba(250, 248, 244, .99) 34%, rgba(250, 248, 244, .88) 48%,
+    rgba(250, 248, 244, .34) 60%, rgba(250, 248, 244, 0) 70%);
+}
+@media (max-width: 900px) {
+  /* One column, so the veil runs up the page instead of across it. */
+  /* The copy runs nearly the full height at this width, so the veil has to hold most of the way
+     down rather than clearing at two thirds. The field keeps the bottom edge and the sides. */
+  .landing::before {
+    background: linear-gradient(184deg,
+      var(--bone) 0%, rgba(250, 248, 244, .98) 56%, rgba(250, 248, 244, .93) 78%,
+      rgba(250, 248, 244, .70) 92%, rgba(250, 248, 244, .34) 100%);
+  }
+  /* The field is quieter here because it spends this width behind words rather than beside them. */
+  .aurora { opacity: .62; }
+}
+
+.landing__grid {
+  position: relative; z-index: 2; display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  align-items: center; gap: var(--s5);
+}
+/* The headline is the only thing held to a short measure. An earlier version put that max-width on
+   the whole column, which squeezed the lede, wrapped the button onto two lines and broke the
+   figures across lines. */
+.landing h1 { margin-bottom: var(--s3); max-width: 9ch; }
+.landing .lede { margin-bottom: var(--s4); max-width: 42ch; }
+.landing .btn { white-space: nowrap; }
+.landing__object { justify-self: center; width: min(58vmin, 560px); aspect-ratio: 1; }
+.landing__object canvas { width: 100%; height: 100%; display: block; }
+
+/* Below the two-column width the object moves behind the words as a quiet layer, so the first
+   screen stays one screen instead of growing a second one to hold a picture. */
+@media (max-width: 900px) {
+  .landing__grid { grid-template-columns: 1fr; gap: 0; }
+  .landing__object {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    display: grid; place-items: center; opacity: .5; pointer-events: none; z-index: -1;
+  }
+  .landing__object canvas { width: min(92vw, 70vh); height: min(92vw, 70vh); }
+  .landing h1 { max-width: 11ch; }
+  .landing .lede { font-size: 16px; }
+}
+
+/* ---------- the site under it ---------- */
+.site { opacity: 0; transition: opacity 420ms var(--ease-out) 180ms; }
+.site.is-on { opacity: 1; }
+
+.nav {
+  position: sticky; top: 0; z-index: 30; height: var(--nav-h);
+  background: rgba(250, 248, 244, .86); backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+.nav .wrap { display: flex; align-items: center; gap: var(--s3); height: 100%; }
+.nav__mark { display: inline-flex; align-items: center; gap: 10px; font-weight: 600; font-stretch: 112%; letter-spacing: -.02em; text-decoration: none; }
+.nav__links { margin-left: auto; display: flex; gap: var(--s3); }
+.nav__links a { color: var(--muted); text-decoration: none; font-size: 15px; transition: color 180ms ease; }
+.nav__links a:hover { color: var(--ink); }
+@media (max-width: 860px) { .nav__links { display: none; } }
+
+.section { padding-block: var(--s7); }
+.section--tint { background: var(--bone-2); }
+.section__head { margin-bottom: var(--s4); }
+.section__head h2 { margin-bottom: var(--s2); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition-duration: 1ms !important; }
+  .landing.is-gone { transform: none; }
+}
+
+/* ---------- the scroll bar ----------
+   One charging bar at the top of the page, filling as the reader goes down. It is the only bar on
+   the site, which is what keeps it meaning something. */
+.progress {
+  position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 90;
+  background: transparent; pointer-events: none;
+}
+.progress i {
+  display: block; height: 100%; width: 100%;
+  transform: scaleX(0); transform-origin: 0 50%;
+  background: linear-gradient(90deg, var(--indigo), var(--rose) 58%, var(--amber));
+}
+
+/* The arrival itself lives in register.css, because it plays inside the register's box and
+   belongs with the box. A full-page version used to sit here too and was only losing to it by
+   stylesheet order, which is not a thing to rely on. */
+
+/* The landing's words and object leave first, so the cards burst into a field that is still lit
+   rather than onto a page that has already gone white. */
+.landing__grid { transition: opacity 460ms var(--ease-out), transform 460ms var(--ease-out); }
+.landing.is-leaving .landing__grid { opacity: 0; transform: translateY(-26px) scale(.985); }
+.landing.is-gone .aurora { opacity: 0; transition: opacity 560ms var(--ease-out); }
+

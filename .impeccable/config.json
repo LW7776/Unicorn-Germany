@@ -1,0 +1,36 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [
+      "design-system/**",
+      "assets/css/base.css",
+      "assets/css/tokens.css",
+      "assets/css/admin.css",
+      "admin.html",
+      "design-options/**"
+    ],
+    "ignoreValues": [
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "*.html"
+        ],
+        "createdAt": "2026-11-23T21:10:16.398Z"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "*.html"
+        ],
+        "createdAt": "2026-11-23T21:10:16.413Z"
+      },
+      {
+        "rule": "overused-font",
+        "value": "mona sans",
+        "createdAt": "2026-11-23T22:03:56.375Z"
+      }
+    ]
+  }
+}

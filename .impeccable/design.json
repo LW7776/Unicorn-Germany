@@ -1,0 +1,203 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-23T00:00:00Z",
+  "title": "Design System: German Unicorns",
+  "extensions": {
+    "colorMeta": {
+      "bone": { "role": "neutral", "displayName": "Bone", "canonical": "#FAF8F4", "tonalRamp": ["#1B1915", "#35312A", "#524C42", "#726C62", "#9B958A", "#C4BEB3", "#E6E1D8", "#FAF8F4"] },
+      "bone-2": { "role": "neutral", "displayName": "Tinted Bone", "canonical": "#F3EFE8", "tonalRamp": ["#19170F", "#332F25", "#4E493C", "#6D6757", "#968F7C", "#BFB8A4", "#DFD9CB", "#F3EFE8"] },
+      "card": { "role": "neutral", "displayName": "Card White", "canonical": "#FFFFFF", "tonalRamp": ["#1A1A1A", "#333333", "#4D4D4D", "#737373", "#A6A6A6", "#CCCCCC", "#EBEBEB", "#FFFFFF"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#15130F", "tonalRamp": ["#15130F", "#2B2721", "#423C33", "#5E574B", "#847C6E", "#AFA79A", "#D9D3C9", "#F4F1EC"] },
+      "muted": { "role": "neutral", "displayName": "Muted Ink", "canonical": "#544F46", "tonalRamp": ["#17150F", "#2E2A23", "#413C34", "#544F46", "#79736A", "#A39D93", "#CDC8C0", "#EEEBE6"] },
+      "faint": { "role": "neutral", "displayName": "Faint Ink", "canonical": "#726C62", "tonalRamp": ["#1B1915", "#332F28", "#4C473E", "#5F594F", "#726C62", "#9E988E", "#C9C4BB", "#EDEAE5"] },
+      "line": { "role": "neutral", "displayName": "Hairline", "canonical": "rgba(21, 19, 15, .10)", "tonalRamp": ["rgba(21,19,15,.04)", "rgba(21,19,15,.06)", "rgba(21,19,15,.08)", "rgba(21,19,15,.10)", "rgba(21,19,15,.16)", "rgba(21,19,15,.24)", "rgba(21,19,15,.28)", "rgba(21,19,15,.40)"] },
+      "line-2": { "role": "neutral", "displayName": "Hairline Strong", "canonical": "rgba(21, 19, 15, .16)", "tonalRamp": ["rgba(21,19,15,.04)", "rgba(21,19,15,.06)", "rgba(21,19,15,.08)", "rgba(21,19,15,.10)", "rgba(21,19,15,.16)", "rgba(21,19,15,.24)", "rgba(21,19,15,.28)", "rgba(21,19,15,.40)"] },
+      "action": { "role": "primary", "displayName": "Action Indigo", "canonical": "#2D3BC9", "tonalRamp": ["#0B0E33", "#141A59", "#1D2680", "#2432B4", "#2D3BC9", "#5C68DC", "#9AA2ED", "#DCDFF9"] },
+      "action-ink": { "role": "primary", "displayName": "Action Ink", "canonical": "#FFFFFF", "tonalRamp": ["#1A1A1A", "#333333", "#4D4D4D", "#737373", "#A6A6A6", "#CCCCCC", "#EBEBEB", "#FFFFFF"] },
+      "mark": { "role": "neutral", "displayName": "Mark Ink", "canonical": "#544F46", "tonalRamp": ["#17150F", "#2E2A23", "#413C34", "#544F46", "#79736A", "#A39D93", "#CDC8C0", "#EEEBE6"] },
+      "indigo": { "role": "primary", "displayName": "Field Indigo", "canonical": "#3D4EF5", "tonalRamp": ["#0D1240", "#161D6B", "#202B96", "#2D3BC9", "#3D4EF5", "#7682F8", "#AAB2FB", "#E0E3FE"] },
+      "rose": { "role": "secondary", "displayName": "Field Rose", "canonical": "#F2567E", "tonalRamp": ["#3D0D1D", "#66162F", "#901F42", "#C32C59", "#F2567E", "#F68AA6", "#FABBCB", "#FDE6EC"] },
+      "amber": { "role": "tertiary", "displayName": "Field Amber", "canonical": "#F2A33C", "tonalRamp": ["#3D2708", "#664112", "#905B1B", "#C37B26", "#F2A33C", "#F6BE74", "#FAD7A8", "#FDF0DD"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "The landing wordmark and each page's h1. Mona Sans width axis at 112%, tracking -3.5%." },
+      "headline": { "displayName": "Headline", "purpose": "Section headings. Same cast-object treatment as Display at a smaller clamp." },
+      "title": { "displayName": "Title", "purpose": "Sub-headings, About questions, the detail sheet's company name. Width axis 104%." },
+      "figure": { "displayName": "Figure", "purpose": "Every measured quantity, in Spline Sans Mono with tabular lining numerals, so forty figures line up as a column of evidence." },
+      "body": { "displayName": "Body", "purpose": "Running copy in ink or muted ink, held to --measure (52ch, browser-measured)." },
+      "lede": { "displayName": "Lede", "purpose": "The one muted line under a page heading, held to --measure-wide (56ch)." },
+      "label": { "displayName": "Label", "purpose": "A count, a key, two or three words. Mono, wide tracking, faint." },
+      "note": { "displayName": "Note", "purpose": "A mono sentence. Same voice as Label but normal tracking, because wide tracking slows a sentence down." }
+    },
+    "shadows": [
+      { "name": "resting-card", "value": "0 1px 2px rgba(21,19,15,.04)", "purpose": "Every register cell at rest. Barely there, and that is the point." },
+      { "name": "register-box", "value": "0 1px 2px rgba(21,19,15,.04), 0 18px 48px rgba(21,19,15,.06)", "purpose": "The one large container lifted off the page." },
+      { "name": "lifted-card", "value": "0 2px 4px rgba(21,19,15,.05), 0 12px 28px rgba(21,19,15,.09)", "purpose": "A cell under a fine-pointer hover, paired with a 2px rise." },
+      { "name": "selected-segment", "value": "0 1px 2px rgba(21,19,15,.08), 0 4px 12px rgba(21,19,15,.06)", "purpose": "The pressed state of the grid/map toggle." },
+      { "name": "in-flight", "value": "0 10px 30px rgba(21,19,15,.16), 0 2px 6px rgba(21,19,15,.07)", "purpose": "An arrival card while it is genuinely off the surface. The deepest shadow in the system." },
+      { "name": "drawer", "value": "-24px 0 60px rgba(21,19,15,.16)", "purpose": "The detail sheet against the page it covers, cast sideways because the sheet arrives sideways." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(.23, 1, .32, 1)", "purpose": "The default. Anything arriving or responding to a press: button press 160ms, cell hover 220ms, segment 220ms, section reveal 620ms, landing lift 760ms." },
+      { "name": "ease-io", "value": "cubic-bezier(.77, 0, .175, 1)", "purpose": "Used only inside the arrival, for cards travelling between two known places: the 900ms settle and the 648ms exit through the bottom edge." },
+      { "name": "ease-drawer", "value": "cubic-bezier(.32, .72, 0, 1)", "purpose": "The detail sheet alone, 420ms from translateX(100%) to rest." },
+      { "name": "landing-leave", "value": "grid 460ms ease-out, shell transform 760ms / opacity 520ms ease-out, site fade-up 420ms ease-out 180ms, field fade 560ms", "purpose": "The landing's two-stage leave: words and object go first so the cards burst into a room that is still lit." },
+      { "name": "arrival", "value": "burst 620ms ease-out stagger 6ms, hold 520ms, settle 900ms ease-io stagger 11ms, grid fade 360ms", "purpose": "Forty cards burst from 46% down the register box, hang, then land on measured cell bounds while the rest leave through the bottom edge. Plays once." },
+      { "name": "reduced-motion", "value": "zero Element.animate and zero requestAnimationFrame on load and through entering the register", "purpose": "Under prefers-reduced-motion nothing is scheduled rather than shortened, and it is verified by counting. The single exception is wireProgress coalescing one rAF per frame while the reader scrolls, which is a readout of position rather than motion." }
+    ],
+    "breakpoints": [
+      { "name": "record-stack", "value": "560px" },
+      { "name": "phone", "value": "720px" },
+      { "name": "map-labels", "value": "760px" },
+      { "name": "nav-links", "value": "860px" },
+      { "name": "one-column", "value": "900px" },
+      { "name": "container-max", "value": "1280px" }
+    ],
+    "gates": [
+      { "name": "tools/check_contrast.py", "purpose": "The palette gate. Every :root value is copied here; body tokens are held to 7:1 and labels to 4.5:1 against bone, tinted bone and card." },
+      { "name": "tools/check_landing_contrast.js", "purpose": "The landing gate, run through playwright-cli against localhost:9010 at 1440x900 and 390x844. It measures each landing text element against the ground actually behind its glyphs, because the palette gate compares tokens against bone and cannot see the aurora: it reported a clean pass while the stat labels shipped at 1.51:1 and the figures at 5.93:1." },
+      { "name": "tools/validate.py", "purpose": "Fail-closed register validation. A figure cannot publish unless a verbatim quote from an allowlisted page states that number." },
+      { "name": "tools/validate_funding.py", "purpose": "The weekly ledger's separate, deliberately lighter validator, kept apart so neither standard can quietly become the other." },
+      { "name": "pytest", "purpose": "293 tests, including test_contrast.py (which asserts the landing veil exists so it cannot be quietly deleted) and test_copy.py (no em dashes, no semicolons in user-facing copy)." }
+    ],
+    "constraints": [
+      "Zero build step. Hand-written HTML, CSS and vanilla ES modules. No framework, no bundler, no npm dependency.",
+      "Served as static files from the repository root by GitHub Pages.",
+      "Both faces are self-hosted variable woff2. The Google Fonts CDN is forbidden: embedding it has been ruled a GDPR breach in German courts and this site carries an Impressum.",
+      "No photography of any kind. Company logos are the only imagery and are never recoloured, cropped, masked or redrawn.",
+      "No em dashes and no semicolons in user-facing copy.",
+      "Every figure carries the date it was true and a working link to the public page that states it.",
+      "Python computes, JavaScript renders. No arithmetic on a published figure in browser code."
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one action on the landing and the page's main calls to act.",
+      "html": "<button class=\"ds-btn\">Enter the register</button>",
+      "css": ".ds-btn { appearance: none; border: 0; cursor: pointer; font-family: \"Mona Sans\", ui-sans-serif, system-ui, sans-serif; font-weight: 500; font-size: 16px; display: inline-flex; align-items: center; gap: 10px; padding: 14px 26px; border-radius: 999px; min-height: 48px; background: var(--ink, #15130F); color: var(--bone, #FAF8F4); text-decoration: none; transition: transform 160ms cubic-bezier(.23,1,.32,1), background 200ms ease; } .ds-btn:hover { background: #241F19; } .ds-btn:active { transform: scale(.97); } .ds-btn:focus-visible { outline: 2px solid var(--action, #2D3BC9); outline-offset: 3px; }"
+    },
+    {
+      "name": "Accent Button",
+      "kind": "button",
+      "refersTo": "button-accent",
+      "description": "The accent variant, in the one indigo dark enough to be type.",
+      "html": "<button class=\"ds-btn-accent\">Open the record</button>",
+      "css": ".ds-btn-accent { appearance: none; border: 0; cursor: pointer; font-family: \"Mona Sans\", ui-sans-serif, system-ui, sans-serif; font-weight: 500; font-size: 16px; display: inline-flex; align-items: center; gap: 10px; padding: 14px 26px; border-radius: 999px; min-height: 48px; background: var(--action, #2D3BC9); color: #FFFFFF; transition: transform 160ms cubic-bezier(.23,1,.32,1), background 200ms ease; } .ds-btn-accent:hover { background: #2432B4; } .ds-btn-accent:active { transform: scale(.97); } .ds-btn-accent:focus-visible { outline: 2px solid var(--action, #2D3BC9); outline-offset: 3px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "The quiet variant: no fill, an inset hairline ring.",
+      "html": "<button class=\"ds-btn-ghost\">Show the week</button>",
+      "css": ".ds-btn-ghost { appearance: none; border: 0; cursor: pointer; font-family: \"Mona Sans\", ui-sans-serif, system-ui, sans-serif; font-weight: 500; font-size: 16px; display: inline-flex; align-items: center; gap: 10px; padding: 14px 26px; border-radius: 999px; min-height: 48px; background: transparent; color: var(--ink, #15130F); box-shadow: inset 0 0 0 1px rgba(21,19,15,.16); transition: transform 160ms cubic-bezier(.23,1,.32,1), background 200ms ease; } .ds-btn-ghost:hover { background: var(--bone-2, #F3EFE8); } .ds-btn-ghost:active { transform: scale(.97); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--action, #2D3BC9); outline-offset: 3px; }"
+    },
+    {
+      "name": "Segmented Control",
+      "kind": "nav",
+      "refersTo": "segmented-track",
+      "description": "The grid/map toggle. A tinted pill track holding two pill buttons, the pressed one lifted onto white.",
+      "html": "<div class=\"ds-seg\"><button type=\"button\" aria-pressed=\"true\">Grid</button><button type=\"button\" aria-pressed=\"false\">Map</button></div>",
+      "css": ".ds-seg { display: inline-flex; padding: 4px; background: var(--bone-2, #F3EFE8); border-radius: 999px; gap: 4px; } .ds-seg button { appearance: none; border: 0; cursor: pointer; font-family: \"Mona Sans\", ui-sans-serif, system-ui, sans-serif; font-size: 14px; font-weight: 500; padding: 9px 20px; border-radius: 999px; background: transparent; color: var(--muted, #544F46); min-height: 40px; transition: background 220ms cubic-bezier(.23,1,.32,1), color 220ms cubic-bezier(.23,1,.32,1), transform 150ms cubic-bezier(.23,1,.32,1); } .ds-seg button[aria-pressed=\"true\"] { background: #FFFFFF; color: var(--ink, #15130F); box-shadow: 0 1px 2px rgba(21,19,15,.08), 0 4px 12px rgba(21,19,15,.06); } .ds-seg button:active { transform: scale(.97); } .ds-seg button:focus-visible { outline: 2px solid var(--action, #2D3BC9); outline-offset: 3px; }"
+    },
+    {
+      "name": "Search Field",
+      "kind": "input",
+      "refersTo": "field-input",
+      "description": "The register's search and sector filter. Pill, white, hairline-strong edge.",
+      "html": "<input class=\"ds-field\" type=\"search\" placeholder=\"Search\" aria-label=\"Search the register\">",
+      "css": ".ds-field { font-family: \"Mona Sans\", ui-sans-serif, system-ui, sans-serif; font-size: 15px; color: var(--ink, #15130F); background: #FFFFFF; border: 1px solid rgba(21,19,15,.16); border-radius: 999px; padding: 11px 18px; min-height: 44px; min-width: 160px; } .ds-field::placeholder { color: var(--faint, #726C62); opacity: 1; } .ds-field:focus-visible { outline: 2px solid var(--action, #2D3BC9); outline-offset: 3px; }"
+    },
+    {
+      "name": "Register Cell",
+      "kind": "card",
+      "refersTo": "cell",
+      "description": "One company. A logo plate, the name, the figure in mono, then a hairline meta row carrying the date and the source that proves the figure.",
+      "html": "<div class=\"ds-cell\"><span class=\"ds-cell-plate\"><span class=\"ds-cell-wordmark\">1KOMMA5°</span></span><span class=\"ds-cell-name\">1KOMMA5°</span><span class=\"ds-cell-fig\">$1.35 bn</span><span class=\"ds-cell-meta\"><span class=\"ds-cell-date\">Oct 2026</span><a class=\"ds-cell-src\" href=\"#\">Tech.eu</a></span><span class=\"ds-cell-marks\"><span class=\"ds-mark\" data-kind=\"aged\" title=\"The figure is over three years old\"></span></span></div>",
+      "css": ".ds-cell { position: relative; display: block; width: 100%; text-align: left; border: 1px solid rgba(21,19,15,.10); cursor: pointer; font-family: \"Mona Sans\", ui-sans-serif, system-ui, sans-serif; color: var(--ink, #15130F); background: #FFFFFF; border-radius: 20px; padding: 24px; box-shadow: 0 1px 2px rgba(21,19,15,.04); transition: transform 220ms cubic-bezier(.23,1,.32,1), box-shadow 220ms cubic-bezier(.23,1,.32,1); } .ds-cell:hover { transform: translateY(-2px); box-shadow: 0 2px 4px rgba(21,19,15,.05), 0 12px 28px rgba(21,19,15,.09); } .ds-cell:active { transform: translateY(-1px) scale(.995); } .ds-cell:focus-visible { outline: 2px solid var(--action, #2D3BC9); outline-offset: 3px; } .ds-cell-plate { height: 34px; display: flex; align-items: center; margin-bottom: 24px; } .ds-cell-wordmark { font-weight: 600; font-size: 15px; } .ds-cell-name { display: block; font-size: 13px; color: var(--muted, #544F46); margin-bottom: 6px; } .ds-cell-fig { display: block; font-family: \"Spline Sans Mono\", ui-monospace, Menlo, monospace; font-variant-numeric: tabular-nums lining-nums; font-size: 26px; font-weight: 500; letter-spacing: -.02em; line-height: 1.1; } .ds-cell-meta { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-top: 10px; padding-top: 9px; border-top: 1px solid rgba(21,19,15,.10); font-size: 13px; } .ds-cell-date { color: var(--faint, #726C62); font-family: \"Spline Sans Mono\", ui-monospace, Menlo, monospace; } .ds-cell-src { color: var(--action, #2D3BC9); text-decoration: none; text-underline-offset: 3px; } .ds-cell-src:hover { text-decoration: underline; } .ds-cell-marks { display: flex; gap: 6px; margin-top: 10px; color: var(--mark, #544F46); } .ds-mark { display: inline-block; width: 12px; height: 12px; border: 1.5px solid currentColor; flex: none; } .ds-mark[data-kind=\"aged\"] { background-image: linear-gradient(to top right, transparent calc(50% - 1px), currentColor calc(50% - 1px), currentColor calc(50% + 1px), transparent calc(50% + 1px)); }"
+    },
+    {
+      "name": "Caveat Marks and Key",
+      "kind": "chip",
+      "refersTo": "cell",
+      "description": "The four caveats, drawn at one stroke weight in one colour so no caveat depends on hue to be read, with the key that sits directly under the register box.",
+      "html": "<ul class=\"ds-key\"><li><span class=\"ds-mark\" data-kind=\"undisclosed\"></span>No figure was ever published</li><li><span class=\"ds-mark\" data-kind=\"disputed\"></span>Sources disagree on the figure</li><li><span class=\"ds-mark\" data-kind=\"aged\"></span>The figure is over three years old</li><li><span class=\"ds-mark\" data-kind=\"reported\"></span>Counted by others, no published valuation</li></ul>",
+      "css": ".ds-key { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 16px 0 0; padding: 0; list-style: none; font-family: \"Mona Sans\", ui-sans-serif, system-ui, sans-serif; font-size: 13px; color: var(--faint, #726C62); } .ds-key li { display: flex; align-items: center; gap: 9px; } .ds-key .ds-mark { color: var(--mark, #544F46); } .ds-mark { display: inline-block; width: 12px; height: 12px; border: 1.5px solid currentColor; flex: none; } .ds-mark[data-kind=\"undisclosed\"] { background: none; } .ds-mark[data-kind=\"disputed\"] { border: none; background: linear-gradient(currentColor, currentColor) 0 2px / 12px 1.5px no-repeat, linear-gradient(currentColor, currentColor) 0 8px / 9px 1.5px no-repeat; } .ds-mark[data-kind=\"aged\"] { background-image: linear-gradient(to top right, transparent calc(50% - 1px), currentColor calc(50% - 1px), currentColor calc(50% + 1px), transparent calc(50% + 1px)); } .ds-mark[data-kind=\"reported\"] { background-image: repeating-linear-gradient(currentColor 0 1px, transparent 1px 3px); }"
+    },
+    {
+      "name": "Detail Sheet",
+      "kind": "custom",
+      "refersTo": "detail-sheet",
+      "description": "The right-edge drawer that holds one company's record: the figure, the sentence that proves it, and every source in full.",
+      "html": "<aside class=\"ds-sheet\"><div class=\"ds-sheet-in\"><h2 class=\"ds-sheet-name\">1KOMMA5°</h2><p class=\"ds-sheet-where\">Hamburg · Climate Tech</p><span class=\"ds-sheet-fig\">$1.35 bn</span><div class=\"ds-sheet-meta\"><span class=\"ds-sheet-date\">Oct 2026</span><a class=\"ds-sheet-src\" href=\"#\">Tech.eu</a></div><div class=\"ds-sheet-block\"><h3>The sentence that proves it</h3><blockquote class=\"ds-quote\">German energytech unicorn 1KOMMA5° has reached a valuation of $1.35 billion in its latest financing round</blockquote></div></div></aside>",
+      "css": ".ds-sheet { position: relative; width: min(620px, 94vw); background: #FFFFFF; box-shadow: -24px 0 60px rgba(21,19,15,.16); font-family: \"Mona Sans\", ui-sans-serif, system-ui, sans-serif; transform: none; transition: transform 420ms cubic-bezier(.32,.72,0,1); } .ds-sheet-in { padding: 64px 40px 96px; } .ds-sheet-name { font-size: 30px; font-weight: 600; font-stretch: 104%; letter-spacing: -.03em; margin: 0 0 6px; line-height: 1.04; } .ds-sheet-where { font-size: 14px; color: var(--faint, #726C62); margin: 0 0 40px; } .ds-sheet-fig { display: block; font-family: \"Spline Sans Mono\", ui-monospace, Menlo, monospace; font-variant-numeric: tabular-nums lining-nums; font-size: clamp(40px, 5vw, 58px); font-weight: 500; letter-spacing: -.03em; line-height: 1; } .ds-sheet-meta { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-top: 12px; padding-top: 11px; border-top: 1px solid rgba(21,19,15,.10); font-size: 13px; margin-bottom: 64px; } .ds-sheet-date { color: var(--faint, #726C62); font-family: \"Spline Sans Mono\", ui-monospace, Menlo, monospace; } .ds-sheet-src { color: var(--action, #2D3BC9); text-decoration: none; text-underline-offset: 3px; } .ds-sheet-src:hover { text-decoration: underline; } .ds-sheet-block { margin-bottom: 64px; } .ds-sheet-block h3 { font-size: 13px; color: var(--faint, #726C62); font-weight: 500; font-stretch: 100%; letter-spacing: .05em; margin: 0 0 12px; } .ds-quote { margin: 0; padding: 24px; background: var(--bone, #FAF8F4); border-radius: 14px; color: var(--ink, #15130F); line-height: 1.7; font-size: 15px; }"
+    },
+    {
+      "name": "Sector Bar",
+      "kind": "custom",
+      "refersTo": "register-box",
+      "description": "A charging bar for where the value sits. The track is tinted bone, the fill runs the aurora's own three lights, and the figure beside it is mono.",
+      "html": "<div class=\"ds-bar\"><div class=\"ds-bar-row\"><span class=\"ds-bar-name\">Software</span><span class=\"ds-bar-n\">11 companies</span></div><div class=\"ds-bar-track\"><div class=\"ds-bar-fill\" style=\"--pct: 64%\"></div></div></div>",
+      "css": ".ds-bar { font-family: \"Mona Sans\", ui-sans-serif, system-ui, sans-serif; } .ds-bar-row { display: flex; align-items: baseline; gap: 16px; margin-bottom: 8px; } .ds-bar-name { font-size: 15px; } .ds-bar-n { margin-left: auto; font-size: 14px; color: var(--muted, #544F46); } .ds-bar-track { height: 6px; border-radius: 999px; background: var(--bone-2, #F3EFE8); overflow: hidden; } .ds-bar-fill { height: 100%; border-radius: 999px; width: var(--pct); background: linear-gradient(90deg, var(--indigo, #3D4EF5), var(--rose, #F2567E) 62%, var(--amber, #F2A33C)); }"
+    },
+    {
+      "name": "Navigation Bar",
+      "kind": "nav",
+      "refersTo": "register-box",
+      "description": "The 68px sticky bar on a translucent bone ground with a backdrop blur and a hairline bottom edge.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-mark\" href=\"#\">German Unicorns</a><span class=\"ds-nav-links\"><a href=\"#\">Register</a><a href=\"#\">Growth</a><a href=\"#\">Week</a><a href=\"#\">About</a></span></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 24px; height: 68px; padding: 0 24px; background: rgba(250, 248, 244, .86); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(21,19,15,.10); font-family: \"Mona Sans\", ui-sans-serif, system-ui, sans-serif; } .ds-nav-mark { display: inline-flex; align-items: center; gap: 10px; font-weight: 600; font-stretch: 112%; letter-spacing: -.02em; text-decoration: none; color: var(--ink, #15130F); } .ds-nav-links { margin-left: auto; display: flex; gap: 24px; } .ds-nav-links a { color: var(--muted, #544F46); text-decoration: none; font-size: 15px; transition: color 180ms ease; } .ds-nav-links a:hover { color: var(--ink, #15130F); } .ds-nav-links a:focus-visible { outline: 2px solid var(--action, #2D3BC9); outline-offset: 3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Lit Room",
+    "overview": "The register is a warm, well-lit room rather than a spreadsheet. One slow field of light carries the whole page, a single faceted object stands in that field and is lit by it, and every company is a soft card you could pick up. The world is called Aurora, and it was chosen by the client by name against a cooler and a darker alternative. It refuses two things explicitly: the dark analytics tracker with its glass panels and neon accent, and the clinical white data sheet that is that tracker's polite opposite.\n\nDensity is generous rather than efficient. The page runs on an 8pt rhythm with real air: 128px between sections, 64px between blocks inside the detail sheet, and a reading column held to a measured 52 characters. The surfaces are nearly flat. Depth comes from one soft, wide, low-opacity elevation and from tonal layering between three grounds (bone, a tinted bone, and white card), never from a hard edge or a dark border.\n\nThe whole visual argument is that colour is light and ink is evidence. Indigo, rose and amber exist in the aurora, in the landing object and in two drawn data marks, and they are never set as type. Everything a reader actually reads is ink, muted ink, or the one darkened indigo that was made for the job. Figures are the exception to the sans: every measured quantity on the site is set in a mono face with tabular lining numerals, so the numbers line up as a column of evidence wherever they appear.",
+    "keyCharacteristics": [
+      "One warm bone ground, lit by a single slow aurora of indigo, rose and amber.",
+      "Colour lives in the light field and in drawn data, never in type.",
+      "Pill controls, 20px cards, one soft elevation, an 8pt rhythm with real air.",
+      "Mona Sans with its width axis pushed to 112% for headings; Spline Sans Mono for every figure, date and label.",
+      "Zero build step, no framework, no npm dependency, no photography, both faces self-hosted.",
+      "Motion plays once and is not scheduled at all under reduced motion."
+    ],
+    "rules": [
+      { "name": "The Light-Not-Type Rule", "body": "Indigo, rose and amber live in the aurora, in the landing object, in the progress bar and in the sector bar gradients. They are never set as a text colour, a link colour, a border or an icon fill. --action is the darkened indigo that exists for that job, and it is the only chromatic text colour on the site.", "section": "colors" },
+      { "name": "The Two-Gate Rule", "body": "A palette gate cannot see a light field. tools/check_contrast.py compares tokens against bone and reported a clean pass while the landing shipped with its stat labels at 1.51:1 and its figures at 5.93:1 over the aurora. Any text that sits over the field is measured in a real browser by tools/check_landing_contrast.js against the ground actually behind its glyphs, or it does not ship.", "section": "colors" },
+      { "name": "The Drawn-Caveat Rule", "body": "The four caveats (undisclosed, disputed, aged, reported) are drawn marks at one stroke weight in one colour. No caveat depends on hue to be read, which is why there is no red, amber or green anywhere in the data layer.", "section": "colors" },
+      { "name": "The Self-Hosted Faces Rule", "body": "Both faces are self-hosted variable woff2 in assets/fonts/. The Google Fonts CDN is forbidden: embedding it has been ruled a GDPR breach in German courts and this site carries an Impressum. No webfont service, no link to a third-party font host, ever.", "section": "typography" },
+      { "name": "The Measured Measure Rule", "body": "The reading column is --measure: 52ch and the lede column is --measure-wide: 56ch, and those numbers are browser measurements rather than character counts. ch is the advance of the zero glyph, and Mona Sans's zero at this width is about 40% wider than its average character, so every measure written in ch was letting roughly 40% more text onto the line than it looked like: 68ch rendered 94 characters, 64ch rendered 91, against a 65-75 bar. Set a new measure by measuring the rendered line, not by counting characters.", "section": "typography" },
+      { "name": "The Mono-Carries-Evidence Rule", "body": "Every figure, date and source timestamp is mono with font-variant-numeric: tabular-nums lining-nums. Prose is never mono and a figure is never sans. A reader who learns the pairing once reads every number on the site.", "section": "typography" },
+      { "name": "The Soft-Elevation Rule", "body": "Every shadow is ink at 4-16% alpha with a blur at least five times its offset, and no shadow is coloured. Hover adds elevation and 2px of rise; nothing else changes on hover.", "section": "elevation" },
+      { "name": "The Hairline Rule", "body": "Borders are rgba(21,19,15,.10) or .16 and 1px. There are no dark rules, no double rules and no boxes drawn in ink.", "section": "elevation" },
+      { "name": "The Reduced-Motion Contract", "body": "Under prefers-reduced-motion: reduce nothing is scheduled, rather than shortened: the arrival returns before building its layer, the section reveals return before touching the DOM, the counters paint their final value, the landing object paints a single frame, and the stylesheet sets animation: none and 1ms transitions globally. Verified by counting, not by looking: zero Element.animate and zero requestAnimationFrame on load and through entering the register. The single exception is wireProgress, which coalesces one requestAnimationFrame per frame while the reader scrolls. That bar is a readout of where the reader already is rather than motion of its own, and making it paint synchronously would mean doing layout work on every scroll event to satisfy a count.", "section": "components" }
+    ],
+    "dos": [
+      "Do keep indigo, rose and amber in the light field, the landing object, the progress bar and the sector gradients, and use #2D3BC9 whenever a chromatic colour has to be type.",
+      "Do set every figure, date and source timestamp in Spline Sans Mono with font-variant-numeric: tabular-nums lining-nums.",
+      "Do push Mona Sans's width axis to 112% with -0.035em tracking on display and headline, and 104% with -0.02em on titles.",
+      "Do hold reading columns to --measure and ledes to --measure-wide, and set any new measure by measuring the rendered line in a browser.",
+      "Do run tools/check_contrast.py for the palette and playwright-cli run-code --filename=tools/check_landing_contrast.js for anything set over the aurora, plus tools/validate.py, tools/validate_funding.py and the 293 pytest tests before shipping.",
+      "Do keep every :root value in assets/css/aurora.css and the copy of it in tools/check_contrast.py in step; that duplication is the only reason the tokens can be trusted.",
+      "Do hold running copy to 7:1 rather than the 4.5:1 AA floor, and reserve --faint for labels, dates and meta.",
+      "Do make a new caveat or status readable by shape and stroke, so it survives being seen without colour.",
+      "Do build on the 8pt scale (8 / 16 / 24 / 40 / 64 / 96 / 128) and the two radii plus the pill.",
+      "Do plan every animation to play once, and to be skipped entirely rather than shortened under reduced motion."
+    ],
+    "donts": [
+      "Don't set --indigo, --rose or --amber as a text colour, a link colour, a border or an icon fill.",
+      "Don't link the Google Fonts CDN or any third-party webfont host. Both faces are self-hosted woff2, and this site carries an Impressum.",
+      "Don't write a measure in ch and trust it; Mona Sans's zero is about 40% wider than its average character.",
+      "Don't add a build step, a framework, a bundler or an npm dependency. The site is hand-written HTML, CSS and vanilla ES modules served from the repository root by GitHub Pages, and a browser gate borrows an already-installed CLI rather than adding a package.",
+      "Don't do arithmetic on a published figure in browser code. Python computes, JavaScript renders.",
+      "Don't add photography of any kind. Company logos are the only imagery, and they are never recoloured, cropped, masked or redrawn.",
+      "Don't use an em dash or a semicolon in user-facing copy.",
+      "Don't publish a figure without its date and a working link to the page that states it.",
+      "Don't add a second progress bar or a second charging element. One bar at the top of the page is what keeps it meaning anything.",
+      "Don't add a hard-edged or offset shadow, a dark border, or a shadow carrying colour.",
+      "Don't trust the palette gate for text that sits over the aurora; it compares tokens against bone and cannot see the field."
+    ]
+  }
+}

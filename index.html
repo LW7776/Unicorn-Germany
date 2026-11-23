@@ -2,109 +2,170 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>German Unicorns · every billion-euro company, sourced</title>
-<meta name="description" content="Every current German unicorn, with every valuation dated and linked to the reporting behind it.">
-<link rel="stylesheet" href="assets/css/tokens.css">
-<link rel="stylesheet" href="assets/css/base.css">
-<link rel="stylesheet" href="assets/css/hero.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>German Unicorns: every German company past a billion, with its source</title>
+<meta name="description" content="Forty German companies valued at a billion or more, each figure carrying the date it was true and a link to the page that states it, plus the week's funding rounds.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="German Unicorns: every German company past a billion, with its source">
+<meta property="og:description" content="Forty companies past a billion, twelve of them in the last twelve months, every figure traced to a dated public page.">
+<meta name="theme-color" content="#FAF8F4">
+<link rel="canonical" href="https://lw7776.github.io/Unicorn-Germany/">
+
+<!-- Both faces are self-hosted woff2 and are never loaded from the Google Fonts CDN. Embedding it
+     has been ruled a GDPR breach in German courts and this site carries an Impressum. -->
+<link rel="preload" href="assets/fonts/mona-sans-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/spline-sans-mono-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/aurora.css">
 <link rel="stylesheet" href="assets/css/register.css">
-<link rel="stylesheet" href="assets/css/funding.css">
-<link rel="stylesheet" href="assets/css/detail.css">
-<!-- assets/js/reveal.js brings each block up as it reaches the viewport, and
-     base.css starts them at zero opacity so none is ever painted and then
-     snatched back. With no JavaScript there is nothing to bring them up, so
-     the hidden state has to be undone here. -->
-<noscript><style>[data-reveal]{opacity:1;transform:none}</style></noscript>
+
+<!-- The first screen is a door, so a back navigation must not restore a scroll position behind it. -->
+<script>if ("scrollRestoration" in history) history.scrollRestoration = "manual";</script>
 </head>
 <body>
-<a class="visually-hidden" href="#register">Skip to the companies</a>
+<a class="skip-link" href="#register">Skip to the register</a>
+<div class="progress" aria-hidden="true"><i data-progress></i></div>
 
-<header class="topbar" data-topbar hidden>
-  <a class="topbar__mark" href="#register">GERMAN&nbsp;UNICORNS</a>
-  <!-- The map has no entry of its own. It is a way of looking at the companies,
-       not a separate destination, so it is reached from the grid/map toggle
-       inside the register and from nowhere else. -->
-  <nav class="topbar__nav" aria-label="Main">
-    <a href="#register" data-companies-link>Companies</a>
-    <a href="#funding">Funding</a>
-    <a href="about.html">About</a>
-  </nav>
-</header>
-
-<section class="hero" id="top" data-hero>
-  <!-- The punchline again, at the scale of a stamped plate rather than a
-       sentence, sitting behind the constellation so the hero reads in three
-       layers: wordmark, sky, statement. It is aria-hidden because the words are
-       already the <h1> below it — a screen reader hearing "made in germany"
-       twice would be told the hero says something it does not. It carries no
-       information a sighted reader needs either, which is the test it has to
-       pass: at --ghost-ink it is a texture, and if it ever becomes legible
-       enough to read as a second headline it is too strong. -->
-  <p class="hero__ghost" aria-hidden="true">MADE IN<span>GERMANY</span></p>
-  <canvas class="hero__canvas" data-constellation aria-hidden="true"></canvas>
-  <div class="hero__inner">
-    <p class="label hero__eyebrow">A register of German unicorns</p>
-    <!-- Each word is its own element so the load animation can bring them in one
-         at a time (assets/js/hero.js). The wrapping <span>s are the two lines
-         hero.css composes above 1200px, and they stay the layout unit — the word
-         spans are inline and inherit everything, so with the script absent, or
-         under prefers-reduced-motion, this renders exactly as the plain sentence
-         it was before. -->
-    <h1 class="hero__title" data-hero-title>
-      <span><span class="hero__word">Made</span> <span class="hero__word">in</span> <span class="hero__word">Germany.</span></span>
-      <span><span class="hero__word">Built</span> <span class="hero__word">by</span> <span class="hero__word">startups.</span></span>
-    </h1>
-    <button class="hero__cta" type="button" data-enter>
-      Enter the register
-      <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
-        <path d="M7 1v12M2 8l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.5"/>
-      </svg>
-    </button>
+<!-- ============================ THE LANDING ============================
+     One field of light, one object standing in it, and the fewest words that say what this is.
+     The object is lit by the same aurora that lights the page, so the two are one device. -->
+<div class="landing" id="landing">
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="landing__grid">
+      <div class="landing__copy">
+        <h1>German<br>Unicorns</h1>
+        <p class="lede">Every German company worth a billion or more, with the date each figure was true and the page that proves it. Twelve of them crossed in the last twelve months.</p>
+        <button class="btn btn--accent" id="enter" type="button">
+          Enter the register
+          <svg width="13" height="13" viewBox="0 0 13 13" aria-hidden="true" fill="none">
+            <path d="M2 6.5h8M7 3.5 10 6.5l-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="landing__object">
+        <canvas id="landing-object" aria-hidden="true"></canvas>
+      </div>
+    </div>
   </div>
-</section>
+</div>
 
-<main class="register" id="register" data-register hidden>
-  <!-- The site's recurring line, used as the section heading rather than as a
-       tagline stuck above one. It appears here and in the hero, and nowhere
-       else: it used to close the week's lead write-up as well, which turned a
-       signature into a sign-off and is why it was taken out of the round-ups. -->
-  <section class="intro" data-reveal>
-    <h2 class="intro__title">
-      Made in Germany.<br><span class="intro__accent">Built by startups.</span>
-    </h2>
-    <p class="intro__lede prose">
-      Germany has always known how to build. Cars, machines, chemicals, engineering the world
-      trusted for a century. What has changed is who is doing the building now. A new generation
-      of founders is turning that same discipline toward software, defence and energy technology.
-      The results are starting to show, unicorns, world class talent, and capital that is finally
-      catching up. Made in Germany. Built by startups.
-    </p>
-    <!-- Two pictures of the register, both drawn from figures settled in
-         tools/build.py (stats.crossingsByYear and stats.sectorComposition) so
-         neither can say something the data does not. The lede above states that
-         the pace has changed; the first of these is where a reader can see it.
-         Empty until assets/js/viz.js fills them, and left out of the page
-         entirely if the register is empty rather than drawn as a bare axis. -->
-    <div class="intro__viz" data-viz></div>
-  </section>
+<!-- ============================ THE SITE ============================ -->
+<div class="site" id="site">
+  <header class="nav">
+    <div class="wrap">
+      <a class="nav__mark" href="#top">German Unicorns</a>
+      <nav class="nav__links" aria-label="Main">
+        <a href="#register">Register</a>
+        <a href="#shape">Growth</a>
+        <a href="#week">Week</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
 
-  <section class="stats" data-stats data-reveal aria-label="Ecosystem at a glance"></section>
-  <section class="controls" data-controls data-reveal></section>
-  <div class="grid" data-grid role="list"></div>
-  <div class="map" data-map hidden></div>
-</main>
+  <main id="top">
+    <section class="section" id="register" aria-labelledby="register-h" data-reveal>
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="register-h">The register</h2>
+          <p class="lede">Forty companies past a billion. Thirty-eight carry a valuation somebody published, and two are counted by others where this standard could not be met.</p>
+        </div>
+        <!-- The register lives in a box with its own scroller, and the arrival plays inside it.
+             The box is what makes the forty cards land somewhere rather than just stopping. -->
+        <div class="reg__box" data-reg-box>
+          <div class="reg__bar">
+            <div class="seg" role="group" aria-label="View">
+              <button type="button" data-view="grid" aria-pressed="true">Grid</button>
+              <button type="button" data-view="map" aria-pressed="false">Map</button>
+            </div>
+            <label class="field">
+              <span class="visually-hidden">Search companies</span>
+              <input type="search" id="reg-search" placeholder="Search" autocomplete="off">
+            </label>
+            <label class="field">
+              <span class="visually-hidden">Filter by sector</span>
+              <select id="reg-sector"></select>
+            </label>
+            <p class="reg__count label" data-reg-count></p>
+          </div>
+          <div class="reg__scroll" data-reg-scroll>
+            <div class="reg__grid" data-reg-grid></div>
+            <div class="reg__map" data-reg-map hidden></div>
+          </div>
+        </div>
+        <!-- The marks are the register's evidence system and they are drawn rather than coloured,
+             so that no caveat depends on hue to be read. That only works if a reader can find out
+             what each one means, and until now nothing on the page said. -->
+        <ul class="key" aria-label="What the marks on a company mean">
+          <li><span class="mark" data-kind="undisclosed" aria-hidden="true"></span>No figure was ever published</li>
+          <li><span class="mark" data-kind="disputed" aria-hidden="true"></span>Sources disagree on the figure</li>
+          <li><span class="mark" data-kind="aged" aria-hidden="true"></span>The figure is over three years old</li>
+          <li><span class="mark" data-kind="reported" aria-hidden="true"></span>Counted by others, no published valuation</li>
+        </ul>
+      </div>
+    </section>
 
-<!-- The weekly funding round-up: German rounds generally, not only unicorns.
-     Hidden alongside the register until the hero transition completes, so the
-     landing view stays the hero alone. -->
-<section class="roundup" id="funding" data-roundup aria-label="Weekly funding round-up" hidden></section>
+    <section class="section section--tint" id="shape" aria-labelledby="shape-h" data-reveal>
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="shape-h">The shape of the register</h2>
+          <p class="lede">How many German companies had crossed a billion by the end of each year. Nothing here is a projection, and a year nobody crossed in is a flat year.</p>
+        </div>
+        <div class="shape">
+          <div class="shape__figs">
+            <div><span class="bigstat__k">Companies</span><span class="bigstat__v fig" data-count="40">40</span></div>
+            <div><span class="bigstat__k">Combined value</span><span class="bigstat__v fig" data-count="125.1" data-count-prefix="~&euro;" data-count-suffix=" bn" data-count-decimals="1">~&euro;125.1 bn</span></div>
+            <div><span class="bigstat__k">Crossed this year</span><span class="bigstat__v fig" data-count="12">12</span></div>
+          </div>
+          <div class="curve" data-curve></div>
+        </div>
+      </div>
+    </section>
 
-<dialog class="city" data-city-window aria-label="Companies in this city"></dialog>
-<dialog class="detail" data-detail aria-label="Company detail"></dialog>
+    <section class="section" id="sectors" aria-labelledby="sectors-h" data-reveal>
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="sectors-h">Where the value sits</h2>
+          <p class="lede">Every company on the register counted once per sector it is recorded in.</p>
+        </div>
+        <div class="sectors" data-sectors></div>
+      </div>
+    </section>
 
-<footer class="footer" data-footer></footer>
+    <section class="section section--tint" id="week" aria-labelledby="week-h" data-reveal>
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="week-h">The week just closed</h2>
+          <p class="lede">German rounds, newest first, written up once. A selection rather than a complete list, and every round links to the reporting behind it.</p>
+        </div>
+        <div class="week" data-week></div>
+      </div>
+    </section>
+  </main>
 
-<script type="module" src="assets/js/main.js"></script>
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__grid">
+        <div>
+          <p class="foot__mark">German Unicorns</p>
+          <p class="foot__lede">A public register of Germany's private companies valued at a billion or more.</p>
+        </div>
+        <nav aria-label="Footer">
+          <a href="#register">Register</a>
+          <a href="#week">Week</a>
+          <a href="about.html">About</a>
+          <a href="impressum.html">Imprint</a>
+          <a href="https://github.com/LW7776/Unicorn-Germany/issues/new" target="_blank" rel="noopener noreferrer">Report an error</a>
+        </nav>
+      </div>
+      <p class="foot__legal note">&copy; 2026 German Unicorns. Product names and logos are trademarks of their owners.</p>
+    </div>
+  </footer>
+</div>
+
+<div class="scrim" data-scrim hidden></div>
+<aside class="sheet" data-sheet aria-label="Company detail" hidden></aside>
+
+<script type="module" src="assets/js/app.js"></script>
 </body>
 </html>

@@ -36,6 +36,12 @@ HTML_COMMENT = re.compile(r"<!--.*?-->", re.DOTALL)
 # <style> so their section reveals cannot leave content hidden without
 # JavaScript, and CSS separates declarations with semicolons.
 HTML_STYLE = re.compile(r"<style\b[^>]*>.*?</style>", re.DOTALL | re.IGNORECASE)
+# An inline <script> is a program, on exactly the same principle as <style> above: a statement
+# separator in JavaScript is not punctuation a reader meets, because the element never renders.
+# The pages carry two of them in the head, which set the class the hero's entrance waits on and
+# the class the moments wait on, both before the first paint so the words never flash in
+# unanimated and then get snatched back.
+HTML_SCRIPT = re.compile(r"<script\b[^>]*>.*?</script>", re.DOTALL | re.IGNORECASE)
 # `&nbsp;` is markup, not a semicolon anybody reads.
 HTML_ENTITY = re.compile(r"&(?:#\d+|#x[0-9a-fA-F]+|[a-zA-Z][a-zA-Z0-9]*);")
 
@@ -110,7 +116,7 @@ def test_no_banned_punctuation_in_the_static_pages():
     pairs = []
     for page in HTML_PAGES:
         source = (ROOT / page).read_text(encoding="utf-8")
-        stripped = HTML_STYLE.sub("", HTML_COMMENT.sub("", source))
+        stripped = HTML_SCRIPT.sub("", HTML_STYLE.sub("", HTML_COMMENT.sub("", source)))
         pairs.append((page, HTML_ENTITY.sub("", stripped)))
     assert _offences(pairs) == []
 
